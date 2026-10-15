@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 for (const { name, route, label } of [
   { name: "ArrowDown", route: "/arrow-down-props/", label: "Down arrow" },
   { name: "ArrowLeft", route: "/props/", label: "Back arrow" },
+  { name: "ArrowRight", route: "/arrow-right-props/", label: "Right arrow" },
   { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
   { name: "Copy", route: "/copy-props/", label: "Copy icon" },
   { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },

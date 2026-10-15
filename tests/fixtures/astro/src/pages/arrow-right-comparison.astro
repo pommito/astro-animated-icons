@@ -1,0 +1,124 @@
+---
+import { ArrowRight } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ArrowRight recipe comparison</title>
+  </head>
+  <body>
+    <h1>ArrowRight recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. Each arrow completes one 400 ms cycle.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference morphs its path with native browser keyframes. It reproduces the pinned recipe without running React. The interrupted return uses a 300 ms shaft tween and the upstream head spring.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><ArrowRight size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-right.tsx">Pinned upstream ArrowRight recipe</a></p>
+    <p><a href="https://lucide-animated.com/icons/arrow-right">Live ArrowRight icon</a></p>
+    <p><a href="/arrow-right/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const [shaft, head] = control.querySelectorAll("path");
+    const origin = { d: getComputedStyle(shaft).d, transform: getComputedStyle(head).transform };
+    const current = new DOMMatrix(origin.transform).m41;
+    const previousHead = references.get(control)?.[1];
+    let velocity = 0;
+    if (previousHead && Number(previousHead.currentTime) > 0) {
+      const time = Number(previousHead.currentTime);
+      previousHead.currentTime = Math.max(0, time - 5);
+      velocity = (current - new DOMMatrix(getComputedStyle(head).transform).m41) / (Math.min(time, 5) / 1000);
+      previousHead.currentTime = time;
+    }
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const options = { duration: 400, easing: "linear", fill: "both" as const };
+    const headFrames = returning ? [] : [
+      { transform: origin.transform, easing: "ease-out" },
+      { transform: "translateX(-3px)", easing: "ease-out" },
+      { transform: "translateX(0px)" },
+    ];
+    let headDuration = 400;
+    if (returning) {
+      const decay = 12.5;
+      const frequency = Math.sqrt(500 - decay * decay);
+      const coefficient = (velocity + decay * current) / frequency;
+      for (let time = 0; time <= 2000; time += 5) {
+        const seconds = time / 1000;
+        const cosine = Math.cos(frequency * seconds);
+        const sine = Math.sin(frequency * seconds);
+        const position = Math.exp(-decay * seconds) * (current * cosine + coefficient * sine);
+        const speed = Math.exp(-decay * seconds) * ((coefficient * frequency - decay * current) * cosine - (current * frequency + decay * coefficient) * sine);
+        const done = time > 0 && Math.abs(position) <= 0.005 && Math.abs(speed) <= 10;
+        headFrames.push({ transform: `translateX(${done ? 0 : position}px)` });
+        if (done) { headDuration = time; break; }
+      }
+    }
+    const animations = [
+      shaft.animate(returning ? [
+        { d: origin.d }, { d: 'path("M5 12h14")' },
+      ] : [
+        { d: origin.d, easing: "ease-out" },
+        { d: 'path("M5 12h9")', easing: "ease-out" },
+        { d: 'path("M5 12h14")' },
+      ], { ...options, duration: returning ? 300 : 400, easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "linear" }),
+      head.animate(headFrames, { ...options, duration: headDuration }),
+    ];
+    references.set(control, animations);
+    let remaining = 2;
+    for (const animation of animations) animation.addEventListener("finish", () => {
+      if (--remaining === 0 && references.get(control) === animations) resetReference(control);
+    }, { once: true });
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-right").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-right").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>

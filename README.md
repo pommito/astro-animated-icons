@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `ArrowUp`, `MapPin`, `Copy`, `Check`, `AtSign`, and `ArrowDown` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `MapPin`, `Copy`, `Check`, `AtSign`, and `ArrowDown` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -24,6 +24,18 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
   Back to articles
 </a>
 ```
+
+For a forward link, use `ArrowRight`:
+
+```astro
+---
+import { ArrowRight } from "@grave/animated-icons/astro";
+---
+
+<a href="/next-article/">Next article <ArrowRight size={16} /></a>
+```
+
+`ArrowRight` shares the props below and exports `ArrowRightIconHandle` for manual playback. Use `controlled` and wait for `customElements.whenDefined("grave-arrow-right")` before calling `startAnimation()` or `stopAnimation()`. The containing link keeps its name and focus behavior.
 
 Use `ArrowUp` for an upward link or control:
 
@@ -99,7 +111,7 @@ import { AtSign } from "@grave/animated-icons/astro";
 
 The `/at-sign-comparison/` preview pairs the adapter with a native keyframe reproduction of the pinned upstream recipe at 14, 16, 24, and 28 px. The reference uses normalized path lengths independently of the adapter's measured SVG lengths. Play all and Stop all compare full playback and interrupted returns. `/at-sign/` provides hover, manual controls, and template instances. After `pnpm test:build`, serve it with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45329` and open `http://127.0.0.1:45329/at-sign-comparison/`. Visual acceptance belongs to Victor.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-up>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, or `<grave-arrow-down>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, or `<grave-arrow-down>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -138,7 +150,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowUp`, and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `ArrowUpIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, and `ArrowDownIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, `ArrowUp`, and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `ArrowRightIconHandle`, `ArrowUpIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, and `ArrowDownIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -151,6 +163,10 @@ ArrowLeft's arrowhead moves three SVG units to the right while the shaft shorten
 ArrowDown uses the same directional cycle helper as ArrowLeft, with local geometry and values. Its head follows y=0, -3, and 0 over 400 ms. The shaft follows `M12 5v14`, `M12 5v9`, and `M12 5v14` through native dash lengths, keeping the top endpoint at (12, 5), the two-unit stroke, and rounded caps. There are no delayed or repeating tracks. ArrowLeft keeps its existing motion and 120 ms return.
 
 Stopping ArrowDown restores the shaft over 300 ms with the upstream default cubic-bezier(0.25, 0.1, 0.35, 1). The head returns with the upstream default spring, stiffness 500, damping 25, mass 1, and rest speed 10. Before interruption, the adapter samples the head's native animation ten milliseconds apart to retain its velocity. Motion's vanilla spring generator produces five-millisecond transform samples for native playback. This avoids scaling the shaft and retains the head's momentum without the hybrid animation runtime. Rapid replay starts from the current pose, as in the existing package contract. Frame sampling can differ slightly from React's frame-by-frame velocity estimate.
+
+ArrowRight uses the pinned upstream geometry `M5 12h14` and `m12 5 7 7-7 7`. Its head moves through x=0, -3, and 0 in SVG coordinates over 400 ms. Its shaft shortens from 14 to 9 units and returns, with its left endpoint fixed at x=5. Each half uses ease-out, as resolved by the live site's Motion runtime. Native stroke dashes preserve thickness and rounded caps at 14, 16, 24, and 28 px. Screen travel scales with size.
+
+Stopping ArrowRight returns the shaft over 300 ms with `cubic-bezier(0.25, 0.1, 0.35, 1)`. The head returns with stiffness 500, damping 25, mass 1, rest speed 10, and a 0.005 rest-delta threshold. The resolved live options confirmed the stiffness, damping, mass, and rest speed on 2026-10-15. The pinned source and live variants agree. The return spring retains the current velocity, measured over the preceding 5 ms, and is sampled into native keyframes every 5 ms. This keeps the physical distance in SVG units while using `motion/mini`. A new cycle starts from the current pose. Removal and reduced motion cancel both tracks and restore the full drawing immediately. ArrowLeft keeps its existing easing and 120 ms return.
 
 ArrowUp shares the native dash mechanism in `src/icons/arrow.ts` while keeping its paths and transition choices in `src/icons/arrow-up/`. Its head moves through y=0, 3, and 0 in SVG units. Its shaft starts at (12, 19), so shortening the dash from 14 to 9 units moves only the upper endpoint from y=5 to y=10. Both tracks complete in 400 ms, with `easeOut` applied separately to each 200 ms segment. There are no delayed or repeating tracks.
 
@@ -192,6 +208,17 @@ The same preview server provides `/check-comparison/`, pairing Check with a nati
 
 `/arrow-down-comparison/` pairs ArrowDown with an independent native path-morph reference at 14, 16, 24, and 28 px. Play all and Stop all compare entry and interrupted return. The reference samples the analytical spring equation; it does not execute the upstream React component. `/arrow-down/` provides hover, manual playback, and template instances. The pinned source is [arrow-down.tsx at 4662fff](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down.tsx). The live site's initial paths, full cycle, and interrupted spring return were inspected on 2026-10-15. A 51-frame capture measured a minimum head y of -2.97429 and a minimum shaft length of 9.04285 units, then restored y=0 and `M12 5v14`. These sampled values agree with the pinned peak values of -3 and 9; no recipe difference was observed. Its implicit return defaults differ from ArrowLeft's adapter, so ArrowDown supplies its own return tracks. Visual acceptance belongs to Victor.
 
+The `/arrow-right-comparison/` fixture compares ArrowRight with an independent native path morph at 14, 16, 24, and 28 px. Play all runs a single cycle; Stop all interrupts it. The reference uses native per-segment easing and an independent analytic spring equation with inherited velocity. It does not execute React. The live site's React variants and resolved Motion options were inspected separately and agree with the pinned recipe and the adapter's timing and return parameters. The fixture has no presentation stylesheet. Visual acceptance belongs to Victor.
+
+Use a separate port when other fixture servers are running:
+
+```sh
+pnpm test:build
+pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45331
+```
+
+Open `http://127.0.0.1:45331/arrow-right-comparison/` for comparison or `/arrow-right/` for standalone hover, manual controls, and dynamic instances.
+
 `/arrow-up-comparison/` pairs ArrowUp with native path morphing and an independently sampled return spring at 14, 16, 24, and 28 px. Play all synchronizes both columns; Stop all interrupts both. The reference uses CSS `d` keyframes in Chrome and does not execute React. `/arrow-up/` provides standalone hover, controlled playback, and dynamic templates. For concurrent development, this task uses port 45332 instead of the default port. After `pnpm test:build`, run `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45332` and open `http://127.0.0.1:45332/arrow-up-comparison/`.
 
 On 2026-10-15, the live catalogue's ArrowUp module matched the [pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx): the same two paths, 400 ms cycle, and no explicit transition on the normal variants. Browser frame sampling confirmed the implicit ease-out entry, spring head return, and 300 ms shaft return. The catalogue displays samples at 40 px through its page CSS; the component's default remains 28 px. Visual acceptance belongs to Victor.
@@ -222,7 +249,15 @@ ArrowDown tests cover its full initial drawing without JavaScript, the 400 ms cy
 
 After integrating AtSign and ArrowUp from main, the ArrowDown verification run on 2026-10-15 passed `pnpm check`, `pnpm test:build`, `pnpm test --workers=1 --config=.artifacts/playwright.config.ts`, and `pnpm inspect:bundle`. Astro diagnostics reported zero errors, warnings, and hints, TypeScript exited successfully, the fixture built 35 pages, and Chrome reported `118 passed (1.6m)`. The ignored local configuration reserves port 45333 for this task. Repository defaults remain on port 45321. For this worktree, start the comparison with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45333` and open `http://127.0.0.1:45333/arrow-down-comparison/`. Firefox, Safari, and physical touch devices remain unverified. Victor gives visual acceptance.
 
+After integrating ArrowRight from main, the ArrowDown source remained unchanged. `pnpm check` passed, `pnpm test:build` built 40 pages, and the focused ArrowDown, ArrowUp, and ArrowRight browser suite reported `24 passed (19.4s)`. Bundle inspection passed with the latest combined catalogue.
+
 Before ArrowDown was added, the verification run on 2026-10-15 completed `pnpm check` with zero errors, warnings, or hints in Astro diagnostics, and TypeScript exited successfully. That earlier `pnpm test --workers=1` run reported `69 passed (57.3s)` in Chrome. The regressions include queued finish events followed by restart, stopping during or after that restart, and removal before the old finish callbacks run. Stopping MapPin leaves four return tracks; stopping Copy leaves two; stopping Check leaves three. Each restores the complete drawing. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+
+ArrowRight tests cover the complete drawing without JavaScript, a single 400 ms cycle with no delay or repeat, per-segment ease-out, controlled and standalone playback, interruption continuity, inherited head velocity, rapid replay, queued completion cleanup, removal, and reduced-motion cancellation. Shared scenarios cover props, independent template instances before and after registration, reconnection, touch, keyboard focus, and mouse hover when touch is the primary pointer. The comparison samples entry at 0, 50, 100, 150, 200, 250, 300, 350, and 400 ms, then interrupts at 100 ms and samples return at 0, 30, 60, 120, 200, 300, and 500 ms. It checks painted shaft endpoints and head positions at all four sizes, with a 0.03 screen-pixel tolerance, plus the fixed start, two-unit stroke, and rounded caps. A separate 64-sample run measured a maximum difference of 0.000047 screen pixels against the independent reference, zero page errors, and zero tracks after reduced-motion playback. Browser coverage remains Chrome; Firefox, Safari, and manual visual acceptance remain unverified.
+
+On 2026-10-15, `pnpm check` completed with zero errors, warnings, or hints in Astro diagnostics, and TypeScript exited successfully. `pnpm test --workers=1 --config .artifacts/playwright.arrow-right.config.ts` reported `118 passed (1.7m)` in Chrome. The regressions include queued finish events followed by restart, stopping during or after that restart, and removal before the old finish callbacks run. Stopping MapPin leaves four return tracks; stopping Copy leaves two; stopping Check leaves three. Each restores the complete drawing. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+
+The ignored ArrowRight validation config copies the repository config and changes only its test directory and server port to 45331. The first full run had one timing-sensitive MapPin failure, observing three tracks instead of four during rapid replay. Its focused rerun and the final full suite passed without changes to MapPin.
 
 ArrowUp coverage extends the shared props, insertion, reconnection, pointer, and reduced-motion scenarios. Focused tests check static HTML without JavaScript, the 200 ms peak, a fixed shaft bottom, standalone hover, manual control, interrupted return, rapid replay, and stale completion callbacks. The comparison samples entry every 50 ms from 0 to 400 ms, then returns interrupted at 50 and 200 ms at 0, 50, 100, 150, 200, 300, 400, and 600 ms. Head displacement and shaft endpoints differ by less than 0.03 screen pixels at all four sizes. Bundle inspection adds `/arrow-up-single/` and `/arrows/`, verifies that unused ArrowUp registration stays out of other pages, and checks that the two arrows share their runtime and CSS.
 
@@ -234,26 +269,28 @@ The comparison samples entry and both interrupted returns at 0, 25, 50, 100, 150
 
 After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
-The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. `/check-single/` renders only Check; `/copy-check/` renders Copy and Check. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together, and Copy and Check together, reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes.
+The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. `/check-single/` renders only Check; `/copy-check/` renders Copy and Check. `/arrow-right-single/` renders only ArrowRight; `/arrow-left-right/` renders ArrowLeft and ArrowRight; `/arrows/` renders ArrowLeft and ArrowUp. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together, and Copy and Check together, reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes.
 
 A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzip totals sum the individually compressed chunks.
 
 | Route | External entries | Imported JS chunks | Raw JS bytes | Gzip JS bytes | CSS bytes |
 | --- | --- | --- | --- | --- | --- |
 | `/plain/` | 0 | 0 | 0 | 0 | 0 |
-| `/single/`, ArrowLeft | 1 | 3 | 10,379 | 4,265 | 123 |
-| `/map-pin-single/`, MapPin | 1 | 2 | 10,224 | 4,099 | 123 |
+| `/single/` | 1 | 3 | 10,379 | 4,265 | 123 |
+| `/map-pin-single/` | 1 | 2 | 10,224 | 4,099 | 123 |
 | `/both/` | 2 | 4 | 11,241 | 4,743 | 123 |
-| `/copy-single/`, Copy | 1 | 3 | 13,975 | 5,812 | 123 |
+| `/copy-single/` | 1 | 3 | 13,975 | 5,812 | 123 |
 | `/arrow-copy/` | 2 | 5 | 14,992 | 6,456 | 123 |
-| `/check-single/`, Check | 1 | 2 | 9,944 | 4,013 | 123 |
+| `/check-single/` | 1 | 2 | 9,944 | 4,013 | 123 |
 | `/copy-check/` | 2 | 4 | 14,557 | 6,204 | 123 |
-| `/at-sign-single/`, AtSign | 1 | 2 | 10,175 | 4,064 | 123 |
+| `/at-sign-single/` | 1 | 2 | 10,175 | 4,064 | 123 |
 | `/arrow-at-sign/` | 2 | 4 | 11,192 | 4,708 | 123 |
-| `/arrow-up-single/`, ArrowUp | 1 | 4 | 14,600 | 6,214 | 123 |
-| `/arrows/`, ArrowLeft and ArrowUp | 2 | 5 | 14,853 | 6,408 | 123 |
-| `/arrow-down-single/`, ArrowDown | 1 | 4 | 15,275 | 6,557 | 123 |
-| `/arrow-down-left/`, ArrowLeft and ArrowDown | 2 | 5 | 15,528 | 6,751 | 123 |
+| `/arrow-right-single/` | 1 | 3 | 14,722 | 6,193 | 123 |
+| `/arrow-left-right/` | 2 | 5 | 15,739 | 6,837 | 123 |
+| `/arrow-up-single/` | 1 | 4 | 14,600 | 6,214 | 123 |
+| `/arrows/` | 2 | 5 | 14,853 | 6,408 | 123 |
+| `/arrow-down-single/` | 1 | 4 | 15,275 | 6,557 | 123 |
+| `/arrow-down-left/` | 2 | 5 | 15,528 | 6,751 | 123 |
 
 The production build imports these JavaScript chunks. The arrow helper and lifecycle are shared; each icon registers only its own element.
 
@@ -267,6 +304,7 @@ The production build imports these JavaScript chunks. The arrow helper and lifec
 | `spring.lZsRY_TK.js` | 4,052 | 1,841 |
 | `Check.astro_astro_type_script_index_0_lang.D1T-1x_O.js` | 582 | 392 |
 | `AtSign.astro_astro_type_script_index_0_lang.DpV-AWxW.js` | 813 | 443 |
+| `ArrowRight.astro_astro_type_script_index_0_lang.C15l-eBQ.js` | 1,308 | 731 |
 | `ArrowUp.astro_astro_type_script_index_0_lang.BLx2hsjl.js` | 422 | 302 |
 | `ArrowDown.astro_astro_type_script_index_0_lang.BbAqEzCr.js` | 1,097 | 645 |
 
@@ -276,4 +314,4 @@ Browser behavior has been checked in Chrome. Firefox and Safari remain unverifie
 
 ## Attribution
 
-The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [pinned ArrowUp recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx), [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), [ArrowDown recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down.tsx), and [AtSign recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
+The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [pinned ArrowUp recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx), [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), [ArrowDown recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down.tsx), [ArrowRight recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-right.tsx), and [AtSign recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
