@@ -24,3 +24,5 @@ export { default as ArrowUpRight } from "./icons/arrow-up-right/ArrowUpRight.ast
 export type { ArrowUpRightIconHandle } from "./icons/arrow-up-right/element";
 export { default as AttachFile } from "./icons/attach-file/AttachFile.astro";
 export type { AttachFileIconHandle } from "./icons/attach-file/element";
+export { default as AudioLines } from "./icons/audio-lines/AudioLines.astro";
+export type { AudioLinesIconHandle } from "./icons/audio-lines/element";

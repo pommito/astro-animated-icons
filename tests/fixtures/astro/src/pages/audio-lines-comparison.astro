@@ -1,0 +1,97 @@
+---
+import { AudioLines } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+const paths = ["M2 10v3", "M6 6v11", "M10 3v18", "M14 8v7", "M18 5v13", "M22 10v3"];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>AudioLines recipe comparison</title></head>
+  <body>
+    <h1>AudioLines recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The four inner lines loop until stopped.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference morphs SVG paths with native keyframes. It reproduces the pinned source without running React. The adapter uses stroke dashes.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Path reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><AudioLines size={size} /> {size} px</button></td>
+            <td><button type="button" data-reference>
+              <span data-grave-icon><svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                {paths.map((d) => <path d={d} />)}
+              </svg></span> {size} px
+            </button></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://lucide-animated.com/icons/audio-lines">Live AudioLines icon</a></p>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/audio-lines.tsx">Pinned source</a></p>
+    <p><a href="/audio-lines/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const recipes = [
+    { normal: "M6 6v11", active: "M6 10v3", duration: 1500 },
+    { normal: "M10 3v18", active: "M10 9v5", duration: 1000 },
+    { normal: "M14 8v7", active: "M14 6v11", duration: 800 },
+    { normal: "M18 5v13", active: "M18 7v9", duration: 1500 },
+  ];
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const paths = [...control.querySelectorAll("path")].slice(1, 5);
+    const origins = paths.map((path) => getComputedStyle(path).getPropertyValue("d"));
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const animations = paths.map((path, index) => {
+      const recipe = recipes[index];
+      const normal = `path("${recipe.normal}")`;
+      return path.animate(returning ? [
+        { d: origins[index] }, { d: normal },
+      ] : [
+        { d: normal, easing: "cubic-bezier(0, 0, 0.58, 1)" },
+        { d: `path("${recipe.active}")`, easing: "cubic-bezier(0, 0, 0.58, 1)" },
+        { d: normal },
+      ], {
+        duration: returning ? 300 : recipe.duration,
+        iterations: returning ? 1 : Infinity,
+        easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "linear",
+        fill: "both",
+      });
+    });
+    references.set(control, animations);
+    if (returning) Promise.all(animations.map((animation) => animation.finished)).then(() => {
+      if (references.get(control) === animations) resetReference(control);
+    }).catch(() => {});
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-audio-lines").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-audio-lines").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
