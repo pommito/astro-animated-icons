@@ -5,6 +5,7 @@ for (const { name, route, label } of [
   { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
   { name: "Copy", route: "/copy-props/", label: "Copy icon" },
   { name: "Archive", route: "/archive-props/", label: "Archive icon" },
+  { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },
   { name: "Check", route: "/check-props/", label: "Check icon" },
 ]) {
   test.describe(name, () => {

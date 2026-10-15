@@ -8,3 +8,5 @@ export { default as Check } from "./icons/check/Check.astro";
 export type { CheckIconHandle } from "./icons/check/element";
 export { default as Archive } from "./icons/archive/Archive.astro";
 export type { ArchiveIconHandle } from "./icons/archive/element";
+export { default as AtSign } from "./icons/at-sign/AtSign.astro";
+export type { AtSignIconHandle } from "./icons/at-sign/element";
