@@ -1,0 +1,32 @@
+---
+import { ArrowUp } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>ArrowUp browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><ArrowUp size={16} />ArrowUp example</a></p>
+    <button type="button" id="secondary"><ArrowUp size={24} />Other up arrow icon</button>
+    <ArrowUp id="standalone" label="Up arrow" />
+    <button type="button" id="controlled"><ArrowUp controlled />Manual up arrow icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><ArrowUp size={16} />Dynamic up arrow icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { ArrowUpIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-arrow-up");
+  const controlled = document.querySelector<HTMLElement & ArrowUpIconHandle>("#controlled grave-arrow-up")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>

@@ -7,6 +7,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2, label: "Copy icon", axis: "x" as const },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
+  { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
 ]) {
   test.describe(name, () => {
     test("reduced motion keeps the icon static and preserves the native control", async ({ page }) => {

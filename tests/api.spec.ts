@@ -7,6 +7,7 @@ for (const { name, route, label } of [
   { name: "Copy", route: "/copy-props/", label: "Copy icon" },
   { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },
   { name: "Check", route: "/check-props/", label: "Check icon" },
+  { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
 ]) {
   test.describe(name, () => {
     test("HTML attributes, scoped classes, inline styles, and the upstream default size reach the icon", async ({ page }) => {
