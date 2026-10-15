@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, `ArrowUpLeft`, `MapPin`, `Copy`, `Check`, `AtSign`, `ArrowDown`, and `Archive` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, `ArrowUpLeft`, `MapPin`, `Copy`, `Check`, `AtSign`, `ArrowDown`, `Archive`, and `Bot` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -147,7 +147,21 @@ import { AtSign } from "@grave/animated-icons/astro";
 
 The `/at-sign-comparison/` preview pairs the adapter with a native keyframe reproduction of the pinned upstream recipe at 14, 16, 24, and 28 px. The reference uses normalized path lengths independently of the adapter's measured SVG lengths. Play all and Stop all compare full playback and interrupted returns. `/at-sign/` provides hover, manual controls, and template instances. After `pnpm test:build`, serve it with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45329` and open `http://127.0.0.1:45329/at-sign-comparison/`. Visual acceptance belongs to Victor.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-arrow-up-right>`, `<grave-arrow-up-left>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, `<grave-arrow-down>`, or `<grave-archive>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+Use `Bot` for an assistant control:
+
+```astro
+---
+import { Bot } from "@grave/animated-icons/astro";
+---
+
+<button type="button"><Bot size={16} />Open assistant</button>
+```
+
+`Bot` exports `BotIconHandle`. For manual playback, use `controlled`, wait for `customElements.whenDefined("grave-bot")`, then call `startAnimation()` or `stopAnimation()`. Both eyes wait 200 ms, blink once over 500 ms with ease-in-out per segment, and return to their original shape. The antenna, body, and side paths stay still. A stop cancels the pending delay and returns the eyes over 300 ms with cubic Bézier (0.25, 0.1, 0.35, 1). Centered stroke dashes preserve the two-unit stroke and round dot when the eye closes. Removal and reduced motion cancel all tracks and restore the complete drawing immediately.
+
+The `/bot-comparison/` preview pairs Bot with an independent reference that animates the SVG line endpoints at 14, 16, 24, and 28 px. It uses an analytic Bézier curve and a native animation clock, without React. Use Play all and Stop all to compare the delayed blink and interrupted returns. After `pnpm test:build`, serve it with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45338` and open `http://127.0.0.1:45338/bot-comparison/`. `/bot/` provides manual controls and template instances. Visual acceptance belongs to Victor.
+
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-arrow-up-right>`, `<grave-arrow-up-left>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, `<grave-arrow-down>`, `<grave-archive>`, or `<grave-bot>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -186,7 +200,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, `ArrowUpLeft`, and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `Archive` holds its raised lid and morphed paths until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy, ArrowUpLeft, and ArrowUpRight return with their springs; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Archive returns its lid with the same spring and its paths over 300 ms. Both methods return `void`. The package exports the `ArrowDownIconHandle`, `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowUpRightIconHandle`, `ArrowUpLeftIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, and `ArchiveIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, `ArrowUpLeft`, `ArrowDown`, and `Bot` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `Archive` holds its raised lid and morphed paths until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy, ArrowUpLeft, and ArrowUpRight return with their springs; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Archive returns its lid with the same spring and its paths over 300 ms. Both methods return `void`. The package exports the `ArrowDownIconHandle`, `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowUpRightIconHandle`, `ArrowUpLeftIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, `ArchiveIconHandle`, and `BotIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -347,6 +361,23 @@ The final full command, `pnpm test --workers=1 --config=.artifacts/playwright.ar
 After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
 The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. `/check-single/` renders only Check; `/copy-check/` renders Copy and Check. `/arrow-right-single/` renders only ArrowRight; `/arrow-left-right/` renders ArrowLeft and ArrowRight; `/arrows/` renders ArrowLeft and ArrowUp. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together, and Copy and Check together, reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes.
+
+Bot's comparison samples entry at 0, 50, 150, 199, 200, 250, 325, 400, 450, 500, 575, 650, and 700 ms, plus returns interrupted at 50, 325, 450, and 575 ms. Painted eye endpoints and stroke widths agree with the independent attribute reference within 0.001 screen pixels at 14, 16, 24, and 28 px. Chrome screenshots cover rest, 199, 325, 450, 575, and 700 ms, plus reduced motion. An additional canvas rasterization comparison found differences around the eye edges between native dashes and direct SVG endpoints, including at rest and the closed dot. Geometric agreement does not establish pixel equality. Victor gives visual acceptance.
+
+The live Bot page's geometry and React variants agree with the pinned source. Its resolved Motion options confirm a 200 ms delay, 500 ms entry, and ease-in-out, then a 300 ms return with no delay and cubic Bézier (0.25, 0.1, 0.35, 1). Both live eyes reach y1=y2=14 when paused at 450 ms. The local preview reports zero page errors and zero tracks after reduced-motion playback. Browser coverage remains Chrome; Firefox, Safari, and physical touch devices remain unverified.
+
+Bot verification on 2026-10-15 ran `pnpm check`, `pnpm test:build`, `pnpm test --workers=1 --config=.artifacts/playwright.bot.config.ts`, and `pnpm inspect:bundle`. Astro diagnostics reported zero errors, warnings, or hints, and TypeScript passed. The final Chrome suite reported `138 passed (2.6m)`. The ignored local configuration replaces the preview URL and port with 45338. The committed Playwright configuration remains unchanged. Coverage includes static HTML without JavaScript, props, hover and manual controls, delay cancellation, interrupted returns, rapid replay, stale completion callbacks, template upgrades, independent instances, removal, reconnection, touch and mouse input, keyboard focus, and reduced motion. An initial run exposed a timing race in the existing Check removal scenario: its 100 ms opacity track could finish between counting and removing the element. The shared test now pauses tracks at pointer entry, matching the existing template-upgrade scenario, without changing production behavior. Bundle inspection reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+
+After integrating ArrowDown and Archive, the complete Chrome suite reported `165 passed (3.1m)`. A concurrent ArrowUpRight merge added a separate recipe and helper without changing existing icon production code. After resolving the shared exports, documentation, and bundle inspection, `pnpm check` passed again, and the focused Bot/ArrowUpRight contract run reported `30 passed (30.2s)`. The shared test pauses added on both branches were deduplicated during integration.
+
+After integrating ArrowDown, Archive, and ArrowUpRight, Bot's production route imports the following chunks. The shared chunk split changes because Archive uses the full Motion API. Bot's recipe still uses `motion/mini` and adds no CSS. `/arrow-bot/` loads the union of ArrowLeft and Bot, totaling 11,336 raw bytes and 5,029 gzip bytes. Gzip totals sum individually compressed chunks.
+
+| Imported Bot chunk | Raw bytes | Gzip bytes |
+| --- | --- | --- |
+| `Bot.astro_astro_type_script_index_0_lang.B6I_D6tZ.js` | 646 | 403 |
+| `resolve-elements.uR7bWyEF.js` | 7,648 | 3,006 |
+| `animate-style.CqlGSeCm.js` | 2,022 | 976 |
+| Bot route total | 10,316 | 4,385 |
 
 A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzip totals sum the individually compressed chunks.
 

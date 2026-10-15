@@ -1,0 +1,121 @@
+---
+import { Bot } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Bot recipe comparison</title>
+  </head>
+  <body>
+    <h1>Bot recipe comparison</h1>
+    <p>Hover a sample or play both columns together. The eyes blink once after 200 ms.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference changes the line endpoints directly with a browser animation clock. It reproduces the pinned recipe without running React. The adapter uses centered stroke dashes.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Bot size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 8V4H8" />
+                  <rect height="12" rx="2" width="16" x="4" y="8" />
+                  <path d="M2 14h2" />
+                  <path d="M20 14h2" />
+                  <line x1="15" x2="15" y1="13" y2="15" />
+                  <line x1="9" x2="9" y1="13" y2="15" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bot.tsx">Upstream Bot recipe</a></p>
+    <p><a href="https://lucide-animated.com/icons/bot">Live Bot reference</a></p>
+    <p><a href="/bot/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, { animation: Animation; sample(): void }>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.animation.cancel();
+    references.delete(control);
+    for (const line of control.querySelectorAll("line")) {
+      line.setAttribute("y1", "13");
+      line.setAttribute("y2", "15");
+    }
+  }
+
+  function playReference(control: Element, returning = false) {
+    const eyes = [...control.querySelectorAll("line")];
+    const start = eyes.map((eye) => [Number(eye.getAttribute("y1")), Number(eye.getAttribute("y2"))]);
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const animation = control.animate({ opacity: [1, 1] }, {
+      duration: returning ? 300 : 500,
+      delay: returning ? 0 : 200,
+      easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "ease-in-out",
+      fill: "both",
+    });
+    function sample() {
+      if (references.get(control)?.animation !== animation) return;
+      const time = Number(animation.currentTime ?? 0);
+      const local = Math.max(0, Math.min(1, (time - (returning ? 0 : 200)) / (returning ? 300 : 500)));
+      const segment = returning ? local : local <= 0.5 ? local * 2 : (1 - local) * 2;
+      const curve = returning ? [0.25, 0.1, 0.35, 1] : [0.42, 0, 0.58, 1];
+      const bezier = (t: number, a: number, b: number) => 3 * (1 - t) ** 2 * t * a + 3 * (1 - t) * t ** 2 * b + t ** 3;
+      let lower = 0;
+      let upper = 1;
+      for (let step = 0; step < 32; step++) {
+        const middle = (lower + upper) / 2;
+        if (bezier(middle, curve[0], curve[2]) < segment) lower = middle;
+        else upper = middle;
+      }
+      const eased = segment === 0 || segment === 1 ? segment : bezier((lower + upper) / 2, curve[1], curve[3]);
+      eyes.forEach((eye, index) => {
+        eye.setAttribute("y1", String(returning ? start[index][0] + (13 - start[index][0]) * eased : 13 + eased));
+        eye.setAttribute("y2", String(returning ? start[index][1] + (15 - start[index][1]) * eased : 15 - eased));
+      });
+    }
+    references.set(control, { animation, sample });
+    function tick() {
+      if (references.get(control)?.animation !== animation) return;
+      sample();
+      if (animation.playState !== "finished") requestAnimationFrame(tick);
+    }
+    tick();
+    animation.onfinish = () => { if (references.get(control)?.animation === animation) resetReference(control); };
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("bot-sample", () => references.get(control)?.sample());
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-bot").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-bot").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
