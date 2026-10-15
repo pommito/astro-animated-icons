@@ -25,9 +25,6 @@ for (const { name, route, tag, animationCount } of [
         control.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
       }));
 
-      await dynamic.evaluate((element) => element.addEventListener("pointerenter", () => {
-        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
-      }, { once: true }));
       await dynamic.hover();
       await expect.poll(() => dynamic.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       expect(await page.locator("#primary").evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);

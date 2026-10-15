@@ -36,9 +36,6 @@ for (const { name, route, tag, animationCount, label, axis } of [
         control.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
       }));
       const resting = (await link.locator("path").first().boundingBox())![axis];
-      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
-        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
-      }));
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await page.emulateMedia({ reducedMotion: "reduce" });
