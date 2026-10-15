@@ -1,0 +1,95 @@
+---
+import { ArrowUp } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>ArrowUp recipe comparison</title></head>
+  <body>
+    <h1>ArrowUp recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. Stop during playback to compare the return.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference morphs the shaft with native CSS path keyframes and samples the default return spring independently. It does not run React. Both columns preserve position on interruption; the adapter starts a new spring without inherited velocity.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><ArrowUp size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference>
+              <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12 7-7 7 7" /><path d="M12 19V5" />
+              </svg>Reference {size} px
+            </button></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://lucide-animated.com/">Live Lucide Animated catalogue</a></p>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx">Pinned upstream ArrowUp source</a></p>
+    <p><a href="/arrow-up/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  function reset(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+  function play(control: Element, returning = false) {
+    const [head, shaft] = control.querySelectorAll("path");
+    const origin = { head: getComputedStyle(head).transform, shaft: getComputedStyle(shaft).d };
+    reset(control);
+    if (reducedMotion.matches) return;
+    let headFrames: Keyframe[];
+    if (returning) {
+      const y = new DOMMatrix(origin.head).m42;
+      const frequency = Math.sqrt(500 - 12.5 ** 2);
+      headFrames = Array.from({ length: 121 }, (_, index) => {
+        const time = index / 200;
+        const displacement = y * Math.exp(-12.5 * time) * (Math.cos(frequency * time) + 12.5 / frequency * Math.sin(frequency * time));
+        return { offset: index / 120, transform: `translateY(${index === 120 ? 0 : displacement}px)` };
+      });
+    } else {
+      headFrames = [
+        { transform: origin.head, offset: 0, easing: "cubic-bezier(0, 0, 0.58, 1)" },
+        { transform: "translateY(3px)", offset: 0.5, easing: "cubic-bezier(0, 0, 0.58, 1)" },
+        { transform: "translateY(0px)", offset: 1 },
+      ];
+    }
+    const animations = [
+      head.animate(headFrames, { duration: returning ? 600 : 400, fill: "both" }),
+      shaft.animate(returning ? [
+        { d: origin.shaft }, { d: 'path("M12 19V5")' },
+      ] : [
+        { d: origin.shaft, offset: 0, easing: "cubic-bezier(0, 0, 0.58, 1)" }, { d: 'path("M12 19V10")', offset: 0.5, easing: "cubic-bezier(0, 0, 0.58, 1)" }, { d: 'path("M12 19V5")', offset: 1 },
+      ], { duration: returning ? 300 : 400, easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "linear", fill: "both" }),
+    ];
+    references.set(control, animations);
+    Promise.all(animations.map((animation) => animation.finished)).then(() => {
+      if (references.get(control) === animations) reset(control);
+    }).catch(() => {});
+  }
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") play(control);
+    });
+    control.addEventListener("pointerleave", () => { if (references.has(control)) play(control, true); });
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-up").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => play(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-up").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => { if (references.has(control)) play(control, true); });
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(reset);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(reset));
+</script>
