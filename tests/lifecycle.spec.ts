@@ -8,12 +8,14 @@ for (const { name, route, tag, animationCount } of [
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4 },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2 },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5 },
+  { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2 },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2 },
   { name: "FileText", route: "/file-text/", tag: "grave-file-text", animationCount: 4 },
 
   { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4 },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1 },
+  { name: "AudioLines", route: "/audio-lines/", tag: "grave-audio-lines", animationCount: 8 },
 ]) {
   test.describe(name, () => {
     test("a template instance inserted after registration animates independently and reconnects to a new control", async ({ page }) => {
