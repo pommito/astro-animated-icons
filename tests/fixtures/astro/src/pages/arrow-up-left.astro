@@ -1,0 +1,32 @@
+---
+import { ArrowUpLeft } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>ArrowUpLeft browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><ArrowUpLeft size={16} />ArrowUpLeft example</a></p>
+    <button type="button" id="secondary"><ArrowUpLeft size={24} />Other up-left arrow icon</button>
+    <ArrowUpLeft id="standalone" label="Up-left arrow" />
+    <button type="button" id="controlled"><ArrowUpLeft controlled />Manual up-left arrow icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><ArrowUpLeft size={16} />Dynamic up-left arrow icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { ArrowUpLeftIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-arrow-up-left");
+  const controlled = document.querySelector<HTMLElement & ArrowUpLeftIconHandle>("#controlled grave-arrow-up-left")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>

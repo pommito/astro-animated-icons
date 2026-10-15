@@ -195,5 +195,25 @@ for (const icon of [arrowUp, arrows]) {
 for (const icon of [arrowUp, arrows]) {
   assert.ok(!icon.source.includes("grave-arrow-right"), "Unused ArrowRight behavior must not load");
 }
+const arrowUpLeft = inspectRoute("arrow-up-left-single/index.html");
+assert.equal(arrowUpLeft.entries.length, 1);
+assert.equal(arrowUpLeft.inline.length, 0);
+assert.equal(arrowUpLeft.css, single.css, "ArrowUpLeft must reuse the shared CSS");
+assert.ok(arrowUpLeft.source.includes("grave-arrow-up-left"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up["']|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowUpLeft.source), "ArrowUpLeft alone must exclude other registrations");
+const arrowLeftUpLeft = inspectRoute("arrow-left-up-left/index.html");
+assert.equal(arrowLeftUpLeft.entries.length, 2);
+assert.equal(arrowLeftUpLeft.inline.length, 0);
+assert.equal(arrowLeftUpLeft.css, single.css);
+assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-left"));
+assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-up-left"));
+assert.deepEqual(new Set(arrowLeftUpLeft.chunks.keys()), new Set([...single.chunks.keys(), ...arrowUpLeft.chunks.keys()]));
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
+for (const icon of [arrowUpLeft, arrowLeftUpLeft]) {
+  assert.ok(!/grave-arrow-up-left/.test(icon.css), "ArrowUpLeft must not add icon-specific CSS");
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

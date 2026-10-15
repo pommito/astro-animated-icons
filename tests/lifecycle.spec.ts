@@ -8,6 +8,7 @@ for (const { name, route, tag, animationCount } of [
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5 },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2 },
+  { name: "ArrowUpLeft", route: "/arrow-up-left/", tag: "grave-arrow-up-left", animationCount: 1 },
 ]) {
   test.describe(name, () => {
     test("a template instance inserted after registration animates independently and reconnects to a new control", async ({ page }) => {
@@ -19,6 +20,9 @@ for (const { name, route, tag, animationCount } of [
       const oldControl = await dynamic.elementHandle();
       const instance = await icon.elementHandle();
 
+      await dynamic.evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }));
       await dynamic.hover();
       await expect.poll(() => dynamic.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       expect(await page.locator("#primary").evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
@@ -30,6 +34,9 @@ for (const { name, route, tag, animationCount } of [
       expect(running).toEqual(Array(animationCount).fill("idle"));
       await page.mouse.move(0, 0);
       await page.locator("#primary").evaluate((control, element) => control.append(element!), instance);
+      await page.locator("#primary").evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }));
       for (let cycle = 0; cycle < 3; cycle++) {
         await page.locator("#primary").hover();
         await expect.poll(() => instance!.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);

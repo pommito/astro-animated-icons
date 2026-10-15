@@ -148,6 +148,9 @@ test("standalone hover and manual playback respect reduced motion", async ({ pag
   await page.waitForFunction(() => !!customElements.get("grave-at-sign"));
   const icon = page.locator("#standalone");
   await expect(icon.locator("svg")).toHaveAttribute("width", "28");
+  await icon.evaluate((element) => element.addEventListener("pointerenter", () => {
+    element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+  }, { once: true }));
   await icon.hover();
   await expect.poll(() => icon.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(5);
   await page.emulateMedia({ reducedMotion: "reduce" });

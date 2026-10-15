@@ -1,0 +1,113 @@
+---
+import { ArrowUpLeft } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>ArrowUpLeft recipe comparison</title></head>
+  <body>
+    <h1>ArrowUpLeft recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. Stop during playback to compare the spring return.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses native keyframes and independent spring equations. Its fill-box origin is the drawing's top-left corner. It reproduces the pinned recipe without running React.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><ArrowUpLeft size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference>
+              <span data-grave-icon><svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <g style="transform-box: fill-box; transform-origin: 0% 0%"><path d="M7 7H17" /><path d="M7 7V17" /><path d="M17 17L7 7" /></g>
+              </svg></span>Reference {size} px
+            </button></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://lucide-animated.com/icons/arrow-up-left">Live ArrowUpLeft</a></p>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up-left.tsx">Pinned upstream source</a></p>
+    <p><a href="/arrow-up-left/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function reset(control: Element) {
+    references.get(control)?.cancel();
+    references.delete(control);
+  }
+
+  function springFrames(origin: number, target: number, velocity: number, stiffness: number, damping: number) {
+    const decay = damping / 2;
+    const frequency = Math.sqrt(stiffness - decay ** 2);
+    const displacement = origin - target;
+    const sine = (velocity + decay * displacement) / frequency;
+    let settled = false;
+    return Array.from({ length: 401 }, (_, index) => {
+      const time = index * 0.005;
+      const wave = displacement * Math.cos(frequency * time) + sine * Math.sin(frequency * time);
+      const value = target + Math.exp(-decay * time) * wave;
+      const speed = Math.exp(-decay * time) * ((sine * frequency - decay * displacement) * Math.cos(frequency * time) - (displacement * frequency + decay * sine) * Math.sin(frequency * time));
+      settled ||= Math.abs(value - target) <= 0.005 && Math.abs(speed) <= 10;
+      return settled ? target : value;
+    });
+  }
+
+  function play(control: Element, returning = false) {
+    const drawing = control.querySelector("g")!;
+    const previous = references.get(control);
+    const pose = new DOMMatrix(getComputedStyle(drawing).transform);
+    let translationVelocity = 0;
+    let scaleVelocity = 0;
+    if (previous && Number(previous.currentTime) > 0) {
+      const time = Number(previous.currentTime);
+      const interval = Math.min(time, 5);
+      previous.currentTime = time - interval;
+      const before = new DOMMatrix(getComputedStyle(drawing).transform);
+      previous.currentTime = time;
+      translationVelocity = (pose.m41 - before.m41) * 1000 / interval;
+      scaleVelocity = (pose.a - before.a) * 1000 / interval;
+    }
+    reset(control);
+    if (reducedMotion.matches) return;
+    const translation = returning ? springFrames(pose.m41, 0, translationVelocity, 500, 25) : [];
+    const scale = returning ? springFrames(pose.a, 1, scaleVelocity, 550, 30) : [];
+    const frames = returning ? translation.map((value, index) => ({
+      offset: index / 400,
+      transform: `translateX(${value}px) translateY(${value}px) scale(${scale[index]})`,
+    })) : [
+      { transform: "translateX(0px) translateY(0px) scale(1)", offset: 0, easing: "ease-in-out" },
+      { transform: "translateX(4px) translateY(4px) scale(0.85)", offset: 0.5, easing: "ease-in-out" },
+      { transform: "translateX(0px) translateY(0px) scale(1)", offset: 1 },
+    ];
+    const animation = drawing.animate(frames, { duration: returning ? 2000 : 500, fill: "both" });
+    references.set(control, animation);
+    animation.finished.then(() => {
+      if (references.get(control) === animation) reset(control);
+    }).catch(() => {});
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") play(control);
+    });
+    control.addEventListener("pointerleave", () => { if (references.has(control)) play(control, true); });
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-up-left").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => play(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-up-left").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => { if (references.has(control)) play(control, true); });
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(reset);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(reset));
+</script>
