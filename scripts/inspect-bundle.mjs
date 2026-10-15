@@ -257,5 +257,24 @@ for (const icon of [archive, arrowArchive, arrowDown, arrowDownLeft]) {
 for (const icon of [arrowUpRight, arrowLeftUpRight]) {
   assert.ok(!/grave-(archive|arrow-down)/.test(icon.source));
 }
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight]) {
+  assert.ok(!icon.source.includes("grave-bot"), "Unused Bot behavior must not load");
+  assert.ok(!icon.css.includes("grave-bot"), "Unused Bot CSS must not load");
+}
+const bot = inspectRoute("bot-single/index.html");
+assert.equal(bot.entries.length, 1);
+assert.equal(bot.inline.length, 0);
+assert.equal(bot.css, single.css, "Bot must reuse the same base CSS");
+assert.ok(bot.source.includes("grave-bot"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(bot.source));
+assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(bot.source));
+const arrowBot = inspectRoute("arrow-bot/index.html");
+assert.equal(arrowBot.entries.length, 2);
+assert.equal(arrowBot.inline.length, 0);
+assert.equal(arrowBot.css, single.css);
+assert.ok(arrowBot.source.includes("grave-bot"));
+assert.ok(arrowBot.source.includes("grave-arrow-left"));
+assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowBot.source));
+assert.deepEqual(new Set(arrowBot.chunks.keys()), new Set([...single.chunks.keys(), ...bot.chunks.keys()]));
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

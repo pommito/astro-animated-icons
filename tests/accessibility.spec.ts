@@ -9,6 +9,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
+  { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4, label: "Bot icon", axis: "y" as const },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1, label: "Up-right arrow", axis: "y" as const },
 ]) {
   test.describe(name, () => {
@@ -74,6 +75,9 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       expect(await page.evaluate(() => matchMedia("(hover: hover) and (pointer: fine)").matches)).toBe(false);
       const link = page.locator("#primary");
+      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }));
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await context.close();
