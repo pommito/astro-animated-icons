@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `MapPin`, `Copy`, `Check`, `AtSign`, `ArrowDown`, `Archive`, and `FileText` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, `MapPin`, `Copy`, `Check`, `AtSign`, `ArrowDown`, `Archive`, and `FileText` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -48,6 +48,18 @@ import { ArrowUp } from "@grave/animated-icons/astro";
 ```
 
 `ArrowUp` shares the props below and exports `ArrowUpIconHandle`. For manual playback, use `controlled`, wait for `customElements.whenDefined("grave-arrow-up")`, then call `startAnimation()` or `stopAnimation()` on the element.
+
+Use `ArrowUpRight` inside a link:
+
+```astro
+---
+import { ArrowUpRight } from "@grave/animated-icons/astro";
+---
+
+<a href="https://example.com/">Visit website <ArrowUpRight size={16} /></a>
+```
+
+`ArrowUpRight` shares the props below and exports `ArrowUpRightIconHandle`. For manual playback, use `controlled`, wait for `customElements.whenDefined("grave-arrow-up-right")`, then call `startAnimation()` or `stopAnimation()` on the element. Its complete static SVG is present before registration.
 
 For a location label, import `MapPin` from the same entry point:
 
@@ -141,7 +153,7 @@ Stopping FileText cancels the delayed entry tracks. Each text path returns from 
 
 The `/file-text-comparison/` fixture compares FileText at 14, 16, 24, and 28 px against native keyframes with normalized paths and an independent analytic return spring. Play all and Stop all synchronize both columns. The fixture does not execute React. `/file-text/` provides standalone hover, manual controls, and dynamic template instances. For this task, serve the built fixture with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45339` and open `http://127.0.0.1:45339/file-text-comparison/`. Visual acceptance belongs to Victor.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, `<grave-arrow-down>`, `<grave-archive>`, or `<grave-file-text>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-arrow-up-right>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, `<grave-arrow-down>`, `<grave-archive>`, or `<grave-file-text>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -180,7 +192,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, `ArrowUp`, and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `Archive` holds its raised lid and morphed paths until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Archive returns its lid with the same spring and its paths over 300 ms. Both methods return `void`. The package exports the `ArrowDownIconHandle`, `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, `ArchiveIconHandle`, and `FileTextIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, `ArrowUp`, `ArrowUpRight`, and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `Archive` holds its raised lid and morphed paths until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Archive returns its lid with the same spring and its paths over 300 ms. Both methods return `void`. The package exports the `ArrowDownIconHandle`, `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowUpRightIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, `ArchiveIconHandle`, and `FileTextIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -201,6 +213,10 @@ Stopping ArrowRight returns the shaft over 300 ms with `cubic-bezier(0.25, 0.1, 
 ArrowUp shares the native dash mechanism in `src/icons/arrow.ts` while keeping its paths and transition choices in `src/icons/arrow-up/`. Its head moves through y=0, 3, and 0 in SVG units. Its shaft starts at (12, 19), so shortening the dash from 14 to 9 units moves only the upper endpoint from y=5 to y=10. Both tracks complete in 400 ms, with `easeOut` applied separately to each 200 ms segment. There are no delayed or repeating tracks.
 
 On interrupted return, ArrowUp's head uses the upstream default transform spring (stiffness 500, damping 25, rest speed 10). Its shaft returns over 300 ms with cubic Bézier (0.25, 0.1, 0.35, 1), the upstream default for a path. Position stays continuous on stop or replay. Like Copy, the native spring starts without the previous track's velocity. ArrowLeft retains its existing easing and 120 ms return. Shared lifecycle cleanup waits for both ArrowUp tracks before clearing styles.
+
+ArrowUpRight moves its complete group through (0, 0), (-4, 4), and (0, 0) in SVG units, scaling through 1, 0.85, and 1 over 500 ms. Each 250 ms segment uses ease-in-out. Its explicit `transform-box: view-box` and `transform-origin: 17px 7px` match the source's top-right fill-box origin. Translation and stroke scaling therefore follow the SVG size. There are no delays or repeats. Restarting replays the explicit keyframes from rest, as in the source.
+
+Interrupted return preserves position and velocity. Translation uses stiffness 500 and damping 25; scale uses stiffness 550 and damping 30. All three springs use mass 1, rest speed 10, and rest delta 0.005. Motion's vanilla spring generator supplies a sample every 5 ms for one native transform track. The diagonal helper accepts the horizontal direction; each icon keeps its geometry and origin local. The shared lifecycle cancels the track on removal and reduced-motion changes, leaving the complete drawing. Existing icons keep their recipes.
 
 MapPin translates the whole SVG through y=0, -5, and -3 px over 500 ms, with offsets 0, 0.6, and 1. Easing applies to each segment so the pin reaches -5 px at 300 ms. Moving the SVG keeps the same travel in screen pixels at 14, 16, 24, and 28 px, as in the upstream recipe. Shared SVG overflow keeps the drawing visible.
 
@@ -258,6 +274,23 @@ Open `http://127.0.0.1:45331/arrow-right-comparison/` for comparison or `/arrow-
 `/arrow-up-comparison/` pairs ArrowUp with native path morphing and an independently sampled return spring at 14, 16, 24, and 28 px. Play all synchronizes both columns; Stop all interrupts both. The reference uses CSS `d` keyframes in Chrome and does not execute React. `/arrow-up/` provides standalone hover, controlled playback, and dynamic templates. For concurrent development, this task uses port 45332 instead of the default port. After `pnpm test:build`, run `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45332` and open `http://127.0.0.1:45332/arrow-up-comparison/`.
 
 On 2026-10-15, the live catalogue's ArrowUp module matched the [pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx): the same two paths, 400 ms cycle, and no explicit transition on the normal variants. Browser frame sampling confirmed the implicit ease-out entry, spring head return, and 300 ms shaft return. The catalogue displays samples at 40 px through its page CSS; the component's default remains 28 px. Visual acceptance belongs to Victor.
+
+`/arrow-up-right-comparison/` pairs ArrowUpRight with an independent native keyframe and analytic spring reference at 14, 16, 24, and 28 px. The reference uses the upstream fill-box origin; the adapter uses explicit viewBox coordinates. Play all synchronizes the columns and Stop all interrupts them. `/arrow-up-right/` provides hover, manual controls, and dynamic templates. The fixture does not execute React. Visual acceptance belongs to Victor.
+
+For this comparison, run `pnpm test:build`, then `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45334` and open `http://127.0.0.1:45334/arrow-up-right-comparison/`. On 2026-10-15, the live catalogue's geometry, variants, and resolved return spring options matched the pinned ArrowUpRight source. Sampling the live React component at 0, 125, 250, 375, and 500 ms confirmed translations (0, 0), (-2, 2), (-4, 4), (-2, 2), (0, 0) and scales 1, 0.925, 0.85, 0.925, 1. Its page CSS displays the sample at 40 px; the component default remains 28 px.
+
+ArrowUpRight's browser scenarios cover static HTML without JavaScript, default size and wrapper props, standalone hover, controlled playback, independent instances, template insertion before and after registration, removal, reconnection, rapid replay, queued completion callbacks, touch and keyboard exclusion, mouse hover with a touch primary pointer, and reduced motion during entry and return. The comparison samples entry and returns interrupted at 50, 125, 250, and 350 ms. It compares three transformed points at eleven times and all four sizes. Every coordinate differs by less than 0.03 screen pixels. The preview reference solves the springs independently; a separate browser inspection checks the live React component. Safari, Firefox, and physical touch devices remain unverified.
+
+On 2026-10-15, `pnpm check` reported zero Astro diagnostic errors, warnings, or hints, and TypeScript exited successfully. `pnpm test:build` built all 40 fixture pages. `pnpm test --workers=1 --config=.artifacts/playwright.config.ts` reported `134 passed (2.6m)` in Chrome, including 16 ArrowUpRight scenarios. The ignored local config changes only the fixture port to 45334. Initial full runs exposed two timing races in shared tests: hover could precede registration or finish before the first observation, and Check's 100 ms opacity track could finish before removal. The shared tests now wait for registration where needed and pause tracks on pointer entry. The final full run passed without changing existing icon recipes. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+
+After integrating Archive and ArrowDown from `main` on 2026-10-15, `pnpm check` passed and the complete Chrome run reported `161 passed (4.5m)`. Playwright's server setup rebuilt the production fixtures on port 45334. `pnpm inspect:bundle` verified one external entry, four imported chunks, no inline script, and the same 123 bytes of shared CSS on `/arrow-up-right-single/`. ArrowUpRight alone loads 15,015 raw JS bytes and 6,596 gzip bytes. `/arrow-left-up-right/` loads the exact union of ArrowLeft's and ArrowUpRight's chunks. Pages without ArrowUpRight exclude its registration; the browser bundles exclude React. The expanded fixture changes how the bundler splits the shared runtime.
+
+| Imported chunk | Raw bytes | Gzip bytes |
+| --- | ---: | ---: |
+| `ArrowUpRight.astro_astro_type_script_index_0_lang.CnPpcKIl.js` | 1,264 | 762 |
+| `resolve-elements.uR7bWyEF.js` | 7,648 | 3,006 |
+| `spring.BQl6Gvt7.js` | 4,081 | 1,852 |
+| `animate-style.CqlGSeCm.js` | 2,022 | 976 |
 
 An optional visual playground can live in the ignored `apps/playground` directory. It is local tooling, excluded from the shared workspace and repository. The package's tests and checks do not require it. A public demo can be added when the package and its design are ready.
 
