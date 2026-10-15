@@ -129,5 +129,25 @@ for (const icon of [single, mapPin, both, copy, arrowCopy, check, copyCheck]) {
   assert.ok(!/grave-(map-pin|arrow-left|copy|check)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
 }
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck]) {
+  assert.ok(!icon.source.includes("grave-archive"), "Unused Archive behavior must not load");
+}
+const archive = inspectRoute("archive-single/index.html");
+assert.equal(archive.entries.length, 1);
+assert.equal(archive.inline.length, 0);
+assert.equal(archive.css, single.css, "Archive must reuse shared CSS");
+assert.ok(archive.source.includes("grave-archive"));
+assert.ok(!/grave-(arrow-left|map-pin|copy|check|bundle-probe)/.test(archive.source));
+assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(archive.source));
+assert.ok(!/grave-archive/.test(archive.css));
+const arrowArchive = inspectRoute("arrow-archive/index.html");
+assert.equal(arrowArchive.entries.length, 2);
+assert.equal(arrowArchive.inline.length, 0);
+assert.equal(arrowArchive.css, single.css);
+assert.ok(arrowArchive.source.includes("grave-arrow-left"));
+assert.ok(arrowArchive.source.includes("grave-archive"));
+assert.ok(!/grave-(map-pin|copy|check|bundle-probe)/.test(arrowArchive.source));
+assert.deepEqual(new Set(arrowArchive.chunks.keys()), new Set([...single.chunks.keys(), ...archive.chunks.keys()]));
+
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

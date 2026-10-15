@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `MapPin`, `Copy`, and `Check` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `MapPin`, `Copy`, `Check`, and `Archive` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -61,7 +61,19 @@ import { Check } from "@grave/animated-icons/astro";
 
 For success feedback, use `controlled` and the exported `CheckIconHandle`. Wait for `customElements.whenDefined("grave-check")` before calling its methods. The checkmark is visible at rest, so the consumer must insert its template only after the operation succeeds. For example, await `navigator.clipboard.writeText()` before replacing Copy with Check and calling `startAnimation()`. On rejection, retain Copy and announce the error. Keep the button's accessible name stable and use a separate live status. The [consumer fixture](tests/fixtures/astro/src/pages/check.astro) demonstrates these boundaries with a promise that can be resolved or rejected manually. The icon does not access the clipboard, swap icons, or announce status.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, `<grave-copy>`, or `<grave-check>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+Use `Archive` inside a native control:
+
+```astro
+---
+import { Archive } from "@grave/animated-icons/astro";
+---
+
+<button type="button"><Archive size={16} /> Archive message</button>
+```
+
+`Archive` raises its lid and morphs its body and handle on hover. It holds the open pose until stopped. It shares the props below and exports `ArchiveIconHandle` for manual playback. Use `controlled` and wait for `customElements.whenDefined("grave-archive")` before calling `startAnimation()` or `stopAnimation()`. The consumer implements the archive operation.
+
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, or `<grave-archive>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -100,7 +112,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft` completes one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, and `CheckIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft` completes one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `Archive` holds its raised lid and morphed paths until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Archive returns its lid with the same spring and its paths over 300 ms. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, and `ArchiveIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -108,7 +120,7 @@ The nearest `a[href]` or `button` triggers one hover animation. Without a contai
 
 The arrowhead moves three SVG units to the right while the shaft shortens, then both return over 400 ms. The shaft's path runs from x=19 to x=5. Its length comes from `getTotalLength()`. A five-unit retraction moves its visible left endpoint to x=10, matching Lucide Animated's path recipe. Animating `stroke-dasharray` preserves the stroke thickness and rounded caps at each size. The fixed right endpoint stays at x=19.
 
-`motion/mini` drives the recipes through the Web Animations API. It animates ArrowLeft's head transform and shaft dash. Retriggering starts from the current drawing. Leaving the hover target returns ArrowLeft over 120 ms. There is no autoplay. Future icons should use the Motion API their recipe needs; path morphing may require the hybrid API.
+`motion/mini` drives the recipes through the Web Animations API. It animates ArrowLeft's head transform and shaft dash. Retriggering starts from the current drawing. Leaving the hover target returns ArrowLeft over 120 ms. There is no autoplay. Archive uses the full vanilla Motion API to interpolate its path strings. Other recipes keep `motion/mini`.
 
 MapPin translates the whole SVG through y=0, -5, and -3 px over 500 ms, with offsets 0, 0.6, and 1. Easing applies to each segment so the pin reaches -5 px at 300 ms. Moving the SVG keeps the same travel in screen pixels at 14, 16, 24, and 28 px, as in the upstream recipe. Shared SVG overflow keeps the drawing visible.
 
@@ -119,6 +131,10 @@ Copy translates the front rectangle by -3 on both axes and the back path by +3 i
 Under `prefers-reduced-motion: reduce`, all icons stay static, including manual playback. Changing the preference during playback cancels the animation and restores the drawing. The consumer's control continues to provide its normal color and focus feedback.
 
 Check reveals opacity from zero to one over 100 ms, grows its path from zero to the complete checkmark, and scales from 0.5 to one over 400 ms. All tracks use the source's ease-in-out curve. The path has an explicit `transform-box: fill-box` and `transform-origin: center`, so scaling uses its own center at SVG coordinates (12, 11.5). `getTotalLength()` converts the normalized reveal into native stroke dash lengths for `motion/mini`. Rounded caps and the two-unit stroke scale with the path, as in the source. Starting again replays the reveal from its initial keyframes; stopping preserves the current pose before returning. Removal and reduced-motion changes clear the three tracks and leave the complete checkmark visible. Under reduced motion, a consumer still inserts Check after success, without a drawing or scale effect.
+
+Archive adapts the [pinned upstream recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/archive.tsx). Its lid moves by -1.5 SVG units with stiffness 200, damping 25, and mass 1. These physics override the source's declared 200 ms duration. The spring settles after roughly 650 ms, rather than stopping at 200 ms. Travel scales with the SVG size. The body morphs from `M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8` to `M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11`, and the handle moves from `M10 12h4` to `M10 15h4`. Both paths use Motion's default 300 ms transition and cubic Bezier curve `[0.25, 0.1, 0.35, 1]` on entry and return.
+
+The Archive recipe animates Motion values and writes the resulting transform and `d` attributes to the existing SVG. A retained numeric Motion value carries the lid's velocity into an interrupted return. Each path transition reads its current `d` attribute. Stopping the Motion values preserves the drawing and detaches their old controls. Calling a value animation's `cancel()` directly would rewind its update callback. The shared lifecycle cancels all three tracks on removal or a reduced-motion change, then restores the complete static SVG. There are no delayed or repeating tracks.
 
 All icons use the lifecycle and trigger code in `src/element.ts`. Each instance attaches listeners in `connectedCallback()`. `disconnectedCallback()` aborts those listeners and cancels its animations. Reconnection finds the current containing control. Each new playback stops and cancels the previous controls while preserving their current pose. A playback identifier prevents queued completion callbacks from clearing a newer playback, and removes late style writes after reset. Template clones work both before and after custom-element registration. Use the Astro component to create the template's SVG, rather than supplying SVG markup yourself.
 
@@ -143,6 +159,8 @@ The tests use installed Google Chrome through Playwright's `chrome` channel. Ins
 To review Copy visually, run `pnpm test:build`, then `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45321` and open `http://127.0.0.1:45321/copy-comparison/`. The reference samples the spring equation into native keyframes; it does not run the upstream React component. `/copy/` also provides standalone hover, manual controls, and dynamic template instances. Visual acceptance belongs to Victor.
 
 The same preview server provides `/check-comparison/`, pairing Check with a native keyframe reproduction of the upstream recipe at 14, 16, 24, and 28 px. The reference uses `pathLength="1"` and an explicit SVG origin, independently of the adapter's measured dash lengths and fill-box origin. Use Play all and Stop all to compare the reveal and interrupted returns. `/check/` adds manual playback, dynamic instances, and simulated clipboard success and rejection. These fixtures contain no presentation stylesheet. Visual acceptance belongs to Victor; the comparison does not execute the upstream React component.
+
+`/archive-comparison/` pairs Archive with an independent spring equation and cubic Bezier implementation at 14, 16, 24, and 28 px. Play all and Stop all compare entry, the held pose, and an interrupted return. The reference does not import Motion or run React. `/archive/` adds standalone hover, controlled playback, and dynamic template instances. For an isolated preview on port 45330, run `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45330` after `pnpm test:build`, then open `http://127.0.0.1:45330/archive-comparison/`. Visual acceptance belongs to Victor.
 
 An optional visual playground can live in the ignored `apps/playground` directory. It is local tooling, excluded from the shared workspace and repository. The package's tests and checks do not require it. A public demo can be added when the package and its design are ready.
 
@@ -187,8 +205,23 @@ A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzi
 
 The shared `animate-style.BLONbVKL.js` chunk contains Motion mini and the shared lifecycle, totaling 9,362 raw bytes and 3,621 gzip bytes. `ArrowLeft.astro_astro_type_script_index_0_lang.DHKgs_yC.js` adds 666 raw bytes and 418 gzip bytes. `MapPin.astro_astro_type_script_index_0_lang.oiIrofDQ.js` adds 862 raw bytes and 478 gzip bytes. `Copy.astro_astro_type_script_index_0_lang.Beqn0Av6.js` adds 4,526 raw bytes and 2,049 gzip bytes, including the spring generator. `Check.astro_astro_type_script_index_0_lang.D1T-1x_O.js` adds 582 raw bytes and 392 gzip bytes. Chunk hashes can change on rebuild.
 
+Archive verification on 2026-10-15 completed with `pnpm check`, `pnpm test:build`, `pnpm test --workers=1`, and `pnpm inspect:bundle`. The test run used a temporary Playwright configuration pointing at this worktree's preview on port 45330. Astro diagnostics reported zero errors, warnings, or hints, and TypeScript exited successfully. Chrome reported `80 passed (1.4m)`. Archive scenarios cover the initial SVG without JavaScript, props, hover and held poses, standalone and controlled playback, position and velocity during interruption, rapid playback, completed morph callbacks, removal, reconnection, templates inserted before and after registration, touch, keyboard focus, mouse input with a touch primary pointer, and reduced-motion changes. Its JS-driven tracks are verified through rendered geometry and SVG attributes rather than `getAnimations()`.
+
+The independent Archive preview sampled entry and a return interrupted at 96 ms at 16, 48, 96, 192, 304, 512, and 896 ms. The reference resamples its current pose at the moment of interruption, as Motion does. Three repeated runs measured a maximum screen-coordinate difference of 0.0042 px across all four sizes. The automated bound is 0.03 px. A separate Chrome comparison against the live React component on [lucide-animated.com](https://lucide-animated.com/icons/archive), with both browser clocks controlled, measured a maximum difference of 0.000031 px over the same sizes and samples. The live site's CSS enlarges its preview to 48 px; this comparison overrode that preview sizing to compare equal rendered sizes. The live geometry, spring, path timing, and interrupted return agreed with the pinned recipe. These samples do not establish pixel-identical antialiasing or visual acceptance.
+
+The Archive build produced the following imported chunks. Gzip totals sum individually compressed chunks. Chunk names can change on rebuild.
+
+| Chunk | Raw bytes | Gzip bytes |
+| --- | --- | --- |
+| `Archive.astro_astro_type_script_index_0_lang.Co68OOsf.js` | 45,124 | 16,758 |
+| `resolve-elements.uR7bWyEF.js` | 7,648 | 3,006 |
+| `spring.BQl6Gvt7.js` | 4,081 | 1,852 |
+| Archive route total | 56,853 | 21,616 |
+
+`/archive-single/` has one external entry, three imported JS chunks, no inline script, and the same 123 bytes of CSS as the other icons. `/arrow-archive/` has two entries and five imported chunks, totaling 59,585 raw bytes and 23,031 gzip bytes. Its chunks are the exact union of the individual routes. Inspection reported `Selective loading verified: shared CSS only, unused icon behavior excluded.` Archive adds no CSS selectors and no React code. The full Motion API changes the shared chunk split for this build: ArrowLeft alone totals 10,380 raw bytes and 4,421 gzip bytes, while retaining its existing behavior. The earlier table records the build before Archive.
+
 Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. An ArrowLeft peak-frame comparison at 14, 16, 24, and 28 px retains small antialiasing differences between the dashed shaft and the reference's shortened path. The ignored local playground has a `/map-pin/` comparison at 14, 16, 24, and 28 px. It pairs the Astro adapter with a native keyframe reproduction of the upstream recipe, with play and stop controls. A Chrome comparison at 150, 300, 400, 550, and 800 ms matched translation, opacity, normalized dash length, and normalized dash offset at all four sizes. It does not execute the upstream React component. Start it with `pnpm --dir apps/playground dev` when the local playground is present. The committed `/map-pin/` browser fixture also provides hover and manual controls without a presentation stylesheet. Visual acceptance belongs to Victor, including the movement at small sizes.
 
 ## Attribution
 
-The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), and [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
+The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), and [Archive recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/archive.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
