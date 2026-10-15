@@ -7,6 +7,7 @@ for (const { name, route, tag, animationCount } of [
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4 },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2 },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5 },
+  { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2 },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2 },
   { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4 },

@@ -1,0 +1,32 @@
+---
+import { AttachFile } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>AttachFile browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><AttachFile size={16} />AttachFile example</a></p>
+    <button type="button" id="secondary"><AttachFile size={24} />Other attach-file icon</button>
+    <AttachFile id="standalone" label="AttachFile icon" />
+    <button type="button" id="controlled"><AttachFile controlled />Manual attach-file icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><AttachFile size={16} />Dynamic attach-file icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { AttachFileIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-attach-file");
+  const controlled = document.querySelector<HTMLElement & AttachFileIconHandle>("#controlled grave-attach-file")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>
