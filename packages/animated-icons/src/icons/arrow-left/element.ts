@@ -1,18 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateArrowLeft } from "./definition";
+import { arrowLeftRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type ArrowLeftIconHandle = IconHandle;
 
-const ArrowLeftElement = createIconElement({
-  animate: animateArrowLeft,
-  clear(drawing) {
-    drawing.querySelectorAll("path").forEach((path) => {
-      path.style.removeProperty("transform");
-      path.style.removeProperty("stroke-dasharray");
-    });
-  },
-});
+const ArrowLeftElement = createIconElement(arrowLeftRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {
