@@ -8,7 +8,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 The local pilot implements `ArrowLeft` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
-Read [the project brief](docs/PROJECT_BRIEF.md) for the agreed direction, API examples, open decisions, and implementation checks. Agents should start with [AGENTS.md](AGENTS.md).
+Agents should start with [AGENTS.md](AGENTS.md).
 
 ## Usage
 

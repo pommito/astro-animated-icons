@@ -1,12 +1,12 @@
 # Working in this repository
 
-Before planning implementation, changing the package interface, or integrating a consumer, read [docs/PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md). It records the conversation that established this project and distinguishes decisions from proposals.
+Before changing package exports or integrating a consumer, read [README.md](README.md) for the package interface and development workflow.
 
 Discuss work with Victor in French. Write code identifiers, documentation, issues, PRs, and commits in English. Product content follows its readers' language.
 
 Victor is learning Web Components while building this package. Explain the mechanism behind each substantial design choice and keep examples small. State what was actually verified and what remains uncertain. Visual acceptance belongs to Victor.
 
-Use the latest user request to establish the task. The brief records context and does not itself authorize implementation, publication, consumer changes, or delegation.
+Use the latest user request to establish the task.
 
 When working on Victor's machine, read the applicable local rules:
 

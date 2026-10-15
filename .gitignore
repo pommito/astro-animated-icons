@@ -6,3 +6,4 @@ playwright-report/
 .DS_Store
 .artifacts/
 /apps/playground/
+/docs/PROJECT_BRIEF.md
