@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 for (const { name, route, tag, animationCount } of [
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2 },
+  { name: "ArrowRight", route: "/arrow-right/", tag: "grave-arrow-right", animationCount: 2 },
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4 },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2 },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5 },
