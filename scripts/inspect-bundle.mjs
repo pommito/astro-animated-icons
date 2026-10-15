@@ -295,5 +295,29 @@ for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, che
   assert.ok(!icon.source.includes("grave-attach-file"), "Unused AttachFile behavior must not load");
 }
 assert.ok(!attachFile.css.includes("grave-attach-file"), "AttachFile must not add icon-specific CSS");
+
+
+
+const audioLines = inspectRoute("audio-lines-single/index.html");
+assert.equal(audioLines.entries.length, 1);
+assert.equal(audioLines.inline.length, 0);
+assert.equal(audioLines.css, single.css);
+assert.ok(audioLines.source.includes("grave-audio-lines"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bot|attach-file|bundle-probe)/.test(audioLines.source));
+const arrowAudioLines = inspectRoute("arrow-audio-lines/index.html");
+assert.equal(arrowAudioLines.entries.length, 2);
+assert.equal(arrowAudioLines.inline.length, 0);
+assert.equal(arrowAudioLines.css, single.css);
+assert.ok(arrowAudioLines.source.includes("grave-audio-lines"));
+assert.ok(arrowAudioLines.source.includes("grave-arrow-left"));
+assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bot|attach-file|bundle-probe)/.test(arrowAudioLines.source));
+assert.deepEqual(new Set(arrowAudioLines.chunks.keys()), new Set([...single.chunks.keys(), ...audioLines.chunks.keys()]));
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, attachFile, arrowAttachFile]) {
+  assert.ok(!icon.source.includes("grave-audio-lines"), "Unused AudioLines behavior must not load");
+}
+for (const icon of [audioLines, arrowAudioLines]) {
+  assert.ok(!/grave-(audio-lines|arrow-left)/.test(icon.css));
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");
