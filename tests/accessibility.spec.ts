@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount, label, axis } of [
   { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2, label: "Down arrow", axis: "y" as const },
@@ -10,6 +11,8 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2, label: "AttachFile icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
+  { name: "FileText", route: "/file-text/", tag: "grave-file-text", animationCount: 4, label: "FileText icon", axis: "x" as const },
+
   { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4, label: "Bot icon", axis: "y" as const },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1, label: "Up-right arrow", axis: "y" as const },
   { name: "ArrowUpLeft", route: "/arrow-up-left/", tag: "grave-arrow-up-left", animationCount: 1, label: "Up-left arrow", axis: "y" as const },
@@ -35,16 +38,12 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.goto(route);
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       const link = page.locator("#primary");
-      await link.evaluate((control) => control.addEventListener("pointerenter", () => {
-        control.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
-      }));
       const resting = (await link.locator("path").first().boundingBox())![axis];
+      await pauseAnimationsOnPointer(link);
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
-      await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => {
-        animation.pause();
-        animation.currentTime = 50;
-      }));
+      await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => { animation.currentTime = 50; }));
+
       await page.emulateMedia({ reducedMotion: "reduce" });
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
       expect((await link.locator("path").first().boundingBox())![axis]).toBeCloseTo(resting, 1);
@@ -81,9 +80,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       expect(await page.evaluate(() => matchMedia("(hover: hover) and (pointer: fine)").matches)).toBe(false);
       const link = page.locator("#primary");
-      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
-        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
-      }));
+      await pauseAnimationsOnPointer(link);
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await context.close();

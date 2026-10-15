@@ -1,0 +1,122 @@
+---
+import { FileText } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>FileText recipe comparison</title>
+  </head>
+  <body>
+    <h1>FileText recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. Stop all interrupts the delayed text tracks and returns to the complete drawing.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses normalized path lengths and an independent spring equation with native keyframes. It reproduces the upstream recipe without running React.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><FileText size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M10 9H8" pathLength="1" />
+                  <path d="M16 13H8" pathLength="1" />
+                  <path d="M16 17H8" pathLength="1" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-text.tsx">Pinned FileText source</a></p>
+    <p><a href="https://lucide-animated.com/icons/file-text">Live FileText icon</a></p>
+    <p><a href="/file-text/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const svg = control.querySelector("svg")!;
+    const paths = [...svg.querySelectorAll("path")].slice(2);
+    const scale = () => new DOMMatrix(getComputedStyle(svg).transform).a;
+    const origin = scale();
+    const dashes = paths.map((path) => getComputedStyle(path).strokeDasharray);
+    const previousZoom = references.get(control)?.[0];
+    let velocity = 0;
+    if (previousZoom && Number(previousZoom.currentTime) > 0) {
+      const time = Number(previousZoom.currentTime);
+      previousZoom.currentTime = Math.max(0, time - 5);
+      velocity = (origin - scale()) / (Math.min(time, 5) / 1000);
+      previousZoom.currentTime = time;
+    }
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    let frames = [origin, 1.05];
+    let duration = 300;
+    if (returning) {
+      const displacement = origin - 1;
+      const frequency = Math.sqrt(550 - 15 * 15);
+      const sine = (velocity + 15 * displacement) / frequency;
+      frames = [origin];
+      duration = 0;
+      for (let ms = 5; ms <= 2000; ms += 5) {
+        const t = ms / 1000;
+        const wave = displacement * Math.cos(frequency * t) + sine * Math.sin(frequency * t);
+        const distance = Math.exp(-15 * t) * wave;
+        const speed = Math.exp(-15 * t) * (-15 * wave - displacement * frequency * Math.sin(frequency * t) + sine * frequency * Math.cos(frequency * t));
+        const done = Math.abs(distance) <= 0.005 && Math.abs(speed) <= 10;
+        frames.push(done ? 1 : 1 + distance);
+        duration = ms;
+        if (done) break;
+      }
+    }
+    references.set(control, [
+      svg.animate({ transform: frames.map((value) => `scale(${value})`) }, { duration, easing: returning ? "linear" : "ease-out", fill: "both" }),
+      ...paths.map((path, index) => path.animate(
+        returning ? [{ strokeDasharray: dashes[index] === "none" ? "1 1" : dashes[index] }, { strokeDasharray: "1 1" }] : [
+          { strokeDasharray: "1 1", easing: "ease-out" },
+          { strokeDasharray: "0 1", easing: "ease-out" },
+          { strokeDasharray: "1 1" },
+        ],
+        { duration: returning ? 300 : 700, delay: returning ? 0 : 300 + index * 200, easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "linear", fill: "both" },
+      )),
+    ]);
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-file-text").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-file-text").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
