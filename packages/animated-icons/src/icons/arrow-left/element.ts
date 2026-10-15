@@ -1,4 +1,4 @@
-import { animateArrowLeft } from "./arrow-left";
+import { animateArrowLeft } from "./definition";
 
 class ArrowLeftElement extends HTMLElement {
   private listeners?: AbortController;
