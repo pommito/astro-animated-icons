@@ -50,3 +50,15 @@ test("keyboard focus keeps the arrow static and the link usable", async ({ page 
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/#destination$/);
 });
+
+test("a mouse still triggers hover when the primary pointer is touch", async ({ browser }) => {
+  const context = await browser.newContext({ hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto("/");
+  await page.waitForFunction(() => customElements.get("grave-arrow-left") !== undefined);
+  expect(await page.evaluate(() => matchMedia("(hover: hover) and (pointer: fine)").matches)).toBe(false);
+  const link = page.locator("#primary");
+  await link.hover();
+  await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(2);
+  await context.close();
+});

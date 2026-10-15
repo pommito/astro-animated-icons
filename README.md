@@ -29,23 +29,56 @@ The package owns the SVG and animation. Consumers do not register elements or im
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
-| `size` | `24` | SVG width and height, as a number in pixels or a CSS length such as `"1em"` |
-| `strokeWidth` | `2` | Stroke width in the 24-unit SVG viewBox |
-| `color` | `"currentColor"` | Stroke color, inherited from the control by default |
+| `size` | `28` | Numeric SVG width and height in pixels, matching the React reference |
 | `class` | None | Class on the custom-element wrapper |
+| `class:list` | None | Astro class-list directive, resolved into the wrapper's class |
+| `style` | None | CSS string or Astro style object on the wrapper |
+| `id`, `title`, `data-*`, other HTML attributes | None | Passed to the wrapper, including Astro's parent style scope |
 | `label` | None | Accessible SVG label for a meaningful standalone icon |
+| `controlled` | `false` | Disables automatic hover so a client script controls playback |
 
-Icons are decorative by default and cannot receive keyboard focus. Keep the name and focus on the containing link or button. An icon outside a native control stays static. Use `label` only when the icon itself needs an accessible name.
+The React reference exposes `size`, HTML wrapper attributes, and the `startAnimation()` and `stopAnimation()` ref methods. This adapter uses Astro's `class` instead of React's `className`. `controlled` replaces the controlled mode that React activates when a ref is attached. `label` supplies an accessible SVG name. Keep React callback props such as `onMouseEnter` out of Astro frontmatter; attach browser listeners in a client script instead.
+
+The SVG uses `currentColor` and a stroke width of two viewBox units, as in the reference. Set the color through an inherited text color, a class, or `style={{ color: "rebeccapurple" }}`. `color` and `strokeWidth` are no longer dedicated icon props. Use `size` for SVG dimensions; a size class on the wrapper does not resize the SVG.
+
+Icons are decorative by default and have no keyboard tab stop. Keep the name and focus on the containing link or button. Use `label` when the icon itself needs an accessible name. HTML accessibility attributes apply to the wrapper; `label` names the inner SVG.
+
+Control an icon from a client script with the same method names as the React handle:
+
+```astro
+---
+import { ArrowLeft } from "@grave/animated-icons/astro";
+---
+
+<ArrowLeft id="manual-arrow" controlled />
+<button id="replay" type="button">Replay</button>
+
+<script>
+  import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-arrow-left");
+  const icon = document.querySelector<HTMLElement & ArrowLeftIconHandle>("#manual-arrow")!;
+  document.querySelector("#replay")!.addEventListener("click", () => {
+    icon.startAnimation();
+  });
+</script>
+```
+
+`startAnimation()` plays one cycle from the current drawing. `stopAnimation()` returns it to rest over 120 ms. Both methods return `void`. The package also exports the `ArrowLeftIconHandle` type. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
-The nearest `a[href]` or `button` triggers one hover animation. The arrowhead moves three SVG units to the right while the shaft shortens, then both return over 400 ms. This follows the movement in the reference supplied for the pilot and Lucide Animated's recipe. The shaft scales around its visible right endpoint. This preserves the endpoint but slightly scales its rounded cap, unlike upstream path morphing.
+The nearest `a[href]` or `button` triggers one hover animation. Without a containing control, the wrapper itself triggers hover, as in the React reference. A controlled icon only responds to its playback methods. Mouse hover works even when touch is the primary input. Touch contact and keyboard focus do not trigger automatic playback.
 
-`motion/mini` drives CSS transforms through the Web Animations API. Retriggering starts from the current transform. Leaving the control returns the drawing over 120 ms. There is no autoplay, keyboard-focus animation, touch-hover animation, or public playback method in this first icon.
+The arrowhead moves three SVG units to the right while the shaft shortens, then both return over 400 ms. The shaft's path runs from x=19 to x=5. Its length comes from `getTotalLength()`. A five-unit retraction moves its visible left endpoint to x=10, matching Lucide Animated's path recipe. Animating `stroke-dasharray` preserves the stroke thickness and rounded caps at each size. The fixed right endpoint stays at x=19.
 
-Under `prefers-reduced-motion: reduce`, the arrow stays static. Changing the preference during playback cancels the animation and restores the drawing. The consumer's control continues to provide its normal color and focus feedback.
+`motion/mini` drives the head transform and shaft dash through the Web Animations API. Retriggering starts from the current drawing. Leaving the hover target returns the drawing over 120 ms. There is no autoplay. Future icons should use the Motion API their recipe needs; path morphing may require the hybrid API.
+
+Under `prefers-reduced-motion: reduce`, the arrow stays static, including manual playback. Changing the preference during playback cancels the animation and restores the drawing. The consumer's control continues to provide its normal color and focus feedback.
 
 Each instance attaches listeners in `connectedCallback()`. `disconnectedCallback()` aborts those listeners and cancels its animations. Reconnection finds the current containing control. Template clones work both before and after custom-element registration. Use the Astro component to create the template's SVG, rather than supplying SVG markup yourself.
+
+`src/icon.css` contains the shared wrapper and SVG styles. Keep drawing-specific settings with the rendered drawing or client recipe. Astro can collect styles from unused components imported through an export barrel, so per-icon `<style>` blocks would make the catalogue's CSS accumulate on consumer pages.
 
 ## Local development
 
@@ -79,11 +112,13 @@ The path resolves from the portfolio's `apps/web/package.json`. Its article back
 
 ## Verification and limits
 
-Browser tests check the built fixture pages with JavaScript disabled, hover compression and return, independent instances, insertion before and after registration, cancellation on removal, reconnection to a different control, rapid retriggering, touch input, and reduced-motion changes during playback. Astro and TypeScript checks cover the package, test fixture, and test code.
+Browser tests check the built fixture pages with JavaScript disabled, hover compression and return, independent instances, insertion before and after registration, cancellation on removal, reconnection to a different control, rapid retriggering, touch input, mouse input with a touch primary pointer, and reduced-motion changes during playback. API checks cover scoped classes, HTML attributes, inline styles, the default size, standalone hover, and manual playback. Astro and TypeScript checks cover the package, test fixture, and test code.
 
-After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, their raw and gzip sizes, and inline scripts. `/plain/` must have no scripts. `/single/` must have one external icon script and no inline script. The browser-test page reuses the icon script across repeated instances and adds a small inline script for template insertion and removal. Source imports are per icon. With one icon, selective loading of unused icon animations cannot yet be proved. Repeat this check when adding `Copy` and `Check`, including any imported child chunks.
+After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
-Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. Visual acceptance belongs to Victor, including how closely the scaled shaft matches the reference at small sizes.
+The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. This covers two static exports in Astro 7.3.8. Repeat the measurement with real animation recipes when adding `Copy` and `Check`.
+
+Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. A peak-frame comparison at 14, 16, 24, and 28 px retains small antialiasing differences between the dashed shaft and the reference's shortened path. Visual acceptance belongs to Victor, including the movement at small sizes.
 
 ## Attribution
 

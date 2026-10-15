@@ -24,7 +24,7 @@ test("the containing link compresses the arrow like the reference and restores i
   const tip = link.locator("path").first();
   const resting = (await tip.boundingBox())!.x;
   const shaft = link.locator("path").nth(1);
-  const shaftAtRest = (await shaft.boundingBox())!;
+  const shaftAtRest = await shaft.boundingBox();
   await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
   await link.hover({ position: { x: 80, y: 8 } });
   await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(2);
@@ -35,10 +35,13 @@ test("the containing link compresses the arrow like the reference and restores i
     }
   });
   expect((await tip.boundingBox())!.x).toBeGreaterThan(resting + 0.5);
-  const compressed = (await shaft.boundingBox())!;
-  expect(compressed.width).toBeLessThan(shaftAtRest.width - 0.5);
-  expect(compressed.x + compressed.width).toBeCloseTo(shaftAtRest.x + shaftAtRest.width, 1);
+  expect(await shaft.boundingBox()).toEqual(shaftAtRest);
+  expect(await shaft.evaluate((element) => getComputedStyle(element).strokeDasharray)).toBe("9px, 14px");
+  expect(await shaft.evaluate((element) => getComputedStyle(element).transform)).toBe("none");
+  await expect(shaft).toHaveCSS("stroke-linecap", "round");
+  await expect(shaft).toHaveCSS("stroke-width", "2px");
   await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => animation.play()));
   await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
   expect((await tip.boundingBox())!.x).toBeCloseTo(resting, 1);
+  await expect(shaft).toHaveCSS("stroke-dasharray", "none");
 });

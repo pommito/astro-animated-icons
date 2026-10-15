@@ -1,26 +1,26 @@
 ---
 import { arrowLeftPaths } from "./definition";
+import type { HTMLAttributes } from "astro/types";
+import "../../icon.css";
 
-interface Props {
-  size?: number | string;
-  strokeWidth?: number;
-  color?: string;
-  class?: string;
+interface Props extends Omit<HTMLAttributes<"div">, "children"> {
+  size?: number;
   label?: string;
+  controlled?: boolean;
 }
 
-const { size = 24, strokeWidth = 2, color = "currentColor", class: className, label } = Astro.props;
+const { size = 28, label, controlled = false, ...attributes } = Astro.props;
 ---
 
-<grave-arrow-left class={className}>
+<grave-arrow-left {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
     viewBox="0 0 24 24"
     fill="none"
-    stroke={color}
-    stroke-width={strokeWidth}
+    stroke="currentColor"
+    stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
     aria-hidden={label ? undefined : "true"}
@@ -35,9 +35,3 @@ const { size = 24, strokeWidth = 2, color = "currentColor", class: className, la
 <script>
   import "./element";
 </script>
-
-<style>
-  grave-arrow-left { display: inline-flex; flex: none; vertical-align: middle; }
-  svg { display: block; overflow: visible; }
-  path:nth-child(2) { transform-box: stroke-box; transform-origin: right center; }
-</style>

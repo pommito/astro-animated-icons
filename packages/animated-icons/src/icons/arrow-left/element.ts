@@ -1,12 +1,16 @@
 import { animateArrowLeft } from "./definition";
 
-class ArrowLeftElement extends HTMLElement {
+export interface ArrowLeftIconHandle {
+  startAnimation(): void;
+  stopAnimation(): void;
+}
+
+class ArrowLeftElement extends HTMLElement implements ArrowLeftIconHandle {
   private listeners?: AbortController;
   private animation?: ReturnType<typeof animateArrowLeft>;
 
   connectedCallback() {
-    const control = this.closest("a[href], button");
-    if (!control) return;
+    const control = this.closest("a[href], button") ?? this;
 
     this.listeners = new AbortController();
     const options = { signal: this.listeners.signal };
@@ -15,15 +19,15 @@ class ArrowLeftElement extends HTMLElement {
     control.addEventListener("pointerenter", (event) => {
       if (
         (event as PointerEvent).pointerType === "touch" ||
-        !matchMedia("(hover: hover) and (pointer: fine)").matches ||
+        this.hasAttribute("data-controlled") ||
         reducedMotion.matches ||
         control.matches(":disabled, [aria-disabled='true']")
       ) return;
-      this.play(false);
+      this.startAnimation();
     }, options);
 
     control.addEventListener("pointerleave", () => {
-      if (this.animation) this.play(true);
+      if (!this.hasAttribute("data-controlled")) this.stopAnimation();
     }, options);
 
     reducedMotion.addEventListener("change", () => {
@@ -37,12 +41,21 @@ class ArrowLeftElement extends HTMLElement {
     this.reset();
   }
 
+  startAnimation() {
+    if (!this.isConnected || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    this.play(false);
+  }
+
+  stopAnimation() {
+    if (this.animation) this.play(true);
+  }
+
   private play(returning: boolean) {
     const drawing = this.querySelector("g");
     if (!drawing) return;
 
     this.animation = animateArrowLeft(drawing, returning, () => {
-      drawing.querySelectorAll("path").forEach((path) => path.style.removeProperty("transform"));
+      this.clearDrawing();
       this.animation = undefined;
     });
   }
@@ -50,7 +63,20 @@ class ArrowLeftElement extends HTMLElement {
   private reset() {
     this.animation?.forEach((animation) => animation.cancel());
     this.animation = undefined;
-    this.querySelectorAll("path").forEach((path) => path.style.removeProperty("transform"));
+    this.clearDrawing();
+  }
+
+  private clearDrawing() {
+    this.querySelectorAll("path").forEach((path) => {
+      path.style.removeProperty("transform");
+      path.style.removeProperty("stroke-dasharray");
+    });
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "grave-arrow-left": ArrowLeftElement;
   }
 }
 

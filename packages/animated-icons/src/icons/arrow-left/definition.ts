@@ -2,18 +2,28 @@ import { animate } from "motion/mini";
 
 export const arrowLeftPaths = ["m12 19-7-7 7-7", "M19 12H5"];
 
+const headTravel = 3;
+const shaftRetraction = 5;
+const playbackDuration = 0.4;
+const returnDuration = 0.12;
+
 export function animateArrowLeft(drawing: SVGGElement, returning: boolean, onComplete: () => void) {
-  const [head, shaft] = drawing.querySelectorAll("path");
-  let remaining = 2;
+  const paths = drawing.querySelectorAll("path");
+  const [head, shaft] = paths;
+  const shaftLength = shaft.getTotalLength();
+  const fullShaft = `${shaftLength}px ${shaftLength}px`;
+  const retractedShaft = `${shaftLength - shaftRetraction}px ${shaftLength}px`;
+  shaft.style.strokeDasharray ||= fullShaft;
+  let remaining = paths.length;
   const options = {
-    duration: returning ? 0.12 : 0.4,
-    ease: [0.42, 0, 0.58, 1] as [number, number, number, number],
+    duration: returning ? returnDuration : playbackDuration,
+    ease: "easeInOut" as const,
     onComplete: () => {
       if (--remaining === 0) onComplete();
     },
   };
   return [
-    animate(head, { transform: returning ? "translateX(0px)" : [null, "translateX(3px)", "translateX(0px)"] }, options),
-    animate(shaft, { transform: returning ? "scaleX(1)" : [null, `scaleX(${9 / 14})`, "scaleX(1)"] }, options),
+    animate(head, { transform: returning ? "translateX(0px)" : [null, `translateX(${headTravel}px)`, "translateX(0px)"] }, options),
+    animate(shaft, { strokeDasharray: returning ? fullShaft : [null, retractedShaft, fullShaft] }, options),
   ];
 }
