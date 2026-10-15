@@ -7,7 +7,7 @@ const shaftRetraction = 5;
 const playbackDuration = 0.4;
 const returnDuration = 0.12;
 
-export function animateArrowLeft(drawing: SVGGElement, returning: boolean, onComplete: () => void) {
+export function animateArrowLeft(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void) {
   const paths = drawing.querySelectorAll("path");
   const [head, shaft] = paths;
   const shaftLength = shaft.getTotalLength();
@@ -19,7 +19,7 @@ export function animateArrowLeft(drawing: SVGGElement, returning: boolean, onCom
     duration: returning ? returnDuration : playbackDuration,
     ease: "easeInOut" as const,
     onComplete: () => {
-      if (--remaining === 0) onComplete();
+      onComplete(--remaining === 0);
     },
   };
   return [

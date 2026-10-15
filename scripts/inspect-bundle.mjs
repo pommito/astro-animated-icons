@@ -40,6 +40,9 @@ function inspectRoute(route) {
   const bytes = [...chunks.values()].reduce((sum, source) => sum + Buffer.byteLength(source), 0);
   const gzip = [...chunks.values()].reduce((sum, source) => sum + gzipSync(source).byteLength, 0);
   console.log(`${route}: ${entries.length} external entries, ${chunks.size} JS chunks, ${bytes} bytes, ${gzip} bytes gzip; ${inline.length} inline scripts, ${inline.reduce((sum, source) => sum + Buffer.byteLength(source), 0)} bytes; ${Buffer.byteLength(css)} bytes CSS`);
+  for (const [path, source] of chunks) {
+    console.log(`  ${path}: ${Buffer.byteLength(source)} bytes, ${gzipSync(source).byteLength} bytes gzip`);
+  }
   return { entries, chunks, inline, css, source: [...chunks.values(), ...inline].join("\n") };
 }
 
@@ -51,6 +54,7 @@ assert.equal(plain.css, "");
 const single = inspectRoute("single/index.html");
 assert.equal(single.entries.length, 1);
 assert.equal(single.inline.length, 0);
+assert.ok(!single.source.includes("grave-map-pin"), "ArrowLeft alone must not load MapPin behavior");
 
 const selective = inspectRoute("selective/index.html");
 assert.deepEqual([...selective.chunks.keys()], [...single.chunks.keys()]);
@@ -61,5 +65,23 @@ const probe = inspectRoute("probe/index.html");
 assert.equal(probe.css, single.css, "Icons must share base styles without adding unused icon selectors");
 assert.ok(!probe.source.includes("grave-arrow-left"), "The probe must not load ArrowLeft behavior");
 assert.ok(!probe.css.includes("grave-arrow-left"), "The probe must not load ArrowLeft-specific CSS");
+assert.ok(!probe.source.includes("grave-map-pin"), "The probe must not load MapPin behavior");
+
+const mapPin = inspectRoute("map-pin-single/index.html");
+assert.equal(mapPin.entries.length, 1);
+assert.equal(mapPin.inline.length, 0);
+assert.equal(mapPin.css, single.css, "MapPin must reuse the same base CSS");
+assert.ok(mapPin.source.includes("grave-map-pin"));
+assert.ok(!mapPin.source.includes("grave-arrow-left"), "MapPin alone must not load ArrowLeft behavior");
+assert.ok(!mapPin.source.includes("grave-bundle-probe"));
+
+const both = inspectRoute("both/index.html");
+assert.equal(both.css, single.css, "Multiple real icons must share the same base CSS");
+assert.ok(both.source.includes("grave-map-pin"));
+assert.ok(both.source.includes("grave-arrow-left"));
+for (const icon of [single, mapPin, both]) {
+  assert.ok(!/grave-(map-pin|arrow-left)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
+}
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

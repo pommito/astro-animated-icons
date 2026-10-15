@@ -1,0 +1,18 @@
+---
+import { MapPin } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <MapPin id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <MapPin id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <MapPin id="string-style" style="color: green" size={16} />
+    <MapPin id="class-list" class:list={["icon", { "extra-class": true }]} label="Location pin" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>
