@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 for (const { name, route, tag, animationCount, label, axis } of [
+  { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2, label: "Down arrow", axis: "y" as const },
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2, label: "Left arrow", axis: "x" as const },
   { name: "ArrowRight", route: "/arrow-right/", tag: "grave-arrow-right", animationCount: 2, label: "Right arrow", axis: "x" as const },
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4, label: "Location pin", axis: "y" as const },
