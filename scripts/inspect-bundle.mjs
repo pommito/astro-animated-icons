@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { gzipSync } from "node:zlib";
 
-const output = new URL("../apps/playground/dist/", import.meta.url);
+const output = new URL("../tests/fixtures/astro/dist/", import.meta.url);
 for (const route of ["plain/index.html", "single/index.html", "index.html"]) {
   const html = readFileSync(new URL(route, output), "utf8");
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];

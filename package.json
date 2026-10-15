@@ -5,9 +5,8 @@
   "packageManager": "pnpm@12.5.1",
   "engines": { "node": ">=22.12.0" },
   "scripts": {
-    "dev": "pnpm --filter @grave/animated-icons-playground dev",
-    "check": "pnpm --filter @grave/animated-icons check && pnpm --filter @grave/animated-icons-playground check && tsc --noEmit",
-    "build": "pnpm --filter @grave/animated-icons-playground build",
+    "check": "pnpm --filter @grave/animated-icons check && pnpm --filter @grave/animated-icons-test-fixture check && tsc --noEmit",
+    "test:build": "pnpm --filter @grave/animated-icons-test-fixture build",
     "inspect:bundle": "node scripts/inspect-bundle.mjs",
     "test": "playwright test"
   },

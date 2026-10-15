@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft` in `@grave/animated-icons`, with a playground under `apps/playground`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Read [the project brief](docs/PROJECT_BRIEF.md) for the agreed direction, API examples, open decisions, and implementation checks. Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -49,20 +49,21 @@ Each instance attaches listeners in `connectedCallback()`. `disconnectedCallback
 
 ## Local development
 
-Use Node.js 22.12 or later and pnpm 12.5.1. The peer range is Astro `^7.2.10`. The playground uses Astro 7.3.8; the portfolio integration uses Astro 7.2.10. The lockfile currently resolves Motion 13.5.1.
+Use Node.js 22.12 or later and pnpm 12.5.1. The peer range is Astro `^7.2.10`. The test fixture uses Astro 7.3.8; the portfolio integration uses Astro 7.2.10. The lockfile currently resolves Motion 13.5.1.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev
 pnpm check
-pnpm build
+pnpm test:build
 pnpm test
 pnpm inspect:bundle
 ```
 
 The tests use installed Google Chrome through Playwright's `chrome` channel. Install Chrome, or run `pnpm exec playwright install chrome` if it is absent. The test server uses port 45321. Astro's `--ignore-lock` flag keeps that server in the foreground under an agent so Playwright can manage its lifetime.
 
-The playground demonstrates 14, 16, and 24 px icons, repeated instances, template insertion, removal, and reconnection. Use your browser's reduced-motion emulation to compare variants. If port 4321 is occupied, run `pnpm dev --port 4322`. Background servers can be managed with `pnpm --filter @grave/animated-icons-playground exec astro dev status`, `logs`, and `stop`.
+`tests/fixtures/astro` is a minimal consumer for automated browser tests and bundle measurements. It has no presentation stylesheet or visual-demo interface. `pnpm test:build` compiles its pages. Playwright builds and serves them automatically when running `pnpm test`.
+
+An optional visual playground can live in the ignored `apps/playground` directory. It is local tooling, excluded from the shared workspace and repository. The package's tests and checks do not require it. A public demo can be added when the package and its design are ready.
 
 The package exports its Astro and TypeScript source. The consumer's Astro build compiles it, so there is no separate library compilation or watcher. Run `pnpm install` in this repository first so the linked package can resolve Motion. Restart the consumer dev server if it does not notice a linked source change.
 
@@ -78,9 +79,9 @@ The path resolves from the portfolio's `apps/web/package.json`. Its article back
 
 ## Verification and limits
 
-Browser tests check the built pages with JavaScript disabled, hover compression and return, independent instances, insertion before and after registration, cancellation on removal, reconnection to a different control, rapid retriggering, touch input, and reduced-motion changes during playback. Astro and TypeScript checks cover the package, playground, and test code.
+Browser tests check the built fixture pages with JavaScript disabled, hover compression and return, independent instances, insertion before and after registration, cancellation on removal, reconnection to a different control, rapid retriggering, touch input, and reduced-motion changes during playback. Astro and TypeScript checks cover the package, test fixture, and test code.
 
-`pnpm inspect:bundle` reads the production HTML and reports external entry scripts, their raw and gzip sizes, and inline scripts. `/plain/` must have no scripts. `/single/` must have one external icon script and no inline script. The playground reuses the icon script across repeated instances and adds a small inline script for its controls. Source imports are per icon. With one icon, selective loading of unused icon animations cannot yet be proved. Repeat this check when adding `Copy` and `Check`, including any imported child chunks.
+After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, their raw and gzip sizes, and inline scripts. `/plain/` must have no scripts. `/single/` must have one external icon script and no inline script. The browser-test page reuses the icon script across repeated instances and adds a small inline script for template insertion and removal. Source imports are per icon. With one icon, selective loading of unused icon animations cannot yet be proved. Repeat this check when adding `Copy` and `Check`, including any imported child chunks.
 
 Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. Visual acceptance belongs to Victor, including how closely the scaled shaft matches the reference at small sizes.
 

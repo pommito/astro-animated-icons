@@ -1,12 +1,10 @@
 {
-  "name": "@grave/animated-icons-playground",
+  "name": "@grave/animated-icons-test-fixture",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev --host 127.0.0.1 --port 4321",
     "build": "astro build",
-    "check": "astro check",
-    "preview": "astro preview --host 127.0.0.1 --port 4321"
+    "check": "astro check"
   },
   "dependencies": { "@grave/animated-icons": "workspace:*", "astro": "7.3.8" },
   "devDependencies": { "@astrojs/check": "0.9.10", "typescript": "^6.0.3" }

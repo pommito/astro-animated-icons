@@ -8,7 +8,7 @@ export default defineConfig({
     channel: "chrome",
   },
   webServer: {
-    command: "pnpm build && pnpm --filter @grave/animated-icons-playground exec astro preview --ignore-lock --host 127.0.0.1 --port 45321",
+    command: "pnpm test:build && pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45321",
     url: "http://127.0.0.1:45321",
     reuseExistingServer: false,
   },

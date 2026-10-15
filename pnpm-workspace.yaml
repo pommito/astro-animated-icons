@@ -1,6 +1,6 @@
 packages:
   - packages/*
-  - apps/*
+  - tests/fixtures/*
 
 allowBuilds:
   esbuild: true
