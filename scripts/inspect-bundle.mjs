@@ -55,6 +55,7 @@ const single = inspectRoute("single/index.html");
 assert.equal(single.entries.length, 1);
 assert.equal(single.inline.length, 0);
 assert.ok(!single.source.includes("grave-map-pin"), "ArrowLeft alone must not load MapPin behavior");
+assert.ok(!single.source.includes("grave-copy"), "ArrowLeft alone must not load Copy behavior");
 
 const selective = inspectRoute("selective/index.html");
 assert.deepEqual([...selective.chunks.keys()], [...single.chunks.keys()]);
@@ -66,6 +67,7 @@ assert.equal(probe.css, single.css, "Icons must share base styles without adding
 assert.ok(!probe.source.includes("grave-arrow-left"), "The probe must not load ArrowLeft behavior");
 assert.ok(!probe.css.includes("grave-arrow-left"), "The probe must not load ArrowLeft-specific CSS");
 assert.ok(!probe.source.includes("grave-map-pin"), "The probe must not load MapPin behavior");
+assert.ok(!probe.source.includes("grave-copy"), "The probe must not load Copy behavior");
 
 const mapPin = inspectRoute("map-pin-single/index.html");
 assert.equal(mapPin.entries.length, 1);
@@ -74,13 +76,36 @@ assert.equal(mapPin.css, single.css, "MapPin must reuse the same base CSS");
 assert.ok(mapPin.source.includes("grave-map-pin"));
 assert.ok(!mapPin.source.includes("grave-arrow-left"), "MapPin alone must not load ArrowLeft behavior");
 assert.ok(!mapPin.source.includes("grave-bundle-probe"));
+assert.ok(!mapPin.source.includes("grave-copy"), "MapPin alone must not load Copy behavior");
 
 const both = inspectRoute("both/index.html");
 assert.equal(both.css, single.css, "Multiple real icons must share the same base CSS");
 assert.ok(both.source.includes("grave-map-pin"));
 assert.ok(both.source.includes("grave-arrow-left"));
-for (const icon of [single, mapPin, both]) {
-  assert.ok(!/grave-(map-pin|arrow-left)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
+assert.ok(!both.source.includes("grave-copy"));
+
+const copy = inspectRoute("copy-single/index.html");
+assert.equal(copy.entries.length, 1);
+assert.equal(copy.inline.length, 0);
+assert.equal(copy.css, single.css, "Copy must reuse the same base CSS");
+assert.ok(copy.source.includes("grave-copy"));
+assert.ok(!copy.source.includes("grave-arrow-left"), "Copy alone must not load ArrowLeft behavior");
+assert.ok(!copy.source.includes("grave-map-pin"), "Copy alone must not load MapPin behavior");
+assert.ok(!copy.source.includes("grave-bundle-probe"));
+
+const arrowCopy = inspectRoute("arrow-copy/index.html");
+assert.equal(arrowCopy.entries.length, 2);
+assert.equal(arrowCopy.inline.length, 0);
+assert.equal(arrowCopy.css, single.css, "ArrowLeft and Copy must share the same base CSS");
+assert.ok(arrowCopy.source.includes("grave-arrow-left"));
+assert.ok(arrowCopy.source.includes("grave-copy"));
+assert.ok(!arrowCopy.source.includes("grave-map-pin"));
+const sharedChunks = [...single.chunks.keys()].filter((path) => copy.chunks.has(path));
+assert.ok(sharedChunks.length > 0, "Copy and ArrowLeft must reuse their shared runtime");
+assert.deepEqual(new Set(arrowCopy.chunks.keys()), new Set([...single.chunks.keys(), ...copy.chunks.keys()]));
+
+for (const icon of [single, mapPin, both, copy, arrowCopy]) {
+  assert.ok(!/grave-(map-pin|arrow-left|copy)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
 }
 inspectRoute("index.html");
