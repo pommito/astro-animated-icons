@@ -11,6 +11,7 @@ for (const { name, route, label } of [
   { name: "AttachFile", route: "/attach-file-props/", label: "AttachFile icon" },
   { name: "Check", route: "/check-props/", label: "Check icon" },
   { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
+  { name: "Bot", route: "/bot-props/", label: "Bot icon" },
   { name: "ArrowUpRight", route: "/arrow-up-right-props/", label: "Up-right arrow" },
 ]) {
   test.describe(name, () => {
