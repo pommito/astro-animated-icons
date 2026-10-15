@@ -16,5 +16,7 @@ export { default as ArrowRight } from "./icons/arrow-right/ArrowRight.astro";
 export type { ArrowRightIconHandle } from "./icons/arrow-right/element";
 export { default as ArrowUp } from "./icons/arrow-up/ArrowUp.astro";
 export type { ArrowUpIconHandle } from "./icons/arrow-up/element";
+export { default as ArrowUpRight } from "./icons/arrow-up-right/ArrowUpRight.astro";
+export type { ArrowUpRightIconHandle } from "./icons/arrow-up-right/element";
 export { default as AttachFile } from "./icons/attach-file/AttachFile.astro";
 export type { AttachFileIconHandle } from "./icons/attach-file/element";
