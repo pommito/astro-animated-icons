@@ -125,11 +125,32 @@ assert.ok(!/grave-(arrow-left|map-pin|bundle-probe)/.test(copyCheck.source));
 assert.ok([...check.chunks.keys()].some((path) => copy.chunks.has(path)), "Check and Copy must reuse their shared runtime");
 assert.deepEqual(new Set(copyCheck.chunks.keys()), new Set([...copy.chunks.keys(), ...check.chunks.keys()]));
 
-for (const icon of [single, mapPin, both, copy, arrowCopy, check, copyCheck]) {
-  assert.ok(!/grave-(map-pin|arrow-left|copy|check)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck]) {
+  assert.ok(!icon.source.includes("grave-at-sign"), "Unused AtSign behavior must not load");
+}
+
+const atSign = inspectRoute("at-sign-single/index.html");
+assert.equal(atSign.entries.length, 1);
+assert.equal(atSign.inline.length, 0);
+assert.equal(atSign.css, single.css, "AtSign must reuse the same base CSS");
+assert.ok(atSign.source.includes("grave-at-sign"));
+assert.ok(!/grave-(arrow-left|map-pin|copy|check|bundle-probe)/.test(atSign.source), "AtSign alone must exclude every unused icon");
+
+const arrowAtSign = inspectRoute("arrow-at-sign/index.html");
+assert.equal(arrowAtSign.entries.length, 2);
+assert.equal(arrowAtSign.inline.length, 0);
+assert.equal(arrowAtSign.css, single.css, "ArrowLeft and AtSign must share the same base CSS");
+assert.ok(arrowAtSign.source.includes("grave-at-sign"));
+assert.ok(arrowAtSign.source.includes("grave-arrow-left"));
+assert.ok(!/grave-(map-pin|copy|check|bundle-probe)/.test(arrowAtSign.source));
+assert.ok([...atSign.chunks.keys()].some((path) => single.chunks.has(path)), "AtSign and ArrowLeft must reuse their shared runtime");
+assert.deepEqual(new Set(arrowAtSign.chunks.keys()), new Set([...single.chunks.keys(), ...atSign.chunks.keys()]));
+
+for (const icon of [single, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign]) {
+  assert.ok(!/grave-(map-pin|arrow-left|copy|check|at-sign)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
 }
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck]) {
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign]) {
   assert.ok(!icon.source.includes("grave-arrow-down"), "Unused ArrowDown behavior must not load");
 }
 const arrowDown = inspectRoute("arrow-down-single/index.html");
@@ -137,7 +158,7 @@ assert.equal(arrowDown.entries.length, 1);
 assert.equal(arrowDown.inline.length, 0);
 assert.equal(arrowDown.css, single.css);
 assert.ok(arrowDown.source.includes("grave-arrow-down"));
-assert.ok(!/grave-(arrow-left|map-pin|copy|check|bundle-probe)/.test(arrowDown.source));
+assert.ok(!/grave-(arrow-left|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowDown.source));
 assert.ok(!/grave-arrow-down/.test(arrowDown.css));
 assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(arrowDown.source));
 const arrows = inspectRoute("arrows/index.html");
@@ -145,6 +166,6 @@ assert.equal(arrows.entries.length, 2);
 assert.equal(arrows.inline.length, 0);
 assert.equal(arrows.css, single.css);
 assert.deepEqual(new Set(arrows.chunks.keys()), new Set([...single.chunks.keys(), ...arrowDown.chunks.keys()]));
-assert.ok(!/grave-(map-pin|copy|check|bundle-probe)/.test(arrows.source));
+assert.ok(!/grave-(map-pin|copy|check|at-sign|bundle-probe)/.test(arrows.source));
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

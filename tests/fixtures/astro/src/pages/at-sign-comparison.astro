@@ -1,0 +1,92 @@
+---
+import { AtSign } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AtSign recipe comparison</title>
+  </head>
+  <body>
+    <h1>AtSign recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The complete drawing stays visible after playback.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses native browser keyframes and normalized path lengths. It reproduces the upstream recipe without running the React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><AtSign size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4" pathLength="1" />
+                  <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" pathLength="1" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx">Upstream AtSign recipe</a></p>
+    <p><a href="/at-sign/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const circle = control.querySelector("circle")!;
+    const path = control.querySelector("path")!;
+    const circleStyle = getComputedStyle(circle);
+    const pathStyle = getComputedStyle(path);
+    const origin = {
+      circleOpacity: circleStyle.opacity, circleDash: circleStyle.strokeDasharray, offset: circleStyle.strokeDashoffset,
+      pathOpacity: pathStyle.opacity, pathDash: pathStyle.strokeDasharray,
+    };
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const options = { duration: returning ? 400 : 300, easing: "ease-in-out", fill: "both" as const };
+    const outer = { ...options, delay: 300, duration: 300 };
+    references.set(control, [
+      circle.animate({ opacity: [returning ? Number(origin.circleOpacity) : 0, 1] }, { ...options, duration: 100 }),
+      circle.animate({ strokeDasharray: [returning ? origin.circleDash : "0 1", "1 1"] }, options),
+      circle.animate({ strokeDashoffset: [returning ? origin.offset : "-1px", "0px"] }, options),
+      path.animate({ opacity: [returning ? Number(origin.pathOpacity) : 0, 1] }, { ...outer, duration: 100 }),
+      path.animate({ strokeDasharray: [returning ? origin.pathDash : "0 1", "1 1"] }, outer),
+    ]);
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-at-sign").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-at-sign").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>

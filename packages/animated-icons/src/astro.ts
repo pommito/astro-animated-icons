@@ -8,3 +8,5 @@ export { default as Check } from "./icons/check/Check.astro";
 export type { CheckIconHandle } from "./icons/check/element";
 export { default as ArrowDown } from "./icons/arrow-down/ArrowDown.astro";
 export type { ArrowDownIconHandle } from "./icons/arrow-down/element";
+export { default as AtSign } from "./icons/at-sign/AtSign.astro";
+export type { AtSignIconHandle } from "./icons/at-sign/element";

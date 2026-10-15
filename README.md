@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `MapPin`, `Copy`, `Check`, and `ArrowDown` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `MapPin`, `Copy`, `Check`, `AtSign`, and `ArrowDown` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -73,7 +73,21 @@ import { ArrowDown } from "@grave/animated-icons/astro";
 
 `ArrowDown` shares the props below and exports `ArrowDownIconHandle`. For manual playback, use `controlled` and wait for `customElements.whenDefined("grave-arrow-down")` before calling its methods.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, or `<grave-arrow-down>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+Use `AtSign` for an address or contact control:
+
+```astro
+---
+import { AtSign } from "@grave/animated-icons/astro";
+---
+
+<a href="mailto:hello@example.com"><AtSign size={16} />Email</a>
+```
+
+`AtSign` exports `AtSignIconHandle` for manual playback. Use `controlled` and wait for `customElements.whenDefined("grave-at-sign")` before calling `startAnimation()` or `stopAnimation()`. The circle reveals over 300 ms, with opacity over 100 ms and a full-length negative dash offset returning to zero. The outer path waits 300 ms, then reveals over 300 ms with a 100 ms opacity transition. Both shapes stay complete until stopped. The circle returns over 400 ms; the outer path retains its 300 ms delay and 300 ms return. Removal and reduced-motion changes cancel every track and restore the static drawing immediately. AtSign reuses the shared lifecycle and CSS.
+
+The `/at-sign-comparison/` preview pairs the adapter with a native keyframe reproduction of the pinned upstream recipe at 14, 16, 24, and 28 px. The reference uses normalized path lengths independently of the adapter's measured SVG lengths. Play all and Stop all compare full playback and interrupted returns. `/at-sign/` provides hover, manual controls, and template instances. After `pnpm test:build`, serve it with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45329` and open `http://127.0.0.1:45329/at-sign-comparison/`. Visual acceptance belongs to Victor.
+
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, or `<grave-arrow-down>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -112,7 +126,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft` and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, and `ArrowDownIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft` and `ArrowDown` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, and `ArrowDownIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -186,9 +200,13 @@ Check tests cover the full initial drawing without JavaScript, 100 ms opacity an
 
 ArrowDown tests cover its full initial drawing without JavaScript, the 400 ms cycle, fixed shaft endpoint, retained position and sampled velocity on interruption, rapid replay, stale completion callbacks, removal, and reduced-motion cancellation during the return. Shared scenarios cover props, independent template instances before and after registration, reconnection, touch exclusion, mouse hover with a touch primary pointer, and keyboard focus. The comparison samples entry at 0, 50, 100, 150, 200, 300, and 400 ms. It interrupts at 100 and 200 ms, then samples the return at 0, 25, 50, 100, 150, 200, and 300 ms. At all four sizes, head positions and visible shaft endpoints differ from the independent reference by less than 0.03 screen pixels. Native dash rendering can still produce antialiasing differences from a morphed path.
 
-The ArrowDown verification run on 2026-10-15 passed `pnpm check`, `pnpm test:build`, `pnpm test --workers=1 --config=.artifacts/playwright.config.ts`, and `pnpm inspect:bundle`. Astro diagnostics reported zero errors, warnings, and hints, TypeScript exited successfully, the fixture built 25 pages, and Chrome reported `85 passed (1.3m)`. The ignored local configuration reserves port 45333 for this task. Repository defaults remain on port 45321. For this worktree, start the comparison with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45333` and open `http://127.0.0.1:45333/arrow-down-comparison/`. Firefox, Safari, and physical touch devices remain unverified. Victor gives visual acceptance.
+After integrating AtSign from main, the ArrowDown verification run on 2026-10-15 passed `pnpm check`, `pnpm test:build`, `pnpm test --workers=1 --config=.artifacts/playwright.config.ts`, and `pnpm inspect:bundle`. Astro diagnostics reported zero errors, warnings, and hints, TypeScript exited successfully, the fixture built 30 pages, and Chrome reported `102 passed (1.3m)`. The ignored local configuration reserves port 45333 for this task. Repository defaults remain on port 45321. For this worktree, start the comparison with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45333` and open `http://127.0.0.1:45333/arrow-down-comparison/`. Firefox, Safari, and physical touch devices remain unverified. Victor gives visual acceptance.
 
 Before ArrowDown was added, the verification run on 2026-10-15 completed `pnpm check` with zero errors, warnings, or hints in Astro diagnostics, and TypeScript exited successfully. That earlier `pnpm test --workers=1` run reported `69 passed (57.3s)` in Chrome. The regressions include queued finish events followed by restart, stopping during or after that restart, and removal before the old finish callbacks run. Stopping MapPin leaves four return tracks; stopping Copy leaves two; stopping Check leaves three. Each restores the complete drawing. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+
+AtSign verification on 2026-10-15 ran `pnpm check`, `pnpm test:build`, `pnpm test --workers=1`, and `pnpm inspect:bundle`. A temporary Playwright configuration changed the test URL and preview server to port 45329 for concurrent icon work. Astro reported zero diagnostic errors, warnings, or hints; TypeScript passed. Chrome reported `86 passed (1.2m)`, including the existing icons. AtSign coverage includes the initial drawing without JavaScript, props, hover and manual control, delayed entry and return, interruptions at 50 and 350 ms, rapid replay with queued completions, removal, reconnection, template upgrades, touch and mouse input, keyboard focus, and reduced motion.
+
+The comparison samples entry and both interrupted returns at 0, 25, 50, 100, 150, 299, 300, 350, 400, 450, and 600 ms. At 14, 16, 24, and 28 px, adapter and reference opacity, normalized dash length, and normalized dash offset agree to four decimal places. Shape bounds differ by less than 0.03 screen pixels. Chrome screenshots at rest, 150 ms, 450 ms, and reduced motion support visual review. The live site's circle and path geometry match the pinned source, and its registry serves identical circle and path variants. A live Chrome hover check showed the circle reveal before the delayed outer path and the complete drawing after leaving. The comparison fixture runs native keyframes rather than the upstream React component. Firefox and Safari remain unverified. Victor gives visual acceptance.
 
 After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
@@ -208,13 +226,17 @@ A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzi
 | `/copy-check/` | 2 | 4 | 14,557 | 6,204 | 123 |
 | `/arrow-down-single/`, ArrowDown | 1 | 4 | 15,108 | 6,506 | 123 |
 | `/arrows/`, ArrowLeft and ArrowDown | 2 | 5 | 15,299 | 6,665 | 123 |
+| `/at-sign-single/`, AtSign | 1 | 2 | 10,175 | 4,064 | 123 |
+| `/arrow-at-sign/` | 2 | 4 | 11,042 | 4,656 | 123 |
 
 The shared `animate-style.BLONbVKL.js` chunk contains Motion mini and the shared lifecycle, totaling 9,362 raw bytes and 3,621 gzip bytes. `arrow.B7kjPeC9.js` holds the directional cycle helper at 676 raw bytes and 433 gzip bytes. `ArrowLeft.astro_astro_type_script_index_0_lang.DA9MVm7s.js` adds 191 raw bytes and 159 gzip bytes. ArrowLeft keeps its entry and return behavior; extracting the shared recipe adds a chunk and 201 raw bytes compared with its previous build.
 
 `spring.lZsRY_TK.js`, shared by Copy and ArrowDown, totals 4,052 raw bytes and 1,841 gzip bytes. `ArrowDown.astro_astro_type_script_index_0_lang.In_N2Vsl.js` adds 1,018 raw bytes and 611 gzip bytes. `Copy.astro_astro_type_script_index_0_lang.DdRFSo9E.js` adds 561 raw bytes and 350 gzip bytes. MapPin remains at 862 raw bytes and 478 gzip bytes, and Check remains at 582 raw bytes and 392 gzip bytes. ArrowDown's single-icon page excludes every other registration and adds no icon-specific CSS. Chunk hashes can change on rebuild.
 
+`AtSign.astro_astro_type_script_index_0_lang.DpV-AWxW.js` adds 813 raw bytes and 443 gzip bytes. AtSign reuses the shared runtime and CSS. Bundle inspection verifies that unrelated pages exclude its registration and ArrowLeft with AtSign loads the union of their individual chunks.
+
 Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. An ArrowLeft peak-frame comparison at 14, 16, 24, and 28 px retains small antialiasing differences between the dashed shaft and the reference's shortened path. The ignored local playground has a `/map-pin/` comparison at 14, 16, 24, and 28 px. It pairs the Astro adapter with a native keyframe reproduction of the upstream recipe, with play and stop controls. A Chrome comparison at 150, 300, 400, 550, and 800 ms matched translation, opacity, normalized dash length, and normalized dash offset at all four sizes. It does not execute the upstream React component. Start it with `pnpm --dir apps/playground dev` when the local playground is present. The committed `/map-pin/` browser fixture also provides hover and manual controls without a presentation stylesheet. Visual acceptance belongs to Victor, including the movement at small sizes.
 
 ## Attribution
 
-The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), and [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
+The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), [ArrowDown recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down.tsx), and [AtSign recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
