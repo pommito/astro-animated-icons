@@ -1,0 +1,79 @@
+---
+import { Check, Copy } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Check browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><Check size={16} />Check example</a></p>
+    <button type="button" id="secondary"><Check size={24} />Other check icon</button>
+    <Check id="standalone" label="Check icon" />
+    <button type="button" id="controlled"><Check controlled />Manual check icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><Check size={16} />Dynamic check icon</a></template>
+    <h1>Consumer success feedback</h1>
+    <p>This fixture simulates a clipboard promise. Resolve or reject it after clicking Copy link. No clipboard access occurs.</p>
+    <button type="button" id="copy"><span id="copy-icon"><Copy size={16} controlled /></span>Copy link</button>
+    <button type="button" id="resolve-copy" disabled>Resolve clipboard promise</button>
+    <button type="button" id="reject-copy" disabled>Reject clipboard promise</button>
+    <p role="status" aria-live="polite"></p>
+    <template id="copy-template"><Copy size={16} controlled /></template>
+    <template id="success-template"><Check size={16} controlled /></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { CheckIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-check");
+  const controlled = document.querySelector<HTMLElement & CheckIconHandle>("#controlled grave-check")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+
+  const copyButton = document.querySelector<HTMLButtonElement>("#copy")!;
+  const iconContainer = document.querySelector("#copy-icon")!;
+  const copyTemplate = document.querySelector<HTMLTemplateElement>("#copy-template")!;
+  const successTemplate = document.querySelector<HTMLTemplateElement>("#success-template")!;
+  const status = document.querySelector("[role='status']")!;
+  const resolveButton = document.querySelector<HTMLButtonElement>("#resolve-copy")!;
+  const rejectButton = document.querySelector<HTMLButtonElement>("#reject-copy")!;
+  let resolveCopy: () => void;
+  let rejectCopy: () => void;
+  resolveButton.addEventListener("click", () => resolveCopy());
+  rejectButton.addEventListener("click", () => rejectCopy());
+
+  function simulateClipboardWrite() {
+    return new Promise<void>((resolve, reject) => {
+      resolveCopy = resolve;
+      rejectCopy = () => reject(new Error("Simulated clipboard rejection"));
+    });
+  }
+
+  copyButton.addEventListener("click", async () => {
+    copyButton.disabled = true;
+    resolveButton.disabled = false;
+    rejectButton.disabled = false;
+    iconContainer.replaceChildren(copyTemplate.content.cloneNode(true));
+    status.textContent = "Copying link";
+    try {
+      await simulateClipboardWrite();
+      iconContainer.replaceChildren(successTemplate.content.cloneNode(true));
+      iconContainer.querySelector("grave-check")!.startAnimation();
+      status.textContent = "Link copied";
+    } catch {
+      status.textContent = "Could not copy link";
+    } finally {
+      copyButton.disabled = false;
+      resolveButton.disabled = true;
+      rejectButton.disabled = true;
+    }
+  });
+</script>

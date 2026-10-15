@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `MapPin`, and `Copy` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `MapPin`, `Copy`, and `Check` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -49,7 +49,19 @@ import { Copy } from "@grave/animated-icons/astro";
 
 `Copy` animates on hover and returns when hover ends. The consumer implements clipboard operations and success feedback. It shares the props below and exports `CopyIconHandle` for manual playback. Use `controlled` and wait for `customElements.whenDefined("grave-copy")` before calling the handle methods.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, or `<grave-copy>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+Use `Check` for a complete checkmark that reveals on hover:
+
+```astro
+---
+import { Check } from "@grave/animated-icons/astro";
+---
+
+<Check size={16} label="Complete" />
+```
+
+For success feedback, use `controlled` and the exported `CheckIconHandle`. Wait for `customElements.whenDefined("grave-check")` before calling its methods. The checkmark is visible at rest, so the consumer must insert its template only after the operation succeeds. For example, await `navigator.clipboard.writeText()` before replacing Copy with Check and calling `startAnimation()`. On rejection, retain Copy and announce the error. Keep the button's accessible name stable and use a separate live status. The [consumer fixture](tests/fixtures/astro/src/pages/check.astro) demonstrates these boundaries with a promise that can be resolved or rejected manually. The icon does not access the clipboard, swap icons, or announce status.
+
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-map-pin>`, `<grave-copy>`, or `<grave-check>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -88,7 +100,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft` completes one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, and `CopyIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft` completes one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, and `CheckIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -105,6 +117,8 @@ The inner circle starts hidden when playback starts. After 300 ms, opacity reach
 Copy translates the front rectangle by -3 on both axes and the back path by +3 in SVG coordinates. Screen travel scales with the SVG size. Motion's `spring` generator supplies stiffness 160, damping 17, and mass 1 to `motion/mini`, which converts the spring into native easing. Entry and return use the same spring. Entry holds the shifted drawing after completion. Interruption preserves the current position before starting the next spring; it does not inherit the previous spring's velocity. Removal and reduced-motion changes immediately cancel both tracks and clear their transforms.
 
 Under `prefers-reduced-motion: reduce`, all icons stay static, including manual playback. Changing the preference during playback cancels the animation and restores the drawing. The consumer's control continues to provide its normal color and focus feedback.
+
+Check reveals opacity from zero to one over 100 ms, grows its path from zero to the complete checkmark, and scales from 0.5 to one over 400 ms. All tracks use the source's ease-in-out curve. The path has an explicit `transform-box: fill-box` and `transform-origin: center`, so scaling uses its own center at SVG coordinates (12, 11.5). `getTotalLength()` converts the normalized reveal into native stroke dash lengths for `motion/mini`. Rounded caps and the two-unit stroke scale with the path, as in the source. Starting again replays the reveal from its initial keyframes; stopping preserves the current pose before returning. Removal and reduced-motion changes clear the three tracks and leave the complete checkmark visible. Under reduced motion, a consumer still inserts Check after success, without a drawing or scale effect.
 
 All icons use the lifecycle and trigger code in `src/element.ts`. Each instance attaches listeners in `connectedCallback()`. `disconnectedCallback()` aborts those listeners and cancels its animations. Reconnection finds the current containing control. Each new playback stops and cancels the previous controls while preserving their current pose. A playback identifier prevents queued completion callbacks from clearing a newer playback, and removes late style writes after reset. Template clones work both before and after custom-element registration. Use the Astro component to create the template's SVG, rather than supplying SVG markup yourself.
 
@@ -128,6 +142,8 @@ The tests use installed Google Chrome through Playwright's `chrome` channel. Ins
 
 To review Copy visually, run `pnpm test:build`, then `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45321` and open `http://127.0.0.1:45321/copy-comparison/`. The reference samples the spring equation into native keyframes; it does not run the upstream React component. `/copy/` also provides standalone hover, manual controls, and dynamic template instances. Visual acceptance belongs to Victor.
 
+The same preview server provides `/check-comparison/`, pairing Check with a native keyframe reproduction of the upstream recipe at 14, 16, 24, and 28 px. The reference uses `pathLength="1"` and an explicit SVG origin, independently of the adapter's measured dash lengths and fill-box origin. Use Play all and Stop all to compare the reveal and interrupted returns. `/check/` adds manual playback, dynamic instances, and simulated clipboard success and rejection. These fixtures contain no presentation stylesheet. Visual acceptance belongs to Victor; the comparison does not execute the upstream React component.
+
 An optional visual playground can live in the ignored `apps/playground` directory. It is local tooling, excluded from the shared workspace and repository. The package's tests and checks do not require it. A public demo can be added when the package and its design are ready.
 
 The package exports its Astro and TypeScript source. The consumer's Astro build compiles it, so there is no separate library compilation or watcher. Run `pnpm install` in this repository first so the linked package can resolve Motion. Restart the consumer dev server if it does not notice a linked source change.
@@ -148,11 +164,13 @@ Browser tests check all icons on the built fixture pages with JavaScript disable
 
 Copy tests cover spring positions, held and return states, position continuity on interruption, rapid retriggering, queued completion callbacks, manual reduced motion, and small-size travel. The comparison preview checks both axes at 50, 100, 200, 350, and 700 ms on entry and return against an independent spring equation. The difference stays below 0.03 screen pixels at 14, 16, 24, and 28 px.
 
-On 2026-10-15, `pnpm check` completed with zero errors, warnings, or hints in Astro diagnostics, and TypeScript exited successfully. `pnpm test --workers=1` reported `51 passed` in Chrome. The regressions include queued finish events followed by restart, stopping during or after that restart, and removal before the old finish callbacks run. Stopping MapPin leaves four return tracks; stopping Copy leaves two. Both restore the complete drawing. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
+Check tests cover the full initial drawing without JavaScript, 100 ms opacity and 400 ms reveal, held completion, 300 ms interrupted return, standalone and controlled playback, rapid retriggering, queued completion cleanup, and reduced-motion success feedback. The consumer fixture keeps Copy during a pending promise and after rejection, then inserts and animates Check only after resolution. Shared scenarios cover props, template upgrades, reconnection, mouse input with a touch primary pointer, and exclusion of touch and focus autoplay. The comparison samples reveal at 0, 25, 50, 100, 200, and 400 ms and a return interrupted at 50 ms at 0, 50, 100, 150, and 300 ms. At all four sizes, adapter and reference opacity and normalized path length agree to four decimal places, and path bounds differ by less than 0.03 screen pixels. These checks establish timing and geometry; Victor still reviews the visual result.
+
+On 2026-10-15, `pnpm check` completed with zero errors, warnings, or hints in Astro diagnostics, and TypeScript exited successfully. `pnpm test --workers=1` reported `69 passed (57.3s)` in Chrome. The regressions include queued finish events followed by restart, stopping during or after that restart, and removal before the old finish callbacks run. Stopping MapPin leaves four return tracks; stopping Copy leaves two; stopping Check leaves three. Each restores the complete drawing. `pnpm inspect:bundle` reported `Selective loading verified: shared CSS only, unused icon behavior excluded.`
 
 After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
-The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes. Repeat the measurement when adding `Check`.
+The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. `/check-single/` renders only Check; `/copy-check/` renders Copy and Check. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together, and Copy and Check together, reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes.
 
 A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzip totals sum the individually compressed chunks.
 
@@ -164,11 +182,13 @@ A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzi
 | `/both/` | 2 | 3 | 10,890 | 4,517 | 123 |
 | `/copy-single/`, Copy | 1 | 2 | 13,888 | 5,670 | 123 |
 | `/arrow-copy/` | 2 | 3 | 14,554 | 6,088 | 123 |
+| `/check-single/`, Check | 1 | 2 | 9,944 | 4,013 | 123 |
+| `/copy-check/` | 2 | 3 | 14,470 | 6,062 | 123 |
 
-The shared `animate-style.BLONbVKL.js` chunk contains Motion mini and the shared lifecycle, totaling 9,362 raw bytes and 3,621 gzip bytes. `ArrowLeft.astro_astro_type_script_index_0_lang.DHKgs_yC.js` adds 666 raw bytes and 418 gzip bytes. `MapPin.astro_astro_type_script_index_0_lang.oiIrofDQ.js` adds 862 raw bytes and 478 gzip bytes. `Copy.astro_astro_type_script_index_0_lang.Beqn0Av6.js` adds 4,526 raw bytes and 2,049 gzip bytes, including the spring generator. Chunk hashes can change on rebuild.
+The shared `animate-style.BLONbVKL.js` chunk contains Motion mini and the shared lifecycle, totaling 9,362 raw bytes and 3,621 gzip bytes. `ArrowLeft.astro_astro_type_script_index_0_lang.DHKgs_yC.js` adds 666 raw bytes and 418 gzip bytes. `MapPin.astro_astro_type_script_index_0_lang.oiIrofDQ.js` adds 862 raw bytes and 478 gzip bytes. `Copy.astro_astro_type_script_index_0_lang.Beqn0Av6.js` adds 4,526 raw bytes and 2,049 gzip bytes, including the spring generator. `Check.astro_astro_type_script_index_0_lang.D1T-1x_O.js` adds 582 raw bytes and 392 gzip bytes. Chunk hashes can change on rebuild.
 
 Browser behavior has been checked in Chrome. Firefox and Safari remain unverified. An ArrowLeft peak-frame comparison at 14, 16, 24, and 28 px retains small antialiasing differences between the dashed shaft and the reference's shortened path. The ignored local playground has a `/map-pin/` comparison at 14, 16, 24, and 28 px. It pairs the Astro adapter with a native keyframe reproduction of the upstream recipe, with play and stop controls. A Chrome comparison at 150, 300, 400, 550, and 800 ms matched translation, opacity, normalized dash length, and normalized dash offset at all four sizes. It does not execute the upstream React component. Start it with `pnpm --dir apps/playground dev` when the local playground is present. The committed `/map-pin/` browser fixture also provides hover and manual controls without a presentation stylesheet. Visual acceptance belongs to Victor, including the movement at small sizes.
 
 ## Attribution
 
-The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), and [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
+The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), and [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.

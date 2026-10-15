@@ -1,0 +1,83 @@
+---
+import { Check } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Check recipe comparison</title>
+  </head>
+  <body>
+    <h1>Check recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The completed checkmark stays visible.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses native browser keyframes and a normalized path length. It reproduces the upstream recipe without running the React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Check size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 12 9 17L20 6" pathLength="1" style="transform-origin: 12px 11.5px" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx">Upstream Check recipe</a></p>
+    <p><a href="/check/">Lifecycle, manual controls, and simulated clipboard feedback</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const path = control.querySelector("path")!;
+    const style = getComputedStyle(path);
+    const origin = { opacity: style.opacity, dash: style.strokeDasharray, transform: style.transform };
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const options = { duration: returning ? 300 : 400, easing: "ease-in-out", fill: "both" as const };
+    references.set(control, [
+      path.animate({ opacity: [returning ? Number(origin.opacity) : 0, 1] }, { ...options, duration: 100 }),
+      path.animate({ strokeDasharray: [returning ? origin.dash : "0 1", "1 1"] }, options),
+      path.animate({ transform: [returning ? origin.transform : "scale(0.5)", "scale(1)"] }, options),
+    ]);
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-check").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-check").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
