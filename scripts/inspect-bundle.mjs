@@ -195,5 +195,26 @@ for (const icon of [arrowUp, arrows]) {
 for (const icon of [arrowUp, arrows]) {
   assert.ok(!icon.source.includes("grave-arrow-right"), "Unused ArrowRight behavior must not load");
 }
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows]) {
+  assert.ok(!icon.source.includes("grave-file-text"), "Unused FileText behavior must not load");
+}
+const fileText = inspectRoute("file-text-single/index.html");
+assert.equal(fileText.entries.length, 1);
+assert.equal(fileText.inline.length, 0);
+assert.equal(fileText.css, single.css, "FileText must reuse the same base CSS");
+assert.ok(fileText.source.includes("grave-file-text"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(fileText.source));
+const arrowFileText = inspectRoute("arrow-file-text/index.html");
+assert.equal(arrowFileText.entries.length, 2);
+assert.equal(arrowFileText.inline.length, 0);
+assert.equal(arrowFileText.css, single.css);
+assert.ok(arrowFileText.source.includes("grave-arrow-left"));
+assert.ok(arrowFileText.source.includes("grave-file-text"));
+assert.ok(!/grave-(arrow-right|arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowFileText.source));
+assert.deepEqual(new Set(arrowFileText.chunks.keys()), new Set([...single.chunks.keys(), ...fileText.chunks.keys()]));
+for (const icon of [fileText, arrowFileText]) {
+  assert.ok(!/grave-(file-text|map-pin|arrow-left|arrow-up|arrow-right|copy|check|at-sign)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");

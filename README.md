@@ -6,7 +6,7 @@ The first consumer is [Victor's portfolio](https://github.com/pommito/portfolio-
 
 ## Status
 
-The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `MapPin`, `Copy`, `Check`, and `AtSign` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
+The local pilot implements `ArrowLeft`, `ArrowRight`, `ArrowUp`, `MapPin`, `Copy`, `Check`, `AtSign`, and `FileText` in `@grave/animated-icons`. It is linked into the portfolio's article back link. The package remains private and unpublished. A root license must be chosen before publication.
 
 Agents should start with [AGENTS.md](AGENTS.md).
 
@@ -99,7 +99,25 @@ import { AtSign } from "@grave/animated-icons/astro";
 
 The `/at-sign-comparison/` preview pairs the adapter with a native keyframe reproduction of the pinned upstream recipe at 14, 16, 24, and 28 px. The reference uses normalized path lengths independently of the adapter's measured SVG lengths. Play all and Stop all compare full playback and interrupted returns. `/at-sign/` provides hover, manual controls, and template instances. After `pnpm test:build`, serve it with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45329` and open `http://127.0.0.1:45329/at-sign-comparison/`. Visual acceptance belongs to Victor.
 
-The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, or `<grave-at-sign>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
+Use `FileText` for a document link:
+
+```astro
+---
+import { FileText } from "@grave/animated-icons/astro";
+---
+
+<a href="/notes/"><FileText size={16} />Read notes</a>
+```
+
+`FileText` shares the props below and exports `FileTextIconHandle`. For manual playback, set `controlled`, wait for `customElements.whenDefined("grave-file-text")`, then call `startAnimation()` or `stopAnimation()`. Astro renders all five paths before JavaScript runs. The existing Web Component lifecycle adds hover and manual playback to that SVG, and the containing link retains its name and keyboard focus.
+
+FileText scales the whole SVG to 1.05 over 300 ms with ease-out and holds that scale until stopped. The three text paths follow normalized length 1, 0, 1 over 700 ms, starting after 300, 500, and 700 ms. Each half uses the live runtime's implicit ease-out curve. The outline and folded corner keep their geometry. The source's x1 and x2 attributes have no rendered effect on a path, whose geometry comes from `d`; the adapter omits those tracks. Measured native dash lengths preserve the visible endpoints and rounded caps at each size.
+
+Stopping FileText cancels the delayed entry tracks. Each text path returns from its current length over 300 ms with cubic Bézier (0.25, 0.1, 0.35, 1), without delay. The scale returns with the upstream default spring, stiffness 550, damping 30, mass 1, rest speed 10, and rest delta 0.005. Like ArrowRight, the native scale track retains velocity sampled over the preceding 5 ms. Sampling the spring in scale units preserves the upstream rest threshold. Replaying restarts the text cycle at full length, as in the source, while scale starts from its current value. Removal and reduced-motion changes cancel all tracks and immediately restore the static SVG. No repeat is scheduled.
+
+The `/file-text-comparison/` fixture compares FileText at 14, 16, 24, and 28 px against native keyframes with normalized paths and an independent analytic return spring. Play all and Stop all synchronize both columns. The fixture does not execute React. `/file-text/` provides standalone hover, manual controls, and dynamic template instances. For this task, serve the built fixture with `pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45339` and open `http://127.0.0.1:45339/file-text-comparison/`. Visual acceptance belongs to Victor.
+
+The package owns the SVG and animation. Consumers do not register elements or import Motion. Astro emits the complete SVG in the initial HTML, then loads the rendered icon's registration script for `<grave-arrow-left>`, `<grave-arrow-right>`, `<grave-arrow-up>`, `<grave-map-pin>`, `<grave-copy>`, `<grave-check>`, `<grave-at-sign>`, or `<grave-file-text>`. The browser attaches behavior to the existing markup. No hydration directive is needed.
 
 | Prop | Default | Behavior |
 | --- | --- | --- |
@@ -138,7 +156,7 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 </script>
 ```
 
-`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, and `ArrowUp` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, and `AtSignIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
+`startAnimation()` starts the icon's recipe. `ArrowLeft`, `ArrowRight`, and `ArrowUp` complete one cycle; `MapPin` stays raised and `Copy` keeps its shapes shifted until stopped. `Check` reveals and keeps the completed checkmark visible. `stopAnimation()` returns ArrowLeft and MapPin to rest over 120 ms; Copy returns with its spring; Check restores its full size and path over 300 ms with a 100 ms opacity transition. Both methods return `void`. The package exports the `ArrowRightIconHandle`, `ArrowUpIconHandle`, `ArrowLeftIconHandle`, `MapPinIconHandle`, `CopyIconHandle`, `CheckIconHandle`, `AtSignIconHandle`, and `FileTextIconHandle` types. Wait for registration before calling either method on an element inserted before its registration script runs.
 
 ## Motion and lifecycle
 
@@ -241,6 +259,12 @@ AtSign verification on 2026-10-15 ran `pnpm check`, `pnpm test:build`, `pnpm tes
 
 The comparison samples entry and both interrupted returns at 0, 25, 50, 100, 150, 299, 300, 350, 400, 450, and 600 ms. At 14, 16, 24, and 28 px, adapter and reference opacity, normalized dash length, and normalized dash offset agree to four decimal places. Shape bounds differ by less than 0.03 screen pixels. Chrome screenshots at rest, 150 ms, 450 ms, and reduced motion support visual review. The live site's circle and path geometry match the pinned source, and its registry serves identical circle and path variants. A live Chrome hover check showed the circle reveal before the delayed outer path and the complete drawing after leaving. The comparison fixture runs native keyframes rather than the upstream React component. Firefox and Safari remain unverified. Victor gives visual acceptance.
 
+FileText comparison checks 2,520 poses across five paths, four sizes, and 18 timestamps. It checks entry and returns interrupted at 100, 250, 450, 650, 825, and 1,025 ms. Scale and normalized dash length must differ by less than 0.00005, and path endpoints and bounds by less than 0.03 screen pixels. Separate tests cover full static HTML, held scale, the absence of repeats, replay during a text cycle, stale completion callbacks, cancelled delayed work, props, template upgrades, reconnection, pointer input, keyboard focus, and reduced motion.
+
+On 2026-10-15, the live FileText variants and geometry matched the pinned source. Inspection of the live Motion tracks confirmed 300 ms ease-out scale, 700 ms text cycles with ease-out per segment, delays of 300, 500, and 700 ms, a 550/30 scale return spring, and 300 ms text returns without delay. Changing the live top path's x1 and x2 attributes to 100 and -100 left its `d` and bounds unchanged at x=8, y=9, width=2, height=0. The live page displays a 48 px SVG through CSS while its component default remains 28 px. Screenshots compare the live 825 ms pose, the local four-size preview, and the complete reduced-motion drawing. Browser observation reported no page errors and zero local tracks after reduced motion. The preview uses native keyframes rather than React; Firefox, Safari, and Victor's visual acceptance remain unverified.
+
+FileText validation on 2026-10-15 ran `pnpm check`, `pnpm test:build`, `pnpm test --workers=1 --config .artifacts/playwright.file-text.config.ts`, and `pnpm inspect:bundle`. Astro reported zero diagnostic errors, warnings, or hints, TypeScript passed, and the fixture built 40 routes. The ignored configuration changes only the fixture URL and server port to 45339, plus the relative test directory for its location. The strict full run reported `138 passed (2.5m)` with two failures in existing Check and AtSign tests that missed short tracks before counting them. The final full run added `--retries=1` and exited successfully with `139 passed (2.4m)` and `1 flaky`: the existing AtSign reduced-motion test passed on retry. All 22 FileText scenarios passed without retries, including the 2,520-pose comparison. The shared runtime and other icon recipes were not changed. Bundle inspection reported `Selective loading verified: shared CSS only, unused icon behavior excluded.` FileText alone imports three chunks totaling 14,748 raw bytes and 6,231 gzip bytes, with the same 123 bytes of shared CSS.
+
 After `pnpm test:build`, `pnpm inspect:bundle` reads the fixture's production HTML and reports external entry scripts, imported JS chunks, raw and gzip sizes, inline scripts, and CSS bytes. `/plain/` must have no scripts or CSS. `/single/` must have one external icon script and no inline script. The browser-test page adds a script for dynamic instances and manual control.
 
 The fixture has a private barrel containing `ArrowLeft` and a test-only `BundleProbe`. `/selective/` renders only `ArrowLeft`; `/probe/` renders only the probe. Bundle inspection verifies that they share the same base CSS and exclude the unused element's registration code. `/map-pin-single/` renders only `MapPin`; `/both/` renders ArrowLeft and MapPin. `/copy-single/` renders only Copy; `/arrow-copy/` renders ArrowLeft and Copy. `/check-single/` renders only Check; `/copy-check/` renders Copy and Check. `/arrow-right-single/` renders only ArrowRight; `/arrow-left-right/` renders ArrowLeft and ArrowRight; `/arrows/` renders ArrowLeft and ArrowUp. Inspection verifies that each single-icon route excludes the other registrations, all reuse the same base CSS, and the browser code excludes React. ArrowLeft and Copy together, and Copy and Check together, reuse the exact union of their individual JS chunks. It prints every imported JS chunk with raw and gzip bytes.
@@ -259,6 +283,8 @@ A production build with Astro 7.3.8 and Motion 13.5.1 produced these totals. Gzi
 | `/copy-check/` | 2 | 4 | 14,549 | 6,206 | 123 |
 | `/at-sign-single/`, AtSign | 1 | 2 | 10,169 | 4,073 | 123 |
 | `/arrow-at-sign/` | 2 | 4 | 11,111 | 4,686 | 123 |
+| `/file-text-single/`, FileText | 1 | 3 | 14,748 | 6,231 | 123 |
+| `/arrow-file-text/`, ArrowLeft and FileText | 2 | 5 | 15,690 | 6,844 | 123 |
 | `/arrow-up-single/`, ArrowUp | 1 | 4 | 14,524 | 6,189 | 123 |
 | `/arrows/`, ArrowLeft and ArrowUp | 2 | 5 | 14,771 | 6,377 | 123 |
 | `/arrow-right-single/`, ArrowRight | 1 | 3 | 14,720 | 6,201 | 123 |
@@ -268,6 +294,7 @@ AtSign alone excludes ArrowUp and every other registration. ArrowLeft with AtSig
 
 | Imported chunk | Raw bytes | Gzip bytes |
 | --- | --- | --- |
+| `FileText.astro_astro_type_script_index_0_lang.T4YAcFC2.js` | 1,335 | 760 |
 | `ArrowUp.astro_astro_type_script_index_0_lang.BBgjknEv.js` | 416 | 293 |
 | `element.3lv88F-F.js` | 9,362 | 3,634 |
 | `arrow.BQveSzFk.js` | 695 | 425 |
@@ -278,4 +305,4 @@ Browser behavior has been checked in Chrome. Firefox and Safari remain unverifie
 
 ## Attribution
 
-The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [pinned ArrowUp recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx), [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), [AtSign recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx), and [ArrowRight recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-right.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
+The SVG derives from Lucide and Feather. The animations adapt Lucide Animated's [pinned ArrowUp recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-up.tsx), [ArrowLeft recipe](https://github.com/pqoqubbw/icons/blob/main/icons/arrow-left.tsx), [MapPin recipe](https://github.com/pqoqubbw/icons/blob/main/icons/map-pin.tsx), [Copy recipe](https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx), [Check recipe](https://github.com/pqoqubbw/icons/blob/main/icons/check.tsx), [AtSign recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/at-sign.tsx), [FileText recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-text.tsx), and [ArrowRight recipe](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-right.tsx). Applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion remains a package dependency under its own license.
