@@ -1,0 +1,85 @@
+---
+import { AttachFile } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AttachFile recipe comparison</title>
+  </head>
+  <body>
+    <h1>AttachFile recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The complete drawing stays visible after playback.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses native browser keyframes and normalized path lengths. It reproduces the upstream recipe without running the React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><AttachFile size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <span data-grave-icon><svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 7.90909V16C6 19.3137 8.68629 22 12 22V22C15.3137 22 18 19.3137 18 16V6C18 3.79086 16.2091 2 14 2V2C11.7909 2 10 3.79086 10 6V15.1818C10 16.2864 10.8954 17.1818 12 17.1818V17.1818C13.1046 17.1818 14 16.2864 14 15.1818V8" pathLength="1" />
+                </svg></span>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/attach-file.tsx">Upstream AttachFile recipe</a></p>
+    <p><a href="/attach-file/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const path = control.querySelector("path")!;
+    const style = getComputedStyle(path);
+    const origin = { opacity: style.opacity, dash: style.strokeDasharray };
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const options = {
+      duration: returning ? 300 : 400, delay: returning ? 0 : 100,
+      easing: returning ? "cubic-bezier(0.25, 0.1, 0.35, 1)" : "ease-out", fill: "both" as const,
+    };
+    references.set(control, [
+      path.animate({ opacity: [returning ? Number(origin.opacity) : 0, 1] }, { ...options, duration: returning ? 300 : 100 }),
+      path.animate({ strokeDasharray: [returning ? origin.dash : "0 1", "1 1"] }, options),
+    ]);
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-attach-file").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-attach-file").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>

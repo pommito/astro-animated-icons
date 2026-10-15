@@ -6,6 +6,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4, label: "Location pin", axis: "y" as const },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2, label: "Copy icon", axis: "x" as const },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
+  { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2, label: "AttachFile icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
 ]) {
@@ -29,9 +30,11 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.goto(route);
       const link = page.locator("#primary");
       const resting = (await link.locator("path").first().boundingBox())![axis];
+      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }));
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
-      await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => animation.pause()));
       await page.emulateMedia({ reducedMotion: "reduce" });
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
       expect((await link.locator("path").first().boundingBox())![axis]).toBeCloseTo(resting, 1);
@@ -68,6 +71,9 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       expect(await page.evaluate(() => matchMedia("(hover: hover) and (pointer: fine)").matches)).toBe(false);
       const link = page.locator("#primary");
+      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }, { once: true }));
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await context.close();

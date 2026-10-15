@@ -6,6 +6,7 @@ for (const { name, route, label } of [
   { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
   { name: "Copy", route: "/copy-props/", label: "Copy icon" },
   { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },
+  { name: "AttachFile", route: "/attach-file-props/", label: "AttachFile icon" },
   { name: "Check", route: "/check-props/", label: "Check icon" },
   { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
 ]) {
