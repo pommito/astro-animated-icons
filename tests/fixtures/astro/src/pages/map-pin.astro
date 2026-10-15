@@ -1,0 +1,33 @@
+---
+import { MapPin } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>MapPin browser test fixture</title></head>
+  <body>
+    <p id="location"><MapPin size={14} />Paris, France</p>
+    <p><a href="#destination" id="primary"><MapPin size={16} />Find Paris</a></p>
+    <button type="button" id="secondary"><MapPin size={24} />Other location</button>
+    <MapPin id="standalone" label="Location pin" />
+    <button type="button" id="controlled"><MapPin controlled />Manual pin</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><MapPin size={16} />Dynamic location</a></template>
+    <p id="destination">Paris</p>
+  </body>
+</html>
+
+<script>
+  import type { MapPinIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-map-pin");
+  const controlled = document.querySelector<HTMLElement & MapPinIconHandle>("#controlled grave-map-pin")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>

@@ -1,24 +1,31 @@
 import { expect, test } from "@playwright/test";
 
-test("HTML attributes, scoped classes, inline styles, and the upstream default size reach the icon", async ({ page }) => {
-  await page.goto("/props/");
-  const scoped = page.getByTestId("scoped-icon");
-  const control = page.locator("p.icon");
-  await expect(scoped).toHaveAttribute("id", "scoped");
-  await expect(scoped).toHaveAttribute("title", "Back");
-  expect(await scoped.evaluate((element) => getComputedStyle(element).color)).toBe(
-    await control.evaluate((element) => getComputedStyle(element).color),
-  );
-  await expect(scoped).toHaveCSS("margin-inline-start", "32px");
-  await expect(scoped.locator("svg")).toHaveAttribute("width", "28");
-  await expect(scoped.locator("svg")).toHaveAttribute("height", "28");
-  await expect(page.locator("#inline")).toHaveCSS("color", "rgb(102, 51, 153)");
-  await expect(page.locator("#inline svg")).toHaveCSS("stroke", "rgb(102, 51, 153)");
-  await expect(page.locator("#string-style")).toHaveCSS("color", "rgb(0, 128, 0)");
-  await expect(page.locator("#string-style svg")).toHaveAttribute("width", "16");
-  await expect(page.locator("#class-list")).toHaveClass("icon extra-class");
-  await expect(page.getByRole("img", { name: "Back arrow" })).toBeVisible();
-});
+for (const { name, route, label } of [
+  { name: "ArrowLeft", route: "/props/", label: "Back arrow" },
+  { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
+]) {
+  test.describe(name, () => {
+    test("HTML attributes, scoped classes, inline styles, and the upstream default size reach the icon", async ({ page }) => {
+      await page.goto(route);
+      const scoped = page.getByTestId("scoped-icon");
+      const control = page.locator("p.icon");
+      await expect(scoped).toHaveAttribute("id", "scoped");
+      await expect(scoped).toHaveAttribute("title", "Back");
+      expect(await scoped.evaluate((element) => getComputedStyle(element).color)).toBe(
+        await control.evaluate((element) => getComputedStyle(element).color),
+      );
+      await expect(scoped).toHaveCSS("margin-inline-start", "32px");
+      await expect(scoped.locator("svg")).toHaveAttribute("width", "28");
+      await expect(scoped.locator("svg")).toHaveAttribute("height", "28");
+      await expect(page.locator("#inline")).toHaveCSS("color", "rgb(102, 51, 153)");
+      await expect(page.locator("#inline svg")).toHaveCSS("stroke", "rgb(102, 51, 153)");
+      await expect(page.locator("#string-style")).toHaveCSS("color", "rgb(0, 128, 0)");
+      await expect(page.locator("#string-style svg")).toHaveAttribute("width", "16");
+      await expect(page.locator("#class-list")).toHaveClass("icon extra-class");
+      await expect(page.getByRole("img", { name: label })).toBeVisible();
+    });
+  });
+}
 
 test("an uncontrolled standalone icon animates on hover", async ({ page }) => {
   await page.goto("/");
