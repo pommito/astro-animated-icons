@@ -15,6 +15,7 @@ for (const { name, route, tag, animationCount } of [
 
   { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4 },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1 },
+  { name: "ArrowUpLeft", route: "/arrow-up-left/", tag: "grave-arrow-up-left", animationCount: 1 },
   { name: "AudioLines", route: "/audio-lines/", tag: "grave-audio-lines", animationCount: 8 },
 ]) {
   test.describe(name, () => {

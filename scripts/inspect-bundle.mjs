@@ -231,7 +231,27 @@ for (const icon of [arrowUpRight, arrowLeftUpRight]) {
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
 }
 
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowUp, arrows, arrowRight, arrowLeftRight, arrowDown, arrowDownLeft]) {
+const arrowUpLeft = inspectRoute("arrow-up-left-single/index.html");
+assert.equal(arrowUpLeft.entries.length, 1);
+assert.equal(arrowUpLeft.inline.length, 0);
+assert.equal(arrowUpLeft.css, single.css, "ArrowUpLeft must reuse the shared CSS");
+assert.ok(arrowUpLeft.source.includes("grave-arrow-up-left"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up["']|arrow-up-right|arrow-down|archive|bot|attach-file|map-pin|copy|check|at-sign|audio-lines|file-text|bundle-probe)/.test(arrowUpLeft.source), "ArrowUpLeft alone must exclude other registrations");
+const arrowLeftUpLeft = inspectRoute("arrow-left-up-left/index.html");
+assert.equal(arrowLeftUpLeft.entries.length, 2);
+assert.equal(arrowLeftUpLeft.inline.length, 0);
+assert.equal(arrowLeftUpLeft.css, single.css);
+assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-left"));
+assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-up-left"));
+assert.deepEqual(new Set(arrowLeftUpLeft.chunks.keys()), new Set([...single.chunks.keys(), ...arrowUpLeft.chunks.keys()]));
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, arrowUpRight, arrowLeftUpRight]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
+for (const icon of [arrowUpLeft, arrowLeftUpLeft]) {
+  assert.ok(!/grave-arrow-up-left/.test(icon.css), "ArrowUpLeft must not add icon-specific CSS");
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowUp, arrows, arrowRight, arrowLeftRight, arrowDown, arrowDownLeft, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-archive"), "Unused Archive behavior must not load");
 }
 const archive = inspectRoute("archive-single/index.html");
@@ -251,13 +271,17 @@ assert.ok(arrowArchive.source.includes("grave-archive"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-down|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowArchive.source));
 assert.deepEqual(new Set(arrowArchive.chunks.keys()), new Set([...single.chunks.keys(), ...archive.chunks.keys()]));
 
-for (const icon of [archive, arrowArchive, arrowDown, arrowDownLeft]) {
+for (const icon of [archive, arrowArchive, arrowDown, arrowDownLeft, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-arrow-up-right"), "Unused ArrowUpRight behavior must not load");
 }
 for (const icon of [arrowUpRight, arrowLeftUpRight]) {
   assert.ok(!/grave-(archive|arrow-down)/.test(icon.source));
 }
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight]) {
+for (const icon of [archive, arrowArchive]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
+
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-bot"), "Unused Bot behavior must not load");
   assert.ok(!icon.css.includes("grave-bot"), "Unused Bot CSS must not load");
 }
@@ -276,6 +300,9 @@ assert.ok(arrowBot.source.includes("grave-bot"));
 assert.ok(arrowBot.source.includes("grave-arrow-left"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowBot.source));
 assert.deepEqual(new Set(arrowBot.chunks.keys()), new Set([...single.chunks.keys(), ...bot.chunks.keys()]));
+for (const icon of [bot, arrowBot]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
 const attachFile = inspectRoute("attach-file-single/index.html");
 assert.equal(attachFile.entries.length, 1);
 assert.equal(attachFile.inline.length, 0);
@@ -291,10 +318,13 @@ assert.ok(arrowAttachFile.source.includes("grave-attach-file"));
 assert.ok(arrowAttachFile.source.includes("grave-arrow-left"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|bot|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowAttachFile.source));
 assert.deepEqual(new Set(arrowAttachFile.chunks.keys()), new Set([...single.chunks.keys(), ...attachFile.chunks.keys()]));
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot]) {
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-attach-file"), "Unused AttachFile behavior must not load");
 }
 assert.ok(!attachFile.css.includes("grave-attach-file"), "AttachFile must not add icon-specific CSS");
+for (const icon of [attachFile, arrowAttachFile]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
 
 
 
@@ -312,15 +342,18 @@ assert.ok(arrowAudioLines.source.includes("grave-audio-lines"));
 assert.ok(arrowAudioLines.source.includes("grave-arrow-left"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bot|attach-file|bundle-probe)/.test(arrowAudioLines.source));
 assert.deepEqual(new Set(arrowAudioLines.chunks.keys()), new Set([...single.chunks.keys(), ...audioLines.chunks.keys()]));
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, attachFile, arrowAttachFile]) {
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, attachFile, arrowAttachFile, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-audio-lines"), "Unused AudioLines behavior must not load");
 }
 for (const icon of [audioLines, arrowAudioLines]) {
   assert.ok(!/grave-(audio-lines|arrow-left)/.test(icon.css));
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
 }
+for (const icon of [audioLines, arrowAudioLines]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
+}
 
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, attachFile, arrowAttachFile, audioLines, arrowAudioLines]) {
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot, attachFile, arrowAttachFile, audioLines, arrowAudioLines, arrowUpLeft, arrowLeftUpLeft]) {
   assert.ok(!icon.source.includes("grave-file-text"), "Unused FileText behavior must not load");
 }
 const fileText = inspectRoute("file-text-single/index.html");
@@ -340,6 +373,9 @@ assert.deepEqual(new Set(arrowFileText.chunks.keys()), new Set([...single.chunks
 for (const icon of [fileText, arrowFileText]) {
   assert.ok(!/grave-(file-text|attach-file|audio-lines|bot|archive|arrow-down|map-pin|arrow-left|arrow-up|arrow-right|copy|check|at-sign)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
+for (const icon of [fileText, arrowFileText]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
 }
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");
