@@ -4,3 +4,5 @@ export { default as MapPin } from "./icons/map-pin/MapPin.astro";
 export type { MapPinIconHandle } from "./icons/map-pin/element";
 export { default as Copy } from "./icons/copy/Copy.astro";
 export type { CopyIconHandle } from "./icons/copy/element";
+export { default as Check } from "./icons/check/Check.astro";
+export type { CheckIconHandle } from "./icons/check/element";

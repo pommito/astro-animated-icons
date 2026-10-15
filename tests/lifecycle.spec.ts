@@ -4,6 +4,7 @@ for (const { name, route, tag, animationCount } of [
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2 },
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4 },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2 },
+  { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
 ]) {
   test.describe(name, () => {
     test("a template instance inserted after registration animates independently and reconnects to a new control", async ({ page }) => {

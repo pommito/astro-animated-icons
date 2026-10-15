@@ -104,8 +104,29 @@ const sharedChunks = [...single.chunks.keys()].filter((path) => copy.chunks.has(
 assert.ok(sharedChunks.length > 0, "Copy and ArrowLeft must reuse their shared runtime");
 assert.deepEqual(new Set(arrowCopy.chunks.keys()), new Set([...single.chunks.keys(), ...copy.chunks.keys()]));
 
-for (const icon of [single, mapPin, both, copy, arrowCopy]) {
-  assert.ok(!/grave-(map-pin|arrow-left|copy)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy]) {
+  assert.ok(!icon.source.includes("grave-check"), "Unused Check behavior must not load");
+}
+
+const check = inspectRoute("check-single/index.html");
+assert.equal(check.entries.length, 1);
+assert.equal(check.inline.length, 0);
+assert.equal(check.css, single.css, "Check must reuse the same base CSS");
+assert.ok(check.source.includes("grave-check"));
+assert.ok(!/grave-(arrow-left|map-pin|copy|bundle-probe)/.test(check.source), "Check alone must exclude every unused icon");
+
+const copyCheck = inspectRoute("copy-check/index.html");
+assert.equal(copyCheck.entries.length, 2);
+assert.equal(copyCheck.inline.length, 0);
+assert.equal(copyCheck.css, single.css, "Copy and Check must share the same base CSS");
+assert.ok(copyCheck.source.includes("grave-check"));
+assert.ok(copyCheck.source.includes("grave-copy"));
+assert.ok(!/grave-(arrow-left|map-pin|bundle-probe)/.test(copyCheck.source));
+assert.ok([...check.chunks.keys()].some((path) => copy.chunks.has(path)), "Check and Copy must reuse their shared runtime");
+assert.deepEqual(new Set(copyCheck.chunks.keys()), new Set([...copy.chunks.keys(), ...check.chunks.keys()]));
+
+for (const icon of [single, mapPin, both, copy, arrowCopy, check, copyCheck]) {
+  assert.ok(!/grave-(map-pin|arrow-left|copy|check)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
 }
 inspectRoute("index.html");
