@@ -7,6 +7,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4, label: "Location pin", axis: "y" as const },
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2, label: "Copy icon", axis: "x" as const },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
+  { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2, label: "AttachFile icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
   { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4, label: "Bot icon", axis: "y" as const },
