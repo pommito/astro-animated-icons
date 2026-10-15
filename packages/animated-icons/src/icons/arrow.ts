@@ -4,18 +4,19 @@ type TrackOptions = NonNullable<Parameters<typeof animate>[2]>;
 
 interface ArrowMotion {
   axis: "X" | "Y";
+  headTravel?: number;
+  headReturnAnimation?(head: SVGPathElement, onComplete: () => void): ReturnType<typeof animate>;
   playback?: TrackOptions;
   headReturn?: TrackOptions;
   shaftReturn?: TrackOptions;
 }
 
-const headTravel = 3;
 const shaftRetraction = 5;
 const playbackDuration = 0.4;
 const returnDuration = 0.12;
 
 export function animateArrow(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void, motion: ArrowMotion) {
-  const { axis } = motion;
+  const { axis, headTravel = 3 } = motion;
   const paths = drawing.querySelectorAll("path");
   const [head, shaft] = paths;
   const shaftLength = shaft.getTotalLength();
@@ -31,7 +32,7 @@ export function animateArrow(drawing: SVGGElement, returning: boolean, onComplet
     onComplete: onFinish,
   };
   return [
-    animate(head, { transform: returning ? `translate${axis}(0px)` : [null, `translate${axis}(${headTravel}px)`, `translate${axis}(0px)`] }, { ...options, ...(returning && motion.headReturn), onComplete: onFinish }),
+    returning && motion.headReturnAnimation ? motion.headReturnAnimation(head, onFinish) : animate(head, { transform: returning ? `translate${axis}(0px)` : [null, `translate${axis}(${headTravel}px)`, `translate${axis}(0px)`] }, { ...options, ...(returning && motion.headReturn), onComplete: onFinish }),
     animate(shaft, { strokeDasharray: returning ? fullShaft : [null, retractedShaft, fullShaft] }, { ...options, ...(returning && motion.shaftReturn), onComplete: onFinish }),
   ];
 }

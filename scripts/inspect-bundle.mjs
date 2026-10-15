@@ -192,10 +192,48 @@ for (const icon of [arrowUp, arrows]) {
   assert.ok(!/grave-(map-pin|arrow-left|arrow-up|arrow-right|copy|check|at-sign)/.test(icon.css));
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
 }
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowUp, arrows, arrowRight, arrowLeftRight]) {
+  assert.ok(!icon.source.includes("grave-arrow-down"), "Unused ArrowDown behavior must not load");
+}
+const arrowDown = inspectRoute("arrow-down-single/index.html");
+assert.equal(arrowDown.entries.length, 1);
+assert.equal(arrowDown.inline.length, 0);
+assert.equal(arrowDown.css, single.css);
+assert.ok(arrowDown.source.includes("grave-arrow-down"));
+assert.ok(!/grave-(arrow-left|map-pin|copy|check|at-sign|arrow-up|arrow-right|bundle-probe)/.test(arrowDown.source));
+assert.ok(!/grave-arrow-down/.test(arrowDown.css));
+assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(arrowDown.source));
+const arrowDownLeft = inspectRoute("arrow-down-left/index.html");
+assert.equal(arrowDownLeft.entries.length, 2);
+assert.equal(arrowDownLeft.inline.length, 0);
+assert.equal(arrowDownLeft.css, single.css);
+assert.deepEqual(new Set(arrowDownLeft.chunks.keys()), new Set([...single.chunks.keys(), ...arrowDown.chunks.keys()]));
+assert.ok(!/grave-(map-pin|copy|check|at-sign|arrow-up|arrow-right|bundle-probe)/.test(arrowDownLeft.source));
 for (const icon of [arrowUp, arrows]) {
   assert.ok(!icon.source.includes("grave-arrow-right"), "Unused ArrowRight behavior must not load");
 }
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows]) {
+
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowUp, arrows, arrowRight, arrowLeftRight, arrowDown, arrowDownLeft]) {
+  assert.ok(!icon.source.includes("grave-archive"), "Unused Archive behavior must not load");
+}
+const archive = inspectRoute("archive-single/index.html");
+assert.equal(archive.entries.length, 1);
+assert.equal(archive.inline.length, 0);
+assert.equal(archive.css, single.css, "Archive must reuse shared CSS");
+assert.ok(archive.source.includes("grave-archive"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|arrow-down|map-pin|copy|check|at-sign|bundle-probe)/.test(archive.source));
+assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(archive.source));
+assert.ok(!/grave-archive/.test(archive.css));
+const arrowArchive = inspectRoute("arrow-archive/index.html");
+assert.equal(arrowArchive.entries.length, 2);
+assert.equal(arrowArchive.inline.length, 0);
+assert.equal(arrowArchive.css, single.css);
+assert.ok(arrowArchive.source.includes("grave-arrow-left"));
+assert.ok(arrowArchive.source.includes("grave-archive"));
+assert.ok(!/grave-(arrow-right|arrow-up|arrow-down|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowArchive.source));
+assert.deepEqual(new Set(arrowArchive.chunks.keys()), new Set([...single.chunks.keys(), ...archive.chunks.keys()]));
+
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive]) {
   assert.ok(!icon.source.includes("grave-bot"), "Unused Bot behavior must not load");
   assert.ok(!icon.css.includes("grave-bot"), "Unused Bot CSS must not load");
 }
@@ -204,7 +242,7 @@ assert.equal(bot.entries.length, 1);
 assert.equal(bot.inline.length, 0);
 assert.equal(bot.css, single.css, "Bot must reuse the same base CSS");
 assert.ok(bot.source.includes("grave-bot"));
-assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(bot.source));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(bot.source));
 assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(bot.source));
 const arrowBot = inspectRoute("arrow-bot/index.html");
 assert.equal(arrowBot.entries.length, 2);
@@ -212,7 +250,7 @@ assert.equal(arrowBot.inline.length, 0);
 assert.equal(arrowBot.css, single.css);
 assert.ok(arrowBot.source.includes("grave-bot"));
 assert.ok(arrowBot.source.includes("grave-arrow-left"));
-assert.ok(!/grave-(arrow-right|arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowBot.source));
+assert.ok(!/grave-(arrow-right|arrow-up|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowBot.source));
 assert.deepEqual(new Set(arrowBot.chunks.keys()), new Set([...single.chunks.keys(), ...bot.chunks.keys()]));
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");
