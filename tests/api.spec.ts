@@ -11,6 +11,7 @@ for (const { name, route, label } of [
   { name: "Check", route: "/check-props/", label: "Check icon" },
   { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
   { name: "ArrowUpRight", route: "/arrow-up-right-props/", label: "Up-right arrow" },
+  { name: "AudioLines", route: "/audio-lines-props/", label: "AudioLines icon" },
 ]) {
   test.describe(name, () => {
     test("HTML attributes, scoped classes, inline styles, and the upstream default size reach the icon", async ({ page }) => {

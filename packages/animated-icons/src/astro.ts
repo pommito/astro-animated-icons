@@ -18,3 +18,5 @@ export { default as ArrowUp } from "./icons/arrow-up/ArrowUp.astro";
 export type { ArrowUpIconHandle } from "./icons/arrow-up/element";
 export { default as ArrowUpRight } from "./icons/arrow-up-right/ArrowUpRight.astro";
 export type { ArrowUpRightIconHandle } from "./icons/arrow-up-right/element";
+export { default as AudioLines } from "./icons/audio-lines/AudioLines.astro";
+export type { AudioLinesIconHandle } from "./icons/audio-lines/element";

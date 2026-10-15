@@ -10,6 +10,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1, label: "Up-right arrow", axis: "y" as const },
+  { name: "AudioLines", route: "/audio-lines/", tag: "grave-audio-lines", animationCount: 8, label: "AudioLines icon", axis: "y" as const },
 ]) {
   test.describe(name, () => {
     test("reduced motion keeps the icon static and preserves the native control", async ({ page }) => {
