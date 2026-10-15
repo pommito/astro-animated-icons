@@ -1,0 +1,93 @@
+---
+import { ArrowDown } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>ArrowDown recipe comparison</title></head>
+  <body>
+    <h1>ArrowDown recipe comparison</h1>
+    <p>Hover a sample or play both columns together. Stop during playback to compare the return.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference morphs the shaft with native path keyframes and samples the return spring equation. It does not run the upstream React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>{sizes.map((size) => (
+        <tr data-size={size}>
+          <th scope="row">{size} px</th>
+          <td><button type="button" data-adapter><ArrowDown size={size} />Astro {size} px</button></td>
+          <td><button type="button" data-reference>
+            <span data-grave-icon><svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m19 12-7 7-7-7" /><path d="M12 5v14" />
+            </svg></span>Reference {size} px
+          </button></td>
+        </tr>
+      ))}</tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down.tsx">Pinned upstream recipe</a> · <a href="https://lucide-animated.com/icons/arrow-down">Live reference</a> · <a href="/arrow-down/">Lifecycle and manual controls</a></p>
+    <p>The adapter samples the current head velocity before interruption and carries it into the return spring. ArrowLeft keeps its existing 120 ms return.</p>
+  </body>
+</html>
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+  function playReference(control: Element, returning = false) {
+    const [head, shaft] = control.querySelectorAll("path");
+    const transform = getComputedStyle(head).transform;
+    const path = getComputedStyle(shaft).d;
+    const previousAnimation = references.get(control)?.[0];
+    const time = Number(previousAnimation?.currentTime ?? 0);
+    const interval = Math.min(10, time);
+    let velocity = 0;
+    if (previousAnimation && interval > 0) {
+      previousAnimation.currentTime = time - interval;
+      const previous = new DOMMatrix(getComputedStyle(head).transform).m42;
+      previousAnimation.currentTime = time;
+      velocity = (new DOMMatrix(transform).m42 - previous) * 1000 / interval;
+    }
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const rest = 'path("M12 5v14")';
+    const options = { duration: 400, easing: "ease-in-out", fill: "both" as const };
+    const position = new DOMMatrix(transform).m42;
+    const frequency = Math.sqrt(500 - 12.5 ** 2);
+    let settled = false;
+    const springFrames = Array.from({ length: 121 }, (_, index) => {
+      const time = index * 0.005;
+      const displacement = Math.exp(-12.5 * time) * (position * Math.cos(frequency * time) + (velocity + 12.5 * position) / frequency * Math.sin(frequency * time));
+      const sineCoefficient = (velocity + 12.5 * position) / frequency;
+      const speed = Math.exp(-12.5 * time) * ((-12.5 * position + frequency * sineCoefficient) * Math.cos(frequency * time) + (-12.5 * sineCoefficient - frequency * position) * Math.sin(frequency * time));
+      settled ||= Math.abs(displacement) <= 0.005 && Math.abs(speed) <= 10;
+      return { transform: `translateY(${settled || index === 120 ? 0 : displacement}px)`, offset: index / 120 };
+    });
+    const animations = [
+      returning ? head.animate(springFrames, { duration: 600, fill: "both" }) : head.animate({ transform: [transform, "translateY(-3px)", "translateY(0px)"] }, options),
+      shaft.animate({ d: returning ? [path, rest] : [path, 'path("M12 5v9")', rest] }, returning ? { ...options, duration: 300, easing: "cubic-bezier(0.25, 0.1, 0.35, 1)" } : options),
+    ];
+    references.set(control, animations);
+    Promise.all(animations.map((animation) => animation.finished)).then(() => {
+      if (references.get(control) === animations) resetReference(control);
+    }).catch(() => {});
+  }
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-down").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-arrow-down").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+</script>
