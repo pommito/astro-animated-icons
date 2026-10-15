@@ -6,6 +6,7 @@ for (const { name, route, tag, animationCount } of [
   { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2 },
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5 },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
+  { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2 },
 ]) {
   test.describe(name, () => {
     test("a template instance inserted after registration animates independently and reconnects to a new control", async ({ page }) => {
@@ -60,6 +61,9 @@ for (const { name, route, tag, animationCount } of [
       }
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       const dynamic = page.locator("#dynamic a");
+      await dynamic.evaluate((element) => element.addEventListener("pointerenter", () => {
+        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      }, { once: true }));
       await dynamic.hover();
       await expect.poll(() => dynamic.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
     });

@@ -150,7 +150,29 @@ for (const icon of [single, mapPin, both, copy, arrowCopy, check, copyCheck, atS
   assert.ok(!/grave-(map-pin|arrow-left|copy|check|at-sign)/.test(icon.css), "No icon-specific CSS may leak through the barrel");
   assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source), "The browser bundle must not include React");
 }
+const arrowUp = inspectRoute("arrow-up-single/index.html");
+assert.equal(arrowUp.entries.length, 1);
+assert.equal(arrowUp.inline.length, 0);
+assert.equal(arrowUp.css, single.css, "ArrowUp must reuse the same base CSS");
+assert.ok(arrowUp.source.includes("grave-arrow-up"));
+assert.ok(!/grave-(arrow-left|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowUp.source));
+const arrows = inspectRoute("arrows/index.html");
+assert.equal(arrows.entries.length, 2);
+assert.equal(arrows.inline.length, 0);
+assert.equal(arrows.css, single.css);
+assert.ok(arrows.source.includes("grave-arrow-left"));
+assert.ok(arrows.source.includes("grave-arrow-up"));
+assert.ok(!/grave-(map-pin|copy|check|at-sign|bundle-probe)/.test(arrows.source));
+assert.deepEqual(new Set(arrows.chunks.keys()), new Set([...single.chunks.keys(), ...arrowUp.chunks.keys()]));
 for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign]) {
+  assert.ok(!icon.source.includes("grave-arrow-up"), "Unused ArrowUp behavior must not load");
+}
+for (const icon of [arrowUp, arrows]) {
+  assert.ok(!/grave-(map-pin|arrow-left|arrow-up|copy|check|at-sign)/.test(icon.css));
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
+
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowUp, arrows]) {
   assert.ok(!icon.source.includes("grave-archive"), "Unused Archive behavior must not load");
 }
 const archive = inspectRoute("archive-single/index.html");
@@ -158,7 +180,7 @@ assert.equal(archive.entries.length, 1);
 assert.equal(archive.inline.length, 0);
 assert.equal(archive.css, single.css, "Archive must reuse shared CSS");
 assert.ok(archive.source.includes("grave-archive"));
-assert.ok(!/grave-(arrow-left|map-pin|copy|check|at-sign|bundle-probe)/.test(archive.source));
+assert.ok(!/grave-(arrow-left|arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(archive.source));
 assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(archive.source));
 assert.ok(!/grave-archive/.test(archive.css));
 const arrowArchive = inspectRoute("arrow-archive/index.html");
@@ -167,7 +189,7 @@ assert.equal(arrowArchive.inline.length, 0);
 assert.equal(arrowArchive.css, single.css);
 assert.ok(arrowArchive.source.includes("grave-arrow-left"));
 assert.ok(arrowArchive.source.includes("grave-archive"));
-assert.ok(!/grave-(map-pin|copy|check|at-sign|bundle-probe)/.test(arrowArchive.source));
+assert.ok(!/grave-(arrow-up|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowArchive.source));
 assert.deepEqual(new Set(arrowArchive.chunks.keys()), new Set([...single.chunks.keys(), ...archive.chunks.keys()]));
 
 inspectRoute("index.html");
