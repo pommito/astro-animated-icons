@@ -1,0 +1,88 @@
+---
+import { Copy } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Copy recipe comparison</title>
+  </head>
+  <body>
+    <h1>Copy recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. Stop returns both shapes with the same spring.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference samples the spring equation with stiffness 160, damping 17, and mass 1 in native browser keyframes. It reproduces the recipe without running the React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Copy size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="8" y="8" width="14" height="14" rx="2" ry="2" />
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/main/icons/copy.tsx">Upstream Copy recipe</a></p>
+    <p><a href="/copy/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    const parts = [...control.querySelectorAll("rect, path")];
+    const origins = parts.map((part) => new DOMMatrix(getComputedStyle(part).transform).m41);
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    references.set(control, parts.map((part, index) => {
+      const target = returning ? 0 : index === 0 ? -3 : 3;
+      const frames = Array.from({ length: 201 }, (_, frame) => {
+        const time = frame * 0.005;
+        const frequency = Math.sqrt(160 - 8.5 ** 2);
+        const remaining = Math.exp(-8.5 * time) * (Math.cos(frequency * time) + 8.5 / frequency * Math.sin(frequency * time));
+        const value = frame === 200 ? target : target + (origins[index] - target) * remaining;
+        return { transform: `translate(${value}px, ${value}px)` };
+      });
+      return part.animate(frames, { duration: 1000, fill: "both" });
+    }));
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-copy").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-copy").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
