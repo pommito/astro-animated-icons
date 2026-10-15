@@ -10,3 +10,5 @@ export { default as ArrowDown } from "./icons/arrow-down/ArrowDown.astro";
 export type { ArrowDownIconHandle } from "./icons/arrow-down/element";
 export { default as AtSign } from "./icons/at-sign/AtSign.astro";
 export type { AtSignIconHandle } from "./icons/at-sign/element";
+export { default as ArrowUp } from "./icons/arrow-up/ArrowUp.astro";
+export type { ArrowUpIconHandle } from "./icons/arrow-up/element";

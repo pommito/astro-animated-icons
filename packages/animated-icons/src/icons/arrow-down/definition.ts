@@ -1,33 +1,39 @@
 import { spring } from "motion";
 import { animate } from "motion/mini";
-import { createArrowRecipe } from "../arrow";
+import { animateArrow, clearArrow } from "../arrow";
 
 export const arrowDownPaths = ["m19 12-7 7-7-7", "M12 5v14"];
 
 const velocities = new WeakMap<SVGPathElement, number>();
-const recipe = createArrowRecipe("Y", -3, 5, {
-  head(head, onComplete) {
-    const position = new DOMMatrix(getComputedStyle(head).transform).m42;
-    const generator = spring({
-      keyframes: [position, 0],
-      velocity: velocities.get(head) ?? 0,
-      stiffness: 500,
-      damping: 25,
-      restSpeed: 10,
-      restDelta: 0.005,
+const recipe = {
+  clear: clearArrow,
+  animate(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void) {
+    return animateArrow(drawing, returning, onComplete, {
+      axis: "Y",
+      headTravel: -3,
+      headReturnAnimation(head, onComplete) {
+        const position = new DOMMatrix(getComputedStyle(head).transform).m42;
+        const generator = spring({
+          keyframes: [position, 0],
+          velocity: velocities.get(head) ?? 0,
+          stiffness: 500,
+          damping: 25,
+          restSpeed: 10,
+          restDelta: 0.005,
+        });
+        const frames: string[] = [];
+        let duration = 0;
+        for (; duration <= 2000; duration += 5) {
+          const state = generator.next(duration);
+          frames.push(`translateY(${state.value}px)`);
+          if (state.done) break;
+        }
+        return animate(head, { transform: frames }, { duration: duration / 1000, ease: "linear", onComplete });
+      },
+      shaftReturn: { duration: 0.3, ease: [0.25, 0.1, 0.35, 1] },
     });
-    const frames: string[] = [];
-    let duration = 0;
-    for (; duration <= 2000; duration += 5) {
-      const state = generator.next(duration);
-      frames.push(`translateY(${state.value}px)`);
-      if (state.done) break;
-    }
-    return animate(head, { transform: frames }, { duration: duration / 1000, ease: "linear", onComplete });
   },
-  shaftDuration: 0.3,
-  shaftEase: [0.25, 0.1, 0.35, 1],
-});
+};
 
 export const arrowDownRecipe = {
   ...recipe,
