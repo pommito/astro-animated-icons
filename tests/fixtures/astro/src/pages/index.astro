@@ -1,0 +1,45 @@
+---
+import { ArrowLeft } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ArrowLeft browser test fixture</title>
+  </head>
+  <body>
+    <p><a href="#destination" id="primary"><ArrowLeft size={14} />Back to articles <span>14 px</span></a></p>
+    <p><button type="button"><ArrowLeft size={24} />Go back <span>24 px</span></button></p>
+    <ArrowLeft label="Left arrow" id="standalone" />
+    <button type="button" id="controlled"><ArrowLeft controlled />Manual back</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template">
+      <a href="#destination"><ArrowLeft size={16} />Dynamic back link</a>
+    </template>
+    <p id="destination">Link destination</p>
+  </body>
+</html>
+
+<script>
+  import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
+
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+
+  await customElements.whenDefined("grave-arrow-left");
+  const controlled = document.querySelector<HTMLElement & ArrowLeftIconHandle>("#controlled grave-arrow-left")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+
+  document.querySelector("#add")!.addEventListener("click", () => {
+    container.append(template.content.cloneNode(true));
+  });
+  document.querySelector("#remove")!.addEventListener("click", () => {
+    container.lastElementChild?.remove();
+  });
+</script>

@@ -1,0 +1,13 @@
+---
+import "../../../../../packages/animated-icons/src/icon.css";
+---
+
+<grave-bundle-probe data-grave-icon>
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 12H19" /></svg>
+</grave-bundle-probe>
+
+<script>
+  if (!customElements.get("grave-bundle-probe")) {
+    customElements.define("grave-bundle-probe", class extends HTMLElement {});
+  }
+</script>

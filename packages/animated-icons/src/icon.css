@@ -1,0 +1,10 @@
+[data-grave-icon] {
+  display: inline-flex;
+  flex: none;
+  vertical-align: middle;
+}
+
+[data-grave-icon] > svg {
+  display: block;
+  overflow: visible;
+}
