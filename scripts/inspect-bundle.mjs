@@ -276,5 +276,24 @@ assert.ok(arrowBot.source.includes("grave-bot"));
 assert.ok(arrowBot.source.includes("grave-arrow-left"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowBot.source));
 assert.deepEqual(new Set(arrowBot.chunks.keys()), new Set([...single.chunks.keys(), ...bot.chunks.keys()]));
+const attachFile = inspectRoute("attach-file-single/index.html");
+assert.equal(attachFile.entries.length, 1);
+assert.equal(attachFile.inline.length, 0);
+assert.equal(attachFile.css, single.css, "AttachFile must reuse the same base CSS");
+assert.ok(attachFile.source.includes("grave-attach-file"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up|arrow-up-right|arrow-down|archive|bot|map-pin|copy|check|at-sign|bundle-probe)/.test(attachFile.source));
+assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(attachFile.source));
+const arrowAttachFile = inspectRoute("arrow-attach-file/index.html");
+assert.equal(arrowAttachFile.entries.length, 2);
+assert.equal(arrowAttachFile.inline.length, 0);
+assert.equal(arrowAttachFile.css, single.css);
+assert.ok(arrowAttachFile.source.includes("grave-attach-file"));
+assert.ok(arrowAttachFile.source.includes("grave-arrow-left"));
+assert.ok(!/grave-(arrow-right|arrow-up|arrow-up-right|arrow-down|archive|bot|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowAttachFile.source));
+assert.deepEqual(new Set(arrowAttachFile.chunks.keys()), new Set([...single.chunks.keys(), ...attachFile.chunks.keys()]));
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, archive, arrowArchive, arrowUpRight, arrowLeftUpRight, bot, arrowBot]) {
+  assert.ok(!icon.source.includes("grave-attach-file"), "Unused AttachFile behavior must not load");
+}
+assert.ok(!attachFile.css.includes("grave-attach-file"), "AttachFile must not add icon-specific CSS");
 inspectRoute("index.html");
 console.log("Selective loading verified: shared CSS only, unused icon behavior excluded.");
