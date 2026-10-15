@@ -1,0 +1,41 @@
+---
+import { archiveBody, archiveHandle } from "./definition";
+import type { HTMLAttributes } from "astro/types";
+import "../../icon.css";
+
+interface Props extends Omit<HTMLAttributes<"div">, "children"> {
+  size?: number;
+  label?: string;
+  controlled?: boolean;
+}
+
+const { size = 28, label, controlled = false, ...attributes } = Astro.props;
+---
+
+<grave-archive {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden={label ? undefined : "true"}
+    aria-label={label}
+    role={label ? "img" : undefined}
+    focusable="false"
+  >
+    <g>
+      <rect x="2" y="3" width="20" height="5" rx="1" />
+      <path d={archiveBody} />
+      <path d={archiveHandle} />
+    </g>
+  </svg>
+</grave-archive>
+
+<script>
+  import "./element";
+</script>

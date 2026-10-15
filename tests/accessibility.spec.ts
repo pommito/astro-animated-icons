@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount, label, axis } of [
+  { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2, label: "Down arrow", axis: "y" as const },
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2, label: "Left arrow", axis: "x" as const },
   { name: "ArrowRight", route: "/arrow-right/", tag: "grave-arrow-right", animationCount: 2, label: "Right arrow", axis: "x" as const },
   { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4, label: "Location pin", axis: "y" as const },
@@ -30,9 +32,10 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.goto(route);
       const link = page.locator("#primary");
       const resting = (await link.locator("path").first().boundingBox())![axis];
+      await pauseAnimationsOnPointer(link);
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
-      await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => animation.pause()));
+      await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => { animation.currentTime = 50; }));
       await page.emulateMedia({ reducedMotion: "reduce" });
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
       expect((await link.locator("path").first().boundingBox())![axis]).toBeCloseTo(resting, 1);
@@ -69,6 +72,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
       await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       expect(await page.evaluate(() => matchMedia("(hover: hover) and (pointer: fine)").matches)).toBe(false);
       const link = page.locator("#primary");
+      await pauseAnimationsOnPointer(link);
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await context.close();

@@ -1,0 +1,122 @@
+---
+import { Archive } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>Archive recipe comparison</title></head>
+  <body>
+    <h1>Archive recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The open pose stays visible until stopped.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference evaluates the spring equation and cubic Bezier curve directly. It does not import Motion or run the React component.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Archive size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference>
+              <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="5" rx="1" />
+                <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" />
+                <path d="M10 12h4" />
+              </svg>Reference {size} px
+            </button></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://lucide-animated.com/icons/archive">Live Archive icon</a></p>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/archive.tsx">Pinned upstream recipe</a></p>
+    <p><a href="/archive/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  interface State { frame: number; y: number; velocity: number; body: number; handle: number; sample?: (now: number) => void }
+  const references = new Map<Element, State>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    const state = references.get(control);
+    if (state) cancelAnimationFrame(state.frame);
+    references.delete(control);
+    control.querySelector("rect")!.style.removeProperty("transform");
+    const [body, handle] = control.querySelectorAll("path");
+    body.setAttribute("d", "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8");
+    handle.setAttribute("d", "M10 12h4");
+  }
+
+  function ease(progress: number) {
+    const cubic = (t: number, a: number, b: number) => 3 * (1 - t) ** 2 * t * a + 3 * (1 - t) * t ** 2 * b + t ** 3;
+    let low = 0, high = 1;
+    for (let step = 0; step < 30; step++) {
+      const mid = (low + high) / 2;
+      if (cubic(mid, 0.25, 0.35) < progress) low = mid;
+      else high = mid;
+    }
+    return cubic((low + high) / 2, 0.1, 1);
+  }
+
+  function playReference(control: Element, returning = false) {
+    if (reducedMotion.matches) return;
+    const prior = references.get(control);
+    if (prior) {
+      prior.sample?.(performance.now());
+      cancelAnimationFrame(prior.frame);
+    }
+    const state: State = prior ?? { frame: 0, y: 0, velocity: 0, body: 0, handle: 0 };
+    const origin = { ...state };
+    const targetY = returning ? 0 : -1.5;
+    const targetPath = returning ? 0 : 1;
+    const start = performance.now();
+    const frequency = Math.sqrt(200 - 12.5 ** 2);
+    const delta = origin.y - targetY;
+    const sine = (origin.velocity + 12.5 * delta) / frequency;
+    const lid = control.querySelector("rect")!;
+    const [body, handle] = control.querySelectorAll("path");
+
+    function tick(now: number) {
+      const seconds = (now - start) / 1000;
+      const sin = Math.sin(frequency * seconds), cos = Math.cos(frequency * seconds);
+      const decay = Math.exp(-12.5 * seconds);
+      state.y = targetY + decay * (delta * cos + sine * sin);
+      state.velocity = decay * ((-12.5 * delta + frequency * sine) * cos + (-12.5 * sine - frequency * delta) * sin);
+      const settled = Math.abs(state.velocity) <= 0.01 && Math.abs(state.y - targetY) <= 0.005;
+      if (settled) { state.y = targetY; state.velocity = 0; }
+      const progress = ease(Math.min(1, (now - start) / 300));
+      state.body = origin.body + (targetPath - origin.body) * progress;
+      state.handle = origin.handle + (targetPath - origin.handle) * progress;
+      lid.style.transform = `translateY(${state.y}px)`;
+      body.setAttribute("d", `M4 ${8 + 3 * state.body}v${11 - 2 * state.body}a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V${8 + 3 * state.body}`);
+      handle.setAttribute("d", `M10 ${12 + 3 * state.handle}h4`);
+      if (!settled || now - start < 300) state.frame = requestAnimationFrame(tick);
+      else if (returning) resetReference(control);
+    }
+    state.sample = tick;
+    references.set(control, state);
+    state.frame = requestAnimationFrame(tick);
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-archive").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-archive").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>
