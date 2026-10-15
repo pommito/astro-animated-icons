@@ -1,0 +1,45 @@
+---
+import { ArrowRight } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ArrowRight browser test fixture</title>
+  </head>
+  <body>
+    <p><a href="#destination" id="primary"><ArrowRight size={14} />Next article <span>14 px</span></a></p>
+    <p><button type="button"><ArrowRight size={24} />Go forward <span>24 px</span></button></p>
+    <ArrowRight label="Right arrow" id="standalone" />
+    <button type="button" id="controlled"><ArrowRight controlled />Manual forward</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template">
+      <a href="#destination"><ArrowRight size={16} />Dynamic forward link</a>
+    </template>
+    <p id="destination">Link destination</p>
+  </body>
+</html>
+
+<script>
+  import type { ArrowRightIconHandle } from "@grave/animated-icons/astro";
+
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+
+  await customElements.whenDefined("grave-arrow-right");
+  const controlled = document.querySelector<HTMLElement & ArrowRightIconHandle>("#controlled grave-arrow-right")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+
+  document.querySelector("#add")!.addEventListener("click", () => {
+    container.append(template.content.cloneNode(true));
+  });
+  document.querySelector("#remove")!.addEventListener("click", () => {
+    container.lastElementChild?.remove();
+  });
+</script>

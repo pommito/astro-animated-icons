@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
   { name: "ArrowLeft", route: "/props/", label: "Back arrow" },
+  { name: "ArrowRight", route: "/arrow-right-props/", label: "Right arrow" },
   { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
   { name: "Copy", route: "/copy-props/", label: "Copy icon" },
   { name: "Archive", route: "/archive-props/", label: "Archive icon" },

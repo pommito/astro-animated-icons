@@ -10,5 +10,7 @@ export { default as Archive } from "./icons/archive/Archive.astro";
 export type { ArchiveIconHandle } from "./icons/archive/element";
 export { default as AtSign } from "./icons/at-sign/AtSign.astro";
 export type { AtSignIconHandle } from "./icons/at-sign/element";
+export { default as ArrowRight } from "./icons/arrow-right/ArrowRight.astro";
+export type { ArrowRightIconHandle } from "./icons/arrow-right/element";
 export { default as ArrowUp } from "./icons/arrow-up/ArrowUp.astro";
 export type { ArrowUpIconHandle } from "./icons/arrow-up/element";
