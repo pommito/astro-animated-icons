@@ -1,0 +1,17 @@
+{
+  "name": "@grave/animated-icons",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": { "./astro": "./src/astro.ts" },
+  "files": ["src", "THIRD_PARTY_NOTICES.md"],
+  "scripts": { "check": "astro check" },
+  "peerDependencies": { "astro": "^7.2.10" },
+  "dependencies": { "motion": "^13.4.4" },
+  "devDependencies": {
+    "astro": "7.3.8",
+    "@astrojs/check": "0.9.10",
+    "typescript": "^6.0.3"
+  }
+}

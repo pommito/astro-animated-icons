@@ -1,0 +1,43 @@
+---
+import { arrowLeftPaths } from "./arrow-left";
+
+interface Props {
+  size?: number | string;
+  strokeWidth?: number;
+  color?: string;
+  class?: string;
+  label?: string;
+}
+
+const { size = 24, strokeWidth = 2, color = "currentColor", class: className, label } = Astro.props;
+---
+
+<grave-arrow-left class={className}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    stroke-width={strokeWidth}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden={label ? undefined : "true"}
+    aria-label={label}
+    role={label ? "img" : undefined}
+    focusable="false"
+  >
+    <g>{arrowLeftPaths.map((d) => <path d={d} />)}</g>
+  </svg>
+</grave-arrow-left>
+
+<script>
+  import "./arrow-left-element";
+</script>
+
+<style>
+  grave-arrow-left { display: inline-flex; flex: none; vertical-align: middle; }
+  svg { display: block; overflow: visible; }
+  path:nth-child(2) { transform-box: stroke-box; transform-origin: right center; }
+</style>
