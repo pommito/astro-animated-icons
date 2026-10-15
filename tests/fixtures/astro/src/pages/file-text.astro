@@ -1,0 +1,32 @@
+---
+import { FileText } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>FileText browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><FileText size={16} />FileText example</a></p>
+    <button type="button" id="secondary"><FileText size={24} />Other file-text icon</button>
+    <FileText id="standalone" label="FileText icon" />
+    <button type="button" id="controlled"><FileText controlled />Manual file-text icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><FileText size={16} />Dynamic file-text icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { FileTextIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-file-text");
+  const controlled = document.querySelector<HTMLElement & FileTextIconHandle>("#controlled grave-file-text")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>

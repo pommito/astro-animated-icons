@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
 
 type CheckElement = HTMLElement & IconHandle;
@@ -219,9 +220,11 @@ test("hover reveals the checkmark in 400 ms, holds it, and resets in 300 ms", as
   await expect(path).toHaveCSS("opacity", "1");
   await page.waitForTimeout(150);
   await expect(path).toHaveCSS("transform", "matrix(1, 0, 0, 1, 0, 0)");
+  await pauseAnimationsOnPointer(link, "pointerleave");
   await page.mouse.move(0, 0);
   const durations = await link.evaluate((element) => element.getAnimations({ subtree: true }).map((animation) => animation.effect!.getTiming().duration).sort());
   expect(durations).toEqual([100, 300, 300]);
+  await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => animation.finish()));
   await expect(path).toHaveCSS("transform", "none");
   await expect(path).toHaveCSS("stroke-dasharray", "none");
   await expect(path).toHaveCSS("opacity", "1");
