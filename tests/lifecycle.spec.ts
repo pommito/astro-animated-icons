@@ -11,6 +11,8 @@ for (const { name, route, tag, animationCount } of [
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3 },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2 },
   { name: "FileText", route: "/file-text/", tag: "grave-file-text", animationCount: 4 },
+
+  { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4 },
   { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1 },
 ]) {
   test.describe(name, () => {

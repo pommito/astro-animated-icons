@@ -18,5 +18,8 @@ export { default as ArrowUp } from "./icons/arrow-up/ArrowUp.astro";
 export type { ArrowUpIconHandle } from "./icons/arrow-up/element";
 export { default as FileText } from "./icons/file-text/FileText.astro";
 export type { FileTextIconHandle } from "./icons/file-text/element";
+
+export { default as Bot } from "./icons/bot/Bot.astro";
+export type { BotIconHandle } from "./icons/bot/element";
 export { default as ArrowUpRight } from "./icons/arrow-up-right/ArrowUpRight.astro";
 export type { ArrowUpRightIconHandle } from "./icons/arrow-up-right/element";
