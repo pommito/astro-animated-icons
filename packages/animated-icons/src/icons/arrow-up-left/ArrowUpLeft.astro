@@ -1,5 +1,5 @@
 ---
-import { arrowUpLeftPaths } from "./definition";
+import { arrowUpLeftOrigin, arrowUpLeftPaths } from "./definition";
 import type { HTMLAttributes } from "astro/types";
 import "../../icon.css";
 
@@ -28,7 +28,7 @@ const { size = 28, label, controlled = false, ...attributes } = Astro.props;
     role={label ? "img" : undefined}
     focusable="false"
   >
-    <g style="transform-box: view-box; transform-origin: 7px 7px">{arrowUpLeftPaths.map((d) => <path d={d} />)}</g>
+    <g style={arrowUpLeftOrigin}>{arrowUpLeftPaths.map((d) => <path d={d} />)}</g>
   </svg>
 </grave-arrow-up-left>
 

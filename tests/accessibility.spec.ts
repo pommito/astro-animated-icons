@@ -9,6 +9,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
   { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
   { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
   { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
+  { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1, label: "Up-right arrow", axis: "y" as const },
   { name: "ArrowUpLeft", route: "/arrow-up-left/", tag: "grave-arrow-up-left", animationCount: 1, label: "Up-left arrow", axis: "y" as const },
 ]) {
   test.describe(name, () => {
@@ -29,11 +30,12 @@ for (const { name, route, tag, animationCount, label, axis } of [
 
     test("changing the motion preference during playback cancels travel immediately", async ({ page }) => {
       await page.goto(route);
+      await page.waitForFunction((tag) => customElements.get(tag) !== undefined, tag);
       const link = page.locator("#primary");
-      const resting = (await link.locator("path").first().boundingBox())![axis];
-      await link.evaluate((element) => element.addEventListener("pointerenter", () => {
-        element.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
+      await link.evaluate((control) => control.addEventListener("pointerenter", () => {
+        control.getAnimations({ subtree: true }).forEach((animation) => animation.pause());
       }));
+      const resting = (await link.locator("path").first().boundingBox())![axis];
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
       await link.evaluate((element) => element.getAnimations({ subtree: true }).forEach((animation) => {

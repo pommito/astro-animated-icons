@@ -1,12 +1,13 @@
 import { createIconElement } from "../../element";
-import { animateArrowUpLeft, clearArrowUpLeft } from "./definition";
+import { animateArrowUpLeft } from "./definition";
+import { clearDiagonalArrow } from "../diagonal-arrow";
 import type { IconHandle } from "../../element";
 
 export type ArrowUpLeftIconHandle = IconHandle;
 
 const ArrowUpLeftElement = createIconElement({
   animate: animateArrowUpLeft,
-  clear: clearArrowUpLeft,
+  clear: clearDiagonalArrow,
 });
 
 declare global {

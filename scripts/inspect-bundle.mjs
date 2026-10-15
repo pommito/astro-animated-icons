@@ -212,12 +212,31 @@ assert.ok(!/grave-(map-pin|copy|check|at-sign|arrow-up|arrow-right|bundle-probe)
 for (const icon of [arrowUp, arrows]) {
   assert.ok(!icon.source.includes("grave-arrow-right"), "Unused ArrowRight behavior must not load");
 }
+const arrowUpRight = inspectRoute("arrow-up-right-single/index.html");
+assert.equal(arrowUpRight.entries.length, 1);
+assert.equal(arrowUpRight.inline.length, 0);
+assert.equal(arrowUpRight.css, single.css, "ArrowUpRight must reuse the same base CSS");
+assert.ok(arrowUpRight.source.includes("grave-arrow-up-right"));
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up["']|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowUpRight.source));
+const arrowLeftUpRight = inspectRoute("arrow-left-up-right/index.html");
+assert.equal(arrowLeftUpRight.entries.length, 2);
+assert.equal(arrowLeftUpRight.inline.length, 0);
+assert.equal(arrowLeftUpRight.css, single.css);
+assert.deepEqual(new Set(arrowLeftUpRight.chunks.keys()), new Set([...single.chunks.keys(), ...arrowUpRight.chunks.keys()]));
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-right"), "Unused ArrowUpRight behavior must not load");
+}
+for (const icon of [arrowUpRight, arrowLeftUpRight]) {
+  assert.ok(!/grave-(arrow|map-pin|copy|check|at-sign)/.test(icon.css));
+  assert.ok(!/react(?:-dom)?|react\/jsx-runtime/.test(icon.source));
+}
+
 const arrowUpLeft = inspectRoute("arrow-up-left-single/index.html");
 assert.equal(arrowUpLeft.entries.length, 1);
 assert.equal(arrowUpLeft.inline.length, 0);
 assert.equal(arrowUpLeft.css, single.css, "ArrowUpLeft must reuse the shared CSS");
 assert.ok(arrowUpLeft.source.includes("grave-arrow-up-left"));
-assert.ok(!/grave-(arrow-left|arrow-right|arrow-up["']|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowUpLeft.source), "ArrowUpLeft alone must exclude other registrations");
+assert.ok(!/grave-(arrow-left|arrow-right|arrow-up["']|arrow-up-right|arrow-down|archive|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowUpLeft.source), "ArrowUpLeft alone must exclude other registrations");
 const arrowLeftUpLeft = inspectRoute("arrow-left-up-left/index.html");
 assert.equal(arrowLeftUpLeft.entries.length, 2);
 assert.equal(arrowLeftUpLeft.inline.length, 0);
@@ -225,7 +244,7 @@ assert.equal(arrowLeftUpLeft.css, single.css);
 assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-left"));
 assert.ok(arrowLeftUpLeft.source.includes("grave-arrow-up-left"));
 assert.deepEqual(new Set(arrowLeftUpLeft.chunks.keys()), new Set([...single.chunks.keys(), ...arrowUpLeft.chunks.keys()]));
-for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft]) {
+for (const icon of [single, selective, probe, mapPin, both, copy, arrowCopy, check, copyCheck, atSign, arrowAtSign, arrowRight, arrowLeftRight, arrowUp, arrows, arrowDown, arrowDownLeft, arrowUpRight, arrowLeftUpRight]) {
   assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
 }
 for (const icon of [arrowUpLeft, arrowLeftUpLeft]) {
@@ -252,6 +271,12 @@ assert.ok(arrowArchive.source.includes("grave-archive"));
 assert.ok(!/grave-(arrow-right|arrow-up|arrow-down|map-pin|copy|check|at-sign|bundle-probe)/.test(arrowArchive.source));
 assert.deepEqual(new Set(arrowArchive.chunks.keys()), new Set([...single.chunks.keys(), ...archive.chunks.keys()]));
 
+for (const icon of [archive, arrowArchive, arrowDown, arrowDownLeft, arrowUpLeft, arrowLeftUpLeft]) {
+  assert.ok(!icon.source.includes("grave-arrow-up-right"), "Unused ArrowUpRight behavior must not load");
+}
+for (const icon of [arrowUpRight, arrowLeftUpRight]) {
+  assert.ok(!/grave-(archive|arrow-down)/.test(icon.source));
+}
 for (const icon of [archive, arrowArchive]) {
   assert.ok(!icon.source.includes("grave-arrow-up-left"), "Unused ArrowUpLeft registration must not load");
 }

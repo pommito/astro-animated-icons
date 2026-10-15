@@ -10,6 +10,7 @@ for (const { name, route, label } of [
   { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },
   { name: "Check", route: "/check-props/", label: "Check icon" },
   { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
+  { name: "ArrowUpRight", route: "/arrow-up-right-props/", label: "Up-right arrow" },
   { name: "ArrowUpLeft", route: "/arrow-up-left-props/", label: "Up-left arrow" },
 ]) {
   test.describe(name, () => {
