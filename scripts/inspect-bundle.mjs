@@ -64,6 +64,9 @@ const singleRoutes = {
   "attach-file": "attach-file-single",
   "audio-lines": "audio-lines-single",
   home: "home-single",
+  "grip": "grip-single",
+  "grip-horizontal": "grip-horizontal-single",
+  "grip-vertical": "grip-vertical-single",
   "chevron-down": "chevron-down-single",
   "chevron-first": "chevron-first-single",
   "chevron-left": "chevron-left-single",
@@ -84,6 +87,9 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["arrow-grip", "arrow-left", "grip"],
+  ["arrow-grip-horizontal", "arrow-left", "grip-horizontal"],
+  ["arrow-grip-vertical", "arrow-left", "grip-vertical"],
   ["chevron-down-combined", "arrow-left", "chevron-down"],
   ["chevron-first-combined", "arrow-left", "chevron-first"],
   ["chevron-left-combined", "arrow-left", "chevron-left"],

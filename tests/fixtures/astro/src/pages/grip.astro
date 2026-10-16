@@ -1,0 +1,32 @@
+---
+import { Grip } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Grip browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><Grip size={16} />Grip example</a></p>
+    <button type="button" id="secondary"><Grip size={24} />Other grip icon</button>
+    <Grip id="standalone" label="Grip icon" />
+    <button type="button" id="controlled"><Grip controlled />Manual grip icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><Grip size={16} />Dynamic grip icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { GripIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-grip");
+  const controlled = document.querySelector<HTMLElement & GripIconHandle>("#controlled grave-grip")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>

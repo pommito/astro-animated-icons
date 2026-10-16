@@ -1,0 +1,32 @@
+---
+import { GripHorizontal } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>GripHorizontal browser test fixture</title></head>
+  <body>
+    <p><a href="#destination" id="primary"><GripHorizontal size={16} />GripHorizontal example</a></p>
+    <button type="button" id="secondary"><GripHorizontal size={24} />Other grip-horizontal icon</button>
+    <GripHorizontal id="standalone" label="GripHorizontal icon" />
+    <button type="button" id="controlled"><GripHorizontal controlled />Manual grip-horizontal icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><GripHorizontal size={16} />Dynamic grip-horizontal icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { GripHorizontalIconHandle } from "@grave/animated-icons/astro";
+
+  await customElements.whenDefined("grave-grip-horizontal");
+  const controlled = document.querySelector<HTMLElement & GripHorizontalIconHandle>("#controlled grave-grip-horizontal")!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>
