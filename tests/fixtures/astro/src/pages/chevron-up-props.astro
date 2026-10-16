@@ -1,0 +1,18 @@
+---
+import { ChevronUp } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <ChevronUp id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <ChevronUp id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <ChevronUp id="string-style" style="color: green" size={16} />
+    <ChevronUp id="class-list" class:list={["icon", { "extra-class": true }]} label="ChevronUp icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>

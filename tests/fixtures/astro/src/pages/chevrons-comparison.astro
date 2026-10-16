@@ -1,0 +1,42 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { chevrons } from "../../../../helpers/chevrons";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Chevron recipe comparisons</title></head>
+  <body>
+    <h1>Chevron recipe comparisons</h1>
+    <p>The reference uses native browser keyframes and an independent spring equation. It reproduces revision 4662fff2b60fdcf4751b32013606756caf7c4c26 without executing the upstream React components.</p>
+    <p>Single chevrons complete a 500 ms cycle. ChevronFirst completes a 600 ms cycle. Opposed chevrons hold their spring pose until stopped. Hover a sample or use the synchronized controls.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    {chevrons.map((icon) => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+          <tbody>{sizes.map((size) => <tr data-size={size} data-icon={icon.slug}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Component size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference data-icon={icon.slug}>
+              <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: middle">
+                {icon.frame === "circle" && <circle cx="12" cy="12" r="10" />}
+                {icon.frame === "square" && <rect height="18" rx="2" width="18" x="3" y="3" />}
+                {icon.paths.map((d) => <path d={d} />)}
+              </svg>
+              Reference {size} px
+            </button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../chevron-reference";
+</script>

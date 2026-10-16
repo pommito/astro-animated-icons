@@ -32,6 +32,10 @@ AudioLines uses Lucide geometry and adapts the pinned Lucide Animated AudioLines
 
 Home uses Lucide geometry and adapts Lucide Animated's Home recipe pinned to commit `4662fff2b60fdcf4751b32013606756caf7c4c26`. The outer house stays fixed while the door reveals over 600 ms, with opacity revealing over 200 ms. Entry and return use ease-out and the same durations. Native stroke dash lengths replace normalized path length. Home shares its path reveal mechanism with AttachFile and uses the existing Web Component lifecycle and Motion's vanilla browser API.
 
+The 17 chevron variants adapt Lucide Animated's drawings and recipes at commit `4662fff2b60fdcf4751b32013606756caf7c4c26`. ChevronDown, ChevronLeft, ChevronRight, ChevronUp, and their CircleChevron and SquareChevron variants move two SVG units and return over 500 ms, with the peak at 200 ms and ease-out per segment. Their surrounding circle or square stays fixed. Interrupted returns use a 500 ms ease-out tween from the current pose.
+
+ChevronFirst moves through x=-2, 1, -1, and 0 over 600 ms with offsets 0, 0.3, 0.7, and 1 and ease-in-out per segment. Its vertical bar stays fixed. Return uses a 300 ms ease-out tween. ChevronsDownUp, ChevronsLeftRight, ChevronsRightLeft, and ChevronsUpDown move their two paths by opposing two-unit translations with stiffness 250 and damping 25. They hold their final pose until stopped. Motion's spring generator supplies native keyframes in SVG units and preserves sampled velocity during interruption. All variants reuse the shared lifecycle and reduced-motion behavior.
+
 Sources:
 
 - [Lucide Animated Home, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/home.tsx)
@@ -54,6 +58,23 @@ Sources:
 - [Lucide Animated FileText, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-text.tsx)
 
 - [Lucide Animated AttachFile, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/attach-file.tsx)
+- [Lucide Animated ChevronDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevron-down.tsx)
+- [Lucide Animated ChevronFirst, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevron-first.tsx)
+- [Lucide Animated ChevronLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevron-left.tsx)
+- [Lucide Animated ChevronRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevron-right.tsx)
+- [Lucide Animated ChevronUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevron-up.tsx)
+- [Lucide Animated ChevronsDownUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevrons-down-up.tsx)
+- [Lucide Animated ChevronsLeftRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevrons-left-right.tsx)
+- [Lucide Animated ChevronsRightLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevrons-right-left.tsx)
+- [Lucide Animated ChevronsUpDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chevrons-up-down.tsx)
+- [Lucide Animated CircleChevronDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-chevron-down.tsx)
+- [Lucide Animated CircleChevronLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-chevron-left.tsx)
+- [Lucide Animated CircleChevronRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-chevron-right.tsx)
+- [Lucide Animated CircleChevronUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-chevron-up.tsx)
+- [Lucide Animated SquareChevronDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-down.tsx)
+- [Lucide Animated SquareChevronLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-left.tsx)
+- [Lucide Animated SquareChevronRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-right.tsx)
+- [Lucide Animated SquareChevronUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-up.tsx)
 - [Lucide Animated license](https://github.com/pqoqubbw/icons/blob/main/LICENSE)
 
 ## Lucide and Feather

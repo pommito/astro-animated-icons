@@ -1,0 +1,14 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+import { chevronDownPaths } from "./definition";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-chevron-down">
+  <g>{chevronDownPaths.map((d) => <path d={d} data-chevron />)}</g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

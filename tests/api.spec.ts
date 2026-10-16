@@ -1,6 +1,8 @@
+import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
+  ...chevrons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   { name: "Home", route: "/home-props/", label: "Home icon" },
   { name: "ArrowDown", route: "/arrow-down-props/", label: "Down arrow" },
   { name: "ArrowLeft", route: "/props/", label: "Back arrow" },
