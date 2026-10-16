@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
+  { name: "Home", route: "/home/", tag: "grave-home", animationCount: 2 },
   { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2 },
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2 },
   { name: "ArrowRight", route: "/arrow-right/", tag: "grave-arrow-right", animationCount: 2 },

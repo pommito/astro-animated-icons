@@ -1,0 +1,18 @@
+---
+import { Home } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <Home id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <Home id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <Home id="string-style" style="color: green" size={16} />
+    <Home id="class-list" class:list={["icon", { "extra-class": true }]} label="Home icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>
