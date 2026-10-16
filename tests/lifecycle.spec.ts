@@ -1,8 +1,10 @@
+import { gitIcons } from "./helpers/git-icons.js";
 import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
+  ...gitIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...chevrons.map(({ name, slug, tag, kind, axis }) => ({ name, route: `/${slug}/`, tag, animationCount: kind === "spring" ? 2 : 1, label: `${name} icon`, axis: axis === "X" ? "x" as const : "y" as const })),
   { name: "Home", route: "/home/", tag: "grave-home", animationCount: 2 },
   { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2 },

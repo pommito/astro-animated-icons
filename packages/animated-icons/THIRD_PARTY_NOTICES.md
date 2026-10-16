@@ -36,7 +36,33 @@ The 17 chevron variants adapt Lucide Animated's drawings and recipes at commit `
 
 ChevronFirst moves through x=-2, 1, -1, and 0 over 600 ms with offsets 0, 0.3, 0.7, and 1 and ease-in-out per segment. Its vertical bar stays fixed. Return uses a 300 ms ease-out tween. ChevronsDownUp, ChevronsLeftRight, ChevronsRightLeft, and ChevronsUpDown move their two paths by opposing two-unit translations with stiffness 250 and damping 25. They hold their final pose until stopped. Motion's spring generator supplies native keyframes in SVG units and preserves sampled velocity during interruption. All variants reuse the shared lifecycle and reduced-motion behavior.
 
+The 15 Git-related icons adapt Lucide Animated's drawings and recipes at commit `4662fff2b60fdcf4751b32013606756caf7c4c26`. They include FolderGit, FolderGit2, GitBranch, GitCommitHorizontal, GitCommitVertical, GitCompareArrows, GitCompare, GitFork, GitGraph, GitMerge, GitPullRequestClosed, GitPullRequestCreate, GitPullRequest, Github, and Gitlab. Native stroke dash lengths and offsets replace normalized path values. They reuse the shared lifecycle, rendering, CSS, and reduced-motion behavior.
+
+The branch, comparison, fork, graph, merge, and pull-request drawings reveal nodes and edges in 300 ms stages, with delays starting at 100 ms. Edges with a path offset draw from a negative full-length dash offset toward zero. Opacity uses Motion's default 300 ms cubic Bezier `(0.25, 0.1, 0.35, 1)`, independently of the path's ease-out transition. Return uses the default 300 ms curve without delay. GitCompareArrows retains its 400 ms opacity delay on returning arrowheads, as specified by its normal variant. GitPullRequestClosed finishes its final node at 1600 ms.
+
+GitCommitHorizontal, GitCommitVertical, and FolderGit reveal three shapes with 150 ms path delays and 100 ms opacity delays per stage. Both properties use the default 300 ms curve. FolderGit and FolderGit2 keep their folder outlines fixed. Gitlab reveals its outline over 700 ms after a 100 ms delay; opacity takes 300 ms. Its return uses the default 300 ms transition.
+
+Github reveals and scales its body from 0.9 to 1 over 400 ms. Its tail draws over 500 ms, then rotates through 0, -15, 15, -10, 10, -5, and 5 degrees in a repeating 2500 ms cycle, with ease-in-out per segment. Both paths use their bounding-box centers as transform origins. Stop returns from the current pose over 300 ms with ease-out. Cancellation prevents a queued draw completion from starting another loop.
+
+The Git comparison fixture uses independent native keyframes and normalized stroke lengths, without executing the upstream React components. Browser tests compare entry and interrupted returns at 14, 16, 24, and 28 px. Github's tail angles and loop cancellation are checked separately.
+
 Sources:
+
+- [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
+- [Lucide Animated FolderGit2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git-2.tsx)
+- [Lucide Animated GitBranch, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-branch.tsx)
+- [Lucide Animated GitCommitHorizontal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-commit-horizontal.tsx)
+- [Lucide Animated GitCommitVertical, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-commit-vertical.tsx)
+- [Lucide Animated GitCompareArrows, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-compare-arrows.tsx)
+- [Lucide Animated GitCompare, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-compare.tsx)
+- [Lucide Animated GitFork, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-fork.tsx)
+- [Lucide Animated GitGraph, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-graph.tsx)
+- [Lucide Animated GitMerge, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-merge.tsx)
+- [Lucide Animated GitPullRequestClosed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-pull-request-closed.tsx)
+- [Lucide Animated GitPullRequestCreate, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-pull-request-create.tsx)
+- [Lucide Animated GitPullRequest, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/git-pull-request.tsx)
+- [Lucide Animated Github, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/github.tsx)
+- [Lucide Animated Gitlab, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gitlab.tsx)
 
 - [Lucide Animated Home, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/home.tsx)
 

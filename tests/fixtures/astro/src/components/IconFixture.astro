@@ -1,8 +1,8 @@
 ---
-import type { ChevronDown } from "@grave/animated-icons/astro";
+import type { ArrowLeft } from "@grave/animated-icons/astro";
 
 interface Props {
-  Icon: typeof ChevronDown;
+  Icon: typeof ArrowLeft;
   name: string;
   tag: string;
 }
@@ -27,11 +27,11 @@ const { Icon, name, tag } = Astro.props;
 </html>
 
 <script>
-  import type { ChevronDownIconHandle } from "@grave/animated-icons/astro";
+  import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
 
   const tag = document.body.dataset.iconTag!;
   await customElements.whenDefined(tag);
-  const controlled = document.querySelector<HTMLElement & ChevronDownIconHandle>(`#controlled ${tag}`)!;
+  const controlled = document.querySelector<HTMLElement & ArrowLeftIconHandle>(`#controlled ${tag}`)!;
   document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
   document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
   const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;

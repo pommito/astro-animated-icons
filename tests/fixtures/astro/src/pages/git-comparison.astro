@@ -1,0 +1,53 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { gitIcons } from "../../../../helpers/git-icons";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>Git recipe comparisons</title></head>
+  <body>
+    <h1>Git recipe comparisons</h1>
+    <p>Hover a sample or use the synchronized controls. The reference uses native browser keyframes and normalized stroke lengths. It reproduces revision 4662fff2b60fdcf4751b32013606756caf7c4c26 without executing the upstream React components.</p>
+    <p>The nodes and edges redraw with their original delays. Folder outlines stay fixed. Github draws its tail for 500 ms, then wags until stopped.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    {gitIcons.map((icon) => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+          <tbody>{sizes.map((size) => <tr data-size={size} data-icon={icon.slug}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Component size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference data-icon={icon.slug}>
+              <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                {icon.drawing.map((shape) => {
+                  const Shape = shape.tag;
+                  return <Shape {...shape.attrs} pathLength="1" style={icon.slug === "github" ? "transform-box: fill-box; transform-origin: center" : undefined} />;
+                })}
+              </svg>
+              Reference {size} px
+            </button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../git-reference";
+</script>
+
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; }
+  section { margin-block-start: 2rem; }
+  table { border-spacing: 0.5rem; font-variant-numeric: tabular-nums; }
+  button { min-block-size: 2.75rem; }
+  button:active { background-color: oklch(0.9 0 none); }
+  button:focus-visible { outline: 2px solid currentColor; outline-offset: 0.2rem; }
+  svg { vertical-align: middle; }
+</style>
