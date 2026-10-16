@@ -1,0 +1,91 @@
+---
+import { Home } from "@grave/animated-icons/astro";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home recipe comparison</title>
+  </head>
+  <body>
+    <h1>Home recipe comparison</h1>
+    <p>Hover a sample, or play both columns together. The outline stays fixed while the door redraws over 600 ms and fades in over 200 ms.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <p>The reference uses native browser keyframes and a normalized path length. It reproduces the pinned recipe without running the upstream React component. Both entry and return use ease-out.</p>
+    <table>
+      <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+      <tbody>
+        {sizes.map((size) => (
+          <tr data-size={size}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Home size={size} />Astro {size} px</button></td>
+            <td>
+              <button type="button" data-reference>
+                <span data-grave-icon><svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" pathLength="1" />
+                </svg></span>
+                Reference {size} px
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p><a href="https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/home.tsx">Upstream Home recipe</a></p>
+    <p><a href="https://lucide-animated.com/icons/home">Live Home reference</a></p>
+    <p><a href="/home/">Lifecycle and manual controls</a></p>
+  </body>
+</html>
+
+<script>
+  const references = new Map<Element, Animation[]>();
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function resetReference(control: Element) {
+    references.get(control)?.forEach((animation) => animation.cancel());
+    references.delete(control);
+  }
+
+  function playReference(control: Element, returning = false) {
+    if (returning && !references.has(control)) return;
+    const path = control.querySelector("path:last-child")!;
+    const style = getComputedStyle(path);
+    const origin = { opacity: style.opacity, dash: style.strokeDasharray };
+    resetReference(control);
+    if (reducedMotion.matches) return;
+    const options = { duration: 600, easing: "ease-out", fill: "both" as const };
+    const animations = [
+      path.animate({ opacity: [returning ? Number(origin.opacity) : 0, 1] }, { ...options, duration: 200 }),
+      path.animate({ strokeDasharray: [returning ? origin.dash : "0 1", "1 1"] }, options),
+    ];
+    references.set(control, animations);
+    if (returning) {
+      void Promise.all(animations.map((animation) => animation.finished)).then(() => {
+        if (references.get(control) === animations) resetReference(control);
+      }).catch(() => {});
+    }
+  }
+
+  for (const control of document.querySelectorAll("[data-reference]")) {
+    control.addEventListener("pointerenter", (event) => {
+      if ((event as PointerEvent).pointerType !== "touch") playReference(control);
+    });
+    control.addEventListener("pointerleave", () => playReference(control, true));
+  }
+  document.querySelector("#play")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-home").forEach((icon) => icon.startAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control));
+  });
+  document.querySelector("#stop")!.addEventListener("click", () => {
+    document.querySelectorAll("grave-home").forEach((icon) => icon.stopAnimation());
+    document.querySelectorAll("[data-reference]").forEach((control) => playReference(control, true));
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) document.querySelectorAll("[data-reference]").forEach(resetReference);
+  });
+  window.addEventListener("pagehide", () => document.querySelectorAll("[data-reference]").forEach(resetReference));
+</script>

@@ -63,6 +63,7 @@ const singleRoutes = {
   "arrow-up-right": "arrow-up-right-single",
   "attach-file": "attach-file-single",
   "audio-lines": "audio-lines-single",
+  home: "home-single",
 };
 
 const combinations = [
@@ -80,6 +81,7 @@ const combinations = [
   ["arrow-attach-file", "arrow-left", "attach-file"],
   ["arrow-audio-lines", "arrow-left", "audio-lines"],
   ["arrow-file-text", "arrow-left", "file-text"],
+  ["arrow-home", "arrow-left", "home"],
 ];
 
 export function verifyBundles(output, log = console.log) {
