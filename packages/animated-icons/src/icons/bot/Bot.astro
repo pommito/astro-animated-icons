@@ -1,42 +1,19 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import "../../icon.css";
+import Icon, { type IconProps } from "../../Icon.astro";
 
-interface Props extends Omit<HTMLAttributes<"div">, "children"> {
-  size?: number;
-  label?: string;
-  controlled?: boolean;
-}
-
-const { size = 28, label, controlled = false, ...attributes } = Astro.props;
+type Props = IconProps;
 ---
 
-<grave-bot {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden={label ? undefined : "true"}
-    aria-label={label}
-    role={label ? "img" : undefined}
-    focusable="false"
-  >
-    <g>
-      <path d="M12 8V4H8" />
-      <rect height="12" rx="2" width="16" x="4" y="8" />
-      <path d="M2 14h2" />
-      <path d="M20 14h2" />
-      <line x1="15" x2="15" y1="13" y2="15" />
-      <line x1="9" x2="9" y1="13" y2="15" />
-    </g>
-  </svg>
-</grave-bot>
+<Icon {...Astro.props} tag="grave-bot">
+  <g>
+    <path d="M12 8V4H8" />
+    <rect height="12" rx="2" width="16" x="4" y="8" />
+    <path d="M2 14h2" />
+    <path d="M20 14h2" />
+    <line x1="15" x2="15" y1="13" y2="15" />
+    <line x1="9" x2="9" y1="13" y2="15" />
+  </g>
+</Icon>
 
 <script>
   import "./element";

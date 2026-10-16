@@ -1,3 +1,4 @@
+import type { IconRecipe, IconTrack } from "../../element";
 import { spring } from "motion";
 import { animate } from "motion/mini";
 
@@ -17,11 +18,9 @@ export function clearFileText(drawing: SVGGElement) {
   drawing.querySelectorAll("path").forEach((path) => path.style.removeProperty("stroke-dasharray"));
 }
 
-export function animateFileText(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void) {
+export function animateFileText(drawing: SVGGElement, returning: boolean, track: IconTrack) {
   const svg = drawing.ownerSVGElement!;
   const origin = new DOMMatrix(getComputedStyle(svg).transform).a;
-  let remaining = 4;
-  const complete = () => onComplete(--remaining === 0 && returning);
   let frames: (string | null)[] = [null, "scale(1.05)"];
   let duration = 0.3;
 
@@ -40,9 +39,9 @@ export function animateFileText(drawing: SVGGElement, returning: boolean, onComp
     duration = time / 1000;
   }
 
-  const zoom = animate(svg, { transform: frames }, { duration, ease: returning ? "linear" : "easeOut", onComplete: complete });
-  return [
-    {
+  track((onComplete) => {
+    const zoom = animate(svg, { transform: frames }, { duration, ease: returning ? "linear" : "easeOut", onComplete });
+    return {
       stop() {
         const time = zoom.time;
         if (time > 0) {
@@ -55,17 +54,23 @@ export function animateFileText(drawing: SVGGElement, returning: boolean, onComp
         zoom.stop();
       },
       cancel() { zoom.cancel(); },
-    },
-    ...[...drawing.querySelectorAll("path")].slice(2).map((path, index) => {
-      const length = path.getTotalLength();
-      const full = `${length}px ${length}px`;
-      path.style.strokeDasharray ||= full;
-      return animate(path, { strokeDasharray: returning ? full : [full, `0px ${length}px`, full] }, {
-        duration: returning ? 0.3 : 0.7,
-        delay: returning ? 0 : 0.3 + index * 0.2,
-        ease: returning ? [0.25, 0.1, 0.35, 1] : ["easeOut", "easeOut"],
-        onComplete: complete,
-      });
-    }),
-  ];
+    };
+  });
+  [...drawing.querySelectorAll("path")].slice(2).forEach((path, index) => {
+    const length = path.getTotalLength();
+    const full = `${length}px ${length}px`;
+    path.style.strokeDasharray ||= full;
+    return track((onComplete) => animate(path, { strokeDasharray: returning ? full : [full, `0px ${length}px`, full] }, {
+      duration: returning ? 0.3 : 0.7,
+      delay: returning ? 0 : 0.3 + index * 0.2,
+      ease: returning ? [0.25, 0.1, 0.35, 1] : ["easeOut", "easeOut"],
+      onComplete,
+    }));
+  });
 }
+
+export const fileTextRecipe = {
+  finish: "hold",
+  animate: animateFileText,
+  clear: clearFileText,
+} satisfies IconRecipe;

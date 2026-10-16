@@ -1,10 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateFileText, clearFileText } from "./definition";
+import { fileTextRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type FileTextIconHandle = IconHandle;
 
-const FileTextElement = createIconElement({ animate: animateFileText, clear: clearFileText });
+const FileTextElement = createIconElement(fileTextRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

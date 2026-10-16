@@ -1,18 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateAttachFile } from "./definition";
+import { attachFileRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type AttachFileIconHandle = IconHandle;
 
-const AttachFileElement = createIconElement({
-  animate: animateAttachFile,
-  clear(drawing) {
-    const path = drawing.querySelector("path")!;
-    for (const property of ["opacity", "stroke-dasharray"]) {
-      path.style.removeProperty(property);
-    }
-  },
-});
+const AttachFileElement = createIconElement(attachFileRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

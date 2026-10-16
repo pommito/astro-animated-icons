@@ -1,39 +1,16 @@
 ---
+import Icon, { type IconProps } from "../../Icon.astro";
 import { copyPath } from "./definition";
-import type { HTMLAttributes } from "astro/types";
-import "../../icon.css";
 
-interface Props extends Omit<HTMLAttributes<"div">, "children"> {
-  size?: number;
-  label?: string;
-  controlled?: boolean;
-}
-
-const { size = 28, label, controlled = false, ...attributes } = Astro.props;
+type Props = IconProps;
 ---
 
-<grave-copy {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden={label ? undefined : "true"}
-    aria-label={label}
-    role={label ? "img" : undefined}
-    focusable="false"
-  >
-    <g>
-      <rect x="8" y="8" width="14" height="14" rx="2" ry="2" />
-      <path d={copyPath} />
-    </g>
-  </svg>
-</grave-copy>
+<Icon {...Astro.props} tag="grave-copy">
+  <g>
+    <rect x="8" y="8" width="14" height="14" rx="2" ry="2" />
+    <path d={copyPath} />
+  </g>
+</Icon>
 
 <script>
   import "./element";

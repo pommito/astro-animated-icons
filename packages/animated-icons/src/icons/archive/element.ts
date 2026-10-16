@@ -1,13 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateArchive, clearArchive } from "./definition";
+import { archiveRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type ArchiveIconHandle = IconHandle;
 
-const ArchiveElement = createIconElement({
-  animate: animateArchive,
-  clear: clearArchive,
-});
+const ArchiveElement = createIconElement(archiveRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

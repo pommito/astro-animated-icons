@@ -1,39 +1,16 @@
 ---
+import Icon, { type IconProps } from "../../Icon.astro";
 import { mapPinPath } from "./definition";
-import type { HTMLAttributes } from "astro/types";
-import "../../icon.css";
 
-interface Props extends Omit<HTMLAttributes<"div">, "children"> {
-  size?: number;
-  label?: string;
-  controlled?: boolean;
-}
-
-const { size = 28, label, controlled = false, ...attributes } = Astro.props;
+type Props = IconProps;
 ---
 
-<grave-map-pin {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden={label ? undefined : "true"}
-    aria-label={label}
-    role={label ? "img" : undefined}
-    focusable="false"
-  >
-    <g>
-      <path d={mapPinPath} />
-      <circle cx="12" cy="10" r="3" />
-    </g>
-  </svg>
-</grave-map-pin>
+<Icon {...Astro.props} tag="grave-map-pin">
+  <g>
+    <path d={mapPinPath} />
+    <circle cx="12" cy="10" r="3" />
+  </g>
+</Icon>
 
 <script>
   import "./element";

@@ -1,19 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateMapPin } from "./definition";
+import { mapPinRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type MapPinIconHandle = IconHandle;
 
-const MapPinElement = createIconElement({
-  animate: animateMapPin,
-  clear(drawing) {
-    drawing.ownerSVGElement!.style.removeProperty("transform");
-    const circle = drawing.querySelector("circle")!;
-    circle.style.removeProperty("opacity");
-    circle.style.removeProperty("stroke-dasharray");
-    circle.style.removeProperty("stroke-dashoffset");
-  },
-});
+const MapPinElement = createIconElement(mapPinRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

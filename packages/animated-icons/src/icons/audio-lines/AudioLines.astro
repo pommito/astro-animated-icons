@@ -1,46 +1,23 @@
 ---
+import Icon, { type IconProps } from "../../Icon.astro";
 import { audioLines } from "./definition";
-import type { HTMLAttributes } from "astro/types";
-import "../../icon.css";
 
-interface Props extends Omit<HTMLAttributes<"div">, "children"> {
-  size?: number;
-  label?: string;
-  controlled?: boolean;
-}
-
-const { size = 28, label, controlled = false, ...attributes } = Astro.props;
+type Props = IconProps;
 ---
 
-<grave-audio-lines {...attributes} data-grave-icon data-controlled={controlled ? "" : undefined}>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden={label ? undefined : "true"}
-    aria-label={label}
-    role={label ? "img" : undefined}
-    focusable="false"
-  >
-    <g>
-      <path d="M2 10v3" />
-      {audioLines.map(({ x, top, length, normalTop, normalLength }) => (
-        <path
-          data-audio-line
-          d={`M${x} ${top}v${length}`}
-          style={normalLength === length ? undefined : `stroke-dasharray: ${normalLength}px ${length}px; stroke-dashoffset: ${top - normalTop}px`}
-        />
-      ))}
-      <path d="M22 10v3" />
-    </g>
-  </svg>
-</grave-audio-lines>
+<Icon {...Astro.props} tag="grave-audio-lines">
+  <g>
+    <path d="M2 10v3" />
+    {audioLines.map(({ x, top, length, normalTop, normalLength }) => (
+      <path
+        data-audio-line
+        d={`M${x} ${top}v${length}`}
+        style={normalLength === length ? undefined : `stroke-dasharray: ${normalLength}px ${length}px; stroke-dashoffset: ${top - normalTop}px`}
+      />
+    ))}
+    <path d="M22 10v3" />
+  </g>
+</Icon>
 
 <script>
   import "./element";
