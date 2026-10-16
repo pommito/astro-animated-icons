@@ -1,9 +1,11 @@
+import { grips } from "./helpers/grips.js";
 import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
   ...chevrons.map(({ name, slug, tag, kind, axis }) => ({ name, route: `/${slug}/`, tag, animationCount: kind === "spring" ? 2 : 1, label: `${name} icon`, axis: axis === "X" ? "x" as const : "y" as const })),
+  ...grips.map(({ name, slug, tag, pulse, circles }) => ({ name, route: `/${slug}/`, tag, animationCount: circles.length * (pulse ? 2 : 1), label: `${name} icon`, axis: "x" as const })),
   { name: "Home", route: "/home/", tag: "grave-home", animationCount: 2 },
   { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2 },
   { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2 },

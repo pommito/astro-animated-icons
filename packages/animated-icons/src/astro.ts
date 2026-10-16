@@ -67,3 +67,12 @@ export { default as SquareChevronRight } from "./icons/square-chevron-right/Squa
 export type { SquareChevronRightIconHandle } from "./icons/square-chevron-right/element";
 export { default as SquareChevronUp } from "./icons/square-chevron-up/SquareChevronUp.astro";
 export type { SquareChevronUpIconHandle } from "./icons/square-chevron-up/element";
+
+export { default as Grip } from "./icons/grip/Grip.astro";
+export type { GripIconHandle } from "./icons/grip/element";
+
+export { default as GripHorizontal } from "./icons/grip-horizontal/GripHorizontal.astro";
+export type { GripHorizontalIconHandle } from "./icons/grip-horizontal/element";
+
+export { default as GripVertical } from "./icons/grip-vertical/GripVertical.astro";
+export type { GripVerticalIconHandle } from "./icons/grip-vertical/element";

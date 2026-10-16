@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-grip-horizontal">
+  <g>
+    <circle cx="5" cy="9" r="1" style="transform-origin: 5px 9px" />
+    <circle cx="12" cy="9" r="1" style="transform-origin: 12px 9px" />
+    <circle cx="19" cy="9" r="1" style="transform-origin: 19px 9px" />
+    <circle cx="5" cy="15" r="1" style="transform-origin: 5px 15px" />
+    <circle cx="12" cy="15" r="1" style="transform-origin: 12px 15px" />
+    <circle cx="19" cy="15" r="1" style="transform-origin: 19px 15px" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
