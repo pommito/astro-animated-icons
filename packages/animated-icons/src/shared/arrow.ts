@@ -5,19 +5,19 @@ type TrackOptions = NonNullable<Parameters<typeof animate>[2]>;
 
 interface ArrowMotion {
   axis: "X" | "Y";
-  headTravel?: number;
   headAnimation?(head: SVGPathElement, returning: boolean, onComplete: () => void): IconAnimation;
   playback?: TrackOptions;
   headReturn?: TrackOptions;
   shaftReturn?: TrackOptions;
 }
 
+const headTravel = 3;
 const shaftRetraction = 5;
 const playbackDuration = 0.4;
 const returnDuration = 0.12;
 
 export function animateArrow(drawing: SVGGElement, returning: boolean, track: IconTrack, motion: ArrowMotion) {
-  const { axis, headTravel = 3 } = motion;
+  const { axis } = motion;
   const [head, shaft] = drawing.querySelectorAll("path");
   const shaftLength = shaft.getTotalLength();
   const fullShaft = `${shaftLength}px ${shaftLength}px`;
