@@ -172,3 +172,15 @@ export type { FolderXIconHandle } from "./icons/folder-x/element";
 
 export { default as Folders } from "./icons/folders/Folders.astro";
 export type { FoldersIconHandle } from "./icons/folders/element";
+
+export { default as Sun } from "./icons/sun/Sun.astro";
+export type { SunIconHandle } from "./icons/sun/element";
+
+export { default as Moon } from "./icons/moon/Moon.astro";
+export type { MoonIconHandle } from "./icons/moon/element";
+
+export { default as Monitor } from "./icons/monitor/Monitor.astro";
+export type { MonitorIconHandle } from "./icons/monitor/element";
+
+export { default as Linkedin } from "./icons/linkedin/Linkedin.astro";
+export type { LinkedinIconHandle } from "./icons/linkedin/element";
