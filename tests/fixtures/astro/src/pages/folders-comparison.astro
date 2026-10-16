@@ -1,0 +1,38 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { folders } from "../../../../helpers/folders";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Folder recipe comparisons</title></head>
+  <body>
+    <h1>Folder recipe comparisons</h1>
+    <p>The reference runs the original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Only their class utility import points to a local equivalent. React is confined to this comparison page.</p>
+    <p>Hover a row or use its Replay button to animate both versions together. Play all starts every sample. Stop all returns them to rest. Seek pauses both versions at the selected time in the current playback.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <label>Playback time in milliseconds <input id="time" type="number" value="200" min="0" max="3000" step="50" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+    {folders.map(icon => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <tbody>{sizes.map(size => <tr data-icon={icon.slug} data-size={size}>
+            <th scope="row">{size} px</th>
+            <td data-adapter><Component size={size} controlled /></td>
+            <td><div data-reference data-name={icon.name} data-size={size}></div></td>
+            <td><button type="button" data-replay aria-label={`Replay ${icon.name} at ${size} pixels`}>Replay</button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../folder-reference";
+</script>

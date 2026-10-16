@@ -1,10 +1,12 @@
+import { folders } from "./helpers/folders.js";
 import { gitIcons } from "./helpers/git-icons.js";
 import { grips } from "./helpers/grips.js";
 import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
-  ...gitIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
+  ...folders.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
+  ...gitIcons.filter(({ slug }) => !slug.startsWith("folder-")).map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...chevrons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...grips.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   { name: "Home", route: "/home-props/", label: "Home icon" },

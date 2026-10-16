@@ -9,9 +9,9 @@ export const gitIcons = [
       {"tag": "path", "attrs": {"d": "M7 13h3"}},
     ],
     steps: [
-      {"child": 2, "delay": 0.15, "mode": "default", "opacityDelay": 0.1},
-      {"child": 3, "delay": 0.3, "mode": "default", "opacityDelay": 0.2},
-      {"child": 4, "delay": 0, "mode": "default", "opacityDelay": 0},
+      {"child": 2, "delay": 0.15, "mode": "draw", "opacityDelay": 0.1},
+      {"child": 3, "delay": 0.3, "mode": "draw", "opacityDelay": 0.2},
+      {"child": 4, "delay": 0, "mode": "draw", "opacityDelay": 0},
     ],
   },
   {

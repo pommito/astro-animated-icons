@@ -106,3 +106,69 @@ export type { GripHorizontalIconHandle } from "./icons/grip-horizontal/element";
 
 export { default as GripVertical } from "./icons/grip-vertical/GripVertical.astro";
 export type { GripVerticalIconHandle } from "./icons/grip-vertical/element";
+
+export { default as FolderArchive } from "./icons/folder-archive/FolderArchive.astro";
+export type { FolderArchiveIconHandle } from "./icons/folder-archive/element";
+
+export { default as FolderCheck } from "./icons/folder-check/FolderCheck.astro";
+export type { FolderCheckIconHandle } from "./icons/folder-check/element";
+
+export { default as FolderClock } from "./icons/folder-clock/FolderClock.astro";
+export type { FolderClockIconHandle } from "./icons/folder-clock/element";
+
+export { default as FolderCode } from "./icons/folder-code/FolderCode.astro";
+export type { FolderCodeIconHandle } from "./icons/folder-code/element";
+
+export { default as FolderCog } from "./icons/folder-cog/FolderCog.astro";
+export type { FolderCogIconHandle } from "./icons/folder-cog/element";
+
+export { default as FolderDot } from "./icons/folder-dot/FolderDot.astro";
+export type { FolderDotIconHandle } from "./icons/folder-dot/element";
+
+export { default as FolderDown } from "./icons/folder-down/FolderDown.astro";
+export type { FolderDownIconHandle } from "./icons/folder-down/element";
+
+export { default as FolderHeart } from "./icons/folder-heart/FolderHeart.astro";
+export type { FolderHeartIconHandle } from "./icons/folder-heart/element";
+
+export { default as FolderInput } from "./icons/folder-input/FolderInput.astro";
+export type { FolderInputIconHandle } from "./icons/folder-input/element";
+
+export { default as FolderKanban } from "./icons/folder-kanban/FolderKanban.astro";
+export type { FolderKanbanIconHandle } from "./icons/folder-kanban/element";
+
+export { default as FolderKey } from "./icons/folder-key/FolderKey.astro";
+export type { FolderKeyIconHandle } from "./icons/folder-key/element";
+
+export { default as FolderLock } from "./icons/folder-lock/FolderLock.astro";
+export type { FolderLockIconHandle } from "./icons/folder-lock/element";
+
+export { default as FolderMinus } from "./icons/folder-minus/FolderMinus.astro";
+export type { FolderMinusIconHandle } from "./icons/folder-minus/element";
+
+export { default as FolderOpen } from "./icons/folder-open/FolderOpen.astro";
+export type { FolderOpenIconHandle } from "./icons/folder-open/element";
+
+export { default as FolderOutput } from "./icons/folder-output/FolderOutput.astro";
+export type { FolderOutputIconHandle } from "./icons/folder-output/element";
+
+export { default as FolderPlus } from "./icons/folder-plus/FolderPlus.astro";
+export type { FolderPlusIconHandle } from "./icons/folder-plus/element";
+
+export { default as FolderRoot } from "./icons/folder-root/FolderRoot.astro";
+export type { FolderRootIconHandle } from "./icons/folder-root/element";
+
+export { default as FolderSync } from "./icons/folder-sync/FolderSync.astro";
+export type { FolderSyncIconHandle } from "./icons/folder-sync/element";
+
+export { default as FolderTree } from "./icons/folder-tree/FolderTree.astro";
+export type { FolderTreeIconHandle } from "./icons/folder-tree/element";
+
+export { default as FolderUp } from "./icons/folder-up/FolderUp.astro";
+export type { FolderUpIconHandle } from "./icons/folder-up/element";
+
+export { default as FolderX } from "./icons/folder-x/FolderX.astro";
+export type { FolderXIconHandle } from "./icons/folder-x/element";
+
+export { default as Folders } from "./icons/folders/Folders.astro";
+export type { FoldersIconHandle } from "./icons/folders/element";
