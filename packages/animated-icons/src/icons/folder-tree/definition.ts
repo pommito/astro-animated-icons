@@ -25,7 +25,7 @@ function animateFolderTree(drawing: SVGGElement, returning: boolean, track: Icon
     opacityDuration: 0.3,
     opacityDelay: 0.45,
     opacityEase: [0.25, 0.1, 0.35, 1],
-    pathOffset: true,
+    reverseOffset: true,
   });
   animatePathReveal(drawing.querySelector<SVGGeometryElement>('[data-motion="3"]')!, returning, track, {
     ease: "easeOut",
@@ -34,7 +34,7 @@ function animateFolderTree(drawing: SVGGElement, returning: boolean, track: Icon
     opacityDuration: 0.3,
     opacityDelay: 1.15,
     opacityEase: [0.25, 0.1, 0.35, 1],
-    pathOffset: true,
+    reverseOffset: true,
   });
 }
 

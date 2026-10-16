@@ -16,7 +16,7 @@ for (const icon of folders) {
         await expect.poll(() => element.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
         const poses = await element.evaluate((element: HTMLElement & IconHandle) => {
           const pose = () =>
-            [...element.querySelectorAll("[data-motion]")].flatMap((shape) => {
+            [...element.querySelectorAll("svg *")].flatMap((shape) => {
               const matrix = new DOMMatrix(getComputedStyle(shape).transform);
               return [matrix.a, matrix.b, matrix.c, matrix.d, matrix.e, matrix.f];
             });
@@ -87,7 +87,7 @@ for (const icon of folders) {
       await expect
         .poll(() =>
           element.evaluate((element) =>
-            [...element.querySelectorAll("[data-motion]")].every(
+            [...element.querySelectorAll("svg *")].every(
               (shape) =>
                 !(shape as SVGElement).style.transform &&
                 !(shape as SVGElement).style.opacity &&

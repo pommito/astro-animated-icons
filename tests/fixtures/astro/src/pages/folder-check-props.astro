@@ -1,18 +1,6 @@
 ---
 import { FolderCheck } from "@grave/animated-icons/astro";
+import IconPropsFixture from "../components/IconPropsFixture.astro";
 ---
 
-<html lang="en">
-  <head><title>Icon props fixture</title></head>
-  <body>
-    <FolderCheck id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
-    <FolderCheck id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
-    <FolderCheck id="string-style" style="color: green" size={16} />
-    <FolderCheck id="class-list" class:list={["icon", { "extra-class": true }]} label="FolderCheck icon" />
-    <p class="icon">Scoped style control</p>
-  </body>
-</html>
-
-<style>
-  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
-</style>
+<IconPropsFixture Icon={FolderCheck} name="FolderCheck" />

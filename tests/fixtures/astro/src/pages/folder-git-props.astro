@@ -1,18 +1,6 @@
 ---
 import { FolderGit } from "@grave/animated-icons/astro";
+import IconPropsFixture from "../components/IconPropsFixture.astro";
 ---
 
-<html lang="en">
-  <head><title>Icon props fixture</title></head>
-  <body>
-    <FolderGit id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
-    <FolderGit id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
-    <FolderGit id="string-style" style="color: green" size={16} />
-    <FolderGit id="class-list" class:list={["icon", { "extra-class": true }]} label="FolderGit icon" />
-    <p class="icon">Scoped style control</p>
-  </body>
-</html>
-
-<style>
-  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
-</style>
+<IconPropsFixture Icon={FolderGit} name="FolderGit" />

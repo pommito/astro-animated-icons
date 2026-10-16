@@ -1,6 +1,4 @@
 export { default as ArrowLeft } from "./icons/arrow-left/ArrowLeft.astro";
-export { default as FolderCheck } from "./icons/folder-check/FolderCheck.astro";
-export type { FolderCheckIconHandle } from "./icons/folder-check/element";
 export type { ArrowLeftIconHandle } from "./icons/arrow-left/element";
 export { default as Home } from "./icons/home/Home.astro";
 export type { HomeIconHandle } from "./icons/home/element";
@@ -70,6 +68,36 @@ export type { SquareChevronRightIconHandle } from "./icons/square-chevron-right/
 export { default as SquareChevronUp } from "./icons/square-chevron-up/SquareChevronUp.astro";
 export type { SquareChevronUpIconHandle } from "./icons/square-chevron-up/element";
 
+export { default as GitBranch } from "./icons/git-branch/GitBranch.astro";
+export type { GitBranchIconHandle } from "./icons/git-branch/element";
+export { default as FolderGit } from "./icons/folder-git/FolderGit.astro";
+export type { FolderGitIconHandle } from "./icons/folder-git/element";
+export { default as FolderGit2 } from "./icons/folder-git-2/FolderGit2.astro";
+export type { FolderGit2IconHandle } from "./icons/folder-git-2/element";
+export { default as GitCommitHorizontal } from "./icons/git-commit-horizontal/GitCommitHorizontal.astro";
+export type { GitCommitHorizontalIconHandle } from "./icons/git-commit-horizontal/element";
+export { default as GitCommitVertical } from "./icons/git-commit-vertical/GitCommitVertical.astro";
+export type { GitCommitVerticalIconHandle } from "./icons/git-commit-vertical/element";
+export { default as GitCompareArrows } from "./icons/git-compare-arrows/GitCompareArrows.astro";
+export type { GitCompareArrowsIconHandle } from "./icons/git-compare-arrows/element";
+export { default as GitCompare } from "./icons/git-compare/GitCompare.astro";
+export type { GitCompareIconHandle } from "./icons/git-compare/element";
+export { default as GitFork } from "./icons/git-fork/GitFork.astro";
+export type { GitForkIconHandle } from "./icons/git-fork/element";
+export { default as GitGraph } from "./icons/git-graph/GitGraph.astro";
+export type { GitGraphIconHandle } from "./icons/git-graph/element";
+export { default as GitMerge } from "./icons/git-merge/GitMerge.astro";
+export type { GitMergeIconHandle } from "./icons/git-merge/element";
+export { default as GitPullRequestClosed } from "./icons/git-pull-request-closed/GitPullRequestClosed.astro";
+export type { GitPullRequestClosedIconHandle } from "./icons/git-pull-request-closed/element";
+export { default as GitPullRequestCreate } from "./icons/git-pull-request-create/GitPullRequestCreate.astro";
+export type { GitPullRequestCreateIconHandle } from "./icons/git-pull-request-create/element";
+export { default as GitPullRequest } from "./icons/git-pull-request/GitPullRequest.astro";
+export type { GitPullRequestIconHandle } from "./icons/git-pull-request/element";
+export { default as Gitlab } from "./icons/gitlab/Gitlab.astro";
+export type { GitlabIconHandle } from "./icons/gitlab/element";
+export { default as Github } from "./icons/github/Github.astro";
+export type { GithubIconHandle } from "./icons/github/element";
 export { default as Grip } from "./icons/grip/Grip.astro";
 export type { GripIconHandle } from "./icons/grip/element";
 
@@ -79,14 +107,11 @@ export type { GripHorizontalIconHandle } from "./icons/grip-horizontal/element";
 export { default as GripVertical } from "./icons/grip-vertical/GripVertical.astro";
 export type { GripVerticalIconHandle } from "./icons/grip-vertical/element";
 
-export { default as Folders } from "./icons/folders/Folders.astro";
-export type { FoldersIconHandle } from "./icons/folders/element";
-
-export { default as FolderGit2 } from "./icons/folder-git-2/FolderGit2.astro";
-export type { FolderGit2IconHandle } from "./icons/folder-git-2/element";
-
 export { default as FolderArchive } from "./icons/folder-archive/FolderArchive.astro";
 export type { FolderArchiveIconHandle } from "./icons/folder-archive/element";
+
+export { default as FolderCheck } from "./icons/folder-check/FolderCheck.astro";
+export type { FolderCheckIconHandle } from "./icons/folder-check/element";
 
 export { default as FolderClock } from "./icons/folder-clock/FolderClock.astro";
 export type { FolderClockIconHandle } from "./icons/folder-clock/element";
@@ -102,9 +127,6 @@ export type { FolderDotIconHandle } from "./icons/folder-dot/element";
 
 export { default as FolderDown } from "./icons/folder-down/FolderDown.astro";
 export type { FolderDownIconHandle } from "./icons/folder-down/element";
-
-export { default as FolderGit } from "./icons/folder-git/FolderGit.astro";
-export type { FolderGitIconHandle } from "./icons/folder-git/element";
 
 export { default as FolderHeart } from "./icons/folder-heart/FolderHeart.astro";
 export type { FolderHeartIconHandle } from "./icons/folder-heart/element";
@@ -147,3 +169,6 @@ export type { FolderUpIconHandle } from "./icons/folder-up/element";
 
 export { default as FolderX } from "./icons/folder-x/FolderX.astro";
 export type { FolderXIconHandle } from "./icons/folder-x/element";
+
+export { default as Folders } from "./icons/folders/Folders.astro";
+export type { FoldersIconHandle } from "./icons/folders/element";
