@@ -1,17 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateCopy } from "./definition";
+import { copyRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type CopyIconHandle = IconHandle;
 
-const CopyElement = createIconElement({
-  animate: animateCopy,
-  clear(drawing) {
-    drawing.querySelectorAll("rect, path").forEach((part) => {
-      (part as SVGElement).style.removeProperty("transform");
-    });
-  },
-});
+const CopyElement = createIconElement(copyRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

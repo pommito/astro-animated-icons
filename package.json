@@ -8,6 +8,7 @@
     "check": "pnpm --filter @grave/animated-icons check && pnpm --filter @grave/animated-icons-test-fixture check && tsc --noEmit",
     "test:build": "pnpm --filter @grave/animated-icons-test-fixture build",
     "inspect:bundle": "node scripts/inspect-bundle.mjs",
+    "test:bundle": "node --test scripts/inspect-bundle.test.mjs",
     "test": "playwright test"
   },
   "devDependencies": {

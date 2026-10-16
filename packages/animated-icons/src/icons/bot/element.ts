@@ -1,18 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateBot } from "./definition";
+import { botRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type BotIconHandle = IconHandle;
 
-const BotElement = createIconElement({
-  animate: animateBot,
-  clear(drawing) {
-    for (const eye of drawing.querySelectorAll("line")) {
-      eye.style.removeProperty("stroke-dasharray");
-      eye.style.removeProperty("stroke-dashoffset");
-    }
-  },
-});
+const BotElement = createIconElement(botRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

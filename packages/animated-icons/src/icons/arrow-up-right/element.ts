@@ -1,11 +1,10 @@
 import { createIconElement } from "../../element";
+import { arrowUpRightRecipe } from "./definition";
 import type { IconHandle } from "../../element";
-import { clearDiagonalArrow } from "../diagonal-arrow";
-import { animateArrowUpRight } from "./definition";
 
 export type ArrowUpRightIconHandle = IconHandle;
 
-const ArrowUpRightElement = createIconElement({ animate: animateArrowUpRight, clear: clearDiagonalArrow });
+const ArrowUpRightElement = createIconElement(arrowUpRightRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

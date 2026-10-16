@@ -1,3 +1,4 @@
+import type { IconTrack } from "../element";
 import { spring } from "motion";
 import { animate } from "motion/mini";
 
@@ -18,7 +19,7 @@ export function clearDiagonalArrow(drawing: SVGGElement) {
   drawing.style.removeProperty("transform");
 }
 
-export function animateDiagonalArrow(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void, direction: -1 | 1) {
+export function animateDiagonalArrow(drawing: SVGGElement, returning: boolean, track: IconTrack, direction: -1 | 1) {
   let frames = [identity, `translate(${direction * 4}px, 4px) scale(0.85)`, identity];
   let duration = 0.5;
   if (returning) {
@@ -50,26 +51,28 @@ export function animateDiagonalArrow(drawing: SVGGElement, returning: boolean, o
     duration = time / 1000;
   }
 
-  const animation = animate(drawing, { transform: frames }, {
-    duration,
-    ease: returning ? "linear" : ["easeInOut", "easeInOut"],
-    onComplete: () => onComplete(true),
+  track((onComplete) => {
+    const animation = animate(drawing, { transform: frames }, {
+      duration,
+      ease: returning ? "linear" : ["easeInOut", "easeInOut"],
+      onComplete,
+    });
+    return {
+      stop() {
+        const time = animation.time;
+        const current = pose(drawing);
+        let velocity = [0, 0, 0];
+        if (time > 0) {
+          const interval = Math.min(time, 0.005);
+          animation.time = time - interval;
+          const previous = pose(drawing);
+          animation.time = time;
+          velocity = current.map((value, index) => (value - previous[index]) / interval);
+        }
+        velocities.set(drawing, velocity);
+        animation.stop();
+      },
+      cancel() { animation.cancel(); },
+    };
   });
-  return [{
-    stop() {
-      const time = animation.time;
-      const current = pose(drawing);
-      let velocity = [0, 0, 0];
-      if (time > 0) {
-        const interval = Math.min(time, 0.005);
-        animation.time = time - interval;
-        const previous = pose(drawing);
-        animation.time = time;
-        velocity = current.map((value, index) => (value - previous[index]) / interval);
-      }
-      velocities.set(drawing, velocity);
-      animation.stop();
-    },
-    cancel() { animation.cancel(); },
-  }];
 }

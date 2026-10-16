@@ -264,13 +264,13 @@ ArrowRight uses the pinned upstream geometry `M5 12h14` and `m12 5 7 7-7 7`. Its
 
 Stopping ArrowRight returns the shaft over 300 ms with `cubic-bezier(0.25, 0.1, 0.35, 1)`. The head returns with stiffness 500, damping 25, mass 1, rest speed 10, and a 0.005 rest-delta threshold. The resolved live options confirmed the stiffness, damping, mass, and rest speed on 2026-10-15. The pinned source and live variants agree. The return spring retains the current velocity, measured over the preceding 5 ms, and is sampled into native keyframes every 5 ms. This keeps the physical distance in SVG units while using `motion/mini`. A new cycle starts from the current pose. Removal and reduced motion cancel both tracks and restore the full drawing immediately. ArrowLeft keeps its existing easing and 120 ms return.
 
-ArrowUp shares the native dash mechanism in `src/icons/arrow.ts` while keeping its paths and transition choices in `src/icons/arrow-up/`. Its head moves through y=0, 3, and 0 in SVG units. Its shaft starts at (12, 19), so shortening the dash from 14 to 9 units moves only the upper endpoint from y=5 to y=10. Both tracks complete in 400 ms, with `easeOut` applied separately to each 200 ms segment. There are no delayed or repeating tracks.
+ArrowUp shares the native dash mechanism in `src/shared/arrow.ts` while keeping its paths and transition choices in `src/icons/arrow-up/`. Its head moves through y=0, 3, and 0 in SVG units. Its shaft starts at (12, 19), so shortening the dash from 14 to 9 units moves only the upper endpoint from y=5 to y=10. Both tracks complete in 400 ms, with `easeOut` applied separately to each 200 ms segment. There are no delayed or repeating tracks.
 
 On interrupted return, ArrowUp's head uses the upstream default transform spring (stiffness 500, damping 25, rest speed 10). Its shaft returns over 300 ms with cubic Bézier (0.25, 0.1, 0.35, 1), the upstream default for a path. Position stays continuous on stop or replay. Like Copy, the native spring starts without the previous track's velocity. ArrowLeft retains its existing easing and 120 ms return. Shared lifecycle cleanup waits for both ArrowUp tracks before clearing styles.
 
 ArrowUpLeft transforms its complete group over 500 ms. Translation follows (0, 0), (4, 4), (0, 0), while scale follows 1, 0.85, 1. Each half uses ease-in-out. Its explicit view-box origin at (7, 7) matches the source's top-left fill-box origin. At the midpoint, the corner moves to (11, 11), and the ten-unit sides shrink to 8.5 units. Translation and stroke scale with the SVG at every size. There are no delayed or repeating tracks. Starting again replays the source's explicit initial keyframes.
 
-Stopping ArrowUpLeft preserves position and estimates velocity over the preceding 5 ms. Translation returns with stiffness 500 and damping 25; scale returns with stiffness 550 and damping 30. Both use mass 1, rest speed 10, and a 0.005 rest-delta threshold. Motion's spring generators sample the return every 5 ms in SVG units, then `motion/mini` runs the combined transform through native keyframes. Removal and reduced motion cancel the group and clear its transform. ArrowUpLeft shares `src/icons/diagonal-arrow.ts` with ArrowUpRight. Each icon keeps its paths and origin local. ArrowUpLeft passes horizontal direction 1; ArrowUpRight passes -1.
+Stopping ArrowUpLeft preserves position and estimates velocity over the preceding 5 ms. Translation returns with stiffness 500 and damping 25; scale returns with stiffness 550 and damping 30. Both use mass 1, rest speed 10, and a 0.005 rest-delta threshold. Motion's spring generators sample the return every 5 ms in SVG units, then `motion/mini` runs the combined transform through native keyframes. Removal and reduced motion cancel the group and clear its transform. ArrowUpLeft shares `src/shared/diagonal-arrow.ts` with ArrowUpRight. Each icon keeps its paths and origin local. ArrowUpLeft passes horizontal direction 1; ArrowUpRight passes -1.
 
 ArrowUpRight moves its complete group through (0, 0), (-4, 4), and (0, 0) in SVG units, scaling through 1, 0.85, and 1 over 500 ms. Each 250 ms segment uses ease-in-out. Its explicit `transform-box: view-box` and `transform-origin: 17px 7px` match the source's top-right fill-box origin. Translation and stroke scaling therefore follow the SVG size. There are no delays or repeats. Restarting replays the explicit keyframes from rest, as in the source.
 
@@ -296,6 +296,27 @@ All icons use the lifecycle and trigger code in `src/element.ts`. Each instance 
 
 `src/icon.css` contains the shared wrapper and SVG styles. Keep drawing-specific settings with the rendered drawing or client recipe. Astro can collect styles from unused components imported through an export barrel, so per-icon `<style>` blocks would make the catalogue's CSS accumulate on consumer pages.
 
+`src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Its registration script stays in that adapter so rendering one icon loads only that icon's behavior. The shared module has no registration script.
+
+Each `src/icons/<name>/definition.ts` exports an internal recipe with three responsibilities:
+
+- `finish` declares whether completed entry restores the drawing or holds its final pose.
+- `animate(drawing, returning, track)` registers the animation tracks.
+- `clear(drawing)` restores the drawing, including any attributes or retained motion state.
+
+The lifecycle module owns the track count, cancellation, and completion ordering. A track factory receives one completion callback and returns its `stop()` and `cancel()` operations. It reports completion when that track finishes. A native SVG track can use Motion mini directly:
+
+```ts
+track((onComplete) => animate(path, { opacity: [0, 1] }, {
+  duration: 0.1,
+  onComplete,
+}));
+```
+
+The recipe does not count tracks or decide when to clear a whole playback. A completed return always restores the drawing. Callbacks from an older playback cannot clear a newer one, but can repair late writes after reset. The lifecycle also accepts factories with custom stop and cancel operations, preserving Archive's Motion values and the velocity sampling used by interrupted springs.
+
+`src/shared/` contains mechanisms used by at least two icons. Each directory in `src/icons/` contains one exported icon. `src/shared/arrow.ts` shares the head and shaft mechanism for ArrowLeft, ArrowUp, and ArrowDown. ArrowDown supplies its head animation and velocity-preserving control. `src/shared/diagonal-arrow.ts` shares the combined translation and scale for ArrowUpLeft and ArrowUpRight. ArrowRight keeps its recipe and stop behavior in its own definition.
+
 ## Local development
 
 Use Node.js 22.12 or later and pnpm 12.5.1. The peer range is Astro `^7.2.10`. The test fixture uses Astro 7.3.8; the portfolio integration uses Astro 7.2.10. The lockfile currently resolves Motion 13.5.1.
@@ -306,7 +327,10 @@ pnpm check
 pnpm test:build
 pnpm test
 pnpm inspect:bundle
+pnpm test:bundle
 ```
+
+Bundle inspection applies one loading contract to the cases in `scripts/inspect-bundle.mjs`. It checks exact icon-tag strings, expected script counts, shared CSS, absence of React, and the chunk unions for combined routes. It also checks that the icon directories, Astro exports, and single-icon cases agree. `pnpm test:bundle` requires a built fixture and verifies failures by modifying temporary copies of the production output; it leaves the fixture unchanged.
 
 The tests use installed Google Chrome through Playwright's `chrome` channel. Install Chrome, or run `pnpm exec playwright install chrome` if it is absent. The test server uses port 45321. Astro's `--ignore-lock` flag keeps that server in the foreground under an agent so Playwright can manage its lifetime.
 
@@ -543,6 +567,22 @@ After Bot and AttachFile were added to main, `pnpm check` passed, `pnpm test:bui
 After the AudioLines catalog integration, the shared lifecycle, shared diagonal recipe, and ArrowUpLeft implementation were unchanged. `pnpm check`, the 70-page fixture build, and bundle inspection passed. The ArrowUpLeft file reported `8 passed (8.0s)`; shared props, accessibility, and lifecycle scenarios filtered with `--grep 'AudioLines|ArrowUpLeft'` reported `16 passed (7.1s)`. Both commands used the same local config and one worker.
 
 On the main revision containing FileText, the package runtime and diagonal helper remained unchanged. Types, the 75-page fixture build, and selective bundle inspection passed. ArrowUpLeft's recipe file reported `8 passed (8.4s)` and its shared contracts reported `8 passed (3.9s)` using the current shared test helper.
+
+## Architecture verification
+
+On 2026-10-16, the architecture refactor preserved the public Astro exports, props, initial SVG, and playback handles. The complete Chrome suite passed before and after the change, with `261 passed (3.3m)` before and `261 passed (3.2m)` after. These scenarios include scoped props, static drawing without JavaScript, template upgrades, reconnection, queued completion callbacks, reduced motion, velocity-preserving spring returns, Archive morphs, and AudioLines loops.
+
+`pnpm check` passed with zero Astro diagnostic errors, warnings, or hints, and TypeScript completed. `pnpm inspect:bundle` reported `Verified 15 icons across 33 bundle cases.` and `Selective loading verified: shared CSS only, unused icon behavior excluded.` The five `pnpm test:bundle` cases passed, including temporary output changes with unused and missing registrations, icon-specific CSS, and missing shared CSS.
+
+The same lockfile, Node.js 22.20.0, production fixture, and single Chrome worker were used for the before and after checks. Each route below retained one external entry, no inline script, and 123 CSS bytes. Gzip totals sum individually compressed chunks.
+
+| Route | Raw JS before | Raw JS after | Gzip JS before | Gzip JS after |
+| --- | --- | --- | --- | --- |
+| `/single/`, ArrowLeft | 10,690 | 10,789 | 4,626 | 4,691 |
+| `/check-single/`, Check | 10,296 | 10,482 | 4,395 | 4,467 |
+| `/archive-single/`, Archive | 56,853 | 57,019 | 21,616 | 21,705 |
+
+The shared completion bookkeeping adds a small browser cost while concentrating the recipe protocol. These measurements do not establish a performance improvement. The earlier bundle tables record previous builds. Firefox and Safari remain unverified, and visual acceptance belongs to Victor.
 
 ## Attribution
 

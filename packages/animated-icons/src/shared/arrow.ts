@@ -1,11 +1,12 @@
 import { animate } from "motion/mini";
+import type { IconAnimation, IconTrack } from "../element";
 
 type TrackOptions = NonNullable<Parameters<typeof animate>[2]>;
 
 interface ArrowMotion {
   axis: "X" | "Y";
   headTravel?: number;
-  headReturnAnimation?(head: SVGPathElement, onComplete: () => void): ReturnType<typeof animate>;
+  headAnimation?(head: SVGPathElement, returning: boolean, onComplete: () => void): IconAnimation;
   playback?: TrackOptions;
   headReturn?: TrackOptions;
   shaftReturn?: TrackOptions;
@@ -15,26 +16,22 @@ const shaftRetraction = 5;
 const playbackDuration = 0.4;
 const returnDuration = 0.12;
 
-export function animateArrow(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void, motion: ArrowMotion) {
+export function animateArrow(drawing: SVGGElement, returning: boolean, track: IconTrack, motion: ArrowMotion) {
   const { axis, headTravel = 3 } = motion;
-  const paths = drawing.querySelectorAll("path");
-  const [head, shaft] = paths;
+  const [head, shaft] = drawing.querySelectorAll("path");
   const shaftLength = shaft.getTotalLength();
   const fullShaft = `${shaftLength}px ${shaftLength}px`;
   const retractedShaft = `${shaftLength - shaftRetraction}px ${shaftLength}px`;
   shaft.style.strokeDasharray ||= fullShaft;
-  let remaining = paths.length;
-  const onFinish = () => onComplete(--remaining === 0);
   const options = {
     duration: returning ? returnDuration : playbackDuration,
     ease: "easeInOut" as const,
     ...(!returning && motion.playback),
-    onComplete: onFinish,
   };
-  return [
-    returning && motion.headReturnAnimation ? motion.headReturnAnimation(head, onFinish) : animate(head, { transform: returning ? `translate${axis}(0px)` : [null, `translate${axis}(${headTravel}px)`, `translate${axis}(0px)`] }, { ...options, ...(returning && motion.headReturn), onComplete: onFinish }),
-    animate(shaft, { strokeDasharray: returning ? fullShaft : [null, retractedShaft, fullShaft] }, { ...options, ...(returning && motion.shaftReturn), onComplete: onFinish }),
-  ];
+  track((onComplete) => motion.headAnimation
+    ? motion.headAnimation(head, returning, onComplete)
+    : animate(head, { transform: returning ? `translate${axis}(0px)` : [null, `translate${axis}(${headTravel}px)`, `translate${axis}(0px)`] }, { ...options, ...(returning && motion.headReturn), onComplete }));
+  track((onComplete) => animate(shaft, { strokeDasharray: returning ? fullShaft : [null, retractedShaft, fullShaft] }, { ...options, ...(returning && motion.shaftReturn), onComplete }));
 }
 
 export function clearArrow(drawing: SVGGElement) {

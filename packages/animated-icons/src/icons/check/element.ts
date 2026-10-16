@@ -1,18 +1,10 @@
 import { createIconElement } from "../../element";
-import { animateCheck } from "./definition";
+import { checkRecipe } from "./definition";
 import type { IconHandle } from "../../element";
 
 export type CheckIconHandle = IconHandle;
 
-const CheckElement = createIconElement({
-  animate: animateCheck,
-  clear(drawing) {
-    const path = drawing.querySelector("path")!;
-    for (const property of ["opacity", "stroke-dasharray", "transform"]) {
-      path.style.removeProperty(property);
-    }
-  },
-});
+const CheckElement = createIconElement(checkRecipe);
 
 declare global {
   interface HTMLElementTagNameMap {

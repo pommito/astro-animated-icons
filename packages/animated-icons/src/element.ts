@@ -3,15 +3,23 @@ export interface IconHandle {
   stopAnimation(): void;
 }
 
-interface IconRecipe {
-  animate(drawing: SVGGElement, returning: boolean, onComplete: (restoreDrawing: boolean) => void): { stop(): void; cancel(): void }[];
+export interface IconAnimation {
+  stop(): void;
+  cancel(): void;
+}
+
+export type IconTrack = (start: (onComplete: () => void) => IconAnimation) => IconAnimation;
+
+export interface IconRecipe {
+  finish: "hold" | "restore";
+  animate(drawing: SVGGElement, returning: boolean, track: IconTrack): void;
   clear(drawing: SVGGElement): void;
 }
 
 export function createIconElement(recipe: IconRecipe) {
   return class AnimatedIconElement extends HTMLElement implements IconHandle {
     private listeners?: AbortController;
-    private animation?: ReturnType<IconRecipe["animate"]>;
+    private animation?: IconAnimation[];
     private playbackId = 0;
 
     connectedCallback() {
@@ -64,17 +72,37 @@ export function createIconElement(recipe: IconRecipe) {
         animation.stop();
         animation.cancel();
       });
-      this.animation = recipe.animate(drawing, returning, (restoreDrawing) => {
-        if (playbackId !== this.playbackId) {
-          // A queued Motion finish event can commit styles after cancellation.
-          if (!this.animation) this.clearDrawing();
-          return;
-        }
-        if (restoreDrawing) {
+      const controls: IconAnimation[] = [];
+      this.animation = controls;
+      let remaining = 0;
+      let ready = false;
+      const finish = () => {
+        if (ready && remaining === 0 && (returning || recipe.finish === "restore")) {
           this.clearDrawing();
           this.animation = undefined;
         }
-      });
+      };
+      const track: IconTrack = (start) => {
+        remaining++;
+        let completed = false;
+        const control = start(() => {
+          if (playbackId !== this.playbackId) {
+            // A queued Motion finish event can commit styles after cancellation.
+            if (!this.animation) this.clearDrawing();
+            return;
+          }
+          if (!completed) {
+            completed = true;
+            remaining--;
+            finish();
+          }
+        });
+        controls.push(control);
+        return control;
+      };
+      recipe.animate(drawing, returning, track);
+      ready = true;
+      finish();
     }
 
     private reset() {
