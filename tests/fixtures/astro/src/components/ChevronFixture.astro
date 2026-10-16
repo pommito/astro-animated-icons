@@ -1,0 +1,41 @@
+---
+import type { ChevronDown } from "@grave/animated-icons/astro";
+
+interface Props {
+  Icon: typeof ChevronDown;
+  name: string;
+  tag: string;
+}
+
+const { Icon, name, tag } = Astro.props;
+---
+
+<html lang="en">
+  <head><title>{name} browser test fixture</title></head>
+  <body data-icon-tag={tag}>
+    <p><a href="#destination" id="primary"><Icon size={16} />{name} example</a></p>
+    <button type="button" id="secondary"><Icon size={24} />Other {name} icon</button>
+    <Icon id="standalone" label={`${name} icon`} />
+    <button type="button" id="controlled"><Icon controlled />Manual {name} icon</button>
+    <button type="button" id="stop-controlled">Stop manual animation</button>
+    <button type="button" id="add">Add instance</button>
+    <button type="button" id="remove">Remove instance</button>
+    <div id="dynamic"></div>
+    <template id="instance-template"><a href="#destination"><Icon size={16} />Dynamic {name} icon</a></template>
+    <p id="destination">Example destination</p>
+  </body>
+</html>
+
+<script>
+  import type { ChevronDownIconHandle } from "@grave/animated-icons/astro";
+
+  const tag = document.body.dataset.iconTag!;
+  await customElements.whenDefined(tag);
+  const controlled = document.querySelector<HTMLElement & ChevronDownIconHandle>(`#controlled ${tag}`)!;
+  document.querySelector("#controlled")!.addEventListener("click", () => controlled.startAnimation());
+  document.querySelector("#stop-controlled")!.addEventListener("click", () => controlled.stopAnimation());
+  const template = document.querySelector<HTMLTemplateElement>("#instance-template")!;
+  const container = document.querySelector("#dynamic")!;
+  document.querySelector("#add")!.addEventListener("click", () => container.append(template.content.cloneNode(true)));
+  document.querySelector("#remove")!.addEventListener("click", () => container.lastElementChild?.remove());
+</script>
