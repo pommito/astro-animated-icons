@@ -5,8 +5,9 @@ import { AsyncMotionValueAnimation, JSAnimation, visualElementStore } from "moti
 import * as originals from "./references/folders";
 import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
 
-const references: ArrowLeftIconHandle[] = [];
+const references = new Map<Element, ArrowLeftIconHandle>();
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+let playbackRevision = 0;
 
 for (const container of document.querySelectorAll<HTMLElement>("[data-reference]")) {
   const Component = originals[container.dataset.name as keyof typeof originals];
@@ -14,7 +15,27 @@ for (const container of document.querySelectorAll<HTMLElement>("[data-reference]
   flushSync(() =>
     createRoot(container).render(createElement(Component, { size: Number(container.dataset.size), ref })),
   );
-  references.push(ref.current!);
+  references.set(container, ref.current!);
+}
+
+async function playSamples(scope: ParentNode, returning: boolean) {
+  const revision = ++playbackRevision;
+  const completions: Promise<unknown>[] = [];
+  scope.querySelectorAll<HTMLElement & ArrowLeftIconHandle>("[data-adapter] [data-grave-icon]").forEach((icon) => {
+    if (returning) {
+      icon.stopAnimation();
+      completions.push(...icon.getAnimations({ subtree: true }).map((animation) => animation.finished));
+    } else icon.startAnimation();
+  });
+  if (!reducedMotion.matches) {
+    scope.querySelectorAll("[data-reference]").forEach((container) => {
+      const icon = references.get(container)!;
+      if (returning) completions.push(Promise.resolve(icon.stopAnimation()));
+      else icon.startAnimation();
+    });
+  }
+  await Promise.allSettled(completions);
+  return revision === playbackRevision;
 }
 
 for (const [id, returning] of [
@@ -22,15 +43,24 @@ for (const [id, returning] of [
   ["stop", true],
 ] as const) {
   document.querySelector(`#${id}`)!.addEventListener("click", () => {
-    document
-      .querySelectorAll<HTMLElement & ArrowLeftIconHandle>("[data-adapter] [data-grave-icon]")
-      .forEach((icon) => (returning ? icon.stopAnimation() : icon.startAnimation()));
-    if (!reducedMotion.matches)
-      references.forEach((icon) => (returning ? icon.stopAnimation() : icon.startAnimation()));
+    playSamples(document, returning);
+  });
+}
+
+for (const row of document.querySelectorAll<HTMLTableRowElement>("tr[data-icon]")) {
+  row.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "touch") playSamples(row, false);
+  });
+  row.addEventListener("pointerleave", (event) => {
+    if (event.pointerType !== "touch") playSamples(row, true);
+  });
+  row.querySelector("[data-replay]")!.addEventListener("click", async () => {
+    if (await playSamples(row, true)) playSamples(row, false);
   });
 }
 
 document.addEventListener("folder-seek", (event) => {
+  playbackRevision++;
   const milliseconds = (event as CustomEvent<number>).detail;
   document.querySelectorAll("[data-reference] svg *").forEach((element) => {
     const visual = visualElementStore.get(element);
@@ -59,6 +89,7 @@ document.querySelector("#seek")!.addEventListener("click", () => {
 
 reducedMotion.addEventListener("change", () => {
   if (!reducedMotion.matches) return;
+  playbackRevision++;
   references.forEach((icon) => icon.stopAnimation());
   document.querySelectorAll("[data-reference] svg *").forEach((element) => {
     const visual = visualElementStore.get(element);
