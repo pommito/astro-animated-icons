@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-git-commit-vertical">
+  <g>
+    <path d="M12 3v6" />
+    <circle cx="12" cy="12" r="3" />
+    <path d="M12 15v6" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

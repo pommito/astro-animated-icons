@@ -49,6 +49,22 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "folder-git": "folder-git-single",
+  "folder-git-2": "folder-git-2-single",
+  "git-branch": "git-branch-single",
+  "git-commit-horizontal": "git-commit-horizontal-single",
+  "git-commit-vertical": "git-commit-vertical-single",
+  "git-compare-arrows": "git-compare-arrows-single",
+  "git-compare": "git-compare-single",
+  "git-fork": "git-fork-single",
+  "git-graph": "git-graph-single",
+  "git-merge": "git-merge-single",
+  "git-pull-request-closed": "git-pull-request-closed-single",
+  "git-pull-request-create": "git-pull-request-create-single",
+  "git-pull-request": "git-pull-request-single",
+  "github": "github-single",
+  "gitlab": "gitlab-single",
+
   "map-pin": "map-pin-single",
   copy: "copy-single",
   check: "check-single",
@@ -87,6 +103,22 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["folder-git-combined", "arrow-left", "folder-git"],
+  ["folder-git-2-combined", "arrow-left", "folder-git-2"],
+  ["git-branch-combined", "arrow-left", "git-branch"],
+  ["git-commit-horizontal-combined", "arrow-left", "git-commit-horizontal"],
+  ["git-commit-vertical-combined", "arrow-left", "git-commit-vertical"],
+  ["git-compare-arrows-combined", "arrow-left", "git-compare-arrows"],
+  ["git-compare-combined", "arrow-left", "git-compare"],
+  ["git-fork-combined", "arrow-left", "git-fork"],
+  ["git-graph-combined", "arrow-left", "git-graph"],
+  ["git-merge-combined", "arrow-left", "git-merge"],
+  ["git-pull-request-closed-combined", "arrow-left", "git-pull-request-closed"],
+  ["git-pull-request-create-combined", "arrow-left", "git-pull-request-create"],
+  ["git-pull-request-combined", "arrow-left", "git-pull-request"],
+  ["github-combined", "arrow-left", "github"],
+  ["gitlab-combined", "arrow-left", "gitlab"],
+
   ["arrow-grip", "arrow-left", "grip"],
   ["arrow-grip-horizontal", "arrow-left", "grip-horizontal"],
   ["arrow-grip-vertical", "arrow-left", "grip-vertical"],
