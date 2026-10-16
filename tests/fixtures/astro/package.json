@@ -6,6 +6,17 @@
     "build": "astro build",
     "check": "astro check"
   },
-  "dependencies": { "@grave/animated-icons": "workspace:*", "astro": "7.3.8" },
-  "devDependencies": { "@astrojs/check": "0.9.10", "typescript": "^6.0.3" }
+  "dependencies": {
+    "@grave/animated-icons": "workspace:*",
+    "astro": "7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "motion": "^13.5.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^6.0.3"
+  }
 }

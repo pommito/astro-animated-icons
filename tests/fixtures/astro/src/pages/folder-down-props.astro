@@ -1,0 +1,18 @@
+---
+import { FolderDown } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <FolderDown id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <FolderDown id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <FolderDown id="string-style" style="color: green" size={16} />
+    <FolderDown id="class-list" class:list={["icon", { "extra-class": true }]} label="FolderDown icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>

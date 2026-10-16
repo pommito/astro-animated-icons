@@ -38,6 +38,8 @@ ChevronFirst moves through x=-2, 1, -1, and 0 over 600 ms with offsets 0, 0.3, 0
 
 Grip, GripHorizontal, and GripVertical adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26` and use Lucide circle geometry. Grip fades nine circles through opacity 1, 0.3, 0.3, and 1 over 1100 ms at offsets 0, 0.2, 0.8, and 1, with 70 ms between circles and ease-out per segment. GripHorizontal and GripVertical pulse six circles through opacity 1, 0.4, and 1 and scale 1, 0.85, and 1 over 1000 ms with ease-in-out. Their delays are 0, 150, 300, 250, 400, and 550 ms in source order. Each circle scales around its own center. Interrupted returns use a 250 ms ease-out tween without delays. All three restore the drawing after entry and reuse the shared lifecycle, input, and reduced-motion behavior. Replaying restarts the sequence, following this package's playback contract rather than the upstream reentry guard. Motion's vanilla browser API supplies native opacity and transform tracks.
 
+The 24 folder variants adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26` and use Lucide geometry. Native stroke dashes reproduce progressive drawing and path offsets, including separate opacity timings and delayed returns. Native transform keyframes sample the source tweens and springs in SVG units and preserve interruption velocity. FolderHeart, FolderKanban, FolderKey, FolderLock, and FolderRoot loop until stopped. The shared lifecycle restores each initial drawing on disconnection or reduced motion. The comparison fixture at `/folders-comparison/` runs the original React components at 14, 16, 24, and 28 px. Its vendored sources under `tests/fixtures/astro/src/references/folders/` change only the class utility import. React remains a test fixture dependency.
+
 Sources:
 
 - [Lucide Animated Grip, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/grip.tsx)
@@ -83,6 +85,30 @@ Sources:
 - [Lucide Animated SquareChevronLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-left.tsx)
 - [Lucide Animated SquareChevronRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-right.tsx)
 - [Lucide Animated SquareChevronUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-chevron-up.tsx)
+- [Lucide Animated FolderArchive, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-archive.tsx)
+- [Lucide Animated FolderCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-check.tsx)
+- [Lucide Animated FolderClock, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-clock.tsx)
+- [Lucide Animated FolderCode, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-code.tsx)
+- [Lucide Animated FolderCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-cog.tsx)
+- [Lucide Animated FolderDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-dot.tsx)
+- [Lucide Animated FolderDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-down.tsx)
+- [Lucide Animated FolderGit2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git-2.tsx)
+- [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
+- [Lucide Animated FolderHeart, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-heart.tsx)
+- [Lucide Animated FolderInput, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-input.tsx)
+- [Lucide Animated FolderKanban, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-kanban.tsx)
+- [Lucide Animated FolderKey, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-key.tsx)
+- [Lucide Animated FolderLock, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-lock.tsx)
+- [Lucide Animated FolderMinus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-minus.tsx)
+- [Lucide Animated FolderOpen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-open.tsx)
+- [Lucide Animated FolderOutput, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-output.tsx)
+- [Lucide Animated FolderPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-plus.tsx)
+- [Lucide Animated FolderRoot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-root.tsx)
+- [Lucide Animated FolderSync, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-sync.tsx)
+- [Lucide Animated FolderTree, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-tree.tsx)
+- [Lucide Animated FolderUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-up.tsx)
+- [Lucide Animated FolderX, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-x.tsx)
+- [Lucide Animated Folders, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folders.tsx)
 - [Lucide Animated license](https://github.com/pqoqubbw/icons/blob/main/LICENSE)
 
 ## Lucide and Feather

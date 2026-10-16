@@ -1,0 +1,127 @@
+import { cubicBezier, easeInOut, easeOut, interpolate, spring } from "motion";
+import { animate } from "motion/mini";
+import type { IconTrack } from "../element";
+
+type Property = "x" | "y" | "rotate" | "scale" | "opacity";
+type Values = Partial<Record<Property, number | number[]>>;
+interface Transition {
+  type?: "spring";
+  stiffness?: number;
+  damping?: number;
+  restSpeed?: number;
+  duration?: number;
+  ease?: "easeOut" | "easeInOut" | [number, number, number, number];
+  times?: number[];
+  repeat?: number;
+}
+interface Pose {
+  values: Partial<Record<Property, number>>;
+  velocities: Partial<Record<Property, number>>;
+}
+const poses = new WeakMap<SVGElement, Pose>();
+
+export function clearSvgTransform(element: SVGElement) {
+  poses.delete(element);
+  element.style.removeProperty("transform");
+  element.style.removeProperty("opacity");
+}
+
+export function animateSvgTransform(
+  element: SVGElement,
+  returning: boolean,
+  track: IconTrack,
+  targets: Values,
+  options: Transition,
+) {
+  const previous = poses.get(element);
+  const properties = Object.keys(targets) as Property[];
+  let duration = options.type === "spring" ? 0 : (options.duration ?? 0.3) * 1000;
+  const samplers = properties.map((property) => {
+    const rest = property === "scale" || property === "opacity" ? 1 : 0;
+    const origin = previous?.values[property] ?? rest;
+    const target = returning ? rest : targets[property]!;
+    const values = Array.isArray(target) ? target : [origin, target];
+    if (options.type === "spring") {
+      const generator = spring({ ...options, keyframes: values, velocity: previous?.velocities[property] ?? 0 });
+      let time = 0;
+      // Mini normalizes spring distances; sample in the upstream property's units.
+      do {
+        time += 5;
+      } while (!generator.next(time).done && time < 10000);
+      duration = Math.max(duration, time);
+      return (time: number) => generator.next(time).value;
+    }
+    const times = options.times ?? values.map((_, index) => index / (values.length - 1));
+    const ease = Array.isArray(options.ease)
+      ? cubicBezier(...options.ease)
+      : options.ease === "easeInOut"
+        ? easeInOut
+        : easeOut;
+    return interpolate(
+      times.map((time) => time * duration),
+      values,
+      { ease },
+    );
+  });
+  const sample = (time: number) => {
+    if (options.repeat === Infinity) time %= duration;
+    return Object.fromEntries(properties.map((property, index) => [property, samplers[index](time)])) as Pose["values"];
+  };
+  const frames = Array.from({ length: Math.ceil(duration / 5) + 1 }, (_, index) =>
+    sample((index * duration) / Math.ceil(duration / 5)),
+  );
+  const transform = (values: Pose["values"]) =>
+    [
+      values.x === undefined ? "" : `translateX(${values.x}px)`,
+      values.y === undefined ? "" : `translateY(${values.y}px)`,
+      values.scale === undefined ? "" : `scale(${values.scale})`,
+      values.rotate === undefined ? "" : `rotate(${values.rotate}deg)`,
+    ]
+      .filter(Boolean)
+      .join(" ");
+  const keyframes = {
+    ...(properties.some((property) => property !== "opacity") ? { transform: frames.map(transform) } : {}),
+    ...(properties.includes("opacity") ? { opacity: frames.map((frame) => frame.opacity!) } : {}),
+  };
+  for (const [property, values] of Object.entries(keyframes)) {
+    track((onComplete) => {
+      let completed = false;
+      const animation = animate(
+        element,
+        { [property]: values },
+        {
+          duration: duration / 1000,
+          ease: "linear",
+          repeat: options.repeat,
+          onComplete() {
+            completed = true;
+            poses.set(element, { values: frames.at(-1)!, velocities: {} });
+            onComplete();
+          },
+        },
+      );
+      return {
+        stop() {
+          if (completed) return;
+          const time = animation.time * 1000;
+          const current = sample(time);
+          const interval = Math.min(time, 5);
+          const before = sample(Math.max(0, time - interval));
+          poses.set(element, {
+            values: current,
+            velocities: Object.fromEntries(
+              properties.map((property) => [
+                property,
+                interval ? ((current[property]! - before[property]!) * 1000) / interval : 0,
+              ]),
+            ),
+          });
+          animation.stop();
+        },
+        cancel() {
+          animation.cancel();
+        },
+      };
+    });
+  }
+}

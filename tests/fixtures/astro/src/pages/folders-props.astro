@@ -1,0 +1,18 @@
+---
+import { Folders } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <Folders id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <Folders id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <Folders id="string-style" style="color: green" size={16} />
+    <Folders id="class-list" class:list={["icon", { "extra-class": true }]} label="Folders icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>

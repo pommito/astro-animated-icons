@@ -1,0 +1,18 @@
+---
+import { FolderPlus } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <FolderPlus id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <FolderPlus id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <FolderPlus id="string-style" style="color: green" size={16} />
+    <FolderPlus id="class-list" class:list={["icon", { "extra-class": true }]} label="FolderPlus icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>

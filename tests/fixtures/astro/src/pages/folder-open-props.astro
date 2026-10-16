@@ -1,0 +1,18 @@
+---
+import { FolderOpen } from "@grave/animated-icons/astro";
+---
+
+<html lang="en">
+  <head><title>Icon props fixture</title></head>
+  <body>
+    <FolderOpen id="scoped" class="icon" title="Back" data-testid="scoped-icon" />
+    <FolderOpen id="inline" style={{ color: "rebeccapurple", marginInlineStart: "2em" }} />
+    <FolderOpen id="string-style" style="color: green" size={16} />
+    <FolderOpen id="class-list" class:list={["icon", { "extra-class": true }]} label="FolderOpen icon" />
+    <p class="icon">Scoped style control</p>
+  </body>
+</html>
+
+<style>
+  .icon { color: oklch(0.5 0.2 25); margin-inline-start: 2em; }
+</style>
