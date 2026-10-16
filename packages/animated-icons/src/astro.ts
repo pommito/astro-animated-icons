@@ -98,3 +98,11 @@ export { default as Gitlab } from "./icons/gitlab/Gitlab.astro";
 export type { GitlabIconHandle } from "./icons/gitlab/element";
 export { default as Github } from "./icons/github/Github.astro";
 export type { GithubIconHandle } from "./icons/github/element";
+export { default as Grip } from "./icons/grip/Grip.astro";
+export type { GripIconHandle } from "./icons/grip/element";
+
+export { default as GripHorizontal } from "./icons/grip-horizontal/GripHorizontal.astro";
+export type { GripHorizontalIconHandle } from "./icons/grip-horizontal/element";
+
+export { default as GripVertical } from "./icons/grip-vertical/GripVertical.astro";
+export type { GripVerticalIconHandle } from "./icons/grip-vertical/element";
