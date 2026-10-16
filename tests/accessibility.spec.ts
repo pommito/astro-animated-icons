@@ -1,3 +1,4 @@
+import { displayIcons } from "./helpers/display-icons.js";
 import { folders } from "./helpers/folders.js";
 import { gitIcons } from "./helpers/git-icons.js";
 import { grips } from "./helpers/grips.js";
@@ -6,6 +7,7 @@ import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount, label, axis } of [
+  ...displayIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...folders.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...gitIcons.filter(({ slug }) => !slug.startsWith("folder-")).map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...chevrons.map(({ name, slug, tag, kind, axis }) => ({ name, route: `/${slug}/`, tag, animationCount: kind === "spring" ? 2 : 1, label: `${name} icon`, axis: axis === "X" ? "x" as const : "y" as const })),

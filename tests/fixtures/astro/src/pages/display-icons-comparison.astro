@@ -1,0 +1,44 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { displayIcons } from "../../../../helpers/display-icons";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Sun, Moon, Monitor, and Linkedin comparisons</title></head>
+  <body>
+    <h1>Sun, Moon, Monitor, and Linkedin comparisons</h1>
+    <p>The reference uses independent native browser keyframes, without executing the upstream React components. Sun, Moon, and Linkedin follow Lucide Animated revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Monitor uses the Lucide drawing with one screen blink.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    {displayIcons.map((icon) => {
+      const Component = icons[icon.name];
+      const source = icon.slug === "monitor"
+        ? "https://github.com/lucide-icons/lucide/blob/66de90d63e5e26d867a4391bd607fd7a3bbe17fd/icons/monitor.svg"
+        : `https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`;
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={source}>Pinned upstream source</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Recipe reference</th></tr></thead>
+          <tbody>{sizes.map((size) => <tr data-size={size} data-icon={icon.slug}>
+            <th scope="row">{size} px</th>
+            <td><button type="button" data-adapter><Component size={size} />Astro {size} px</button></td>
+            <td><button type="button" data-reference data-icon={icon.slug}>
+              <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <g style={icon.slug === "moon" ? "transform-origin: 12px 12px" : undefined}>
+                  {icon.drawing.map(({ tag: Shape, attrs }) => <Shape {...attrs} pathLength={icon.slug === "linkedin" ? "1" : undefined} />)}
+                </g>
+              </svg>
+              Reference {size} px
+            </button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../display-icons-reference";
+</script>

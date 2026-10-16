@@ -49,6 +49,11 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  sun: "sun-single",
+  moon: "moon-single",
+  monitor: "monitor-single",
+  linkedin: "linkedin-single",
+
   "folder-archive": "folder-archive-single",
   "folder-check": "folder-check-single",
   "folder-clock": "folder-clock-single",
@@ -125,6 +130,11 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["sun-combined", "arrow-left", "sun"],
+  ["moon-combined", "arrow-left", "moon"],
+  ["monitor-combined", "arrow-left", "monitor"],
+  ["linkedin-combined", "arrow-left", "linkedin"],
+
   ["folder-archive-combined", "arrow-left", "folder-archive"],
   ["folder-check-combined", "arrow-left", "folder-check"],
   ["folder-clock-combined", "arrow-left", "folder-clock"],
