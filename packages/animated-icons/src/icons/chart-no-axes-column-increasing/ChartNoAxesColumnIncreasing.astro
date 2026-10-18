@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-chart-no-axes-column-increasing">
+  <g>
+    <path d="M6 20v-4" />
+    <path d="M12 20v-10" />
+    <path d="M18 20v-16" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

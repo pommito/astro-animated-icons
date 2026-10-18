@@ -1,5 +1,13 @@
 # Third-party notices
 
+The ten chart components adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. ChartBarDecreasing, ChartBarIncreasing, ChartColumnDecreasing, ChartColumnIncreasing, ChartNoAxesColumnDecreasing, and ChartNoAxesColumnIncreasing hide their bars over 300 ms with 100 ms between bars, wait for all bars to finish, then reveal them with the same timing and ease-out curve. Native stroke dashes replace normalized path lengths. Both awaited phases share cancellable tracks, which prevent a queued redraw after stop, removal, or reduced motion. Restarting these cycles begins from the current pose.
+
+ChartLine and ChartSpline reuse the staggered path reveal mechanism. Their stroke reveals after 150 ms over 300 ms with ease-out. Their property-specific opacity transition overrides the root duration and uses Motion's default 300 ms curve (0.25, 0.1, 0.35, 1) after 100 ms. Their explicit zero-to-one entry keyframes restart the reveal on replay. ChartScatter fades all five points out over 200 ms, then reveals them in source order with 150 ms between points and 300 ms ease-out transitions. Returns restore stroke length and opacity over 300 ms with the default curve and no delay.
+
+ChartPie moves its sector by (1.1, -1.1) SVG units using stiffness 250 and damping 15, preserving velocity on interruption. Those physical parameters override the source's bounce value. The existing transform sampler replaces the React transforms, with the same spring on return. The complete initial SVG, common props, hover, manual playback, reduced motion, and cleanup use the shared package lifecycle.
+
+The chart comparison fixture at `/charts-comparison/` executes all ten pinned React components at 14, 16, 24, and 28 px. Its vendored sources change only the class utility import to the local equivalent. The upstream asynchronous sequences require measuring the hide and reveal phases separately. React stays confined to comparison fixtures.
+
 The ten MessageCircle and MessageSquare components, including their Check, More, Plus, and X variants, adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. Circle and square variants share matching recipes. The simple bubbles rotate through 0, -7, 7, and 0 degrees over 500 ms with ease-in-out per segment. Their scale springs to 1.05 with stiffness 400 and damping 10, then holds until stopped. Return uses Motion's default scale spring (stiffness 550, damping 30) and rotation spring (stiffness 500, damping 25), carrying interrupted velocity. Nested groups with SVG origin (12, 12) replace the upstream SVG transforms.
 
 Message checks reveal opacity and stroke length over 400 ms with ease-in-out. They share the existing UserCheck reveal mechanism. Plus and X variants reveal their second stroke after 200 ms. Return removes that delay and restores both properties over 300 ms with Motion's default cubic Bezier curve (0.25, 0.1, 0.35, 1). Native stroke dash lengths replace normalized path lengths. The More variants run the original eight opacity keyframes over 1.5 seconds with per-dot offsets, then hold fully visible. The upstream native opacity animation uses a global ease-out curve. Their return uses the default 300 ms opacity transition.
@@ -239,6 +247,17 @@ Sources:
 - [Lucide Animated Bluetooth, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bluetooth.tsx)
 - [Lucide Animated BluetoothConnected, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bluetooth-connected.tsx)
 - [Lucide Animated BluetoothOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bluetooth-off.tsx)
+
+- [Lucide Animated ChartBarDecreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-bar-decreasing.tsx)
+- [Lucide Animated ChartBarIncreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-bar-increasing.tsx)
+- [Lucide Animated ChartColumnDecreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-column-decreasing.tsx)
+- [Lucide Animated ChartColumnIncreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-column-increasing.tsx)
+- [Lucide Animated ChartLine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-line.tsx)
+- [Lucide Animated ChartNoAxesColumnDecreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-no-axes-column-decreasing.tsx)
+- [Lucide Animated ChartNoAxesColumnIncreasing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-no-axes-column-increasing.tsx)
+- [Lucide Animated ChartPie, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-pie.tsx)
+- [Lucide Animated ChartScatter, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-scatter.tsx)
+- [Lucide Animated ChartSpline, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chart-spline.tsx)
 
 The energy and Bluetooth adapters and their copied comparison sources use the pinned Lucide Animated revision above. The comparison sources change only the class utility import. Battery preserves the upstream empty interior at rest. Battery level adapters combine the two asynchronous phases into one cancellable timeline so stopped playback cannot start a later phase.
 
