@@ -414,3 +414,33 @@ export type { ChartScatterIconHandle } from "./icons/chart-scatter/element";
 
 export { default as ChartSpline } from "./icons/chart-spline/ChartSpline.astro";
 export type { ChartSplineIconHandle } from "./icons/chart-spline/element";
+
+export { default as Wifi } from "./icons/wifi/Wifi.astro";
+export type { WifiIconHandle } from "./icons/wifi/element";
+
+export { default as WifiLow } from "./icons/wifi-low/WifiLow.astro";
+export type { WifiLowIconHandle } from "./icons/wifi-low/element";
+
+export { default as WifiCog } from "./icons/wifi-cog/WifiCog.astro";
+export type { WifiCogIconHandle } from "./icons/wifi-cog/element";
+
+export { default as WifiPen } from "./icons/wifi-pen/WifiPen.astro";
+export type { WifiPenIconHandle } from "./icons/wifi-pen/element";
+
+export { default as WifiSync } from "./icons/wifi-sync/WifiSync.astro";
+export type { WifiSyncIconHandle } from "./icons/wifi-sync/element";
+
+export { default as BluetoothSearching } from "./icons/bluetooth-searching/BluetoothSearching.astro";
+export type { BluetoothSearchingIconHandle } from "./icons/bluetooth-searching/element";
+
+export { default as Nfc } from "./icons/nfc/Nfc.astro";
+export type { NfcIconHandle } from "./icons/nfc/element";
+
+export { default as Router } from "./icons/router/Router.astro";
+export type { RouterIconHandle } from "./icons/router/element";
+
+export { default as Radio } from "./icons/radio/Radio.astro";
+export type { RadioIconHandle } from "./icons/radio/element";
+
+export { default as RadioTower } from "./icons/radio-tower/RadioTower.astro";
+export type { RadioTowerIconHandle } from "./icons/radio-tower/element";
