@@ -62,9 +62,10 @@ interface Comparison {
   route: string;
   seekEvent: string;
   tags: string[];
+  times?: number[];
 }
 
-export function testUpstreamComparison({ name, route, seekEvent, tags }: Comparison) {
+export function testUpstreamComparison({ name, route, seekEvent, tags, times = [0, 50, 100, 150, 200, 300, 400, 600, 800, 1000, 1500] }: Comparison) {
   test(`${name} adapters match the original React components at small sizes`, async ({ page }) => {
     test.setTimeout(60000);
     const errors: string[] = [];
@@ -76,7 +77,7 @@ export function testUpstreamComparison({ name, route, seekEvent, tags }: Compari
     await page.waitForTimeout(100);
     const samples = await page.evaluate(sampleUpstreamPoses, {
       seekEvent,
-      times: [0, 50, 100, 150, 200, 300, 400, 600, 800, 1000, 1500],
+      times,
       origin: "svg-center" as const,
     });
     const { maximumGeometry, maximumPaint } = compareUpstreamPoses(samples);
