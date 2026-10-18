@@ -1,0 +1,10 @@
+export { LockIcon as Lock } from "./security/lock";
+export { LockOpenIcon as LockOpen } from "./security/lock-open";
+export { LockKeyholeIcon as LockKeyhole } from "./security/lock-keyhole";
+export { LockKeyholeOpenIcon as LockKeyholeOpen } from "./security/lock-keyhole-open";
+export { KeyIcon as Key } from "./security/key";
+export { KeyCircleIcon as KeyCircle } from "./security/key-circle";
+export { KeySquareIcon as KeySquare } from "./security/key-square";
+export { ShieldCheckIcon as ShieldCheck } from "./security/shield-check";
+export { FingerprintIcon as Fingerprint } from "./security/fingerprint";
+export { ScanFaceIcon as ScanFace } from "./security/scan-face";

@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "lock": "lock-single",
+  "lock-open": "lock-open-single",
+  "lock-keyhole": "lock-keyhole-single",
+  "lock-keyhole-open": "lock-keyhole-open-single",
+  "key": "key-single",
+  "key-circle": "key-circle-single",
+  "key-square": "key-square-single",
+  "shield-check": "shield-check-single",
+  "fingerprint": "fingerprint-single",
+  "scan-face": "scan-face-single",
   "alarm-clock": "alarm-clock-single",
   "alarm-clock-check": "alarm-clock-check-single",
   "alarm-clock-minus": "alarm-clock-minus-single",
@@ -199,6 +209,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["lock-combined", "arrow-left", "lock"],
+  ["lock-open-combined", "arrow-left", "lock-open"],
+  ["lock-keyhole-combined", "arrow-left", "lock-keyhole"],
+  ["lock-keyhole-open-combined", "arrow-left", "lock-keyhole-open"],
+  ["key-combined", "arrow-left", "key"],
+  ["key-circle-combined", "arrow-left", "key-circle"],
+  ["key-square-combined", "arrow-left", "key-square"],
+  ["shield-check-combined", "arrow-left", "shield-check"],
+  ["fingerprint-combined", "arrow-left", "fingerprint"],
+  ["scan-face-combined", "arrow-left", "scan-face"],
   ["alarm-clock-combined", "arrow-left", "alarm-clock"],
   ["alarm-clock-check-combined", "arrow-left", "alarm-clock-check"],
   ["alarm-clock-minus-combined", "arrow-left", "alarm-clock-minus"],

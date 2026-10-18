@@ -104,7 +104,28 @@ FilePenLine repeats its 500 ms pen movement once and extends its line from one t
 
 FileCog shares FolderCog's rotation recipe, turning its cog by 180 degrees with stiffness 50 and damping 10. Its adapter honors the package's size prop. FileStack moves its top and bottom sheets together using Motion's default translation springs. FileChartLine reveals its chart over 300 ms after a 150 ms delay, with opacity beginning after 100 ms. All ten hold their completed entry pose until stopped; returning restores the complete initial drawing.
 
+The ten security icons adapt Lucide Animated drawings and recipes pinned to commit `4662fff2b60fdcf4751b32013606756caf7c4c26`: Lock, LockOpen, LockKeyhole, LockKeyholeOpen, Key, KeyCircle, KeySquare, ShieldCheck, Fingerprint, and ScanFace. They reuse the package's rendering, props, manual playback, input handling, lifecycle, and reduced-motion policy. The comparison fixture at `/security-comparison/` executes all ten pinned React components at 14, 16, 24, and 28 px. Only their class utility imports point to a local equivalent. React stays in the comparison fixture.
+
+The four locks combine root SVG rotation and scale keyframes over one second with a 300 ms shackle transition, using cubic-bezier(0.4, 0, 0.2, 1). Closed locks shorten the shackle to 70 percent. Open locks start and return at 80 percent, extending to full length during playback. A normalized SVG pathLength and stroke dash preserve that open drawing before JavaScript runs. Root keyframe replays start at the current pose, including held poses. Shackle transitions also start at the current pose. The upstream root keyframe arrays restart at a fixed first pose.
+
+Key rotates through -3, -33, -25, and -28 degrees over 600 ms at offsets 0, 0.6, 0.8, and 1, with ease-in-out. Its SVG origin is 30 percent across and 70 percent down. Return uses stiffness 120 and damping 14. KeyCircle bounces vertically through 0, -3, 0, -2, and 0 CSS pixels while rotating through 0, 3, -3, and 0 degrees over 900 ms. KeySquare rotates through 0, 15, -15, and 0 degrees and scales through 1, 1.05, 1, and 1 over 600 ms. Their bounce fields do not select springs for these keyframe arrays. Both use the source's default ease-out curve. Root SVG transforms preserve their CSS-pixel translation and center origins at every size. Replays preserve the current pose, including Key's held -28-degree rotation.
+
+ShieldCheck shares Check's stroke, scale, and opacity mechanism. Its stroke and scale reveal over 400 ms, opacity reveals over 100 ms, and return takes 300 ms. ShieldCheck uses ease-out. Fingerprint keeps nine faint base paths visible while its nine foreground paths reveal through lengths 0.1, 0.3, 0.5, 0.7, 0.9, and 1 over two seconds, with ease-out per segment. Foreground opacity uses the source's five keyframes over 500 ms with the native ease-out curve. Native stroke dashes replace normalized foreground lengths. Replays of interrupted reveals preserve the current stroke, scale, and opacity.
+
+ScanFace runs the source's hidden phase before its visible phase. The root scales to 0.9; corners scale to 1.2, rotate 45 degrees, and fade with stiffness 200 and damping 20. The mouth scales to 0.8 and fades over 300 ms after a 100 ms delay. Return uses Motion's default scale and rotation springs and 300 ms opacity transition. A cancellable phase barrier waits for every hidden track before starting the visible phase. Stop, replay, disconnection, and reduced motion invalidate the pending phase, so a late completion cannot restart playback. Native transform keyframes sample springs in their original property units and retain interruption velocity.
+
 Sources:
+
+- [Lucide Animated Lock, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/lock.tsx)
+- [Lucide Animated LockOpen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/lock-open.tsx)
+- [Lucide Animated LockKeyhole, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/lock-keyhole.tsx)
+- [Lucide Animated LockKeyholeOpen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/lock-keyhole-open.tsx)
+- [Lucide Animated Key, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/key.tsx)
+- [Lucide Animated KeyCircle, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/key-circle.tsx)
+- [Lucide Animated KeySquare, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/key-square.tsx)
+- [Lucide Animated ShieldCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shield-check.tsx)
+- [Lucide Animated Fingerprint, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/fingerprint.tsx)
+- [Lucide Animated ScanFace, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/scan-face.tsx)
 
 - [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
 - [Lucide Animated FolderGit2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git-2.tsx)

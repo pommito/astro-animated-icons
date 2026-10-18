@@ -1,3 +1,4 @@
+import { securityIcons } from "./helpers/security-icons.js";
 import { clockCalendarIcons } from "./helpers/clock-calendar.js";
 
 import { chartIcons } from "./helpers/chart-icons.js";
@@ -14,6 +15,7 @@ import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount, label, axis } of [
+  ...securityIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...clockCalendarIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
 
   ...chartIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
@@ -72,7 +74,7 @@ for (const { name, route, tag, animationCount, label, axis } of [
 
       await page.emulateMedia({ reducedMotion: "reduce" });
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
-      expect((await link.locator("path, circle, line").first().boundingBox())![axis]).toBeCloseTo(resting, 1);
+      await expect.poll(async () => (await link.locator("path, circle, line").first().boundingBox())![axis]).toBeCloseTo(resting, 1);
       await page.emulateMedia({ reducedMotion: "no-preference" });
       await page.mouse.move(0, 0);
       await link.hover();
