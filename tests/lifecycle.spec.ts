@@ -1,4 +1,5 @@
 import { navigationIcons } from "./helpers/navigation-icons.js";
+import { commands } from "./helpers/commands.js";
 import { userIcons } from "./helpers/user-icons.js";
 import { displayIcons } from "./helpers/display-icons.js";
 import { folders } from "./helpers/folders.js";
@@ -10,6 +11,7 @@ import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
   ...navigationIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
+  ...commands.filter(({ animationCount }) => animationCount > 0).map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...userIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...displayIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...folders.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),

@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-menu">
+  <g>
+    <line x1="4" x2="20" y1="6" y2="6" style="transform-box: fill-box; transform-origin: 50% 50%" />
+    <line x1="4" x2="20" y1="12" y2="12" style="transform-box: fill-box; transform-origin: 50% 50%" />
+    <line x1="4" x2="20" y1="18" y2="18" style="transform-box: fill-box; transform-origin: 50% 50%" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
