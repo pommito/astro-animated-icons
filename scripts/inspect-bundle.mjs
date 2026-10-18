@@ -48,6 +48,7 @@ function inspectRoute(output, route, log) {
 
 
 const singleRoutes = {
+  "arrow-left": "single",
   "map-pin-check-inside": "map-pin-check-inside-single",
   "map-pin-check": "map-pin-check-single",
   "map-pin-house": "map-pin-house-single",
@@ -58,7 +59,6 @@ const singleRoutes = {
   "map-pin-plus": "map-pin-plus-single",
   "map-pin-x-inside": "map-pin-x-inside-single",
   "compass": "compass-single",
-  "arrow-left": "single",
   "battery": "battery-single",
   "battery-charging": "battery-charging-single",
   "battery-full": "battery-full-single",

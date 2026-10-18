@@ -26,7 +26,7 @@ test("MapPinPlusInside reveals horizontal before vertical and holds the raised p
 });
 
 
-testIconBehavior(mapCompassIcons, [100, 300, 650, 1000]);
+testIconBehavior(mapCompassIcons, [100, 300, 350, 650, 1000]);
 
 for (const icon of mapCompassIcons) {
   test(`${icon.name} plays, holds, and replays its moving transform continuously`, async ({ page }) => {
