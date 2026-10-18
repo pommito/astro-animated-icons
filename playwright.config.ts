@@ -1,15 +1,19 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const baseURL = `http://127.0.0.1:${process.env.ICON_TEST_PORT ?? "45321"}`;
+
 export default defineConfig({
   testDir: "./tests",
   use: {
-    baseURL: "http://127.0.0.1:45321",
+    baseURL,
     ...devices["Desktop Chrome"],
     channel: "chrome",
   },
   webServer: {
-    command: "pnpm test:build && pnpm --filter @grave/animated-icons-test-fixture exec astro preview --ignore-lock --host 127.0.0.1 --port 45321",
-    url: "http://127.0.0.1:45321",
+    command: "node scripts/fixture.mjs serve",
+    url: baseURL,
     reuseExistingServer: false,
+    stdout: "pipe",
+    gracefulShutdown: { signal: "SIGTERM", timeout: 5000 },
   },
 });

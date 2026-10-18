@@ -1,0 +1,52 @@
+# Validation coverage
+
+The suite tests the consumer contract at several boundaries. Add an icon to its recipe suite and bundle cases. Add a shared representative only when the icon introduces a mechanism the existing representatives do not exercise.
+
+## Shared behavior
+
+`tests/api.spec.ts` checks HTML props, scoped styles, accessible labels, size, and manual controls. Its rendering cases are ArrowLeft, Archive, SlidersHorizontal, and Bluetooth. They pass props through adapters for native tracks, path morphing, attribute animation, and a drawing with custom line caps and joins. Every other adapter still has its complete initial drawing and playback checked by its recipe suite.
+
+`tests/accessibility.spec.ts` and `tests/lifecycle.spec.ts` use the cases in `tests/helpers/shared-cases.ts`. Their assertions are unchanged. They check keyboard activation, touch suppression, mouse input on touch-primary devices, reduced-motion changes, independent instances, template upgrades, removal, and reconnection to a new control.
+
+| Representative | Mechanism or failure mode |
+| --- | --- |
+| ArrowLeft | Native path tracks, completed entry restores the drawing |
+| MapPin | Delayed reveal, several tracks, held pose |
+| Check | Completed reveal and queued finish events |
+| FolderHeart | Infinite opacity track |
+| AlarmClock | Spring tracks alongside repeating oscillations |
+| BatteryFull | Fade-out followed by staggered fill |
+| ScanFace | Hidden and visible phases with cancellable callbacks |
+
+Archive and SlidersHorizontal keep their dedicated lifecycle and reduced-motion tests in `tests/archive.spec.ts` and `tests/commands.spec.ts`. Those tests observe paths, spring motion, or SVG attributes directly. Counting native animations cannot establish that their JavaScript-driven work has stopped.
+
+The shared suites previously expanded the same scenarios across nearly the entire catalog. Removing those repetitions does not remove recipe tests. HTML props fixtures now exist only for the four rendering cases. Single-icon and combined routes remain because each protects a distinct consumer bundle.
+
+## Every icon
+
+The icon suites retain their existing no-JavaScript scenarios. They check initial SVG geometry and native links. They also retain manual playback, stop continuity, replay, cleanup, instance isolation, and reduced-motion checks where recipes can differ. The helper `testIconBehavior` continues to apply these checks to each member of its recipe family.
+
+Animation assertions and timeouts remain unchanged. The interruption samples protect distinct phases within each family:
+
+| Suite | Existing interruption samples and purpose |
+| --- | --- |
+| Energy and Bluetooth | 100, 300, 650, 1600 ms cover filling, delayed slash reveal, staggered bars, and later loops |
+| Clock and calendar | 50, 300, 950, 1600 ms cover entry, reveal boundaries, and oscillations after the initial spring |
+| Charts | 100, 300, 650, 1000 ms cover fade-out, the hidden interval, staggered redraw, and held sectors |
+| Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
+| Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
+| Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
+
+Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
+
+## Checks without a browser
+
+`pnpm check` checks the package, the remaining Astro consumer fixtures, and TypeScript test code. Both Astro checks remain because adapters and consumer templates have different typing responsibilities.
+
+`pnpm inspect:bundle` checks every exported icon against its directory and single-icon route. It also checks registration counts, shared CSS, unused exports, absence of React in consumer bundles, and exact chunk unions for combined routes. `pnpm test:bundle` keeps all negative cases against temporary output copies. These checks already run without Chrome. Their assertions remain intact.
+
+`pnpm test:fixture` checks reuse and rejection of changed inputs or output through the fixture commands. The tests restore their temporary changes and reuse an existing build.
+
+See [the contributor workflow](../CONTRIBUTING.md#validate-the-change) for commands.
+
+Measurements for this strategy are recorded in [the validation timing record](history/2026-10-18-validation.md).

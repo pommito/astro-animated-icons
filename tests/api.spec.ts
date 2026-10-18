@@ -1,53 +1,7 @@
-import { energyBluetoothIcons } from "./helpers/energy-bluetooth.js";
-import { securityIcons } from "./helpers/security-icons.js";
-import { clockCalendarIcons } from "./helpers/clock-calendar.js";
-
-import { chartIcons } from "./helpers/chart-icons.js";
-import { navigationIcons } from "./helpers/navigation-icons.js";
-import { documentIcons } from "./helpers/documents.js";
-import { commands } from "./helpers/commands.js";
-import { userIcons } from "./helpers/user-icons.js";
-import { displayIcons } from "./helpers/display-icons.js";
-import { folders } from "./helpers/folders.js";
-import { gitIcons } from "./helpers/git-icons.js";
-import { grips } from "./helpers/grips.js";
-import { chevrons } from "./helpers/chevrons.js";
+import { renderingCases } from "./helpers/shared-cases.js";
 import { expect, test } from "@playwright/test";
 
-for (const { name, route, label } of [
-  ...energyBluetoothIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...securityIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...clockCalendarIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-
-  ...chartIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...navigationIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...documentIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}-props/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...commands.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...userIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...displayIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...folders.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...gitIcons.filter(({ slug }) => !slug.startsWith("folder-")).map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...chevrons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  ...grips.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
-  { name: "Home", route: "/home-props/", label: "Home icon" },
-  { name: "ArrowDown", route: "/arrow-down-props/", label: "Down arrow" },
-  { name: "ArrowLeft", route: "/props/", label: "Back arrow" },
-  { name: "ArrowRight", route: "/arrow-right-props/", label: "Right arrow" },
-  { name: "MapPin", route: "/map-pin-props/", label: "Location pin" },
-  { name: "Copy", route: "/copy-props/", label: "Copy icon" },
-  { name: "Archive", route: "/archive-props/", label: "Archive icon" },
-  { name: "AtSign", route: "/at-sign-props/", label: "AtSign icon" },
-  { name: "AttachFile", route: "/attach-file-props/", label: "AttachFile icon" },
-  { name: "Check", route: "/check-props/", label: "Check icon" },
-  { name: "ArrowUp", route: "/arrow-up-props/", label: "Up arrow" },
-  { name: "FileText", route: "/file-text-props/", label: "FileText icon" },
-
-  { name: "Bot", route: "/bot-props/", label: "Bot icon" },
-  { name: "ArrowUpRight", route: "/arrow-up-right-props/", label: "Up-right arrow" },
-  { name: "ArrowUpLeft", route: "/arrow-up-left-props/", label: "Up-left arrow" },
-  { name: "AudioLines", route: "/audio-lines-props/", label: "AudioLines icon" },
-]) {
+for (const { name, route, label } of renderingCases) {
   test.describe(name, () => {
     test("HTML attributes, scoped classes, inline styles, and the upstream default size reach the icon", async ({ page }) => {
       await page.goto(route);
@@ -105,4 +59,3 @@ test("manual playback also respects reduced motion", async ({ page }) => {
   await page.locator("#controlled").click();
   expect(await page.locator("#controlled").evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
 });
-import { messageIcons } from "./helpers/message-icons.js";
