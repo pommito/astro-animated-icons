@@ -1,4 +1,5 @@
 import { energyBluetoothIcons } from "./helpers/energy-bluetooth.js";
+import { securityIcons } from "./helpers/security-icons.js";
 import { clockCalendarIcons } from "./helpers/clock-calendar.js";
 
 import { chartIcons } from "./helpers/chart-icons.js";
@@ -16,6 +17,7 @@ import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
   ...energyBluetoothIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
+  ...securityIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...clockCalendarIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
 
   ...chartIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),

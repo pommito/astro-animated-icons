@@ -1,4 +1,5 @@
 import { energyBluetoothIcons } from "./helpers/energy-bluetooth.js";
+import { securityIcons } from "./helpers/security-icons.js";
 import { clockCalendarIcons } from "./helpers/clock-calendar.js";
 
 import { chartIcons } from "./helpers/chart-icons.js";
@@ -15,6 +16,7 @@ import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
   ...energyBluetoothIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
+  ...securityIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...clockCalendarIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
 
   ...chartIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
