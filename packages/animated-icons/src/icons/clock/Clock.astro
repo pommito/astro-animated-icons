@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-clock">
+  <g>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="12" x2="12" y1="12" y2="6" data-motion="0" style="transform-box: fill-box; transform-origin: 0% 100%" />
+    <line x1="12" x2="16" y1="12" y2="12" data-motion="1" style="transform-box: fill-box; transform-origin: 0% 100%" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
