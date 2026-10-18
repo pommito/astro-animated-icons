@@ -313,3 +313,33 @@ export type { ExternalLinkIconHandle } from "./icons/external-link/element";
 
 export { default as Link } from "./icons/link/Link.astro";
 export type { LinkIconHandle } from "./icons/link/element";
+
+export { default as Lock } from "./icons/lock/Lock.astro";
+export type { LockIconHandle } from "./icons/lock/element";
+
+export { default as LockOpen } from "./icons/lock-open/LockOpen.astro";
+export type { LockOpenIconHandle } from "./icons/lock-open/element";
+
+export { default as LockKeyhole } from "./icons/lock-keyhole/LockKeyhole.astro";
+export type { LockKeyholeIconHandle } from "./icons/lock-keyhole/element";
+
+export { default as LockKeyholeOpen } from "./icons/lock-keyhole-open/LockKeyholeOpen.astro";
+export type { LockKeyholeOpenIconHandle } from "./icons/lock-keyhole-open/element";
+
+export { default as Key } from "./icons/key/Key.astro";
+export type { KeyIconHandle } from "./icons/key/element";
+
+export { default as KeyCircle } from "./icons/key-circle/KeyCircle.astro";
+export type { KeyCircleIconHandle } from "./icons/key-circle/element";
+
+export { default as KeySquare } from "./icons/key-square/KeySquare.astro";
+export type { KeySquareIconHandle } from "./icons/key-square/element";
+
+export { default as ShieldCheck } from "./icons/shield-check/ShieldCheck.astro";
+export type { ShieldCheckIconHandle } from "./icons/shield-check/element";
+
+export { default as Fingerprint } from "./icons/fingerprint/Fingerprint.astro";
+export type { FingerprintIconHandle } from "./icons/fingerprint/element";
+
+export { default as ScanFace } from "./icons/scan-face/ScanFace.astro";
+export type { ScanFaceIconHandle } from "./icons/scan-face/element";
