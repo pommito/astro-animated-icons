@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-battery">
+  <g>
+    <rect height="12" rx="2" width="16" x="2" y="6" />
+    <path d="M22 14v-4" />
+    <rect data-fill fill="currentColor" height="8" rx="1" stroke="none" width="0" opacity="0" x="4" y="8" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

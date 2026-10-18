@@ -1,11 +1,12 @@
 import { animate } from "motion/mini";
-import type { IconTrack } from "../element";
+import type { IconRecipe, IconTrack } from "../element";
 
 type RevealOptions = NonNullable<Parameters<typeof animate>[2]> & {
   opacityDuration?: number;
   opacityDelay?: number;
   opacityEase?: NonNullable<Parameters<typeof animate>[2]>["ease"];
   reverseOffset?: boolean;
+  pathOffset?: 1 | -1;
   preservePose?: boolean;
 };
 
@@ -14,7 +15,7 @@ const playbacks = new WeakMap<SVGGeometryElement, { active: boolean }>();
 export function animatePathReveal(path: SVGGeometryElement, returning: boolean, track: IconTrack, options: RevealOptions) {
   const length = path.getTotalLength();
   const fullPath = `${length}px ${length}px`;
-  const { opacityDuration, opacityDelay = options.delay, opacityEase = options.ease, reverseOffset, preservePose, ...transition } = options;
+  const { opacityDuration, opacityDelay = options.delay, opacityEase = options.ease, reverseOffset, pathOffset = reverseOffset ? 1 : undefined, preservePose, ...transition } = options;
   const interrupted = preservePose && playbacks.get(path)?.active;
   const playback = { active: true };
   if (preservePose) playbacks.set(path, playback);
@@ -24,8 +25,8 @@ export function animatePathReveal(path: SVGGeometryElement, returning: boolean, 
     playback.active = false;
     onComplete();
   } }));
-  if (reverseOffset) {
-    track((onComplete) => animate(path, { strokeDashoffset: returning ? "0px" : [`${-length}px`, "0px"] }, { ...transition, onComplete }));
+  if (pathOffset) {
+    track((onComplete) => animate(path, { strokeDashoffset: returning ? "0px" : [`${-pathOffset * length}px`, "0px"] }, { ...transition, onComplete }));
   }
 }
 
@@ -34,4 +35,16 @@ export function clearPathReveal(path: SVGGeometryElement) {
   path.style.removeProperty("opacity");
   path.style.removeProperty("stroke-dasharray");
   path.style.removeProperty("stroke-dashoffset");
+}
+
+export function createPathRevealRecipe(strokes: RevealOptions[]): IconRecipe {
+  return {
+    finish: "hold",
+    animate(drawing, returning, track) {
+      strokes.forEach((options, index) => animatePathReveal(drawing.children[index] as SVGGeometryElement, returning, track, options));
+    },
+    clear(drawing) {
+      strokes.forEach((_, index) => clearPathReveal(drawing.children[index] as SVGGeometryElement));
+    },
+  };
 }

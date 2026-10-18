@@ -1,0 +1,21 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-battery-warning">
+  <g>
+    <path d="M14 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2" />
+    <path d="M22 14v-4" />
+    <path d="M6 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2" />
+    <g data-pulse style="transform-box: fill-box; transform-origin: center;">
+      <path d="M10 17h.01" />
+      <path d="M10 7v6" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
