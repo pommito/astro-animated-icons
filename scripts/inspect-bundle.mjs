@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "battery": "battery-single",
+  "battery-charging": "battery-charging-single",
+  "battery-full": "battery-full-single",
+  "battery-low": "battery-low-single",
+  "battery-medium": "battery-medium-single",
+  "battery-plus": "battery-plus-single",
+  "battery-warning": "battery-warning-single",
+  "bluetooth": "bluetooth-single",
+  "bluetooth-connected": "bluetooth-connected-single",
+  "bluetooth-off": "bluetooth-off-single",
+
   "login": "login-single",
   "logout": "logout-single",
   "refresh-cw": "refresh-cw-single",
@@ -178,6 +189,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["battery-combined", "arrow-left", "battery"],
+  ["battery-charging-combined", "arrow-left", "battery-charging"],
+  ["battery-full-combined", "arrow-left", "battery-full"],
+  ["battery-low-combined", "arrow-left", "battery-low"],
+  ["battery-medium-combined", "arrow-left", "battery-medium"],
+  ["battery-plus-combined", "arrow-left", "battery-plus"],
+  ["battery-warning-combined", "arrow-left", "battery-warning"],
+  ["bluetooth-combined", "arrow-left", "bluetooth"],
+  ["bluetooth-connected-combined", "arrow-left", "bluetooth-connected"],
+  ["bluetooth-off-combined", "arrow-left", "bluetooth-off"],
+
   ["login-combined", "arrow-left", "login"],
   ["logout-combined", "arrow-left", "logout"],
   ["refresh-cw-combined", "arrow-left", "refresh-cw"],

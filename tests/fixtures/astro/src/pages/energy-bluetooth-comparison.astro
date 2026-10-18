@@ -1,0 +1,40 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { energyBluetoothIcons } from "../../../../helpers/energy-bluetooth";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Energy and Bluetooth recipe comparisons</title></head>
+  <body>
+    <h1>Energy and Bluetooth recipe comparisons</h1>
+    <p>The reference runs the ten original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Their class utility import points to a local equivalent. React is confined to this comparison page.</p>
+    <p>Hover a row or use its Replay button to animate both versions together. Play all starts every sample. Stop all returns them to rest. Seek pauses both versions at the selected time in the current playback.</p>
+    <p>Battery keeps its complete outline visible at rest. Its separate fill starts at width zero and opacity zero, matching upstream. CSS geometry width reproduces the fill without stretching its corner radius. BatteryFull, BatteryMedium, and BatteryLow flatten the asynchronous fade-out and staggered fade-in into one cancellable timeline, preventing an old fade-in from restarting after stop. Pulses use fill-box centers and preserve spring velocity on return. Bluetooth keeps the upstream butt caps and miter joins. Native stroke lengths replace normalized path lengths.</p>
+    <p>The automated comparison checks entry and each battery level phase separately. The second phase begins after the original asynchronous fade-out completes. Seek uses the current reference phase for those three icons; replay them before seeking their fade-out. Adapter interruption tests check continuity and cleanup separately. Seeking a native React animation does not rebase Motion's wall-clock sampling on stop, so a stop after seeking does not provide a reliable numerical reference for an interrupted return.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <label>Playback time in milliseconds <input id="time" type="number" value="200" min="0" max="3000" step="50" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+    {energyBluetoothIcons.map(icon => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <tbody>{sizes.map(size => <tr data-icon={icon.slug} data-size={size}>
+            <th scope="row">{size} px</th>
+            <td data-adapter><Component size={size} controlled /></td>
+            <td><div data-reference data-name={icon.name} data-size={size}></div></td>
+            <td><button type="button" data-replay aria-label={`Replay ${icon.name} at ${size} pixels`}>Replay</button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../energy-bluetooth-reference";
+</script>
