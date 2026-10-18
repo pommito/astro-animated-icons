@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { sampleUpstreamPoses, compareUpstreamPoses } from "./helpers/upstream-comparison.js";
 import { messageIcons } from "./helpers/message-icons.js";
 import { testIconBehavior } from "./helpers/icon-behavior.js";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
@@ -21,46 +22,14 @@ test("all message adapters match the pinned React components at small sizes", as
       await page.locator("#stop").click();
       await page.waitForTimeout(50);
     }
-    const samples = await page.evaluate(() => {
-      return [0, 50, 100, 150, 200, 250, 300, 375, 400, 500, 600, 800, 1000, 1200, 1500, 1600].flatMap((time) => {
-        document.dispatchEvent(new CustomEvent("message-seek", { detail: time }));
-        return [...document.querySelectorAll<HTMLTableRowElement>("tr[data-icon]")].map((row) => {
-          const pose = (selector: string) => {
-            const container = row.querySelector(selector)!;
-            const origin = container.firstElementChild!.getBoundingClientRect();
-            return [...container.querySelectorAll<SVGGeometryElement>("path")].map((shape) => {
-              const box = shape.getBoundingClientRect();
-              let opacity = 1;
-              let parent: Element | null = shape;
-              while (parent && parent !== container) {
-                opacity *= Number(getComputedStyle(parent).opacity);
-                parent = parent.parentElement;
-              }
-              const length = Number(shape.getAttribute("pathLength")) || shape.getTotalLength();
-              const dash = parseFloat(getComputedStyle(shape).strokeDasharray);
-              return [
-                box.x - origin.x, box.y - origin.y, box.width, box.height, opacity,
-                Number.isNaN(dash) ? 1 : dash / length,
-                parseFloat(getComputedStyle(shape).strokeDashoffset) / length,
-              ];
-            });
-          };
-          return { time, icon: row.dataset.icon, size: row.dataset.size, adapter: pose("[data-adapter]"), reference: pose("[data-reference]") };
-        });
-      });
+    const samples = await page.evaluate(sampleUpstreamPoses, {
+      seekEvent: "message-seek",
+      times: [0, 50, 100, 150, 200, 250, 300, 375, 400, 500, 600, 800, 1000, 1200, 1500, 1600],
+      origin: "wrapper" as const,
     });
-    for (const sample of samples) {
-      expect(sample.adapter.length).toBe(sample.reference.length);
-      sample.adapter.forEach((shape, index) => shape.forEach((value, coordinate) => {
-        const difference = Math.abs(value - sample.reference[index][coordinate]);
-        if (coordinate < 4) maximumGeometry = Math.max(maximumGeometry, difference);
-        else maximumPaint = Math.max(maximumPaint, difference);
-        const tolerance = coordinate < 4 ? 0.03 : 0.005;
-        if (difference >= tolerance) {
-          expect(difference, `${sample.icon}, ${sample.size}px, ${sample.time}ms, returning ${returning}, shape ${index}, coordinate ${coordinate}`).toBeLessThan(tolerance);
-        }
-      }));
-    }
+    const differences = compareUpstreamPoses(samples, `returning ${returning}`);
+    maximumGeometry = Math.max(maximumGeometry, differences.maximumGeometry);
+    maximumPaint = Math.max(maximumPaint, differences.maximumPaint);
   }
   expect(errors).toEqual([]);
   expect(maximumGeometry).toBeLessThan(0.03);
