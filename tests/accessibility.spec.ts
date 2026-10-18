@@ -1,53 +1,8 @@
-import { energyBluetoothIcons } from "./helpers/energy-bluetooth.js";
-import { securityIcons } from "./helpers/security-icons.js";
-import { clockCalendarIcons } from "./helpers/clock-calendar.js";
-
-import { chartIcons } from "./helpers/chart-icons.js";
-import { navigationIcons } from "./helpers/navigation-icons.js";
-import { documentIcons } from "./helpers/documents.js";
-import { commands } from "./helpers/commands.js";
-import { userIcons } from "./helpers/user-icons.js";
-import { displayIcons } from "./helpers/display-icons.js";
-import { folders } from "./helpers/folders.js";
-import { gitIcons } from "./helpers/git-icons.js";
-import { grips } from "./helpers/grips.js";
-import { chevrons } from "./helpers/chevrons.js";
+import { sharedCases } from "./helpers/shared-cases.js";
 import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
-for (const { name, route, tag, animationCount, label, axis } of [
-  ...energyBluetoothIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...securityIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...clockCalendarIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-
-  ...chartIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...navigationIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...documentIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...commands.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...userIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...displayIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...folders.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...gitIcons.filter(({ slug }) => !slug.startsWith("folder-")).map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
-  ...chevrons.map(({ name, slug, tag, kind, axis }) => ({ name, route: `/${slug}/`, tag, animationCount: kind === "spring" ? 2 : 1, label: `${name} icon`, axis: axis === "X" ? "x" as const : "y" as const })),
-  ...grips.map(({ name, slug, tag, pulse, circles }) => ({ name, route: `/${slug}/`, tag, animationCount: circles.length * (pulse ? 2 : 1), label: `${name} icon`, axis: "x" as const })),
-  { name: "Home", route: "/home/", tag: "grave-home", animationCount: 2, label: "Home icon", axis: "x" as const },
-  { name: "ArrowDown", route: "/arrow-down/", tag: "grave-arrow-down", animationCount: 2, label: "Down arrow", axis: "y" as const },
-  { name: "ArrowLeft", route: "/", tag: "grave-arrow-left", animationCount: 2, label: "Left arrow", axis: "x" as const },
-  { name: "ArrowRight", route: "/arrow-right/", tag: "grave-arrow-right", animationCount: 2, label: "Right arrow", axis: "x" as const },
-  { name: "MapPin", route: "/map-pin/", tag: "grave-map-pin", animationCount: 4, label: "Location pin", axis: "y" as const },
-  { name: "Copy", route: "/copy/", tag: "grave-copy", animationCount: 2, label: "Copy icon", axis: "x" as const },
-  { name: "AtSign", route: "/at-sign/", tag: "grave-at-sign", animationCount: 5, label: "AtSign icon", axis: "x" as const },
-  { name: "AttachFile", route: "/attach-file/", tag: "grave-attach-file", animationCount: 2, label: "AttachFile icon", axis: "x" as const },
-  { name: "Check", route: "/check/", tag: "grave-check", animationCount: 3, label: "Check icon", axis: "x" as const },
-  { name: "ArrowUp", route: "/arrow-up/", tag: "grave-arrow-up", animationCount: 2, label: "Up arrow", axis: "y" as const },
-  { name: "FileText", route: "/file-text/", tag: "grave-file-text", animationCount: 4, label: "FileText icon", axis: "x" as const },
-
-  { name: "Bot", route: "/bot/", tag: "grave-bot", animationCount: 4, label: "Bot icon", axis: "y" as const },
-  { name: "ArrowUpRight", route: "/arrow-up-right/", tag: "grave-arrow-up-right", animationCount: 1, label: "Up-right arrow", axis: "y" as const },
-  { name: "ArrowUpLeft", route: "/arrow-up-left/", tag: "grave-arrow-up-left", animationCount: 1, label: "Up-left arrow", axis: "y" as const },
-  { name: "AudioLines", route: "/audio-lines/", tag: "grave-audio-lines", animationCount: 8, label: "AudioLines icon", axis: "y" as const },
-]) {
+for (const { name, route, tag, animationCount, label, axis } of sharedCases) {
   test.describe(name, () => {
     test("reduced motion keeps the icon static and preserves the native control", async ({ page }) => {
       await page.emulateMedia({ reducedMotion: "reduce" });
@@ -117,4 +72,3 @@ for (const { name, route, tag, animationCount, label, axis } of [
     });
   });
 }
-import { messageIcons } from "./helpers/message-icons.js";

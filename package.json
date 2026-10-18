@@ -6,10 +6,15 @@
   "engines": { "node": ">=22.12.0" },
   "scripts": {
     "check": "pnpm --filter @grave/animated-icons check && pnpm --filter @grave/animated-icons-test-fixture check && tsc --noEmit",
-    "test:build": "pnpm --filter @grave/animated-icons-test-fixture build",
-    "inspect:bundle": "node scripts/inspect-bundle.mjs",
-    "test:bundle": "node --test scripts/inspect-bundle.test.mjs",
-    "test": "playwright test"
+    "test:build": "node scripts/fixture.mjs build --fresh",
+    "test:prepare": "node scripts/fixture.mjs build",
+    "test:serve": "node scripts/fixture.mjs serve",
+    "test:fixture": "pnpm test:prepare && node --test scripts/fixture.test.mjs",
+    "inspect:bundle": "node scripts/fixture.mjs check && node scripts/inspect-bundle.mjs",
+    "test:bundle": "node scripts/fixture.mjs check && node --test scripts/inspect-bundle.test.mjs",
+    "test": "playwright test",
+    "test:fresh": "pnpm test:build && playwright test",
+    "validate": "pnpm check && pnpm test:build && pnpm inspect:bundle && pnpm test:bundle && pnpm test:fixture && pnpm test"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",
