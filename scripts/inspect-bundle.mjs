@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "download": "download-single",
+  "upload": "upload-single",
+  "clipboard-check": "clipboard-check-single",
+  "delete": "delete-single",
+  "file-check": "file-check-single",
+  "file-check-2": "file-check-2-single",
+  "file-pen-line": "file-pen-line-single",
+  "file-cog": "file-cog-single",
+  "file-stack": "file-stack-single",
+  "file-chart-line": "file-chart-line-single",
   "user": "user-single",
   "user-check": "user-check-single",
   "user-plus": "user-plus-single",
@@ -137,6 +147,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["download-combined", "arrow-left", "download"],
+  ["upload-combined", "arrow-left", "upload"],
+  ["clipboard-check-combined", "arrow-left", "clipboard-check"],
+  ["delete-combined", "arrow-left", "delete"],
+  ["file-check-combined", "arrow-left", "file-check"],
+  ["file-check-2-combined", "arrow-left", "file-check-2"],
+  ["file-pen-line-combined", "arrow-left", "file-pen-line"],
+  ["file-cog-combined", "arrow-left", "file-cog"],
+  ["file-stack-combined", "arrow-left", "file-stack"],
+  ["file-chart-line-combined", "arrow-left", "file-chart-line"],
+
   ["user-combined", "arrow-left", "user"],
   ["user-check-combined", "arrow-left", "user-check"],
   ["user-plus-combined", "arrow-left", "user-plus"],

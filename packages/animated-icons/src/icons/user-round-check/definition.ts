@@ -1,1 +1,1 @@
-export { userCheckRecipe as userRoundCheckRecipe } from "../../shared/user-check";
+export { checkRevealRecipe as userRoundCheckRecipe } from "../../shared/check-reveal";

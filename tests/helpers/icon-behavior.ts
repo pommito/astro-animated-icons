@@ -18,9 +18,9 @@ export function testIconBehavior(icons: readonly FixtureIcon[], stopTimes: reado
       await expect(link.locator("svg")).toBeVisible();
       await expect(link.locator("svg")).toHaveAttribute("aria-hidden", "true");
       await expect(link.locator("svg")).toHaveAttribute("stroke-width", "2");
-      await expect(link.locator("path, circle, rect, line")).toHaveCount(icon.drawing.length);
+      await expect(link.locator("path, circle, rect, line, polyline")).toHaveCount(icon.drawing.length);
       for (const [index, shape] of icon.drawing.entries()) {
-        const actual = link.locator("path, circle, rect, line").nth(index);
+        const actual = link.locator("path, circle, rect, line, polyline").nth(index);
         expect(await actual.evaluate((element) => element.localName)).toBe(shape.tag);
         for (const [attribute, value] of Object.entries(shape.attrs)) await expect(actual).toHaveAttribute(attribute, value);
       }
@@ -50,9 +50,9 @@ export function testIconBehavior(icons: readonly FixtureIcon[], stopTimes: reado
           }
           element.startAnimation();
           element.getAnimations({ subtree: true }).forEach((animation) => { animation.pause(); animation.currentTime = time; });
-          const pose = () => [...element.querySelectorAll("g, path, circle, rect, line")].map((shape) => {
+          const pose = () => [...element.querySelectorAll("g, path, circle, rect, line, polyline")].map((shape) => {
             const style = getComputedStyle(shape);
-            return [style.opacity, style.strokeDasharray, style.strokeDashoffset, style.transform];
+            return [style.opacity, style.strokeDasharray, style.strokeDashoffset, style.transform, style.getPropertyValue("d")];
           });
           const before = pose();
           if (interruption === "stop") element.stopAnimation();
@@ -66,8 +66,8 @@ export function testIconBehavior(icons: readonly FixtureIcon[], stopTimes: reado
         if (interruption === "reduce") await page.emulateMedia({ reducedMotion: "reduce" });
         await expect.poll(() => element!.evaluate((element) => ({
           tracks: element.getAnimations({ subtree: true }).length,
-          shapes: element.querySelectorAll("path, circle, rect, line").length,
-          clean: [...element.querySelectorAll<SVGElement>("g, path, circle, rect, line")].every((shape) => !shape.style.opacity && !shape.style.strokeDasharray && !shape.style.strokeDashoffset && !shape.style.transform),
+          shapes: element.querySelectorAll("path, circle, rect, line, polyline").length,
+          clean: [...element.querySelectorAll<SVGElement>("g, path, circle, rect, line, polyline")].every((shape) => !shape.style.opacity && !shape.style.strokeDasharray && !shape.style.strokeDashoffset && !shape.style.transform && !shape.style.getPropertyValue("d")),
         }))).toEqual({ tracks: 0, shapes: icon.drawing.length, clean: true });
         if (interruption === "reduce") {
           await element!.evaluate((element: HTMLElement & IconHandle) => element.startAnimation());

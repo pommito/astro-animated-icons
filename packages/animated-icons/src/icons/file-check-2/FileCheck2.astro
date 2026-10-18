@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-file-check-2">
+  <g>
+    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+    <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
+    <path d="m3 15 2 2 4-4" data-motion="0" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
