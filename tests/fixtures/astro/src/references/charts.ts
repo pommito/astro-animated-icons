@@ -1,0 +1,10 @@
+export { ChartBarDecreasingIcon as ChartBarDecreasing } from "./charts/chart-bar-decreasing";
+export { ChartBarIncreasingIcon as ChartBarIncreasing } from "./charts/chart-bar-increasing";
+export { ChartColumnDecreasingIcon as ChartColumnDecreasing } from "./charts/chart-column-decreasing";
+export { ChartColumnIncreasingIcon as ChartColumnIncreasing } from "./charts/chart-column-increasing";
+export { ChartLineIcon as ChartLine } from "./charts/chart-line";
+export { ChartNoAxesColumnDecreasingIcon as ChartNoAxesColumnDecreasing } from "./charts/chart-no-axes-column-decreasing";
+export { ChartNoAxesColumnIncreasingIcon as ChartNoAxesColumnIncreasing } from "./charts/chart-no-axes-column-increasing";
+export { ChartPieIcon as ChartPie } from "./charts/chart-pie";
+export { ChartScatterIcon as ChartScatter } from "./charts/chart-scatter";
+export { ChartSplineIcon as ChartSpline } from "./charts/chart-spline";

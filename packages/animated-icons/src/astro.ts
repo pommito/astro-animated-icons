@@ -343,3 +343,33 @@ export type { FingerprintIconHandle } from "./icons/fingerprint/element";
 
 export { default as ScanFace } from "./icons/scan-face/ScanFace.astro";
 export type { ScanFaceIconHandle } from "./icons/scan-face/element";
+
+export { default as ChartBarDecreasing } from "./icons/chart-bar-decreasing/ChartBarDecreasing.astro";
+export type { ChartBarDecreasingIconHandle } from "./icons/chart-bar-decreasing/element";
+
+export { default as ChartBarIncreasing } from "./icons/chart-bar-increasing/ChartBarIncreasing.astro";
+export type { ChartBarIncreasingIconHandle } from "./icons/chart-bar-increasing/element";
+
+export { default as ChartColumnDecreasing } from "./icons/chart-column-decreasing/ChartColumnDecreasing.astro";
+export type { ChartColumnDecreasingIconHandle } from "./icons/chart-column-decreasing/element";
+
+export { default as ChartColumnIncreasing } from "./icons/chart-column-increasing/ChartColumnIncreasing.astro";
+export type { ChartColumnIncreasingIconHandle } from "./icons/chart-column-increasing/element";
+
+export { default as ChartLine } from "./icons/chart-line/ChartLine.astro";
+export type { ChartLineIconHandle } from "./icons/chart-line/element";
+
+export { default as ChartNoAxesColumnDecreasing } from "./icons/chart-no-axes-column-decreasing/ChartNoAxesColumnDecreasing.astro";
+export type { ChartNoAxesColumnDecreasingIconHandle } from "./icons/chart-no-axes-column-decreasing/element";
+
+export { default as ChartNoAxesColumnIncreasing } from "./icons/chart-no-axes-column-increasing/ChartNoAxesColumnIncreasing.astro";
+export type { ChartNoAxesColumnIncreasingIconHandle } from "./icons/chart-no-axes-column-increasing/element";
+
+export { default as ChartPie } from "./icons/chart-pie/ChartPie.astro";
+export type { ChartPieIconHandle } from "./icons/chart-pie/element";
+
+export { default as ChartScatter } from "./icons/chart-scatter/ChartScatter.astro";
+export type { ChartScatterIconHandle } from "./icons/chart-scatter/element";
+
+export { default as ChartSpline } from "./icons/chart-spline/ChartSpline.astro";
+export type { ChartSplineIconHandle } from "./icons/chart-spline/element";
