@@ -10,6 +10,7 @@ import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
   ...navigationIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
+  ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}-props/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...commands.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...userIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...displayIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
@@ -92,3 +93,4 @@ test("manual playback also respects reduced motion", async ({ page }) => {
   await page.locator("#controlled").click();
   expect(await page.locator("#controlled").evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
 });
+import { messageIcons } from "./helpers/message-icons.js";
