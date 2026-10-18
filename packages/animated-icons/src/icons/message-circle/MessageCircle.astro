@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-message-circle">
+  <g style="transform-origin: 12px 12px">
+    <g data-rotation style="transform-origin: 12px 12px">
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

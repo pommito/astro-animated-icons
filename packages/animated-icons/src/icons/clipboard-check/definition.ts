@@ -1,3 +1,3 @@
-import { createCheckRevealRecipe } from "../../shared/check-reveal";
+import { createSymbolRevealRecipe } from "../../shared/symbol-reveal";
 
-export const clipboardCheckRecipe = createCheckRevealRecipe(0.3);
+export const clipboardCheckRecipe = createSymbolRevealRecipe(2, 1, 0.3);

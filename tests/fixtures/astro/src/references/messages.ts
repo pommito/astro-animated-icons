@@ -1,0 +1,10 @@
+export { MessageCircleIcon as MessageCircle } from "./messages/message-circle";
+export { MessageCircleCheckIcon as MessageCircleCheck } from "./messages/message-circle-check";
+export { MessageCircleMoreIcon as MessageCircleMore } from "./messages/message-circle-more";
+export { MessageCirclePlusIcon as MessageCirclePlus } from "./messages/message-circle-plus";
+export { MessageCircleXIcon as MessageCircleX } from "./messages/message-circle-x";
+export { MessageSquareIcon as MessageSquare } from "./messages/message-square";
+export { MessageSquareCheckIcon as MessageSquareCheck } from "./messages/message-square-check";
+export { MessageSquareMoreIcon as MessageSquareMore } from "./messages/message-square-more";
+export { MessageSquarePlusIcon as MessageSquarePlus } from "./messages/message-square-plus";
+export { MessageSquareXIcon as MessageSquareX } from "./messages/message-square-x";
