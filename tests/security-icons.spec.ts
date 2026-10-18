@@ -1,8 +1,15 @@
 import { securityIcons } from "./helpers/security-icons.js";
 import { testIconBehavior } from "./helpers/icon-behavior.js";
 import { sampleUpstreamPoses, compareUpstreamPoses } from "./helpers/upstream-comparison.js";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
+
+async function playAndPause(page: Page) {
+  await page.evaluate(() => {
+    document.querySelector<HTMLButtonElement>("#play")!.click();
+    document.dispatchEvent(new CustomEvent("security-seek", { detail: 0 }));
+  });
+}
 
 test("Lock holds the pinned partial shackle and returns without a pose jump", async ({ page }) => {
   await page.goto("/lock/");
@@ -84,8 +91,7 @@ test("Security adapters match the pinned React components at four sizes", async 
   await page.goto("/security-comparison/");
   await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
   await page.waitForFunction((tags) => tags.every((tag) => !!customElements.get(tag)), securityIcons.map((icon) => icon.tag));
-  await page.locator("#play").click();
-  await page.waitForTimeout(100);
+  await playAndPause(page);
   const samples = await page.evaluate(sampleUpstreamPoses, {
     seekEvent: "security-seek", times: [0, 50, 100, 150, 200, 300, 400, 600, 800, 1000, 1500, 2000], origin: "wrapper" as const,
   });
@@ -101,8 +107,7 @@ test("Security adapters match the pinned React components at four sizes", async 
 test("ScanFace hidden phase matches the pinned React component at four sizes", async ({ page }) => {
   await page.goto("/security-comparison/");
   await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-  await page.locator("#play").click();
-  await page.waitForTimeout(100);
+  await playAndPause(page);
   const samples = await page.evaluate(sampleUpstreamPoses, {
     seekEvent: "security-seek", times: [0, 50, 100, 150, 200, 300], origin: "wrapper" as const,
   });
@@ -147,8 +152,7 @@ for (const icon of securityIcons) {
 test("ScanFace visible phase matches the pinned React component at four sizes", async ({ page }) => {
   await page.goto("/security-comparison/");
   await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-  await page.locator("#play").click();
-  await page.waitForTimeout(100);
+  await playAndPause(page);
   await page.evaluate(() => document.dispatchEvent(new Event("security-finish-hidden")));
   await page.waitForTimeout(50);
   const samples = await page.evaluate(sampleUpstreamPoses, {
