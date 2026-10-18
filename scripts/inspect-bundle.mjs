@@ -48,6 +48,16 @@ function inspectRoute(output, route, log) {
 
 
 const singleRoutes = {
+  "map-pin-check-inside": "map-pin-check-inside-single",
+  "map-pin-check": "map-pin-check-single",
+  "map-pin-house": "map-pin-house-single",
+  "map-pin-minus-inside": "map-pin-minus-inside-single",
+  "map-pin-minus": "map-pin-minus-single",
+  "map-pin-off": "map-pin-off-single",
+  "map-pin-plus-inside": "map-pin-plus-inside-single",
+  "map-pin-plus": "map-pin-plus-single",
+  "map-pin-x-inside": "map-pin-x-inside-single",
+  "compass": "compass-single",
   "arrow-left": "single",
   "battery": "battery-single",
   "battery-charging": "battery-charging-single",
@@ -219,6 +229,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["map-pin-check-inside-combined", "arrow-left", "map-pin-check-inside"],
+  ["map-pin-check-combined", "arrow-left", "map-pin-check"],
+  ["map-pin-house-combined", "arrow-left", "map-pin-house"],
+  ["map-pin-minus-inside-combined", "arrow-left", "map-pin-minus-inside"],
+  ["map-pin-minus-combined", "arrow-left", "map-pin-minus"],
+  ["map-pin-off-combined", "arrow-left", "map-pin-off"],
+  ["map-pin-plus-inside-combined", "arrow-left", "map-pin-plus-inside"],
+  ["map-pin-plus-combined", "arrow-left", "map-pin-plus"],
+  ["map-pin-x-inside-combined", "arrow-left", "map-pin-x-inside"],
+  ["compass-combined", "arrow-left", "compass"],
   ["battery-combined", "arrow-left", "battery"],
   ["battery-charging-combined", "arrow-left", "battery-charging"],
   ["battery-full-combined", "arrow-left", "battery-full"],
