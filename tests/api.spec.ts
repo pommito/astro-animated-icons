@@ -1,4 +1,5 @@
 import { documentIcons } from "./helpers/documents.js";
+import { commands } from "./helpers/commands.js";
 import { userIcons } from "./helpers/user-icons.js";
 import { displayIcons } from "./helpers/display-icons.js";
 import { folders } from "./helpers/folders.js";
@@ -9,6 +10,7 @@ import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
   ...documentIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
+  ...commands.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...userIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...displayIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...folders.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
