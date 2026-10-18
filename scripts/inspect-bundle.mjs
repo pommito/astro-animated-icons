@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "link": "link-single",
+  "external-link": "external-link-single",
+  "eye-off": "eye-off-single",
+  "eye": "eye-single",
+  "sliders-horizontal": "sliders-horizontal-single",
+  "settings": "settings-single",
+  "plus": "plus-single",
+  "x": "x-single",
+  "menu": "menu-single",
+  "search": "search-single",
   "user": "user-single",
   "user-check": "user-check-single",
   "user-plus": "user-plus-single",
@@ -137,6 +147,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["link-combined", "arrow-left", "link"],
+  ["external-link-combined", "arrow-left", "external-link"],
+  ["eye-off-combined", "arrow-left", "eye-off"],
+  ["eye-combined", "arrow-left", "eye"],
+  ["sliders-horizontal-combined", "arrow-left", "sliders-horizontal"],
+  ["settings-combined", "arrow-left", "settings"],
+  ["plus-combined", "arrow-left", "plus"],
+  ["x-combined", "arrow-left", "x"],
+  ["menu-combined", "arrow-left", "menu"],
+  ["search-combined", "arrow-left", "search"],
   ["user-combined", "arrow-left", "user"],
   ["user-check-combined", "arrow-left", "user-check"],
   ["user-plus-combined", "arrow-left", "user-plus"],
