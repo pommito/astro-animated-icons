@@ -2,7 +2,7 @@ import { cubicBezier, easeInOut, easeOut, interpolate, spring } from "motion";
 import { animate } from "motion/mini";
 import type { IconTrack } from "../element";
 
-type Property = "x" | "y" | "rotate" | "scale" | "opacity";
+type Property = "x" | "y" | "rotate" | "scale" | "scaleY" | "opacity";
 type Values = Partial<Record<Property, number | number[]>>;
 interface Transition {
   type?: "spring";
@@ -33,17 +33,19 @@ export function animateSvgTransform(
   track: IconTrack,
   targets: Values,
   options: Transition,
+  propertyOptions: Partial<Record<Property, Transition>> = {},
 ) {
   const previous = poses.get(element);
   const properties = Object.keys(targets) as Property[];
   let duration = options.type === "spring" ? 0 : (options.duration ?? 0.3) * 1000;
   const samplers = properties.map((property) => {
-    const rest = property === "scale" || property === "opacity" ? 1 : 0;
+    const rest = property === "scale" || property === "scaleY" || property === "opacity" ? 1 : 0;
     const origin = previous?.values[property] ?? rest;
     const target = returning ? rest : targets[property]!;
     const values = Array.isArray(target) ? target : [origin, target];
-    if (options.type === "spring") {
-      const generator = spring({ ...options, keyframes: values, velocity: previous?.velocities[property] ?? 0 });
+    const transition = { ...options, ...propertyOptions[property] };
+    if (transition.type === "spring") {
+      const generator = spring({ ...transition, keyframes: values, velocity: previous?.velocities[property] ?? 0 });
       let time = 0;
       // Mini normalizes spring distances; sample in the upstream property's units.
       do {
@@ -77,6 +79,7 @@ export function animateSvgTransform(
       values.x === undefined ? "" : `translateX(${values.x}px)`,
       values.y === undefined ? "" : `translateY(${values.y}px)`,
       values.scale === undefined ? "" : `scale(${values.scale})`,
+      values.scaleY === undefined ? "" : `scaleY(${values.scaleY})`,
       values.rotate === undefined ? "" : `rotate(${values.rotate}deg)`,
     ]
       .filter(Boolean)

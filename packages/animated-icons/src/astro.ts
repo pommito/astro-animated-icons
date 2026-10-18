@@ -225,3 +225,33 @@ export { default as MessageSquarePlus } from "./icons/message-square-plus/Messag
 export type { MessageSquarePlusIconHandle } from "./icons/message-square-plus/element";
 export { default as MessageSquareX } from "./icons/message-square-x/MessageSquareX.astro";
 export type { MessageSquareXIconHandle } from "./icons/message-square-x/element";
+
+export { default as Search } from "./icons/search/Search.astro";
+export type { SearchIconHandle } from "./icons/search/element";
+
+export { default as Menu } from "./icons/menu/Menu.astro";
+export type { MenuIconHandle } from "./icons/menu/element";
+
+export { default as X } from "./icons/x/X.astro";
+export type { XIconHandle } from "./icons/x/element";
+
+export { default as Plus } from "./icons/plus/Plus.astro";
+export type { PlusIconHandle } from "./icons/plus/element";
+
+export { default as Settings } from "./icons/settings/Settings.astro";
+export type { SettingsIconHandle } from "./icons/settings/element";
+
+export { default as SlidersHorizontal } from "./icons/sliders-horizontal/SlidersHorizontal.astro";
+export type { SlidersHorizontalIconHandle } from "./icons/sliders-horizontal/element";
+
+export { default as Eye } from "./icons/eye/Eye.astro";
+export type { EyeIconHandle } from "./icons/eye/element";
+
+export { default as EyeOff } from "./icons/eye-off/EyeOff.astro";
+export type { EyeOffIconHandle } from "./icons/eye-off/element";
+
+export { default as ExternalLink } from "./icons/external-link/ExternalLink.astro";
+export type { ExternalLinkIconHandle } from "./icons/external-link/element";
+
+export { default as Link } from "./icons/link/Link.astro";
+export type { LinkIconHandle } from "./icons/link/element";
