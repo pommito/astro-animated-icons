@@ -49,6 +49,13 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "user": "user-single",
+  "user-check": "user-check-single",
+  "user-plus": "user-plus-single",
+  "user-round-check": "user-round-check-single",
+  "user-round-cog": "user-round-cog-single",
+  "user-round-plus": "user-round-plus-single",
+  "users": "users-single",
   sun: "sun-single",
   moon: "moon-single",
   monitor: "monitor-single",
@@ -130,6 +137,13 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["user-combined", "arrow-left", "user"],
+  ["user-check-combined", "arrow-left", "user-check"],
+  ["user-plus-combined", "arrow-left", "user-plus"],
+  ["user-round-check-combined", "arrow-left", "user-round-check"],
+  ["user-round-cog-combined", "arrow-left", "user-round-cog"],
+  ["user-round-plus-combined", "arrow-left", "user-round-plus"],
+  ["users-combined", "arrow-left", "users"],
   ["sun-combined", "arrow-left", "sun"],
   ["moon-combined", "arrow-left", "moon"],
   ["monitor-combined", "arrow-left", "monitor"],

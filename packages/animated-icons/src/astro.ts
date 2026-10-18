@@ -184,3 +184,24 @@ export type { MonitorIconHandle } from "./icons/monitor/element";
 
 export { default as Linkedin } from "./icons/linkedin/Linkedin.astro";
 export type { LinkedinIconHandle } from "./icons/linkedin/element";
+
+export { default as UserCheck } from "./icons/user-check/UserCheck.astro";
+export type { UserCheckIconHandle } from "./icons/user-check/element";
+
+export { default as UserRoundCheck } from "./icons/user-round-check/UserRoundCheck.astro";
+export type { UserRoundCheckIconHandle } from "./icons/user-round-check/element";
+
+export { default as UserPlus } from "./icons/user-plus/UserPlus.astro";
+export type { UserPlusIconHandle } from "./icons/user-plus/element";
+
+export { default as UserRoundCog } from "./icons/user-round-cog/UserRoundCog.astro";
+export type { UserRoundCogIconHandle } from "./icons/user-round-cog/element";
+
+export { default as Users } from "./icons/users/Users.astro";
+export type { UsersIconHandle } from "./icons/users/element";
+
+export { default as UserRoundPlus } from "./icons/user-round-plus/UserRoundPlus.astro";
+export type { UserRoundPlusIconHandle } from "./icons/user-round-plus/element";
+
+export { default as User } from "./icons/user/User.astro";
+export type { UserIconHandle } from "./icons/user/element";

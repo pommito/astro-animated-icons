@@ -10,6 +10,7 @@ interface Transition {
   damping?: number;
   restSpeed?: number;
   duration?: number;
+  delay?: number;
   ease?: "easeOut" | "easeInOut" | [number, number, number, number];
   times?: number[];
   repeat?: number;
@@ -46,7 +47,7 @@ export function animateSvgTransform(
       let time = 0;
       // Mini normalizes spring distances; sample in the upstream property's units.
       do {
-        time += 5;
+        time += 50;
       } while (!generator.next(time).done && time < 10000);
       duration = Math.max(duration, time);
       return (time: number) => generator.next(time).value;
@@ -65,6 +66,7 @@ export function animateSvgTransform(
   });
   const sample = (time: number) => {
     if (options.repeat === Infinity) time %= duration;
+    time = Math.min(duration, Math.max(0, time));
     return Object.fromEntries(properties.map((property, index) => [property, samplers[index](time)])) as Pose["values"];
   };
   const frames = Array.from({ length: Math.ceil(duration / 5) + 1 }, (_, index) =>
@@ -91,6 +93,7 @@ export function animateSvgTransform(
         { [property]: values },
         {
           duration: duration / 1000,
+          delay: options.delay,
           ease: "linear",
           repeat: options.repeat,
           onComplete() {
@@ -103,7 +106,7 @@ export function animateSvgTransform(
       return {
         stop() {
           if (completed) return;
-          const time = animation.time * 1000;
+          const time = Math.max(0, animation.time * 1000 - (options.delay ?? 0) * 1000);
           const current = sample(time);
           const interval = Math.min(time, 5);
           const before = sample(Math.max(0, time - interval));

@@ -58,6 +58,14 @@ Monitor uses the Lucide drawing pinned to commit `66de90d63e5e26d867a4391bd607fd
 
 Linkedin uses the pinned Lucide Animated drawing and recipe. Its path, rectangle, and circle reveal together over 600 ms with linear path length and reverse-offset transitions. Opacity reveals over 100 ms with Motion's default curve. Returning restores the complete drawing over 400 ms with a 100 ms opacity transition. Native SVG stroke dashes replace normalized path length and offset.
 
+The seven user icons adapt Lucide Animated drawings and recipes pinned to commit `4662fff2b60fdcf4751b32013606756caf7c4c26`: User, UserCheck, UserPlus, UserRoundCheck, UserRoundCog, UserRoundPlus, and Users. They reuse the shared rendering, lifecycle, input, and reduced-motion behavior.
+
+User redraws its head with a reverse stroke offset and a scale spring (stiffness 550, damping 30, rest speed 10). Its body redraws over 400 ms after a 200 ms delay, including on return. UserCheck and UserRoundCheck share a 400 ms ease-in-out check reveal and a 300 ms return with Motion's default curve. UserPlus scales and rotates its plus after 250 ms, with keyframes at 0, 70, and 100 percent of a 450 ms ease-out transition. It returns over 300 ms. The zero-scale entry preserves the pinned recipe.
+
+UserRoundCog rotates its cog by 180 degrees over 300 ms with ease-out. The upstream spring settings are nested inside a second transition object, which selects Motion's fallback tween instead of configuring a spring. This adapter honors the package size prop; the upstream SVG forces 24 px. Users slides its two right-hand paths from x=-6 to zero after 100 ms using stiffness 200 and damping 13. Spring sampling retains velocity during interruption.
+
+UserRoundPlus draws its vertical and horizontal bars after 300 and 600 ms, with 200 ms path transitions and 100 ms opacity transitions. Its upstream normal variant restores only opacity. An interrupted return keeps the partial stroke during that 300 ms opacity transition, then the shared lifecycle restores the complete drawing. The upstream component retains the partial stroke. The comparison fixture runs the pinned React components, with a local class utility import and UserRoundCog dimensions changed to the requested size.
+
 Sources:
 
 - [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
@@ -148,6 +156,14 @@ Sources:
 - [Lucide Animated Linkedin, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/linkedin.tsx)
 - [Lucide Monitor, pinned drawing](https://github.com/lucide-icons/lucide/blob/66de90d63e5e26d867a4391bd607fd7a3bbe17fd/icons/monitor.svg)
 
+- [Lucide Animated User, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user.tsx)
+- [Lucide Animated UserCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-check.tsx)
+- [Lucide Animated UserPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-plus.tsx)
+- [Lucide Animated UserRoundCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-round-check.tsx)
+- [Lucide Animated UserRoundCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-round-cog.tsx)
+- [Lucide Animated UserRoundPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-round-plus.tsx)
+- [Lucide Animated Users, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/users.tsx)
+
 ## Lucide and Feather
 
 ISC License
@@ -170,7 +186,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 The following Lucide icons are derived from the Feather project:
 
-airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out
+airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, user-check, user-plus, users, x-circle, x-octagon, x-square, x, zoom-in, zoom-out
 
 The MIT License (MIT) (for the icons listed above)
 
