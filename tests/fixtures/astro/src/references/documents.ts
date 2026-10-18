@@ -1,0 +1,10 @@
+export { DownloadIcon as Download } from "./documents/download";
+export { UploadIcon as Upload } from "./documents/upload";
+export { ClipboardCheckIcon as ClipboardCheck } from "./documents/clipboard-check";
+export { DeleteIcon as Delete } from "./documents/delete";
+export { FileCheckIcon as FileCheck } from "./documents/file-check";
+export { FileCheck2Icon as FileCheck2 } from "./documents/file-check-2";
+export { FilePenLineIcon as FilePenLine } from "./documents/file-pen-line";
+export { FileCogIcon as FileCog } from "./documents/file-cog";
+export { FileStackIcon as FileStack } from "./documents/file-stack";
+export { FileChartLineIcon as FileChartLine } from "./documents/file-chart-line";

@@ -1,3 +1,4 @@
+import { documentIcons } from "./helpers/documents.js";
 import { commands } from "./helpers/commands.js";
 import { userIcons } from "./helpers/user-icons.js";
 import { displayIcons } from "./helpers/display-icons.js";
@@ -9,6 +10,7 @@ import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
+  ...documentIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...commands.filter(({ animationCount }) => animationCount > 0).map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...userIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),

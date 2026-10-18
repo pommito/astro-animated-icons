@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "download": "download-single",
+  "upload": "upload-single",
+  "clipboard-check": "clipboard-check-single",
+  "delete": "delete-single",
+  "file-check": "file-check-single",
+  "file-check-2": "file-check-2-single",
+  "file-pen-line": "file-pen-line-single",
+  "file-cog": "file-cog-single",
+  "file-stack": "file-stack-single",
+  "file-chart-line": "file-chart-line-single",
   "message-circle": "message-circle-single",
   "message-circle-check": "message-circle-check-single",
   "message-circle-more": "message-circle-more-single",
@@ -157,6 +167,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["download-combined", "arrow-left", "download"],
+  ["upload-combined", "arrow-left", "upload"],
+  ["clipboard-check-combined", "arrow-left", "clipboard-check"],
+  ["delete-combined", "arrow-left", "delete"],
+  ["file-check-combined", "arrow-left", "file-check"],
+  ["file-check-2-combined", "arrow-left", "file-check-2"],
+  ["file-pen-line-combined", "arrow-left", "file-pen-line"],
+  ["file-cog-combined", "arrow-left", "file-cog"],
+  ["file-stack-combined", "arrow-left", "file-stack"],
+  ["file-chart-line-combined", "arrow-left", "file-chart-line"],
+
   ["message-circle-combined", "arrow-left", "message-circle"],
   ["message-circle-check-combined", "arrow-left", "message-circle-check"],
   ["message-circle-more-combined", "arrow-left", "message-circle-more"],

@@ -13,7 +13,7 @@ export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOpti
       const pose = (selector: string) => {
         const container = row.querySelector(selector)!;
         const anchor = (origin === "wrapper" ? container.firstElementChild! : container.querySelector("svg")!).getBoundingClientRect();
-        return [...container.querySelectorAll<SVGGeometryElement>("path, circle, line, rect")].map((shape) => {
+        return [...container.querySelectorAll<SVGGeometryElement>("path, circle, line, rect, polyline")].map((shape) => {
           const box = shape.getBoundingClientRect();
           let opacity = 1;
           let parent: Element | null = shape;

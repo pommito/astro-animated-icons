@@ -67,7 +67,6 @@ export function animateSvgTransform(
     );
   });
   const sample = (time: number) => {
-    if (options.repeat === Infinity) time %= duration;
     time = Math.min(duration, Math.max(0, time));
     return Object.fromEntries(properties.map((property, index) => [property, samplers[index](time)])) as Pose["values"];
   };
@@ -109,7 +108,8 @@ export function animateSvgTransform(
       return {
         stop() {
           if (completed) return;
-          const time = Math.max(0, animation.time * 1000 - (options.delay ?? 0) * 1000);
+          let time = Math.max(0, animation.time * 1000 - (options.delay ?? 0) * 1000);
+          if (options.repeat && time < duration * (options.repeat + 1)) time %= duration;
           const current = sample(time);
           const interval = Math.min(time, 5);
           const before = sample(Math.max(0, time - interval));
