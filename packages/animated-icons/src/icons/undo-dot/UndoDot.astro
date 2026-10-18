@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-undo-dot">
+  <g>
+    <path style="transform-box: fill-box; transform-origin: 50% 50%" d="M3 7v6h6" />
+    <path d="M21 17a9 9 0 0 0-15-6.7L3 13" />
+    <circle style="transform-box: fill-box; transform-origin: 50% 50%" cx="12" cy="17" r="1" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

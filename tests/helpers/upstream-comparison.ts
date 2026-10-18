@@ -1,9 +1,9 @@
-import { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 interface ComparisonOptions {
   seekEvent: string;
   times: number[];
-  origin: "svg" | "wrapper";
+  origin: "svg" | "svg-center" | "wrapper";
 }
 
 export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOptions) {
@@ -13,6 +13,8 @@ export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOpti
       const pose = (selector: string) => {
         const container = row.querySelector(selector)!;
         const anchor = (origin === "wrapper" ? container.firstElementChild! : container.querySelector("svg")!).getBoundingClientRect();
+        const originX = anchor.x + (origin === "svg-center" ? anchor.width / 2 : 0);
+        const originY = anchor.y + (origin === "svg-center" ? anchor.height / 2 : 0);
         return [...container.querySelectorAll<SVGGeometryElement>("path, circle, line, rect, polyline")].map((shape) => {
           const box = shape.getBoundingClientRect();
           let opacity = 1;
@@ -24,7 +26,7 @@ export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOpti
           const length = Number(shape.getAttribute("pathLength")) || shape.getTotalLength();
           const dash = parseFloat(getComputedStyle(shape).strokeDasharray);
           return [
-            box.x - anchor.x, box.y - anchor.y, box.width, box.height, opacity,
+            box.x - originX, box.y - originY, box.width, box.height, opacity,
             Number.isNaN(dash) ? 1 : dash / length,
             parseFloat(getComputedStyle(shape).strokeDashoffset) / length,
           ];
@@ -53,4 +55,34 @@ export function compareUpstreamPoses(samples: ReturnType<typeof sampleUpstreamPo
   expect(maximumGeometry).toBeLessThan(0.03);
   expect(maximumPaint).toBeLessThan(0.005);
   return { maximumGeometry, maximumPaint };
+}
+
+interface Comparison {
+  name: string;
+  route: string;
+  seekEvent: string;
+  tags: string[];
+}
+
+export function testUpstreamComparison({ name, route, seekEvent, tags }: Comparison) {
+  test(`${name} adapters match the original React components at small sizes`, async ({ page }) => {
+    test.setTimeout(60000);
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await page.goto(route);
+    await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
+    await page.waitForFunction((tags) => tags.every((tag) => !!customElements.get(tag)), tags);
+    await page.locator("#play").click();
+    await page.waitForTimeout(100);
+    const samples = await page.evaluate(sampleUpstreamPoses, {
+      seekEvent,
+      times: [0, 50, 100, 150, 200, 300, 400, 600, 800, 1000, 1500],
+      origin: "svg-center" as const,
+    });
+    const { maximumGeometry, maximumPaint } = compareUpstreamPoses(samples);
+    expect(errors).toEqual([]);
+    console.log(
+      `${name} comparison: ${tags.length} original React components at 14, 16, 24, and 28 px; maximum geometry difference ${maximumGeometry.toFixed(6)} screen pixels, maximum normalized paint difference ${maximumPaint.toFixed(6)}.`,
+    );
+  });
 }
