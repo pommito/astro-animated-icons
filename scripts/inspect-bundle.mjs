@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "message-circle": "message-circle-single",
+  "message-circle-check": "message-circle-check-single",
+  "message-circle-more": "message-circle-more-single",
+  "message-circle-plus": "message-circle-plus-single",
+  "message-circle-x": "message-circle-x-single",
+  "message-square": "message-square-single",
+  "message-square-check": "message-square-check-single",
+  "message-square-more": "message-square-more-single",
+  "message-square-plus": "message-square-plus-single",
+  "message-square-x": "message-square-x-single",
   "user": "user-single",
   "user-check": "user-check-single",
   "user-plus": "user-plus-single",
@@ -137,6 +147,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["message-circle-combined", "arrow-left", "message-circle"],
+  ["message-circle-check-combined", "arrow-left", "message-circle-check"],
+  ["message-circle-more-combined", "arrow-left", "message-circle-more"],
+  ["message-circle-plus-combined", "arrow-left", "message-circle-plus"],
+  ["message-circle-x-combined", "arrow-left", "message-circle-x"],
+  ["message-square-combined", "arrow-left", "message-square"],
+  ["message-square-check-combined", "arrow-left", "message-square-check"],
+  ["message-square-more-combined", "arrow-left", "message-square-more"],
+  ["message-square-plus-combined", "arrow-left", "message-square-plus"],
+  ["message-square-x-combined", "arrow-left", "message-square-x"],
   ["user-combined", "arrow-left", "user"],
   ["user-check-combined", "arrow-left", "user-check"],
   ["user-plus-combined", "arrow-left", "user-plus"],
