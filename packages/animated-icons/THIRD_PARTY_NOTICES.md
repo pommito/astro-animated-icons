@@ -1,5 +1,11 @@
 # Third-party notices
 
+AlarmClock, AlarmClockCheck, AlarmClockMinus, AlarmClockPlus, Clock, Timer, Hourglass, History, CalendarCheck, and CalendarCheck2 adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. The four alarms repeat the upstream six horizontal keyframes every 300 ms with linear easing. Body parts use amplitude 1 and lift -1.5; bells use amplitude 2 and lift -2.5. Separate nested groups let each axis use its own timing. Lift and return use stiffness 200 and damping 25. The physics override the declared 200 ms duration. Interrupted replay replaces the first horizontal keyframe with the captured pose; subsequent iterations of that playback reuse it. Returning carries the current velocity into both springs. The shared lifecycle cancels infinite tracks, pending completions, and sampled state on removal or reduced motion.
+
+Clock shares FolderClock's hand mechanism. History reverses those hand rotations and rotates its separate arrow group to -50 degrees with stiffness 250 and damping 25. Hourglass rotates its group to 180 degrees with stiffness 100 and damping 15. Timer rotates its hand to 300 degrees over 600 ms after a 100 ms delay. Its centered button scales from 0.9 to 1 and moves through y=0, 1, 0 over 300 ms. Its return uses Motion's separate default translation and scale springs. Both calendar checks reveal stroke and opacity over 400 ms with ease-in-out, then return over 300 ms with the default cubic Bezier curve. Native stroke dash lengths replace normalized path lengths. Interrupted replay preserves the current transform, stroke, and opacity.
+
+The `/clock-calendar-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. The copied sources change only the class utility import. React remains confined to comparison pages. At exact alarm loop boundaries, native Web Animations samples the next iteration's first frame while the upstream JavaScript sampler returns the previous iteration's final frame. Numerical comparisons sample 1 ms before and after these boundaries. The fixture records the compatibility adjustments for manual visual review.
+
 The ten MessageCircle and MessageSquare components, including their Check, More, Plus, and X variants, adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. Circle and square variants share matching recipes. The simple bubbles rotate through 0, -7, 7, and 0 degrees over 500 ms with ease-in-out per segment. Their scale springs to 1.05 with stiffness 400 and damping 10, then holds until stopped. Return uses Motion's default scale spring (stiffness 550, damping 30) and rotation spring (stiffness 500, damping 25), carrying interrupted velocity. Nested groups with SVG origin (12, 12) replace the upstream SVG transforms.
 
 Message checks reveal opacity and stroke length over 400 ms with ease-in-out. They share the existing UserCheck reveal mechanism. Plus and X variants reveal their second stroke after 200 ms. Return removes that delay and restores both properties over 300 ms with Motion's default cubic Bezier curve (0.25, 0.1, 0.35, 1). Native stroke dash lengths replace normalized path lengths. The More variants run the original eight opacity keyframes over 1.5 seconds with per-dot offsets, then hold fully visible. The upstream native opacity animation uses a global ease-out curve. Their return uses the default 300 ms opacity transition.
@@ -228,6 +234,17 @@ Sources:
 - [Lucide Animated EyeOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/eye-off.tsx)
 - [Lucide Animated ExternalLink, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/external-link.tsx)
 - [Lucide Animated Link, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/link.tsx)
+
+- [Lucide Animated AlarmClock, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-clock.tsx)
+- [Lucide Animated AlarmClockCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-clock-check.tsx)
+- [Lucide Animated AlarmClockMinus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-clock-minus.tsx)
+- [Lucide Animated AlarmClockPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-clock-plus.tsx)
+- [Lucide Animated Clock, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/clock.tsx)
+- [Lucide Animated Timer, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/timer.tsx)
+- [Lucide Animated Hourglass, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hourglass.tsx)
+- [Lucide Animated History, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/history.tsx)
+- [Lucide Animated CalendarCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/calendar-check.tsx)
+- [Lucide Animated CalendarCheck2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/calendar-check-2.tsx)
 
 ## Lucide and Feather
 

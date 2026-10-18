@@ -313,3 +313,24 @@ export type { ExternalLinkIconHandle } from "./icons/external-link/element";
 
 export { default as Link } from "./icons/link/Link.astro";
 export type { LinkIconHandle } from "./icons/link/element";
+
+export { default as AlarmClock } from "./icons/alarm-clock/AlarmClock.astro";
+export type { AlarmClockIconHandle } from "./icons/alarm-clock/element";
+export { default as AlarmClockCheck } from "./icons/alarm-clock-check/AlarmClockCheck.astro";
+export type { AlarmClockCheckIconHandle } from "./icons/alarm-clock-check/element";
+export { default as AlarmClockMinus } from "./icons/alarm-clock-minus/AlarmClockMinus.astro";
+export type { AlarmClockMinusIconHandle } from "./icons/alarm-clock-minus/element";
+export { default as AlarmClockPlus } from "./icons/alarm-clock-plus/AlarmClockPlus.astro";
+export type { AlarmClockPlusIconHandle } from "./icons/alarm-clock-plus/element";
+export { default as Clock } from "./icons/clock/Clock.astro";
+export type { ClockIconHandle } from "./icons/clock/element";
+export { default as Timer } from "./icons/timer/Timer.astro";
+export type { TimerIconHandle } from "./icons/timer/element";
+export { default as Hourglass } from "./icons/hourglass/Hourglass.astro";
+export type { HourglassIconHandle } from "./icons/hourglass/element";
+export { default as History } from "./icons/history/History.astro";
+export type { HistoryIconHandle } from "./icons/history/element";
+export { default as CalendarCheck } from "./icons/calendar-check/CalendarCheck.astro";
+export type { CalendarCheckIconHandle } from "./icons/calendar-check/element";
+export { default as CalendarCheck2 } from "./icons/calendar-check-2/CalendarCheck2.astro";
+export type { CalendarCheck2IconHandle } from "./icons/calendar-check-2/element";

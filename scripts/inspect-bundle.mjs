@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "alarm-clock": "alarm-clock-single",
+  "alarm-clock-check": "alarm-clock-check-single",
+  "alarm-clock-minus": "alarm-clock-minus-single",
+  "alarm-clock-plus": "alarm-clock-plus-single",
+  "clock": "clock-single",
+  "timer": "timer-single",
+  "hourglass": "hourglass-single",
+  "history": "history-single",
+  "calendar-check": "calendar-check-single",
+  "calendar-check-2": "calendar-check-2-single",
+
   "login": "login-single",
   "logout": "logout-single",
   "refresh-cw": "refresh-cw-single",
@@ -178,6 +189,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["alarm-clock-combined", "arrow-left", "alarm-clock"],
+  ["alarm-clock-check-combined", "arrow-left", "alarm-clock-check"],
+  ["alarm-clock-minus-combined", "arrow-left", "alarm-clock-minus"],
+  ["alarm-clock-plus-combined", "arrow-left", "alarm-clock-plus"],
+  ["clock-combined", "arrow-left", "clock"],
+  ["timer-combined", "arrow-left", "timer"],
+  ["hourglass-combined", "arrow-left", "hourglass"],
+  ["history-combined", "arrow-left", "history"],
+  ["calendar-check-combined", "arrow-left", "calendar-check"],
+  ["calendar-check-2-combined", "arrow-left", "calendar-check-2"],
+
   ["login-combined", "arrow-left", "login"],
   ["logout-combined", "arrow-left", "logout"],
   ["refresh-cw-combined", "arrow-left", "refresh-cw"],

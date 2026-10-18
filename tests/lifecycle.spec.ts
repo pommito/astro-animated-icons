@@ -1,3 +1,4 @@
+import { clockCalendarIcons } from "./helpers/clock-calendar.js";
 import { navigationIcons } from "./helpers/navigation-icons.js";
 import { documentIcons } from "./helpers/documents.js";
 import { commands } from "./helpers/commands.js";
@@ -11,6 +12,7 @@ import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
 for (const { name, route, tag, animationCount } of [
+  ...clockCalendarIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...navigationIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...documentIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
   ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),

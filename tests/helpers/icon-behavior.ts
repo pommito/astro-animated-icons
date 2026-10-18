@@ -46,7 +46,9 @@ export function testIconBehavior(icons: readonly FixtureIcon[], stopTimes: reado
         const poses = await element!.evaluate(async (element: HTMLElement & IconHandle, { interruption, time }) => {
           for (let cycle = 0; cycle < 4; cycle++) {
             element.startAnimation();
-            element.getAnimations({ subtree: true }).forEach((animation) => animation.finish());
+            element.getAnimations({ subtree: true }).forEach((animation) => {
+              if (Number.isFinite(animation.effect!.getTiming().iterations)) animation.finish();
+            });
           }
           element.startAnimation();
           element.getAnimations({ subtree: true }).forEach((animation) => { animation.pause(); animation.currentTime = time; });

@@ -1,3 +1,4 @@
+import { clockCalendarIcons } from "./helpers/clock-calendar.js";
 import { navigationIcons } from "./helpers/navigation-icons.js";
 import { documentIcons } from "./helpers/documents.js";
 import { commands } from "./helpers/commands.js";
@@ -10,6 +11,7 @@ import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
+  ...clockCalendarIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...navigationIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...documentIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...messageIcons.map(({ name, slug, tag, animationCount }) => ({ name, route: `/${slug}-props/`, tag, animationCount, label: `${name} icon`, axis: "x" as const })),
