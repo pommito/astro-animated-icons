@@ -1,70 +1,9 @@
 import { expect, test } from "@playwright/test";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
+import { testIconBehavior } from "./helpers/icon-behavior.js";
 import { displayIcons } from "./helpers/display-icons.js";
 
-for (const icon of displayIcons) {
-  test(`${icon.name} renders its complete drawing and a usable link without JavaScript`, async ({ browser }) => {
-    const context = await browser.newContext({ javaScriptEnabled: false });
-    const page = await context.newPage();
-    await page.goto(`/${icon.slug}/`);
-    const link = page.locator("#primary");
-    await expect(link.locator("svg")).toBeVisible();
-    await expect(link.locator("svg")).toHaveAttribute("aria-hidden", "true");
-    await expect(link.locator("svg")).toHaveAttribute("stroke-width", "2");
-    await expect(link.locator("path, circle, rect, line")).toHaveCount(icon.drawing.length);
-    for (const [index, shape] of icon.drawing.entries()) {
-      const actual = link.locator("path, circle, rect, line").nth(index);
-      expect(await actual.evaluate((element) => element.localName)).toBe(shape.tag);
-      for (const [attribute, value] of Object.entries(shape.attrs)) await expect(actual).toHaveAttribute(attribute, value);
-    }
-    await expect(page.getByRole("img", { name: `${icon.name} icon` })).toBeVisible();
-    await expect(link.locator(icon.tag)).not.toHaveAttribute("tabindex");
-    await link.click();
-    await expect(page).toHaveURL(/#destination$/);
-    await context.close();
-  });
-
-  for (const interruption of ["stop", "remove", "reduce"] as const) {
-    test(`${icon.name} preserves its pose on stop and cleans rapid replays after ${interruption}`, async ({ page }) => {
-      await page.goto(`/${icon.slug}/`);
-      await page.waitForFunction((tag) => !!customElements.get(tag), icon.tag);
-      const control = page.locator("#controlled");
-      await control.hover();
-      expect(await control.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
-      const element = await control.locator(icon.tag).elementHandle();
-      const poses = await element!.evaluate((element: HTMLElement & IconHandle, interruption) => {
-        for (let cycle = 0; cycle < 4; cycle++) {
-          element.startAnimation();
-          element.getAnimations({ subtree: true }).forEach((animation) => animation.finish());
-        }
-        element.startAnimation();
-        element.getAnimations({ subtree: true }).forEach((animation) => { animation.pause(); animation.currentTime = 250; });
-        const pose = () => [...element.querySelectorAll("g, path, circle, rect, line")].map((shape) => {
-          const style = getComputedStyle(shape);
-          return [style.opacity, style.strokeDasharray, style.strokeDashoffset, style.transform];
-        });
-        const before = pose();
-        if (interruption === "stop") element.stopAnimation();
-        element.getAnimations({ subtree: true }).forEach((animation) => { animation.pause(); animation.currentTime = 0; });
-        const after = pose();
-        element.getAnimations({ subtree: true }).forEach((animation) => animation.play());
-        if (interruption === "remove") element.remove();
-        return { before, after };
-      }, interruption);
-      if (interruption === "stop") expect(poses.after).toEqual(poses.before);
-      if (interruption === "reduce") await page.emulateMedia({ reducedMotion: "reduce" });
-      await expect.poll(() => element!.evaluate((element) => ({
-        tracks: element.getAnimations({ subtree: true }).length,
-        styles: [...element.querySelectorAll<SVGElement>("g, path, circle, rect, line")].map((shape) => [shape.style.opacity, shape.style.strokeDasharray, shape.style.strokeDashoffset, shape.style.transform]),
-      }))).toEqual({ tracks: 0, styles: Array.from({ length: icon.drawing.length + 1 }, () => ["", "", "", ""]) });
-      if (interruption === "reduce") {
-        await element!.evaluate((element: HTMLElement & IconHandle) => element.startAnimation());
-        expect(await element!.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
-      }
-      expect(await page.locator("#secondary").evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
-    });
-  }
-}
+testIconBehavior(displayIcons);
 
 test("Linkedin redraws all three shapes linearly with a reverse offset", async ({ page }) => {
   await page.goto("/linkedin/");

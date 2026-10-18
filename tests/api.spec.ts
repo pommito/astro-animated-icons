@@ -1,3 +1,4 @@
+import { userIcons } from "./helpers/user-icons.js";
 import { displayIcons } from "./helpers/display-icons.js";
 import { folders } from "./helpers/folders.js";
 import { gitIcons } from "./helpers/git-icons.js";
@@ -6,6 +7,7 @@ import { chevrons } from "./helpers/chevrons.js";
 import { expect, test } from "@playwright/test";
 
 for (const { name, route, label } of [
+  ...userIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...displayIcons.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...folders.map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
   ...gitIcons.filter(({ slug }) => !slug.startsWith("folder-")).map(({ name, slug }) => ({ name, route: `/${slug}-props/`, label: `${name} icon` })),
