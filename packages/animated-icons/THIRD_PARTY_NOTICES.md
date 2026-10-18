@@ -80,6 +80,16 @@ RefreshCw, RefreshCcw, RotateCw, and RotateCcw rotate to 50 or -50 degrees with 
 
 Undo, Redo, UndoDot, and RedoDot animate for 600 ms with cubic-bezier(0.25, 0.1, 0.25, 1) per segment. The arrowhead moves by ±2.1 horizontally and -1.4 vertically, rotates by ±12 degrees, then returns. The arc shortens from full length to 80 percent and back. Dot variants scale their dot through 1, 1.2, and 1. SVG stroke dashes replace normalized pathLength. Returns use the same duration and easing from the current pose. Login, Logout, and the four history recipes also begin interrupted replays from the current pose, including the current arc length and dot scale. Their upstream keyframe arrays restart at a fixed initial pose. The comparison fixture runs all ten pinned React components at 14, 16, 24, and 28 px; only their class utility imports point to a local equivalent.
 
+The ten document and transfer icons adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`: Download, Upload, ClipboardCheck, Delete, FileCheck, FileCheck2, FilePenLine, FileCog, FileStack, and FileChartLine. They reuse the common props, rendering, input handling, lifecycle, and reduced-motion behavior. The comparison fixture at `/documents-comparison/` executes the pinned React components at 14, 16, 24, and 28 px. The class utility import points to a local equivalent; FileCog's fixed 28 px dimensions are changed to the requested size in the reference.
+
+Download and Upload share a transfer recipe and move their arrow by two units with stiffness 200 and damping 10. Their return uses Motion's default translation spring, stiffness 500, damping 25, and rest speed 10. Delete lifts its lid by 1.1 units and lowers its body and bars by one and half a unit, using stiffness 500 and damping 30. The body morph in the source is a translation of every point by one unit; the adapter uses that equivalent translation.
+
+FileCheck and FileCheck2 reuse the shared 400 ms check reveal and 300 ms return. ClipboardCheck uses a 300 ms reveal. The source hides ClipboardCheck's check initially and on return. The adapter keeps it visible at rest and restores its opacity during return to preserve the complete-drawing contract.
+
+FilePenLine repeats its 500 ms pen movement once and extends its line from one to five units over 500 ms. The adapter interpolates the same path through CSS `d`, so native animation seeking and cancellation remain available. Its return uses Motion's default translation and rotation springs. Shared transform sampling preserves the current pose when stopping within a repeated iteration.
+
+FileCog shares FolderCog's rotation recipe, turning its cog by 180 degrees with stiffness 50 and damping 10. Its adapter honors the package's size prop. FileStack moves its top and bottom sheets together using Motion's default translation springs. FileChartLine reveals its chart over 300 ms after a 150 ms delay, with opacity beginning after 100 ms. All ten hold their completed entry pose until stopped; returning restores the complete initial drawing.
+
 Sources:
 
 - [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
@@ -188,6 +198,16 @@ Sources:
 - [Lucide Animated Redo, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/redo.tsx)
 - [Lucide Animated UndoDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/undo-dot.tsx)
 - [Lucide Animated RedoDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/redo-dot.tsx)
+- [Lucide Animated Download, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/download.tsx)
+- [Lucide Animated Upload, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/upload.tsx)
+- [Lucide Animated ClipboardCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/clipboard-check.tsx)
+- [Lucide Animated Delete, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/delete.tsx)
+- [Lucide Animated FileCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-check.tsx)
+- [Lucide Animated FileCheck2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-check-2.tsx)
+- [Lucide Animated FilePenLine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-pen-line.tsx)
+- [Lucide Animated FileCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-cog.tsx)
+- [Lucide Animated FileStack, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-stack.tsx)
+- [Lucide Animated FileChartLine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/file-chart-line.tsx)
 - [Lucide Animated MessageCircle, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-circle.tsx)
 - [Lucide Animated MessageCircleCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-circle-check.tsx)
 - [Lucide Animated MessageCircleMore, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-circle-more.tsx)

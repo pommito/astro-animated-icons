@@ -255,6 +255,35 @@ export type { UndoDotIconHandle } from "./icons/undo-dot/element";
 
 export { default as RedoDot } from "./icons/redo-dot/RedoDot.astro";
 export type { RedoDotIconHandle } from "./icons/redo-dot/element";
+export { default as Download } from "./icons/download/Download.astro";
+export type { DownloadIconHandle } from "./icons/download/element";
+
+export { default as Upload } from "./icons/upload/Upload.astro";
+export type { UploadIconHandle } from "./icons/upload/element";
+
+export { default as ClipboardCheck } from "./icons/clipboard-check/ClipboardCheck.astro";
+export type { ClipboardCheckIconHandle } from "./icons/clipboard-check/element";
+
+export { default as Delete } from "./icons/delete/Delete.astro";
+export type { DeleteIconHandle } from "./icons/delete/element";
+
+export { default as FileCheck } from "./icons/file-check/FileCheck.astro";
+export type { FileCheckIconHandle } from "./icons/file-check/element";
+
+export { default as FileCheck2 } from "./icons/file-check-2/FileCheck2.astro";
+export type { FileCheck2IconHandle } from "./icons/file-check-2/element";
+
+export { default as FilePenLine } from "./icons/file-pen-line/FilePenLine.astro";
+export type { FilePenLineIconHandle } from "./icons/file-pen-line/element";
+
+export { default as FileCog } from "./icons/file-cog/FileCog.astro";
+export type { FileCogIconHandle } from "./icons/file-cog/element";
+
+export { default as FileStack } from "./icons/file-stack/FileStack.astro";
+export type { FileStackIconHandle } from "./icons/file-stack/element";
+
+export { default as FileChartLine } from "./icons/file-chart-line/FileChartLine.astro";
+export type { FileChartLineIconHandle } from "./icons/file-chart-line/element";
 export { default as Search } from "./icons/search/Search.astro";
 export type { SearchIconHandle } from "./icons/search/element";
 
