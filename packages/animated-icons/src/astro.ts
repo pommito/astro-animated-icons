@@ -205,3 +205,33 @@ export type { UserRoundPlusIconHandle } from "./icons/user-round-plus/element";
 
 export { default as User } from "./icons/user/User.astro";
 export type { UserIconHandle } from "./icons/user/element";
+
+export { default as Login } from "./icons/login/Login.astro";
+export type { LoginIconHandle } from "./icons/login/element";
+
+export { default as Logout } from "./icons/logout/Logout.astro";
+export type { LogoutIconHandle } from "./icons/logout/element";
+
+export { default as RefreshCw } from "./icons/refresh-cw/RefreshCw.astro";
+export type { RefreshCwIconHandle } from "./icons/refresh-cw/element";
+
+export { default as RefreshCcw } from "./icons/refresh-ccw/RefreshCcw.astro";
+export type { RefreshCcwIconHandle } from "./icons/refresh-ccw/element";
+
+export { default as RotateCw } from "./icons/rotate-cw/RotateCw.astro";
+export type { RotateCwIconHandle } from "./icons/rotate-cw/element";
+
+export { default as RotateCcw } from "./icons/rotate-ccw/RotateCcw.astro";
+export type { RotateCcwIconHandle } from "./icons/rotate-ccw/element";
+
+export { default as Undo } from "./icons/undo/Undo.astro";
+export type { UndoIconHandle } from "./icons/undo/element";
+
+export { default as Redo } from "./icons/redo/Redo.astro";
+export type { RedoIconHandle } from "./icons/redo/element";
+
+export { default as UndoDot } from "./icons/undo-dot/UndoDot.astro";
+export type { UndoDotIconHandle } from "./icons/undo-dot/element";
+
+export { default as RedoDot } from "./icons/redo-dot/RedoDot.astro";
+export type { RedoDotIconHandle } from "./icons/redo-dot/element";

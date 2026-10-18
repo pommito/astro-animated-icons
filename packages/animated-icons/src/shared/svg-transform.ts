@@ -2,8 +2,8 @@ import { cubicBezier, easeInOut, easeOut, interpolate, spring } from "motion";
 import { animate } from "motion/mini";
 import type { IconTrack } from "../element";
 
-type Property = "x" | "y" | "rotate" | "scale" | "opacity";
-type Values = Partial<Record<Property, number | number[]>>;
+type Property = "x" | "translateX" | "y" | "rotate" | "scale" | "opacity";
+type Values = Partial<Record<Property, number | (number | null)[]>>;
 interface Transition {
   type?: "spring";
   stiffness?: number;
@@ -41,7 +41,7 @@ export function animateSvgTransform(
     const rest = property === "scale" || property === "opacity" ? 1 : 0;
     const origin = previous?.values[property] ?? rest;
     const target = returning ? rest : targets[property]!;
-    const values = Array.isArray(target) ? target : [origin, target];
+    const values = Array.isArray(target) ? target.map((value) => value ?? origin) : [origin, target];
     if (options.type === "spring") {
       const generator = spring({ ...options, keyframes: values, velocity: previous?.velocities[property] ?? 0 });
       let time = 0;
@@ -75,6 +75,7 @@ export function animateSvgTransform(
   const transform = (values: Pose["values"]) =>
     [
       values.x === undefined ? "" : `translateX(${values.x}px)`,
+      values.translateX === undefined ? "" : `translateX(${values.translateX}px)`,
       values.y === undefined ? "" : `translateY(${values.y}px)`,
       values.scale === undefined ? "" : `scale(${values.scale})`,
       values.rotate === undefined ? "" : `rotate(${values.rotate}deg)`,

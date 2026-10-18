@@ -64,7 +64,7 @@ export function mountReferences(originals: Record<string, ReferenceComponent>, s
   document.addEventListener(seekEvent, (event) => {
     playbackRevision++;
     const milliseconds = (event as CustomEvent<number>).detail;
-    document.querySelectorAll("[data-reference] svg *").forEach((element) => {
+    document.querySelectorAll("[data-reference] svg, [data-reference] svg *").forEach((element) => {
       const visual = visualElementStore.get(element);
       visual?.values.forEach((value) => {
         if (value.animation instanceof AsyncMotionValueAnimation) {
@@ -93,7 +93,7 @@ export function mountReferences(originals: Record<string, ReferenceComponent>, s
     if (!reducedMotion.matches) return;
     playbackRevision++;
     references.forEach((icon) => icon.stopAnimation());
-    document.querySelectorAll("[data-reference] svg *").forEach((element) => {
+    document.querySelectorAll("[data-reference] svg, [data-reference] svg *").forEach((element) => {
       const visual = visualElementStore.get(element);
       visual?.values.forEach((value) => {
         if (value.animation instanceof AsyncMotionValueAnimation) value.animation.complete();

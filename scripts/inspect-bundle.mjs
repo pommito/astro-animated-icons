@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "login": "login-single",
+  "logout": "logout-single",
+  "refresh-cw": "refresh-cw-single",
+  "refresh-ccw": "refresh-ccw-single",
+  "rotate-cw": "rotate-cw-single",
+  "rotate-ccw": "rotate-ccw-single",
+  "undo": "undo-single",
+  "redo": "redo-single",
+  "undo-dot": "undo-dot-single",
+  "redo-dot": "redo-dot-single",
+
   "user": "user-single",
   "user-check": "user-check-single",
   "user-plus": "user-plus-single",
@@ -137,6 +148,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["login-combined", "arrow-left", "login"],
+  ["logout-combined", "arrow-left", "logout"],
+  ["refresh-cw-combined", "arrow-left", "refresh-cw"],
+  ["refresh-ccw-combined", "arrow-left", "refresh-ccw"],
+  ["rotate-cw-combined", "arrow-left", "rotate-cw"],
+  ["rotate-ccw-combined", "arrow-left", "rotate-ccw"],
+  ["undo-combined", "arrow-left", "undo"],
+  ["redo-combined", "arrow-left", "redo"],
+  ["undo-dot-combined", "arrow-left", "undo-dot"],
+  ["redo-dot-combined", "arrow-left", "redo-dot"],
+
   ["user-combined", "arrow-left", "user"],
   ["user-check-combined", "arrow-left", "user-check"],
   ["user-plus-combined", "arrow-left", "user-plus"],

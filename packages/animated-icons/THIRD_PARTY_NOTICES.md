@@ -66,6 +66,14 @@ UserRoundCog rotates its cog by 180 degrees over 300 ms with ease-out. The upstr
 
 UserRoundPlus draws its vertical and horizontal bars after 300 and 600 ms, with 200 ms path transitions and 100 ms opacity transitions. Its upstream normal variant restores only opacity. An interrupted return keeps the partial stroke during that 300 ms opacity transition, then the shared lifecycle restores the complete drawing. The upstream component retains the partial stroke. The comparison fixture runs the pinned React components, with a local class utility import and UserRoundCog dimensions changed to the requested size.
 
+The ten navigation and history icons adapt Lucide Animated drawings and recipes pinned to commit `4662fff2b60fdcf4751b32013606756caf7c4c26`: Login, Logout, RefreshCw, RefreshCcw, RotateCw, RotateCcw, Undo, Redo, UndoDot, and RedoDot. They reuse the common rendering, playback, input, and reduced-motion behavior.
+
+Login and Logout combine the upstream x offset (-2 or 2 units) with a three-keyframe translateX excursion (0, 3, 0 or 0, -3, 0) over 400 ms with ease-out per segment. Their upstream recipes have no normal variant. This adapter returns both translations to zero over 400 ms from the current pose, then clears retained styles. The public Login name follows this package's naming, while the upstream component is named LogInIcon.
+
+RefreshCw, RefreshCcw, RotateCw, and RotateCcw rotate to 50 or -50 degrees with stiffness 250 and damping 25, then hold. They do not loop. The adapter rotates the inner drawing around viewBox center (12, 12), matching the upstream SVG or group rotation. The shared spring sampler preserves pose and velocity when interrupted. Public handle names use the package's Cw and Ccw spelling and correct the upstream RefreshCW handle typo.
+
+Undo, Redo, UndoDot, and RedoDot animate for 600 ms with cubic-bezier(0.25, 0.1, 0.25, 1) per segment. The arrowhead moves by ±2.1 horizontally and -1.4 vertically, rotates by ±12 degrees, then returns. The arc shortens from full length to 80 percent and back. Dot variants scale their dot through 1, 1.2, and 1. SVG stroke dashes replace normalized pathLength. Returns use the same duration and easing from the current pose. Login, Logout, and the four history recipes also begin interrupted replays from the current pose, including the current arc length and dot scale. Their upstream keyframe arrays restart at a fixed initial pose. The comparison fixture runs all ten pinned React components at 14, 16, 24, and 28 px; only their class utility imports point to a local equivalent.
+
 Sources:
 
 - [Lucide Animated FolderGit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/folder-git.tsx)
@@ -163,6 +171,17 @@ Sources:
 - [Lucide Animated UserRoundCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-round-cog.tsx)
 - [Lucide Animated UserRoundPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/user-round-plus.tsx)
 - [Lucide Animated Users, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/users.tsx)
+
+- [Lucide Animated Login, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/login.tsx)
+- [Lucide Animated Logout, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/logout.tsx)
+- [Lucide Animated RefreshCw, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/refresh-cw.tsx)
+- [Lucide Animated RefreshCcw, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/refresh-ccw.tsx)
+- [Lucide Animated RotateCw, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rotate-cw.tsx)
+- [Lucide Animated RotateCcw, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rotate-ccw.tsx)
+- [Lucide Animated Undo, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/undo.tsx)
+- [Lucide Animated Redo, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/redo.tsx)
+- [Lucide Animated UndoDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/undo-dot.tsx)
+- [Lucide Animated RedoDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/redo-dot.tsx)
 
 ## Lucide and Feather
 
