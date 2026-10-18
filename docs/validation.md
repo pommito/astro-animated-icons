@@ -36,8 +36,11 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
 | Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
+| Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
+
+`tests/cloud-icons.spec.ts` checks all ten cloud drawings, finite held poses, looping stroke order, stop continuity, replay, removal, and reduced motion. Its `/cloud-comparison/` route executes the ten pinned React components at 14, 16, 24, and 28 px. Entry and return measurements sample fifteen times. Return starts from the captured 3250 ms pose with reference velocity reset, because the upstream native stop sampler uses wall-clock time after seeking. Real interrupted spring velocity is covered through adapter continuity tests, without a numerical equality claim against React. Cloud adds no shared representative: existing cases already cover native opacity loops, delayed tracks, and sampled transforms.
 
 ## Checks without a browser
 

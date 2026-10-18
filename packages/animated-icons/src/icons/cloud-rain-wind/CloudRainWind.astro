@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-cloud-rain-wind">
+  <g>
+    <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+    <g>
+      <path data-weather d="m9.2 22 3-7" />
+      <path data-weather d="m9 13-3 7" />
+      <path data-weather d="m17 13-3 7" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
