@@ -5,11 +5,9 @@ interface Comparison {
   route: string;
   seekEvent: string;
   tags: readonly string[];
-  returnFrom?: number;
-  ignoredOpacity?: readonly string[];
 }
 
-export function testUpstreamComparison({ name, route, seekEvent, tags, returnFrom, ignoredOpacity = [] }: Comparison) {
+export function testUpstreamComparison({ name, route, seekEvent, tags }: Comparison) {
   test(name, async ({ page }) => {
     test.setTimeout(60000);
     const errors: string[] = [];
@@ -22,11 +20,6 @@ export function testUpstreamComparison({ name, route, seekEvent, tags, returnFro
     );
     await page.locator("#play").click();
     await page.waitForTimeout(100);
-    if (returnFrom !== undefined) {
-      await page.evaluate(({ time, seekEvent }) => document.dispatchEvent(new CustomEvent(seekEvent, { detail: time })), { time: returnFrom, seekEvent });
-      await page.locator("#stop").click();
-      await page.waitForTimeout(100);
-    }
     const samples = await page.evaluate((seekEvent) => {
       return [0, 50, 100, 150, 200, 300, 400, 600, 800, 1000, 1500].flatMap((time) => {
         document.dispatchEvent(new CustomEvent(seekEvent, { detail: time }));
@@ -73,7 +66,6 @@ export function testUpstreamComparison({ name, route, seekEvent, tags, returnFro
       expect(sample.adapter.length).toBe(sample.reference.length);
       sample.adapter.forEach((shape, index) =>
         shape.forEach((value, coordinate) => {
-          if (returnFrom !== undefined && ignoredOpacity.includes(sample.icon!) && coordinate === 4) return;
           const difference = Math.abs(value - sample.reference[index][coordinate]);
           if (coordinate < 4) maximumGeometry = Math.max(maximumGeometry, difference);
           else maximumPaint = Math.max(maximumPaint, difference);

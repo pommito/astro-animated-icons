@@ -69,13 +69,13 @@ UserRoundPlus draws its vertical and horizontal bars after 300 and 600 ms, with 
 
 The ten document and transfer icons adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`: Download, Upload, ClipboardCheck, Delete, FileCheck, FileCheck2, FilePenLine, FileCog, FileStack, and FileChartLine. They reuse the common props, rendering, input handling, lifecycle, and reduced-motion behavior. The comparison fixture at `/documents-comparison/` executes the pinned React components at 14, 16, 24, and 28 px. The class utility import points to a local equivalent; FileCog's fixed 28 px dimensions are changed to the requested size in the reference.
 
-Download and Upload move their arrow by two units with stiffness 200 and damping 10. Their return uses Motion's default translation spring, stiffness 500, damping 25, and rest speed 10. Delete lifts its lid by 1.1 units and lowers its body and bars by one and half a unit, using stiffness 500 and damping 30. The body morph in the source is a translation of every point by one unit; the adapter uses that equivalent translation.
+Download and Upload share a transfer recipe and move their arrow by two units with stiffness 200 and damping 10. Their return uses Motion's default translation spring, stiffness 500, damping 25, and rest speed 10. Delete lifts its lid by 1.1 units and lowers its body and bars by one and half a unit, using stiffness 500 and damping 30. The body morph in the source is a translation of every point by one unit; the adapter uses that equivalent translation.
 
 FileCheck and FileCheck2 reuse the shared 400 ms check reveal and 300 ms return. ClipboardCheck uses a 300 ms reveal. The source hides ClipboardCheck's check initially and on return. The adapter keeps it visible at rest and restores its opacity during return to preserve the complete-drawing contract.
 
 FilePenLine repeats its 500 ms pen movement once and extends its line from one to five units over 500 ms. The adapter interpolates the same path through CSS `d`, so native animation seeking and cancellation remain available. Its return uses Motion's default translation and rotation springs. Shared transform sampling preserves the current pose when stopping within a repeated iteration.
 
-FileCog rotates its cog by 180 degrees with stiffness 50 and damping 10. Its adapter honors the package's size prop. FileStack moves its top and bottom sheets together using Motion's default translation springs. FileChartLine reveals its chart over 300 ms after a 150 ms delay, with opacity beginning after 100 ms. All ten hold their completed entry pose until stopped; returning restores the complete initial drawing.
+FileCog shares FolderCog's rotation recipe, turning its cog by 180 degrees with stiffness 50 and damping 10. Its adapter honors the package's size prop. FileStack moves its top and bottom sheets together using Motion's default translation springs. FileChartLine reveals its chart over 300 ms after a 150 ms delay, with opacity beginning after 100 ms. All ten hold their completed entry pose until stopped; returning restores the complete initial drawing.
 
 Sources:
 
