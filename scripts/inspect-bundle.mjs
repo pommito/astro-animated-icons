@@ -49,6 +49,19 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "wifi": "wifi-single",
+  "wifi-low": "wifi-low-single",
+  "wifi-cog": "wifi-cog-single",
+  "wifi-pen": "wifi-pen-single",
+  "wifi-sync": "wifi-sync-single",
+  "bluetooth-searching": "bluetooth-searching-single",
+  "nfc": "nfc-single",
+  "router": "router-single",
+  "radio": "radio-single",
+  "radio-tower": "radio-tower-single",
+
+
+
   "map-pin-check-inside": "map-pin-check-inside-single",
   "map-pin-check": "map-pin-check-single",
   "map-pin-house": "map-pin-house-single",
@@ -239,6 +252,18 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["wifi-combined", "arrow-left", "wifi"],
+  ["wifi-low-combined", "arrow-left", "wifi-low"],
+  ["wifi-cog-combined", "arrow-left", "wifi-cog"],
+  ["wifi-pen-combined", "arrow-left", "wifi-pen"],
+  ["wifi-sync-combined", "arrow-left", "wifi-sync"],
+  ["bluetooth-searching-combined", "arrow-left", "bluetooth-searching"],
+  ["nfc-combined", "arrow-left", "nfc"],
+  ["router-combined", "arrow-left", "router"],
+  ["radio-combined", "arrow-left", "radio"],
+  ["radio-tower-combined", "arrow-left", "radio-tower"],
+
+
   ["map-pin-check-inside-combined", "arrow-left", "map-pin-check-inside"],
   ["map-pin-check-combined", "arrow-left", "map-pin-check"],
   ["map-pin-house-combined", "arrow-left", "map-pin-house"],

@@ -1,0 +1,40 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { connectivityIcons } from "../../../../helpers/connectivity";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Connectivity recipe comparisons</title></head>
+  <body>
+    <h1>Connectivity recipe comparisons</h1>
+    <p>The reference runs the ten original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Their class utility import points to a local equivalent. React is confined to this comparison page.</p>
+    <p>Hover a row or use its Replay button to animate both versions together. Play all starts every sample. Stop all returns them to rest. Seek pauses both versions at the selected time in the current playback.</p>
+    <p>Signals combine the upstream asynchronous fade-out and delayed spring fade-in into one cancellable track. The spring opacity samples preserve the native normalization to 100 and the fade completion velocity from Motion's 30 ms velocity window. WifiLow includes the original question-mark show and timed hide. BluetoothSearching repeats its search arcs and center opacity. Local transforms retain their fill-box centers. WifiCog and WifiSync use fixed 24 px SVGs upstream; those originals are checked at 24 px while adapters honor the common size prop.</p>
+    <p>Automated samples check the two signal phases separately after the original asynchronous fade-out completes, along with the other entry tracks and completed-entry returns. BluetoothSearching loops continuously, so its interrupted return is covered by adapter continuity tests. Its JavaScript reference holds the last frame at an exact repeat boundary while native tracks begin the next iteration; numerical entry samples bracket that boundary. Seek uses the current reference phase. WifiLow's timed hide uses a wall-clock timer, so its hide and adapter cancellation are tested separately. Seeking a React animation does not rebase its wall-clock sampling or timers on stop and cannot establish numerical fidelity for interrupted returns. Adapter tests check stop continuity, replay, removal, and reduced motion independently.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <label>Playback time in milliseconds <input id="time" type="number" value="200" min="0" max="3000" step="50" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+    {connectivityIcons.map(icon => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <tbody>{(icon.slug === "wifi-cog" || icon.slug === "wifi-sync" ? [24] : sizes).map(size => <tr data-icon={icon.slug} data-size={size}>
+            <th scope="row">{size} px</th>
+            <td data-adapter><Component size={size} controlled /></td>
+            <td><div data-reference data-name={icon.name} data-size={size}></div></td>
+            <td><button type="button" data-replay aria-label={`Replay ${icon.name} at ${size} pixels`}>Replay</button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../connectivity-reference";
+</script>

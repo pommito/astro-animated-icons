@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-wifi-low">
+  <g>
+    <path d="M12 20h.01" />
+    <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+    <text dominant-baseline="central" fill="currentColor" font-size="8" font-weight="bold" opacity="0" stroke="none" text-anchor="middle" x="12" y="8" data-question="" style="transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0)">?</text>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
