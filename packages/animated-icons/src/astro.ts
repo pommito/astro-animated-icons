@@ -445,6 +445,36 @@ export type { RadioIconHandle } from "./icons/radio/element";
 export { default as RadioTower } from "./icons/radio-tower/RadioTower.astro";
 export type { RadioTowerIconHandle } from "./icons/radio-tower/element";
 
+
+export { default as MapPinPlusInside } from "./icons/map-pin-plus-inside/MapPinPlusInside.astro";
+export type { MapPinPlusInsideIconHandle } from "./icons/map-pin-plus-inside/element";
+
+export { default as MapPinCheckInside } from "./icons/map-pin-check-inside/MapPinCheckInside.astro";
+export type { MapPinCheckInsideIconHandle } from "./icons/map-pin-check-inside/element";
+
+export { default as MapPinCheck } from "./icons/map-pin-check/MapPinCheck.astro";
+export type { MapPinCheckIconHandle } from "./icons/map-pin-check/element";
+
+export { default as MapPinHouse } from "./icons/map-pin-house/MapPinHouse.astro";
+export type { MapPinHouseIconHandle } from "./icons/map-pin-house/element";
+
+export { default as MapPinMinusInside } from "./icons/map-pin-minus-inside/MapPinMinusInside.astro";
+export type { MapPinMinusInsideIconHandle } from "./icons/map-pin-minus-inside/element";
+
+export { default as MapPinMinus } from "./icons/map-pin-minus/MapPinMinus.astro";
+export type { MapPinMinusIconHandle } from "./icons/map-pin-minus/element";
+
+export { default as MapPinOff } from "./icons/map-pin-off/MapPinOff.astro";
+export type { MapPinOffIconHandle } from "./icons/map-pin-off/element";
+
+export { default as MapPinPlus } from "./icons/map-pin-plus/MapPinPlus.astro";
+export type { MapPinPlusIconHandle } from "./icons/map-pin-plus/element";
+
+export { default as MapPinXInside } from "./icons/map-pin-x-inside/MapPinXInside.astro";
+export type { MapPinXInsideIconHandle } from "./icons/map-pin-x-inside/element";
+
+export { default as Compass } from "./icons/compass/Compass.astro";
+export type { CompassIconHandle } from "./icons/compass/element";
 export { default as Receipt } from "./icons/receipt/Receipt.astro";
 export type { ReceiptIconHandle } from "./icons/receipt/element";
 

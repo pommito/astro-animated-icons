@@ -36,6 +36,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Charts | 100, 300, 650, 1000 ms cover fade-out, the hidden interval, staggered redraw, and held sectors |
 | Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
 | Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
+| Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
 | Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
 

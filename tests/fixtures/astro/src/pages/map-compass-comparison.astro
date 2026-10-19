@@ -1,0 +1,41 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { mapCompassIcons } from "../../../../helpers/map-compass";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Map and compass recipe comparisons</title></head>
+  <body>
+    <h1>Map and compass recipe comparisons</h1>
+    <p>The reference runs the original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Their class utility import points to a local equivalent. React is confined to this comparison page.</p>
+    <p>Hover a row or use its Replay button to animate both versions together. Play all starts every sample. Stop all returns them to rest. Seek pauses both versions at the selected time in the current playback.</p>
+    <p>The map pins move through 0, -5, and -3 CSS pixels over 500 ms. Their symbols reveal after 300 ms, with a second stroke after 600 ms for Plus and X. Compass rotates its polygon through 360 degrees with stiffness 120 and damping 15, around its fill-box center.</p>
+    <p>Interrupted pin returns retain the current stroke length during the source's opacity-only normal variant, then restore the complete drawing when return finishes. The upstream component retains the partial stroke. Root pin replays preserve the current position; the upstream keyframe array restarts at zero.</p>
+    <p>The comparison seeks the actual React tracks, including Compass's JavaScript spring. Numerical return comparisons start from a completed held pose. Seeking an upstream animation does not synchronize the Motion value and its velocity for an interrupted return, so interrupted continuity and cleanup are checked on the adapters separately.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <label>Playback time in milliseconds <input id="time" type="number" value="200" min="0" max="3000" step="50" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+    {mapCompassIcons.map(icon => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <tbody>{sizes.map(size => <tr data-icon={icon.slug} data-size={size}>
+            <th scope="row">{size} px</th>
+            <td data-adapter><Component size={size} controlled /></td>
+            <td><div data-reference data-name={icon.name} data-size={size}></div></td>
+            <td><button type="button" data-replay aria-label={`Replay ${icon.name} at ${size} pixels`}>Replay</button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../map-compass-reference";
+</script>

@@ -61,6 +61,17 @@ const singleRoutes = {
   "radio-tower": "radio-tower-single",
 
 
+
+  "map-pin-check-inside": "map-pin-check-inside-single",
+  "map-pin-check": "map-pin-check-single",
+  "map-pin-house": "map-pin-house-single",
+  "map-pin-minus-inside": "map-pin-minus-inside-single",
+  "map-pin-minus": "map-pin-minus-single",
+  "map-pin-off": "map-pin-off-single",
+  "map-pin-plus-inside": "map-pin-plus-inside-single",
+  "map-pin-plus": "map-pin-plus-single",
+  "map-pin-x-inside": "map-pin-x-inside-single",
+  "compass": "compass-single",
   "receipt": "receipt-single",
   "receipt-cent": "receipt-cent-single",
   "receipt-euro": "receipt-euro-single",
@@ -252,6 +263,17 @@ const combinations = [
   ["radio-combined", "arrow-left", "radio"],
   ["radio-tower-combined", "arrow-left", "radio-tower"],
 
+
+  ["map-pin-check-inside-combined", "arrow-left", "map-pin-check-inside"],
+  ["map-pin-check-combined", "arrow-left", "map-pin-check"],
+  ["map-pin-house-combined", "arrow-left", "map-pin-house"],
+  ["map-pin-minus-inside-combined", "arrow-left", "map-pin-minus-inside"],
+  ["map-pin-minus-combined", "arrow-left", "map-pin-minus"],
+  ["map-pin-off-combined", "arrow-left", "map-pin-off"],
+  ["map-pin-plus-inside-combined", "arrow-left", "map-pin-plus-inside"],
+  ["map-pin-plus-combined", "arrow-left", "map-pin-plus"],
+  ["map-pin-x-inside-combined", "arrow-left", "map-pin-x-inside"],
+  ["compass-combined", "arrow-left", "compass"],
   ["receipt-combined", "arrow-left", "receipt"],
   ["receipt-cent-combined", "arrow-left", "receipt-cent"],
   ["receipt-euro-combined", "arrow-left", "receipt-euro"],
