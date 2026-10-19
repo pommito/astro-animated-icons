@@ -1,5 +1,14 @@
 # Third-party notices
 
+MapPinCheckInside, MapPinCheck, MapPinHouse, MapPinMinusInside, MapPinMinus, MapPinOff, MapPinPlusInside, MapPinPlus, MapPinXInside, and Compass adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. Each pin moves its whole SVG through y=0, -5, and -3 CSS pixels over 500 ms, with the peak at 300 ms and ease-out per segment. Symbols reveal after 300 ms over 300 ms, except Plus and X strokes, which draw over 200 ms with delays of 300 and 600 ms. Opacity reveals over 100 ms with the same per-property delay. MapPinPlusInside draws its horizontal stroke first despite the upstream variant names; MapPinPlus draws its vertical stroke first. Native stroke dashes replace normalized path lengths.
+
+Pin returns use the upstream default translation spring (stiffness 500, damping 25, rest speed 10) and 300 ms opacity curve (0.25, 0.1, 0.35, 1). The upstream normal variants omit path length. Interrupted returns preserve the partial stroke until the package lifecycle restores the complete drawing after return; upstream retains it. Interrupted root replays preserve their current position, while the upstream keyframe array restarts at zero. Symbol replays restart their explicit zero-to-one keyframes.
+
+Compass rotates only its polygon to 360 degrees using stiffness 120 and damping 15. Its origin is the polygon's bounding-box center (12, 12). The shared sampler preserves pose and velocity during interruption. Its circle remains fixed. These ten adapters use the existing rendering, lifecycle, input, and reduced-motion behavior.
+
+The `/map-compass-comparison/` fixture executes all ten original pinned React components at 14, 16, 24, and 28 px. Copied sources change only the class utility import. React stays out of consumer bundles. Numerical entry and completed-pose return comparisons use the existing React track seeker. Interrupted JavaScript spring returns cannot be synchronized numerically through this seeker because seeking does not update Motion value velocity; adapter tests cover pose continuity and cleanup instead.
+
+
 AlarmClock, AlarmClockCheck, AlarmClockMinus, AlarmClockPlus, Clock, Timer, Hourglass, History, CalendarCheck, and CalendarCheck2 adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`. The four alarms repeat the upstream six horizontal keyframes every 300 ms with linear easing. Body parts use amplitude 1 and lift -1.5; bells use amplitude 2 and lift -2.5. Separate nested groups let each axis use its own timing. Lift and return use stiffness 200 and damping 25. The physics override the declared 200 ms duration. Interrupted replay replaces the first horizontal keyframe with the captured pose; subsequent iterations of that playback reuse it. Returning carries the current velocity into both springs. The shared lifecycle cancels infinite tracks, pending completions, and sampled state on removal or reduced motion.
 
 Clock shares FolderClock's hand mechanism. History reverses those hand rotations and rotates its separate arrow group to -50 degrees with stiffness 250 and damping 25. Hourglass rotates its group to 180 degrees with stiffness 100 and damping 15. Timer rotates its hand to 300 degrees over 600 ms after a 100 ms delay. Its centered button scales from 0.9 to 1 and moves through y=0, 1, 0 over 300 ms. Its return uses Motion's separate default translation and scale springs. Both calendar checks reveal stroke and opacity over 400 ms with ease-in-out, then return over 300 ms with the default cubic Bezier curve. Native stroke dash lengths replace normalized path lengths. Interrupted replay preserves the current transform, stroke, and opacity.
@@ -298,6 +307,16 @@ Sources:
 
 The energy and Bluetooth adapters and their copied comparison sources use the pinned Lucide Animated revision above. The comparison sources change only the class utility import. Battery preserves the upstream empty interior at rest. Battery level adapters combine the two asynchronous phases into one cancellable timeline so stopped playback cannot start a later phase.
 
+- [Lucide Animated MapPinCheckInside, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-check-inside.tsx)
+- [Lucide Animated MapPinCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-check.tsx)
+- [Lucide Animated MapPinHouse, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-house.tsx)
+- [Lucide Animated MapPinMinusInside, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-minus-inside.tsx)
+- [Lucide Animated MapPinMinus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-minus.tsx)
+- [Lucide Animated MapPinOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-off.tsx)
+- [Lucide Animated MapPinPlusInside, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-plus-inside.tsx)
+- [Lucide Animated MapPinPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-plus.tsx)
+- [Lucide Animated MapPinXInside, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-x-inside.tsx)
+- [Lucide Animated Compass, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/compass.tsx)
 - [Lucide Animated Receipt, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt.tsx)
 - [Lucide Animated ReceiptCent, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-cent.tsx)
 - [Lucide Animated ReceiptEuro, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-euro.tsx)
