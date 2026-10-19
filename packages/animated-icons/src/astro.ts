@@ -444,3 +444,33 @@ export type { CloudSyncIconHandle } from "./icons/cloud-sync/element";
 
 export { default as CloudUpload } from "./icons/cloud-upload/CloudUpload.astro";
 export type { CloudUploadIconHandle } from "./icons/cloud-upload/element";
+
+export { default as Receipt } from "./icons/receipt/Receipt.astro";
+export type { ReceiptIconHandle } from "./icons/receipt/element";
+
+export { default as ReceiptCent } from "./icons/receipt-cent/ReceiptCent.astro";
+export type { ReceiptCentIconHandle } from "./icons/receipt-cent/element";
+
+export { default as ReceiptEuro } from "./icons/receipt-euro/ReceiptEuro.astro";
+export type { ReceiptEuroIconHandle } from "./icons/receipt-euro/element";
+
+export { default as ReceiptIndianRupee } from "./icons/receipt-indian-rupee/ReceiptIndianRupee.astro";
+export type { ReceiptIndianRupeeIconHandle } from "./icons/receipt-indian-rupee/element";
+
+export { default as ReceiptJapaneseYen } from "./icons/receipt-japanese-yen/ReceiptJapaneseYen.astro";
+export type { ReceiptJapaneseYenIconHandle } from "./icons/receipt-japanese-yen/element";
+
+export { default as ReceiptPoundSterling } from "./icons/receipt-pound-sterling/ReceiptPoundSterling.astro";
+export type { ReceiptPoundSterlingIconHandle } from "./icons/receipt-pound-sterling/element";
+
+export { default as ReceiptRussianRuble } from "./icons/receipt-russian-ruble/ReceiptRussianRuble.astro";
+export type { ReceiptRussianRubleIconHandle } from "./icons/receipt-russian-ruble/element";
+
+export { default as ReceiptSwissFranc } from "./icons/receipt-swiss-franc/ReceiptSwissFranc.astro";
+export type { ReceiptSwissFrancIconHandle } from "./icons/receipt-swiss-franc/element";
+
+export { default as ReceiptText } from "./icons/receipt-text/ReceiptText.astro";
+export type { ReceiptTextIconHandle } from "./icons/receipt-text/element";
+
+export { default as ReceiptTurkishLira } from "./icons/receipt-turkish-lira/ReceiptTurkishLira.astro";
+export type { ReceiptTurkishLiraIconHandle } from "./icons/receipt-turkish-lira/element";

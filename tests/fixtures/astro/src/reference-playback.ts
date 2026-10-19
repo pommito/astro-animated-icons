@@ -1,0 +1,23 @@
+import { AsyncMotionValueAnimation, JSAnimation, visualElementStore } from "motion";
+
+interface SampleOptions {
+  complete?: boolean;
+  resetVelocity?: boolean;
+}
+
+export function sampleReference(element: Element, milliseconds: number, { complete, resetVelocity }: SampleOptions = {}) {
+  const visual = visualElementStore.get(element);
+  visual?.values.forEach((value) => {
+    if (value.animation instanceof AsyncMotionValueAnimation) {
+      const animation = value.animation;
+      animation.pause();
+      animation.time = milliseconds / 1000;
+      // JS seeks schedule a frame; comparison controls need the pose synchronously.
+      if (animation.animation instanceof JSAnimation) animation.animation.sample(milliseconds);
+      // Early spring completion would otherwise carry transient velocity into the next phase.
+      if (resetVelocity) value.jump(value.get(), false);
+      if (complete) animation.complete();
+    }
+  });
+  visual?.render();
+}
