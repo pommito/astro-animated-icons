@@ -1,0 +1,10 @@
+export { ReceiptIcon as Receipt } from "./receipts/receipt";
+export { ReceiptCentIcon as ReceiptCent } from "./receipts/receipt-cent";
+export { ReceiptEuroIcon as ReceiptEuro } from "./receipts/receipt-euro";
+export { ReceiptIndianRupeeIcon as ReceiptIndianRupee } from "./receipts/receipt-indian-rupee";
+export { ReceiptJapaneseYenIcon as ReceiptJapaneseYen } from "./receipts/receipt-japanese-yen";
+export { ReceiptPoundSterlingIcon as ReceiptPoundSterling } from "./receipts/receipt-pound-sterling";
+export { ReceiptRussianRubleIcon as ReceiptRussianRuble } from "./receipts/receipt-russian-ruble";
+export { ReceiptSwissFrancIcon as ReceiptSwissFranc } from "./receipts/receipt-swiss-franc";
+export { ReceiptTextIcon as ReceiptText } from "./receipts/receipt-text";
+export { ReceiptTurkishLiraIcon as ReceiptTurkishLira } from "./receipts/receipt-turkish-lira";

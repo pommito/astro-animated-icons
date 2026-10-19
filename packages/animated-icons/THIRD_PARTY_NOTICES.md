@@ -311,6 +311,19 @@ The energy and Bluetooth adapters and their copied comparison sources use the pi
 
 The connectivity adapters use these pinned sources. Their comparison copies change only the class utility import. WifiCog and WifiSync ignore the upstream fixed 24 px dimensions in the adapter to honor the common size prop; the comparison retains the originals and checks these two at 24 px. Signal adapters combine asynchronous fade-out and spring fade-in into cancellable tracks, including native spring normalization to 100 and the fade completion velocity from Motion's 30 ms velocity window. BluetoothSearching samples either side of exact JavaScript repeat boundaries because native tracks already start the next iteration at that instant. WifiLow also combines its delayed question-mark show and timed hide, preventing callbacks after cancellation. Native stroke lengths and sampled SVG transforms preserve the drawing and local transform origins.
 
+- [Lucide Animated Receipt, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt.tsx)
+- [Lucide Animated ReceiptCent, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-cent.tsx)
+- [Lucide Animated ReceiptEuro, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-euro.tsx)
+- [Lucide Animated ReceiptIndianRupee, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-indian-rupee.tsx)
+- [Lucide Animated ReceiptJapaneseYen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-japanese-yen.tsx)
+- [Lucide Animated ReceiptPoundSterling, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-pound-sterling.tsx)
+- [Lucide Animated ReceiptRussianRuble, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-russian-ruble.tsx)
+- [Lucide Animated ReceiptSwissFranc, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-swiss-franc.tsx)
+- [Lucide Animated ReceiptText, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-text.tsx)
+- [Lucide Animated ReceiptTurkishLira, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-turkish-lira.tsx)
+
+The receipt adapters use the pinned sources above. Copied comparison sources change only the class utility import. ReceiptSwissFranc respects the requested size instead of the upstream fixed 24 px; the comparison runner normalizes that SVG after mounting. Currency paths preserve their individual entry and return durations, opacity timings, secondary delays, and path offsets. ReceiptText combines the asynchronous reverse-staggered erase and forward-staggered redraw into one cancellable timeline, so interruption cannot restart a queued phase.
+
 ## Lucide and Feather
 
 ISC License

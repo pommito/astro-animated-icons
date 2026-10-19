@@ -1,7 +1,8 @@
 import { createElement, createRef, type ComponentType, type RefAttributes } from "react";
 import { createRoot } from "react-dom/client";
 import { flushSync } from "react-dom";
-import { AsyncMotionValueAnimation, JSAnimation, visualElementStore } from "motion";
+import { AsyncMotionValueAnimation, visualElementStore } from "motion";
+import { sampleReference } from "./reference-playback";
 import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
 
 type ReferenceComponent = ComponentType<{ size?: number } & RefAttributes<ArrowLeftIconHandle>>;
@@ -65,17 +66,7 @@ export function mountReferences(originals: Record<string, ReferenceComponent>, s
     playbackRevision++;
     const milliseconds = (event as CustomEvent<number>).detail;
     document.querySelectorAll("[data-reference] svg, [data-reference] svg *").forEach((element) => {
-      const visual = visualElementStore.get(element);
-      visual?.values.forEach((value) => {
-        if (value.animation instanceof AsyncMotionValueAnimation) {
-          const animation = value.animation;
-          animation.pause();
-          animation.time = milliseconds / 1000;
-          // JS seeks schedule a frame; sample synchronously for the comparison controls.
-          if (animation.animation instanceof JSAnimation) animation.animation.sample(milliseconds);
-        }
-      });
-      visual?.render();
+      sampleReference(element, milliseconds);
     });
     document.getAnimations().forEach((animation) => {
       animation.pause();

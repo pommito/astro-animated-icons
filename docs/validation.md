@@ -36,7 +36,10 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Charts | 100, 300, 650, 1000 ms cover fade-out, the hidden interval, staggered redraw, and held sectors |
 | Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
 | Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
+| Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
+
+Receipts reuse the native path tracks and cancellable keyframe timelines covered by the existing representatives, so they add no shared representative.
 
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 
