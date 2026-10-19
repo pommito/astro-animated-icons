@@ -15,7 +15,7 @@ export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOpti
         const anchor = (origin === "wrapper" ? container.firstElementChild! : container.querySelector("svg")!).getBoundingClientRect();
         const originX = anchor.x + (origin === "svg-center" ? anchor.width / 2 : 0);
         const originY = anchor.y + (origin === "svg-center" ? anchor.height / 2 : 0);
-        return [...container.querySelectorAll<SVGGeometryElement>("path, circle, line, rect, polyline")].map((shape) => {
+        return [...container.querySelectorAll<SVGGeometryElement>("path, circle, line, rect, polyline, polygon")].map((shape) => {
           const box = shape.getBoundingClientRect();
           let opacity = 1;
           let parent: Element | null = shape;

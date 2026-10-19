@@ -1,0 +1,10 @@
+export { MapPinCheckInsideIcon as MapPinCheckInside } from "./map-compass/map-pin-check-inside";
+export { MapPinCheckIcon as MapPinCheck } from "./map-compass/map-pin-check";
+export { MapPinHouseIcon as MapPinHouse } from "./map-compass/map-pin-house";
+export { MapPinMinusInsideIcon as MapPinMinusInside } from "./map-compass/map-pin-minus-inside";
+export { MapPinMinusIcon as MapPinMinus } from "./map-compass/map-pin-minus";
+export { MapPinOffIcon as MapPinOff } from "./map-compass/map-pin-off";
+export { MapPinPlusInsideIcon as MapPinPlusInside } from "./map-compass/map-pin-plus-inside";
+export { MapPinPlusIcon as MapPinPlus } from "./map-compass/map-pin-plus";
+export { MapPinXInsideIcon as MapPinXInside } from "./map-compass/map-pin-x-inside";
+export { CompassIcon as Compass } from "./map-compass/compass";
