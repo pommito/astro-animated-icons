@@ -31,6 +31,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Suite | Existing interruption samples and purpose |
 | --- | --- |
 | Energy and Bluetooth | 100, 300, 650, 1600 ms cover filling, delayed slash reveal, staggered bars, and later loops |
+| Connectivity | 100, 300, 650, 1600 ms cover fades, staggered springs, rotations, and repeating searches. WifiLow also samples its timed hide at 1750 ms; its text has dedicated show, hold, and hide interruption checks. |
 | Clock and calendar | 50, 300, 950, 1600 ms cover entry, reveal boundaries, and oscillations after the initial spring |
 | Charts | 100, 300, 650, 1000 ms cover fade-out, the hidden interval, staggered redraw, and held sectors |
 | Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
@@ -45,6 +46,8 @@ Receipts reuse the native path tracks and cancellable keyframe timelines covered
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 
 `tests/cloud-icons.spec.ts` checks all ten cloud drawings, finite held poses, looping stroke order, stop continuity, replay, removal, and reduced motion. Its `/cloud-comparison/` route executes the ten pinned React components at 14, 16, 24, and 28 px. Entry and return measurements sample fifteen times. Return starts from the captured 3250 ms pose with reference velocity reset, because the upstream native stop sampler uses wall-clock time after seeking. Real interrupted spring velocity is covered through adapter continuity tests, without a numerical equality claim against React. Cloud adds no shared representative: existing cases already cover native opacity loops, delayed tracks, and sampled transforms.
+
+The connectivity family reuses native opacity and SVG transform tracks already represented above. WifiLow adds a text node, but its delayed show and hide are flattened into native tracks rather than introducing runtime callbacks. Dedicated connectivity tests check that text at rest, during playback, and after stop, removal, and reduced motion. No shared representative is added.
 
 ## Checks without a browser
 

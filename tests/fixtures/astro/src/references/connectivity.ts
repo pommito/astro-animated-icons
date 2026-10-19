@@ -1,0 +1,10 @@
+export { WifiIcon as Wifi } from "./connectivity/wifi";
+export { WifiLowIcon as WifiLow } from "./connectivity/wifi-low";
+export { WifiCogIcon as WifiCog } from "./connectivity/wifi-cog";
+export { WifiPenIcon as WifiPen } from "./connectivity/wifi-pen";
+export { WifiSyncIcon as WifiSync } from "./connectivity/wifi-sync";
+export { BluetoothSearchingIcon as BluetoothSearching } from "./connectivity/bluetooth-searching";
+export { NfcIcon as Nfc } from "./connectivity/nfc";
+export { RouterIcon as Router } from "./connectivity/router";
+export { RadioIcon as Radio } from "./connectivity/radio";
+export { RadioTowerIcon as RadioTower } from "./connectivity/radio-tower";

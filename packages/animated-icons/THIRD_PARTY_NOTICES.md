@@ -328,6 +328,20 @@ Sources:
 
 The energy and Bluetooth adapters and their copied comparison sources use the pinned Lucide Animated revision above. The comparison sources change only the class utility import. Battery preserves the upstream empty interior at rest. Battery level adapters combine the two asynchronous phases into one cancellable timeline so stopped playback cannot start a later phase.
 
+- [Lucide Animated Wifi, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wifi.tsx)
+- [Lucide Animated WifiLow, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wifi-low.tsx)
+- [Lucide Animated WifiCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wifi-cog.tsx)
+- [Lucide Animated WifiPen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wifi-pen.tsx)
+- [Lucide Animated WifiSync, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wifi-sync.tsx)
+- [Lucide Animated BluetoothSearching, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bluetooth-searching.tsx)
+- [Lucide Animated Nfc, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/nfc.tsx)
+- [Lucide Animated Router, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/router.tsx)
+- [Lucide Animated Radio, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/radio.tsx)
+- [Lucide Animated RadioTower, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/radio-tower.tsx)
+
+The connectivity adapters use these pinned sources. Their comparison copies change only the class utility import. WifiCog and WifiSync ignore the upstream fixed 24 px dimensions in the adapter to honor the common size prop; the comparison retains the originals and checks these two at 24 px. Signal adapters combine asynchronous fade-out and spring fade-in into cancellable tracks, including native spring normalization to 100 and the fade completion velocity from Motion's 30 ms velocity window. BluetoothSearching samples either side of exact JavaScript repeat boundaries because native tracks already start the next iteration at that instant. WifiLow also combines its delayed question-mark show and timed hide, preventing callbacks after cancellation. Native stroke lengths and sampled SVG transforms preserve the drawing and local transform origins.
+
+
 - [Lucide Animated MapPinCheckInside, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-check-inside.tsx)
 - [Lucide Animated MapPinCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-check.tsx)
 - [Lucide Animated MapPinHouse, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/map-pin-house.tsx)
