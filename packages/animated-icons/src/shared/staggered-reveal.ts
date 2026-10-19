@@ -10,6 +10,7 @@ interface RevealStep {
   defaultEase?: boolean;
   reverseOffset?: boolean;
   opacityOnly?: boolean;
+  opacityEase?: NonNullable<Parameters<typeof animate>[2]>["ease"];
   returnDelay?: number;
 }
 
@@ -25,7 +26,7 @@ export function createStaggeredRevealRecipe(steps: RevealStep[]): IconRecipe {
         const opacityDelay = returning ? delay : step.opacityDelay ?? delay;
         if (step.opacityOnly) {
           track((onComplete) => animate(shape, { opacity: returning ? 1 : [0, 1] }, {
-            duration: 0.3, delay: opacityDelay, ease: defaultEase, onComplete,
+            duration: 0.3, delay: opacityDelay, ease: returning ? defaultEase : step.opacityEase ?? defaultEase, onComplete,
           }));
         } else {
           animatePathReveal(shape, returning, track, {

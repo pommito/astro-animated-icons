@@ -415,6 +415,36 @@ export type { ChartScatterIconHandle } from "./icons/chart-scatter/element";
 export { default as ChartSpline } from "./icons/chart-spline/ChartSpline.astro";
 export type { ChartSplineIconHandle } from "./icons/chart-spline/element";
 
+export { default as CloudBackup } from "./icons/cloud-backup/CloudBackup.astro";
+export type { CloudBackupIconHandle } from "./icons/cloud-backup/element";
+
+export { default as CloudCog } from "./icons/cloud-cog/CloudCog.astro";
+export type { CloudCogIconHandle } from "./icons/cloud-cog/element";
+
+export { default as CloudDownload } from "./icons/cloud-download/CloudDownload.astro";
+export type { CloudDownloadIconHandle } from "./icons/cloud-download/element";
+
+export { default as CloudLightning } from "./icons/cloud-lightning/CloudLightning.astro";
+export type { CloudLightningIconHandle } from "./icons/cloud-lightning/element";
+
+export { default as CloudRainWind } from "./icons/cloud-rain-wind/CloudRainWind.astro";
+export type { CloudRainWindIconHandle } from "./icons/cloud-rain-wind/element";
+
+export { default as CloudRain } from "./icons/cloud-rain/CloudRain.astro";
+export type { CloudRainIconHandle } from "./icons/cloud-rain/element";
+
+export { default as CloudSnow } from "./icons/cloud-snow/CloudSnow.astro";
+export type { CloudSnowIconHandle } from "./icons/cloud-snow/element";
+
+export { default as CloudSun } from "./icons/cloud-sun/CloudSun.astro";
+export type { CloudSunIconHandle } from "./icons/cloud-sun/element";
+
+export { default as CloudSync } from "./icons/cloud-sync/CloudSync.astro";
+export type { CloudSyncIconHandle } from "./icons/cloud-sync/element";
+
+export { default as CloudUpload } from "./icons/cloud-upload/CloudUpload.astro";
+export type { CloudUploadIconHandle } from "./icons/cloud-upload/element";
+
 export { default as Wifi } from "./icons/wifi/Wifi.astro";
 export type { WifiIconHandle } from "./icons/wifi/element";
 
@@ -475,6 +505,7 @@ export type { MapPinXInsideIconHandle } from "./icons/map-pin-x-inside/element";
 
 export { default as Compass } from "./icons/compass/Compass.astro";
 export type { CompassIconHandle } from "./icons/compass/element";
+
 export { default as Receipt } from "./icons/receipt/Receipt.astro";
 export type { ReceiptIconHandle } from "./icons/receipt/element";
 

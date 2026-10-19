@@ -1,0 +1,10 @@
+export { CloudBackupIcon as CloudBackup } from "./cloud/cloud-backup";
+export { CloudCogIcon as CloudCog } from "./cloud/cloud-cog";
+export { CloudDownloadIcon as CloudDownload } from "./cloud/cloud-download";
+export { CloudLightningIcon as CloudLightning } from "./cloud/cloud-lightning";
+export { CloudRainWindIcon as CloudRainWind } from "./cloud/cloud-rain-wind";
+export { CloudRainIcon as CloudRain } from "./cloud/cloud-rain";
+export { CloudSnowIcon as CloudSnow } from "./cloud/cloud-snow";
+export { CloudSunIcon as CloudSun } from "./cloud/cloud-sun";
+export { CloudSyncIcon as CloudSync } from "./cloud/cloud-sync";
+export { CloudUploadIcon as CloudUpload } from "./cloud/cloud-upload";

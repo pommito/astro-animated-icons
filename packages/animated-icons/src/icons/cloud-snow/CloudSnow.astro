@@ -1,0 +1,23 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-cloud-snow">
+  <g>
+    <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+    <g>
+      <path data-weather d="M8 15h.01" />
+      <path data-weather d="M8 19h.01" />
+      <path data-weather d="M12 17h.01" />
+      <path data-weather d="M12 21h.01" />
+      <path data-weather d="M16 15h.01" />
+      <path data-weather d="M16 19h.01" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
