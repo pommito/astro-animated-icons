@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-layout-grid">
+  <g>
+    <rect height="7" rx="1" width="7" x="3" y="3" style="transform-box: fill-box; transform-origin: center" />
+    <rect height="7" rx="1" width="7" x="14" y="3" style="transform-box: fill-box; transform-origin: center" />
+    <rect height="7" rx="1" width="7" x="14" y="14" style="transform-box: fill-box; transform-origin: center" />
+    <rect height="7" rx="1" width="7" x="3" y="14" style="transform-box: fill-box; transform-origin: center" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

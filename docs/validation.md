@@ -64,6 +64,8 @@ The connectivity family reuses native opacity and SVG transform tracks already r
 
 `tests/corner-resize.spec.ts` checks all ten corner and resize drawings without JavaScript, directional pulse peaks, finite held spring poses, stop continuity at 50, 225, 400, and 650 ms, replay during entry and return, removal, instance isolation, and reduced motion. Its `/corner-resize-comparison/` route executes all ten pinned React components at 14, 16, 24, and 28 px. Fifteen entry and completed-pose return samples measure geometry and paint. Expand and Shrink return from their held translations; corner pulses have already returned to rest. Public adapter tests check pose continuity during interrupted returns. Numerical equality of interrupted spring velocity to React is unverified. These icons reuse the existing native transform sampler and lifecycle, so shared representatives remain unchanged.
 
+Layout and gallery use the family helper at 50, 225, 400, 650, and 1200 ms. Dedicated Layers tests observe both spring stages, completion ordering, pending-stage cancellation, and reconnection. The pinned comparison covers all ten entries and captured returns, plus Layers second-stage geometry at four sizes.
+
 ## Checks without a browser
 
 `pnpm check` checks the package, the remaining Astro consumer fixtures, and TypeScript test code. Both Astro checks remain because adapters and consumer templates have different typing responsibilities.
