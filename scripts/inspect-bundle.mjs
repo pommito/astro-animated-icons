@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "arrow-down-0-1": "arrow-down-0-1-single",
+  "arrow-down-1-0": "arrow-down-1-0-single",
+  "arrow-down-a-z": "arrow-down-a-z-single",
+  "arrow-down-z-a": "arrow-down-z-a-single",
+  "square-arrow-down": "square-arrow-down-single",
+  "square-arrow-left": "square-arrow-left-single",
+  "square-arrow-right": "square-arrow-right-single",
+  "square-arrow-up": "square-arrow-up-single",
+  "trending-down": "trending-down-single",
+  "trending-up": "trending-up-single",
+
   "angry": "angry-single",
   "annoyed": "annoyed-single",
   "frown": "frown-single",
@@ -391,6 +402,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["arrow-down-0-1-combined", "arrow-left", "arrow-down-0-1"],
+  ["arrow-down-1-0-combined", "arrow-left", "arrow-down-1-0"],
+  ["arrow-down-a-z-combined", "arrow-left", "arrow-down-a-z"],
+  ["arrow-down-z-a-combined", "arrow-left", "arrow-down-z-a"],
+  ["square-arrow-down-combined", "arrow-left", "square-arrow-down"],
+  ["square-arrow-left-combined", "arrow-left", "square-arrow-left"],
+  ["square-arrow-right-combined", "arrow-left", "square-arrow-right"],
+  ["square-arrow-up-combined", "arrow-left", "square-arrow-up"],
+  ["trending-down-combined", "arrow-left", "trending-down"],
+  ["trending-up-combined", "arrow-left", "trending-up"],
   ["angry-combined", "arrow-left", "angry"],
   ["annoyed-combined", "arrow-left", "annoyed"],
   ["frown-combined", "arrow-left", "frown"],

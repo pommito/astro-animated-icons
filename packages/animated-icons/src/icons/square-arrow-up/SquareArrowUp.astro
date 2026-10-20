@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-square-arrow-up">
+  <g>
+    <rect height="18" rx="2" width="18" x="3" y="3" />
+    <path data-part="head" d="m16 12-4-4-4 4" />
+    <path data-part="shaft" d="M12 16V8" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
