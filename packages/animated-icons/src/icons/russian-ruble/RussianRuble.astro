@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-russian-ruble">
+  <g>
+    <path d="M6 11h8a4 4 0 0 0 0-8H9v18" />
+    <path d="M6 15h8" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "cart": "cart-single",
+  "credit-card": "credit-card-single",
+  "wallet": "wallet-single",
+  "dollar-sign": "dollar-sign-single",
+  "euro": "euro-single",
+  "pound-sterling": "pound-sterling-single",
+  "indian-rupee": "indian-rupee-single",
+  "japanese-yen": "japanese-yen-single",
+  "russian-ruble": "russian-ruble-single",
+  "swiss-franc": "swiss-franc-single",
   "bold": "bold-single",
   "italic": "italic-single",
   "underline": "underline-single",
@@ -338,6 +348,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["cart-combined", "arrow-left", "cart"],
+  ["credit-card-combined", "arrow-left", "credit-card"],
+  ["wallet-combined", "arrow-left", "wallet"],
+  ["dollar-sign-combined", "arrow-left", "dollar-sign"],
+  ["euro-combined", "arrow-left", "euro"],
+  ["pound-sterling-combined", "arrow-left", "pound-sterling"],
+  ["indian-rupee-combined", "arrow-left", "indian-rupee"],
+  ["japanese-yen-combined", "arrow-left", "japanese-yen"],
+  ["russian-ruble-combined", "arrow-left", "russian-ruble"],
+  ["swiss-franc-combined", "arrow-left", "swiss-franc"],
   ["bold-combined", "arrow-left", "bold"],
   ["italic-combined", "arrow-left", "italic"],
   ["underline-combined", "arrow-left", "underline"],
