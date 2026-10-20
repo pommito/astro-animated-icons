@@ -24,6 +24,8 @@ Volume keeps its template-upgrade and reconnection coverage in `tests/media-icon
 
 The shared suites previously expanded the same scenarios across nearly the entire catalog. Removing those repetitions does not remove recipe tests. HTML props fixtures now exist only for the four rendering cases. Single-icon and combined routes remain because each protects a distinct consumer bundle.
 
+AlignLeft and AlignRight use the same SVG attribute mechanism as SlidersHorizontal. Their dedicated checks in `tests/text-formatting.spec.ts` observe moving endpoints, stop continuity, cancellation after removal, reduced motion, and instance isolation. Bold checks its held stroke width and cleanup directly because native track counts cannot prove that the visible width returned to two. The text formatting comparison includes stroke width and endpoint geometry in entry and captured-return measurements. Existing shared representatives remain unchanged.
+
 ## Every icon
 
 The icon suites retain their existing no-JavaScript scenarios. They check initial SVG geometry and native links. They also retain manual playback, stop continuity, replay, cleanup, instance isolation, and reduced-motion checks where recipes can differ. The helper `testIconBehavior` continues to apply these checks to each member of its recipe family.

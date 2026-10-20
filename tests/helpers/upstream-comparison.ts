@@ -4,9 +4,10 @@ interface ComparisonOptions {
   seekEvent: string;
   times: number[];
   origin: "svg" | "svg-center" | "wrapper";
+  includeStrokeWidth?: boolean;
 }
 
-export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOptions) {
+export function sampleUpstreamPoses({ seekEvent, times, origin, includeStrokeWidth }: ComparisonOptions) {
   return times.flatMap((time) => {
     document.dispatchEvent(new CustomEvent(seekEvent, { detail: time }));
     return [...document.querySelectorAll<HTMLTableRowElement>("tr[data-icon]")].map((row) => {
@@ -29,6 +30,7 @@ export function sampleUpstreamPoses({ seekEvent, times, origin }: ComparisonOpti
             box.x - originX, box.y - originY, box.width, box.height, opacity,
             Number.isNaN(dash) ? 1 : dash / length,
             parseFloat(getComputedStyle(shape).strokeDashoffset) / length,
+            ...(includeStrokeWidth ? [parseFloat(getComputedStyle(shape).strokeWidth)] : []),
           ];
         });
       };

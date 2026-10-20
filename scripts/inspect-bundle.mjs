@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "bold": "bold-single",
+  "italic": "italic-single",
+  "underline": "underline-single",
+  "a-arrow-down": "a-arrow-down-single",
+  "a-arrow-up": "a-arrow-up-single",
+  "align-center": "align-center-single",
+  "align-left": "align-left-single",
+  "align-right": "align-right-single",
+  "align-horizontal": "align-horizontal-single",
+  "align-vertical": "align-vertical-single",
   "play": "play-single",
   "pause": "pause-single",
   "volume": "volume-single",
@@ -306,6 +316,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["bold-combined", "arrow-left", "bold"],
+  ["italic-combined", "arrow-left", "italic"],
+  ["underline-combined", "arrow-left", "underline"],
+  ["a-arrow-down-combined", "arrow-left", "a-arrow-down"],
+  ["a-arrow-up-combined", "arrow-left", "a-arrow-up"],
+  ["align-center-combined", "arrow-left", "align-center"],
+  ["align-left-combined", "arrow-left", "align-left"],
+  ["align-right-combined", "arrow-left", "align-right"],
+  ["align-horizontal-combined", "arrow-left", "align-horizontal"],
+  ["align-vertical-combined", "arrow-left", "align-vertical"],
+
   ["arrow-down-left-combined", "arrow-left", "arrow-down-left"],
   ["arrow-down-right-combined", "arrow-left", "arrow-down-right"],
   ["arrow-big-down-combined", "arrow-left", "arrow-big-down"],

@@ -1,0 +1,10 @@
+export { BoldIcon as Bold } from "./text-formatting/bold";
+export { ItalicIcon as Italic } from "./text-formatting/italic";
+export { UnderlineIcon as Underline } from "./text-formatting/underline";
+export { AArrowDownIcon as AArrowDown } from "./text-formatting/a-arrow-down";
+export { AArrowUpIcon as AArrowUp } from "./text-formatting/a-arrow-up";
+export { AlignCenterIcon as AlignCenter } from "./text-formatting/align-center";
+export { AlignLeftIcon as AlignLeft } from "./text-formatting/align-left";
+export { AlignRightIcon as AlignRight } from "./text-formatting/align-right";
+export { AlignHorizontalIcon as AlignHorizontal } from "./text-formatting/align-horizontal";
+export { AlignVerticalIcon as AlignVertical } from "./text-formatting/align-vertical";
