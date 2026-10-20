@@ -23,6 +23,25 @@ The `/communication-comparison/` fixture executes all ten original pinned React 
 - [Lucide Animated Send, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/send.tsx)
 - [Lucide Animated Bell, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bell.tsx)
 
+CornerDownLeft, CornerDownRight, CornerLeftDown, CornerLeftUp, CornerRightDown, CornerRightUp, CornerUpLeft, CornerUpRight, Expand, and Shrink adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The eight corner icons pulse their root SVG over 450 ms with ease-in-out per segment. Horizontal arrows scale X through 1, 1.15, and 1, with translation through 0, -2 or 2, and 0 CSS pixels. Vertical arrows apply the same values on Y. Root SVG transforms preserve the upstream viewport center and CSS-pixel translation at 14, 16, 24, and 28 px. Return uses Motion's default translation spring with stiffness 500 and damping 25, and scale spring with stiffness 550 and damping 30. Both use rest speed 10. Completed pulses restore the drawing. Interrupted replays preserve the current adapter pose, while upstream keyframe arrays restart at rest.
+
+Expand translates its four paths outward by 2 SVG units on each axis. Shrink translates its four paths inward by 1 unit. Both hold their final pose and use stiffness 250 and damping 25 for entry and return. The shared SVG sampler preserves pose and sampled velocity on interruption, and the existing lifecycle cancels all tracks and clears retained state on removal or reduced motion. The only extension to that sampler is scaleX support.
+
+The `/corner-resize-comparison/` fixture executes all ten pinned React sources at explicit sizes 14, 16, 24, and 28 px. Copied sources change only the class utility import to `../utils`. Entry measurements sample 0 through 1000 ms. Return measurements start after completed entry with reference velocity reset, so Expand and Shrink return from their held pose while corner pulses are already at rest. Public adapter tests cover interrupted stop continuity and replay. Numerical equivalence of real interrupted spring velocity is unverified. Automated geometry and paint measurements support the user's manual visual acceptance. React remains confined to comparison pages.
+
+- [Lucide Animated CornerDownLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-down-left.tsx)
+- [Lucide Animated CornerDownRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-down-right.tsx)
+- [Lucide Animated CornerLeftDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-left-down.tsx)
+- [Lucide Animated CornerLeftUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-left-up.tsx)
+- [Lucide Animated CornerRightDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-right-down.tsx)
+- [Lucide Animated CornerRightUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-right-up.tsx)
+- [Lucide Animated CornerUpLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-up-left.tsx)
+- [Lucide Animated CornerUpRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-up-right.tsx)
+- [Lucide Animated Expand, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/expand.tsx)
+- [Lucide Animated Shrink, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shrink.tsx)
+
 CloudBackup, CloudCog, CloudDownload, CloudLightning, CloudRainWind, CloudRain, CloudSnow, CloudSun, CloudSync, and CloudUpload adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 CloudBackup and CloudSync rotate their inner groups to -360 degrees over 800 and 1200 ms with ease-in-out, then hold. They return over the same duration. The shared group transform recipe also preserves FolderSync's existing behavior. CloudCog shares the existing cog spring to 180 degrees with stiffness 50 and damping 10. CloudDownload and CloudUpload move their arrow groups by 2 and -2 SVG units over 300 ms with cubic-bezier(0.68, -0.6, 0.32, 1.6), then hold. Their returns use the same curve. These transfer curves differ from Download and Upload's springs.
