@@ -961,6 +961,36 @@ export type { VibrateIconHandle } from "./icons/vibrate/element";
 export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
 export type { EvChargerIconHandle } from "./icons/ev-charger/element";
 
+export { default as Ambulance } from "./icons/ambulance/Ambulance.astro";
+export type { AmbulanceIconHandle } from "./icons/ambulance/element";
+
+export { default as Stethoscope } from "./icons/stethoscope/Stethoscope.astro";
+export type { StethoscopeIconHandle } from "./icons/stethoscope/element";
+
+export { default as Syringe } from "./icons/syringe/Syringe.astro";
+export type { SyringeIconHandle } from "./icons/syringe/element";
+
+export { default as Thermometer } from "./icons/thermometer/Thermometer.astro";
+export type { ThermometerIconHandle } from "./icons/thermometer/element";
+
+export { default as Brain } from "./icons/brain/Brain.astro";
+export type { BrainIconHandle } from "./icons/brain/element";
+
+export { default as Atom } from "./icons/atom/Atom.astro";
+export type { AtomIconHandle } from "./icons/atom/element";
+
+export { default as Flask } from "./icons/flask/Flask.astro";
+export type { FlaskIconHandle } from "./icons/flask/element";
+
+export { default as Telescope } from "./icons/telescope/Telescope.astro";
+export type { TelescopeIconHandle } from "./icons/telescope/element";
+
+export { default as CircleGauge } from "./icons/circle-gauge/CircleGauge.astro";
+export type { CircleGaugeIconHandle } from "./icons/circle-gauge/element";
+
+export { default as Gauge } from "./icons/gauge/Gauge.astro";
+export type { GaugeIconHandle } from "./icons/gauge/element";
+
 export { default as Coffee } from "./icons/coffee/Coffee.astro";
 export type { CoffeeIconHandle } from "./icons/coffee/element";
 

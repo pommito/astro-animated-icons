@@ -1,0 +1,10 @@
+export { AmbulanceIcon as Ambulance } from "./health-science/ambulance";
+export { StethoscopeIcon as Stethoscope } from "./health-science/stethoscope";
+export { SyringeIcon as Syringe } from "./health-science/syringe";
+export { ThermometerIcon as Thermometer } from "./health-science/thermometer";
+export { BrainIcon as Brain } from "./health-science/brain";
+export { AtomIcon as Atom } from "./health-science/atom";
+export { FlaskIcon as Flask } from "./health-science/flask";
+export { TelescopeIcon as Telescope } from "./health-science/telescope";
+export { CircleGaugeIcon as CircleGauge } from "./health-science/circle-gauge";
+export { GaugeIcon as Gauge } from "./health-science/gauge";
