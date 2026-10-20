@@ -27,6 +27,27 @@ Numerical samples compare geometry, opacity, and normalized dashes through 12.50
 - [Lucide Animated TrainTrack, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/train-track.tsx)
 - [Lucide Animated Waypoints, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waypoints.tsx)
 
+SunDim, SunMedium, SunMoon, Sunset, Snowflake, Wind, WindArrowDown, Tornado, Droplet, and Flame adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+SunDim and SunMedium fade each ray from opacity 0 to 1 over 300 ms, delayed by its one-based index times 100 ms. SunMoon adds a 1.5-second ease-in-out rotation through 0, -5, 5, -2, 2, and 0 degrees around its inner group's bounding-box center. Sunset pulses its arrow vertically through 0, 1, and 0 SVG units over Motion's implicit 800 ms ease-out transition. Its sparse source array renders five rays, including the horizon. The adapter renders the same five paths. Ray returns use the implicit 300 ms curve, cubic-bezier(0.25, 0.1, 0.35, 1). SunMoon and Sunset return their transforms with the implicit stiffness 500, damping 25 spring.
+
+Snowflake rotates the whole SVG through 0, -5, 5, -5, 5, and 0 degrees over 400 ms, with offsets 0, 0.2, 0.4, 0.6, 0.8, and 1 and ease-out per segment. Its return uses the implicit rotation spring. Wind redraws and fades its three paths over 500 ms with ease-in-out and delays 200, 0, and 400 ms. WindArrowDown keeps delays 200 and 400 ms for its wind paths. Its two arrow paths enter from y=-10 with opacity 0 after 350 ms, over 500 ms. Wind returns retain their custom delays and use 300 ms ease-in-out; the arrow returns without a delay.
+
+Tornado moves each path through x=0, its one-based index in SVG units, and 0 over 600 ms, repeats once, and delays each path by its index times 100 ms. Its property-specific ease-in-out transition applies to horizontal movement. Return uses 300 ms ease-in-out. Droplet redraws and fades over 600 ms after 200 ms in both directions, with ease-out. Flame redraws over 400 ms after 100 ms and fades over 100 ms after the same delay. Its return uses the implicit 300 ms curve. Native dash arrays and offsets replace normalized pathLength and pathOffset animation.
+
+The `/weather-nature-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources change only the class utility import to a local equivalent. Active replays preserve the interrupted pose rather than jumping to the explicit first keyframe. The lifecycle restores these rest-ending reveals after all entry tracks complete, so a later replay starts a fresh reveal. Finished layers retain their pose while other layers remain active. Comparisons sample delayed rays and wind, repeat boundaries, and captured returns at 150, 450, 1100, and 1800 ms. Captured returns reset velocity on both versions before calling the original stop method. Public handle tests separately check actual stop continuity, replay, cleanup, independent instances, and reduced motion. Real interrupted spring velocity parity is unmeasured. React stays confined to comparison bundles. Numerical comparisons support manual visual review.
+
+- [Lucide Animated SunDim, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sun-dim.tsx)
+- [Lucide Animated SunMedium, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sun-medium.tsx)
+- [Lucide Animated SunMoon, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sun-moon.tsx)
+- [Lucide Animated Sunset, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sunset.tsx)
+- [Lucide Animated Snowflake, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/snowflake.tsx)
+- [Lucide Animated Wind, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wind.tsx)
+- [Lucide Animated WindArrowDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wind-arrow-down.tsx)
+- [Lucide Animated Tornado, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/tornado.tsx)
+- [Lucide Animated Droplet, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/droplet.tsx)
+- [Lucide Animated Flame, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/flame.tsx)
+
 LayoutGrid, LayoutPanelTop, PanelLeftClose, PanelLeftOpen, PanelRightOpen, Layers, SquareStack, GalleryHorizontalEnd, GalleryVerticalEnd, and GalleryThumbnails adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 LayoutGrid moves its four rectangles right, down, left, and up by 11 units over 800 ms, with offsets 0, 0.4, 0.6, and 1 and ease-in-out. LayoutPanelTop uses separate opacity timings of 500, 700, and 800 ms. Its lower rectangles enter from opposing 10-unit offsets after 300 and 400 ms with Motion's implicit translation spring. Its top rectangle enters from -5 units over 500 ms. The panel arrow paths move by -1.5, +1.5, and -1.5 units over 500 ms with offsets 0, 0.4, and 1. Panel frames stay fixed.

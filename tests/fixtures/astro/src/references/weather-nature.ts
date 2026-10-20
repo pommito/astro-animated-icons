@@ -1,0 +1,10 @@
+export { SunDimIcon as SunDim } from "./weather-nature/sun-dim";
+export { SunMediumIcon as SunMedium } from "./weather-nature/sun-medium";
+export { SunMoonIcon as SunMoon } from "./weather-nature/sun-moon";
+export { SunsetIcon as Sunset } from "./weather-nature/sunset";
+export { SnowflakeIcon as Snowflake } from "./weather-nature/snowflake";
+export { WindIcon as Wind } from "./weather-nature/wind";
+export { WindArrowDownIcon as WindArrowDown } from "./weather-nature/wind-arrow-down";
+export { TornadoIcon as Tornado } from "./weather-nature/tornado";
+export { DropletIcon as Droplet } from "./weather-nature/droplet";
+export { FlameIcon as Flame } from "./weather-nature/flame";
