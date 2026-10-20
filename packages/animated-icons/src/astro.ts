@@ -647,3 +647,33 @@ export type { ExpandIconHandle } from "./icons/expand/element";
 
 export { default as Shrink } from "./icons/shrink/Shrink.astro";
 export type { ShrinkIconHandle } from "./icons/shrink/element";
+
+export { default as Cart } from "./icons/cart/Cart.astro";
+export type { CartIconHandle } from "./icons/cart/element";
+
+export { default as CreditCard } from "./icons/credit-card/CreditCard.astro";
+export type { CreditCardIconHandle } from "./icons/credit-card/element";
+
+export { default as Wallet } from "./icons/wallet/Wallet.astro";
+export type { WalletIconHandle } from "./icons/wallet/element";
+
+export { default as DollarSign } from "./icons/dollar-sign/DollarSign.astro";
+export type { DollarSignIconHandle } from "./icons/dollar-sign/element";
+
+export { default as Euro } from "./icons/euro/Euro.astro";
+export type { EuroIconHandle } from "./icons/euro/element";
+
+export { default as PoundSterling } from "./icons/pound-sterling/PoundSterling.astro";
+export type { PoundSterlingIconHandle } from "./icons/pound-sterling/element";
+
+export { default as IndianRupee } from "./icons/indian-rupee/IndianRupee.astro";
+export type { IndianRupeeIconHandle } from "./icons/indian-rupee/element";
+
+export { default as JapaneseYen } from "./icons/japanese-yen/JapaneseYen.astro";
+export type { JapaneseYenIconHandle } from "./icons/japanese-yen/element";
+
+export { default as RussianRuble } from "./icons/russian-ruble/RussianRuble.astro";
+export type { RussianRubleIconHandle } from "./icons/russian-ruble/element";
+
+export { default as SwissFranc } from "./icons/swiss-franc/SwissFranc.astro";
+export type { SwissFrancIconHandle } from "./icons/swiss-franc/element";

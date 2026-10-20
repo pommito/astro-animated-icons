@@ -40,12 +40,15 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
 | Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
 | Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
+| Commerce and currency | 100, 300, 550, 750, 1000 ms cover Cart's delayed and repeated vertical pulses, the held scale, currency secondary reveals, and completed entries. Replays at 100 and 350 ms of return cover the delayed and active secondary return. |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
 | Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 
 Receipts reuse the native path tracks and cancellable keyframe timelines covered by the existing representatives, so they add no shared representative.
 
 Media recipes use `tests/media-icons.spec.ts` with 50, 200, 450, and 1000 ms interruption samples. Volume also checks replacement ordering and cancellation after the waves appear. Airplay checks its automatic return after the 600 ms entry. `/media-comparison/` executes all ten pinned React sources at 14, 16, 24, and 28 px.
+
+Cart keeps dedicated held-scale and return comparisons because its scale returns while the remaining vertical pulses continue. These use native tracks and the existing lifecycle; the per-icon removal and reduced-motion checks establish cancellation. No additional shared representative is needed.
 
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 

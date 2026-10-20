@@ -452,6 +452,19 @@ The receipt adapters use the pinned sources above. Copied comparison sources cha
 
 The directional arrow adapters use these pinned sources. Their copied comparison sources change only the class utility import. Diagonals retain distinct head and shaft paths and their individual SVG origins. Big arrows preserve their 3-unit pulse and separate 1-unit dash pulse. Sampled native transforms preserve the 0.5-second diagonal and 0.4-second big-arrow entry curves, plus the implicit translation and scale return springs. The comparison captures entry poses and resets velocity on both versions before measuring returns; manual playback retains interrupted velocity.
 
+- [Lucide Animated Cart, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cart.tsx)
+- [Lucide Animated CreditCard, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/credit-card.tsx)
+- [Lucide Animated Wallet, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wallet.tsx)
+- [Lucide Animated DollarSign, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/dollar-sign.tsx)
+- [Lucide Animated Euro, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/euro.tsx)
+- [Lucide Animated PoundSterling, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/pound-sterling.tsx)
+- [Lucide Animated IndianRupee, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/indian-rupee.tsx)
+- [Lucide Animated JapaneseYen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/japanese-yen.tsx)
+- [Lucide Animated RussianRuble, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/russian-ruble.tsx)
+- [Lucide Animated SwissFranc, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/swiss-franc.tsx)
+
+The commerce and currency adapters use these pinned sources. Their copied comparison sources change only the class utility import. Cart retains independent scale and repeated vertical timing, including its implicit easeOut curve and continued vertical pulses during the scale return. Currency paths keep their main and secondary assignments, opacity timings, delays, and offsets. Native sampled transforms replace upstream JavaScript transforms. Replays preserve the current transform pose under the shared playback protocol.
+
 ## Lucide and Feather
 
 ISC License
