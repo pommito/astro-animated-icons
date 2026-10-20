@@ -107,7 +107,7 @@ for (const slug of ["coffee", "soup", "cup-soda"]) {
     const read = () => icon!.evaluate(element => ({
       tracks: element.getAnimations({ subtree: true }).length,
       clean: [...element.querySelectorAll<SVGElement>("svg, g, path, circle")].every(shape => !shape.style.opacity && !shape.style.transform),
-      bubbles: [...element.querySelectorAll("circle")].every(shape => getComputedStyle(shape).opacity === "0"),
+      bubbles: [...element.querySelectorAll("circle")].every(shape => shape.getAttribute("opacity") === "0" && (!element.isConnected || getComputedStyle(shape).opacity === "0")),
     }));
     await expect.poll(read).toEqual({ tracks: 0, clean: true, bubbles: true });
     await page.locator("#secondary").evaluate((control, icon) => {
@@ -161,11 +161,18 @@ test("Steam and bubble repeat boundaries stay invisible in both renderers", asyn
       const row = document.querySelector(`tr[data-icon='${slug}'][data-size='28']`)!;
       return [1, 2].map(iteration => {
         document.dispatchEvent(new CustomEvent("food-plants-seek", { detail: delays[part] + 1500 * iteration }));
-        return ["[data-adapter]", "[data-reference]"].map(selector => Number(getComputedStyle(row.querySelectorAll(`${selector} path, ${selector} circle`)[index]).opacity));
+        return {
+          slug, index, iteration,
+          values: ["[data-adapter]", "[data-reference]"].map(selector => Number(getComputedStyle(row.querySelectorAll(`${selector} path, ${selector} circle`)[index]).opacity)),
+        };
       });
     }));
   });
-  expect(opacity.every(pair => pair.every(value => value === 0))).toBe(true);
+  for (const { slug, index, iteration, values } of opacity) {
+    const context = `${slug}, shape ${index}, repeat ${iteration}`;
+    expect(values[0], context).toBe(values[1]);
+    expect(values[0], context).toBeCloseTo(0, 12);
+  }
 });
 
 for (const slug of ["banana", "fish-symbol", "cup-soda"]) {

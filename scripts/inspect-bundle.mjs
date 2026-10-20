@@ -48,6 +48,7 @@ function inspectRoute(output, route, log) {
 
 
 const singleRoutes = {
+  "arrow-left": "single",
   "banana": "banana-single",
   "coffee": "coffee-single",
   "cooking-pot": "cooking-pot-single",
@@ -59,7 +60,6 @@ const singleRoutes = {
   "tree-pine": "tree-pine-single",
   "fish-symbol": "fish-symbol-single",
 
-  "arrow-left": "single",
   "pen-tool": "pen-tool-single",
   "square-pen": "square-pen-single",
   "palette": "palette-single",

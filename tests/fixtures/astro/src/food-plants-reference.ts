@@ -12,4 +12,3 @@ document.addEventListener("food-plants-capture-return", () => {
   });
   document.querySelectorAll("[data-reference] svg, [data-reference] svg *").forEach(captureReferencePose);
 });
-
