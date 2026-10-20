@@ -1,0 +1,10 @@
+export { PhoneIcon as Phone } from "./communication/phone";
+export { PhoneCallIcon as PhoneCall } from "./communication/phone-call";
+export { PhoneForwardedIcon as PhoneForwarded } from "./communication/phone-forwarded";
+export { PhoneIncomingIcon as PhoneIncoming } from "./communication/phone-incoming";
+export { PhoneMissedIcon as PhoneMissed } from "./communication/phone-missed";
+export { PhoneOffIcon as PhoneOff } from "./communication/phone-off";
+export { MailCheckIcon as MailCheck } from "./communication/mail-check";
+export { MailboxIcon as Mailbox } from "./communication/mailbox";
+export { SendIcon as Send } from "./communication/send";
+export { BellIcon as Bell } from "./communication/bell";

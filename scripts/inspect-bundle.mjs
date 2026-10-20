@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "phone": "phone-single",
+  "phone-call": "phone-call-single",
+  "phone-forwarded": "phone-forwarded-single",
+  "phone-incoming": "phone-incoming-single",
+  "phone-missed": "phone-missed-single",
+  "phone-off": "phone-off-single",
+  "mail-check": "mail-check-single",
+  "mailbox": "mailbox-single",
+  "send": "send-single",
+  "bell": "bell-single",
+
   "corner-down-left": "corner-down-left-single",
   "corner-down-right": "corner-down-right-single",
   "corner-left-down": "corner-left-down-single",
@@ -294,6 +305,17 @@ const combinations = [
   ["arrow-big-right-dash-combined", "arrow-left", "arrow-big-right-dash"],
   ["arrow-big-up-combined", "arrow-left", "arrow-big-up"],
   ["arrow-big-up-dash-combined", "arrow-left", "arrow-big-up-dash"],
+
+  ["phone-combined", "arrow-left", "phone"],
+  ["phone-call-combined", "arrow-left", "phone-call"],
+  ["phone-forwarded-combined", "arrow-left", "phone-forwarded"],
+  ["phone-incoming-combined", "arrow-left", "phone-incoming"],
+  ["phone-missed-combined", "arrow-left", "phone-missed"],
+  ["phone-off-combined", "arrow-left", "phone-off"],
+  ["mail-check-combined", "arrow-left", "mail-check"],
+  ["mailbox-combined", "arrow-left", "mailbox"],
+  ["send-combined", "arrow-left", "send"],
+  ["bell-combined", "arrow-left", "bell"],
 
   ["wifi-combined", "arrow-left", "wifi"],
   ["wifi-low-combined", "arrow-left", "wifi-low"],
