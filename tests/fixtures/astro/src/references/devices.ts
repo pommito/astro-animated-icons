@@ -1,0 +1,10 @@
+export { MonitorCheckIcon as MonitorCheck } from "./devices/monitor-check";
+export { MonitorCogIcon as MonitorCog } from "./devices/monitor-cog";
+export { LaptopMinimalCheckIcon as LaptopMinimalCheck } from "./devices/laptop-minimal-check";
+export { SmartphoneChargingIcon as SmartphoneCharging } from "./devices/smartphone-charging";
+export { SmartphoneNfcIcon as SmartphoneNfc } from "./devices/smartphone-nfc";
+export { KeyboardIcon as Keyboard } from "./devices/keyboard";
+export { CctvIcon as Cctv } from "./devices/cctv";
+export { ProjectorIcon as Projector } from "./devices/projector";
+export { VibrateIcon as Vibrate } from "./devices/vibrate";
+export { EvChargerIcon as EvCharger } from "./devices/ev-charger";

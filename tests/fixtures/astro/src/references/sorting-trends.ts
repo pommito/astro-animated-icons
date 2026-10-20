@@ -1,0 +1,10 @@
+export { ArrowDown01Icon as ArrowDown01 } from "./sorting-trends/arrow-down-0-1";
+export { ArrowDown10Icon as ArrowDown10 } from "./sorting-trends/arrow-down-1-0";
+export { ArrowDownAZIcon as ArrowDownAZ } from "./sorting-trends/arrow-down-a-z";
+export { ArrowDownZAIcon as ArrowDownZA } from "./sorting-trends/arrow-down-z-a";
+export { SquareArrowDownIcon as SquareArrowDown } from "./sorting-trends/square-arrow-down";
+export { SquareArrowLeftIcon as SquareArrowLeft } from "./sorting-trends/square-arrow-left";
+export { SquareArrowRightIcon as SquareArrowRight } from "./sorting-trends/square-arrow-right";
+export { SquareArrowUpIcon as SquareArrowUp } from "./sorting-trends/square-arrow-up";
+export { TrendingDownIcon as TrendingDown } from "./sorting-trends/trending-down";
+export { TrendingUpIcon as TrendingUp } from "./sorting-trends/trending-up";

@@ -879,3 +879,54 @@ export type { WrenchIconHandle } from "./icons/wrench/element";
 
 export { default as Hammer } from "./icons/hammer/Hammer.astro";
 export type { HammerIconHandle } from "./icons/hammer/element";
+
+export { default as ArrowDown01 } from "./icons/arrow-down-0-1/ArrowDown01.astro";
+export type { ArrowDown01IconHandle } from "./icons/arrow-down-0-1/element";
+export { default as ArrowDown10 } from "./icons/arrow-down-1-0/ArrowDown10.astro";
+export type { ArrowDown10IconHandle } from "./icons/arrow-down-1-0/element";
+export { default as ArrowDownAZ } from "./icons/arrow-down-a-z/ArrowDownAZ.astro";
+export type { ArrowDownAZIconHandle } from "./icons/arrow-down-a-z/element";
+export { default as ArrowDownZA } from "./icons/arrow-down-z-a/ArrowDownZA.astro";
+export type { ArrowDownZAIconHandle } from "./icons/arrow-down-z-a/element";
+export { default as SquareArrowDown } from "./icons/square-arrow-down/SquareArrowDown.astro";
+export type { SquareArrowDownIconHandle } from "./icons/square-arrow-down/element";
+export { default as SquareArrowLeft } from "./icons/square-arrow-left/SquareArrowLeft.astro";
+export type { SquareArrowLeftIconHandle } from "./icons/square-arrow-left/element";
+export { default as SquareArrowRight } from "./icons/square-arrow-right/SquareArrowRight.astro";
+export type { SquareArrowRightIconHandle } from "./icons/square-arrow-right/element";
+export { default as SquareArrowUp } from "./icons/square-arrow-up/SquareArrowUp.astro";
+export type { SquareArrowUpIconHandle } from "./icons/square-arrow-up/element";
+export { default as TrendingDown } from "./icons/trending-down/TrendingDown.astro";
+export type { TrendingDownIconHandle } from "./icons/trending-down/element";
+export { default as TrendingUp } from "./icons/trending-up/TrendingUp.astro";
+export type { TrendingUpIconHandle } from "./icons/trending-up/element";
+
+export { default as MonitorCheck } from "./icons/monitor-check/MonitorCheck.astro";
+export type { MonitorCheckIconHandle } from "./icons/monitor-check/element";
+
+export { default as MonitorCog } from "./icons/monitor-cog/MonitorCog.astro";
+export type { MonitorCogIconHandle } from "./icons/monitor-cog/element";
+
+export { default as LaptopMinimalCheck } from "./icons/laptop-minimal-check/LaptopMinimalCheck.astro";
+export type { LaptopMinimalCheckIconHandle } from "./icons/laptop-minimal-check/element";
+
+export { default as SmartphoneCharging } from "./icons/smartphone-charging/SmartphoneCharging.astro";
+export type { SmartphoneChargingIconHandle } from "./icons/smartphone-charging/element";
+
+export { default as SmartphoneNfc } from "./icons/smartphone-nfc/SmartphoneNfc.astro";
+export type { SmartphoneNfcIconHandle } from "./icons/smartphone-nfc/element";
+
+export { default as Keyboard } from "./icons/keyboard/Keyboard.astro";
+export type { KeyboardIconHandle } from "./icons/keyboard/element";
+
+export { default as Cctv } from "./icons/cctv/Cctv.astro";
+export type { CctvIconHandle } from "./icons/cctv/element";
+
+export { default as Projector } from "./icons/projector/Projector.astro";
+export type { ProjectorIconHandle } from "./icons/projector/element";
+
+export { default as Vibrate } from "./icons/vibrate/Vibrate.astro";
+export type { VibrateIconHandle } from "./icons/vibrate/element";
+
+export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
+export type { EvChargerIconHandle } from "./icons/ev-charger/element";

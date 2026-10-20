@@ -43,3 +43,15 @@ On the final build, `pnpm inspect:bundle` again verified `334 icons across 671 b
 The code-review skill's independent Standards and Spec reviews found no actionable findings. Standards also reviewed the final inspector-order correction and the shared easing resolver.
 
 Captured returns reset velocity on both versions. Equality of real interrupted spring velocity remains unmeasured. Chrome is the tested browser. Firefox and Safari remain unverified. Numerical evidence supports the user's manual visual acceptance.
+
+## Integration before publication
+
+Integrated `origin/main` at `1aabf824dcd6b6527a161af2fdacb0a81cdb9876`, including the device and sorting/trend batches merged through PRs #65 and #66. Conflict resolutions retain every export, source notice, and bundle case. The SVG-parts helper keeps sorting arrows' string-array path morphs and interrupted attribute replay alongside the design-tool extensions.
+
+`pnpm check` passed both Astro checks with zero diagnostic errors, warnings, or hints, plus TypeScript. The integration browser command was:
+
+```sh
+ICON_TEST_PORT=45392 pnpm test tests/design-tools.spec.ts tests/expressions.spec.ts tests/devices.spec.ts tests/devices-replay.spec.ts tests/sorting-trends.spec.ts --workers=2
+```
+
+Chrome reported `485 passed (4.2m)`. This checks all three incoming and current icon families, device replay, and the expressions that share SVG-parts. `pnpm inspect:bundle` reported `Verified 354 icons across 711 bundle cases.` All five inspector tests and three fixture-cache tests passed using that build. Independent Standards and Spec integration reviews found no actionable findings. The complete catalog suite was not repeated after integration.

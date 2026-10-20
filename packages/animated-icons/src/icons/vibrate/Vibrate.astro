@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-vibrate">
+  <g>
+    <path d="m2 8 2 2-2 2 2 2-2 2" />
+    <path d="m22 8-2 2 2 2-2 2 2 2" />
+    <rect height="14" rx="1" width="8" x="8" y="5" data-motion="0" style="transform-box: fill-box; transform-origin: center;" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
