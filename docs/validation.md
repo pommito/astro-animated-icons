@@ -18,6 +18,8 @@ The suite tests the consumer contract at several boundaries. Add an icon to its 
 | BatteryFull | Fade-out followed by staggered fill |
 | ScanFace | Hidden and visible phases with cancellable callbacks |
 
+Rocket also has dedicated tests in `tests/transport-routes.spec.ts` that observe its fire morph, stopped JavaScript frames, removal, reduced motion, and reconnection.
+
 Archive and SlidersHorizontal keep their dedicated lifecycle and reduced-motion tests in `tests/archive.spec.ts` and `tests/commands.spec.ts`. Those tests observe paths, spring motion, or SVG attributes directly. Counting native animations cannot establish that their JavaScript-driven work has stopped.
 
 Volume keeps its template-upgrade and reconnection coverage in `tests/media-icons.spec.ts`. Its native track count changes with the visible branch and partial stroke state. Those tests observe the actual branches, partial-stroke continuity, cancellation during removal, independent instances, and listener rebinding. Its reduced-motion tests also check that queued replacements cannot recreate the active branch. The common suites keep their existing assertions.
@@ -43,6 +45,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
 | Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
 | Bookmarks and status | 50, 200, 450, and 750 ms cover outline stretch, mark redraw, the delayed Ban slash, and spring rotation. Dedicated entry and return replays check pose continuity. Pinned React comparisons check entry at four sizes, settled returns for all ten icons, and interrupted tween returns for CircleCheck, CircleHelp, and Ban. |
+| Transport and routes | 50, 200, 450, 900, 1600, 6800 ms cover entry, delayed reveals, and later loops; comparison samples extend through the reversed Rocket cycle at 12505 ms |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
 | Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 

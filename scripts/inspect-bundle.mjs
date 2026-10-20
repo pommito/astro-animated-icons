@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "airplane": "airplane-single",
+  "plane-landing": "plane-landing-single",
+  "plane-takeoff": "plane-takeoff-single",
+  "car": "car-single",
+  "truck": "truck-single",
+  "ship": "ship-single",
+  "rocket": "rocket-single",
+  "route": "route-single",
+  "train-track": "train-track-single",
+  "waypoints": "waypoints-single",
+
   "bold": "bold-single",
   "italic": "italic-single",
   "underline": "underline-single",
@@ -338,6 +349,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["airplane-combined", "arrow-left", "airplane"],
+  ["plane-landing-combined", "arrow-left", "plane-landing"],
+  ["plane-takeoff-combined", "arrow-left", "plane-takeoff"],
+  ["car-combined", "arrow-left", "car"],
+  ["truck-combined", "arrow-left", "truck"],
+  ["ship-combined", "arrow-left", "ship"],
+  ["rocket-combined", "arrow-left", "rocket"],
+  ["route-combined", "arrow-left", "route"],
+  ["train-track-combined", "arrow-left", "train-track"],
+  ["waypoints-combined", "arrow-left", "waypoints"],
+
   ["bold-combined", "arrow-left", "bold"],
   ["italic-combined", "arrow-left", "italic"],
   ["underline-combined", "arrow-left", "underline"],
