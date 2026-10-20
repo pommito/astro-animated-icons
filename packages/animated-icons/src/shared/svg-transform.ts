@@ -16,10 +16,14 @@ interface Transition {
   times?: number[];
   repeat?: number;
   repeatType?: "reverse";
+  continueOnReturn?: boolean;
 }
 interface Pose {
   values: Partial<Record<Property, number>>;
   velocities: Partial<Record<Property, number>>;
+  samplers?: Partial<Record<Property, (time: number) => number>>;
+  time?: number;
+  duration?: number;
 }
 const poses = new WeakMap<SVGElement, Pose>();
 
@@ -42,6 +46,11 @@ export function animateSvgTransform(
   const properties = Object.keys(targets) as Property[];
   let duration = options.type === "spring" ? 0 : (options.duration ?? 0.3) * 1000;
   const samplers = properties.map((property) => {
+    if (returning && propertyOptions[property]?.continueOnReturn && previous?.samplers?.[property]) {
+      const elapsed = previous.time ?? 0;
+      duration = Math.max(duration, (previous.duration ?? 0) - elapsed);
+      return (time: number) => previous.samplers![property]!(elapsed + time);
+    }
     const rest = normal[property] ?? (property === "scale" || property === "scaleX" || property === "scaleY" || property === "opacity" ? 1 : 0);
     const origin = previous?.values[property] ?? rest;
     const target = returning ? rest : targets[property]!;
@@ -57,20 +66,30 @@ export function animateSvgTransform(
       duration = Math.max(duration, time);
       return (time: number) => time === 0 ? values[0] : generator.next(time).value;
     }
-    const times = options.times?.length === values.length ? options.times : values.map((_, index) => index / (values.length - 1));
-    const ease = Array.isArray(options.ease)
-      ? cubicBezier(...options.ease)
-      : options.ease === "linear"
+    const propertyDuration = (transition.duration ?? 0.3) * 1000;
+    const propertyDelay = (propertyOptions[property]?.delay ?? 0) * 1000;
+    const repeats = propertyOptions[property]?.repeat ?? 0;
+    duration = Math.max(duration, propertyDelay + propertyDuration * (repeats + 1));
+    const times = transition.times?.length === values.length ? transition.times : values.map((_, index) => index / (values.length - 1));
+    const ease = Array.isArray(transition.ease)
+      ? cubicBezier(...transition.ease)
+      : transition.ease === "linear"
         ? (progress: number) => progress
-        : options.ease === "easeInOut"
+        : transition.ease === "easeInOut"
         ? easeInOut
         : easeOut;
-    return interpolate(
-      times.map((time) => time * duration),
-      values,
-      { ease },
-    );
+    const interpolateValue = interpolate(times.map((time) => time * propertyDuration), values, { ease });
+    return (time: number) => {
+      time = Math.max(0, time - propertyDelay);
+      if (repeats && time < propertyDuration * (repeats + 1)) {
+        const iteration = Math.floor(time / propertyDuration);
+        time %= propertyDuration;
+        if (transition.repeatType === "reverse" && iteration % 2) time = propertyDuration - time;
+      }
+      return interpolateValue(time);
+    };
   });
+  const retainedSamplers = Object.fromEntries(properties.map((property, index) => [property, samplers[index]]));
   const sample = (time: number) => {
     time = Math.min(duration, Math.max(0, time));
     return Object.fromEntries(properties.map((property, index) => [property, samplers[index](time)])) as Pose["values"];
@@ -95,6 +114,9 @@ export function animateSvgTransform(
     ...(properties.some((property) => property !== "opacity") ? { transform: frames.map(transform) } : {}),
     ...(properties.includes("opacity") ? { opacity: frames.map((frame) => frame.opacity!) } : {}),
   };
+  if (returning && keyframes.transform && Object.values(propertyOptions).some(option => option?.continueOnReturn)) {
+    keyframes.transform[0] = getComputedStyle(element).transform;
+  }
   for (const [property, values] of Object.entries(keyframes)) {
     track((onComplete) => {
       let completed = false;
@@ -109,7 +131,7 @@ export function animateSvgTransform(
           repeatType: options.repeatType,
           onComplete() {
             completed = true;
-            poses.set(element, { values: frames.at(-1)!, velocities: {} });
+            poses.set(element, { values: frames.at(-1)!, velocities: {}, samplers: retainedSamplers, time: duration, duration });
             onComplete();
           },
         },
@@ -131,6 +153,9 @@ export function animateSvgTransform(
           const before = samplePlayback(Math.max(0, time - interval));
           poses.set(element, {
             values: current,
+            samplers: retainedSamplers,
+            time,
+            duration,
             velocities: Object.fromEntries(
               properties.map((property) => [
                 property,

@@ -3,11 +3,13 @@ import { AsyncMotionValueAnimation, JSAnimation, visualElementStore } from "moti
 interface SampleOptions {
   complete?: boolean;
   resetVelocity?: boolean;
+  properties?: string[];
 }
 
-export function sampleReference(element: Element, milliseconds: number, { complete, resetVelocity }: SampleOptions = {}) {
+export function sampleReference(element: Element, milliseconds: number, { complete, resetVelocity, properties }: SampleOptions = {}) {
   const visual = visualElementStore.get(element);
-  visual?.values.forEach((value) => {
+  visual?.values.forEach((value, name) => {
+    if (properties && !properties.includes(name)) return;
     if (value.animation instanceof AsyncMotionValueAnimation) {
       const animation = value.animation;
       animation.pause();
@@ -23,8 +25,13 @@ export function sampleReference(element: Element, milliseconds: number, { comple
 }
 
 export function captureReferencePose(element: Element) {
+  captureReferencePoseExcept(element, []);
+}
+
+export function captureReferencePoseExcept(element: Element, excluded: string[]) {
   const visual = visualElementStore.get(element);
   visual?.values.forEach((value, name) => {
+    if (excluded.includes(name)) return;
     // Upstream native stop samples wall time; preserve the seeked opacity for measured returns.
     const current = name === "opacity" ? Number(getComputedStyle(element).opacity) : value.get();
     value.stop();
