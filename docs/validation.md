@@ -53,6 +53,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Expressions | 50, 250, 650, and 1400 ms cover facial transforms, confetti, and repeated pulses. HeartPulse also completes each real stage before testing stop, replay, removal, and reduced motion; Frown and Smile observe their moving mouth attributes directly. PartyPopper and HeartPulse verify replay after one track and all tracks complete. |
 | Transport and routes | 50, 200, 450, 900, 1600, 6800 ms cover entry, delayed reveals, and later loops; comparison samples extend through the reversed Rocket cycle at 12505 ms |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
+| Health and science | 50, 150, 350, 650, 950, 1700, and 3500 ms cover staggered reveals, delayed Atom returns, independent Flask tracks, and later Brain and Ambulance loops |
 | Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 
 Receipts reuse the native path tracks and cancellable keyframe timelines covered by the existing representatives, so they add no shared representative.
