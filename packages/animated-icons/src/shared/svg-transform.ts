@@ -53,9 +53,9 @@ export function animateSvgTransform(
         time += 50;
       } while (!generator.next(time).done && time < 10000);
       duration = Math.max(duration, time);
-      return (time: number) => generator.next(time).value;
+      return (time: number) => time === 0 ? values[0] : generator.next(time).value;
     }
-    const times = options.times ?? values.map((_, index) => index / (values.length - 1));
+    const times = options.times?.length === values.length ? options.times : values.map((_, index) => index / (values.length - 1));
     const ease = Array.isArray(options.ease)
       ? cubicBezier(...options.ease)
       : options.ease === "easeInOut"
