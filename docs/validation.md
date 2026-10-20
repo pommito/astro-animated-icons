@@ -36,6 +36,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 
 | Suite | Existing interruption samples and purpose |
 | --- | --- |
+| Hands and gestures | 50, 250, 650, 2600 ms cover delayed coins and heart, nested claps, finite returns, and later biceps loops |
 | Energy and Bluetooth | 100, 300, 650, 1600 ms cover filling, delayed slash reveal, staggered bars, and later loops |
 | Connectivity | 100, 300, 650, 1600 ms cover fades, staggered springs, rotations, and repeating searches. WifiLow also samples its timed hide at 1750 ms; its text has dedicated show, hold, and hide interruption checks. |
 | Clock and calendar | 50, 300, 950, 1600 ms cover entry, reveal boundaries, and oscillations after the initial spring |

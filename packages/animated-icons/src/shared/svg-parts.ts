@@ -17,7 +17,7 @@ interface PartTransition extends Omit<Transition, "ease"> {
   opacity?: PartTransition;
 }
 export interface SvgVariants { normal: Pose; animate: Pose }
-export interface SvgPart { selector: string; variants: SvgVariants; transition?: PartTransition }
+export interface SvgPart { selector: string; origin?: string; variants: SvgVariants; transition?: PartTransition }
 
 const defaultEase: [number, number, number, number] = [0.25, 0.1, 0.35, 1];
 
@@ -40,6 +40,7 @@ function beginPlayback(element: SVGElement, property: string, track: IconTrack) 
 }
 
 export function animateSvgPart(element: SVGElement, part: SvgPart, returning: boolean, track: IconTrack) {
+  if (part.origin) element.style.transformOrigin = part.origin;
   const pose = part.variants[returning ? "normal" : "animate"];
   const transition = pose.transition ?? part.transition ?? {};
   const targets: Transform = {};
@@ -104,6 +105,7 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
 
 export function clearSvgPart(element: SVGElement, part: SvgPart) {
   playbacks.delete(element);
+  if (part.origin) element.style.removeProperty("transform-origin");
   clearSvgTransform(element);
   svgEffect.state(element)?.release();
   const d = part.variants.normal.d;

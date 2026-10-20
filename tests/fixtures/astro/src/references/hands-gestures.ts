@@ -1,0 +1,10 @@
+export { HandIcon as Hand } from "./hands-gestures/hand";
+export { HandCoinsIcon as HandCoins } from "./hands-gestures/hand-coins";
+export { HandFistIcon as HandFist } from "./hands-gestures/hand-fist";
+export { HandGrabIcon as HandGrab } from "./hands-gestures/hand-grab";
+export { HandHeartIcon as HandHeart } from "./hands-gestures/hand-heart";
+export { HandHelpingIcon as HandHelping } from "./hands-gestures/hand-helping";
+export { HandMetalIcon as HandMetal } from "./hands-gestures/hand-metal";
+export { HeartHandshakeIcon as HeartHandshake } from "./hands-gestures/heart-handshake";
+export { BicepsFlexedIcon as BicepsFlexed } from "./hands-gestures/biceps-flexed";
+export { ClapIcon as Clap } from "./hands-gestures/clap";
