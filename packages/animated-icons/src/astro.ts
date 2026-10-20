@@ -648,6 +648,36 @@ export type { ExpandIconHandle } from "./icons/expand/element";
 export { default as Shrink } from "./icons/shrink/Shrink.astro";
 export type { ShrinkIconHandle } from "./icons/shrink/element";
 
+export { default as Server } from "./icons/server/Server.astro";
+export type { ServerIconHandle } from "./icons/server/element";
+
+export { default as ServerCog } from "./icons/server-cog/ServerCog.astro";
+export type { ServerCogIconHandle } from "./icons/server-cog/element";
+
+export { default as ServerCrash } from "./icons/server-crash/ServerCrash.astro";
+export type { ServerCrashIconHandle } from "./icons/server-crash/element";
+
+export { default as DatabaseBackup } from "./icons/database-backup/DatabaseBackup.astro";
+export type { DatabaseBackupIconHandle } from "./icons/database-backup/element";
+
+export { default as Cpu } from "./icons/cpu/Cpu.astro";
+export type { CpuIconHandle } from "./icons/cpu/element";
+
+export { default as Terminal } from "./icons/terminal/Terminal.astro";
+export type { TerminalIconHandle } from "./icons/terminal/element";
+
+export { default as Webhook } from "./icons/webhook/Webhook.astro";
+export type { WebhookIconHandle } from "./icons/webhook/element";
+
+export { default as Workflow } from "./icons/workflow/Workflow.astro";
+export type { WorkflowIconHandle } from "./icons/workflow/element";
+
+export { default as Binary } from "./icons/binary/Binary.astro";
+export type { BinaryIconHandle } from "./icons/binary/element";
+
+export { default as Blocks } from "./icons/blocks/Blocks.astro";
+export type { BlocksIconHandle } from "./icons/blocks/element";
+
 export { default as Bookmark } from "./icons/bookmark/Bookmark.astro";
 export type { BookmarkIconHandle } from "./icons/bookmark/element";
 

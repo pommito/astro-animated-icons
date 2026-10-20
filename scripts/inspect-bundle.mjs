@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "server": "server-single",
+  "server-cog": "server-cog-single",
+  "server-crash": "server-crash-single",
+  "database-backup": "database-backup-single",
+  "cpu": "cpu-single",
+  "terminal": "terminal-single",
+  "webhook": "webhook-single",
+  "workflow": "workflow-single",
+  "binary": "binary-single",
+  "blocks": "blocks-single",
+
   "bookmark": "bookmark-single",
   "bookmark-check": "bookmark-check-single",
   "bookmark-minus": "bookmark-minus-single",
@@ -316,6 +327,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["server-combined", "arrow-left", "server"],
+  ["server-cog-combined", "arrow-left", "server-cog"],
+  ["server-crash-combined", "arrow-left", "server-crash"],
+  ["database-backup-combined", "arrow-left", "database-backup"],
+  ["cpu-combined", "arrow-left", "cpu"],
+  ["terminal-combined", "arrow-left", "terminal"],
+  ["webhook-combined", "arrow-left", "webhook"],
+  ["workflow-combined", "arrow-left", "workflow"],
+  ["binary-combined", "arrow-left", "binary"],
+  ["blocks-combined", "arrow-left", "blocks"],
+
   ["bookmark-combined", "arrow-left", "bookmark"],
   ["bookmark-check-combined", "arrow-left", "bookmark-check"],
   ["bookmark-minus-combined", "arrow-left", "bookmark-minus"],
