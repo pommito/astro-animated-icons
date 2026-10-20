@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "sun-dim": "sun-dim-single",
+  "sun-medium": "sun-medium-single",
+  "sun-moon": "sun-moon-single",
+  "sunset": "sunset-single",
+  "snowflake": "snowflake-single",
+  "wind": "wind-single",
+  "wind-arrow-down": "wind-arrow-down-single",
+  "tornado": "tornado-single",
+  "droplet": "droplet-single",
+  "flame": "flame-single",
+
   "layout-grid": "layout-grid-single",
   "layout-panel-top": "layout-panel-top-single",
   "panel-left-close": "panel-left-close-single",
@@ -359,6 +370,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["flame-combined", "arrow-left", "flame"],
+  ["droplet-combined", "arrow-left", "droplet"],
+  ["tornado-combined", "arrow-left", "tornado"],
+  ["wind-arrow-down-combined", "arrow-left", "wind-arrow-down"],
+  ["wind-combined", "arrow-left", "wind"],
+  ["snowflake-combined", "arrow-left", "snowflake"],
+  ["sunset-combined", "arrow-left", "sunset"],
+  ["sun-moon-combined", "arrow-left", "sun-moon"],
+  ["sun-medium-combined", "arrow-left", "sun-medium"],
+  ["sun-dim-combined", "arrow-left", "sun-dim"],
+
   ["layout-grid-combined", "arrow-left", "layout-grid"],
   ["layout-panel-top-combined", "arrow-left", "layout-panel-top"],
   ["panel-left-close-combined", "arrow-left", "panel-left-close"],
