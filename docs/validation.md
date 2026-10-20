@@ -60,6 +60,8 @@ Media recipes use `tests/media-icons.spec.ts` with 50, 200, 450, and 1000 ms int
 
 Cart keeps dedicated held-scale and return comparisons because its scale returns while the remaining vertical pulses continue. These use native tracks and the existing lifecycle; the per-icon removal and reduced-motion checks establish cancellation. No additional shared representative is needed.
 
+The devices suite checks immediate Keyboard resets at several phases, plus its replay behavior. It checks SmartphoneNfc and Projector cancellation during both stages by observing restored opacity, dashes, transforms, and pending-track cleanup. Its comparison route executes all ten pinned React sources with a scoped fixed random stream for Keyboard.
+
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 
 `tests/cloud-icons.spec.ts` checks all ten cloud drawings, finite held poses, looping stroke order, stop continuity, replay, removal, and reduced motion. Its `/cloud-comparison/` route executes the ten pinned React components at 14, 16, 24, and 28 px. Entry and return measurements sample fifteen times. Return starts from the captured 3250 ms pose with reference velocity reset, because the upstream native stop sampler uses wall-clock time after seeking. Real interrupted spring velocity is covered through adapter continuity tests, without a numerical equality claim against React. Cloud adds no shared representative: existing cases already cover native opacity loops, delayed tracks, and sampled transforms.

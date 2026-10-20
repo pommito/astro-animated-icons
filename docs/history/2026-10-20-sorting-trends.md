@@ -41,6 +41,15 @@ The two failures were the existing chevron and grip comparison tests. Both reach
 
 Adapter replay preserves an interrupted pose for transform, d, and offset tracks. The source copies retain their explicit arrays. The upstream comparisons establish initial entry and captured-return agreement; they do not establish interrupted-replay parity. The separate public-handle tests establish replay continuity for the adapter.
 
+## Integration with main
+
+Before PR #66 could merge, main received devices PR #65 at `0672e846b16fe469193b7c5264822183c086ee6a`. The branch integrates that commit. Conflict resolutions retain both complete export lists, source notices, single-icon routes, and combined bundle cases. ArrowLeft remains the first single-icon case. The validation guide retains both families. No device drawing, recipe, fixture, or shared animation mechanism changed during this integration.
+
+- `pnpm check` passed both Astro checks and TypeScript with zero errors, warnings, and hints.
+- `ICON_TEST_PORT=45394 pnpm test tests/sorting-trends.spec.ts tests/devices.spec.ts tests/devices-replay.spec.ts tests/expressions.spec.ts --workers=2` reported `353 passed (3.1m)`. It covers sorting and trends, the incoming device recipes and replay cases, and the existing expression callers of SVG-parts. Sorting and trend comparison maxima remain 0.005981 screen pixels for geometry and 0.000299 for normalized paint.
+- `pnpm inspect:bundle` reported `Verified 344 icons across 691 bundle cases.` All five `pnpm test:bundle` negative checks passed using the same output.
+- Independent Standards and Spec reviews found no remaining integration findings. The complete suite was not repeated after this catalog integration.
+
 ## Standards
 
 The parallel Standards review found no documented violation or concrete code smell. It read the shared mechanisms, adapters, fixtures, tests, and current lifecycle helpers. The review was static.
