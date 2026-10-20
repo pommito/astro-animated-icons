@@ -20,6 +20,8 @@ The suite tests the consumer contract at several boundaries. Add an icon to its 
 
 Archive and SlidersHorizontal keep their dedicated lifecycle and reduced-motion tests in `tests/archive.spec.ts` and `tests/commands.spec.ts`. Those tests observe paths, spring motion, or SVG attributes directly. Counting native animations cannot establish that their JavaScript-driven work has stopped.
 
+Volume keeps its template-upgrade and reconnection coverage in `tests/media-icons.spec.ts`. Its native track count changes with the visible branch and partial stroke state. Those tests observe the actual branches, partial-stroke continuity, cancellation during removal, independent instances, and listener rebinding. Its reduced-motion tests also check that queued replacements cannot recreate the active branch. The common suites keep their existing assertions.
+
 The shared suites previously expanded the same scenarios across nearly the entire catalog. Removing those repetitions does not remove recipe tests. HTML props fixtures now exist only for the four rendering cases. Single-icon and combined routes remain because each protects a distinct consumer bundle.
 
 ## Every icon
@@ -42,6 +44,8 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 
 Receipts reuse the native path tracks and cancellable keyframe timelines covered by the existing representatives, so they add no shared representative.
+
+Media recipes use `tests/media-icons.spec.ts` with 50, 200, 450, and 1000 ms interruption samples. Volume also checks replacement ordering and cancellation after the waves appear. Airplay checks its automatic return after the 600 ms entry. `/media-comparison/` executes all ten pinned React sources at 14, 16, 24, and 28 px.
 
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 
