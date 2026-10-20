@@ -7,7 +7,11 @@ import type { ArrowLeftIconHandle } from "@grave/animated-icons/astro";
 
 type ReferenceComponent = ComponentType<{ size?: number } & RefAttributes<ArrowLeftIconHandle>>;
 
-export function mountReferences(originals: Record<string, ReferenceComponent>, seekEvent: string) {
+export function mountReferences(
+  originals: Record<string, ReferenceComponent>,
+  seekEvent: string,
+  onPlayback?: (scope: ParentNode, returning: boolean) => void,
+) {
   const references = new Map<Element, ArrowLeftIconHandle>();
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   let playbackRevision = 0;
@@ -23,6 +27,7 @@ export function mountReferences(originals: Record<string, ReferenceComponent>, s
 
   async function playSamples(scope: ParentNode, returning: boolean) {
     const revision = ++playbackRevision;
+    onPlayback?.(scope, returning);
     const completions: Promise<unknown>[] = [];
     scope.querySelectorAll<HTMLElement & ArrowLeftIconHandle>("[data-adapter] [data-grave-icon]").forEach((icon) => {
       if (returning) {

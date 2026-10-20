@@ -55,3 +55,9 @@ ICON_TEST_PORT=45392 pnpm test tests/design-tools.spec.ts tests/expressions.spec
 ```
 
 Chrome reported `485 passed (4.2m)`. This checks all three incoming and current icon families, device replay, and the expressions that share SVG-parts. `pnpm inspect:bundle` reported `Verified 354 icons across 711 bundle cases.` All five inspector tests and three fixture-cache tests passed using that build. Independent Standards and Spec integration reviews found no actionable findings. The complete catalog suite was not repeated after integration.
+
+Main advanced during PR publication to `d4c384902bf978e1adb49e13af59624862ce0fbb`, which merged hands and gestures through PR #67. The next integration retains every catalog addition and the comparison runner's optional playback callback. Production helpers remain byte-identical to the preceding integration. Both review axes found no actionable findings.
+
+Final `pnpm check` passed both Astro checks and TypeScript. `ICON_TEST_PORT=45392 pnpm test tests/design-tools.spec.ts tests/hands-gestures.spec.ts tests/expressions.spec.ts --workers=2` reported `355 passed (3.0m)`, including all pinned comparisons and gesture replay controls. The complete catalog suite was not repeated for this integration.
+
+On that final build, the bundle inspector reported `Verified 364 icons across 731 bundle cases.` All five inspector tests and three fixture-cache tests passed without rebuilding. Assertions and test timeouts remain unchanged.
