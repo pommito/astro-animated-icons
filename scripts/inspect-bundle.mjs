@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "layout-grid": "layout-grid-single",
+  "layout-panel-top": "layout-panel-top-single",
+  "panel-left-close": "panel-left-close-single",
+  "panel-left-open": "panel-left-open-single",
+  "panel-right-open": "panel-right-open-single",
+  "layers": "layers-single",
+  "square-stack": "square-stack-single",
+  "gallery-horizontal-end": "gallery-horizontal-end-single",
+  "gallery-vertical-end": "gallery-vertical-end-single",
+  "gallery-thumbnails": "gallery-thumbnails-single",
+
   "bold": "bold-single",
   "italic": "italic-single",
   "underline": "underline-single",
@@ -338,6 +349,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["layout-grid-combined", "arrow-left", "layout-grid"],
+  ["layout-panel-top-combined", "arrow-left", "layout-panel-top"],
+  ["panel-left-close-combined", "arrow-left", "panel-left-close"],
+  ["panel-left-open-combined", "arrow-left", "panel-left-open"],
+  ["panel-right-open-combined", "arrow-left", "panel-right-open"],
+  ["layers-combined", "arrow-left", "layers"],
+  ["square-stack-combined", "arrow-left", "square-stack"],
+  ["gallery-horizontal-end-combined", "arrow-left", "gallery-horizontal-end"],
+  ["gallery-vertical-end-combined", "arrow-left", "gallery-vertical-end"],
+  ["gallery-thumbnails-combined", "arrow-left", "gallery-thumbnails"],
+
   ["bold-combined", "arrow-left", "bold"],
   ["italic-combined", "arrow-left", "italic"],
   ["underline-combined", "arrow-left", "underline"],

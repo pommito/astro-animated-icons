@@ -728,3 +728,24 @@ export type { BadgePercentIconHandle } from "./icons/badge-percent/element";
 
 export { default as Ban } from "./icons/ban/Ban.astro";
 export type { BanIconHandle } from "./icons/ban/element";
+
+export { default as LayoutGrid } from "./icons/layout-grid/LayoutGrid.astro";
+export type { LayoutGridIconHandle } from "./icons/layout-grid/element";
+export { default as LayoutPanelTop } from "./icons/layout-panel-top/LayoutPanelTop.astro";
+export type { LayoutPanelTopIconHandle } from "./icons/layout-panel-top/element";
+export { default as PanelLeftClose } from "./icons/panel-left-close/PanelLeftClose.astro";
+export type { PanelLeftCloseIconHandle } from "./icons/panel-left-close/element";
+export { default as PanelLeftOpen } from "./icons/panel-left-open/PanelLeftOpen.astro";
+export type { PanelLeftOpenIconHandle } from "./icons/panel-left-open/element";
+export { default as PanelRightOpen } from "./icons/panel-right-open/PanelRightOpen.astro";
+export type { PanelRightOpenIconHandle } from "./icons/panel-right-open/element";
+export { default as Layers } from "./icons/layers/Layers.astro";
+export type { LayersIconHandle } from "./icons/layers/element";
+export { default as SquareStack } from "./icons/square-stack/SquareStack.astro";
+export type { SquareStackIconHandle } from "./icons/square-stack/element";
+export { default as GalleryHorizontalEnd } from "./icons/gallery-horizontal-end/GalleryHorizontalEnd.astro";
+export type { GalleryHorizontalEndIconHandle } from "./icons/gallery-horizontal-end/element";
+export { default as GalleryVerticalEnd } from "./icons/gallery-vertical-end/GalleryVerticalEnd.astro";
+export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/element";
+export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
+export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";

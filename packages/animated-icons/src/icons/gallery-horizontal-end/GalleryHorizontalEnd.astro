@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-gallery-horizontal-end">
+  <g>
+    <path d="M6 5v14" style="transform-box: fill-box; transform-origin: center" />
+    <path d="M2 7v10" style="transform-box: fill-box; transform-origin: center" />
+    <rect height="18" rx="2" width="12" x="10" y="3" style="transform-box: fill-box; transform-origin: center" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
