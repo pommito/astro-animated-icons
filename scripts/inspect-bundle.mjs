@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "airplane": "airplane-single",
+  "plane-landing": "plane-landing-single",
+  "plane-takeoff": "plane-takeoff-single",
+  "car": "car-single",
+  "truck": "truck-single",
+  "ship": "ship-single",
+  "rocket": "rocket-single",
+  "route": "route-single",
+  "train-track": "train-track-single",
+  "waypoints": "waypoints-single",
+
   "sun-dim": "sun-dim-single",
   "sun-medium": "sun-medium-single",
   "sun-moon": "sun-moon-single",
@@ -370,6 +381,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["airplane-combined", "arrow-left", "airplane"],
+  ["plane-landing-combined", "arrow-left", "plane-landing"],
+  ["plane-takeoff-combined", "arrow-left", "plane-takeoff"],
+  ["car-combined", "arrow-left", "car"],
+  ["truck-combined", "arrow-left", "truck"],
+  ["ship-combined", "arrow-left", "ship"],
+  ["rocket-combined", "arrow-left", "rocket"],
+  ["route-combined", "arrow-left", "route"],
+  ["train-track-combined", "arrow-left", "train-track"],
+  ["waypoints-combined", "arrow-left", "waypoints"],
+
   ["flame-combined", "arrow-left", "flame"],
   ["droplet-combined", "arrow-left", "droplet"],
   ["tornado-combined", "arrow-left", "tornado"],

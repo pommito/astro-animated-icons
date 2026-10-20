@@ -758,6 +758,27 @@ export type { BadgePercentIconHandle } from "./icons/badge-percent/element";
 export { default as Ban } from "./icons/ban/Ban.astro";
 export type { BanIconHandle } from "./icons/ban/element";
 
+export { default as Airplane } from "./icons/airplane/Airplane.astro";
+export type { AirplaneIconHandle } from "./icons/airplane/element";
+export { default as PlaneLanding } from "./icons/plane-landing/PlaneLanding.astro";
+export type { PlaneLandingIconHandle } from "./icons/plane-landing/element";
+export { default as PlaneTakeoff } from "./icons/plane-takeoff/PlaneTakeoff.astro";
+export type { PlaneTakeoffIconHandle } from "./icons/plane-takeoff/element";
+export { default as Car } from "./icons/car/Car.astro";
+export type { CarIconHandle } from "./icons/car/element";
+export { default as Truck } from "./icons/truck/Truck.astro";
+export type { TruckIconHandle } from "./icons/truck/element";
+export { default as Ship } from "./icons/ship/Ship.astro";
+export type { ShipIconHandle } from "./icons/ship/element";
+export { default as Rocket } from "./icons/rocket/Rocket.astro";
+export type { RocketIconHandle } from "./icons/rocket/element";
+export { default as Route } from "./icons/route/Route.astro";
+export type { RouteIconHandle } from "./icons/route/element";
+export { default as TrainTrack } from "./icons/train-track/TrainTrack.astro";
+export type { TrainTrackIconHandle } from "./icons/train-track/element";
+export { default as Waypoints } from "./icons/waypoints/Waypoints.astro";
+export type { WaypointsIconHandle } from "./icons/waypoints/element";
+
 export { default as SunDim } from "./icons/sun-dim/SunDim.astro";
 export type { SunDimIconHandle } from "./icons/sun-dim/element";
 
