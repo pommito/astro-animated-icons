@@ -850,6 +850,27 @@ export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/
 export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
 export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";
 
+export { default as ArrowDown01 } from "./icons/arrow-down-0-1/ArrowDown01.astro";
+export type { ArrowDown01IconHandle } from "./icons/arrow-down-0-1/element";
+export { default as ArrowDown10 } from "./icons/arrow-down-1-0/ArrowDown10.astro";
+export type { ArrowDown10IconHandle } from "./icons/arrow-down-1-0/element";
+export { default as ArrowDownAZ } from "./icons/arrow-down-a-z/ArrowDownAZ.astro";
+export type { ArrowDownAZIconHandle } from "./icons/arrow-down-a-z/element";
+export { default as ArrowDownZA } from "./icons/arrow-down-z-a/ArrowDownZA.astro";
+export type { ArrowDownZAIconHandle } from "./icons/arrow-down-z-a/element";
+export { default as SquareArrowDown } from "./icons/square-arrow-down/SquareArrowDown.astro";
+export type { SquareArrowDownIconHandle } from "./icons/square-arrow-down/element";
+export { default as SquareArrowLeft } from "./icons/square-arrow-left/SquareArrowLeft.astro";
+export type { SquareArrowLeftIconHandle } from "./icons/square-arrow-left/element";
+export { default as SquareArrowRight } from "./icons/square-arrow-right/SquareArrowRight.astro";
+export type { SquareArrowRightIconHandle } from "./icons/square-arrow-right/element";
+export { default as SquareArrowUp } from "./icons/square-arrow-up/SquareArrowUp.astro";
+export type { SquareArrowUpIconHandle } from "./icons/square-arrow-up/element";
+export { default as TrendingDown } from "./icons/trending-down/TrendingDown.astro";
+export type { TrendingDownIconHandle } from "./icons/trending-down/element";
+export { default as TrendingUp } from "./icons/trending-up/TrendingUp.astro";
+export type { TrendingUpIconHandle } from "./icons/trending-up/element";
+
 export { default as MonitorCheck } from "./icons/monitor-check/MonitorCheck.astro";
 export type { MonitorCheckIconHandle } from "./icons/monitor-check/element";
 

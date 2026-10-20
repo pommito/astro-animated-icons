@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-trending-down">
+  <g>
+    <polyline data-part="line" pathLength="1" points="22 17 13.5 8.5 8.5 13.5 2 7" />
+    <polyline data-part="head" pathLength="1" points="16 17 22 17 22 11" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -1,5 +1,26 @@
 # Third-party notices
 
+ArrowDown01, ArrowDown10, ArrowDownAZ, ArrowDownZA, SquareArrowDown, SquareArrowLeft, SquareArrowRight, SquareArrowUp, TrendingDown, and TrendingUp adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The four sorting arrows leave their arrow paths static and swap their two glyphs by +10 and -10 SVG units with stiffness 240 and damping 24. Each source's glyph drawing and custom direction stay local to its adapter. The glyphs share the existing SVG transform sampler and property completion tracking.
+
+The square arrows keep the square static. Their heads translate through the source's signed three-unit offset over 400 ms with implicit ease-out. Their shafts morph the actual d attribute through all three upstream path strings over the same duration. Returns use the source's implicit translation spring and 300 ms attribute curve. They use the shared SVG-parts attribute tracks and the same cancellable Motion attribute effect as Archive and Rocket. Interrupted morph replays preserve the current path; completed morph replays restart the declared idle keyframe. Cleanup releases the attribute effect and restores the exact idle string.
+
+TrendingDown and TrendingUp pulse the whole SVG by 2 screen pixels on each axis over 500 ms, with the source's vertical sign. Their main polylines reveal over 400 ms with normalized offset 1 to 0. Their arrow heads wait 300 ms, then reveal over 300 ms with offset 0.5 to 0. Opacity uses its own 100 ms track, including the head's 300 ms delay. Upstream omits the whole-SVG normal variant and the polylines' normal pathOffset. Those tracks continue their original timeline when stop starts the declared opacity and path-length returns. The adapter retains the remaining transform and offset samples, including the delay and original easing, until cleanup. No normal target is added to the copied source.
+
+The `/sorting-trends-comparison/` fixture executes all ten original pinned React components at 14, 16, 24, and 28 px. The copies change only their class utility import. The runner seeks attribute morphs through Motion's SVG effect and samples the original controls. Captured returns reset the reference's spring velocity. Trend properties omitted from normal keep their entry timeline during return sampling. Geometry, opacity, and normalized dashes support manual visual review. Actual interrupted spring velocity parity remains unmeasured. React stays confined to comparison pages.
+
+- [Lucide Animated ArrowDown01, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-0-1.tsx)
+- [Lucide Animated ArrowDown10, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-1-0.tsx)
+- [Lucide Animated ArrowDownAZ, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-a-z.tsx)
+- [Lucide Animated ArrowDownZA, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-z-a.tsx)
+- [Lucide Animated SquareArrowDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-arrow-down.tsx)
+- [Lucide Animated SquareArrowLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-arrow-left.tsx)
+- [Lucide Animated SquareArrowRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-arrow-right.tsx)
+- [Lucide Animated SquareArrowUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-arrow-up.tsx)
+- [Lucide Animated TrendingDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/trending-down.tsx)
+- [Lucide Animated TrendingUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/trending-up.tsx)
+
 MonitorCheck, MonitorCog, LaptopMinimalCheck, SmartphoneCharging, SmartphoneNfc, Keyboard, Cctv, Projector, Vibrate, and EvCharger adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 MonitorCheck and LaptopMinimalCheck reveal the check with separate 400 ms ease-in-out opacity and normalized path-length tracks. They return over 300 ms. MonitorCog rotates its cog group to 180 degrees with stiffness 50 and damping 10. SmartphoneCharging and EvCharger repeat their 1-second opacity cycle through 1, 0.4, and 1. Their normal opacity uses Motion's implicit 300 ms curve.

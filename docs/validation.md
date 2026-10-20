@@ -20,6 +20,8 @@ The suite tests the consumer contract at several boundaries. Add an icon to its 
 
 Rocket also has dedicated tests in `tests/transport-routes.spec.ts` that observe its fire morph, stopped JavaScript frames, removal, reduced motion, and reconnection.
 
+The square arrows keep dedicated state-sensitive cancellation tests in `tests/sorting-trends.spec.ts`. They observe actual shaft paths and animation-frame callbacks through entry, return, removal, reduced motion, and reconnection.
+
 Archive and SlidersHorizontal keep their dedicated lifecycle and reduced-motion tests in `tests/archive.spec.ts` and `tests/commands.spec.ts`. Those tests observe paths, spring motion, or SVG attributes directly. Counting native animations cannot establish that their JavaScript-driven work has stopped.
 
 Volume keeps its template-upgrade and reconnection coverage in `tests/media-icons.spec.ts`. Its native track count changes with the visible branch and partial stroke state. Those tests observe the actual branches, partial-stroke continuity, cancellation during removal, independent instances, and listener rebinding. Its reduced-motion tests also check that queued replacements cannot recreate the active branch. The common suites keep their existing assertions.
@@ -36,6 +38,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 
 | Suite | Existing interruption samples and purpose |
 | --- | --- |
+| Sorting and trends | 50, 200, 350, 700 ms cover glyph springs, shaft morphs, and both sides of the delayed trend reveals |
 | Energy and Bluetooth | 100, 300, 650, 1600 ms cover filling, delayed slash reveal, staggered bars, and later loops |
 | Connectivity | 100, 300, 650, 1600 ms cover fades, staggered springs, rotations, and repeating searches. WifiLow also samples its timed hide at 1750 ms; its text has dedicated show, hold, and hide interruption checks. |
 | Clock and calendar | 50, 300, 950, 1600 ms cover entry, reveal boundaries, and oscillations after the initial spring |
