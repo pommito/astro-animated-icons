@@ -24,7 +24,7 @@ The first red test received HTTP 404 for the missing Accessibility route. Early 
 
 Independent Standards and Spec agents reviewed the diff and new files. Spec reported no confirmed discrepancy. Standards suggested removing repeated CalendarDays and CursorClick configurations. Local maps replaced those configurations. Both agents then reviewed the native opacity stop and capture corrections without a new finding. Standards also confirmed that restoring the inspector's canonical first case preserves every CSS assertion. The agents did not run competing browser suites.
 
-## Validation results
+## Initial validation results
 
 `ICON_TEST_PORT=45401 pnpm validate --workers=2` ran once. Package checking covered 1,181 files and fixture checking covered 1,573 files, each with zero errors, warnings, or hints. TypeScript also passed. The forced production build generated 1,177 pages. Bundle inspection verified selective loading, shared CSS, and the absence of React from production across 374 icons and 751 cases.
 
@@ -46,6 +46,31 @@ The focused run also passed no-JavaScript drawings and native links, stop phases
 
 The complete Chrome continuation used `pnpm test --workers=2` and selected 3,273 tests. Its log recorded 166 passes and 11 failures before I interrupted it as failures and long test durations accumulated. Ten failures exceeded the existing 30-second test deadline. Bot's reduced-motion test instead observed `stroke-dasharray: none` while expecting the paused blink's `0px, 4px`. Another complete Chrome suite was running in a separate worktree. Contention is a plausible explanation, not an established cause.
 
-I reran those exact 11 failed titles in `tests/audio-lines.spec.ts`, `tests/bookmarks-status.spec.ts`, `tests/bot.spec.ts`, and `tests/chart-icons.spec.ts`, using `--grep` and `--workers=1`. All 11 passed in 3.5 minutes. Code, assertions, and repository timeouts were unchanged between those runs. The interrupted suite's server was stopped after its PID and working directory were confirmed. The complete catalog remains unverified by this batch; neither the original `pnpm validate` command nor its Chrome continuation passed as a whole.
+I reran those exact 11 failed titles in `tests/audio-lines.spec.ts`, `tests/bookmarks-status.spec.ts`, `tests/bot.spec.ts`, and `tests/chart-icons.spec.ts`, using `--grep` and `--workers=1`. All 11 passed in 3.5 minutes. Code, assertions, and repository timeouts were unchanged between those runs. The interrupted suite's server was stopped after its PID and working directory were confirmed. That attempt did not verify the complete catalog. Neither the initial `pnpm validate` command nor its Chrome continuation passed as a whole.
 
 Chrome 154.0.8037.98 is the browser used by the repository configuration. Firefox and Safari are not checked by this batch. The shared playback API and dependency versions are unchanged. No pull request is published, and the worktree remains available for review.
+
+## Exclusive final validation
+
+The coordinator granted an exclusive validation slot after the other batches stopped their heavy processes. On the unchanged source tree of `c28ce693bdd0761508845c9548b387226945e5cc`, `ICON_TEST_PORT=45401 pnpm validate --workers=1` completed with exit code 0. It used the Node 22.20.0 and temporary pnpm 12.5.1 runtime described above. No source, assertion, or repository timeout change was needed.
+
+| Check | Observed result |
+| --- | --- |
+| Package Astro diagnostics | 1,181 files; zero errors, warnings, or hints |
+| Fixture Astro diagnostics | 1,573 files; zero errors, warnings, or hints |
+| TypeScript | Passed |
+| Forced production build | 1,177 pages in 11.58 seconds |
+| Bundle inspection | 374 icons across 751 cases; selective loading, shared CSS, and no production React verified |
+| Inspector negative tests | 5 passed, 0 failed |
+| Fixture cache tests | 3 passed, 0 failed |
+| Complete Chrome suite | `3273 passed (44.2m)` |
+
+The browser log contains exactly 3,273 distinct test IDs, covering every selected ID from 1 through 3,273. All have pass markers. There are zero failed, skipped, interrupted, or unexecuted cases, and no retry was needed in this exclusive run. All 151 common utility cases passed, including the resolved-opacity tests and Accessibility's actual-path cancellation checks. The five pinned source comparisons passed with the same maximum differences recorded above.
+
+The complete command log is retained at `/private/tmp/common-utilities-exclusive-validation.log`. Earlier logs, including `/private/tmp/common-utilities-full-chrome.log` and `/private/tmp/common-utilities-affected-rerun.log`, remain available for the initial interruption and its targeted rerun.
+
+After completion, port 45401 had no listener and `.artifacts/fixture.lock` was absent. A broader process check found two headless Chrome parents left by the initial interrupted run, PIDs 62351 and 62468. Both had this worktree as their current directory. The earlier check had inspected Node processes and the listener, so it missed these orphaned browsers. I sent SIGTERM to those two confirmed processes before releasing the slot.
+
+A subsequent check found neither PID, no headless Google Chrome browser parent, and no matching Node or pnpm process. Port 45401 remained free and the fixture lock remained absent. No browser, test, build, or fixture process from this batch remained.
+
+The implementation reviews still apply because only this verification record changed after the successful run. Manual visual acceptance and real interrupted spring velocity equality remain outside these numerical checks.
