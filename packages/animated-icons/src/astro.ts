@@ -677,6 +677,27 @@ export type { RussianRubleIconHandle } from "./icons/russian-ruble/element";
 
 export { default as SwissFranc } from "./icons/swiss-franc/SwissFranc.astro";
 export type { SwissFrancIconHandle } from "./icons/swiss-franc/element";
+export { default as Bold } from "./icons/bold/Bold.astro";
+export type { BoldIconHandle } from "./icons/bold/element";
+export { default as Italic } from "./icons/italic/Italic.astro";
+export type { ItalicIconHandle } from "./icons/italic/element";
+export { default as Underline } from "./icons/underline/Underline.astro";
+export type { UnderlineIconHandle } from "./icons/underline/element";
+export { default as AArrowDown } from "./icons/a-arrow-down/AArrowDown.astro";
+export type { AArrowDownIconHandle } from "./icons/a-arrow-down/element";
+export { default as AArrowUp } from "./icons/a-arrow-up/AArrowUp.astro";
+export type { AArrowUpIconHandle } from "./icons/a-arrow-up/element";
+export { default as AlignCenter } from "./icons/align-center/AlignCenter.astro";
+export type { AlignCenterIconHandle } from "./icons/align-center/element";
+export { default as AlignLeft } from "./icons/align-left/AlignLeft.astro";
+export type { AlignLeftIconHandle } from "./icons/align-left/element";
+export { default as AlignRight } from "./icons/align-right/AlignRight.astro";
+export type { AlignRightIconHandle } from "./icons/align-right/element";
+export { default as AlignHorizontal } from "./icons/align-horizontal/AlignHorizontal.astro";
+export type { AlignHorizontalIconHandle } from "./icons/align-horizontal/element";
+export { default as AlignVertical } from "./icons/align-vertical/AlignVertical.astro";
+export type { AlignVerticalIconHandle } from "./icons/align-vertical/element";
+
 export { default as Server } from "./icons/server/Server.astro";
 export type { ServerIconHandle } from "./icons/server/element";
 

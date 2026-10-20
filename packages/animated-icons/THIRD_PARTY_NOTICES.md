@@ -1,5 +1,28 @@
 # Third-party notices
 
+Bold, Italic, Underline, AArrowDown, AArrowUp, AlignCenter, AlignLeft, AlignRight, AlignHorizontal, and AlignVertical adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Bold holds stroke width 3.5 and returns to 2 over 600 ms with ease-out. Cleanup removes its inline stroke width so it inherits the SVG value again. Italic redraws its end lines over 200 ms and its diagonal over 400 ms after 100 ms. Only the end lines fade. Underline redraws and fades its curved stroke over 300 ms and its underline over 400 ms after 200 ms. All these stroke tracks use ease-out, normalized path length 0 to 1, and path offset 1 to 0. Return preserves each line's duration and delay.
+
+AArrowDown and AArrowUp reveal their two letter paths with scale 0.8 to 1 and opacity 0 to 1 over 300 ms. Their arrows enter from -10 or 10 SVG units after a 200 ms delay, over 300 ms. Each path scales around its own bounding-box center. Return uses the implicit transform springs and a separate 300 ms opacity curve. AlignCenter moves only its middle path through 0, 3, -3, 2, -2, and 0 SVG units over one second. Its property-specific transition overrides the parent linear easing and uses ease-out. Stop uses the implicit translation spring.
+
+AlignLeft animates its line endpoints x2 from 21, 15, and 17 to 21, 19, and 12. AlignRight animates x1 from 3, 9, and 7 to 3, 5, and 12. Both hold and use stiffness 150, damping 15, and mass 0.3 in both directions. They share SVG attribute playback and cancellation with SlidersHorizontal. AlignHorizontal holds rectangle scaleX 0.85 and moves its vertical paths inward by 2 units with scaleY 0.9. AlignVertical holds rectangle scaleY 0.8 and moves its horizontal paths inward by 2 units with scaleX 0.9. These poses use stiffness 160, damping 17, and mass 1 around each shape's center.
+
+The `/text-formatting-comparison/` fixture executes the ten pinned React sources at 14, 16, 24, and 28 px. Copied sources change the class utility import to a local equivalent. Bold also sets `initial="normal"` on its motion path. The unmodified source omits an initial path stroke width, so Motion resolves its first target to 3.5 without interpolation from the inherited SVG width. The explicit initial variant makes the reference exercise the declared 2-to-3.5 transition from its first playback, matching the adapter's deliberate idle-state adaptation. All subsequent transition settings remain upstream settings.
+
+Comparison tests measure entry and captured returns at 150, 350, and 1500 ms, including computed stroke width, normalized dashes, opacity, geometry, and endpoint-driven geometry. Captured returns reset velocity on both versions before stopping. Actual interrupted spring velocity parity remains unmeasured. Public handle tests separately check stop continuity, replay, cleanup, reduced motion, and instance isolation. React remains confined to comparison bundles. Numerical comparisons support manual visual review.
+
+- [Lucide Animated Bold, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bold.tsx)
+- [Lucide Animated Italic, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/italic.tsx)
+- [Lucide Animated Underline, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/underline.tsx)
+- [Lucide Animated AArrowDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/a-arrow-down.tsx)
+- [Lucide Animated AArrowUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/a-arrow-up.tsx)
+- [Lucide Animated AlignCenter, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/align-center.tsx)
+- [Lucide Animated AlignLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/align-left.tsx)
+- [Lucide Animated AlignRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/align-right.tsx)
+- [Lucide Animated AlignHorizontal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/align-horizontal.tsx)
+- [Lucide Animated AlignVertical, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/align-vertical.tsx)
+
 Server, ServerCog, ServerCrash, DatabaseBackup, Cpu, Terminal, Webhook, Workflow, Binary, and Blocks adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Server swaps its two groups with opposing 12-unit vertical tracks over 900 ms, repeats once, and uses offsets 0, 0.35, 0.65, and 1. Its interrupted return uses Motion's default transform spring. ServerCog holds a 180-degree rotation with stiffness 50 and damping 10. ServerCrash redraws its lightning path over 400 ms with linear easing. The upstream root SVG controls have no transform variants. Both fixed 24 px upstream SVGs accept the package's common size prop through the adapter.
