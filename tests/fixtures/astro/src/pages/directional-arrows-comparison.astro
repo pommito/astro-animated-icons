@@ -1,0 +1,40 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { directionalArrows } from "../../../../helpers/directional-arrows";
+const sizes = [14, 16, 24, 28];
+---
+
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Directional arrow recipe comparisons</title></head>
+  <body>
+    <h1>Directional arrow recipe comparisons</h1>
+    <p>The reference executes all ten original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Their class utility import points to a local equivalent. React is confined to comparison pages.</p>
+    <p>Hover a row or use its Replay button to animate both versions. Play all starts every sample. Stop all returns them to rest. Seek pauses the current playback at the selected time.</p>
+    <p>Each row passes an explicit size. The diagonals retain their separate head and shaft paths, including the static upper shaft of ArrowDownLeft and the overlapping third head path of ArrowDownRight. Native tracks sample the original translation and scale curves.</p>
+    <p>The automated return comparison captures an early, middle, or late entry pose and resets velocity on both versions before calling Stop all. It measures the default return spring from that captured pose. Manual Stop all preserves playback velocity. Separate public API tests check real interrupted stop continuity, replay, cancellation, removal and reduced motion. Numerical checks support manual visual review.</p>
+    <button type="button" id="play">Play all</button>
+    <button type="button" id="stop">Stop all</button>
+    <label>Playback time in milliseconds <input id="time" type="number" value="200" min="0" max="5000" step="50" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+    {directionalArrows.map(icon => {
+      const Component = icons[icon.name];
+      return <section>
+        <h2>{icon.name}</h2>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <table>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <tbody>{sizes.map(size => <tr data-icon={icon.slug} data-size={size}>
+            <th scope="row">{size} px</th>
+            <td data-adapter><Component size={size} controlled /></td>
+            <td><div data-reference data-name={icon.name} data-size={size}></div></td>
+            <td><button type="button" data-replay aria-label={`Replay ${icon.name} at ${size} pixels`}>Replay</button></td>
+          </tr>)}</tbody>
+        </table>
+      </section>;
+    })}
+  </body>
+</html>
+
+<script>
+  import "../directional-arrows-reference";
+</script>

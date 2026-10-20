@@ -32,6 +32,48 @@ The `/media-comparison/` fixture executes all ten pinned React components at 14,
 
 - [Lucide Animated SwitchCamera, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/switch-camera.tsx)
 
+Phone, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneMissed, PhoneOff, MailCheck, Mailbox, Send, and Bell adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Phone rotates through 10, 20, -10, 10, and 0 degrees and pulses through scale 1, 1.1, and 1 over 900 ms with ease-in-out per segment. PhoneCall uses the same rotation with five scale steps peaking at 1.2. Its waves fade out over 300 ms, then return with stiffness 300 and damping 20 after 200 and 100 ms delays. The existing signal sampler combines both phases into cancellable native tracks, so stop, removal, or reduced motion cannot start a late reveal. Native opacity springs normalize to 100 and retain the fade completion velocity. Phone and PhoneCall return with Motion's default rotation and scale springs.
+
+PhoneForwarded pulses the whole SVG over 900 ms. Its arrowhead moves through x=0, 3, and 0 over 500 ms. The shaft also scales through 1, 0.85, and 1 around its right endpoint. PhoneIncoming pulses its handset to 1.1 over 900 ms while its arrow scales to 1.2 and moves by -1, 1 SVG units over 800 ms. PhoneMissed pulses its handset to 1.05 and its cross to 1.2. The upstream handset variants contain `initial` but omit `normal`, although stop requests `normal`. Both adapters explicitly return the handset to scale 1 with Motion's default scale spring. Their other shapes use the upstream return springs. Interrupted replays preserve the current transform instead of resetting to the first explicit keyframe.
+
+PhoneOff draws its slash over 400 ms with linear easing. MailCheck draws its check and reveals opacity over 400 ms with ease-in-out. Native stroke dashes replace normalized path lengths. Mailbox rotates its flag to -90 degrees around SVG point 18, 11 with stiffness 280 and damping 12, then holds. Return uses stiffness 300 and damping 18. Bell rotates the whole SVG through 0, -10, 10, -10, and 0 degrees over 500 ms with ease-in-out. Its origin is the SVG center, rather than the bell path's bounding-box center.
+
+Send moves its plane by 3, -3 SVG units and scales it to 0.8 over 500 ms, then holds. Its decorative trail reveals stroke length and opacity over 550 ms after a 100 ms delay. The plane remains complete before JavaScript; the trail remains hidden, matching the upstream idle state. The source's path-length animation overrides its declared dashed stroke. The adapter preserves that normalized stroke behavior. Return moves the trail by -3, 3 units and hides it over 300 ms. Cleanup restores its hidden SVG attributes.
+
+The `/communication-comparison/` fixture executes all ten original pinned React sources at 14, 16, 24, and 28 px. The copied sources change the class utility import. Mailbox also places its declared `18px 11px` origin in `initial` and uses `transformBox: "view-box"`. Without that correction, Motion overwrites the source style with the path center at 16.5, 10. The adapter and corrected reference use the requested flag hinge at 18, 11; the numerical comparison therefore measures this intentional correction. The runner normalizes PhoneIncoming, PhoneMissed, and PhoneOff's fixed 24 px dimensions after mounting. All adapters honor the common size prop. React remains confined to comparison pages. PhoneCall's asynchronous fade and spring phases are measured separately. Return comparisons capture the completed entry pose and reset reference velocity before stopping, because native stop otherwise samples wall time after seeking. Adapter tests check interrupted pose continuity and cleanup. Numerical equality during real interrupted spring playback and manual visual acceptance remain outside those measurements.
+
+- [Lucide Animated Phone, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone.tsx)
+- [Lucide Animated PhoneCall, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone-call.tsx)
+- [Lucide Animated PhoneForwarded, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone-forwarded.tsx)
+- [Lucide Animated PhoneIncoming, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone-incoming.tsx)
+- [Lucide Animated PhoneMissed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone-missed.tsx)
+- [Lucide Animated PhoneOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/phone-off.tsx)
+- [Lucide Animated MailCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/mail-check.tsx)
+- [Lucide Animated Mailbox, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/mailbox.tsx)
+- [Lucide Animated Send, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/send.tsx)
+- [Lucide Animated Bell, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bell.tsx)
+
+CornerDownLeft, CornerDownRight, CornerLeftDown, CornerLeftUp, CornerRightDown, CornerRightUp, CornerUpLeft, CornerUpRight, Expand, and Shrink adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The eight corner icons pulse their root SVG over 450 ms with ease-in-out per segment. Horizontal arrows scale X through 1, 1.15, and 1, with translation through 0, -2 or 2, and 0 CSS pixels. Vertical arrows apply the same values on Y. Root SVG transforms preserve the upstream viewport center and CSS-pixel translation at 14, 16, 24, and 28 px. Return uses Motion's default translation spring with stiffness 500 and damping 25, and scale spring with stiffness 550 and damping 30. Both use rest speed 10. Completed pulses restore the drawing. Interrupted replays preserve the current adapter pose, while upstream keyframe arrays restart at rest.
+
+Expand translates its four paths outward by 2 SVG units on each axis. Shrink translates its four paths inward by 1 unit. Both hold their final pose and use stiffness 250 and damping 25 for entry and return. The shared SVG sampler preserves pose and sampled velocity on interruption, and the existing lifecycle cancels all tracks and clears retained state on removal or reduced motion. The only extension to that sampler is scaleX support.
+
+The `/corner-resize-comparison/` fixture executes all ten pinned React sources at explicit sizes 14, 16, 24, and 28 px. Copied sources change only the class utility import to `../utils`. Entry measurements sample 0 through 1000 ms. Return measurements start after completed entry with reference velocity reset, so Expand and Shrink return from their held pose while corner pulses are already at rest. Public adapter tests cover interrupted stop continuity and replay. Numerical equivalence of real interrupted spring velocity is unverified. Automated geometry and paint measurements support the user's manual visual acceptance. React remains confined to comparison pages.
+
+- [Lucide Animated CornerDownLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-down-left.tsx)
+- [Lucide Animated CornerDownRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-down-right.tsx)
+- [Lucide Animated CornerLeftDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-left-down.tsx)
+- [Lucide Animated CornerLeftUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-left-up.tsx)
+- [Lucide Animated CornerRightDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-right-down.tsx)
+- [Lucide Animated CornerRightUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-right-up.tsx)
+- [Lucide Animated CornerUpLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-up-left.tsx)
+- [Lucide Animated CornerUpRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/corner-up-right.tsx)
+- [Lucide Animated Expand, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/expand.tsx)
+- [Lucide Animated Shrink, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shrink.tsx)
+
 CloudBackup, CloudCog, CloudDownload, CloudLightning, CloudRainWind, CloudRain, CloudSnow, CloudSun, CloudSync, and CloudUpload adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 CloudBackup and CloudSync rotate their inner groups to -360 degrees over 800 and 1200 ms with ease-in-out, then hold. They return over the same duration. The shared group transform recipe also preserves FolderSync's existing behavior. CloudCog shares the existing cog spring to 180 degrees with stiffness 50 and damping 10. CloudDownload and CloudUpload move their arrow groups by 2 and -2 SVG units over 300 ms with cubic-bezier(0.68, -0.6, 0.32, 1.6), then hold. Their returns use the same curve. These transfer curves differ from Download and Upload's springs.
@@ -396,6 +438,19 @@ The connectivity adapters use these pinned sources. Their comparison copies chan
 - [Lucide Animated ReceiptTurkishLira, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/receipt-turkish-lira.tsx)
 
 The receipt adapters use the pinned sources above. Copied comparison sources change only the class utility import. ReceiptSwissFranc respects the requested size instead of the upstream fixed 24 px; the comparison runner normalizes that SVG after mounting. Currency paths preserve their individual entry and return durations, opacity timings, secondary delays, and path offsets. ReceiptText combines the asynchronous reverse-staggered erase and forward-staggered redraw into one cancellable timeline, so interruption cannot restart a queued phase.
+
+- [Lucide Animated ArrowDownLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-left.tsx)
+- [Lucide Animated ArrowDownRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-right.tsx)
+- [Lucide Animated ArrowBigDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-down.tsx)
+- [Lucide Animated ArrowBigDownDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-down-dash.tsx)
+- [Lucide Animated ArrowBigLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-left.tsx)
+- [Lucide Animated ArrowBigLeftDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-left-dash.tsx)
+- [Lucide Animated ArrowBigRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-right.tsx)
+- [Lucide Animated ArrowBigRightDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-right-dash.tsx)
+- [Lucide Animated ArrowBigUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-up.tsx)
+- [Lucide Animated ArrowBigUpDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-up-dash.tsx)
+
+The directional arrow adapters use these pinned sources. Their copied comparison sources change only the class utility import. Diagonals retain distinct head and shaft paths and their individual SVG origins. Big arrows preserve their 3-unit pulse and separate 1-unit dash pulse. Sampled native transforms preserve the 0.5-second diagonal and 0.4-second big-arrow entry curves, plus the implicit translation and scale return springs. The comparison captures entry poses and resets velocity on both versions before measuring returns; manual playback retains interrupted velocity.
 
 ## Lucide and Feather
 

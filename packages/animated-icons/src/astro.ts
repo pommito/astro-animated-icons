@@ -565,3 +565,85 @@ export type { AirplayIconHandle } from "./icons/airplay/element";
 
 export { default as SwitchCamera } from "./icons/switch-camera/SwitchCamera.astro";
 export type { SwitchCameraIconHandle } from "./icons/switch-camera/element";
+
+export { default as Phone } from "./icons/phone/Phone.astro";
+export type { PhoneIconHandle } from "./icons/phone/element";
+export { default as PhoneCall } from "./icons/phone-call/PhoneCall.astro";
+export type { PhoneCallIconHandle } from "./icons/phone-call/element";
+export { default as PhoneForwarded } from "./icons/phone-forwarded/PhoneForwarded.astro";
+export type { PhoneForwardedIconHandle } from "./icons/phone-forwarded/element";
+export { default as PhoneIncoming } from "./icons/phone-incoming/PhoneIncoming.astro";
+export type { PhoneIncomingIconHandle } from "./icons/phone-incoming/element";
+export { default as PhoneMissed } from "./icons/phone-missed/PhoneMissed.astro";
+export type { PhoneMissedIconHandle } from "./icons/phone-missed/element";
+export { default as PhoneOff } from "./icons/phone-off/PhoneOff.astro";
+export type { PhoneOffIconHandle } from "./icons/phone-off/element";
+export { default as MailCheck } from "./icons/mail-check/MailCheck.astro";
+export type { MailCheckIconHandle } from "./icons/mail-check/element";
+export { default as Mailbox } from "./icons/mailbox/Mailbox.astro";
+export type { MailboxIconHandle } from "./icons/mailbox/element";
+export { default as Send } from "./icons/send/Send.astro";
+export type { SendIconHandle } from "./icons/send/element";
+export { default as Bell } from "./icons/bell/Bell.astro";
+export type { BellIconHandle } from "./icons/bell/element";
+
+
+export { default as ArrowDownLeft } from "./icons/arrow-down-left/ArrowDownLeft.astro";
+export type { ArrowDownLeftIconHandle } from "./icons/arrow-down-left/element";
+
+export { default as ArrowDownRight } from "./icons/arrow-down-right/ArrowDownRight.astro";
+export type { ArrowDownRightIconHandle } from "./icons/arrow-down-right/element";
+
+export { default as ArrowBigDown } from "./icons/arrow-big-down/ArrowBigDown.astro";
+export type { ArrowBigDownIconHandle } from "./icons/arrow-big-down/element";
+
+export { default as ArrowBigDownDash } from "./icons/arrow-big-down-dash/ArrowBigDownDash.astro";
+export type { ArrowBigDownDashIconHandle } from "./icons/arrow-big-down-dash/element";
+
+export { default as ArrowBigLeft } from "./icons/arrow-big-left/ArrowBigLeft.astro";
+export type { ArrowBigLeftIconHandle } from "./icons/arrow-big-left/element";
+
+export { default as ArrowBigLeftDash } from "./icons/arrow-big-left-dash/ArrowBigLeftDash.astro";
+export type { ArrowBigLeftDashIconHandle } from "./icons/arrow-big-left-dash/element";
+
+export { default as ArrowBigRight } from "./icons/arrow-big-right/ArrowBigRight.astro";
+export type { ArrowBigRightIconHandle } from "./icons/arrow-big-right/element";
+
+export { default as ArrowBigRightDash } from "./icons/arrow-big-right-dash/ArrowBigRightDash.astro";
+export type { ArrowBigRightDashIconHandle } from "./icons/arrow-big-right-dash/element";
+
+export { default as ArrowBigUp } from "./icons/arrow-big-up/ArrowBigUp.astro";
+export type { ArrowBigUpIconHandle } from "./icons/arrow-big-up/element";
+
+export { default as ArrowBigUpDash } from "./icons/arrow-big-up-dash/ArrowBigUpDash.astro";
+export type { ArrowBigUpDashIconHandle } from "./icons/arrow-big-up-dash/element";
+
+export { default as CornerDownLeft } from "./icons/corner-down-left/CornerDownLeft.astro";
+export type { CornerDownLeftIconHandle } from "./icons/corner-down-left/element";
+
+export { default as CornerDownRight } from "./icons/corner-down-right/CornerDownRight.astro";
+export type { CornerDownRightIconHandle } from "./icons/corner-down-right/element";
+
+export { default as CornerLeftDown } from "./icons/corner-left-down/CornerLeftDown.astro";
+export type { CornerLeftDownIconHandle } from "./icons/corner-left-down/element";
+
+export { default as CornerLeftUp } from "./icons/corner-left-up/CornerLeftUp.astro";
+export type { CornerLeftUpIconHandle } from "./icons/corner-left-up/element";
+
+export { default as CornerRightDown } from "./icons/corner-right-down/CornerRightDown.astro";
+export type { CornerRightDownIconHandle } from "./icons/corner-right-down/element";
+
+export { default as CornerRightUp } from "./icons/corner-right-up/CornerRightUp.astro";
+export type { CornerRightUpIconHandle } from "./icons/corner-right-up/element";
+
+export { default as CornerUpLeft } from "./icons/corner-up-left/CornerUpLeft.astro";
+export type { CornerUpLeftIconHandle } from "./icons/corner-up-left/element";
+
+export { default as CornerUpRight } from "./icons/corner-up-right/CornerUpRight.astro";
+export type { CornerUpRightIconHandle } from "./icons/corner-up-right/element";
+
+export { default as Expand } from "./icons/expand/Expand.astro";
+export type { ExpandIconHandle } from "./icons/expand/element";
+
+export { default as Shrink } from "./icons/shrink/Shrink.astro";
+export type { ShrinkIconHandle } from "./icons/shrink/element";
