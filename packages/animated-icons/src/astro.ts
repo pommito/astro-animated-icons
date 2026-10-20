@@ -557,6 +557,36 @@ export { default as Bell } from "./icons/bell/Bell.astro";
 export type { BellIconHandle } from "./icons/bell/element";
 
 
+export { default as ArrowDownLeft } from "./icons/arrow-down-left/ArrowDownLeft.astro";
+export type { ArrowDownLeftIconHandle } from "./icons/arrow-down-left/element";
+
+export { default as ArrowDownRight } from "./icons/arrow-down-right/ArrowDownRight.astro";
+export type { ArrowDownRightIconHandle } from "./icons/arrow-down-right/element";
+
+export { default as ArrowBigDown } from "./icons/arrow-big-down/ArrowBigDown.astro";
+export type { ArrowBigDownIconHandle } from "./icons/arrow-big-down/element";
+
+export { default as ArrowBigDownDash } from "./icons/arrow-big-down-dash/ArrowBigDownDash.astro";
+export type { ArrowBigDownDashIconHandle } from "./icons/arrow-big-down-dash/element";
+
+export { default as ArrowBigLeft } from "./icons/arrow-big-left/ArrowBigLeft.astro";
+export type { ArrowBigLeftIconHandle } from "./icons/arrow-big-left/element";
+
+export { default as ArrowBigLeftDash } from "./icons/arrow-big-left-dash/ArrowBigLeftDash.astro";
+export type { ArrowBigLeftDashIconHandle } from "./icons/arrow-big-left-dash/element";
+
+export { default as ArrowBigRight } from "./icons/arrow-big-right/ArrowBigRight.astro";
+export type { ArrowBigRightIconHandle } from "./icons/arrow-big-right/element";
+
+export { default as ArrowBigRightDash } from "./icons/arrow-big-right-dash/ArrowBigRightDash.astro";
+export type { ArrowBigRightDashIconHandle } from "./icons/arrow-big-right-dash/element";
+
+export { default as ArrowBigUp } from "./icons/arrow-big-up/ArrowBigUp.astro";
+export type { ArrowBigUpIconHandle } from "./icons/arrow-big-up/element";
+
+export { default as ArrowBigUpDash } from "./icons/arrow-big-up-dash/ArrowBigUpDash.astro";
+export type { ArrowBigUpDashIconHandle } from "./icons/arrow-big-up-dash/element";
+
 export { default as CornerDownLeft } from "./icons/corner-down-left/CornerDownLeft.astro";
 export type { CornerDownLeftIconHandle } from "./icons/corner-down-left/element";
 

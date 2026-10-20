@@ -1,0 +1,10 @@
+export { ArrowDownLeftIcon as ArrowDownLeft } from "./directional-arrows/arrow-down-left";
+export { ArrowDownRightIcon as ArrowDownRight } from "./directional-arrows/arrow-down-right";
+export { ArrowBigDownIcon as ArrowBigDown } from "./directional-arrows/arrow-big-down";
+export { ArrowBigDownDashIcon as ArrowBigDownDash } from "./directional-arrows/arrow-big-down-dash";
+export { ArrowBigLeftIcon as ArrowBigLeft } from "./directional-arrows/arrow-big-left";
+export { ArrowBigLeftDashIcon as ArrowBigLeftDash } from "./directional-arrows/arrow-big-left-dash";
+export { ArrowBigRightIcon as ArrowBigRight } from "./directional-arrows/arrow-big-right";
+export { ArrowBigRightDashIcon as ArrowBigRightDash } from "./directional-arrows/arrow-big-right-dash";
+export { ArrowBigUpIcon as ArrowBigUp } from "./directional-arrows/arrow-big-up";
+export { ArrowBigUpDashIcon as ArrowBigUpDash } from "./directional-arrows/arrow-big-up-dash";

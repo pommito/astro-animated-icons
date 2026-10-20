@@ -21,3 +21,14 @@ export function sampleReference(element: Element, milliseconds: number, { comple
   });
   visual?.render();
 }
+
+export function captureReferencePose(element: Element) {
+  const visual = visualElementStore.get(element);
+  visual?.values.forEach((value, name) => {
+    // Upstream native stop samples wall time; preserve the seeked opacity for measured returns.
+    const current = name === "opacity" ? Number(getComputedStyle(element).opacity) : value.get();
+    value.stop();
+    value.jump(current);
+  });
+  visual?.render();
+}

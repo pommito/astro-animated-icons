@@ -1,0 +1,14 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+import { arrowDownRightPaths, arrowDownRightOrigins } from "./definition";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-arrow-down-right">
+  <g>{arrowDownRightPaths.map((d, index) => <path d={d} style={arrowDownRightOrigins[index]} />)}</g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

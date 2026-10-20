@@ -407,6 +407,19 @@ The connectivity adapters use these pinned sources. Their comparison copies chan
 
 The receipt adapters use the pinned sources above. Copied comparison sources change only the class utility import. ReceiptSwissFranc respects the requested size instead of the upstream fixed 24 px; the comparison runner normalizes that SVG after mounting. Currency paths preserve their individual entry and return durations, opacity timings, secondary delays, and path offsets. ReceiptText combines the asynchronous reverse-staggered erase and forward-staggered redraw into one cancellable timeline, so interruption cannot restart a queued phase.
 
+- [Lucide Animated ArrowDownLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-left.tsx)
+- [Lucide Animated ArrowDownRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-down-right.tsx)
+- [Lucide Animated ArrowBigDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-down.tsx)
+- [Lucide Animated ArrowBigDownDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-down-dash.tsx)
+- [Lucide Animated ArrowBigLeft, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-left.tsx)
+- [Lucide Animated ArrowBigLeftDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-left-dash.tsx)
+- [Lucide Animated ArrowBigRight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-right.tsx)
+- [Lucide Animated ArrowBigRightDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-right-dash.tsx)
+- [Lucide Animated ArrowBigUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-up.tsx)
+- [Lucide Animated ArrowBigUpDash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/arrow-big-up-dash.tsx)
+
+The directional arrow adapters use these pinned sources. Their copied comparison sources change only the class utility import. Diagonals retain distinct head and shaft paths and their individual SVG origins. Big arrows preserve their 3-unit pulse and separate 1-unit dash pulse. Sampled native transforms preserve the 0.5-second diagonal and 0.4-second big-arrow entry curves, plus the implicit translation and scale return springs. The comparison captures entry poses and resets velocity on both versions before measuring returns; manual playback retains interrupted velocity.
+
 ## Lucide and Feather
 
 ISC License
