@@ -648,6 +648,35 @@ export type { ExpandIconHandle } from "./icons/expand/element";
 export { default as Shrink } from "./icons/shrink/Shrink.astro";
 export type { ShrinkIconHandle } from "./icons/shrink/element";
 
+export { default as Cart } from "./icons/cart/Cart.astro";
+export type { CartIconHandle } from "./icons/cart/element";
+
+export { default as CreditCard } from "./icons/credit-card/CreditCard.astro";
+export type { CreditCardIconHandle } from "./icons/credit-card/element";
+
+export { default as Wallet } from "./icons/wallet/Wallet.astro";
+export type { WalletIconHandle } from "./icons/wallet/element";
+
+export { default as DollarSign } from "./icons/dollar-sign/DollarSign.astro";
+export type { DollarSignIconHandle } from "./icons/dollar-sign/element";
+
+export { default as Euro } from "./icons/euro/Euro.astro";
+export type { EuroIconHandle } from "./icons/euro/element";
+
+export { default as PoundSterling } from "./icons/pound-sterling/PoundSterling.astro";
+export type { PoundSterlingIconHandle } from "./icons/pound-sterling/element";
+
+export { default as IndianRupee } from "./icons/indian-rupee/IndianRupee.astro";
+export type { IndianRupeeIconHandle } from "./icons/indian-rupee/element";
+
+export { default as JapaneseYen } from "./icons/japanese-yen/JapaneseYen.astro";
+export type { JapaneseYenIconHandle } from "./icons/japanese-yen/element";
+
+export { default as RussianRuble } from "./icons/russian-ruble/RussianRuble.astro";
+export type { RussianRubleIconHandle } from "./icons/russian-ruble/element";
+
+export { default as SwissFranc } from "./icons/swiss-franc/SwissFranc.astro";
+export type { SwissFrancIconHandle } from "./icons/swiss-franc/element";
 export { default as Bold } from "./icons/bold/Bold.astro";
 export type { BoldIconHandle } from "./icons/bold/element";
 export { default as Italic } from "./icons/italic/Italic.astro";
@@ -749,3 +778,23 @@ export { default as HeartPulse } from "./icons/heart-pulse/HeartPulse.astro";
 export type { HeartPulseIconHandle } from "./icons/heart-pulse/element";
 export { default as PartyPopper } from "./icons/party-popper/PartyPopper.astro";
 export type { PartyPopperIconHandle } from "./icons/party-popper/element";
+export { default as LayoutGrid } from "./icons/layout-grid/LayoutGrid.astro";
+export type { LayoutGridIconHandle } from "./icons/layout-grid/element";
+export { default as LayoutPanelTop } from "./icons/layout-panel-top/LayoutPanelTop.astro";
+export type { LayoutPanelTopIconHandle } from "./icons/layout-panel-top/element";
+export { default as PanelLeftClose } from "./icons/panel-left-close/PanelLeftClose.astro";
+export type { PanelLeftCloseIconHandle } from "./icons/panel-left-close/element";
+export { default as PanelLeftOpen } from "./icons/panel-left-open/PanelLeftOpen.astro";
+export type { PanelLeftOpenIconHandle } from "./icons/panel-left-open/element";
+export { default as PanelRightOpen } from "./icons/panel-right-open/PanelRightOpen.astro";
+export type { PanelRightOpenIconHandle } from "./icons/panel-right-open/element";
+export { default as Layers } from "./icons/layers/Layers.astro";
+export type { LayersIconHandle } from "./icons/layers/element";
+export { default as SquareStack } from "./icons/square-stack/SquareStack.astro";
+export type { SquareStackIconHandle } from "./icons/square-stack/element";
+export { default as GalleryHorizontalEnd } from "./icons/gallery-horizontal-end/GalleryHorizontalEnd.astro";
+export type { GalleryHorizontalEndIconHandle } from "./icons/gallery-horizontal-end/element";
+export { default as GalleryVerticalEnd } from "./icons/gallery-vertical-end/GalleryVerticalEnd.astro";
+export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/element";
+export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
+export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";

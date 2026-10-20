@@ -29,6 +29,15 @@ HeartPulse stage 2 return: geometry 0.000011 px; paint 0.000345.
 2219 passed (17.2m)
 ```
 
+## Integration with main
+
+Integrated `0135950389ca958d76caf22da22881471f69ea06`, which includes commerce/currency PR #60 and layout/gallery PR #61. Additive resolutions preserve every icon, handle export, notice, and bundle case. The incoming SVG sampler, keyframe helper, and reference playback helper remain unchanged.
+
+- `pnpm check` passed both Astro checks and TypeScript.
+- `ICON_TEST_PORT=45381 pnpm test tests/expressions.spec.ts tests/commerce-currency.spec.ts tests/layout-gallery.spec.ts tests/bookmarks-status.spec.ts tests/communication-icons.spec.ts tests/text-formatting.spec.ts tests/api.spec.ts tests/accessibility.spec.ts tests/lifecycle.spec.ts --workers=2` reported `622 passed (5.5m)`. This checks all three batches, existing sampler callers, and the shared consumer contract.
+- Bundle inspection verified 304 icons across 611 cases. All five inspector negative tests passed. Both reused the integrated fixture.
+- Standards and Spec integration reviews reported no findings.
+
 ## Review
 
 Separate Standards and Spec agents reviewed the changes against the fixed base. Standards requested semantic shape names and grouped descriptions for shared tracks. The follow-up uses mouth, left-eye, cone, dot, confetti, and plus selectors. Both agents reviewed the selector follow-up and the later completion tracking correction. Both reported no remaining findings. Neither review ran browser tests.

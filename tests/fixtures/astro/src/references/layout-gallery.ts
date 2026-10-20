@@ -1,0 +1,10 @@
+export { LayoutGridIcon as LayoutGrid } from "./layout-gallery/layout-grid";
+export { LayoutPanelTopIcon as LayoutPanelTop } from "./layout-gallery/layout-panel-top";
+export { PanelLeftCloseIcon as PanelLeftClose } from "./layout-gallery/panel-left-close";
+export { PanelLeftOpenIcon as PanelLeftOpen } from "./layout-gallery/panel-left-open";
+export { PanelRightOpenIcon as PanelRightOpen } from "./layout-gallery/panel-right-open";
+export { LayersIcon as Layers } from "./layout-gallery/layers";
+export { SquareStackIcon as SquareStack } from "./layout-gallery/square-stack";
+export { GalleryHorizontalEndIcon as GalleryHorizontalEnd } from "./layout-gallery/gallery-horizontal-end";
+export { GalleryVerticalEndIcon as GalleryVerticalEnd } from "./layout-gallery/gallery-vertical-end";
+export { GalleryThumbnailsIcon as GalleryThumbnails } from "./layout-gallery/gallery-thumbnails";

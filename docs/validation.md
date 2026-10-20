@@ -42,6 +42,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
 | Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
 | Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
+| Commerce and currency | 100, 300, 550, 750, 1000 ms cover Cart's delayed and repeated vertical pulses, the held scale, currency secondary reveals, and completed entries. Replays at 100 and 350 ms of return cover the delayed and active secondary return. |
 | Bookmarks and status | 50, 200, 450, and 750 ms cover outline stretch, mark redraw, the delayed Ban slash, and spring rotation. Dedicated entry and return replays check pose continuity. Pinned React comparisons check entry at four sizes, settled returns for all ten icons, and interrupted tween returns for CircleCheck, CircleHelp, and Ban. |
 | Expressions | 50, 250, 650, and 1400 ms cover facial transforms, confetti, and repeated pulses. HeartPulse also completes each real stage before testing stop, replay, removal, and reduced motion; Frown and Smile observe their moving mouth attributes directly. PartyPopper and HeartPulse verify replay after one track and all tracks complete. |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
@@ -51,6 +52,8 @@ Receipts reuse the native path tracks and cancellable keyframe timelines covered
 
 Media recipes use `tests/media-icons.spec.ts` with 50, 200, 450, and 1000 ms interruption samples. Volume also checks replacement ordering and cancellation after the waves appear. Airplay checks its automatic return after the 600 ms entry. `/media-comparison/` executes all ten pinned React sources at 14, 16, 24, and 28 px.
 
+Cart keeps dedicated held-scale and return comparisons because its scale returns while the remaining vertical pulses continue. These use native tracks and the existing lifecycle; the per-icon removal and reduced-motion checks establish cancellation. No additional shared representative is needed.
+
 Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
 
 `tests/cloud-icons.spec.ts` checks all ten cloud drawings, finite held poses, looping stroke order, stop continuity, replay, removal, and reduced motion. Its `/cloud-comparison/` route executes the ten pinned React components at 14, 16, 24, and 28 px. Entry and return measurements sample fifteen times. Return starts from the captured 3250 ms pose with reference velocity reset, because the upstream native stop sampler uses wall-clock time after seeking. Real interrupted spring velocity is covered through adapter continuity tests, without a numerical equality claim against React. Cloud adds no shared representative: existing cases already cover native opacity loops, delayed tracks, and sampled transforms.
@@ -58,6 +61,8 @@ Dedicated tests also keep their existing interruption samples and assertions. Co
 The connectivity family reuses native opacity and SVG transform tracks already represented above. WifiLow adds a text node, but its delayed show and hide are flattened into native tracks rather than introducing runtime callbacks. Dedicated connectivity tests check that text at rest, during playback, and after stop, removal, and reduced motion. No shared representative is added.
 
 `tests/corner-resize.spec.ts` checks all ten corner and resize drawings without JavaScript, directional pulse peaks, finite held spring poses, stop continuity at 50, 225, 400, and 650 ms, replay during entry and return, removal, instance isolation, and reduced motion. Its `/corner-resize-comparison/` route executes all ten pinned React components at 14, 16, 24, and 28 px. Fifteen entry and completed-pose return samples measure geometry and paint. Expand and Shrink return from their held translations; corner pulses have already returned to rest. Public adapter tests check pose continuity during interrupted returns. Numerical equality of interrupted spring velocity to React is unverified. These icons reuse the existing native transform sampler and lifecycle, so shared representatives remain unchanged.
+
+Layout and gallery use the family helper at 50, 225, 400, 650, and 1200 ms. Dedicated Layers tests observe both spring stages, completion ordering, pending-stage cancellation, and reconnection. The pinned comparison covers all ten entries and captured returns, plus Layers second-stage geometry at four sizes.
 
 ## Checks without a browser
 
