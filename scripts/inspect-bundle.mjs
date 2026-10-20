@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "monitor-check": "monitor-check-single",
+  "monitor-cog": "monitor-cog-single",
+  "laptop-minimal-check": "laptop-minimal-check-single",
+  "smartphone-charging": "smartphone-charging-single",
+  "smartphone-nfc": "smartphone-nfc-single",
+  "keyboard": "keyboard-single",
+  "cctv": "cctv-single",
+  "projector": "projector-single",
+  "vibrate": "vibrate-single",
+  "ev-charger": "ev-charger-single",
+
   "angry": "angry-single",
   "annoyed": "annoyed-single",
   "frown": "frown-single",
@@ -391,6 +402,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["monitor-check-combined", "arrow-left", "monitor-check"],
+  ["monitor-cog-combined", "arrow-left", "monitor-cog"],
+  ["laptop-minimal-check-combined", "arrow-left", "laptop-minimal-check"],
+  ["smartphone-charging-combined", "arrow-left", "smartphone-charging"],
+  ["smartphone-nfc-combined", "arrow-left", "smartphone-nfc"],
+  ["keyboard-combined", "arrow-left", "keyboard"],
+  ["cctv-combined", "arrow-left", "cctv"],
+  ["projector-combined", "arrow-left", "projector"],
+  ["vibrate-combined", "arrow-left", "vibrate"],
+  ["ev-charger-combined", "arrow-left", "ev-charger"],
+
   ["angry-combined", "arrow-left", "angry"],
   ["annoyed-combined", "arrow-left", "annoyed"],
   ["frown-combined", "arrow-left", "frown"],
