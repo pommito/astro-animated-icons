@@ -1,5 +1,27 @@
 # Third-party notices
 
+Angry, Annoyed, Frown, Laugh, Meh, Smile, SmilePlus, Heart, HeartPulse, and PartyPopper adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The face recipes keep whole-SVG transforms separate from mouth, eyebrow, and eye tracks. Each child transforms around its own bounding-box center. Angry keeps its five scale offsets and distributes its six rotations evenly because Motion ignores offsets whose count differs from the keyframes. Frown and Smile morph their mouths with cancellable SVG attribute tracks. Their property-specific d and path-length transitions override the parent's delay. Smile's separate stroke-width track keeps the 100 ms parent delay and implicit 300 ms ease-out transition. Laugh and Smile preserve animated stroke width on the SVG and mouth.
+
+Laugh explicitly returns mouth scaleY to 1 and y to 0 over its normal 300 ms ease-out transition. The upstream normal variant omits those two targets and leaves the mouth stretched. This adaptation makes stop restore the package's idle drawing progressively. The comparison reference adds the same normal targets; its entry recipe is unchanged. Every adapter renders the complete idle SVG before JavaScript, including Laugh's mouth, whose source obtains d from its initial variant.
+
+SmilePlus preserves the separate spring on each plus stroke. Heart repeats its 450 ms pulse twice. HeartPulse hides its heart, draws its ECG over 600 ms, draws its heart over 500 ms, then pulses over 900 ms with one repeat. Its 300 ms return cancels the active sequence, so stop, replay, removal, and reduced motion cannot launch a later stage. The pulse uses the source's 12px 12px origin with Motion's animated fill-box behavior. PartyPopper keeps separate cone, dot, and confetti tracks, including the cone's implicit 300 ms ease-out duration and the confetti's 700 ms per-segment curves.
+
+Completed tracks replay their declared first keyframes. Interrupted tracks retain their current pose on replay. Each property records its own completion, so a finished ECG or confetti reveal restarts even while another part is still moving.
+
+The `/expressions-comparison/` fixture executes all ten original pinned React components at 14, 16, 24, and 28 px. Copied sources redirect the class utility import. Laugh also adds the two normal mouth targets described above. The shared reference runner samples the original controls, and explicit phase completion advances HeartPulse's original async sequence. Returns capture computed opacity and stroke width before resetting reference velocity. Tests compare geometry, normalized dashes, opacity, and stroke width. Real interrupted spring velocity parity remains unmeasured. React stays confined to comparison pages. Numerical comparisons support the user's manual visual acceptance.
+
+- [Lucide Animated Angry, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/angry.tsx)
+- [Lucide Animated Annoyed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/annoyed.tsx)
+- [Lucide Animated Frown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/frown.tsx)
+- [Lucide Animated Laugh, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/laugh.tsx)
+- [Lucide Animated Meh, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/meh.tsx)
+- [Lucide Animated Smile, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/smile.tsx)
+- [Lucide Animated SmilePlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/smile-plus.tsx)
+- [Lucide Animated Heart, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/heart.tsx)
+- [Lucide Animated HeartPulse, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/heart-pulse.tsx)
+- [Lucide Animated PartyPopper, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/party-popper.tsx)
 Airplane, PlaneLanding, PlaneTakeoff, Car, Truck, Ship, Rocket, Route, TrainTrack, and Waypoints adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Airplane holds translateX 3, translateY -3, and scale 0.8 over 500 ms with ease-out. Its three hidden streaks start after 100, 200, and 300 ms. They animate normalized path offset 1 to 2 and opacity to 1 over 150 ms. Return translates them by -3, 3 and fades them over 300 ms. The adapter returns each current dash offset to 1 to preserve stop continuity. The upstream normal variant explicitly resets that offset to 0 before animating to 1.

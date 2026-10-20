@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "angry": "angry-single",
+  "annoyed": "annoyed-single",
+  "frown": "frown-single",
+  "laugh": "laugh-single",
+  "meh": "meh-single",
+  "smile": "smile-single",
+  "smile-plus": "smile-plus-single",
+  "heart": "heart-single",
+  "heart-pulse": "heart-pulse-single",
+  "party-popper": "party-popper-single",
   "airplane": "airplane-single",
   "plane-landing": "plane-landing-single",
   "plane-takeoff": "plane-takeoff-single",
@@ -381,6 +391,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["angry-combined", "arrow-left", "angry"],
+  ["annoyed-combined", "arrow-left", "annoyed"],
+  ["frown-combined", "arrow-left", "frown"],
+  ["laugh-combined", "arrow-left", "laugh"],
+  ["meh-combined", "arrow-left", "meh"],
+  ["smile-combined", "arrow-left", "smile"],
+  ["smile-plus-combined", "arrow-left", "smile-plus"],
+  ["heart-combined", "arrow-left", "heart"],
+  ["heart-pulse-combined", "arrow-left", "heart-pulse"],
+  ["party-popper-combined", "arrow-left", "party-popper"],
   ["airplane-combined", "arrow-left", "airplane"],
   ["plane-landing-combined", "arrow-left", "plane-landing"],
   ["plane-takeoff-combined", "arrow-left", "plane-takeoff"],

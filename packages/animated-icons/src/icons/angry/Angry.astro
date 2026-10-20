@@ -1,0 +1,19 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-angry">
+  <g>
+    <circle cx="12" cy="12" r="10" data-part="outline" style="transform-box: fill-box; transform-origin: center;" />
+    <path d="M16 16s-1.5-2-4-2-4 2-4 2" data-part="mouth" style="transform-box: fill-box; transform-origin: center;" />
+    <path d="M7.5 8 10 9" data-part="left-eyebrow" style="transform-box: fill-box; transform-origin: center;" />
+    <path d="m14 9 2.5-1" data-part="right-eyebrow" style="transform-box: fill-box; transform-origin: center;" />
+    <path d="M9 10h.01" data-part="left-eye" style="transform-box: fill-box; transform-origin: center;" />
+    <path d="M15 10h.01" data-part="right-eye" style="transform-box: fill-box; transform-origin: center;" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

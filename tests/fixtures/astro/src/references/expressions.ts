@@ -1,0 +1,10 @@
+export { AngryIcon as Angry } from "./expressions/angry";
+export { AnnoyedIcon as Annoyed } from "./expressions/annoyed";
+export { FrownIcon as Frown } from "./expressions/frown";
+export { LaughIcon as Laugh } from "./expressions/laugh";
+export { MehIcon as Meh } from "./expressions/meh";
+export { SmileIcon as Smile } from "./expressions/smile";
+export { SmilePlusIcon as SmilePlus } from "./expressions/smile-plus";
+export { HeartIcon as Heart } from "./expressions/heart";
+export { HeartPulseIcon as HeartPulse } from "./expressions/heart-pulse";
+export { PartyPopperIcon as PartyPopper } from "./expressions/party-popper";
