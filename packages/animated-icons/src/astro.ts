@@ -849,3 +849,33 @@ export { default as GalleryVerticalEnd } from "./icons/gallery-vertical-end/Gall
 export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/element";
 export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
 export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";
+
+export { default as PenTool } from "./icons/pen-tool/PenTool.astro";
+export type { PenToolIconHandle } from "./icons/pen-tool/element";
+
+export { default as SquarePen } from "./icons/square-pen/SquarePen.astro";
+export type { SquarePenIconHandle } from "./icons/square-pen/element";
+
+export { default as Palette } from "./icons/palette/Palette.astro";
+export type { PaletteIconHandle } from "./icons/palette/element";
+
+export { default as Figma } from "./icons/figma/Figma.astro";
+export type { FigmaIconHandle } from "./icons/figma/element";
+
+export { default as Feather } from "./icons/feather/Feather.astro";
+export type { FeatherIconHandle } from "./icons/feather/element";
+
+export { default as ScanText } from "./icons/scan-text/ScanText.astro";
+export type { ScanTextIconHandle } from "./icons/scan-text/element";
+
+export { default as Frame } from "./icons/frame/Frame.astro";
+export type { FrameIconHandle } from "./icons/frame/element";
+
+export { default as Stamp } from "./icons/stamp/Stamp.astro";
+export type { StampIconHandle } from "./icons/stamp/element";
+
+export { default as Wrench } from "./icons/wrench/Wrench.astro";
+export type { WrenchIconHandle } from "./icons/wrench/element";
+
+export { default as Hammer } from "./icons/hammer/Hammer.astro";
+export type { HammerIconHandle } from "./icons/hammer/element";

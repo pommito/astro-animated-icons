@@ -1,0 +1,10 @@
+export { PenToolIcon as PenTool } from "./design-tools/pen-tool";
+export { SquarePenIcon as SquarePen } from "./design-tools/square-pen";
+export { PaletteIcon as Palette } from "./design-tools/palette";
+export { FigmaIcon as Figma } from "./design-tools/figma";
+export { FeatherIcon as Feather } from "./design-tools/feather";
+export { ScanTextIcon as ScanText } from "./design-tools/scan-text";
+export { FrameIcon as Frame } from "./design-tools/frame";
+export { StampIcon as Stamp } from "./design-tools/stamp";
+export { WrenchIcon as Wrench } from "./design-tools/wrench";
+export { HammerIcon as Hammer } from "./design-tools/hammer";
