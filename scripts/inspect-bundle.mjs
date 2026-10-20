@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "bookmark": "bookmark-single",
+  "bookmark-check": "bookmark-check-single",
+  "bookmark-minus": "bookmark-minus-single",
+  "bookmark-plus": "bookmark-plus-single",
+  "bookmark-x": "bookmark-x-single",
+  "circle-check": "circle-check-single",
+  "circle-help": "circle-help-single",
+  "badge-alert": "badge-alert-single",
+  "badge-percent": "badge-percent-single",
+  "ban": "ban-single",
   "play": "play-single",
   "pause": "pause-single",
   "volume": "volume-single",
@@ -306,6 +316,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["bookmark-combined", "arrow-left", "bookmark"],
+  ["bookmark-check-combined", "arrow-left", "bookmark-check"],
+  ["bookmark-minus-combined", "arrow-left", "bookmark-minus"],
+  ["bookmark-plus-combined", "arrow-left", "bookmark-plus"],
+  ["bookmark-x-combined", "arrow-left", "bookmark-x"],
+  ["circle-check-combined", "arrow-left", "circle-check"],
+  ["circle-help-combined", "arrow-left", "circle-help"],
+  ["badge-alert-combined", "arrow-left", "badge-alert"],
+  ["badge-percent-combined", "arrow-left", "badge-percent"],
+  ["ban-combined", "arrow-left", "ban"],
   ["arrow-down-left-combined", "arrow-left", "arrow-down-left"],
   ["arrow-down-right-combined", "arrow-left", "arrow-down-right"],
   ["arrow-big-down-combined", "arrow-left", "arrow-big-down"],
