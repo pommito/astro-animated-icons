@@ -778,6 +778,36 @@ export { default as HeartPulse } from "./icons/heart-pulse/HeartPulse.astro";
 export type { HeartPulseIconHandle } from "./icons/heart-pulse/element";
 export { default as PartyPopper } from "./icons/party-popper/PartyPopper.astro";
 export type { PartyPopperIconHandle } from "./icons/party-popper/element";
+export { default as SunDim } from "./icons/sun-dim/SunDim.astro";
+export type { SunDimIconHandle } from "./icons/sun-dim/element";
+
+export { default as SunMedium } from "./icons/sun-medium/SunMedium.astro";
+export type { SunMediumIconHandle } from "./icons/sun-medium/element";
+
+export { default as SunMoon } from "./icons/sun-moon/SunMoon.astro";
+export type { SunMoonIconHandle } from "./icons/sun-moon/element";
+
+export { default as Sunset } from "./icons/sunset/Sunset.astro";
+export type { SunsetIconHandle } from "./icons/sunset/element";
+
+export { default as Snowflake } from "./icons/snowflake/Snowflake.astro";
+export type { SnowflakeIconHandle } from "./icons/snowflake/element";
+
+export { default as Wind } from "./icons/wind/Wind.astro";
+export type { WindIconHandle } from "./icons/wind/element";
+
+export { default as WindArrowDown } from "./icons/wind-arrow-down/WindArrowDown.astro";
+export type { WindArrowDownIconHandle } from "./icons/wind-arrow-down/element";
+
+export { default as Tornado } from "./icons/tornado/Tornado.astro";
+export type { TornadoIconHandle } from "./icons/tornado/element";
+
+export { default as Droplet } from "./icons/droplet/Droplet.astro";
+export type { DropletIconHandle } from "./icons/droplet/element";
+
+export { default as Flame } from "./icons/flame/Flame.astro";
+export type { FlameIconHandle } from "./icons/flame/element";
+
 export { default as LayoutGrid } from "./icons/layout-grid/LayoutGrid.astro";
 export type { LayoutGridIconHandle } from "./icons/layout-grid/element";
 export { default as LayoutPanelTop } from "./icons/layout-panel-top/LayoutPanelTop.astro";

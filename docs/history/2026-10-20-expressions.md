@@ -38,6 +38,13 @@ Integrated `0135950389ca958d76caf22da22881471f69ea06`, which includes commerce/c
 - Bundle inspection verified 304 icons across 611 cases. All five inspector negative tests passed. Both reused the integrated fixture.
 - Standards and Spec integration reviews reported no findings.
 
+Integrated weather/nature PR #62 at `093aef9b342adac1a3cae561ca96071840986527`. The incoming SVG sampler, path reveal, and staggered reveal helpers remain unchanged.
+
+- `pnpm check` passed both Astro checks and TypeScript.
+- `ICON_TEST_PORT=45381 pnpm test tests/expressions.spec.ts tests/weather-nature.spec.ts tests/media-icons.spec.ts --workers=2` reported `307 passed (2.6m)`. This checks expressions against the updated sampler, weather replay, and existing path-reveal callers.
+- Bundle inspection verified 314 icons across 631 cases. All five inspector negative tests passed.
+- Standards and Spec integration reviews reported no findings.
+
 ## Review
 
 Separate Standards and Spec agents reviewed the changes against the fixed base. Standards requested semantic shape names and grouped descriptions for shared tracks. The follow-up uses mouth, left-eye, cone, dot, confetti, and plus selectors. Both agents reviewed the selector follow-up and the later completion tracking correction. Both reported no remaining findings. Neither review ran browser tests.
