@@ -1,0 +1,10 @@
+export { CartIcon as Cart } from "./commerce-currency/cart";
+export { CreditCardIcon as CreditCard } from "./commerce-currency/credit-card";
+export { WalletIcon as Wallet } from "./commerce-currency/wallet";
+export { DollarSignIcon as DollarSign } from "./commerce-currency/dollar-sign";
+export { EuroIcon as Euro } from "./commerce-currency/euro";
+export { PoundSterlingIcon as PoundSterling } from "./commerce-currency/pound-sterling";
+export { IndianRupeeIcon as IndianRupee } from "./commerce-currency/indian-rupee";
+export { JapaneseYenIcon as JapaneseYen } from "./commerce-currency/japanese-yen";
+export { RussianRubleIcon as RussianRuble } from "./commerce-currency/russian-ruble";
+export { SwissFrancIcon as SwissFranc } from "./commerce-currency/swiss-franc";
