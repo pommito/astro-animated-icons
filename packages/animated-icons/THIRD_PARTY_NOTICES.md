@@ -1,5 +1,28 @@
 # Third-party notices
 
+Hand, HandCoins, HandFist, HandGrab, HandHeart, HandHelping, HandMetal, HeartHandshake, BicepsFlexed, and Clap adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Hand and HandMetal rotate the whole SVG around 50% 90%. HandFist repeats its 400 ms translation and scale once in reverse. HandGrab scales over 400 ms. HandHelping translates over 500 ms. HeartHandshake keeps its seven scale and rotation keyframes, with the source's uneven offsets over 700 ms. Their implicit returns use separate translation, rotation, and scale springs.
+
+HandCoins translates each coin from y=-20 with stiffness 150 and damping 15. The second coin's translation waits 150 ms on entry and return. Both opacity tracks use 200 ms without that delay because the property transition replaces the parent transition. Explicit stiffness and damping override the source's bounce setting. HandHeart holds y=-2 and scale=1.1. Its translation uses stiffness 200 and damping 25 after 100 ms. Its scale uses 200 ms without the parent delay or spring. Nested translation and scale elements preserve those independent transitions and their composition order.
+
+BicepsFlexed rotates three paths independently through 0, 15, and 0 degrees in two-second infinite loops. Its outline also scales through 1, 1.3, and 1. Each path uses its own bounding-box center. Clap rotates its outer group through -10, -10, and 0 degrees over 800 ms. Its inner group rotates through 0, -10, 16, and 0 over 400 ms. The groups use fill-box origins 4px 20px and 3px 11px.
+
+The `/hands-gestures-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources redirect their class utility import. Clap also adds `initial="normal"` to both groups so the declared pivots apply on the first entry. Without that initialization, upstream uses the default group centers on the first entry and applies its declared pivots only on return. The adapter uses the initialized pivots throughout. No other reference recipe changes.
+
+Entry samples include later BicepsFlexed loops. Finite reference return seeks clamp each property to its actual completion time, because Motion otherwise samples a paused spring beyond the playback duration. Numerical return samples start at 25 ms. Motion can snap a tiny scale displacement to rest at time zero; the adapter preserves that first pose for stop continuity, which the handle tests check separately. Captured returns reset reference velocity before stopping. Real interrupted spring velocity parity remains unmeasured. Public handle tests separately cover stop continuity, replay, cleanup, instance isolation, and reduced motion. React stays confined to comparison bundles. Numerical comparisons support the user's manual visual acceptance.
+
+- [Lucide Animated Hand, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand.tsx)
+- [Lucide Animated HandCoins, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-coins.tsx)
+- [Lucide Animated HandFist, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-fist.tsx)
+- [Lucide Animated HandGrab, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-grab.tsx)
+- [Lucide Animated HandHeart, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-heart.tsx)
+- [Lucide Animated HandHelping, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-helping.tsx)
+- [Lucide Animated HandMetal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hand-metal.tsx)
+- [Lucide Animated HeartHandshake, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/heart-handshake.tsx)
+- [Lucide Animated BicepsFlexed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/biceps-flexed.tsx)
+- [Lucide Animated Clap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/clap.tsx)
+
 ArrowDown01, ArrowDown10, ArrowDownAZ, ArrowDownZA, SquareArrowDown, SquareArrowLeft, SquareArrowRight, SquareArrowUp, TrendingDown, and TrendingUp adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 The four sorting arrows leave their arrow paths static and swap their two glyphs by +10 and -10 SVG units with stiffness 240 and damping 24. Each source's glyph drawing and custom direction stay local to its adapter. The glyphs share the existing SVG transform sampler and property completion tracking.

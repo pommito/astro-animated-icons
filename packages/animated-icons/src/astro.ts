@@ -850,6 +850,36 @@ export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/
 export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
 export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";
 
+export { default as Hand } from "./icons/hand/Hand.astro";
+export type { HandIconHandle } from "./icons/hand/element";
+
+export { default as HandCoins } from "./icons/hand-coins/HandCoins.astro";
+export type { HandCoinsIconHandle } from "./icons/hand-coins/element";
+
+export { default as HandFist } from "./icons/hand-fist/HandFist.astro";
+export type { HandFistIconHandle } from "./icons/hand-fist/element";
+
+export { default as HandGrab } from "./icons/hand-grab/HandGrab.astro";
+export type { HandGrabIconHandle } from "./icons/hand-grab/element";
+
+export { default as HandHeart } from "./icons/hand-heart/HandHeart.astro";
+export type { HandHeartIconHandle } from "./icons/hand-heart/element";
+
+export { default as HandHelping } from "./icons/hand-helping/HandHelping.astro";
+export type { HandHelpingIconHandle } from "./icons/hand-helping/element";
+
+export { default as HandMetal } from "./icons/hand-metal/HandMetal.astro";
+export type { HandMetalIconHandle } from "./icons/hand-metal/element";
+
+export { default as HeartHandshake } from "./icons/heart-handshake/HeartHandshake.astro";
+export type { HeartHandshakeIconHandle } from "./icons/heart-handshake/element";
+
+export { default as BicepsFlexed } from "./icons/biceps-flexed/BicepsFlexed.astro";
+export type { BicepsFlexedIconHandle } from "./icons/biceps-flexed/element";
+
+export { default as Clap } from "./icons/clap/Clap.astro";
+export type { ClapIconHandle } from "./icons/clap/element";
+
 export { default as ArrowDown01 } from "./icons/arrow-down-0-1/ArrowDown01.astro";
 export type { ArrowDown01IconHandle } from "./icons/arrow-down-0-1/element";
 export { default as ArrowDown10 } from "./icons/arrow-down-1-0/ArrowDown10.astro";

@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "hand": "hand-single",
+  "hand-coins": "hand-coins-single",
+  "hand-fist": "hand-fist-single",
+  "hand-grab": "hand-grab-single",
+  "hand-heart": "hand-heart-single",
+  "hand-helping": "hand-helping-single",
+  "hand-metal": "hand-metal-single",
+  "heart-handshake": "heart-handshake-single",
+  "biceps-flexed": "biceps-flexed-single",
+  "clap": "clap-single",
+
   "arrow-down-0-1": "arrow-down-0-1-single",
   "arrow-down-1-0": "arrow-down-1-0-single",
   "arrow-down-a-z": "arrow-down-a-z-single",
@@ -413,6 +424,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["hand-combined", "arrow-left", "hand"],
+  ["hand-coins-combined", "arrow-left", "hand-coins"],
+  ["hand-fist-combined", "arrow-left", "hand-fist"],
+  ["hand-grab-combined", "arrow-left", "hand-grab"],
+  ["hand-heart-combined", "arrow-left", "hand-heart"],
+  ["hand-helping-combined", "arrow-left", "hand-helping"],
+  ["hand-metal-combined", "arrow-left", "hand-metal"],
+  ["heart-handshake-combined", "arrow-left", "heart-handshake"],
+  ["biceps-flexed-combined", "arrow-left", "biceps-flexed"],
+  ["clap-combined", "arrow-left", "clap"],
+
   ["arrow-down-0-1-combined", "arrow-left", "arrow-down-0-1"],
   ["arrow-down-1-0-combined", "arrow-left", "arrow-down-1-0"],
   ["arrow-down-a-z-combined", "arrow-left", "arrow-down-a-z"],
