@@ -43,6 +43,7 @@ Animation assertions and timeouts remain unchanged. The interruption samples pro
 | Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
 | Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
 | Bookmarks and status | 50, 200, 450, and 750 ms cover outline stretch, mark redraw, the delayed Ban slash, and spring rotation. Dedicated entry and return replays check pose continuity. Pinned React comparisons check entry at four sizes, settled returns for all ten icons, and interrupted tween returns for CircleCheck, CircleHelp, and Ban. |
+| Expressions | 50, 250, 650, and 1400 ms cover facial transforms, confetti, and repeated pulses. HeartPulse also completes each real stage before testing stop, replay, removal, and reduced motion; Frown and Smile observe their moving mouth attributes directly. PartyPopper and HeartPulse verify replay after one track and all tracks complete. |
 | Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
 | Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
 
