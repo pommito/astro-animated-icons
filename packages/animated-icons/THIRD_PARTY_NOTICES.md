@@ -1,5 +1,26 @@
 # Third-party notices
 
+Loader, LoaderCircle, LoaderPinwheel, CircleDashed, Cog, RefreshCcwDot, RefreshCwOff, Maximize, Maximize2, and Minimize adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Loader and LoaderCircle repeat a linear 360-degree turn every 800 ms. LoaderPinwheel turns every 1000 ms and leaves its outer circle static. Their normal returns use spring stiffness 50 and damping 10. The adapters preserve the rendered fill-box origins applied by Motion, including the source's origin handling for Loader and LoaderCircle. Their internal preserveCycleEnd setting retains 360 degrees at exact loop boundaries and samples return velocity within the current cycle just afterward. Other recipes keep their existing boundary behavior. Sampled transforms retain the angle across late-cycle and multi-cycle interruptions rather than deriving a normalized angle from a matrix.
+
+CircleDashed fades its eight paths from zero to one over 300 ms with delays of 100 through 800 ms. Normal opacity uses Motion's default 300 ms easing. Cog rotates the whole SVG to 180 degrees with spring stiffness 50 and damping 10. RefreshCcwDot rotates only its arrow group to -50 degrees with spring stiffness 250 and damping 25. Its center dot stays static. RefreshCwOff shakes the whole SVG through x positions -3, 3, -3, 3, and 0 over 400 ms with ease-out, then returns with spring stiffness 500 and damping 20 when stopped.
+
+Maximize, Maximize2, and Minimize hold individual corner translations with spring stiffness 250 and damping 25. The shared resize recipe receives their own path order and directions. Maximize keeps the source's butt caps and miter joins on its drawing group because the shared SVG otherwise inherits round caps and joins.
+
+The `/loading-view-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect the class utility import to the existing local equivalent. No additional fixture compatibility changes are needed. Geometry and computed opacity comparisons cover entry, later loops, and captured returns. Captured return controls reset velocity on both versions. Actual interrupted spring velocity equality remains unmeasured. React stays confined to comparison pages. Numerical evidence supports manual visual review.
+
+- [Lucide Animated Loader, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/loader.tsx)
+- [Lucide Animated LoaderCircle, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/loader-circle.tsx)
+- [Lucide Animated LoaderPinwheel, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/loader-pinwheel.tsx)
+- [Lucide Animated CircleDashed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-dashed.tsx)
+- [Lucide Animated Cog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cog.tsx)
+- [Lucide Animated RefreshCcwDot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/refresh-ccw-dot.tsx)
+- [Lucide Animated RefreshCwOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/refresh-cw-off.tsx)
+- [Lucide Animated Maximize, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/maximize.tsx)
+- [Lucide Animated Maximize2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/maximize-2.tsx)
+- [Lucide Animated Minimize, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/minimize.tsx)
+
 PenTool, SquarePen, Palette, Figma, Feather, ScanText, Frame, Stamp, Wrench, Hammer adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 PenTool keeps whole-SVG movement and independent normalized path-length, path-offset, and opacity tracks. SquarePen preserves the different keyframe counts and implicit 800 ms ease-out animation. Its return uses the default transform springs. Feather keeps its 1600 ms drift and implicit spring return. Figma preserves its 300 ms path delay and independent 250 ms opacity delay.

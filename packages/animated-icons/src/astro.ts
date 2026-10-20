@@ -960,3 +960,33 @@ export type { VibrateIconHandle } from "./icons/vibrate/element";
 
 export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
 export type { EvChargerIconHandle } from "./icons/ev-charger/element";
+
+export { default as Loader } from "./icons/loader/Loader.astro";
+export type { LoaderIconHandle } from "./icons/loader/element";
+
+export { default as LoaderCircle } from "./icons/loader-circle/LoaderCircle.astro";
+export type { LoaderCircleIconHandle } from "./icons/loader-circle/element";
+
+export { default as LoaderPinwheel } from "./icons/loader-pinwheel/LoaderPinwheel.astro";
+export type { LoaderPinwheelIconHandle } from "./icons/loader-pinwheel/element";
+
+export { default as CircleDashed } from "./icons/circle-dashed/CircleDashed.astro";
+export type { CircleDashedIconHandle } from "./icons/circle-dashed/element";
+
+export { default as Cog } from "./icons/cog/Cog.astro";
+export type { CogIconHandle } from "./icons/cog/element";
+
+export { default as RefreshCcwDot } from "./icons/refresh-ccw-dot/RefreshCcwDot.astro";
+export type { RefreshCcwDotIconHandle } from "./icons/refresh-ccw-dot/element";
+
+export { default as RefreshCwOff } from "./icons/refresh-cw-off/RefreshCwOff.astro";
+export type { RefreshCwOffIconHandle } from "./icons/refresh-cw-off/element";
+
+export { default as Maximize } from "./icons/maximize/Maximize.astro";
+export type { MaximizeIconHandle } from "./icons/maximize/element";
+
+export { default as Maximize2 } from "./icons/maximize-2/Maximize2.astro";
+export type { Maximize2IconHandle } from "./icons/maximize-2/element";
+
+export { default as Minimize } from "./icons/minimize/Minimize.astro";
+export type { MinimizeIconHandle } from "./icons/minimize/element";
