@@ -49,6 +49,16 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "accessibility": "accessibility-single",
+  "activity": "activity-single",
+  "square-activity": "square-activity-single",
+  "cursor-click": "cursor-click-single",
+  "check-check": "check-check-single",
+  "link-2": "link-2-single",
+  "calendar-days": "calendar-days-single",
+  "calendar-cog": "calendar-cog-single",
+  "users-round": "users-round-single",
+  "bot-message-square": "bot-message-square-single",
   "pen-tool": "pen-tool-single",
   "square-pen": "square-pen-single",
   "palette": "palette-single",
@@ -435,6 +445,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["accessibility-combined", "arrow-left", "accessibility"],
+  ["activity-combined", "arrow-left", "activity"],
+  ["square-activity-combined", "arrow-left", "square-activity"],
+  ["cursor-click-combined", "arrow-left", "cursor-click"],
+  ["check-check-combined", "arrow-left", "check-check"],
+  ["link-2-combined", "arrow-left", "link-2"],
+  ["calendar-days-combined", "arrow-left", "calendar-days"],
+  ["calendar-cog-combined", "arrow-left", "calendar-cog"],
+  ["users-round-combined", "arrow-left", "users-round"],
+  ["bot-message-square-combined", "arrow-left", "bot-message-square"],
   ["pen-tool-combined", "arrow-left", "pen-tool"],
   ["square-pen-combined", "arrow-left", "square-pen"],
   ["palette-combined", "arrow-left", "palette"],
