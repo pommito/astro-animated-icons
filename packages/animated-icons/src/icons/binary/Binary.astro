@@ -1,0 +1,34 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-binary">
+  <g>
+    <rect data-motion="0" height="6" rx="2" width="4" x="6" y="4" style="transform-box: fill-box; transform-origin: 50% 50%" />
+    <g data-motion="1" style="transform-box: fill-box; transform-origin: 50% 50%" opacity="0">
+      <path d="M6 4h2v6" />
+      <path d="M6 10h4" />
+    </g>
+    <g data-motion="2" style="transform-box: fill-box; transform-origin: 50% 50%">
+      <path d="M14 4h2v6" />
+      <path d="M14 10h4" />
+    </g>
+    <rect data-motion="3" height="6" rx="2" width="4" x="14" y="4" style="transform-box: fill-box; transform-origin: 50% 50%" opacity="0" />
+    <g data-motion="4" style="transform-box: fill-box; transform-origin: 50% 50%">
+      <path d="M6 14h2v6" />
+      <path d="M6 20h4" />
+    </g>
+    <rect data-motion="5" height="6" rx="2" width="4" x="6" y="14" style="transform-box: fill-box; transform-origin: 50% 50%" opacity="0" />
+    <rect data-motion="6" height="6" rx="2" width="4" x="14" y="14" style="transform-box: fill-box; transform-origin: 50% 50%" />
+    <g data-motion="7" style="transform-box: fill-box; transform-origin: 50% 50%" opacity="0">
+      <path d="M14 14h2v6" />
+      <path d="M14 20h4" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
