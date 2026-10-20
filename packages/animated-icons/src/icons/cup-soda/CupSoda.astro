@@ -1,0 +1,22 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-cup-soda" svgStyle="overflow: hidden;">
+  <g>
+    <path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8" data-part="0" />
+    <path d="M5 8h14" data-part="1" />
+    <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0" data-part="2" />
+    <path d="m12 8 1-6h2" data-part="3" style="transform-box: fill-box; transform-origin: center bottom;" />
+    <circle cx="8.25" cy="20.5" r="0.75" fill="currentColor" stroke="none" opacity="0" data-part="4" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="11.25" cy="19.5" r="0.6" fill="currentColor" stroke="none" opacity="0" data-part="5" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="14" cy="20.75" r="0.6" fill="currentColor" stroke="none" opacity="0" data-part="6" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="9.75" cy="19" r="0.75" fill="currentColor" stroke="none" opacity="0" data-part="7" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="12.5" cy="20" r="0.45" fill="currentColor" stroke="none" opacity="0" data-part="8" style="transform-box: fill-box; transform-origin: center;" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

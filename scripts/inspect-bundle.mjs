@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "banana": "banana-single",
+  "coffee": "coffee-single",
+  "cooking-pot": "cooking-pot-single",
+  "cup-soda": "cup-soda-single",
+  "soup": "soup-single",
+  "leafy-green": "leafy-green-single",
+  "leaf": "leaf-single",
+  "tree-deciduous": "tree-deciduous-single",
+  "tree-pine": "tree-pine-single",
+  "fish-symbol": "fish-symbol-single",
+
   "pen-tool": "pen-tool-single",
   "square-pen": "square-pen-single",
   "palette": "palette-single",
@@ -446,6 +457,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["banana-combined", "arrow-left", "banana"],
+  ["coffee-combined", "arrow-left", "coffee"],
+  ["cooking-pot-combined", "arrow-left", "cooking-pot"],
+  ["cup-soda-combined", "arrow-left", "cup-soda"],
+  ["soup-combined", "arrow-left", "soup"],
+  ["leafy-green-combined", "arrow-left", "leafy-green"],
+  ["leaf-combined", "arrow-left", "leaf"],
+  ["tree-deciduous-combined", "arrow-left", "tree-deciduous"],
+  ["tree-pine-combined", "arrow-left", "tree-pine"],
+  ["fish-symbol-combined", "arrow-left", "fish-symbol"],
+
   ["pen-tool-combined", "arrow-left", "pen-tool"],
   ["square-pen-combined", "arrow-left", "square-pen"],
   ["palette-combined", "arrow-left", "palette"],

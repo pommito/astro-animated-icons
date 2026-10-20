@@ -4,7 +4,7 @@ This batch adds Loader, LoaderCircle, LoaderPinwheel, CircleDashed, Cog, Refresh
 
 ## Final verification
 
-All checks below ran on the final source tree in `/private/tmp/astro-loading-view-01a15972`, on `feat/loading-view-icons`. Browser commands used `ICON_TEST_PORT=45402` and one worker.
+All checks below ran on the original feature source tree at `deee365` in `/private/tmp/astro-loading-view-01a15972`, on `feat/loading-view-icons`. Browser commands used `ICON_TEST_PORT=45402` and one worker. The later main integration is recorded separately below.
 
 | Stage | Observed result |
 | --- | --- |
@@ -53,8 +53,16 @@ Before implementation, the focused Loader no-JavaScript test failed because its 
 
 ## Checkout and limits
 
-The branch starts at `00a7f5189119251da6dc2621391b5dbb27b88fcd`. The managed worktree tool returned `Git ref lookup failed` after the repository moved to `/Users/victor/Developer/products/astro-animated-icons`. A normal Git worktree was created from that repository with reviewed access to its Git metadata. The shared main checkout was not edited, no other batch was integrated, and no PR or push was created.
+The branch starts at `00a7f5189119251da6dc2621391b5dbb27b88fcd`. The managed worktree tool returned `Git ref lookup failed` after the repository moved to `/Users/victor/Developer/products/astro-animated-icons`. A normal Git worktree was created from that repository with reviewed access to its Git metadata. During the original validation, the shared main checkout was not edited, no other batch was integrated, and no PR or push was created.
 
 Chrome is the tested browser. Safari and Firefox remain unverified. Captured reference returns reset velocity on both versions; actual interrupted spring velocity equality remains unmeasured. The numerical and continuity checks support the user's manual visual review. Visual acceptance remains with the user.
 
 After validation, process inspection found no heavy process with this worktree's working directory. Port 45402 had no listener, and `.artifacts/fixture.lock` was absent. The worktree is retained for review.
+
+## Main integration for PR 70
+
+The human subsequently requested publication and merge. [PR 70](https://github.com/pommito/astro-animated-icons/pull/70) was opened from `deee365`. While it was being opened, [PR 69](https://github.com/pommito/astro-animated-icons/pull/69) added the food and plant batch to main through `c85e940a0193d4c4d54462468a386f9b3765f63b`.
+
+The integration preserves both blocks in the two conflicting files, `astro.ts` and `THIRD_PARTY_NOTICES.md`. Bundle cases merged automatically and retain `arrow-left: single` as the first baseline. Independent Standards and Spec reviews found no issue in the resolution. Static comparison confirms 384 components and 384 handles, with all icon files preserved from their respective parents. The transform sampler remains byte-identical to `deee365`. Incoming rendering and Feather drift changes remain byte-identical to main.
+
+`git diff --cached --check` and `node --check scripts/inspect-bundle.mjs` pass. Combined runtime validation is pending an available serialized validation slot. The earlier complete-suite results apply to the original feature tree, rather than this integrated tree.

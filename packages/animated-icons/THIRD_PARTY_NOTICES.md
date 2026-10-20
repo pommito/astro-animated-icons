@@ -21,6 +21,29 @@ The `/loading-view-comparison/` fixture executes all ten pinned React sources at
 - [Lucide Animated Maximize2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/maximize-2.tsx)
 - [Lucide Animated Minimize, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/minimize.tsx)
 
+Banana, Coffee, CookingPot, CupSoda, Soup, LeafyGreen, Leaf, TreeDeciduous, TreePine, and FishSymbol adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Coffee and Soup share 1500 ms rising steam with independent opacity and transform tracks. Their source custom values produce delays of 0, 40, and 80 ms. Leaf and LeafyGreen share Feather's 1600 ms whole-SVG drift and default spring return. Geometry and selector choices remain local to each icon.
+
+CupSoda preserves its 500 ms straw pulse, cubic easing with overshoot, 1800 ms wave loop, and five 1500 ms bubble loops. Bubble delays are 0, 350, 700, 1050, and 550 ms. Bubbles have zero opacity without JavaScript and after cleanup. Its SVG clips to its viewport through an internal rendering option. The public props and playback methods are unchanged.
+
+Banana's animated variant replaces its component transition. Entry uses the implicit 300 ms duration with delays of 200 and 0 ms for both opacity and path length. Return uses the component's 100 ms path delay and independent 150 ms opacity delay. FishSymbol keeps its 150 ms path delay and 100 ms opacity delay. The adapters use normalized SVG path lengths.
+
+CookingPot preserves the 950 ms pot scale and 900 ms lid shake. Motion replaces the source's declared group origins with the fill-box centers during rendering. The adapter matches those actual centers. TreeDeciduous keeps its fixed `12px 21px` SVG origin and implicit spring return. TreePine uses the root SVG center and its component-level 500 ms ease-in-out return.
+
+The `/food-plants-comparison/` fixture executes all ten pinned React components at 14, 16, 24, and 28 px. Copies redirect only the class utility import, except Soup's fixed 24 px dimensions, which use the requested size. The Soup adapter also honors the package size contract. Entry and captured-return measurements compare geometry, opacity, and normalized dashes. Captured returns reset velocity; actual interrupted spring velocity parity remains unmeasured. At fully transparent loop boundaries, the JavaScript and native transform samplers choose different endpoints. Comparisons check opacity at the boundary and geometry on either side. React stays confined to comparison pages. Visual acceptance remains with manual review.
+
+- [Lucide Animated Banana, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/banana.tsx)
+- [Lucide Animated Coffee, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/coffee.tsx)
+- [Lucide Animated CookingPot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cooking-pot.tsx)
+- [Lucide Animated CupSoda, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cup-soda.tsx)
+- [Lucide Animated Soup, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/soup.tsx)
+- [Lucide Animated LeafyGreen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/leafy-green.tsx)
+- [Lucide Animated Leaf, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/leaf.tsx)
+- [Lucide Animated TreeDeciduous, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/tree-deciduous.tsx)
+- [Lucide Animated TreePine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/tree-pine.tsx)
+- [Lucide Animated FishSymbol, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/fish-symbol.tsx)
+
 PenTool, SquarePen, Palette, Figma, Feather, ScanText, Frame, Stamp, Wrench, Hammer adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 PenTool keeps whole-SVG movement and independent normalized path-length, path-offset, and opacity tracks. SquarePen preserves the different keyframe counts and implicit 800 ms ease-out animation. Its return uses the default transform springs. Feather keeps its 1600 ms drift and implicit spring return. Figma preserves its 300 ms path delay and independent 250 ms opacity delay.

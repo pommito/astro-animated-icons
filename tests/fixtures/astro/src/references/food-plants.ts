@@ -1,0 +1,10 @@
+export { BananaIcon as Banana } from "./food-plants/banana";
+export { CoffeeIcon as Coffee } from "./food-plants/coffee";
+export { CookingPotIcon as CookingPot } from "./food-plants/cooking-pot";
+export { CupSodaIcon as CupSoda } from "./food-plants/cup-soda";
+export { SoupIcon as Soup } from "./food-plants/soup";
+export { LeafyGreenIcon as LeafyGreen } from "./food-plants/leafy-green";
+export { LeafIcon as Leaf } from "./food-plants/leaf";
+export { TreeDeciduousIcon as TreeDeciduous } from "./food-plants/tree-deciduous";
+export { TreePineIcon as TreePine } from "./food-plants/tree-pine";
+export { FishSymbolIcon as FishSymbol } from "./food-plants/fish-symbol";
