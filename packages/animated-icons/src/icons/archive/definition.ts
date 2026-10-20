@@ -1,4 +1,5 @@
 import { animate, motionValue } from "motion";
+import { animatePathMorph, clearPathMorph } from "../../shared/path-morph";
 import type { IconRecipe, IconTrack } from "../../element";
 
 export const archiveBody = "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8";
@@ -29,17 +30,7 @@ export function animateArchive(drawing: SVGGElement, returning: boolean, track: 
     return { stop: () => value.stop(), cancel: () => value.stop() };
   });
   for (const [path, target] of [[body, returning ? archiveBody : openBody], [handle, returning ? archiveHandle : openHandle]] as const) {
-    track((onComplete) => {
-      const value = motionValue(path.getAttribute("d")!);
-      animate(value, target, {
-        duration: 0.3,
-        ease: [0.25, 0.1, 0.35, 1],
-        onUpdate: (current) => path.setAttribute("d", current),
-        onComplete,
-      });
-      // Value-animation cancel rewinds onUpdate; stop also detaches its old control.
-      return { stop: () => value.stop(), cancel: () => value.stop() };
-    });
+    animatePathMorph(path, target, track, { duration: 0.3, ease: [0.25, 0.1, 0.35, 1] });
   }
 }
 
@@ -48,8 +39,8 @@ export function clearArchive(drawing: SVGGElement) {
   lidValues.delete(lid);
   lid.style.removeProperty("transform");
   const [body, handle] = drawing.querySelectorAll("path");
-  body.setAttribute("d", archiveBody);
-  handle.setAttribute("d", archiveHandle);
+  clearPathMorph(body, archiveBody);
+  clearPathMorph(handle, archiveHandle);
 }
 
 export const archiveRecipe = {

@@ -13,7 +13,7 @@ interface Transition {
   restSpeed?: number;
   duration?: number;
   delay?: number;
-  ease?: "easeOut" | "easeInOut" | [number, number, number, number];
+  ease?: "linear" | "easeOut" | "easeInOut" | [number, number, number, number];
   times?: number[];
   repeat?: number;
   repeatType?: "reverse";
@@ -41,6 +41,7 @@ export function animateSvgTransform(
   targets: Values,
   options: Transition,
   propertyOptions: Partial<Record<Property, Transition>> = {},
+  normal: Partial<Record<Property, number>> = {},
 ) {
   const previous = poses.get(element);
   const properties = Object.keys(targets) as Property[];
@@ -52,7 +53,7 @@ export function animateSvgTransform(
       duration = Math.max(duration, (previous.duration ?? 0) - elapsed);
       return (time: number) => previous.samplers![property]!(elapsed + time);
     }
-    const rest = property === "scale" || property === "scaleX" || property === "scaleY" || property === "opacity" ? 1 : 0;
+    const rest = normal[property] ?? (property === "scale" || property === "scaleX" || property === "scaleY" || property === "opacity" ? 1 : 0);
     const origin = previous?.values[property] ?? rest;
     const target = returning ? rest : targets[property]!;
     const values = Array.isArray(target) ? target.map((value, index) => index === 0 && interrupted ? origin : value ?? origin) : [origin, target];
@@ -74,7 +75,9 @@ export function animateSvgTransform(
     const times = transition.times?.length === values.length ? transition.times : values.map((_, index) => index / (values.length - 1));
     const ease = Array.isArray(transition.ease)
       ? cubicBezier(...transition.ease)
-      : transition.ease === "easeInOut"
+      : transition.ease === "linear"
+        ? (progress: number) => progress
+        : transition.ease === "easeInOut"
         ? easeInOut
         : easeOut;
     const interpolateValue = interpolate(times.map((time) => time * propertyDuration), values, { ease });

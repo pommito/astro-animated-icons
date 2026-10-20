@@ -1,0 +1,10 @@
+export { AirplaneIcon as Airplane } from "./transport-routes/airplane";
+export { PlaneLandingIcon as PlaneLanding } from "./transport-routes/plane-landing";
+export { PlaneTakeoffIcon as PlaneTakeoff } from "./transport-routes/plane-takeoff";
+export { CarIcon as Car } from "./transport-routes/car";
+export { TruckIcon as Truck } from "./transport-routes/truck";
+export { ShipIcon as Ship } from "./transport-routes/ship";
+export { RocketIcon as Rocket } from "./transport-routes/rocket";
+export { RouteIcon as Route } from "./transport-routes/route";
+export { TrainTrackIcon as TrainTrack } from "./transport-routes/train-track";
+export { WaypointsIcon as Waypoints } from "./transport-routes/waypoints";

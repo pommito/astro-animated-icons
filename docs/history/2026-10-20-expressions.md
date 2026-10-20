@@ -45,6 +45,15 @@ Integrated weather/nature PR #62 at `093aef9b342adac1a3cae561ca96071840986527`. 
 - Bundle inspection verified 314 icons across 631 cases. All five inspector negative tests passed.
 - Standards and Spec integration reviews reported no findings.
 
+Integrated transport/routes PR #63 at `4b5a97b97f000466063359e25d39aacf872c5bd3`. The incoming shared helpers and Archive recipe remain unchanged. The final catalogue contains 324 unique icons and exports.
+
+- `pnpm check` passed both Astro checks with zero errors, warnings, and hints, plus TypeScript.
+- `ICON_TEST_PORT=45381 pnpm test tests/expressions.spec.ts tests/transport-routes.spec.ts tests/archive.spec.ts --workers=2` reported `237 passed (2.2m)`. This checks expressions against the final sampler, transport playback and cancellation, and existing Archive morphing.
+- Bundle inspection reported `Verified 324 icons across 651 bundle cases.` All five inspector negative tests passed using the same fixture output.
+- Standards and Spec integration reviews reported no findings.
+
+The complete suite was not repeated after these integrations.
+
 ## Review
 
 Separate Standards and Spec agents reviewed the changes against the fixed base. Standards requested semantic shape names and grouped descriptions for shared tracks. The follow-up uses mouth, left-eye, cone, dot, confetti, and plus selectors. Both agents reviewed the selector follow-up and the later completion tracking correction. Both reported no remaining findings. Neither review ran browser tests.
