@@ -62,3 +62,5 @@ The connectivity family reuses native opacity and SVG transform tracks already r
 See [the contributor workflow](../CONTRIBUTING.md#validate-the-change) for commands.
 
 Measurements for this strategy are recorded in [the validation timing record](history/2026-10-18-validation.md).
+
+The communication family uses the existing SVG transform, signal, and path-reveal mechanisms, so it adds no shared representative. `tests/communication-icons.spec.ts` checks every drawing and native link without JavaScript, stop continuity at 100, 300, 650, and 1000 ms, rapid replay, removal, reduced motion, and instance isolation. Dedicated tests check PhoneCall's fade and delayed spring reveal, Mailbox's held flag, and Send's hidden decorative trail. `/communication-comparison/` executes the ten pinned React sources at 14, 16, 24, and 28 px. It measures entry, PhoneCall's separate spring phase, and return from a captured completed pose. The runner normalizes three fixed-size upstream SVGs after mounting. The package notices describe the handset return correction and the limits of interrupted spring comparisons.
