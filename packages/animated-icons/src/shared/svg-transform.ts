@@ -5,6 +5,7 @@ import type { IconTrack } from "../element";
 type Property = "x" | "translateX" | "y" | "rotate" | "rotateX" | "scale" | "scaleX" | "scaleY" | "opacity";
 type Values = Partial<Record<Property, number | (number | null)[]>>;
 interface Transition {
+  preservePose?: boolean | "until-clear";
   type?: "spring";
   stiffness?: number;
   damping?: number;
@@ -39,12 +40,13 @@ export function animateSvgTransform(
 ) {
   const previous = poses.get(element);
   const properties = Object.keys(targets) as Property[];
+  const interrupted = options.preservePose && previous && (options.preservePose === "until-clear" || Object.keys(previous.velocities).length > 0);
   let duration = options.type === "spring" ? 0 : (options.duration ?? 0.3) * 1000;
   const samplers = properties.map((property) => {
     const rest = property === "scale" || property === "scaleX" || property === "scaleY" || property === "opacity" ? 1 : 0;
     const origin = previous?.values[property] ?? rest;
     const target = returning ? rest : targets[property]!;
-    const values = Array.isArray(target) ? target.map((value) => value ?? origin) : [origin, target];
+    const values = Array.isArray(target) ? target.map((value, index) => index === 0 && interrupted ? origin : value ?? origin) : [origin, target];
     const transition = { ...options, ...propertyOptions[property] };
     if (transition.type === "spring") {
       const generator = spring({ ...transition, keyframes: values, velocity: previous?.velocities[property] ?? 0 });

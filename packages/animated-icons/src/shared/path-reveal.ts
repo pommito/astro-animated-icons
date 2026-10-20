@@ -7,7 +7,7 @@ type RevealOptions = NonNullable<Parameters<typeof animate>[2]> & {
   opacityEase?: NonNullable<Parameters<typeof animate>[2]>["ease"];
   reverseOffset?: boolean;
   pathOffset?: 1 | -1;
-  preservePose?: boolean;
+  preservePose?: boolean | "until-clear";
 };
 
 const playbacks = new WeakMap<SVGGeometryElement, { active: boolean }>();
@@ -22,11 +22,11 @@ export function animatePathReveal(path: SVGGeometryElement, returning: boolean, 
 
   if (opacityDuration !== undefined) track((onComplete) => animate(path, { opacity: returning ? 1 : [interrupted && path.style.opacity ? path.style.opacity : 0, 1] }, { ...transition, duration: opacityDuration, delay: opacityDelay, ease: opacityEase, onComplete }));
   track((onComplete) => animate(path, { strokeDasharray: returning ? fullPath : [interrupted && path.style.strokeDasharray ? path.style.strokeDasharray : `0px ${length}px`, fullPath] }, { ...transition, onComplete() {
-    playback.active = false;
+    if (preservePose !== "until-clear") playback.active = false;
     onComplete();
   } }));
   if (pathOffset) {
-    track((onComplete) => animate(path, { strokeDashoffset: returning ? "0px" : [`${-pathOffset * length}px`, "0px"] }, { ...transition, onComplete }));
+    track((onComplete) => animate(path, { strokeDashoffset: returning ? "0px" : [interrupted && path.style.strokeDashoffset ? path.style.strokeDashoffset : `${-pathOffset * length}px`, "0px"] }, { ...transition, onComplete }));
   }
 }
 
