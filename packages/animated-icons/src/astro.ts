@@ -849,3 +849,33 @@ export { default as GalleryVerticalEnd } from "./icons/gallery-vertical-end/Gall
 export type { GalleryVerticalEndIconHandle } from "./icons/gallery-vertical-end/element";
 export { default as GalleryThumbnails } from "./icons/gallery-thumbnails/GalleryThumbnails.astro";
 export type { GalleryThumbnailsIconHandle } from "./icons/gallery-thumbnails/element";
+
+export { default as MonitorCheck } from "./icons/monitor-check/MonitorCheck.astro";
+export type { MonitorCheckIconHandle } from "./icons/monitor-check/element";
+
+export { default as MonitorCog } from "./icons/monitor-cog/MonitorCog.astro";
+export type { MonitorCogIconHandle } from "./icons/monitor-cog/element";
+
+export { default as LaptopMinimalCheck } from "./icons/laptop-minimal-check/LaptopMinimalCheck.astro";
+export type { LaptopMinimalCheckIconHandle } from "./icons/laptop-minimal-check/element";
+
+export { default as SmartphoneCharging } from "./icons/smartphone-charging/SmartphoneCharging.astro";
+export type { SmartphoneChargingIconHandle } from "./icons/smartphone-charging/element";
+
+export { default as SmartphoneNfc } from "./icons/smartphone-nfc/SmartphoneNfc.astro";
+export type { SmartphoneNfcIconHandle } from "./icons/smartphone-nfc/element";
+
+export { default as Keyboard } from "./icons/keyboard/Keyboard.astro";
+export type { KeyboardIconHandle } from "./icons/keyboard/element";
+
+export { default as Cctv } from "./icons/cctv/Cctv.astro";
+export type { CctvIconHandle } from "./icons/cctv/element";
+
+export { default as Projector } from "./icons/projector/Projector.astro";
+export type { ProjectorIconHandle } from "./icons/projector/element";
+
+export { default as Vibrate } from "./icons/vibrate/Vibrate.astro";
+export type { VibrateIconHandle } from "./icons/vibrate/element";
+
+export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
+export type { EvChargerIconHandle } from "./icons/ev-charger/element";
