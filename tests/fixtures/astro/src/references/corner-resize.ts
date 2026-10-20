@@ -1,0 +1,10 @@
+export { CornerDownLeftIcon as CornerDownLeft } from "./corner-resize/corner-down-left";
+export { CornerDownRightIcon as CornerDownRight } from "./corner-resize/corner-down-right";
+export { CornerLeftDownIcon as CornerLeftDown } from "./corner-resize/corner-left-down";
+export { CornerLeftUpIcon as CornerLeftUp } from "./corner-resize/corner-left-up";
+export { CornerRightDownIcon as CornerRightDown } from "./corner-resize/corner-right-down";
+export { CornerRightUpIcon as CornerRightUp } from "./corner-resize/corner-right-up";
+export { CornerUpLeftIcon as CornerUpLeft } from "./corner-resize/corner-up-left";
+export { CornerUpRightIcon as CornerUpRight } from "./corner-resize/corner-up-right";
+export { ExpandIcon as Expand } from "./corner-resize/expand";
+export { ShrinkIcon as Shrink } from "./corner-resize/shrink";
