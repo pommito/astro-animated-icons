@@ -677,3 +677,62 @@ export type { RussianRubleIconHandle } from "./icons/russian-ruble/element";
 
 export { default as SwissFranc } from "./icons/swiss-franc/SwissFranc.astro";
 export type { SwissFrancIconHandle } from "./icons/swiss-franc/element";
+export { default as Server } from "./icons/server/Server.astro";
+export type { ServerIconHandle } from "./icons/server/element";
+
+export { default as ServerCog } from "./icons/server-cog/ServerCog.astro";
+export type { ServerCogIconHandle } from "./icons/server-cog/element";
+
+export { default as ServerCrash } from "./icons/server-crash/ServerCrash.astro";
+export type { ServerCrashIconHandle } from "./icons/server-crash/element";
+
+export { default as DatabaseBackup } from "./icons/database-backup/DatabaseBackup.astro";
+export type { DatabaseBackupIconHandle } from "./icons/database-backup/element";
+
+export { default as Cpu } from "./icons/cpu/Cpu.astro";
+export type { CpuIconHandle } from "./icons/cpu/element";
+
+export { default as Terminal } from "./icons/terminal/Terminal.astro";
+export type { TerminalIconHandle } from "./icons/terminal/element";
+
+export { default as Webhook } from "./icons/webhook/Webhook.astro";
+export type { WebhookIconHandle } from "./icons/webhook/element";
+
+export { default as Workflow } from "./icons/workflow/Workflow.astro";
+export type { WorkflowIconHandle } from "./icons/workflow/element";
+
+export { default as Binary } from "./icons/binary/Binary.astro";
+export type { BinaryIconHandle } from "./icons/binary/element";
+
+export { default as Blocks } from "./icons/blocks/Blocks.astro";
+export type { BlocksIconHandle } from "./icons/blocks/element";
+
+export { default as Bookmark } from "./icons/bookmark/Bookmark.astro";
+export type { BookmarkIconHandle } from "./icons/bookmark/element";
+
+export { default as BookmarkCheck } from "./icons/bookmark-check/BookmarkCheck.astro";
+export type { BookmarkCheckIconHandle } from "./icons/bookmark-check/element";
+
+export { default as BookmarkMinus } from "./icons/bookmark-minus/BookmarkMinus.astro";
+export type { BookmarkMinusIconHandle } from "./icons/bookmark-minus/element";
+
+export { default as BookmarkPlus } from "./icons/bookmark-plus/BookmarkPlus.astro";
+export type { BookmarkPlusIconHandle } from "./icons/bookmark-plus/element";
+
+export { default as BookmarkX } from "./icons/bookmark-x/BookmarkX.astro";
+export type { BookmarkXIconHandle } from "./icons/bookmark-x/element";
+
+export { default as CircleCheck } from "./icons/circle-check/CircleCheck.astro";
+export type { CircleCheckIconHandle } from "./icons/circle-check/element";
+
+export { default as CircleHelp } from "./icons/circle-help/CircleHelp.astro";
+export type { CircleHelpIconHandle } from "./icons/circle-help/element";
+
+export { default as BadgeAlert } from "./icons/badge-alert/BadgeAlert.astro";
+export type { BadgeAlertIconHandle } from "./icons/badge-alert/element";
+
+export { default as BadgePercent } from "./icons/badge-percent/BadgePercent.astro";
+export type { BadgePercentIconHandle } from "./icons/badge-percent/element";
+
+export { default as Ban } from "./icons/ban/Ban.astro";
+export type { BanIconHandle } from "./icons/ban/element";

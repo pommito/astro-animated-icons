@@ -1,5 +1,51 @@
 # Third-party notices
 
+Server, ServerCog, ServerCrash, DatabaseBackup, Cpu, Terminal, Webhook, Workflow, Binary, and Blocks adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Server swaps its two groups with opposing 12-unit vertical tracks over 900 ms, repeats once, and uses offsets 0, 0.35, 0.65, and 1. Its interrupted return uses Motion's default transform spring. ServerCog holds a 180-degree rotation with stiffness 50 and damping 10. ServerCrash redraws its lightning path over 400 ms with linear easing. The upstream root SVG controls have no transform variants. Both fixed 24 px upstream SVGs accept the package's common size prop through the adapter.
+
+DatabaseBackup rotates its arrow group through 360 degrees over 600 ms with ease-in-out around its declared SVG point 17.5, 17. Cpu pulses its pins on their local X or Y axis through scale 1, 1.5, and 1, with opacity 1, 0.8, and 1. Each 500 ms cycle repeats once. Transform easing applies per segment, while the native opacity track applies ease-in-out over the whole cycle, matching the upstream renderer. Cpu explicitly returns interrupted scaleX and scaleY tracks to 1. The upstream normal variant names scale and leaves those animated axes untouched. Terminal blinks its cursor with linear opacity 1, 0, and 1 over 800 ms until stopped. The existing lifecycle cancels loops on removal and reduced motion.
+
+Webhook redraws all three paths after 100 ms. Workflow redraws both rectangles immediately and its connector after 300 ms. Their path tracks last 300 ms with ease-out. Their separate opacity tracks start after 150 ms and use Motion's default 300 ms curve, cubic-bezier(0.25, 0.1, 0.35, 1). Their returns have no delay and use the default curve for both properties.
+
+Binary keeps both digit sets in the SVG. Only the original four digits are visible without JavaScript. Outgoing glyphs rotate X to -90 degrees while fading out over 120 ms. Incoming glyphs rotate X from 90 degrees and fade in after another 120 ms. Pairs stagger by 60 ms with custom indices 0 through 3. Return reverses their visibility and ordering. Native tracks include the hidden intervals, so cancellation cannot start a later phase. Each glyph keeps its own bounding-box center. Blocks holds its separate block at translateX=-4 and translateY=4 with Motion's default transform spring.
+
+The `/infrastructure-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources change the class utility import. DatabaseBackup also moves its declared 17.5px 17px origin into initial with transformBox set to view-box. Motion otherwise overwrites that style with the group center at 17, 17. Both adapter and reference use the declared pivot. The runner also applies the explicit sample size to ServerCog and ServerCrash after mounting. Captured-return measurements reset reference velocity before calling the original stop method. Adapter tests separately check real interrupted pose continuity, delayed work, replay, cleanup, and reduced motion. Numerical equality of real interrupted spring velocity is unverified. Visual acceptance remains with manual review.
+
+- [Lucide Animated Server, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server.tsx)
+- [Lucide Animated ServerCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server-cog.tsx)
+- [Lucide Animated ServerCrash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server-crash.tsx)
+- [Lucide Animated DatabaseBackup, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/database-backup.tsx)
+- [Lucide Animated Cpu, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cpu.tsx)
+- [Lucide Animated Terminal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/terminal.tsx)
+- [Lucide Animated Webhook, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/webhook.tsx)
+- [Lucide Animated Workflow, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/workflow.tsx)
+- [Lucide Animated Binary, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/binary.tsx)
+- [Lucide Animated Blocks, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/blocks.tsx)
+
+Bookmark, BookmarkCheck, BookmarkMinus, BookmarkPlus, BookmarkX, CircleCheck, CircleHelp, BadgeAlert, BadgePercent, and Ban adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The bookmark outlines scale Y through 1, 1.3, 0.9, 1.05, and 1 while scaling X through 1, 0.9, 1.1, 0.95, and 1 over 600 ms with ease-out per segment. Only the outline stretches. Their marks retain the source's normalized `pathLength="1"`, `stroke-dasharray="1 1"`, and dash-offset reveal from 1 to 0 over 300 ms. BookmarkCheck also fades its mark. The second Plus and X strokes wait 100 ms. Mark returns use Motion's implicit 300 ms curve, cubic-bezier(0.25, 0.1, 0.35, 1). Outline returns use the default scale spring, stiffness 550, damping 30, and rest speed 10.
+
+CircleCheck draws its check over 400 ms and fades it over 100 ms. Return uses 300 ms for the stroke and 100 ms for opacity. CircleHelp rotates only the question-mark group through 0, -10, 10, -10, and 0 degrees over 500 ms with ease-in-out, including its declared return transition. Local SVG origins follow the animated shape's bounding-box center.
+
+BadgeAlert transforms the whole SVG over 500 ms. Its scale has five values and keeps offsets 0, 0.2, 0.4, 0.6, and 1. Its rotation has six values, so Motion ignores the mismatched offsets and distributes rotation evenly. The shared sampler follows that same length check. Its return uses the default rotation and scale springs. The sampler also preserves the initial interrupted pose when a spring considers a tiny scale distance already settled. BadgePercent rotates only its outline to 180 degrees after 100 ms with stiffness 80 and damping 13. Return uses stiffness 60 and damping 10. The declared 500 ms duration does not override the physics parameters.
+
+Ban starts the circle and slash with separate calls on the same controls. The second call's transition override replaces the slash variant's transition. The circle draws over 400 ms and fades over 100 ms with ease-out. The slash waits 500 ms, then draws and fades together over the implicit 300 ms transition with cubic-bezier(0.25, 0.1, 0.35, 1). Both return with the declared 300 ms stroke and 100 ms opacity transitions. The comparison executes the original calls and samples both sides before and after that delay.
+
+The `/bookmarks-status-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources change only the class utility import. Native tracks replace upstream JavaScript transforms and normalized path-length animation. Replays preserve the current pose of active tracks rather than resetting to an explicit first keyframe. A completed mark starts a fresh reveal when replayed, even if the outline is still moving. Return comparisons capture seeked reference poses and reset their velocity before the original stop method. Settled returns cover all ten icons; interrupted return comparisons cover CircleCheck, CircleHelp, and Ban. Public adapter tests check real interrupted continuity, replay, cleanup, isolation, and reduced motion. Interrupted spring velocity parity is not measured. Numerical comparisons support manual visual review.
+
+- [Lucide Animated Bookmark, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bookmark.tsx)
+- [Lucide Animated BookmarkCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bookmark-check.tsx)
+- [Lucide Animated BookmarkMinus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bookmark-minus.tsx)
+- [Lucide Animated BookmarkPlus, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bookmark-plus.tsx)
+- [Lucide Animated BookmarkX, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bookmark-x.tsx)
+- [Lucide Animated CircleCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-check.tsx)
+- [Lucide Animated CircleHelp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-help.tsx)
+- [Lucide Animated BadgeAlert, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/badge-alert.tsx)
+- [Lucide Animated BadgePercent, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/badge-percent.tsx)
+- [Lucide Animated Ban, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ban.tsx)
+
 Play, Pause, Volume, Mic, MicOff, Disc3, Drum, Cast, Airplay, and SwitchCamera adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Play translates its polygon through 0, -1, 2, and 0 SVG units while rotating through 0, -10, 0, and 0 degrees over 500 ms. Pause moves its rectangles on separate 500 ms tracks. Both use offsets 0, 0.2, 0.5, and 1 with ease-out per segment. Mic moves its capsule through 0, -3, 0, -2, and 0 units over 600 ms with ease-in-out. Their interrupted returns use Motion's default transform spring with stiffness 500, damping 25, and rest speed 10.

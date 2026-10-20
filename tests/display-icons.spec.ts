@@ -119,7 +119,10 @@ test("display icons match independent references during entry and interrupted re
         const difference = Math.abs(value - sample.reference[index][property]);
         if (property < 3) maximumStrokeDifference = Math.max(maximumStrokeDifference, difference);
         else maximumGeometryDifference = Math.max(maximumGeometryDifference, difference);
-        expect(difference, `${sample.icon}, ${sample.size}px, ${sample.time}ms, interruption ${interruption}`).toBeLessThan(property < 3 ? 0.0001 : 0.03);
+        const tolerance = property < 3 ? 0.0001 : 0.03;
+        if (!(difference < tolerance)) {
+          expect(difference, `${sample.icon}, ${sample.size}px, ${sample.time}ms, interruption ${interruption}`).toBeLessThan(tolerance);
+        }
       }));
     }
   }

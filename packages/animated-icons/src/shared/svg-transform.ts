@@ -2,7 +2,7 @@ import { cubicBezier, easeInOut, easeOut, interpolate, spring } from "motion";
 import { animate } from "motion/mini";
 import type { IconTrack } from "../element";
 
-type Property = "x" | "translateX" | "y" | "rotate" | "scale" | "scaleX" | "scaleY" | "opacity";
+type Property = "x" | "translateX" | "y" | "rotate" | "rotateX" | "scale" | "scaleX" | "scaleY" | "opacity";
 type Values = Partial<Record<Property, number | (number | null)[]>>;
 interface Transition {
   type?: "spring";
@@ -62,13 +62,13 @@ export function animateSvgTransform(
         time += 50;
       } while (!generator.next(time).done && time < 10000);
       duration = Math.max(duration, time);
-      return (time: number) => generator.next(time).value;
+      return (time: number) => time === 0 ? values[0] : generator.next(time).value;
     }
     const propertyDuration = (transition.duration ?? 0.3) * 1000;
     const propertyDelay = (propertyOptions[property]?.delay ?? 0) * 1000;
     const repeats = propertyOptions[property]?.repeat ?? 0;
     duration = Math.max(duration, propertyDelay + propertyDuration * (repeats + 1));
-    const times = transition.times ?? values.map((_, index) => index / (values.length - 1));
+    const times = transition.times?.length === values.length ? transition.times : values.map((_, index) => index / (values.length - 1));
     const ease = Array.isArray(transition.ease)
       ? cubicBezier(...transition.ease)
       : transition.ease === "easeInOut"
@@ -101,6 +101,7 @@ export function animateSvgTransform(
       values.scale === undefined ? "" : `scale(${values.scale})`,
       values.scaleX === undefined ? "" : `scaleX(${values.scaleX})`,
       values.scaleY === undefined ? "" : `scaleY(${values.scaleY})`,
+      values.rotateX === undefined ? "" : `rotateX(${values.rotateX}deg)`,
       values.rotate === undefined ? "" : `rotate(${values.rotate}deg)`,
     ]
       .filter(Boolean)
