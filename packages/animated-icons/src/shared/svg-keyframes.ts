@@ -10,6 +10,7 @@ export function createSvgKeyframesRecipe(
   origin = "50% 50%",
   returnTransition = transition,
   returnPropertyOptions: Parameters<typeof animateSvgTransform>[5] = {},
+  entryPropertyOptions: Parameters<typeof animateSvgTransform>[5] = {},
 ): IconRecipe {
   return {
     finish: "hold",
@@ -20,7 +21,7 @@ export function createSvgKeyframesRecipe(
       const keyframes = Object.fromEntries(Object.entries(targets).map(([property, values]) => [
         property, replaying && Array.isArray(values) ? [null, ...values.slice(1)] : values,
       ]));
-      animateSvgTransform(svg, returning, track, keyframes, returning ? returnTransition : transition, returning ? returnPropertyOptions : {});
+      animateSvgTransform(svg, returning, track, keyframes, returning ? returnTransition : transition, returning ? returnPropertyOptions : entryPropertyOptions);
     },
     clear(drawing) {
       clearSvgTransform(drawing.ownerSVGElement!);
