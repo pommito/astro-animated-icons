@@ -21,6 +21,27 @@ The `/weather-nature-comparison/` fixture executes all ten pinned React sources 
 - [Lucide Animated Droplet, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/droplet.tsx)
 - [Lucide Animated Flame, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/flame.tsx)
 
+LayoutGrid, LayoutPanelTop, PanelLeftClose, PanelLeftOpen, PanelRightOpen, Layers, SquareStack, GalleryHorizontalEnd, GalleryVerticalEnd, and GalleryThumbnails adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+LayoutGrid moves its four rectangles right, down, left, and up by 11 units over 800 ms, with offsets 0, 0.4, 0.6, and 1 and ease-in-out. LayoutPanelTop uses separate opacity timings of 500, 700, and 800 ms. Its lower rectangles enter from opposing 10-unit offsets after 300 and 400 ms with Motion's implicit translation spring. Its top rectangle enters from -5 units over 500 ms. The panel arrow paths move by -1.5, +1.5, and -1.5 units over 500 ms with offsets 0, 0.4, and 1. Panel frames stay fixed.
+
+Layers first springs its bottom path to -9 and its middle path to -5, then springs both to zero. Both phases use stiffness 100, damping 14, and mass 1. The existing cancellable sequence waits for every first-stage spring's completion. Stop, replay, removal, and reduced motion invalidate the pending phase. This deliberately fixes the upstream async continuation that can restart after interruption. SquareStack scales each shape around its bounding-box center. Its rear paths use 300/200 ms delays and 400/200 ms durations, while its front rectangle uses 400 ms. Returns retain each path's timing and the rectangle's implicit scale spring.
+
+GalleryHorizontalEnd and GalleryVerticalEnd preserve the explicit tween type, default 300 ms ease-out, custom offsets, and 250 ms stagger. The upstream stiffness and damping fields do not turn these tweens into springs. GalleryThumbnails fades its four marks over 200 ms after delays 150, 300, 450, and 600 ms.
+
+The /layout-gallery-comparison/ fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect the class utility import. Entry and captured-return tests measure geometry and paint. A separate Layers comparison completes the original first-stage springs to advance its async stage and compares the second stage. Captured returns reset velocity on both versions. The first-stage spring durations match the original at 450 and 400 ms. Numerical parity of real interrupted spring velocity remains unmeasured. Visual acceptance remains with manual review.
+
+- [Lucide Animated LayoutGrid, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/layout-grid.tsx)
+- [Lucide Animated LayoutPanelTop, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/layout-panel-top.tsx)
+- [Lucide Animated PanelLeftClose, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/panel-left-close.tsx)
+- [Lucide Animated PanelLeftOpen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/panel-left-open.tsx)
+- [Lucide Animated PanelRightOpen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/panel-right-open.tsx)
+- [Lucide Animated Layers, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/layers.tsx)
+- [Lucide Animated SquareStack, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-stack.tsx)
+- [Lucide Animated GalleryHorizontalEnd, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gallery-horizontal-end.tsx)
+- [Lucide Animated GalleryVerticalEnd, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gallery-vertical-end.tsx)
+- [Lucide Animated GalleryThumbnails, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gallery-thumbnails.tsx)
+
 Bold, Italic, Underline, AArrowDown, AArrowUp, AlignCenter, AlignLeft, AlignRight, AlignHorizontal, and AlignVertical adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Bold holds stroke width 3.5 and returns to 2 over 600 ms with ease-out. Cleanup removes its inline stroke width so it inherits the SVG value again. Italic redraws its end lines over 200 ms and its diagonal over 400 ms after 100 ms. Only the end lines fade. Underline redraws and fades its curved stroke over 300 ms and its underline over 400 ms after 200 ms. All these stroke tracks use ease-out, normalized path length 0 to 1, and path offset 1 to 0. Return preserves each line's duration and delay.
