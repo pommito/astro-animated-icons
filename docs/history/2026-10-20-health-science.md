@@ -36,6 +36,8 @@ Independent Standards and Spec reviews found a duplicated comparison runner, a m
 
 The final `ICON_TEST_PORT=45403 pnpm validate --workers=2` attempt passed both Astro checks, TypeScript, a fresh 1177-page build in 14.53 seconds, and all 751 positive bundle cases. The coordinator requested serialized validation after concurrent browser runs exhausted memory. This attempt received SIGINT during the negative inspector tests, before the fixture cache and browser stages. Its log remains at `/private/tmp/health-science-validate-final.log`. The validation session has stopped, the fixture lock is absent, and port 45403 has no listener. Complete validation awaits the coordinator's exclusive turn.
 
+PR integration includes `main` revision `c85e940`, which adds the food and plant batch. The merge retains both batches in attribution, exports, and bundle cases. A static check confirmed all 20 handle exports and their single and combined routes occur once, with the inspector's baseline route first. The combined tree still requires complete validation before merge.
+
 ## Manual review
 
 Run `ICON_TEST_PORT=45403 pnpm test:serve` and open `/health-science-comparison/`. Check all four sizes, hover and manual playback, and the individual fixture routes linked from the comparison. Numerical evidence supports manual visual review. Visual acceptance remains with the user. Chrome is the browser under test. Firefox and Safari are unverified.
