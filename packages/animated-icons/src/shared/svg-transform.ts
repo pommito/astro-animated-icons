@@ -13,12 +13,13 @@ interface Transition {
   restSpeed?: number;
   duration?: number;
   delay?: number;
-  ease?: "linear" | "easeOut" | "easeInOut" | [number, number, number, number];
+  ease?: Easing | Easing[];
   times?: number[];
   repeat?: number;
   repeatType?: "reverse";
   continueOnReturn?: boolean;
 }
+type Easing = "linear" | "easeOut" | "easeInOut" | [number, number, number, number];
 interface Pose {
   values: Partial<Record<Property, number>>;
   velocities: Partial<Record<Property, number>>;
@@ -27,6 +28,15 @@ interface Pose {
   duration?: number;
 }
 const poses = new WeakMap<SVGElement, Pose>();
+
+export function resolveSvgEasing(ease?: Transition["ease"]) {
+  const resolve = (ease: Easing | undefined): (progress: number) => number => Array.isArray(ease)
+    ? cubicBezier(...ease)
+    : ease === "linear" ? (progress: number) => progress : ease === "easeInOut" ? easeInOut : easeOut;
+  return Array.isArray(ease) && typeof ease[0] !== "number"
+    ? (ease as Easing[]).map(resolve)
+    : resolve(ease as Easing | undefined);
+}
 
 export function clearSvgTransform(element: SVGElement) {
   poses.delete(element);
@@ -73,13 +83,7 @@ export function animateSvgTransform(
     const repeats = propertyOptions[property]?.repeat ?? 0;
     duration = Math.max(duration, propertyDelay + propertyDuration * (repeats + 1));
     const times = transition.times?.length === values.length ? transition.times : values.map((_, index) => index / (values.length - 1));
-    const ease = Array.isArray(transition.ease)
-      ? cubicBezier(...transition.ease)
-      : transition.ease === "linear"
-        ? (progress: number) => progress
-        : transition.ease === "easeInOut"
-        ? easeInOut
-        : easeOut;
+    const ease = resolveSvgEasing(transition.ease);
     const interpolateValue = interpolate(times.map((time) => time * propertyDuration), values, { ease });
     return (time: number) => {
       time = Math.max(0, time - propertyDelay);

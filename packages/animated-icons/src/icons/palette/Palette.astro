@@ -1,0 +1,18 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-palette">
+  <g>
+    <path d="M12 2a1 1 0 0 0 0 20l.25 0a1.75 1.75 0 0 0 1.4-2.8l-.3-.4a1.75 1.75 0 0 1 1.4-2.8h2.25a5 5 0 0 0 5-5 10 9 0 0 0-10-9z" data-part="0" style="transform-box: fill-box; transform-origin: center;" stroke-dasharray="70" />
+    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" data-part="1" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" data-part="2" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" data-part="3" style="transform-box: fill-box; transform-origin: center;" />
+    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" data-part="4" style="transform-box: fill-box; transform-origin: center;" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

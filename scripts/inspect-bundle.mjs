@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "pen-tool": "pen-tool-single",
+  "square-pen": "square-pen-single",
+  "palette": "palette-single",
+  "figma": "figma-single",
+  "feather": "feather-single",
+  "scan-text": "scan-text-single",
+  "frame": "frame-single",
+  "stamp": "stamp-single",
+  "wrench": "wrench-single",
+  "hammer": "hammer-single",
+
   "hand": "hand-single",
   "hand-coins": "hand-coins-single",
   "hand-fist": "hand-fist-single",
@@ -424,6 +435,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["pen-tool-combined", "arrow-left", "pen-tool"],
+  ["square-pen-combined", "arrow-left", "square-pen"],
+  ["palette-combined", "arrow-left", "palette"],
+  ["figma-combined", "arrow-left", "figma"],
+  ["feather-combined", "arrow-left", "feather"],
+  ["scan-text-combined", "arrow-left", "scan-text"],
+  ["frame-combined", "arrow-left", "frame"],
+  ["stamp-combined", "arrow-left", "stamp"],
+  ["wrench-combined", "arrow-left", "wrench"],
+  ["hammer-combined", "arrow-left", "hammer"],
+
   ["hand-combined", "arrow-left", "hand"],
   ["hand-coins-combined", "arrow-left", "hand-coins"],
   ["hand-fist-combined", "arrow-left", "hand-fist"],

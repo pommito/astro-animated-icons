@@ -1,5 +1,28 @@
 # Third-party notices
 
+PenTool, SquarePen, Palette, Figma, Feather, ScanText, Frame, Stamp, Wrench, Hammer adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+PenTool keeps whole-SVG movement and independent normalized path-length, path-offset, and opacity tracks. SquarePen preserves the different keyframe counts and implicit 800 ms ease-out animation. Its return uses the default transform springs. Feather keeps its 1600 ms drift and implicit spring return. Figma preserves its 300 ms path delay and independent 250 ms opacity delay.
+
+Palette keeps its fixed 70-unit outline dash, 450 ms cubic draw, filled currentColor dots, and child springs with stiffness 300 and damping 10. Dot delays are 450, 530, 610, and 690 ms. The adapter allows replay during playback to follow the package contract. The source suppresses repeated starts until its current playback completes. Frame keeps its four held line translations and spring stiffness 160, damping 17, and mass 1.
+
+ScanText erases its three lines with delays of 0, 100, and 200 ms and a 300 ms duration. It awaits every erase track before redrawing with the same delays. Stop, replay, removal, and reduced motion invalidate the pending redraw through the shared cancellable sequence. Frame corners remain static.
+
+Stamp preserves the two moving stamp parts, the separate ink scale, and the opacity keyframe of 1.4, which rendering clamps. Its ink transforms around the actual fill-box center applied by Motion. Wrench and Hammer retain their per-segment easing arrays, distinct return durations, and respective 90% 10% and 0% 100% fill-box origins. The shared transform sampler supports the segment curves; SVG parts own origin setup and cleanup.
+
+The `/design-tools-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect the class utility import. The local utility accepts multiple class strings for Palette. Explicit phase completion advances the original ScanText async sequence. Measurements compare geometry, computed opacity, and normalized stroke dashes for entry and captured returns. Captured returns reset velocity on both versions. Equality of real interrupted spring velocity remains unmeasured. React stays confined to comparison pages. Numerical comparisons support manual visual review.
+
+- [Lucide Animated PenTool, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/pen-tool.tsx)
+- [Lucide Animated SquarePen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-pen.tsx)
+- [Lucide Animated Palette, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/palette.tsx)
+- [Lucide Animated Figma, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/figma.tsx)
+- [Lucide Animated Feather, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/feather.tsx)
+- [Lucide Animated ScanText, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/scan-text.tsx)
+- [Lucide Animated Frame, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/frame.tsx)
+- [Lucide Animated Stamp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/stamp.tsx)
+- [Lucide Animated Wrench, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/wrench.tsx)
+- [Lucide Animated Hammer, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hammer.tsx)
+
 Hand, HandCoins, HandFist, HandGrab, HandHeart, HandHelping, HandMetal, HeartHandshake, BicepsFlexed, and Clap adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Hand and HandMetal rotate the whole SVG around 50% 90%. HandFist repeats its 400 ms translation and scale once in reverse. HandGrab scales over 400 ms. HandHelping translates over 500 ms. HeartHandshake keeps its seven scale and rotation keyframes, with the source's uneven offsets over 700 ms. Their implicit returns use separate translation, rotation, and scale springs.
