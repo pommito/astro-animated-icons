@@ -960,3 +960,33 @@ export type { VibrateIconHandle } from "./icons/vibrate/element";
 
 export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
 export type { EvChargerIconHandle } from "./icons/ev-charger/element";
+
+export { default as Coffee } from "./icons/coffee/Coffee.astro";
+export type { CoffeeIconHandle } from "./icons/coffee/element";
+
+export { default as Banana } from "./icons/banana/Banana.astro";
+export type { BananaIconHandle } from "./icons/banana/element";
+
+export { default as CookingPot } from "./icons/cooking-pot/CookingPot.astro";
+export type { CookingPotIconHandle } from "./icons/cooking-pot/element";
+
+export { default as CupSoda } from "./icons/cup-soda/CupSoda.astro";
+export type { CupSodaIconHandle } from "./icons/cup-soda/element";
+
+export { default as Soup } from "./icons/soup/Soup.astro";
+export type { SoupIconHandle } from "./icons/soup/element";
+
+export { default as LeafyGreen } from "./icons/leafy-green/LeafyGreen.astro";
+export type { LeafyGreenIconHandle } from "./icons/leafy-green/element";
+
+export { default as Leaf } from "./icons/leaf/Leaf.astro";
+export type { LeafIconHandle } from "./icons/leaf/element";
+
+export { default as TreeDeciduous } from "./icons/tree-deciduous/TreeDeciduous.astro";
+export type { TreeDeciduousIconHandle } from "./icons/tree-deciduous/element";
+
+export { default as TreePine } from "./icons/tree-pine/TreePine.astro";
+export type { TreePineIconHandle } from "./icons/tree-pine/element";
+
+export { default as FishSymbol } from "./icons/fish-symbol/FishSymbol.astro";
+export type { FishSymbolIconHandle } from "./icons/fish-symbol/element";
