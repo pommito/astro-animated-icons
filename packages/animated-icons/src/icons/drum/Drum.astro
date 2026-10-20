@@ -1,0 +1,21 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-drum">
+  <g>
+    <path d="m2 2 8 8" style="transform-origin: 6px 6px" />
+    <path d="m22 2-8 8" style="transform-origin: 18px 6px" />
+    <ellipse cx="12" cy="9" rx="10" ry="5" />
+    <path d="M7 13.4v7.9" />
+    <path d="M12 14v8" />
+    <path d="M17 13.4v7.9" />
+    <path d="M2 9v8a10 5 0 0 0 20 0V9" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

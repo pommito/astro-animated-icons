@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-pause">
+  <g>
+    <rect height="16" rx="1" width="4" x="6" y="4" style="transform-origin: 50% 50%" />
+    <rect height="16" rx="1" width="4" x="14" y="4" style="transform-origin: 50% 50%" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

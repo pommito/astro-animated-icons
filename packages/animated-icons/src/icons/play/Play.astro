@@ -1,0 +1,15 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-play">
+  <g>
+    <polygon points="6 3 20 12 6 21 6 3" style="transform-origin: 13px 12px" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

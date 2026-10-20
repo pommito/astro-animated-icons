@@ -1,0 +1,10 @@
+export { PlayIcon as Play } from "./media/play";
+export { PauseIcon as Pause } from "./media/pause";
+export { VolumeIcon as Volume } from "./media/volume";
+export { MicIcon as Mic } from "./media/mic";
+export { MicOffIcon as MicOff } from "./media/mic-off";
+export { Disc3Icon as Disc3 } from "./media/disc-3";
+export { DrumIcon as Drum } from "./media/drum";
+export { CastIcon as Cast } from "./media/cast";
+export { AirplayIcon as Airplay } from "./media/airplay";
+export { SwitchCameraIcon as SwitchCamera } from "./media/switch-camera";

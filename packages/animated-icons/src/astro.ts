@@ -535,3 +535,33 @@ export type { ReceiptTextIconHandle } from "./icons/receipt-text/element";
 
 export { default as ReceiptTurkishLira } from "./icons/receipt-turkish-lira/ReceiptTurkishLira.astro";
 export type { ReceiptTurkishLiraIconHandle } from "./icons/receipt-turkish-lira/element";
+
+export { default as Play } from "./icons/play/Play.astro";
+export type { PlayIconHandle } from "./icons/play/element";
+
+export { default as Pause } from "./icons/pause/Pause.astro";
+export type { PauseIconHandle } from "./icons/pause/element";
+
+export { default as Volume } from "./icons/volume/Volume.astro";
+export type { VolumeIconHandle } from "./icons/volume/element";
+
+export { default as Mic } from "./icons/mic/Mic.astro";
+export type { MicIconHandle } from "./icons/mic/element";
+
+export { default as MicOff } from "./icons/mic-off/MicOff.astro";
+export type { MicOffIconHandle } from "./icons/mic-off/element";
+
+export { default as Disc3 } from "./icons/disc-3/Disc3.astro";
+export type { Disc3IconHandle } from "./icons/disc-3/element";
+
+export { default as Drum } from "./icons/drum/Drum.astro";
+export type { DrumIconHandle } from "./icons/drum/element";
+
+export { default as Cast } from "./icons/cast/Cast.astro";
+export type { CastIconHandle } from "./icons/cast/element";
+
+export { default as Airplay } from "./icons/airplay/Airplay.astro";
+export type { AirplayIconHandle } from "./icons/airplay/element";
+
+export { default as SwitchCamera } from "./icons/switch-camera/SwitchCamera.astro";
+export type { SwitchCameraIconHandle } from "./icons/switch-camera/element";

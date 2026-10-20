@@ -1,5 +1,37 @@
 # Third-party notices
 
+Play, Pause, Volume, Mic, MicOff, Disc3, Drum, Cast, Airplay, and SwitchCamera adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Play translates its polygon through 0, -1, 2, and 0 SVG units while rotating through 0, -10, 0, and 0 degrees over 500 ms. Pause moves its rectangles on separate 500 ms tracks. Both use offsets 0, 0.2, 0.5, and 1 with ease-out per segment. Mic moves its capsule through 0, -3, 0, -2, and 0 units over 600 ms with ease-in-out. Their interrupted returns use Motion's default transform spring with stiffness 500, damping 25, and rest speed 10.
+
+MicOff redraws its slash after 150 ms over 400 ms. Its separate 100 ms opacity track has no delay, matching the upstream property transition. Return draws the full slash over 300 ms and restores opacity over 100 ms. Disc3 rotates its two inner arcs to 90 degrees around 12px 12px over 400 ms with ease-in-out and holds. Its circles stay fixed. Drum rotates its sticks through opposing -10, 10, and 0 degree sequences. Each 500 ms cycle reverses on the next iteration, with initial delays of 100 and 200 ms. Stop preserves pose and the sampled direction of velocity before its default transform spring returns to zero.
+
+Cast fades its dot and two waves over 500 ms with 0, 100, and 200 ms delays. Airplay draws its screen with path length 0 to 1 and path offset 1 to 0 over 600 ms with ease-in-out. Its triangle scales through 0.6, 1.1, and 1 with ease-out while fading in. A cancellable sequence waits for entry, then starts the 300 ms ease-out normal phase. SwitchCamera draws four paths over 400 ms with linear easing. The upstream root SVG has animation controls but no transform variants. Its fixed 24 px dimensions become the package's common size prop.
+
+Volume renders the speaker and complete mute cross before JavaScript. Playback completes the outgoing cross's exit before replacing it with the two wave paths. The complete idle cross exits immediately because its target is unchanged. An interrupted partial cross first restores its strokes and opacity over 300 ms. Waves fade in over 300 ms after 100 and 200 ms delays. Stop fades both waves out over 300 ms, then replaces them with the cross. Its two strokes draw and fade in over 300 ms with the same stagger. These transitions use Motion's default curve, cubic-bezier(0.25, 0.1, 0.35, 1). Cancellation prevents pending phases from replacing SVG nodes after removal, replay, or reduced motion. Volume remains decorative playback and exposes no audio or mute state API. The common replay protocol cancels previous tracks on each command. A repeated command for the visible branch therefore settles its current opacity or partial strokes over 300 ms without the previous stagger. The upstream boolean setter ignores repeated commands for an unchanged state. This compatibility adjustment keeps the common playback handle and preserves the current visible pose.
+
+The `/media-comparison/` fixture executes all ten pinned React components at 14, 16, 24, and 28 px. Copied sources change only the class utility import, except SwitchCamera, whose reference also accepts and applies the explicit size prop. React stays in comparison bundles. Entry and captured-return checks compare geometry, opacity, and normalized stroke dashes. Volume comparisons seek each incoming and outgoing branch after the actual React replacement. Drum return comparisons sample its original animation 5 ms before the captured pose to retain velocity, including during a reversed cycle. Other captured returns reset reference velocity before calling the original stop method. The adapter API tests cover real interrupted continuity and cleanup. These measurements support manual visual review.
+
+- [Lucide Animated Play, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/play.tsx)
+
+- [Lucide Animated Pause, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/pause.tsx)
+
+- [Lucide Animated Volume, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/volume.tsx)
+
+- [Lucide Animated Mic, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/mic.tsx)
+
+- [Lucide Animated MicOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/mic-off.tsx)
+
+- [Lucide Animated Disc3, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/disc-3.tsx)
+
+- [Lucide Animated Drum, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/drum.tsx)
+
+- [Lucide Animated Cast, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cast.tsx)
+
+- [Lucide Animated Airplay, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/airplay.tsx)
+
+- [Lucide Animated SwitchCamera, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/switch-camera.tsx)
+
 CloudBackup, CloudCog, CloudDownload, CloudLightning, CloudRainWind, CloudRain, CloudSnow, CloudSun, CloudSync, and CloudUpload adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 CloudBackup and CloudSync rotate their inner groups to -360 degrees over 800 and 1200 ms with ease-in-out, then hold. They return over the same duration. The shared group transform recipe also preserves FolderSync's existing behavior. CloudCog shares the existing cog spring to 180 degrees with stiffness 50 and damping 10. CloudDownload and CloudUpload move their arrow groups by 2 and -2 SVG units over 300 ms with cubic-bezier(0.68, -0.6, 0.32, 1.6), then hold. Their returns use the same curve. These transfer curves differ from Download and Upload's springs.

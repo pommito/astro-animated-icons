@@ -14,6 +14,7 @@ interface Transition {
   ease?: "easeOut" | "easeInOut" | [number, number, number, number];
   times?: number[];
   repeat?: number;
+  repeatType?: "reverse";
 }
 interface Pose {
   values: Partial<Record<Property, number>>;
@@ -99,6 +100,7 @@ export function animateSvgTransform(
           delay: options.delay,
           ease: "linear",
           repeat: options.repeat,
+          repeatType: options.repeatType,
           onComplete() {
             completed = true;
             poses.set(element, { values: frames.at(-1)!, velocities: {} });
@@ -109,11 +111,18 @@ export function animateSvgTransform(
       return {
         stop() {
           if (completed) return;
-          let time = Math.max(0, animation.time * 1000 - (options.delay ?? 0) * 1000);
-          if (options.repeat && time < duration * (options.repeat + 1)) time %= duration;
-          const current = sample(time);
+          const time = Math.max(0, animation.time * 1000 - (options.delay ?? 0) * 1000);
+          const samplePlayback = (elapsed: number) => {
+            if (options.repeat && elapsed < duration * (options.repeat + 1)) {
+              const iteration = Math.floor(elapsed / duration);
+              elapsed %= duration;
+              if (options.repeatType === "reverse" && iteration % 2) elapsed = duration - elapsed;
+            }
+            return sample(elapsed);
+          };
+          const current = samplePlayback(time);
           const interval = Math.min(time, 5);
-          const before = sample(Math.max(0, time - interval));
+          const before = samplePlayback(Math.max(0, time - interval));
           poses.set(element, {
             values: current,
             velocities: Object.fromEntries(
