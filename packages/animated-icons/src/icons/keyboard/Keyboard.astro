@@ -1,0 +1,22 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-keyboard">
+  <g>
+    <rect height="16" rx="2" width="20" x="2" y="4" />
+    <path d="M10 8h.01" data-key="0" />
+    <path d="M12 12h.01" data-key="1" />
+    <path d="M14 8h.01" data-key="2" />
+    <path d="M16 12h.01" data-key="3" />
+    <path d="M18 8h.01" data-key="4" />
+    <path d="M6 8h.01" data-key="5" />
+    <path d="M7 16h10" data-key="6" />
+    <path d="M8 12h.01" data-key="7" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

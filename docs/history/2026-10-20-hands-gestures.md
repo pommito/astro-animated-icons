@@ -62,3 +62,14 @@ ICON_TEST_PORT=45393 pnpm test tests/chevrons.spec.ts tests/grips.spec.ts -g "al
 The focused rerun reported `2 passed (20.9s)` with exit code 0. The chevron comparison took 10.8 seconds and measured at most 0.000015 screen pixels of geometry difference. The grip comparison took 6.8 seconds and measured at most 0.000061 screen pixels of geometry difference and 0.000000 opacity difference. Assertions and timeouts remain unchanged. Every scenario has a passing result, but the complete two-worker command retains the two timeout failures recorded above.
 
 Chrome is the browser under test. Firefox and Safari remain unverified. Numerical checks support manual visual review. Visual acceptance remains with the user.
+
+## Integration with main
+
+Before publishing the pull request, the branch integrated devices and sorting/trends through `1aabf82`. Conflict resolutions keep all three families' exports, bundle cases, notices, and validation coverage. SVG-parts keeps both optional origins and main's path-array morph support. The remaining incoming files match main exactly.
+
+- `pnpm check` passed both Astro checks with zero errors, warnings, and hints, plus TypeScript.
+- `ICON_TEST_PORT=45393 pnpm test tests/hands-gestures.spec.ts tests/devices.spec.ts tests/devices-replay.spec.ts tests/sorting-trends.spec.ts tests/expressions.spec.ts --workers=2` reported `463 passed (4.1m)`. It checks the new family, the two incoming families, and existing SVG-parts consumers against the integrated helper.
+- `pnpm inspect:bundle` reported `Verified 354 icons across 711 bundle cases.` All five `pnpm test:bundle` tests passed using the same output.
+- Standards and Spec integration reviews found no remaining findings. They checked that no file, export, route, recipe, source notice, or validation evidence was lost.
+
+The complete suite was not repeated after integration. The initial complete pass and its two focused timeout reruns remain recorded above.

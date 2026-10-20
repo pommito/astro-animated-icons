@@ -5,8 +5,8 @@ import { animateSvgTransform, clearSvgTransform } from "./svg-transform";
 
 type Transform = Parameters<typeof animateSvgTransform>[3];
 type Transition = Parameters<typeof animateSvgTransform>[4];
-type Paint = "d" | "pathLength" | "pathOffset" | "strokeWidth";
-type Pose = Transform & Partial<Record<Paint, string | number | number[]>> & { transition?: PartTransition };
+type Paint = "pathLength" | "pathOffset" | "strokeWidth";
+type Pose = Transform & Partial<Record<Paint, string | number | number[]>> & { d?: string | string[]; transition?: PartTransition };
 interface PartTransition extends Omit<Transition, "ease"> {
   ease?: Transition["ease"] | "linear";
   velocity?: number;
@@ -79,7 +79,9 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
     const delay = settings.delay;
     if (property === "d") {
       playback.track(onComplete => {
-        const animation = animate(element, { attrD: target as string }, { duration, ease, delay, onComplete });
+        const values = !returning && playback.interrupted && Array.isArray(target)
+          ? [element.getAttribute("d")!, ...target.slice(1)] : target as string | string[];
+        const animation = animate(element, { attrD: values }, { duration, ease, delay, onComplete });
         return { stop: () => animation.stop(), cancel: () => animation.stop() };
       });
     } else {
