@@ -8,6 +8,7 @@ interface Transition {
   type?: "spring";
   stiffness?: number;
   damping?: number;
+  mass?: number;
   restSpeed?: number;
   duration?: number;
   delay?: number;
