@@ -1,0 +1,14 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+import { arrowBigRightDashPaths } from "./definition";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-arrow-big-right-dash">
+  <g>{arrowBigRightDashPaths.map((d) => <path d={d} />)}</g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

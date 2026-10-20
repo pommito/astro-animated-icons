@@ -60,3 +60,5 @@ The connectivity family reuses native opacity and SVG transform tracks already r
 See [the contributor workflow](../CONTRIBUTING.md#validate-the-change) for commands.
 
 Measurements for this strategy are recorded in [the validation timing record](history/2026-10-18-validation.md).
+
+`tests/directional-arrows.spec.ts` checks all ten directional arrow drawings without JavaScript, automatic and manual playback, interruption at 50, 200, 350 and 450 ms, stop continuity, replay, instance isolation, removal and reduced motion. The `/directional-arrows-comparison/` route executes the pinned React components at 14, 16, 24 and 28 px. Numerical checks sample entry and returns from captured early, middle and late poses. Both versions reset velocity before those measured returns; real interrupted velocity is retained by manual playback and checked for continuity through the public adapter API. These native SVG transform tracks reuse the existing representatives, so no shared representative is added. The former ArrowLeft/ArrowDown bundle route moves from `/arrow-down-left/` to `/arrow-left-down/` to free the new icon's consumer route.
