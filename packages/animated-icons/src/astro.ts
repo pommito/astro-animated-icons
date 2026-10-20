@@ -668,3 +668,33 @@ export { default as AlignHorizontal } from "./icons/align-horizontal/AlignHorizo
 export type { AlignHorizontalIconHandle } from "./icons/align-horizontal/element";
 export { default as AlignVertical } from "./icons/align-vertical/AlignVertical.astro";
 export type { AlignVerticalIconHandle } from "./icons/align-vertical/element";
+
+export { default as Bookmark } from "./icons/bookmark/Bookmark.astro";
+export type { BookmarkIconHandle } from "./icons/bookmark/element";
+
+export { default as BookmarkCheck } from "./icons/bookmark-check/BookmarkCheck.astro";
+export type { BookmarkCheckIconHandle } from "./icons/bookmark-check/element";
+
+export { default as BookmarkMinus } from "./icons/bookmark-minus/BookmarkMinus.astro";
+export type { BookmarkMinusIconHandle } from "./icons/bookmark-minus/element";
+
+export { default as BookmarkPlus } from "./icons/bookmark-plus/BookmarkPlus.astro";
+export type { BookmarkPlusIconHandle } from "./icons/bookmark-plus/element";
+
+export { default as BookmarkX } from "./icons/bookmark-x/BookmarkX.astro";
+export type { BookmarkXIconHandle } from "./icons/bookmark-x/element";
+
+export { default as CircleCheck } from "./icons/circle-check/CircleCheck.astro";
+export type { CircleCheckIconHandle } from "./icons/circle-check/element";
+
+export { default as CircleHelp } from "./icons/circle-help/CircleHelp.astro";
+export type { CircleHelpIconHandle } from "./icons/circle-help/element";
+
+export { default as BadgeAlert } from "./icons/badge-alert/BadgeAlert.astro";
+export type { BadgeAlertIconHandle } from "./icons/badge-alert/element";
+
+export { default as BadgePercent } from "./icons/badge-percent/BadgePercent.astro";
+export type { BadgePercentIconHandle } from "./icons/badge-percent/element";
+
+export { default as Ban } from "./icons/ban/Ban.astro";
+export type { BanIconHandle } from "./icons/ban/element";
