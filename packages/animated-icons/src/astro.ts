@@ -565,3 +565,33 @@ export type { ArrowBigUpIconHandle } from "./icons/arrow-big-up/element";
 
 export { default as ArrowBigUpDash } from "./icons/arrow-big-up-dash/ArrowBigUpDash.astro";
 export type { ArrowBigUpDashIconHandle } from "./icons/arrow-big-up-dash/element";
+
+export { default as CornerDownLeft } from "./icons/corner-down-left/CornerDownLeft.astro";
+export type { CornerDownLeftIconHandle } from "./icons/corner-down-left/element";
+
+export { default as CornerDownRight } from "./icons/corner-down-right/CornerDownRight.astro";
+export type { CornerDownRightIconHandle } from "./icons/corner-down-right/element";
+
+export { default as CornerLeftDown } from "./icons/corner-left-down/CornerLeftDown.astro";
+export type { CornerLeftDownIconHandle } from "./icons/corner-left-down/element";
+
+export { default as CornerLeftUp } from "./icons/corner-left-up/CornerLeftUp.astro";
+export type { CornerLeftUpIconHandle } from "./icons/corner-left-up/element";
+
+export { default as CornerRightDown } from "./icons/corner-right-down/CornerRightDown.astro";
+export type { CornerRightDownIconHandle } from "./icons/corner-right-down/element";
+
+export { default as CornerRightUp } from "./icons/corner-right-up/CornerRightUp.astro";
+export type { CornerRightUpIconHandle } from "./icons/corner-right-up/element";
+
+export { default as CornerUpLeft } from "./icons/corner-up-left/CornerUpLeft.astro";
+export type { CornerUpLeftIconHandle } from "./icons/corner-up-left/element";
+
+export { default as CornerUpRight } from "./icons/corner-up-right/CornerUpRight.astro";
+export type { CornerUpRightIconHandle } from "./icons/corner-up-right/element";
+
+export { default as Expand } from "./icons/expand/Expand.astro";
+export type { ExpandIconHandle } from "./icons/expand/element";
+
+export { default as Shrink } from "./icons/shrink/Shrink.astro";
+export type { ShrinkIconHandle } from "./icons/shrink/element";
