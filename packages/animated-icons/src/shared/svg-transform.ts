@@ -2,7 +2,7 @@ import { cubicBezier, easeInOut, easeOut, interpolate, spring } from "motion";
 import { animate } from "motion/mini";
 import type { IconTrack } from "../element";
 
-type Property = "x" | "translateX" | "y" | "rotate" | "scale" | "scaleX" | "scaleY" | "opacity";
+type Property = "x" | "translateX" | "y" | "rotate" | "rotateX" | "scale" | "scaleX" | "scaleY" | "opacity";
 type Values = Partial<Record<Property, number | (number | null)[]>>;
 interface Transition {
   type?: "spring";
@@ -82,6 +82,7 @@ export function animateSvgTransform(
       values.scale === undefined ? "" : `scale(${values.scale})`,
       values.scaleX === undefined ? "" : `scaleX(${values.scaleX})`,
       values.scaleY === undefined ? "" : `scaleY(${values.scaleY})`,
+      values.rotateX === undefined ? "" : `rotateX(${values.rotateX}deg)`,
       values.rotate === undefined ? "" : `rotate(${values.rotate}deg)`,
     ]
       .filter(Boolean)

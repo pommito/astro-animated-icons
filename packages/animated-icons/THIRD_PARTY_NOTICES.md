@@ -1,5 +1,28 @@
 # Third-party notices
 
+Server, ServerCog, ServerCrash, DatabaseBackup, Cpu, Terminal, Webhook, Workflow, Binary, and Blocks adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Server swaps its two groups with opposing 12-unit vertical tracks over 900 ms, repeats once, and uses offsets 0, 0.35, 0.65, and 1. Its interrupted return uses Motion's default transform spring. ServerCog holds a 180-degree rotation with stiffness 50 and damping 10. ServerCrash redraws its lightning path over 400 ms with linear easing. The upstream root SVG controls have no transform variants. Both fixed 24 px upstream SVGs accept the package's common size prop through the adapter.
+
+DatabaseBackup rotates its arrow group through 360 degrees over 600 ms with ease-in-out around its declared SVG point 17.5, 17. Cpu pulses its pins on their local X or Y axis through scale 1, 1.5, and 1, with opacity 1, 0.8, and 1. Each 500 ms cycle repeats once. Transform easing applies per segment, while the native opacity track applies ease-in-out over the whole cycle, matching the upstream renderer. Cpu explicitly returns interrupted scaleX and scaleY tracks to 1. The upstream normal variant names scale and leaves those animated axes untouched. Terminal blinks its cursor with linear opacity 1, 0, and 1 over 800 ms until stopped. The existing lifecycle cancels loops on removal and reduced motion.
+
+Webhook redraws all three paths after 100 ms. Workflow redraws both rectangles immediately and its connector after 300 ms. Their path tracks last 300 ms with ease-out. Their separate opacity tracks start after 150 ms and use Motion's default 300 ms curve, cubic-bezier(0.25, 0.1, 0.35, 1). Their returns have no delay and use the default curve for both properties.
+
+Binary keeps both digit sets in the SVG. Only the original four digits are visible without JavaScript. Outgoing glyphs rotate X to -90 degrees while fading out over 120 ms. Incoming glyphs rotate X from 90 degrees and fade in after another 120 ms. Pairs stagger by 60 ms with custom indices 0 through 3. Return reverses their visibility and ordering. Native tracks include the hidden intervals, so cancellation cannot start a later phase. Each glyph keeps its own bounding-box center. Blocks holds its separate block at translateX=-4 and translateY=4 with Motion's default transform spring.
+
+The `/infrastructure-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources change the class utility import. DatabaseBackup also moves its declared 17.5px 17px origin into initial with transformBox set to view-box. Motion otherwise overwrites that style with the group center at 17, 17. Both adapter and reference use the declared pivot. The runner also applies the explicit sample size to ServerCog and ServerCrash after mounting. Captured-return measurements reset reference velocity before calling the original stop method. Adapter tests separately check real interrupted pose continuity, delayed work, replay, cleanup, and reduced motion. Numerical equality of real interrupted spring velocity is unverified. Visual acceptance remains with manual review.
+
+- [Lucide Animated Server, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server.tsx)
+- [Lucide Animated ServerCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server-cog.tsx)
+- [Lucide Animated ServerCrash, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/server-crash.tsx)
+- [Lucide Animated DatabaseBackup, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/database-backup.tsx)
+- [Lucide Animated Cpu, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cpu.tsx)
+- [Lucide Animated Terminal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/terminal.tsx)
+- [Lucide Animated Webhook, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/webhook.tsx)
+- [Lucide Animated Workflow, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/workflow.tsx)
+- [Lucide Animated Binary, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/binary.tsx)
+- [Lucide Animated Blocks, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/blocks.tsx)
+
 Play, Pause, Volume, Mic, MicOff, Disc3, Drum, Cast, Airplay, and SwitchCamera adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Play translates its polygon through 0, -1, 2, and 0 SVG units while rotating through 0, -10, 0, and 0 degrees over 500 ms. Pause moves its rectangles on separate 500 ms tracks. Both use offsets 0, 0.2, 0.5, and 1 with ease-out per segment. Mic moves its capsule through 0, -3, 0, -2, and 0 units over 600 ms with ease-in-out. Their interrupted returns use Motion's default transform spring with stiffness 500, damping 25, and rest speed 10.

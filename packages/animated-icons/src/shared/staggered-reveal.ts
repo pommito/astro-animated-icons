@@ -4,6 +4,7 @@ import { animatePathReveal, clearPathReveal } from "./path-reveal";
 
 interface RevealStep {
   child: number;
+  preservePose?: boolean;
   delay: number;
   opacityDelay?: number;
   duration?: number;
@@ -37,6 +38,7 @@ export function createStaggeredRevealRecipe(steps: RevealStep[]): IconRecipe {
             opacityDelay,
             opacityEase: defaultEase,
             reverseOffset: step.reverseOffset,
+            preservePose: step.preservePose,
           });
         }
       }
