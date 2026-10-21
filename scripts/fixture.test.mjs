@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 const check = () => execFileSync(process.execPath, ["scripts/fixture.mjs", "check"], { cwd: root, encoding: "utf8", stdio: "pipe" });
 
 test("consecutive preparations reuse unchanged sources and output", () => {
-  const output = execFileSync("pnpm", ["test:prepare"], { cwd: root, encoding: "utf8" });
+  const output = execFileSync("pnpm", ["fixture:prepare"], { cwd: root, encoding: "utf8" });
   assert.match(output, /Reusing fixture: sources and output match/);
   assert.match(check(), /Fixture output matches current sources/);
 });

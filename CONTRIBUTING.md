@@ -6,15 +6,13 @@ Read a recent [merged pull request](https://github.com/pommito/astro-animated-ic
 
 Use Node.js 22.12 or later and pnpm 12.5.1, as declared in [package.json](package.json). Install dependencies with `pnpm install --frozen-lockfile`.
 
-The browser tests use installed Google Chrome through Playwright's `chrome` channel. Run `pnpm exec playwright install chrome` if Chrome is absent. `pnpm test` prepares and serves the production Astro fixture on port 45321. It builds missing or stale output and reuses matching output on consecutive runs. See [playwright.config.ts](playwright.config.ts) for server settings and [package.json](package.json) for available checks.
-
 For manual review, run:
 
 ```sh
-pnpm test:serve
+pnpm fixture:serve
 ```
 
-This command prepares the fixture and keeps Astro preview in the foreground. Use `ICON_TEST_PORT=45322 pnpm test:serve` or `ICON_TEST_PORT=45322 pnpm test tests/check.spec.ts` when another checkout uses the default port. Playwright refuses to reuse an existing server, and Astro preview fails if its port is occupied. Open the relevant route from [the fixture pages](tests/fixtures/astro/src/pages). Comparison pages provide play and stop controls; check the page's implementation to see how its reference is produced.
+This command prepares the production Astro fixture and keeps preview in the foreground on port 45321. Use `ICON_TEST_PORT=45322 pnpm fixture:serve` when another checkout uses that port. Open the relevant route from [the fixture pages](tests/fixtures/astro/src/pages). Comparison pages provide play and stop controls; check the page's implementation to see how its reference is produced.
 
 ## Work with the existing architecture
 
@@ -29,33 +27,27 @@ Explain substantial design choices through the mechanism they use. Keep code com
 Follow a comparable icon's files and update:
 
 - Component and handle exports in [astro.ts](packages/animated-icons/src/astro.ts).
-- Consumer pages in [the Astro fixture](tests/fixtures/astro/src/pages) and the expected drawing in the matching `tests/helpers/` data file. The HTML drawing check covers each icon without launching Chrome. Reuse the mechanism coverage described in [the validation guide](docs/validation.md).
+- Consumer pages in [the Astro fixture](tests/fixtures/astro/src/pages) and the expected drawing in the matching `tests/helpers/` data file. The HTML drawing check covers each icon without launching Chrome. Follow the automated checks and manual review described in [the validation guide](docs/validation.md).
 - Single-icon and combined-route cases in [the bundle inspector](scripts/inspect-bundle.mjs), with matching fixture pages.
 - Source attribution and applicable [third-party notices](packages/animated-icons/THIRD_PARTY_NOTICES.md).
 
 Pin the upstream recipe revision used for the adaptation. Provide a comparison fixture for visual review and describe how its reference is produced, including whether it executes the upstream component.
 
-Run `pnpm validate:distribution` for a new icon because its exports and consumer fixtures change. Run the appropriate shared workflow as well when introducing a mechanism.
-
-Shared API, accessibility, and lifecycle tests use the representatives in [the coverage guide](docs/validation.md). Follow its criteria for adding coverage.
+Run `pnpm validate` after adding an icon. The user reviews its rendering and animation in the comparison fixture.
 
 Update the README when the common API or setup changes. Keep icon-specific details with the affected recipe, tests, and attribution.
 
 ## Validate the change
 
-Read [the validation guide](docs/validation.md) and select the workflow for the change. For an ordinary icon edit using existing mechanisms, run:
+Read [the validation guide](docs/validation.md), then run:
 
 ```sh
-pnpm validate:icon activity
+pnpm validate
 ```
 
-Replace `activity` with the affected icon slug. The command checks types, prepares or reuses the production fixture, verifies the catalogue and bundles, checks drawings, and runs production loading plus any retained regression suite for that icon. Repeat a focused existing test while debugging. A new icon using an existing mechanism needs its drawing baseline and bundle fixtures; add a browser regression only for a new mechanism or a reproduced failure.
+The command checks types, prepares or reuses the production fixture, verifies the catalogue, bundles and initial SVG output, and runs the Node tests for the validation scripts. Automated validation runs without a browser. Use the existing comparison pages for manual review; the user owns visual acceptance.
 
-For shared changes, select the affected mechanism with `pnpm validate:shared`. For exports, dependencies, distribution, fixture preparation, or validation infrastructure, use `pnpm validate:distribution` and the affected mechanism if behavior also changes. The validation guide lists the scopes and completion criteria. `pnpm validate` runs every retained representative and regression for central lifecycle changes or a release check.
-
-The fixture rebuilds when its inputs or output change. Selecting another test alone does not require a rebuild. `pnpm test:prepare` prepares output without a server. `pnpm test:build` forces a fresh build for untracked build inputs; routine validation reuses valid output. The lock in `.artifacts/fixture.lock` prevents replacement while this checkout serves it. Check the recorded PID before removing a lock left by a stopped process. Use separate checkouts and ports for concurrent runs.
-
-Report commands, results, browser, and relevant limitations. For refactors, name the behavior preserved. Separate measured differences from manual visual acceptance. Historical records describe past executions; current requirements live in the validation guide.
+Report commands, relevant results, and limitations. For refactors, name the behavior checked for preservation. Report browser checks only when someone actually performed them. Historical records describe past executions; current requirements live in the validation guide.
 
 ## Open a pull request
 

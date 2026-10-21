@@ -8,23 +8,15 @@
   },
   "scripts": {
     "check": "pnpm --filter @grave/animated-icons check && pnpm --filter @grave/animated-icons-test-fixture check && tsc --noEmit",
-    "test:build": "node scripts/fixture.mjs build --fresh",
-    "test:prepare": "node scripts/fixture.mjs build",
-    "test:serve": "node scripts/fixture.mjs serve",
-    "test:fixture": "pnpm test:prepare && node --test scripts/fixture.test.mjs",
+    "fixture:build": "node scripts/fixture.mjs build --fresh",
+    "fixture:prepare": "node scripts/fixture.mjs build",
+    "fixture:serve": "node scripts/fixture.mjs serve",
     "inspect:bundle": "node scripts/fixture.mjs check && node scripts/inspect-bundle.mjs",
-    "test:bundle": "node scripts/fixture.mjs check && node --test scripts/inspect-bundle.test.mjs",
-    "test": "playwright test",
-    "test:fresh": "pnpm test:build && playwright test",
-    "validate": "node scripts/validate.mjs all",
-    "test:drawings": "node scripts/fixture.mjs check && node scripts/check-drawings.mjs",
-    "test:drawing-checker": "node --test scripts/check-drawings.test.mjs",
-    "validate:icon": "node scripts/validate.mjs icon",
-    "validate:shared": "node scripts/validate.mjs shared",
-    "validate:distribution": "node scripts/validate.mjs distribution"
+    "check:drawings": "node scripts/fixture.mjs check && node scripts/check-drawings.mjs",
+    "test": "pnpm fixture:prepare && node --test --test-concurrency=1 scripts/*.test.mjs",
+    "validate": "pnpm check && pnpm fixture:prepare && pnpm inspect:bundle && pnpm check:drawings && pnpm test"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.1",
     "@types/node": "^22.0.0",
     "typescript": "^6.0.3"
   }

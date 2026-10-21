@@ -1,5 +1,7 @@
 # Third-party notices
 
+The numerical comparison and browser-test descriptions below document the earlier validation strategy used during adaptation. Current [validation](../../docs/validation.md) runs without a browser; the comparison fixtures remain available for the user's manual review.
+
 Accessibility, Activity, SquareActivity, CursorClick, CheckCheck, Link2, CalendarDays, CalendarCog, UsersRound, and BotMessageSquare adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Accessibility preserves its displaced circle, nested group rotations, delayed full turn, and path morph. Its real idle variant is `initial`. Upstream manual stop uses that variant, but mouse leave targets a nonexistent `normal`. The adapter restores `initial` for either input so the package's idle contract holds. Its path rotates around the top-right fill-box corner.
