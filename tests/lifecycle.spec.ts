@@ -2,7 +2,7 @@ import { sharedCases } from "./helpers/shared-cases.js";
 import { expect, test } from "@playwright/test";
 import { pauseAnimationsOnPointer } from "./helpers/pause-animations.js";
 
-for (const { name, route, tag, animationCount } of sharedCases) {
+for (const { name, route, tag, animationCount } of [sharedCases[0]]) {
   test.describe(name, () => {
     test("a template instance inserted after registration animates independently and reconnects to a new control", async ({ page }) => {
       await page.goto(route);

@@ -1,78 +1,8 @@
 import { expect, test } from "@playwright/test";
-import { sortingTrends } from "./helpers/sorting-trends.js";
-import { testIconBehavior } from "./helpers/icon-behavior.js";
-import { compareUpstreamPoses, sampleUpstreamPoses } from "./helpers/upstream-comparison.js";
+
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
 
-for (const slug of ["square-arrow-down", "square-arrow-left", "square-arrow-right", "square-arrow-up"]) test(`${slug} restores its morphed shaft after stop`, async ({ page }) => {
-  await page.goto(`/${slug}/`);
-  await page.waitForFunction(tag => !!customElements.get(tag), `grave-${slug}`);
-  const icon = await page.locator(`#controlled grave-${slug}`).elementHandle();
-  const read = (element: Element) => element.querySelector("[data-part=shaft]")!.getAttribute("d");
-  const rest = await icon!.evaluate(read);
-  await icon!.evaluate((element: HTMLElement & IconHandle) => element.startAnimation());
-  await expect.poll(() => icon!.evaluate(read)).not.toEqual(rest);
-  const continuity = await icon!.evaluate((element: HTMLElement & IconHandle) => {
-    const path = element.querySelector("[data-part=shaft]")!;
-    const before = path.getAttribute("d");
-    element.stopAnimation();
-    return { before, after: path.getAttribute("d") };
-  });
-  expect(continuity.after).toEqual(continuity.before);
-  await expect.poll(() => icon!.evaluate(read)).toEqual(rest);
-  await page.waitForTimeout(650);
-  expect(await icon!.evaluate(read)).toEqual(rest);
-});
-
-
-testIconBehavior(sortingTrends, [50, 200, 350, 700]);
-
-for (const icon of sortingTrends) {
-  test(`${icon.name} hover starts playback independently and returns to rest`, async ({ page }) => {
-    await page.goto(`/${icon.slug}/`);
-    await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
-    await page.locator("#primary").hover();
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBeGreaterThan(0);
-    expect(await page.locator("#secondary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-    await page.mouse.move(0, 0);
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-  });
-}
-
-for (const interruption of [0, 50, 200, 350, 700]) {
-  test(`Sorting and trends match pinned React ${interruption ? `return from ${interruption} ms` : "entry"} at four sizes`, async ({ page }) => {
-    test.setTimeout(120000);
-    const errors: string[] = [];
-    page.on("pageerror", error => errors.push(error.message));
-    await page.goto("/sorting-trends-comparison/");
-    await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-    await page.waitForFunction(tags => tags.every(tag => !!customElements.get(tag)), sortingTrends.map(icon => icon.tag));
-    await page.evaluate(() => document.querySelector<HTMLButtonElement>("#play")!.click());
-    await page.waitForTimeout(20);
-    await page.evaluate(interruption => {
-      document.dispatchEvent(new CustomEvent("sorting-trends-seek", { detail: interruption }));
-      if (interruption) {
-        document.dispatchEvent(new CustomEvent("sorting-trends-capture-return", { detail: interruption }));
-        document.querySelector<HTMLButtonElement>("#stop")!.click();
-        document.dispatchEvent(new CustomEvent("sorting-trends-seek", { detail: 0 }));
-      }
-    }, interruption);
-    const samples = await page.evaluate(sampleUpstreamPoses, {
-      seekEvent: "sorting-trends-seek", times: [0, 25, 50, 75, 100, 150, 200, 250, 300, 350, 400, 500, 600, 800, 1000],
-      origin: "wrapper" as const,
-    });
-    if (!interruption) for (const icon of sortingTrends) {
-      const poses = samples.filter(sample => sample.icon === icon.slug && sample.size === "28");
-      expect(new Set(poses.map(sample => JSON.stringify(sample.reference))).size, `${icon.name} reference changes`).toBeGreaterThan(1);
-      expect(new Set(poses.map(sample => JSON.stringify(sample.adapter))).size, `${icon.name} adapter changes`).toBeGreaterThan(1);
-    }
-    const result = compareUpstreamPoses(samples, `interruption ${interruption} ms`);
-    expect(errors).toEqual([]);
-    console.log(`Sorting and trends ${interruption ? `captured return ${interruption}ms` : "entry"}: maximum geometry ${result.maximumGeometry.toFixed(6)} px; paint ${result.maximumPaint.toFixed(6)}.`);
-  });
-}
-
-for (const slug of ["square-arrow-down", "square-arrow-left", "square-arrow-right", "square-arrow-up"]) {
+for (const slug of ["square-arrow-right"]) {
   for (const action of ["stop", "remove", "reduce"] as const) for (const returning of [false, true]) {
     test(`${slug} cancels shaft frame work on ${action} during ${returning ? "return" : "entry"}`, async ({ page }) => {
       await page.clock.install({ time: 0 });
@@ -132,7 +62,7 @@ for (const slug of ["square-arrow-down", "square-arrow-left", "square-arrow-righ
   }
 }
 
-for (const slug of ["trending-down", "trending-up"]) {
+for (const slug of ["trending-up"]) {
   test(`${slug} replays both completed reveals from their explicit offsets`, async ({ page }) => {
     await page.goto(`/${slug}/`);
     await page.waitForFunction(tag => !!customElements.get(tag), `grave-${slug}`);

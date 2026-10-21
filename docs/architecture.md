@@ -33,7 +33,7 @@ The recipe does not count tracks or decide when to clear a whole playback. A com
 
 Each direct directory in `src/icons/` contains one exported icon. `src/shared/` contains mechanisms used by at least two icons, including [arrow.ts](../packages/animated-icons/src/shared/arrow.ts) and [diagonal-arrow.ts](../packages/animated-icons/src/shared/diagonal-arrow.ts). Reuse these mechanisms when they fit, and keep geometry, origins, and transition choices in the icon's own files.
 
-For a particular icon's geometry, timing, finish policy, and interrupted returns, read its `definition.ts` alongside its recipe test under [tests/](../tests). Use its comparison page under [the Astro fixture](../tests/fixtures/astro/src/pages) when present. A comparison may use an independent native reference instead of running the upstream component, so check what it actually establishes.
+For a particular icon's geometry, timing, finish policy, and interrupted returns, read its `definition.ts` alongside its drawing baseline under [tests/helpers/](../tests/helpers) and the mechanism representative listed in [validation coverage](validation.md). Use its comparison page under [the Astro fixture](../tests/fixtures/astro/src/pages) when present. A comparison may use an independent native reference instead of running the upstream component, so check what it actually establishes.
 
 ## Loading contract
 

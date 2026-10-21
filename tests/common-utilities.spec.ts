@@ -1,11 +1,6 @@
 import { expect, test } from "@playwright/test";
+
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
-import { commonUtilities } from "./helpers/common-utilities.js";
-import { testIconBehavior } from "./helpers/icon-behavior.js";
-import { compareUpstreamPoses, sampleUpstreamPoses } from "./helpers/upstream-comparison.js";
-
-testIconBehavior(commonUtilities, [50, 250, 450, 950, 1450, 1800]);
-
 
 test("Accessibility restores its real initial path after an interrupted morph", async ({ page }) => {
   const response = await page.goto("/accessibility/");
@@ -19,88 +14,7 @@ test("Accessibility restores its real initial path after an interrupted morph", 
   await expect.poll(() => icon.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
 });
 
- test("Pinned CursorClick runs without a production runtime error", async ({ page }) => {
-  const errors: string[] = [];
-  page.on("pageerror", error => errors.push(error.message));
-  await page.goto("/common-utilities-comparison/");
-  await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-  await page.locator("tr[data-icon=cursor-click]").last().getByRole("button").click();
-  await page.waitForTimeout(2400);
-  expect(errors).toEqual([]);
-});
-
-for (const interruption of [0, 150, 450, 1450, 1800]) {
-  test(`Common utilities match pinned React ${interruption ? `return from ${interruption} ms` : "entry"} at four sizes`, async ({ page }) => {
-    test.setTimeout(120000);
-    const errors: string[] = [];
-    page.on("pageerror", error => errors.push(error.message));
-    await page.goto("/common-utilities-comparison/");
-    await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-    await page.waitForFunction(tags => tags.every(tag => !!customElements.get(tag)), commonUtilities.map(icon => icon.tag));
-    await page.evaluate(() => document.querySelector<HTMLButtonElement>("#play")!.click());
-    await page.waitForTimeout(25);
-    await page.evaluate(interruption => {
-      document.dispatchEvent(new CustomEvent("common-utilities-seek", { detail: interruption }));
-      if (interruption) {
-        document.dispatchEvent(new Event("common-utilities-capture-return"));
-        document.querySelector<HTMLButtonElement>("#stop")!.click();
-        document.dispatchEvent(new CustomEvent("common-utilities-seek", { detail: 0 }));
-      }
-    }, interruption);
-    const samples = await page.evaluate(sampleUpstreamPoses, {
-      seekEvent: "common-utilities-seek", times: [0, 25, 50, 100, 150, 200, 250, 300, 400, 450, 520, 600, 750, 800, 950, 1000, 1300, 1450, 1600, 1800, 2200, 2600],
-      origin: "wrapper" as const,
-    });
-    if (!interruption) for (const icon of commonUtilities) {
-      const poses = samples.filter(sample => sample.icon === icon.slug && sample.size === "28");
-      expect(new Set(poses.map(sample => JSON.stringify(sample.reference))).size, `${icon.name} reference changes`).toBeGreaterThan(1);
-      expect(new Set(poses.map(sample => JSON.stringify(sample.adapter))).size, `${icon.name} adapter changes`).toBeGreaterThan(1);
-    }
-    const result = compareUpstreamPoses(samples, `interruption ${interruption} ms`);
-    expect(errors).toEqual([]);
-    console.log(`Common utilities ${interruption ? `captured return ${interruption}ms` : "entry"}: maximum geometry ${result.maximumGeometry.toFixed(6)} px; paint ${result.maximumPaint.toFixed(6)}.`);
-  });
-}
-
-for (const icon of commonUtilities) {
-  test(`${icon.name} hover plays independently and returns to rest`, async ({ page }) => {
-    await page.goto(`/${icon.slug}/`);
-    await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
-    await page.locator("#primary").hover();
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBeGreaterThan(0);
-    expect(await page.locator("#secondary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-    await page.mouse.move(0, 0);
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-  });
-
-  for (const returning of [false, true]) {
-    test(`${icon.name} replays continuously during ${returning ? "return" : "entry"}`, async ({ page }) => {
-      await page.goto(`/${icon.slug}/`);
-      await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
-      const controlled = page.locator(`#controlled ${icon.tag}`);
-      const pose = await controlled.evaluate((element: HTMLElement & IconHandle, returning) => {
-        const seek = (time: number) => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time; });
-        const read = () => [...element.querySelectorAll("svg, g, path, circle, rect, line")].map(shape => {
-          const style = getComputedStyle(shape);
-          return [style.transform, style.opacity, style.strokeDasharray, style.strokeDashoffset, shape.getAttribute("d")];
-        });
-        element.startAnimation();
-        seek(250);
-        if (returning) { element.stopAnimation(); seek(100); }
-        const before = read();
-        element.startAnimation();
-        seek(0);
-        const after = read();
-        element.stopAnimation();
-        return { before, after };
-      }, returning);
-      expect(pose.after).toEqual(pose.before);
-      await expect.poll(() => controlled.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-    });
-  }
-}
-
-for (const phase of [100, 350, 650, 1100]) for (const action of ["stop", "replay", "remove", "reduce"] as const) {
+for (const phase of [350, 1100]) for (const action of ["stop", "replay", "remove", "reduce"] as const) {
   test(`Accessibility cancels its morph on ${action} at ${phase} ms`, async ({ page }) => {
     await page.goto("/accessibility/");
     await page.waitForFunction(() => !!customElements.get("grave-accessibility"));

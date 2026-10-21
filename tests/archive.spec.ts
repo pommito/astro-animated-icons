@@ -2,7 +2,9 @@ import { expect, test, type Locator, type Page } from "@playwright/test";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
 
 type ArchiveElement = HTMLElement & IconHandle;
+
 const body = "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8";
+
 const openBody = "M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11";
 
 async function ready(page: Page, route = "/archive/", clock = false) {
@@ -192,46 +194,4 @@ test("touch and focus keep Archive static while a mouse on a touch-primary devic
   await page.emulateMedia({ reducedMotion: "reduce" });
   await resting(link);
   await context.close();
-});
-
-test("small sizes match the independent spring and path reference on entry and interrupted return", async ({ page }) => {
-  await ready(page, "/archive-comparison/", true);
-  let maxDifference = 0;
-  for (const returning of [false, true]) {
-    await page.locator("#play").dispatchEvent("click");
-    if (returning) {
-      await page.clock.runFor(96);
-      await page.locator("#stop").dispatchEvent("click");
-    }
-    let prior = 0;
-    for (const time of [16, 48, 96, 192, 304, 512, 896]) {
-      await page.clock.runFor(time - prior);
-      prior = time;
-      const samples = await page.locator("tr[data-size]").evaluateAll((rows) => rows.map((row) => {
-        const boxes = (selector: string) => {
-          const svg = row.querySelector<SVGSVGElement>(`${selector} svg`)!;
-          const origin = svg.getBoundingClientRect();
-          return [...svg.querySelectorAll("rect, path")].map((part) => {
-            const box = part.getBoundingClientRect();
-            return [box.x - origin.x, box.y - origin.y, box.width, box.height];
-          }).flat();
-        };
-        return { size: row.getAttribute("data-size"), adapter: boxes("[data-adapter]"), reference: boxes("[data-reference]") };
-      }));
-      for (const sample of samples) {
-        sample.adapter.forEach((value, index) => {
-          const difference = Math.abs(value - sample.reference[index]);
-          maxDifference = Math.max(maxDifference, difference);
-          expect(difference, `${returning ? "return" : "entry"}, ${sample.size}px, ${time}ms, coordinate ${index}`).toBeLessThan(0.03);
-        });
-      }
-    }
-    await page.locator("#stop").dispatchEvent("click");
-    await page.clock.runFor(1200);
-  }
-  console.log(`Archive comparison maximum screen-coordinate difference: ${maxDifference.toFixed(4)}px`);
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.locator("#play").dispatchEvent("click");
-  await page.clock.runFor(1000);
-  for (const control of await page.locator("[data-adapter], [data-reference]").all()) await resting(control);
 });

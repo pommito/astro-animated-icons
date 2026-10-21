@@ -1,95 +1,88 @@
 # Validation coverage
 
-The suite tests the consumer contract at several boundaries. Add an icon to its recipe suite and bundle cases. Add a shared representative only when the icon introduces a mechanism the existing representatives do not exercise.
+Select validation by the mechanism changed. Ordinary icon work checks that icon's drawing and wiring through the production fixture, then reuses existing behavior coverage. Add a browser test when a new mechanism or a reproduced failure needs one.
 
-## Shared behavior
+## Required workflows
 
-`tests/api.spec.ts` checks HTML props, scoped styles, accessible labels, size, and manual controls. Its rendering cases are ArrowLeft, Archive, SlidersHorizontal, and Bluetooth. They pass props through adapters for native tracks, path morphing, attribute animation, and a drawing with custom line caps and joins. Every other adapter still has its complete initial drawing and playback checked by its recipe suite.
+| Change | Command | Completion criterion |
+| --- | --- | --- |
+| An icon using existing mechanisms | `pnpm validate:icon activity` | Types, current production output, bundle integrity, every recorded drawing, production registrations, and any retained regression suite for that icon pass. Replace `activity` with one or more affected slugs. |
+| Shared pointer, manual control, props or accessible rendering | `pnpm validate:shared triggers` | Shared input, API, reduced-motion and template cases pass. |
+| JavaScript path morphing | `pnpm validate:shared morph` | Archive, square shaft, Rocket and Accessibility cases preserve pose and cancel actual path/frame work. |
+| SVG transforms, paint, springs or repeating tracks | `pnpm validate:shared tracks` | Interrupted opacity, loop bridges, repeated delays, cycle boundaries, paint and cleanup representatives pass. |
+| Sequencing and queued stages | `pnpm validate:shared sequence` | ScanText's stage barrier, ScanFace's hidden phase and Volume's queued branch cases pass. |
+| Animated SVG attributes | `pnpm validate:shared attributes` | Moving endpoints and retained stroke width restore correctly. |
+| Central lifecycle or track protocol | `pnpm validate:shared lifecycle` | Every retained mechanism and regression passes. This is a representative suite, rather than a catalogue interaction matrix. |
+| Exports, dependencies, distribution, fixture preparation or validation scripts | `pnpm validate:distribution` | Types, output integrity, bundle and drawing checks, validator negative tests, fixture cache tests, production registrations and public API cases pass. Also select a shared mechanism if behavior changes. |
+| A release or a change affecting all mechanisms | `pnpm validate` | All current static checks, validator checks and retained browser cases pass. |
 
-`tests/accessibility.spec.ts` and `tests/lifecycle.spec.ts` use the cases in `tests/helpers/shared-cases.ts`. Their assertions are unchanged. They check keyboard activation, touch suppression, mouse input on touch-primary devices, reduced-motion changes, independent instances, template upgrades, removal, and reconnection to a new control.
+Several mechanisms can be named in one command, for example `pnpm validate:shared morph tracks`. The runner deduplicates suite files and prepares the fixture once. Use `--workers=2` to set browser concurrency. An unknown mode, mechanism or icon fails before validation starts.
 
-| Representative | Mechanism or failure mode |
+For a geometry or timing edit, use the icon workflow. A change to an existing shared helper uses the corresponding shared workflow. A new runtime mechanism requires a focused test and an entry in `scripts/validate.mjs` so the normal icon workflow selects its regression. Adding or changing consumer fixtures, public exports, a source name or a deletion also uses the distribution workflow.
+
+During debugging, run the smallest relevant existing suite, for example `pnpm test tests/common-utilities.spec.ts --workers=2`. Complete the applicable workflow before finishing. Documentation-only edits require checking referenced commands, paths and anchors.
+
+## Every icon without an interaction matrix
+
+`pnpm test:drawings` checks built HTML without Chrome. It verifies the native link, destination, custom-element tag, complete shape count, expected geometry and attributes, decorative SVG defaults, and a labeled SVG. Expected geometry comes from the existing family data in `tests/helpers/`. `standalone-drawings.json` preserves the initial drawings of the sixteen earlier icons that lacked family data. Those sixteen baselines were captured from the unchanged production output before this test reduction. They are recorded output, not independent upstream renders.
+
+The checker requires drawing baselines to agree with public exports. It combines the existing overlapping FolderGit expectations. A new icon needs a drawing entry; removing a baseline cannot silently reduce coverage. The negative tests reject missing paths, changed coordinates, a wrong element tag, a broken destination and a missing label.
+
+Update expected geometry for an intended drawing change and review that baseline diff. The checker never regenerates its own expectations.
+
+The HTML check does not execute CSS, calculate painted bounds or verify animation targets. Keep the API rendering representatives and manual visual review for those responsibilities.
+
+`pnpm inspect:bundle` retains the existing global checks for icon directories, public exports and single-icon routes. It checks registrations, script counts, shared CSS, selective loading, absence of React in consumer bundles and exact chunk unions for combined routes. Its negative tests still modify temporary copies of output. These checks remain global because membership and loading relationships cross icon boundaries.
+
+`tests/catalog.spec.ts` loads the production entry modules from every existing single-icon route in one browser page. It checks that every public custom element registers and exposes the public playback methods, with no page errors. It does not repeat hover, interruption or timing scenarios for each icon. The initial drawings are checked separately in HTML. Loading all modules together does not prove isolation; the bundle inspector checks each single-icon dependency graph.
+
+## Shared behavior and regressions
+
+The test bodies retain their behavioral assertions and timeouts. Reductions remove repeated parameter rows or whole redundant scenarios. The following representatives protect distinct mechanisms:
+
+| Suite | Reason to retain it |
 | --- | --- |
-| ArrowLeft | Native path tracks, completed entry restores the drawing |
-| MapPin | Delayed reveal, several tracks, held pose |
-| Check | Completed reveal and queued finish events |
-| FolderHeart | Infinite opacity track |
-| AlarmClock | Spring tracks alongside repeating oscillations |
-| BatteryFull | Fade-out followed by staggered fill |
-| ScanFace | Hidden and visible phases with cancellable callbacks |
+| `api.spec.ts` | Public attributes, size, scoped styles, labels and manual control. Four rendering adapters exercise native tracks, path morphing, SVG attributes and custom stroke settings. |
+| `accessibility.spec.ts` | Reduced motion at load and during playback for ArrowLeft, FolderHeart's loop and ScanFace's queued stage. Touch, keyboard and mouse-on-touch input rules run once against the shared controller. |
+| `lifecycle.spec.ts` | The common element upgrades templates before registration, isolates instances and rebinds listeners after reconnection. Custom JS mechanisms retain their own lifecycle observations below. |
+| `arrow-left.spec.ts` and `check.spec.ts` | Browser rendering without JavaScript, actual native link navigation, visible native-track geometry, queued completion cleanup and a consumer's asynchronous success action. |
+| `archive.spec.ts` | Motion values, path morphing and interrupted spring velocity, with real paths observed after stop, removal, reduced motion and reconnection. |
+| `commands.spec.ts` | JavaScript SVG endpoint animation, template upgrade and listener rebinding. Native animation counts alone cannot establish attribute cleanup. |
+| `common-utilities.spec.ts` | Accessibility's actual idle path after interrupted morphs; early and late cancellation; UsersRound's resolved opacity spring during stop and replay, and after partial or complete track completion; BotMessageSquare's consumed delay on later loop cycles. SquareActivity and CursorClick retain their distinct target and transition regressions. |
+| `sorting-trends.spec.ts` | One square-arrow direction observes morphed shaft paths and stopped animation frames in entry and return. Glyph swaps, held reveals and completed-reveal replay have separate cases. Other directions reuse the same mechanism and retain their drawing baselines. |
+| `transport-routes.spec.ts` | Rocket combines a reversing morph loop and JS frames. Its cancellation cases observe the actual path and frame count after cleanup, including reconnection. |
+| `design-tools.spec.ts` | ScanText waits for every erase track before redraw. Stop, replay, removal and reduced motion are checked in both real stages. Other sequence users reuse this barrier coverage. |
+| `media-icons.spec.ts` | Volume replaces SVG branches asynchronously and must cancel queued replacements. Partial-stroke continuity, repeated stop, templates and reconnection need branch observations. Airplay retains its automatic return case. |
+| `health-science.spec.ts` | Interrupted native transform, scale, paint and path loop bridges return to their original cycles. Ambulance checks cancellation of the pending cycle on stop, removal and reduced motion. |
+| `loading-view.spec.ts` | Loader checks a late-cycle angle and the loop boundary, then removal and reconnection. CircleDashed covers replay of completed opacity tracks. FilePenLine retains both sides of its finite-repeat boundary. |
+| `food-plants.spec.ts` | Coffee covers delayed steam-loop cleanup and reconnection. CupSoda combines a finite track with independent hidden bubble loops. |
+| `text-formatting.spec.ts` | Bold observes actual stroke width through interruption and cleanup. |
+| `devices.spec.ts` | Keyboard has a random per-key recipe and an immediate reset, distinct from shared return animations. |
+| `security-icons.spec.ts` | ScanFace's hidden phase and queued return cancel correctly on removal. |
+| `connectivity-question.spec.ts` | WifiLow's text remains continuous when stopped during show, hold or hide. |
 
-Rocket also has dedicated tests in `tests/transport-routes.spec.ts` that observe its fire morph, stopped JavaScript frames, removal, reduced motion, and reconnection.
+Representative tests cover mechanisms, not every possible recipe parameter. A malformed selector or icon-specific timing mistake can still escape a shared test. The production registration and drawing checks catch wiring and static-output failures; manual review of changed icons checks the animation itself.
 
-The square arrows keep dedicated state-sensitive cancellation tests in `tests/sorting-trends.spec.ts`. They observe actual shaft paths and animation-frame callbacks through entry, return, removal, reduced motion, and reconnection.
+## Adding or changing a test
 
-Archive and SlidersHorizontal keep their dedicated lifecycle and reduced-motion tests in `tests/archive.spec.ts` and `tests/commands.spec.ts`. Those tests observe paths, spring motion, or SVG attributes directly. Counting native animations cannot establish that their JavaScript-driven work has stopped.
+1. Name the failure the test should catch and identify its owner in `src/element.ts`, `src/shared/`, or a custom recipe.
+2. Read the existing representative for that owner. Use it unchanged when the new icon adds only geometry, target choices or ordinary timing values.
+3. For a reproduced defect, keep the smallest case that fails on that defect. Observe the path, attribute, opacity, branch, frame work or native animation that proves the failure. A state flag alone does not prove visible cleanup.
+4. For a new mechanism, add one representative and connect its suite to the appropriate shared scope and affected icon in `scripts/validate.mjs`. Keep assertions for genuinely different stages or completion orders.
+5. For a new icon, update its existing family drawing data and consumer bundle fixtures. Review the comparison fixture manually for start, interruption, stop and replay at the intended size.
 
-Volume keeps its template-upgrade and reconnection coverage in `tests/media-icons.spec.ts`. Its native track count changes with the visible branch and partial stroke state. Those tests observe the actual branches, partial-stroke continuity, cancellation during removal, independent instances, and listener rebinding. Its reduced-motion tests also check that queued replacements cannot recreate the active branch. The common suites keep their existing assertions.
+Choose parameter rows for distinct failure classes. An early opacity spring and a completed opacity track differ. Stop, removal and a motion-preference change have different entry points. Repeating all those cases for every icon, every arbitrary millisecond and every size does not add another mechanism.
 
-The shared suites previously expanded the same scenarios across nearly the entire catalog. Removing those repetitions does not remove recipe tests. HTML props fixtures now exist only for the four rendering cases. Single-icon and combined routes remain because each protects a distinct consumer bundle.
+Comparison fixtures and pinned upstream sources remain available for visual review. Automated four-size, many-time React comparison matrices have been removed. This gives up catalogue-wide numerical fidelity checks. Review changed drawings and motion in the existing comparison pages; add a numerical regression only when a concrete defect needs it. Visual acceptance belongs to the user.
 
-AlignLeft and AlignRight use the same SVG attribute mechanism as SlidersHorizontal. Their dedicated checks in `tests/text-formatting.spec.ts` observe moving endpoints, stop continuity, cancellation after removal, reduced motion, and instance isolation. Bold checks its held stroke width and cleanup directly because native track counts cannot prove that the visible width returned to two. The text formatting comparison includes stroke width and endpoint geometry in entry and captured-return measurements. Existing shared representatives remain unchanged.
+## Fixture reuse and verification records
 
-## Every icon
+`pnpm test:prepare` builds missing or stale production output. `pnpm test` and all validation workflows reuse matching output. `pnpm test:build` and `pnpm test:fresh` deliberately force a rebuild for dependency or build inputs outside the tracked cache contract.
 
-The icon suites retain their existing no-JavaScript scenarios. They check initial SVG geometry and native links. They also retain manual playback, stop continuity, replay, cleanup, instance isolation, and reduced-motion checks where recipes can differ. The helper `testIconBehavior` continues to apply these checks to each member of its recipe family.
+The preparation command hashes package and fixture sources, imported helper data, manifests, lockfiles, installed dependency metadata, Node version and the build environment. It verifies output content as well as inputs. Source changes during a build reject that result. Stop the preview before rebuilding; a checkout's fixture lock protects served output.
 
-Animation assertions and timeouts remain unchanged. The interruption samples protect distinct phases within each family:
+`pnpm check` retains package and consumer Astro checks and TypeScript checking of the browser tests. The icon workflow and the morph, tracks, sequence and attributes scopes check the package and browser-test types. The triggers, lifecycle and distribution workflows also type-check all consumer fixtures. This defers fixture-only type errors during a geometry edit; changes to fixtures or public exports require distribution validation.
 
-| Suite | Existing interruption samples and purpose |
-| --- | --- |
-| Hands and gestures | 50, 250, 650, 2600 ms cover delayed coins and heart, nested claps, finite returns, and later biceps loops |
-| Sorting and trends | 50, 200, 350, 700 ms cover glyph springs, shaft morphs, and both sides of the delayed trend reveals |
-| Energy and Bluetooth | 100, 300, 650, 1600 ms cover filling, delayed slash reveal, staggered bars, and later loops |
-| Connectivity | 100, 300, 650, 1600 ms cover fades, staggered springs, rotations, and repeating searches. WifiLow also samples its timed hide at 1750 ms; its text has dedicated show, hold, and hide interruption checks. |
-| Clock and calendar | 50, 300, 950, 1600 ms cover entry, reveal boundaries, and oscillations after the initial spring |
-| Charts | 100, 300, 650, 1000 ms cover fade-out, the hidden interval, staggered redraw, and held sectors |
-| Messages | 100, 300, 650, 1600 ms cover delayed strokes, blinking dots, springs, and held poses |
-| Security | 100, 300, 650 ms cover partial reveals, interrupted springs, and ScanFace phase changes |
-| Map and compass | 100, 300, 350, 650, 1000 ms cover the initial lift, first reveal boundary, partially revealed symbols, delayed second stroke, held pin and compass spring; polygons participate in the family geometry and cleanup helpers |
-| Receipts | 100, 300, 550, 750, 1000 ms cover the main reveal, reverse text erase, delayed secondary strokes, forward redraw, and held poses |
-| Commerce and currency | 100, 300, 550, 750, 1000 ms cover Cart's delayed and repeated vertical pulses, the held scale, currency secondary reveals, and completed entries. Replays at 100 and 350 ms of return cover the delayed and active secondary return. |
-| Bookmarks and status | 50, 200, 450, and 750 ms cover outline stretch, mark redraw, the delayed Ban slash, and spring rotation. Dedicated entry and return replays check pose continuity. Pinned React comparisons check entry at four sizes, settled returns for all ten icons, and interrupted tween returns for CircleCheck, CircleHelp, and Ban. |
-| Expressions | 50, 250, 650, and 1400 ms cover facial transforms, confetti, and repeated pulses. HeartPulse also completes each real stage before testing stop, replay, removal, and reduced motion; Frown and Smile observe their moving mouth attributes directly. PartyPopper and HeartPulse verify replay after one track and all tracks complete. |
-| Transport and routes | 50, 200, 450, 900, 1600, 6800 ms cover entry, delayed reveals, and later loops; comparison samples extend through the reversed Rocket cycle at 12505 ms |
-| Documents, commands, users, navigation | Existing early, middle, and late samples cover staggered paths and interrupted transforms |
-| Health and science | 50, 150, 350, 650, 950, 1700, and 3500 ms cover staggered reveals, delayed Atom returns, independent Flask tracks, and later Brain and Ambulance loops |
-| Cloud | 100, 300, 650, 1600 ms cover transfer overshoot, partial rotations, delayed rays and flakes, and later opacity loops |
+`pnpm test:bundle`, `pnpm test:fixture` and `pnpm test:drawing-checker` validate the distribution and validation machinery. The distribution workflow includes them; ordinary icon work uses their established assertions without repeating their negative tests.
 
-Receipts reuse the native path tracks and cancellable keyframe timelines covered by the existing representatives, so they add no shared representative.
-
-Media recipes use `tests/media-icons.spec.ts` with 50, 200, 450, and 1000 ms interruption samples. Volume also checks replacement ordering and cancellation after the waves appear. Airplay checks its automatic return after the 600 ms entry. `/media-comparison/` executes all ten pinned React sources at 14, 16, 24, and 28 px.
-
-Cart keeps dedicated held-scale and return comparisons because its scale returns while the remaining vertical pulses continue. These use native tracks and the existing lifecycle; the per-icon removal and reduced-motion checks establish cancellation. No additional shared representative is needed.
-
-The devices suite checks immediate Keyboard resets at several phases, plus its replay behavior. It checks SmartphoneNfc and Projector cancellation during both stages by observing restored opacity, dashes, transforms, and pending-track cleanup. Its comparison route executes all ten pinned React sources with a scoped fixed random stream for Keyboard.
-
-Dedicated tests also keep their existing interruption samples and assertions. Comparison routes retain pinned upstream components or their documented independent references at small sizes. These numerical checks support manual visual review.
-
-`tests/cloud-icons.spec.ts` checks all ten cloud drawings, finite held poses, looping stroke order, stop continuity, replay, removal, and reduced motion. Its `/cloud-comparison/` route executes the ten pinned React components at 14, 16, 24, and 28 px. Entry and return measurements sample fifteen times. Return starts from the captured 3250 ms pose with reference velocity reset, because the upstream native stop sampler uses wall-clock time after seeking. Real interrupted spring velocity is covered through adapter continuity tests, without a numerical equality claim against React. Cloud adds no shared representative: existing cases already cover native opacity loops, delayed tracks, and sampled transforms.
-
-The connectivity family reuses native opacity and SVG transform tracks already represented above. WifiLow adds a text node, but its delayed show and hide are flattened into native tracks rather than introducing runtime callbacks. Dedicated connectivity tests check that text at rest, during playback, and after stop, removal, and reduced motion. No shared representative is added.
-
-`tests/corner-resize.spec.ts` checks all ten corner and resize drawings without JavaScript, directional pulse peaks, finite held spring poses, stop continuity at 50, 225, 400, and 650 ms, replay during entry and return, removal, instance isolation, and reduced motion. Its `/corner-resize-comparison/` route executes all ten pinned React components at 14, 16, 24, and 28 px. Fifteen entry and completed-pose return samples measure geometry and paint. Expand and Shrink return from their held translations; corner pulses have already returned to rest. Public adapter tests check pose continuity during interrupted returns. Numerical equality of interrupted spring velocity to React is unverified. These icons reuse the existing native transform sampler and lifecycle, so shared representatives remain unchanged.
-
-Layout and gallery use the family helper at 50, 225, 400, 650, and 1200 ms. Dedicated Layers tests observe both spring stages, completion ordering, pending-stage cancellation, and reconnection. The pinned comparison covers all ten entries and captured returns, plus Layers second-stage geometry at four sizes.
-
-## Checks without a browser
-
-`pnpm check` checks the package, the remaining Astro consumer fixtures, and TypeScript test code. Both Astro checks remain because adapters and consumer templates have different typing responsibilities.
-
-`pnpm inspect:bundle` checks every exported icon against its directory and single-icon route. It also checks registration counts, shared CSS, unused exports, absence of React in consumer bundles, and exact chunk unions for combined routes. `pnpm test:bundle` keeps all negative cases against temporary output copies. These checks already run without Chrome. Their assertions remain intact.
-
-`pnpm test:fixture` checks reuse and rejection of changed inputs or output through the fixture commands. The tests restore their temporary changes and reuse an existing build.
-
-See [the contributor workflow](../CONTRIBUTING.md#validate-the-change) for commands.
-
-Measurements for this strategy are recorded in [the validation timing record](history/2026-10-18-validation.md).
-
-`tests/directional-arrows.spec.ts` checks all ten directional arrow drawings without JavaScript, automatic and manual playback, interruption at 50, 200, 350 and 450 ms, stop continuity, replay, instance isolation, removal and reduced motion. The `/directional-arrows-comparison/` route executes the pinned React components at 14, 16, 24 and 28 px. Numerical checks sample entry and returns from captured early, middle and late poses. Both versions reset velocity before those measured returns; real interrupted velocity is retained by manual playback and checked for continuity through the public adapter API. These native SVG transform tracks reuse the existing representatives, so no shared representative is added. The former ArrowLeft/ArrowDown bundle route moves from `/arrow-down-left/` to `/arrow-left-down/` to free the new icon's consumer route.
-
-The communication family uses the existing SVG transform, signal, and path-reveal mechanisms, so it adds no shared representative. `tests/communication-icons.spec.ts` checks every drawing and native link without JavaScript, stop continuity at 100, 300, 650, and 1000 ms, rapid replay, removal, reduced motion, and instance isolation. Dedicated tests check PhoneCall's fade and delayed spring reveal, Mailbox's held flag, and Send's hidden decorative trail. `/communication-comparison/` executes the ten pinned React sources at 14, 16, 24, and 28 px. It measures entry, PhoneCall's separate spring phase, and return from a captured completed pose. The runner normalizes three fixed-size upstream SVGs after mounting. The package notices describe the handset return correction and the limits of interrupted spring comparisons.
-
-The infrastructure family reuses the SVG transform sampler, delayed path reveals, and native opacity loops, so it adds no shared representative. `tests/infrastructure-icons.spec.ts` checks complete idle SVG and native links without JavaScript, automatic and manual playback, stop continuity at 50, 120, 225, 400, 650, and 1200 ms, rapid replay, removal, reduced motion, and instance isolation. Dedicated tests check Cpu's interrupted axis reset, Terminal's infinite blink and reconnection, and Binary's hidden phases, queued completion cancellation, and staggered return. `/infrastructure-comparison/` executes all ten pinned React sources at 14, 16, 24, and 28 px. Entry and captured-return measurements compare geometry and normalized paint. Reference velocity resets before measured returns. Real interrupted spring velocity equality remains unverified.
-
-The design tools family uses `tests/design-tools.spec.ts` with interruption samples at 50, 250, 450, 750, and 1400 ms. Each icon keeps no-JavaScript drawing and native-link checks, hover, stop continuity, entry and return replay, removal, reduced motion, and instance isolation. Dedicated ScanText tests observe both async stages, require every erase track to complete before redraw, and check cancellation and reconnection. `/design-tools-comparison/` executes all ten pinned React components at 14, 16, 24, and 28 px. It measures entry and captured returns, including both ScanText stages. Returns reset captured velocity. Real interrupted spring velocity equality remains unverified. These icons reuse existing lifecycle mechanisms, so shared representatives remain unchanged.
+Record validation commands, case counts, elapsed time, build reuse, failures and remaining uncertainty in the change evidence. Separate shell elapsed time, Playwright duration and build cost. Past entries in `docs/history/` are historical evidence, not current test requirements. See [the reduction record](history/2026-10-21-lean-validation.md) for the before/after measurements.

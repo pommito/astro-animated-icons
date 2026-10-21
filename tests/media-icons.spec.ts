@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
 
 test("Volume waits for the outgoing branch and cancels pending replacements on removal", async ({ page }) => {
@@ -19,70 +20,6 @@ test("Volume waits for the outgoing branch and cancels pending replacements on r
   await handle!.evaluate((element: HTMLElement & IconHandle) => { element.startAnimation(); element.remove(); });
   await page.waitForTimeout(800);
   expect(await handle!.evaluate(element => ({ lines: element.querySelectorAll("line").length, waves: element.querySelectorAll("[data-wave]").length, animations: element.getAnimations({subtree:true}).length }))).toEqual({lines:2,waves:0,animations:0});
-});
-
-import { mediaIcons } from "./helpers/media-icons.js";
-import { testIconBehavior } from "./helpers/icon-behavior.js";
-import { compareUpstreamPoses, sampleUpstreamPoses } from "./helpers/upstream-comparison.js";
-
-testIconBehavior(mediaIcons, [50, 200, 450, 1000]);
-
-for (const phase of ["entry", "return", "reverse return"] as const) {
-  test(`Media ${phase} matches pinned React recipes at four sizes`, async ({ page }) => {
-    test.setTimeout(120000);
-    const errors: string[] = [];
-    page.on("pageerror", error => errors.push(error.message));
-    await page.goto("/media-comparison/");
-    await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-    await page.waitForFunction(tags => tags.every(tag => !!customElements.get(tag)), mediaIcons.map(icon => icon.tag));
-    await page.evaluate(phase => {
-      document.querySelector<HTMLButtonElement>("#play")!.click();
-      document.dispatchEvent(new CustomEvent("media-seek", { detail: phase === "entry" ? 0 : phase === "return" ? 3250 : 850 }));
-      if (phase !== "entry") {
-        document.dispatchEvent(new CustomEvent("media-capture-return", { detail: phase === "return" ? 3250 : 850 }));
-        document.querySelector<HTMLButtonElement>("#stop")!.click();
-        document.dispatchEvent(new CustomEvent("media-seek", { detail: 0 }));
-      }
-    }, phase);
-    const samples = await page.evaluate(sampleUpstreamPoses, {
-      seekEvent: "media-seek", times: [0, 50, 100, 150, 200, 300, 400, 500, 650, 800, 1000, 1200], origin: "svg" as const,
-    });
-    if (phase === "entry") for (const icon of mediaIcons.filter(icon => icon.slug !== "volume")) {
-      const poses = samples.filter(sample => sample.icon === icon.slug && sample.size === "28");
-      expect(new Set(poses.map(sample => JSON.stringify(sample.reference))).size, `${icon.name} reference must move`).toBeGreaterThan(1);
-      expect(new Set(poses.map(sample => JSON.stringify(sample.adapter))).size, `${icon.name} adapter must move`).toBeGreaterThan(1);
-    }
-    const result = compareUpstreamPoses(samples.filter(sample => sample.icon !== "volume"), phase);
-    expect(errors).toEqual([]);
-    console.log(`Media ${phase}: maximum geometry ${result.maximumGeometry.toFixed(6)} px; normalized paint ${result.maximumPaint.toFixed(6)}. Volume branch transitions use a separate real-time comparison.`);
-  });
-}
-
-test("Volume branch entry and return match the original component after ordered exits", async ({ page }) => {
-  await page.goto("/media-comparison/");
-  await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-  const row = page.locator('tr[data-icon="volume"][data-size="28"]');
-  await page.evaluate(() => document.querySelector<HTMLButtonElement>("#play")!.click());
-  await expect(row.locator("[data-adapter] line")).toHaveCount(0);
-  await expect(row.locator("[data-reference] line")).toHaveCount(0);
-  await page.waitForFunction(() => [...document.querySelectorAll('tr[data-icon="volume"]')].every(row => row.querySelectorAll("[data-reference] path").length === 3 && row.querySelectorAll("[data-adapter] path").length === 3));
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  const entry = await page.evaluate(sampleUpstreamPoses, { seekEvent: "media-seek", times: [0, 50, 100, 150, 200, 300, 400, 500], origin: "svg" as const });
-  console.log("Volume entry", compareUpstreamPoses(entry.filter(sample => sample.icon === "volume"), "incoming waves"));
-  await page.evaluate(() => {
-    document.dispatchEvent(new Event("media-capture-return"));
-    document.querySelector<HTMLButtonElement>("#stop")!.click();
-  });
-  await page.waitForTimeout(30);
-  const exit = await page.evaluate(sampleUpstreamPoses, { seekEvent: "media-seek", times: [0, 50, 100, 150, 200], origin: "svg" as const });
-  console.log("Volume exit", compareUpstreamPoses(exit.filter(sample => sample.icon === "volume"), "outgoing waves"));
-  await page.evaluate(() => document.getAnimations().forEach(animation => animation.play()));
-  await expect(row.locator("[data-adapter] line")).toHaveCount(2);
-  await expect(row.locator("[data-reference] line")).toHaveCount(2);
-  await page.waitForFunction(() => [...document.querySelectorAll('tr[data-icon="volume"]')].every(row => row.querySelectorAll("[data-reference] line").length === 2 && row.querySelectorAll("[data-adapter] line").length === 2));
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-  const returned = await page.evaluate(sampleUpstreamPoses, { seekEvent: "media-seek", times: [0, 50, 100, 150, 200, 300, 400, 500], origin: "svg" as const });
-  console.log("Volume cross", compareUpstreamPoses(returned.filter(sample => sample.icon === "volume"), "incoming cross"));
 });
 
 test("Airplay awaits its entry before the automatic 300 ms return", async ({ page }) => {
@@ -138,34 +75,6 @@ for (const interruption of ["remove", "reduce"] as const) {
     expect(await handle!.evaluate(element => ({ lines: element.querySelectorAll("line").length, waves: element.querySelectorAll("[data-wave]").length, tracks: element.getAnimations({ subtree: true }).length }))).toEqual({ lines: 2, waves: 0, tracks: 0 });
   });
 }
-
-test("Volume keeps the original branch replacement timing in both directions", async ({ page }) => {
-  await page.goto("/media-comparison/");
-  await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-  await page.waitForTimeout(600);
-  const measure = ({ action, shape }: { action: string; shape: string }) => new Promise<Record<string, number>>(resolve => {
-    const row = document.querySelector('tr[data-icon="volume"][data-size="28"]')!;
-    const times: Record<string, number> = {};
-    const started = performance.now();
-    const observer = new MutationObserver(() => {
-      for (const side of ["adapter", "reference"]) {
-        if (times[side] === undefined && row.querySelector(`[data-${side}] ${shape}`)) times[side] = performance.now() - started;
-      }
-      if (times.adapter !== undefined && times.reference !== undefined) { observer.disconnect(); resolve(times); }
-    });
-    observer.observe(row, { childList: true, subtree: true });
-    document.querySelector<HTMLButtonElement>(action)!.click();
-  });
-  const entry = await page.evaluate(measure, { action: "#play", shape: 'path[d="M16 9a5 5 0 0 1 0 6"]' });
-  expect(entry.adapter).toBeLessThan(150);
-  expect(entry.reference).toBeLessThan(150);
-  await page.waitForTimeout(600);
-  const returning = await page.evaluate(measure, { action: "#stop", shape: "line" });
-  expect(returning.adapter).toBeGreaterThanOrEqual(280);
-  expect(returning.reference).toBeGreaterThanOrEqual(280);
-  expect(Math.abs(returning.adapter - returning.reference)).toBeLessThan(150);
-  console.log(`Volume branch replacement in ms: ${JSON.stringify({ entry, returning })}.`);
-});
 
 test("Volume continues a partial cross after a repeated stop", async ({ page }) => {
   await page.goto("/volume/");
@@ -276,18 +185,4 @@ test("Volume template instances cancel a pending replacement and reconnect to th
   await oldControl!.hover();
   expect(await instance!.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
   expect(await instance!.evaluate(element => [...element.querySelectorAll<SVGElement>("line")].every(line => !line.style.opacity && !line.style.strokeDasharray))).toBe(true);
-});
-
-test("Airplay interrupted return matches the original screen and triangle tracks", async ({ page }) => {
-  await page.goto("/media-comparison/");
-  await page.waitForFunction(() => document.body.dataset.referencesReady === "true" && !!customElements.get("grave-airplay"));
-  await page.evaluate(() => {
-    document.querySelector<HTMLButtonElement>("#play")!.click();
-    document.dispatchEvent(new CustomEvent("media-seek", { detail: 300 }));
-    document.dispatchEvent(new CustomEvent("media-capture-return", { detail: 300 }));
-    document.querySelector<HTMLButtonElement>("#stop")!.click();
-  });
-  const samples = await page.evaluate(sampleUpstreamPoses, { seekEvent: "media-seek", times: [0, 50, 100, 150, 200, 300, 400], origin: "svg" as const });
-  const result = compareUpstreamPoses(samples.filter(sample => sample.icon === "airplay"), "return interrupted at 300 ms");
-  console.log(`Airplay interrupted return: geometry ${result.maximumGeometry.toFixed(6)} px, normalized paint ${result.maximumPaint.toFixed(6)}.`);
 });

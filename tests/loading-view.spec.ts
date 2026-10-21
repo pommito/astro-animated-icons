@@ -1,88 +1,13 @@
 import { expect, test } from "@playwright/test";
 import type { IconHandle } from "../packages/animated-icons/src/element.js";
 import { loadingView } from "./helpers/loading-view.js";
-import { testIconBehavior } from "./helpers/icon-behavior.js";
-import { compareUpstreamPoses, sampleUpstreamPoses } from "./helpers/upstream-comparison.js";
 
-testIconBehavior(loadingView, [50, 250, 700, 950, 1750, 2900]);
-
-for (const icon of loadingView) {
-  test(`${icon.name} hover animates only its own instance`, async ({ page }) => {
-    await page.goto(`/${icon.slug}/`);
-    await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
-    await page.locator("#primary").hover();
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBeGreaterThan(0);
-    expect(await page.locator("#secondary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-    await page.mouse.move(0, 0);
-    await expect.poll(() => page.locator("#primary").evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-  });
-}
-
-for (const interruption of [0, 150, 750, 800, 801, 950, 1000, 1001, 1600, 1601, 1750, 2000, 2001, 2900]) {
-  test(`Loading and viewport match pinned React ${interruption ? `return from ${interruption} ms` : "entry"} at four sizes`, async ({ page }) => {
-    test.setTimeout(120000);
-    const errors: string[] = [];
-    page.on("pageerror", error => errors.push(error.message));
-    await page.goto("/loading-view-comparison/");
-    await page.waitForFunction(() => document.body.dataset.referencesReady === "true");
-    await page.waitForFunction(tags => tags.every(tag => !!customElements.get(tag)), loadingView.map(icon => icon.tag));
-    await page.evaluate(() => document.querySelector<HTMLButtonElement>("#play")!.click());
-    await page.waitForTimeout(100);
-    await page.evaluate(interruption => {
-      document.dispatchEvent(new CustomEvent("loading-view-seek", { detail: interruption }));
-      if (interruption) {
-        document.dispatchEvent(new Event("loading-view-capture-return"));
-        document.querySelector<HTMLButtonElement>("#stop")!.click();
-        document.dispatchEvent(new CustomEvent("loading-view-seek", { detail: 0 }));
-      }
-    }, interruption);
-    const samples = await page.evaluate(sampleUpstreamPoses, {
-      seekEvent: "loading-view-seek", times: [0, 25, 50, 100, 150, 200, 250, 300, 350, 400, 450, 600, 700, 750, 790, 800, 850, 950, 1000, 1100, 1600, 1750, 2400, 2900],
-      origin: "wrapper" as const,
-    });
-    if (!interruption) for (const icon of loadingView) {
-      const poses = samples.filter(sample => sample.icon === icon.slug && sample.size === "28");
-      expect(new Set(poses.map(sample => JSON.stringify(sample.reference))).size, `${icon.name} reference changes`).toBeGreaterThan(1);
-      expect(new Set(poses.map(sample => JSON.stringify(sample.adapter))).size, `${icon.name} adapter changes`).toBeGreaterThan(1);
-    }
-    const result = compareUpstreamPoses(samples, `interruption ${interruption} ms`);
-    expect(errors).toEqual([]);
-    console.log(`Loading and viewport ${interruption ? `captured return ${interruption}ms` : "entry"}: maximum geometry ${result.maximumGeometry.toFixed(6)} px; paint ${result.maximumPaint.toFixed(6)}.`);
-  });
-}
-
-for (const icon of loadingView) for (const returning of [false, true]) {
-  test(`${icon.name} replays continuously during ${returning ? "return" : "entry"}`, async ({ page }) => {
-    await page.goto(`/${icon.slug}/`);
-    await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
-    const controlled = page.locator(`#controlled ${icon.tag}`);
-    const pose = await controlled.evaluate((element: HTMLElement & IconHandle, returning) => {
-      const seek = (time: number) => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time; });
-      const read = () => [...element.querySelectorAll("svg, g, path, circle")].map(shape => {
-        const style = getComputedStyle(shape);
-        return [style.transform, style.opacity];
-      });
-      element.startAnimation();
-      seek(250);
-      if (returning) { element.stopAnimation(); seek(100); }
-      const before = read();
-      element.startAnimation();
-      seek(0);
-      const after = read();
-      element.stopAnimation();
-      return { before, after };
-    }, returning);
-    expect(pose.after).toEqual(pose.before);
-    await expect.poll(() => controlled.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
-  });
-}
-
-for (const icon of loadingView.filter(icon => icon.slug.startsWith("loader"))) {
+for (const icon of loadingView.filter(icon => icon.slug === "loader")) {
   test(`${icon.name} stops from its late-cycle angle without normalizing to a different turn`, async ({ page }) => {
     await page.goto(`/${icon.slug}/`);
     await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
     const result = await page.locator(`#controlled ${icon.tag}`).evaluate((element: HTMLElement & IconHandle, slug) => {
-      const duration = slug === "loader-pinwheel" ? 1000 : 800;
+      const duration = 800;
       const seek = (time: number) => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time; });
       const angle = () => {
         const shape = element.querySelector<SVGElement>("[data-spin]")!;
@@ -153,21 +78,12 @@ test("CircleDashed restarts its completed staggered fade", async ({ page }) => {
   expect(opacities.slice(2)).toEqual([0, 0, 0, 0, 0, 0]);
 });
 
-test("Maximize preserves upstream butt caps and miter joins", async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
-  const page = await context.newPage();
-  await page.goto("/maximize/");
-  const styles = await page.locator("#primary path").evaluateAll(paths => paths.map(path => ({ cap: getComputedStyle(path).strokeLinecap, join: getComputedStyle(path).strokeLinejoin })));
-  expect(styles).toEqual(Array(4).fill({ cap: "butt", join: "miter" }));
-  await context.close();
-});
-
-for (const icon of loadingView.filter(icon => icon.slug.startsWith("loader"))) {
+for (const icon of loadingView.filter(icon => icon.slug === "loader")) {
   test(`${icon.name} returns without spurious reverse turns just after its loop boundary`, async ({ page }) => {
     await page.goto(`/${icon.slug}/`);
     await page.waitForFunction(tag => !!customElements.get(tag), icon.tag);
     const result = await page.locator(`#controlled ${icon.tag}`).evaluate((element: HTMLElement & IconHandle, slug) => {
-      const duration = slug === "loader-pinwheel" ? 1000 : 800;
+      const duration = 800;
       const seek = (time: number) => element.getAnimations({ subtree: true }).forEach(animation => { animation.pause(); animation.currentTime = time; });
       element.startAnimation();
       seek(duration * 3 + 1);

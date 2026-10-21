@@ -37,7 +37,12 @@ for (const { name, route, tag, animationCount, label, axis } of sharedCases) {
       await link.hover();
       await expect.poll(() => link.evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(animationCount);
     });
+  });
+}
 
+{
+  const { route, tag, animationCount } = sharedCases[0];
+  test.describe("Shared input", () => {
     test("touch does not trigger decorative hover playback", async ({ browser }) => {
       const context = await browser.newContext({ hasTouch: true, isMobile: true });
       const page = await context.newPage();
