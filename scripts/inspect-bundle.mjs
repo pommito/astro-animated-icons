@@ -49,6 +49,17 @@ function inspectRoute(output, route, log) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "ambulance": "ambulance-single",
+  "stethoscope": "stethoscope-single",
+  "syringe": "syringe-single",
+  "thermometer": "thermometer-single",
+  "brain": "brain-single",
+  "atom": "atom-single",
+  "flask": "flask-single",
+  "telescope": "telescope-single",
+  "circle-gauge": "circle-gauge-single",
+  "gauge": "gauge-single",
+
   "banana": "banana-single",
   "coffee": "coffee-single",
   "cooking-pot": "cooking-pot-single",
@@ -488,6 +499,16 @@ const combinations = [
   ["maximize-combined", "arrow-left", "maximize"],
   ["maximize-2-combined", "arrow-left", "maximize-2"],
   ["minimize-combined", "arrow-left", "minimize"],
+  ["ambulance-combined", "arrow-left", "ambulance"],
+  ["stethoscope-combined", "arrow-left", "stethoscope"],
+  ["syringe-combined", "arrow-left", "syringe"],
+  ["thermometer-combined", "arrow-left", "thermometer"],
+  ["brain-combined", "arrow-left", "brain"],
+  ["atom-combined", "arrow-left", "atom"],
+  ["flask-combined", "arrow-left", "flask"],
+  ["telescope-combined", "arrow-left", "telescope"],
+  ["circle-gauge-combined", "arrow-left", "circle-gauge"],
+  ["gauge-combined", "arrow-left", "gauge"],
 
 
   ["hand-combined", "arrow-left", "hand"],

@@ -21,6 +21,27 @@ The `/loading-view-comparison/` fixture executes all ten pinned React sources at
 - [Lucide Animated Maximize2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/maximize-2.tsx)
 - [Lucide Animated Minimize, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/minimize.tsx)
 
+Ambulance, Stethoscope, Syringe, Thermometer, Brain, Atom, Flask, Telescope, CircleGauge, and Gauge adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Ambulance shares Truck's vehicle sampler for body bounce, wheels, and delayed speed lines. Its cross keeps an independent 600 ms opacity loop. Replays preserve the current body, wheel, and speed-line pose through the shared vehicle sampler, following the package playback contract. A cancellable finite cycle bridges the interrupted pose before the original infinite loop resumes. SVG-parts uses the same sequence mechanism for Brain and the blinking cross, so later cycles keep their original first keyframes. Brain keeps its 1400 ms mirrored scale, stroke width, and six independent path-length and path-offset tracks. The symmetric keyframes make mirrored and repeated cycles equivalent. Atom retains the 0, 300, and 600 ms delays on entry and return. Stethoscope preserves the 100, 350, and 600 ms reveal schedule and separate opacity transitions.
+
+Syringe and Flask preserve the original filled 512-unit drawings with an icon-local 512-unit viewport mapped into the common 24-unit SVG. Both preserve source viewport clipping. Syringe inherits the source stroke width 5.632 in source coordinates and animates the whole SVG in screen pixels with stiffness 250 and damping 25. Flask overrides the inherited stroke to none, matching its filled source. Its bubbles translate by -12 source units while rotating independently; its body scales with stiffness 150 and damping 10 while rotating through separate keyframes. Nested groups preserve these independent timelines and their source bounding-box centers. The common props and SVG defaults do not change.
+
+Thermometer rotates its source path around its bounding-box center. Telescope retains the duplicated upstream paths, its 12px 13px pivot, 800 ms entry, and 600 ms return. CircleGauge rotates the whole SVG by 72 degrees with Motion's implicit spring. Gauge moves its needle with stiffness 160, damping 17, and mass 1.
+
+The `/health-science-comparison/` fixture executes all ten pinned original React components at 14, 16, 24, and 28 px. Copied sources redirect their class utility import. Telescope also initializes its declared 12px 13px transform origin and sets transform-box to view-box. Motion otherwise replaces that origin with the group center on entry. Angles and timing remain unchanged. Entry and return samples use either side of exact Ambulance speed-line repeat boundaries. At those instants the native adapter starts the next iteration while the upstream JavaScript sampler reports the previous endpoint; the line has zero opacity in both versions. Captured returns reset velocity. Actual interrupted spring velocity parity remains unmeasured. React stays confined to comparison pages. Numerical checks support manual visual review.
+
+- [Lucide Animated Ambulance, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ambulance.tsx)
+- [Lucide Animated Stethoscope, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/stethoscope.tsx)
+- [Lucide Animated Syringe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/syringe.tsx)
+- [Lucide Animated Thermometer, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/thermometer.tsx)
+- [Lucide Animated Brain, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/brain.tsx)
+- [Lucide Animated Atom, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/atom.tsx)
+- [Lucide Animated Flask, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/flask.tsx)
+- [Lucide Animated Telescope, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/telescope.tsx)
+- [Lucide Animated CircleGauge, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-gauge.tsx)
+- [Lucide Animated Gauge, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gauge.tsx)
+
 Banana, Coffee, CookingPot, CupSoda, Soup, LeafyGreen, Leaf, TreeDeciduous, TreePine, and FishSymbol adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Coffee and Soup share 1500 ms rising steam with independent opacity and transform tracks. Their source custom values produce delays of 0, 40, and 80 ms. Leaf and LeafyGreen share Feather's 1600 ms whole-SVG drift and default spring return. Geometry and selector choices remain local to each icon.

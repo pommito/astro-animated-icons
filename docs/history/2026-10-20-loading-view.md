@@ -65,4 +65,10 @@ The human subsequently requested publication and merge. [PR 70](https://github.c
 
 The integration preserves both blocks in the two conflicting files, `astro.ts` and `THIRD_PARTY_NOTICES.md`. Bundle cases merged automatically and retain `arrow-left: single` as the first baseline. Independent Standards and Spec reviews found no issue in the resolution. Static comparison confirms 384 components and 384 handles, with all icon files preserved from their respective parents. The transform sampler remains byte-identical to `deee365`. Incoming rendering and Feather drift changes remain byte-identical to main.
 
-`git diff --cached --check` and `node --check scripts/inspect-bundle.mjs` pass. Combined runtime validation is pending an available serialized validation slot. The earlier complete-suite results apply to the original feature tree, rather than this integrated tree.
+`git diff --cached --check` and `node --check scripts/inspect-bundle.mjs` pass. The earlier complete-suite results apply to the original feature tree, rather than this integrated tree.
+
+On October 21, the human reiterated the request to merge PR 70. Main had subsequently integrated health/science PR 71 through `7b159dc`. The second integration preserves both sets of exports, notices, and combined bundle cases. It keeps main's SVG-parts and vehicle replay changes and this feature's transform sampler without editing either implementation. Conflict markers are absent, the staged diff passes the whitespace check, and the bundle inspector passes the syntax check.
+
+Independent Standards and Spec reviews found no resolution defect. The index preserves 394 unique components, 394 handles, 394 single routes, and 393 combined routes. The reviewers confirmed that the files outside the three resolved registries and notices match their respective parents.
+
+Combined runtime validation was not rerun after either main integration. The original passing evidence above remains available, and the PR records this integration coverage limit.
