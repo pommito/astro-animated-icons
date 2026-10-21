@@ -1,0 +1,15 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-maximize-2">
+  <g>
+    <path data-corner d="M3 16.2V21m0 0h4.8M3 21l6-6" />
+    <path data-corner d="M21 7.8V3m0 0h-4.8M21 3l-6 6" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -6,6 +6,7 @@ type Property = "x" | "translateX" | "y" | "rotate" | "rotateX" | "scale" | "sca
 type Values = Partial<Record<Property, number | (number | null)[]>>;
 interface Transition {
   preservePose?: boolean | "until-clear";
+  preserveCycleEnd?: boolean;
   type?: "spring";
   stiffness?: number;
   damping?: number;
@@ -103,6 +104,14 @@ export function animateSvgTransform(
   const frames = Array.from({ length: Math.ceil(duration / 5) + 1 }, (_, index) =>
     sample((index * duration) / Math.ceil(duration / 5)),
   );
+  const sampleFrame = (time: number) => {
+    const position = Math.min(frames.length - 1, Math.max(0, time / duration * (frames.length - 1)));
+    const index = Math.min(frames.length - 2, Math.floor(position));
+    const progress = position - index;
+    return Object.fromEntries(properties.map(property => [property,
+      frames[index][property]! + (frames[index + 1][property]! - frames[index][property]!) * progress,
+    ])) as Pose["values"];
+  };
   const transform = (values: Pose["values"]) =>
     [
       values.x === undefined ? "" : `translateX(${values.x}px)`,
@@ -120,7 +129,9 @@ export function animateSvgTransform(
     ...(properties.some((property) => property !== "opacity") ? { transform: frames.map(transform) } : {}),
     ...(properties.includes("opacity") ? { opacity: frames.map((frame) => frame.opacity!) } : {}),
   };
-  if (returning && keyframes.transform && Object.values(propertyOptions).some(option => option?.continueOnReturn)) {
+  const startsAtPrevious = previous && properties.filter(property => property !== "opacity")
+    .every(property => frames[0][property] === previous.values[property]);
+  if (keyframes.transform && (startsAtPrevious && element.style.transform.startsWith("matrix") || returning && Object.values(propertyOptions).some(option => option?.continueOnReturn))) {
     keyframes.transform[0] = getComputedStyle(element).transform;
   }
   for (const [property, values] of Object.entries(keyframes)) {
@@ -149,14 +160,20 @@ export function animateSvgTransform(
           const samplePlayback = (elapsed: number) => {
             if (options.repeat && elapsed < duration * (options.repeat + 1)) {
               const iteration = Math.floor(elapsed / duration);
-              elapsed %= duration;
-              if (options.repeatType === "reverse" && iteration % 2) elapsed = duration - elapsed;
+              const phase = elapsed % duration;
+              const completedIteration = !!options.preserveCycleEnd && phase === 0 && iteration > 0;
+              elapsed = completedIteration ? duration : phase;
+              if (options.repeatType === "reverse" && (iteration - Number(completedIteration)) % 2) elapsed = duration - elapsed;
             }
-            return sample(elapsed);
+            return sampleFrame(elapsed);
           };
           const current = samplePlayback(time);
-          const interval = Math.min(time, 5);
-          const before = samplePlayback(Math.max(0, time - interval));
+          const repeating = options.preserveCycleEnd && options.repeat && time < duration * (options.repeat + 1);
+          const phase = repeating && time > 0 ? time % duration || duration : time;
+          const interval = Math.min(phase, 5);
+          const before = repeating && phase <= 5
+            ? sampleFrame(options.repeatType === "reverse" && Math.floor(time / duration) % 2 ? duration : 0)
+            : samplePlayback(Math.max(0, time - interval));
           poses.set(element, {
             values: current,
             samplers: retainedSamplers,
@@ -169,7 +186,9 @@ export function animateSvgTransform(
               ]),
             ),
           });
+          const renderedTransform = property === "transform" ? getComputedStyle(element).transform : undefined;
           animation.stop();
+          if (renderedTransform && getComputedStyle(element).transform !== renderedTransform) element.style.transform = renderedTransform;
         },
         cancel() {
           animation.cancel();
