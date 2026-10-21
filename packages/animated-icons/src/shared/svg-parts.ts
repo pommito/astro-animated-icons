@@ -2,6 +2,7 @@ import { animate, interpolate, svgEffect } from "motion";
 import { animate as animateMini } from "motion/mini";
 import type { IconRecipe, IconTrack } from "../element";
 import { animateSvgTransform, clearSvgTransform, resolveSvgEasing } from "./svg-transform";
+import { animateSequence } from "./sequence";
 
 type Transform = Parameters<typeof animateSvgTransform>[3];
 type Transition = Parameters<typeof animateSvgTransform>[4];
@@ -45,6 +46,14 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
   if (part.transformBox) element.style.transformBox = part.transformBox;
   const pose = part.variants[returning ? "normal" : "animate"];
   const transition = pose.transition ?? part.transition ?? {};
+  if (!returning && transition.repeat === Infinity && [...(playbacks.get(element)?.values() ?? [])].some(playback => playback.active)) {
+    const first = { ...part, variants: { ...part.variants, animate: { ...pose, transition: { ...transition, repeat: 0 } } } };
+    animateSequence(track, [
+      track => animateSvgPart(element, first, false, track),
+      track => { clearSvgPart(element, part); animateSvgPart(element, part, false, track); },
+    ]);
+    return;
+  }
   const targets: Transform = {};
   const propertyOptions: Parameters<typeof animateSvgTransform>[5] = {};
   for (const [key, value] of Object.entries(pose)) {

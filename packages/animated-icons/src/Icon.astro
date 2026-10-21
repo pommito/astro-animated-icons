@@ -10,9 +10,10 @@ export interface IconProps extends Omit<HTMLAttributes<"div">, "children"> {
 
 interface Props extends IconProps {
   tag: `grave-${string}`;
+  svgStyle?: string;
 }
 
-const { tag, size = 28, label, controlled = false, ...attributes } = Astro.props;
+const { tag, svgStyle, size = 28, label, controlled = false, ...attributes } = Astro.props;
 const Tag: string = tag;
 ---
 
@@ -31,6 +32,7 @@ const Tag: string = tag;
     aria-label={label}
     role={label ? "img" : undefined}
     focusable="false"
+    style={svgStyle}
   >
     <slot />
   </svg>

@@ -15,9 +15,9 @@ export function testIconBehavior(icons: readonly FixtureIcon[], stopTimes: reado
       const page = await context.newPage();
       await page.goto(`/${icon.slug}/`);
       const link = page.locator("#primary");
-      await expect(link.locator("svg")).toBeVisible();
-      await expect(link.locator("svg")).toHaveAttribute("aria-hidden", "true");
-      await expect(link.locator("svg")).toHaveAttribute("stroke-width", "2");
+      await expect(link.locator("[data-grave-icon] > svg")).toBeVisible();
+      await expect(link.locator("[data-grave-icon] > svg")).toHaveAttribute("aria-hidden", "true");
+      await expect(link.locator("[data-grave-icon] > svg")).toHaveAttribute("stroke-width", "2");
       await expect(link.locator("path, circle, rect, line, polyline, polygon, ellipse")).toHaveCount(icon.drawing.length);
       for (const [index, shape] of icon.drawing.entries()) {
         const actual = link.locator("path, circle, rect, line, polyline, polygon, ellipse").nth(index);

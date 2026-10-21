@@ -23,6 +23,50 @@ The `/common-utilities-comparison/` fixture executes all ten original pinned Rea
 - [Lucide Animated UsersRound, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/users-round.tsx)
 - [Lucide Animated BotMessageSquare, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bot-message-square.tsx)
 
+Ambulance, Stethoscope, Syringe, Thermometer, Brain, Atom, Flask, Telescope, CircleGauge, and Gauge adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Ambulance shares Truck's vehicle sampler for body bounce, wheels, and delayed speed lines. Its cross keeps an independent 600 ms opacity loop. Replays preserve the current body, wheel, and speed-line pose through the shared vehicle sampler, following the package playback contract. A cancellable finite cycle bridges the interrupted pose before the original infinite loop resumes. SVG-parts uses the same sequence mechanism for Brain and the blinking cross, so later cycles keep their original first keyframes. Brain keeps its 1400 ms mirrored scale, stroke width, and six independent path-length and path-offset tracks. The symmetric keyframes make mirrored and repeated cycles equivalent. Atom retains the 0, 300, and 600 ms delays on entry and return. Stethoscope preserves the 100, 350, and 600 ms reveal schedule and separate opacity transitions.
+
+Syringe and Flask preserve the original filled 512-unit drawings with an icon-local 512-unit viewport mapped into the common 24-unit SVG. Both preserve source viewport clipping. Syringe inherits the source stroke width 5.632 in source coordinates and animates the whole SVG in screen pixels with stiffness 250 and damping 25. Flask overrides the inherited stroke to none, matching its filled source. Its bubbles translate by -12 source units while rotating independently; its body scales with stiffness 150 and damping 10 while rotating through separate keyframes. Nested groups preserve these independent timelines and their source bounding-box centers. The common props and SVG defaults do not change.
+
+Thermometer rotates its source path around its bounding-box center. Telescope retains the duplicated upstream paths, its 12px 13px pivot, 800 ms entry, and 600 ms return. CircleGauge rotates the whole SVG by 72 degrees with Motion's implicit spring. Gauge moves its needle with stiffness 160, damping 17, and mass 1.
+
+The `/health-science-comparison/` fixture executes all ten pinned original React components at 14, 16, 24, and 28 px. Copied sources redirect their class utility import. Telescope also initializes its declared 12px 13px transform origin and sets transform-box to view-box. Motion otherwise replaces that origin with the group center on entry. Angles and timing remain unchanged. Entry and return samples use either side of exact Ambulance speed-line repeat boundaries. At those instants the native adapter starts the next iteration while the upstream JavaScript sampler reports the previous endpoint; the line has zero opacity in both versions. Captured returns reset velocity. Actual interrupted spring velocity parity remains unmeasured. React stays confined to comparison pages. Numerical checks support manual visual review.
+
+- [Lucide Animated Ambulance, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ambulance.tsx)
+- [Lucide Animated Stethoscope, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/stethoscope.tsx)
+- [Lucide Animated Syringe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/syringe.tsx)
+- [Lucide Animated Thermometer, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/thermometer.tsx)
+- [Lucide Animated Brain, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/brain.tsx)
+- [Lucide Animated Atom, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/atom.tsx)
+- [Lucide Animated Flask, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/flask.tsx)
+- [Lucide Animated Telescope, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/telescope.tsx)
+- [Lucide Animated CircleGauge, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-gauge.tsx)
+- [Lucide Animated Gauge, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gauge.tsx)
+
+Banana, Coffee, CookingPot, CupSoda, Soup, LeafyGreen, Leaf, TreeDeciduous, TreePine, and FishSymbol adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Coffee and Soup share 1500 ms rising steam with independent opacity and transform tracks. Their source custom values produce delays of 0, 40, and 80 ms. Leaf and LeafyGreen share Feather's 1600 ms whole-SVG drift and default spring return. Geometry and selector choices remain local to each icon.
+
+CupSoda preserves its 500 ms straw pulse, cubic easing with overshoot, 1800 ms wave loop, and five 1500 ms bubble loops. Bubble delays are 0, 350, 700, 1050, and 550 ms. Bubbles have zero opacity without JavaScript and after cleanup. Its SVG clips to its viewport through an internal rendering option. The public props and playback methods are unchanged.
+
+Banana's animated variant replaces its component transition. Entry uses the implicit 300 ms duration with delays of 200 and 0 ms for both opacity and path length. Return uses the component's 100 ms path delay and independent 150 ms opacity delay. FishSymbol keeps its 150 ms path delay and 100 ms opacity delay. The adapters use normalized SVG path lengths.
+
+CookingPot preserves the 950 ms pot scale and 900 ms lid shake. Motion replaces the source's declared group origins with the fill-box centers during rendering. The adapter matches those actual centers. TreeDeciduous keeps its fixed `12px 21px` SVG origin and implicit spring return. TreePine uses the root SVG center and its component-level 500 ms ease-in-out return.
+
+The `/food-plants-comparison/` fixture executes all ten pinned React components at 14, 16, 24, and 28 px. Copies redirect only the class utility import, except Soup's fixed 24 px dimensions, which use the requested size. The Soup adapter also honors the package size contract. Entry and captured-return measurements compare geometry, opacity, and normalized dashes. Captured returns reset velocity; actual interrupted spring velocity parity remains unmeasured. At fully transparent loop boundaries, the JavaScript and native transform samplers choose different endpoints. Comparisons check opacity at the boundary and geometry on either side. React stays confined to comparison pages. Visual acceptance remains with manual review.
+
+- [Lucide Animated Banana, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/banana.tsx)
+- [Lucide Animated Coffee, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/coffee.tsx)
+- [Lucide Animated CookingPot, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cooking-pot.tsx)
+- [Lucide Animated CupSoda, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cup-soda.tsx)
+- [Lucide Animated Soup, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/soup.tsx)
+- [Lucide Animated LeafyGreen, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/leafy-green.tsx)
+- [Lucide Animated Leaf, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/leaf.tsx)
+- [Lucide Animated TreeDeciduous, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/tree-deciduous.tsx)
+- [Lucide Animated TreePine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/tree-pine.tsx)
+- [Lucide Animated FishSymbol, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/fish-symbol.tsx)
+
 PenTool, SquarePen, Palette, Figma, Feather, ScanText, Frame, Stamp, Wrench, Hammer adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 PenTool keeps whole-SVG movement and independent normalized path-length, path-offset, and opacity tracks. SquarePen preserves the different keyframe counts and implicit 800 ms ease-out animation. Its return uses the default transform springs. Feather keeps its 1600 ms drift and implicit spring return. Figma preserves its 300 ms path delay and independent 250 ms opacity delay.
