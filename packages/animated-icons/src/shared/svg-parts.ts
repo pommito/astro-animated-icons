@@ -47,10 +47,12 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
   const pose = part.variants[returning ? "normal" : "animate"];
   const transition = pose.transition ?? part.transition ?? {};
   if (!returning && transition.repeat === Infinity && [...(playbacks.get(element)?.values() ?? [])].some(playback => playback.active)) {
-    const first = { ...part, variants: { ...part.variants, animate: { ...pose, transition: { ...transition, repeat: 0 } } } };
+    const cycle = (repeat: number, delay = transition.delay) => ({
+      ...part, variants: { ...part.variants, animate: { ...pose, transition: { ...transition, repeat, delay } } },
+    });
     animateSequence(track, [
-      track => animateSvgPart(element, first, false, track),
-      track => { clearSvgPart(element, part); animateSvgPart(element, part, false, track); },
+      track => animateSvgPart(element, cycle(0), false, track),
+      track => { clearSvgPart(element, part); animateSvgPart(element, cycle(Infinity, 0), false, track); },
     ]);
     return;
   }

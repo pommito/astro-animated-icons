@@ -218,3 +218,33 @@ for (const time of [150, 350]) for (const replay of [false, true]) {
     await expect.poll(() => icon.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
   });
 }
+
+test("BotMessageSquare replays its staggered dots without pausing again before later cycles", async ({ page }) => {
+  await page.goto("/bot-message-square/");
+  await page.waitForFunction(() => !!customElements.get("grave-bot-message-square"));
+  const icon = page.locator("#controlled grave-bot-message-square");
+  const result = await icon.evaluate(async (element: HTMLElement & IconHandle) => {
+    const settle = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    const dots = [...element.querySelectorAll("circle")];
+    element.startAnimation();
+    dots.forEach(dot => dot.getAnimations().forEach(animation => { animation.pause(); animation.currentTime = 800; }));
+    element.startAnimation();
+    const entryDelays = dots.map(dot => dot.getAnimations()[0].effect!.getTiming().delay);
+    dots.forEach(dot => dot.getAnimations().forEach(animation => animation.finish()));
+    await settle();
+    const looping = dots.map(dot => dot.getAnimations().some(animation => animation.effect!.getTiming().iterations === Infinity));
+    const poses = [100, 1300, 2500].map(time => dots.map(dot => {
+      dot.getAnimations().forEach(animation => { animation.pause(); animation.currentTime = time; });
+      return Number(getComputedStyle(dot).opacity);
+    }));
+    element.stopAnimation();
+    return { entryDelays, looping, poses };
+  });
+  expect(result.entryDelays).toEqual([0, 300, 600]);
+  expect(result.looping).toEqual([true, true, true]);
+  for (const pose of result.poses) for (const opacity of pose) {
+    expect(opacity).toBeGreaterThan(0.3);
+    expect(opacity).toBeCloseTo(pose[0], 6);
+  }
+  await expect.poll(() => icon.evaluate(element => element.getAnimations({ subtree: true }).length)).toBe(0);
+});
