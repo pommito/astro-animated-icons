@@ -33,10 +33,12 @@ The recipe does not count tracks or decide when to clear a whole playback. A com
 
 Each direct directory in `src/icons/` contains one exported icon. `src/shared/` contains mechanisms used by at least two icons, including [arrow.ts](../packages/animated-icons/src/shared/arrow.ts) and [diagonal-arrow.ts](../packages/animated-icons/src/shared/diagonal-arrow.ts). Reuse these mechanisms when they fit, and keep geometry, origins, and transition choices in the icon's own files.
 
-For a particular icon's geometry, timing, finish policy, and interrupted returns, read its `definition.ts` alongside its recipe test under [tests/](../tests). Use its comparison page under [the Astro fixture](../tests/fixtures/astro/src/pages) when present. A comparison may use an independent native reference instead of running the upstream component, so check what it actually establishes.
+For a particular icon's geometry, timing, finish policy, and interrupted returns, read its `definition.ts` alongside its drawing baseline under [tests/helpers/](../tests/helpers). Follow [Validation](validation.md) for automated checks and manual review. Use its comparison page under [the Astro fixture](../tests/fixtures/astro/src/pages) when present. A comparison may use an independent native reference instead of running the upstream component, so check what it actually establishes.
 
 ## Loading contract
 
 [The bundle inspector](../scripts/inspect-bundle.mjs) applies one contract to single-icon and combined routes. It checks registrations, script counts, shared CSS, absence of React, and exact chunk unions for combined routes. It also checks agreement between icon directories, Astro exports, and single-icon cases.
 
-Its [negative tests](../scripts/inspect-bundle.test.mjs) modify temporary copies of the built fixture to check rejected output. See [contribution validation](../CONTRIBUTING.md#validate-the-change) for the commands. Past measurements are preserved in [the dated verification record](history/2026-10-16-verification.md).
+The inspector reads the same catalogue as the drawing checker. It caches each chunk's source and byte and gzip sizes for one inspection. A later inspection reads the files again, including any changes made by a test.
+
+Its [negative tests](../scripts/inspect-bundle.test.mjs) share one temporary copy of the built fixture and restore each modified file after its check. See [contribution validation](../CONTRIBUTING.md#validate-the-change) for the commands. Past measurements are preserved in [the dated verification record](history/2026-10-16-verification.md).

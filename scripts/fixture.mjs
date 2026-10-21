@@ -77,7 +77,7 @@ async function main() {
   const command = process.argv[2];
   if (!["build", "serve", "check"].includes(command)) throw new Error("Usage: node scripts/fixture.mjs build [--fresh] | serve | check");
   if (command === "check") {
-    if (!current(inputs())) throw new Error("Fixture output is missing, modified, or stale. Run pnpm test:prepare.");
+    if (!current(inputs())) throw new Error("Fixture output is missing, modified, or stale. Run pnpm fixture:prepare.");
     console.log("Fixture output matches current sources.");
     return;
   }
@@ -100,7 +100,7 @@ async function main() {
       console.log("Building fixture from current sources.");
       await run(["build"]);
       if (stopping) return;
-      if (source !== inputs()) throw new Error("Sources changed during the build. Run pnpm test:prepare again.");
+      if (source !== inputs()) throw new Error("Sources changed during the build. Run pnpm fixture:prepare again.");
       writeFileSync(stateFile, JSON.stringify({ inputs: source, output: digest(["tests/fixtures/astro/dist"]) }) + "\n");
     } else console.log("Reusing fixture: sources and output match.");
     if (command === "serve" && !stopping) {

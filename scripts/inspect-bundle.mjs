@@ -3,8 +3,9 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
+import { readCatalog } from "./catalog.mjs";
 
-function inspectRoute(output, route, log) {
+function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
   const entries = scripts.flatMap(([, attributes]) => [...attributes.matchAll(/\bsrc="([^"]+)"/g)].map((match) => match[1]));
@@ -21,9 +22,14 @@ function inspectRoute(output, route, log) {
 
   function collectChunk(path) {
     if (chunks.has(path)) return;
-    const source = readFileSync(new URL(path.slice(1), output), "utf8");
-    chunks.set(path, source);
-    collectImports(source, path);
+    let chunk = chunkCache.get(path);
+    if (!chunk) {
+      const source = readFileSync(new URL(path.slice(1), output), "utf8");
+      chunk = { source, bytes: Buffer.byteLength(source), gzip: gzipSync(source).byteLength };
+      chunkCache.set(path, chunk);
+    }
+    chunks.set(path, chunk);
+    collectImports(chunk.source, path);
   }
 
   entries.forEach(collectChunk);
@@ -37,13 +43,13 @@ function inspectRoute(output, route, log) {
     }
   }
   const css = styles.join("\n").trim();
-  const bytes = [...chunks.values()].reduce((sum, source) => sum + Buffer.byteLength(source), 0);
-  const gzip = [...chunks.values()].reduce((sum, source) => sum + gzipSync(source).byteLength, 0);
+  const bytes = [...chunks.values()].reduce((sum, chunk) => sum + chunk.bytes, 0);
+  const gzip = [...chunks.values()].reduce((sum, chunk) => sum + chunk.gzip, 0);
   log(`${route}: ${entries.length} external entries, ${chunks.size} JS chunks, ${bytes} bytes, ${gzip} bytes gzip; ${inline.length} inline scripts, ${inline.reduce((sum, source) => sum + Buffer.byteLength(source), 0)} bytes; ${Buffer.byteLength(css)} bytes CSS`);
-  for (const [path, source] of chunks) {
-    log(`  ${path}: ${Buffer.byteLength(source)} bytes, ${gzipSync(source).byteLength} bytes gzip`);
+  for (const [path, chunk] of chunks) {
+    log(`  ${path}: ${chunk.bytes} bytes, ${chunk.gzip} bytes gzip`);
   }
-  return { entries, chunks, inline, css, source: [...chunks.values(), ...inline].join("\n") };
+  return { entries, chunks, inline, css, source: [...chunks.values()].map(chunk => chunk.source).concat(inline).join("\n") };
 }
 
 
@@ -909,7 +915,7 @@ const combinations = [
 
 export function verifyBundles(output, log = console.log) {
   const source = new URL("../packages/animated-icons/src/", import.meta.url);
-  const exported = [...readFileSync(new URL("astro.ts", source), "utf8").matchAll(/from "\.\/icons\/([^/]+)\/[^"]+\.astro"/g)].map((match) => match[1]);
+  const exported = readCatalog().map(icon => icon.slug);
   const directories = readdirSync(new URL("icons/", source), { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name);
   assert.deepEqual(new Set(Object.keys(singleRoutes)), new Set(exported), "Every exported icon must have a single-icon bundle case");
   assert.deepEqual(new Set(exported), new Set(directories), "Every icon directory must have an Astro export");
@@ -923,9 +929,10 @@ export function verifyBundles(output, log = console.log) {
     { route: "", icons: ["arrow-left"], entries: 2, inline: 1 },
   ];
   const routes = new Map();
+  const chunkCache = new Map();
   for (const expected of cases) {
     const route = expected.route ? `${expected.route}/index.html` : "index.html";
-    routes.set(expected.route, inspectRoute(output, route, log));
+    routes.set(expected.route, inspectRoute(output, route, log, chunkCache));
   }
   const sharedCSS = routes.get("single").css;
   assert.ok(sharedCSS.includes("[data-grave-icon]"), "single: shared wrapper CSS is missing");

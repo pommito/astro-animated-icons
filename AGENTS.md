@@ -1,11 +1,9 @@
 # Working in this repository
 
-Follow [CONTRIBUTING.md](CONTRIBUTING.md) for implementation, validation, and pull request guidelines.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for implementation and review.
 
-Read the relevant documentation for the task:
+Before editing an icon, animation mechanism, test, export, or validation script, read [Validation](docs/validation.md) and complete its checks. Reuse the existing drawing data and comparison fixtures when adding an icon. Automated validation runs without a browser; the user reviews rendered icons and animations manually.
 
-- [Usage](README.md#usage) defines the package contract and consumer responsibilities.
-- [Architecture](docs/architecture.md) describes rendering, recipe boundaries, lifecycle, and selective loading. For icon-specific behavior, read the affected recipe and tests.
-- [Development setup](CONTRIBUTING.md#development-setup) covers tools and browser fixtures.
+Read [Architecture](docs/architecture.md) before changing rendering, recipes, lifecycle, or loading. Read [Usage](README.md#usage) for the public contract. Keep contributor guidance in CONTRIBUTING.md and this single root AGENTS.md as the agent entry point.
 
-Keep contributor guidelines in CONTRIBUTING.md and one root AGENTS.md as the entry point for agents.
+Report the commands executed, relevant results, and anything left unverified. Visual acceptance belongs to the user.
