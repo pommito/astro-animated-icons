@@ -47,10 +47,12 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
   const pose = part.variants[returning ? "normal" : "animate"];
   const transition = pose.transition ?? part.transition ?? {};
   if (!returning && transition.repeat === Infinity && [...(playbacks.get(element)?.values() ?? [])].some(playback => playback.active)) {
-    const first = { ...part, variants: { ...part.variants, animate: { ...pose, transition: { ...transition, repeat: 0 } } } };
+    const cycle = (repeat: number, delay = transition.delay) => ({
+      ...part, variants: { ...part.variants, animate: { ...pose, transition: { ...transition, repeat, delay } } },
+    });
     animateSequence(track, [
-      track => animateSvgPart(element, first, false, track),
-      track => { clearSvgPart(element, part); animateSvgPart(element, part, false, track); },
+      track => animateSvgPart(element, cycle(0), false, track),
+      track => { clearSvgPart(element, part); animateSvgPart(element, cycle(Infinity, 0), false, track); },
     ]);
     return;
   }
@@ -88,7 +90,24 @@ export function animateSvgPart(element: SVGElement, part: SvgPart, returning: bo
     const duration = settings.duration ?? (Array.isArray(target) && target.length > 2 ? 0.8 : 0.3);
     const ease = settings.ease ?? (Object.keys(options).some(key => !["delay", "repeat", "repeatType"].includes(key)) ? "easeOut" : defaultEase);
     const delay = settings.delay;
-    if (property === "d") {
+    if (property === "opacity" && settings.type === "spring") {
+      playback.track(onComplete => {
+        const values = !returning && playback.interrupted && Array.isArray(target)
+          ? [Number(getComputedStyle(element).opacity), ...target.slice(1)] : target;
+        const animation = animate(element, { opacity: values as number | number[] }, { ...settings, onComplete });
+        const stop = () => {
+          const current = Number(getComputedStyle(element).opacity);
+          animation.stop();
+          const value = svgEffect.get(element, "opacity");
+          if (value) {
+            // Native spring stop samples wall time; retain the displayed pose and its estimated velocity.
+            value.setWithVelocity(current - value.getVelocity() / 100, current, 10);
+            svgEffect.flush(element);
+          } else element.style.opacity = String(current);
+        };
+        return { stop, cancel: stop };
+      });
+    } else if (property === "d") {
       playback.track(onComplete => {
         const values = !returning && playback.interrupted && Array.isArray(target)
           ? [element.getAttribute("d")!, ...target.slice(1)] : target as string | string[];

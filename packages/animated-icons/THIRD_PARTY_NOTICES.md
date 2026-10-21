@@ -1,5 +1,28 @@
 # Third-party notices
 
+Accessibility, Activity, SquareActivity, CursorClick, CheckCheck, Link2, CalendarDays, CalendarCog, UsersRound, and BotMessageSquare adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Accessibility preserves its displaced circle, nested group rotations, delayed full turn, and path morph. Its real idle variant is `initial`. Upstream manual stop uses that variant, but mouse leave targets a nonexistent `normal`. The adapter restores `initial` for either input so the package's idle contract holds. Its path rotates around the top-right fill-box corner.
+
+Activity and SquareActivity share the 600 ms linear trace and independent 100 ms opacity. Their 400 ms returns use a separate 100 ms opacity transition. SquareActivity keeps its square static. CheckCheck staggers its two 400 ms reveals and scales by 100 ms; opacity uses separate 100 ms tracks without that parent delay. Link2 keeps its opposite translations and offsets of 0, 0.4, 0.75, and 1 over 600 ms.
+
+CursorClick moves its cursor over one second. The call `clickControls.start("spread", { delay: 1.3 })` replaces the complete transition declared by the spread variant. Installed Motion 13.5.1 therefore runs the original four-frame displacement and seven-frame opacity as 800 ms ease-out keyframes after 1300 ms, rather than attempting the declared multiframe springs. The comparison executes that unchanged control call and checks its delayed spread and opacity. No source compatibility adjustment or suppressed runtime error is needed. The cursor's unused bounce option has no effect on its keyframe animation.
+
+CalendarDays staggers six 400 ms dot pulses by 100 ms. CalendarCog reuses the held 180-degree spring with stiffness 50 and damping 10. UsersRound preserves its independent translation and opacity springs with stiffness 200 and damping 13 after a 100 ms entry delay. SVG parts uses Motion's native opacity spring. Native stop resamples wall time, so the adapter preserves computed opacity while retaining Motion's velocity estimate. Captured comparisons separately reset that opacity value before restarting the return. BotMessageSquare preserves the parent SVG movement, repeated bubble scale, staggered eye blinks, and three infinite opacity tracks. Its three dots retain the source's hidden idle state.
+
+The `/common-utilities-comparison/` fixture executes all ten original pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect their class utility import. The runner samples Accessibility's actual `d` attribute effect alongside the original React values. Entry and captured returns compare geometry, computed opacity, and normalized stroke dashes. Captured returns reset velocity. Real interrupted spring velocity parity remains unmeasured. React stays confined to comparison pages. Numerical comparisons support manual visual review.
+
+- [Lucide Animated Accessibility, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/accessibility.tsx)
+- [Lucide Animated Activity, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/activity.tsx)
+- [Lucide Animated SquareActivity, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/square-activity.tsx)
+- [Lucide Animated CursorClick, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cursor-click.tsx)
+- [Lucide Animated CheckCheck, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/check-check.tsx)
+- [Lucide Animated Link2, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/link-2.tsx)
+- [Lucide Animated CalendarDays, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/calendar-days.tsx)
+- [Lucide Animated CalendarCog, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/calendar-cog.tsx)
+- [Lucide Animated UsersRound, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/users-round.tsx)
+- [Lucide Animated BotMessageSquare, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bot-message-square.tsx)
+
 Loader, LoaderCircle, LoaderPinwheel, CircleDashed, Cog, RefreshCcwDot, RefreshCwOff, Maximize, Maximize2, and Minimize adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Loader and LoaderCircle repeat a linear 360-degree turn every 800 ms. LoaderPinwheel turns every 1000 ms and leaves its outer circle static. Their normal returns use spring stiffness 50 and damping 10. The adapters preserve the rendered fill-box origins applied by Motion, including the source's origin handling for Loader and LoaderCircle. Their internal preserveCycleEnd setting retains 360 degrees at exact loop boundaries and samples return velocity within the current cycle just afterward. Other recipes keep their existing boundary behavior. Sampled transforms retain the angle across late-cycle and multi-cycle interruptions rather than deriving a normalized angle from a matrix.

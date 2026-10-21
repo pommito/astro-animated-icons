@@ -961,6 +961,37 @@ export type { VibrateIconHandle } from "./icons/vibrate/element";
 export { default as EvCharger } from "./icons/ev-charger/EvCharger.astro";
 export type { EvChargerIconHandle } from "./icons/ev-charger/element";
 
+
+export { default as Accessibility } from "./icons/accessibility/Accessibility.astro";
+export type { AccessibilityIconHandle } from "./icons/accessibility/element";
+
+export { default as Activity } from "./icons/activity/Activity.astro";
+export type { ActivityIconHandle } from "./icons/activity/element";
+
+export { default as SquareActivity } from "./icons/square-activity/SquareActivity.astro";
+export type { SquareActivityIconHandle } from "./icons/square-activity/element";
+
+export { default as CursorClick } from "./icons/cursor-click/CursorClick.astro";
+export type { CursorClickIconHandle } from "./icons/cursor-click/element";
+
+export { default as CheckCheck } from "./icons/check-check/CheckCheck.astro";
+export type { CheckCheckIconHandle } from "./icons/check-check/element";
+
+export { default as Link2 } from "./icons/link-2/Link2.astro";
+export type { Link2IconHandle } from "./icons/link-2/element";
+
+export { default as CalendarDays } from "./icons/calendar-days/CalendarDays.astro";
+export type { CalendarDaysIconHandle } from "./icons/calendar-days/element";
+
+export { default as CalendarCog } from "./icons/calendar-cog/CalendarCog.astro";
+export type { CalendarCogIconHandle } from "./icons/calendar-cog/element";
+
+export { default as UsersRound } from "./icons/users-round/UsersRound.astro";
+export type { UsersRoundIconHandle } from "./icons/users-round/element";
+
+export { default as BotMessageSquare } from "./icons/bot-message-square/BotMessageSquare.astro";
+export type { BotMessageSquareIconHandle } from "./icons/bot-message-square/element";
+
 export { default as Loader } from "./icons/loader/Loader.astro";
 export type { LoaderIconHandle } from "./icons/loader/element";
 

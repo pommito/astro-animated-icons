@@ -1,0 +1,15 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-check-check">
+  <g>
+    <path d="M2 12 7 17L18 6" data-part="0" style="transform-box: fill-box; transform-origin: center;" pathLength="1" />
+    <path d="M13 16L14.5 17.5L22 10" data-part="1" style="transform-box: fill-box; transform-origin: center;" pathLength="1" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
