@@ -14,7 +14,7 @@
     "inspect:bundle": "node scripts/fixture.mjs check && node scripts/inspect-bundle.mjs",
     "check:drawings": "node scripts/fixture.mjs check && node scripts/check-drawings.mjs",
     "test": "pnpm fixture:prepare && node --test --test-concurrency=1 scripts/*.test.mjs",
-    "validate": "pnpm check && pnpm fixture:prepare && pnpm inspect:bundle && pnpm check:drawings && pnpm test"
+    "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

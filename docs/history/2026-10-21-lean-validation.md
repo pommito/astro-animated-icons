@@ -59,3 +59,37 @@ A complete run of the original 3,718 cases was never measured. The earlier distr
 ## Validation boundary
 
 Automated checks establish types, static output, catalogue and bundle relationships, and the validators' rejection behavior. They do not execute custom-element registration, interactions, animation timing, or runtime cleanup. Manual review owns those checks and visual acceptance. No current browser or visual acceptance run is claimed by this record.
+
+## Review corrections and repeated measurements
+
+The follow-up binds the accessible SVG check to the expected standalone custom element and rejects `aria-hidden="true"` on that element or its SVG. The drawing checker and bundle inspector share one catalogue reader that accepts multiline exports and either quote style.
+
+The inspector caches each chunk's source, byte count, and gzip size for one inspection. Its negative tests share one temporary output copy and restore each changed file. A successful inspection followed by a deliberately removed registration in the same directory checks that a later inspection reads changed files.
+
+The validation stages share one fixture preparation. Individual commands retain their freshness checks, and fixture-cache tests still exercise preparation and freshness. The complete command now prints each stage's elapsed time.
+
+The repeated measurements used Node 24.19.0 and pnpm 12.5.1 in the same temporary checkout. A Node wrapper measured `pnpm validate` with `performance.now()` and captured output to a file. Production output was prepared before each measured command, and both commands reused it. The baseline was commit `36ce077`; the second run included the corrections above. These conditions differ from the earlier Node 22 measurement.
+
+| Measurement | Baseline | After corrections |
+| --- | --- | --- |
+| Complete `pnpm validate`, cached build | 137.981 seconds | 133.044 seconds |
+| Node test interval within that command | 39.615 seconds, 11 passed | 4.142 seconds, 14 passed |
+
+The corrected command reported these stage times:
+
+```text
+Types: 127.461 seconds
+Fixture: 0.639 seconds
+Bundles: 0.282 seconds
+Drawings: 0.388 seconds
+Validator tests: 4.186 seconds
+Validation: 132.956 seconds
+```
+
+Both Astro diagnostic summaries reported zero errors and warnings across 1,273 package files and 1,703 consumer files. TypeScript passed. Bundle inspection still verified 404 icons across 811 cases, and the drawing checker verified all 404 icons. The new regressions rejected hidden and unrelated standalone SVGs and accepted a multiline catalogue export. The existing negative bundle and fixture-cache tests passed.
+
+A separate probe counted `gzipSync` calls with Node's `syncBuiltinESMExports()` and ran both inspector implementations against the same production output. Calls fell from 17,124 to 472. All 9,375 log lines matched exactly, including route membership, chunk paths, byte and gzip sizes, CSS sizes, and summaries. That probe took 11.993 seconds before and 1.712 seconds after. It measures inspection under instrumentation, not the complete workflow.
+
+Host load and filesystem caches varied. The separate preparation commands took 14.772 and 86.308 seconds, outside the measured cached validations. These single runs support the reduced work counts and show where this run spent its time; they do not establish a stable overall speedup.
+
+Local evidence is in `.artifacts/baseline-validation.log`, `.artifacts/optimized-validation.log`, their JSON timing records, and `.artifacts/inspector-comparison.json`. `git diff --check` passed. No icon implementation or comparison page changed, and no browser or manual visual review was performed.

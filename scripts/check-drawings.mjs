@@ -41,7 +41,13 @@ export function checkDrawing(html, icon, drawing) {
       assert.equal(shapes[index].attributes[attribute], value, `${icon.slug}: shape ${index} ${attribute}`);
     }
   }
-  assert.ok(nodes.some(node => node.name === "svg" && node.attributes?.["aria-label"] && node.attributes.role === "img"), `${icon.slug}: labeled standalone icon`);
+  const standalone = nodes.find(node => node.attributes?.id === "standalone");
+  assert.equal(standalone?.name, icon.tag, `${icon.slug}: standalone tag`);
+  const labeled = standalone.children.find(node => node.name === "svg");
+  assert.ok(labeled?.attributes["aria-label"] && labeled.attributes.role === "img", `${icon.slug}: labeled standalone icon`);
+  for (const node of [standalone, labeled]) {
+    assert.notEqual(node.attributes["aria-hidden"], "true", `${icon.slug}: labeled standalone icon must remain accessible`);
+  }
   assert.ok(nodes.some(node => node.attributes?.id === "destination"), `${icon.slug}: destination exists`);
 }
 

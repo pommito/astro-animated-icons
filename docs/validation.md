@@ -32,6 +32,8 @@ The user owns visual acceptance. Report which manual checks were actually perfor
 
 `pnpm fixture:prepare` prepares production output without starting a server. `pnpm fixture:build` forces a fresh build when an input lies outside the tracked cache contract. `pnpm test` prepares output and runs the Node tests. The remaining individual commands are listed in `package.json`.
 
+`pnpm validate` prepares the fixture before running the bundle inspector, drawing checker, and Node tests directly. These stages share that preparation; fixture-cache tests still exercise preparation and freshness separately. The command reports elapsed time for each stage and the complete command. Individual `pnpm inspect:bundle`, `pnpm check:drawings`, and `pnpm test` commands keep their fixture checks.
+
 The fixture cache hashes sources, shared fixture data, manifests, lockfiles, installed dependency metadata, Node version, and the build environment. It verifies output contents and rejects sources changed during a build. The lock in `.artifacts/fixture.lock` protects served output. Check its recorded PID before removing a lock left by a stopped process.
 
 Report executed commands, relevant results, and anything unverified. Historical entries in `docs/history/` record earlier test strategies and executions; they do not define current requirements.
