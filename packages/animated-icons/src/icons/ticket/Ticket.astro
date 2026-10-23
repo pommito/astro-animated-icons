@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-ticket">
+  <g>
+    <g data-left>
+      <path d="M13 5H4a2 2 0 0 0-2 2v2a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h9" data-part="0" />
+      <path d="M13 5v2" data-part="1" />
+      <path d="M13 11v2" data-part="2" />
+      <path d="M13 17v2" data-part="3" />
+    </g>
+    <path d="M13 5h7a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6v2a2 2 0 0 1-2 2h-7" data-part="4" data-right style="transform-box: fill-box; transform-origin: center" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

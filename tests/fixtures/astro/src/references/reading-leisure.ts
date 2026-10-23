@@ -1,0 +1,10 @@
+export { BookTextIcon as BookText } from "./reading-leisure/book-text";
+export { GraduationCapIcon as GraduationCap } from "./reading-leisure/graduation-cap";
+export { LanguagesIcon as Languages } from "./reading-leisure/languages";
+export { IdCardIcon as IdCard } from "./reading-leisure/id-card";
+export { TicketIcon as Ticket } from "./reading-leisure/ticket";
+export { ChessBishopIcon as ChessBishop } from "./reading-leisure/chess-bishop";
+export { ChessKingIcon as ChessKing } from "./reading-leisure/chess-king";
+export { ChessKnightIcon as ChessKnight } from "./reading-leisure/chess-knight";
+export { ChessPawnIcon as ChessPawn } from "./reading-leisure/chess-pawn";
+export { RockingChairIcon as RockingChair } from "./reading-leisure/rocking-chair";

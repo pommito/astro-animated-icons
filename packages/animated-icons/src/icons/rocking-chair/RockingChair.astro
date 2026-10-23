@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-rocking-chair" svgStyle="transform-origin: 10% 90%">
+  <g>
+    <polyline points="3.5 2 6.5 12.5 18 12.5" data-part="0" />
+    <line x1="9.5" x2="5.5" y1="12.5" y2="20" data-part="1" />
+    <line x1="15" x2="18.5" y1="12.5" y2="20" data-part="2" />
+    <path d="M2.75 18a13 13 0 0 0 18.5 0" data-part="3" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

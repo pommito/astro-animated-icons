@@ -55,6 +55,17 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "book-text": "book-text-single",
+  "graduation-cap": "graduation-cap-single",
+  "languages": "languages-single",
+  "id-card": "id-card-single",
+  "ticket": "ticket-single",
+  "chess-bishop": "chess-bishop-single",
+  "chess-king": "chess-king-single",
+  "chess-knight": "chess-knight-single",
+  "chess-pawn": "chess-pawn-single",
+  "rocking-chair": "rocking-chair-single",
+
   "accessibility": "accessibility-single",
   "activity": "activity-single",
   "square-activity": "square-activity-single",
@@ -485,6 +496,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["book-text-combined", "arrow-left", "book-text"],
+  ["graduation-cap-combined", "arrow-left", "graduation-cap"],
+  ["languages-combined", "arrow-left", "languages"],
+  ["id-card-combined", "arrow-left", "id-card"],
+  ["ticket-combined", "arrow-left", "ticket"],
+  ["chess-bishop-combined", "arrow-left", "chess-bishop"],
+  ["chess-king-combined", "arrow-left", "chess-king"],
+  ["chess-knight-combined", "arrow-left", "chess-knight"],
+  ["chess-pawn-combined", "arrow-left", "chess-pawn"],
+  ["rocking-chair-combined", "arrow-left", "rocking-chair"],
+
   ["accessibility-combined", "arrow-left", "accessibility"],
   ["activity-combined", "arrow-left", "activity"],
   ["square-activity-combined", "arrow-left", "square-activity"],
