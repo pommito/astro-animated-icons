@@ -1,0 +1,22 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-hat-glasses">
+  <g>
+    <g data-hat style="transform-box: fill-box; transform-origin: 12px 11px;">
+      <path d="m19 11-2.11-6.657a2 2 0 0 0-2.752-1.148l-1.276.61A2 2 0 0 1 12 4H8.5a2 2 0 0 0-1.925 1.456L5 11" />
+      <path d="M2 11h20" />
+    </g>
+    <g data-glasses style="transform-box: fill-box; transform-origin: center;">
+      <path d="M14 18a2 2 0 0 0-4 0" />
+      <circle cx="17" cy="18" r="3" />
+      <circle cx="7" cy="18" r="3" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -1193,6 +1193,16 @@ export type { HardDriveUploadIconHandle } from "./icons/hard-drive-upload/elemen
 export { default as Shredder } from "./icons/shredder/Shredder.astro";
 export type { ShredderIconHandle } from "./icons/shredder/element";
 
+export { default as Bone } from "./icons/bone/Bone.astro";
+export type { BoneIconHandle } from "./icons/bone/element";
+export { default as Cigarette } from "./icons/cigarette/Cigarette.astro";
+export type { CigaretteIconHandle } from "./icons/cigarette/element";
+export { default as CigaretteOff } from "./icons/cigarette-off/CigaretteOff.astro";
+export type { CigaretteOffIconHandle } from "./icons/cigarette-off/element";
+export { default as HatGlasses } from "./icons/hat-glasses/HatGlasses.astro";
+export type { HatGlassesIconHandle } from "./icons/hat-glasses/element";
+export { default as SprayCan } from "./icons/spray-can/SprayCan.astro";
+export type { SprayCanIconHandle } from "./icons/spray-can/element";
 export { default as CircleDollarSign } from "./icons/circle-dollar-sign/CircleDollarSign.astro";
 export type { CircleDollarSignIconHandle } from "./icons/circle-dollar-sign/element";
 export { default as GeorgianLari } from "./icons/georgian-lari/GeorgianLari.astro";

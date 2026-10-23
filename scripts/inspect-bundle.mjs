@@ -55,6 +55,11 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "bone": "bone-single",
+  "cigarette": "cigarette-single",
+  "cigarette-off": "cigarette-off-single",
+  "hat-glasses": "hat-glasses-single",
+  "spray-can": "spray-can-single",
   "circle-dollar-sign": "circle-dollar-sign-single",
   "georgian-lari": "georgian-lari-single",
   "philippine-peso": "philippine-peso-single",
@@ -550,6 +555,11 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["bone-combined", "arrow-left", "bone"],
+  ["cigarette-combined", "arrow-left", "cigarette"],
+  ["cigarette-off-combined", "arrow-left", "cigarette-off"],
+  ["hat-glasses-combined", "arrow-left", "hat-glasses"],
+  ["spray-can-combined", "arrow-left", "spray-can"],
   ["circle-dollar-sign-combined", "arrow-left", "circle-dollar-sign"],
   ["georgian-lari-combined", "arrow-left", "georgian-lari"],
   ["philippine-peso-combined", "arrow-left", "philippine-peso"],
