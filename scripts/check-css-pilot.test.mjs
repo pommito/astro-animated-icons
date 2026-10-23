@@ -40,3 +40,8 @@ test("generated CSS timing cannot drift from the shared recipe", () => change("c
   html => html.replace("animation-duration:0.5s", "animation-duration:0.7s"),
   () => assert.throws(() => verifyCssPilot(output, () => {}), /managed\/bell: CSS matches the shared recipe, bell/),
 ));
+
+test("server CSS markers cannot disappear and cause duplicate client sheets", () => change("css-pilot/managed/bell/index.html",
+  html => html.replace('data-grave-cycle-style="bell"', ""),
+  () => assert.throws(() => verifyCssPilot(output, () => {}), /managed\/bell: active sheet marker for bell/),
+));
