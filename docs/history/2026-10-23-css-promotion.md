@@ -57,3 +57,7 @@ Safari, Firefox, real touch/hybrid hardware, and native operating-system reduced
 ## Owner visual review
 
 On 2026-10-23, the owner confirmed visual acceptance of Bell and ChevronRight on the [production comparison page](http://127.0.0.1:45331/css-pilot/) after the review requested in this chat. This acceptance applies to promotion commit 28d3e5dbea1f0ec4a8dca59ff1cf7ee5fcbd628e. It does not cover later migrations. The owner did not report additional browser or hardware coverage.
+
+## Template correction
+
+The subsequent [template correction record](2026-10-23-css-template-fix.md) resolves the review findings and records the corrected implementation's browser checks and updated payloads. Its measurements supersede the table above for the corrected runtime.

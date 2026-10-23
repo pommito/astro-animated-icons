@@ -11,6 +11,7 @@ export interface IconAnimation {
 export type IconTrack = (start: (onComplete: () => void) => IconAnimation) => IconAnimation;
 
 export interface IconRecipe {
+  connect?(host: HTMLElement): void;
   finish: "hold" | "restore";
   animate(drawing: SVGGElement, returning: boolean, track: IconTrack): void;
   clear(drawing: SVGGElement): void;
@@ -23,6 +24,7 @@ export function createIconElement(recipe: IconRecipe) {
     private playbackId = 0;
 
     connectedCallback() {
+      recipe.connect?.(this);
       const control = this.closest("a[href], button") ?? this;
 
       this.listeners = new AbortController();

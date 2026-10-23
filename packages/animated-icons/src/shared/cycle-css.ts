@@ -16,3 +16,13 @@ export function cycleCSS(cycle: FiniteTransformCycle) {
     selector.replace(target, target + '[data-cycle-state="entry"]') + "{animation-name:" + name + "-entry;}" +
     selector.replace(target, target + '[data-cycle-state="return"]') + "{animation-name:" + name + "-return;}" + "}";
 }
+
+export function ensureCycleCSS(cycle: FiniteTransformCycle, document: Document) {
+  const [active, ...duplicates] = document.querySelectorAll('style[data-grave-cycle-style="' + cycle.id + '"]');
+  duplicates.forEach(sheet => sheet.remove());
+  if (active) return;
+  const sheet = document.createElement("style");
+  sheet.setAttribute("data-grave-cycle-style", cycle.id);
+  sheet.textContent = cycleCSS(cycle);
+  document.head.append(sheet);
+}
