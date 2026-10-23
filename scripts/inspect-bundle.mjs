@@ -10,7 +10,8 @@ const load = path => evaluateTypeScriptData(readFileSync(new URL(path, import.me
 const { cycleCSS } = await load("../packages/animated-icons/src/shared/cycle-css.ts");
 const { bellCycle } = await load("../packages/animated-icons/src/icons/bell/cycle.ts");
 const { chevronRightCycle } = await load("../packages/animated-icons/src/icons/chevron-right/cycle.ts");
-const generatedCSS = new Map([bellCycle, chevronRightCycle].map(cycle => [cycle.id, cycleCSS(cycle)]));
+const { folderCycle } = await load("../packages/animated-icons/src/icons/folder/cycle.ts");
+const generatedCSS = new Map([bellCycle, chevronRightCycle, folderCycle].map(cycle => [cycle.id, cycleCSS(cycle)]));
 
 export function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");
@@ -490,6 +491,7 @@ const singleRoutes = {
   "folder-key": "folder-key-single",
   "folder-lock": "folder-lock-single",
   "folder-minus": "folder-minus-single",
+  "folder": "folder-single",
   "folder-open": "folder-open-single",
   "folder-output": "folder-output-single",
   "folder-plus": "folder-plus-single",
@@ -1000,6 +1002,8 @@ const combinations = [
   ["folder-key-combined", "arrow-left", "folder-key"],
   ["folder-lock-combined", "arrow-left", "folder-lock"],
   ["folder-minus-combined", "arrow-left", "folder-minus"],
+  ["folder-combined", "arrow-left", "folder"],
+  ["folder-file-text-combined", "folder", "file-text"],
   ["folder-open-combined", "arrow-left", "folder-open"],
   ["folder-output-combined", "arrow-left", "folder-output"],
   ["folder-plus-combined", "arrow-left", "folder-plus"],

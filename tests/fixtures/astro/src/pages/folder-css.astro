@@ -1,0 +1,59 @@
+---
+import { Folder } from "@grave/animated-icons/astro";
+import MotionFolder from "../css-references/Folder.astro";
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>Folder CSS comparison</title></head>
+  <body>
+    <header>
+      <span>Folder comparison</span>
+      <button type="button" id="play">Play all</button>
+      <button type="button" id="stop">Stop all</button>
+    </header>
+    <main>
+      <h1>Folder</h1>
+      <p>Hover a row to play both versions. Use Stop while the icon moves to compare the returns.</p>
+      <p>The entry drawing and 400 ms rotation are shared. The previous Motion version returns with a velocity-dependent spring. CSS returns from the displayed angle over 200 ms with ease-out. The return difference is intentional.</p>
+      <section aria-label="Motion and CSS samples">
+        <div class="row headings"><span>Size</span><span>Previous Motion</span><span>Public CSS</span><span>Controls</span></div>
+        {[14, 16, 24, 28].map(size => <div class="row" data-pair data-size={size}>
+          <span>{size} px</span>
+          <MotionFolder controlled size={size} data-sample data-engine="motion" />
+          <Folder controlled size={size} data-sample data-engine="css" />
+          <div class="actions"><button type="button" data-play>Play</button><button type="button" data-stop>Stop</button></div>
+        </div>)}
+      </section>
+      <p><a href="#destination" data-parent><Folder /> Parent hover</a></p>
+      <details>
+        <summary>Numerical and synthetic checks</summary>
+        <p>Entry is compared with Motion at four sizes. Return continuity, its new timing, completion and template cleanup are checked separately. Pointer and preference tests use synthetic events and a matchMedia stub.</p>
+        <button type="button" id="check">Run checks</button>
+        <output id="result"></output>
+      </details>
+      <p id="destination"><a href="/folder/">Full consumer fixture</a> · <a href="/folders-comparison/#folder">Folder family</a></p>
+    </main>
+  </body>
+</html>
+<script>
+  import "../folder-css-checks";
+</script>
+<style>
+  :global(body) { margin: 0; background: oklch(0.98 0.005 260); color: oklch(0.24 0.02 260); font: 16px/1.5 system-ui, sans-serif; }
+  header { position: sticky; inset-block-start: 0; z-index: 1; display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem; padding: 1rem; background: oklch(1 0 0); border-block-end: 1px solid oklch(0.86 0.01 260); }
+  header span { margin-inline-end: auto; font-weight: 600; }
+  main { inline-size: min(48rem, calc(100% - 2rem)); margin-inline: auto; padding-block: 1.5rem 3rem; }
+  h1 { margin-block: 0 0.5rem; }
+  section { border: 1px solid oklch(0.86 0.01 260); border-radius: 0.75rem; background: oklch(1 0 0); overflow: clip; }
+  .row { display: grid; grid-template-columns: 3rem 1fr 1fr minmax(4rem, auto); align-items: center; gap: 0.5rem; padding: 1rem 0.75rem; }
+  .row + .row { border-block-start: 1px solid oklch(0.92 0.005 260); }
+  .headings { font-size: 0.8rem; color: oklch(0.48 0.02 260); }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  button { min-block-size: 2.75rem; padding: 0.4rem 0.65rem; font: inherit; color: inherit; background: oklch(0.96 0.01 260); border: 1px solid oklch(0.8 0.02 260); border-radius: 0.4rem; cursor: pointer; }
+  button:active { background: oklch(0.86 0.02 260); }
+  :is(button, a, summary):focus-visible { outline: 2px solid oklch(0.5 0.18 260); outline-offset: 3px; }
+  a { color: oklch(0.45 0.17 260); }
+  details { padding: 1rem; border: 1px solid oklch(0.86 0.01 260); border-radius: 0.75rem; }
+  summary { cursor: pointer; }
+  output { display: block; overflow-wrap: anywhere; white-space: pre-wrap; margin-block-start: 1rem; }
+  @media (hover: hover) and (pointer: fine) { button:hover { background: oklch(0.9 0.02 260); } }
+</style>
