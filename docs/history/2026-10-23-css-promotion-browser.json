@@ -1,0 +1,33 @@
+{
+  "browser": "Codex in-app browser; version not read",
+  "route": "http://127.0.0.1:45331/css-pilot/",
+  "assertions": 592,
+  "snapshots": 496,
+  "failures": [],
+  "maxAngleError": 0.013984397194736431,
+  "maxTranslationError": 0,
+  "angleToleranceDegrees": 0.03,
+  "translationToleranceViewBoxUnits": 0.005,
+  "lifecycle": {
+    "touchIgnored": true,
+    "parentMouseStarts": true,
+    "disconnectCancels": true,
+    "disabledIgnored": true,
+    "controlledIgnored": true,
+    "startReturnsVoid": true,
+    "manualStarts": true,
+    "stopReturnsVoid": true,
+    "preferenceChangeClears": true,
+    "reducedManualStatic": true,
+    "replayAfterPreference": true,
+    "oldParentDetached": true,
+    "newParentAttached": true,
+    "templateCloneStarts": true
+  },
+  "visualAcceptance": "pending",
+  "limitations": [
+    "Synthetic pointer events and isolated matchMedia stub",
+    "No Safari, Firefox, real touch/hybrid hardware, or operating-system reduced-motion verification",
+    "No frame-pacing claim"
+  ]
+}

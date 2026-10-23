@@ -1,5 +1,4 @@
-import { createSvgKeyframesRecipe } from "../../shared/svg-keyframes";
+import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { bellCycle } from "./cycle";
 
-export const bellRecipe = createSvgKeyframesRecipe(
-  { rotate: [0, -10, 10, -10, 0] }, { duration: 0.5, ease: "easeInOut" },
-);
+export const bellRecipe = createCSSCycleRecipe(bellCycle);

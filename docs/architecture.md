@@ -54,3 +54,7 @@ For a particular icon's geometry, timing, finish policy, and interrupted returns
 The inspector reads the same catalogue as the drawing checker. It caches each chunk's source and byte and gzip sizes for one inspection. A later inspection reads the files again, including any changes made by a test.
 
 Its [negative tests](../scripts/inspect-bundle.test.mjs) share one temporary copy of the built fixture and restore each modified file after its check. See [contribution validation](../CONTRIBUTING.md#validate-the-change) for the commands. Past measurements are preserved in [the dated verification record](history/2026-10-16-verification.md).
+
+## CSS playback
+
+Bell and ChevronRight use generated CSS keyframes through the public adapters. Their cycle.ts files also drive fixture-only Motion references with distinct tags. CssIcon.astro emits each rendered cycle once per request. The CSS track adapter reuses element.ts and captures the rendered transform before interruption. Bell replays from that pose; ChevronRight restarts from zero and restores on completion. LoaderCircle keeps Motion. The dated [parity follow-up](history/2026-10-23-css-parity.md) records the preceding pilot and its limits.
