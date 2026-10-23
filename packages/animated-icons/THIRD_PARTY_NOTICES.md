@@ -941,6 +941,27 @@ The `/reading-leisure-comparison/` fixture executes all ten pinned original Reac
 - [Lucide Animated ChessPawn, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-pawn.tsx)
 - [Lucide Animated RockingChair, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rocking-chair.tsx)
 
+CircleDollarSign, GeorgianLari, PhilippinePeso, SaudiRiyal, TurkishLira, Downvote, Upvote, TrendingUpDown, MessageCircleDashed, and MessageSquareDashed adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The currencies keep their 600 ms main path reveals and independent 100 ms opacity transitions. Secondary strokes begin after 500 ms and draw over 400 ms with path offset from one to zero. Their normal return waits 300 ms and lasts 300 ms; main paths return over 400 ms. SaudiRiyal draws all four strokes together. CircleDollarSign keeps its circle static.
+
+Downvote and Upvote hold a one-pixel left translation, a two-pixel downward or upward translation, and a -12-degree rotation. Entry and return use spring stiffness 250 and damping 25 around the SVG center. TrendingUpDown keeps its 500 ms horizontal movement, 400 ms line reveals with path offset from one, and 300 ms arrowhead reveals delayed by 300 ms with path offset from one half. Its normal variants omit SVG movement and path offset, so those tracks continue to finish during a stop. The shared trending mechanism now applies each part recipe to all matching paths; existing TrendingUp and TrendingDown retain their single line and head.
+
+MessageCircleDashed and MessageSquareDashed fade eight and nine segments from zero to one over 300 ms, delayed by 100 ms times their one-based source order. Their normal opacity uses Motion's default 300 ms transition. All ten recipes hold their completed pose until stopped and use the common lifecycle for reduced motion, interruption, replay, and cleanup.
+
+The `/currency-feedback-comparison/` fixture executes all ten original pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect their class utility import to the local equivalent. React remains confined to comparison fixtures. Automated validation checks types, static drawings, catalogue and bundle relationships. Browser rendering, runtime registration, animation timing, interactions, interruption, cleanup, and visual acceptance remain unverified until manual review.
+
+- [Lucide Animated CircleDollarSign, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-dollar-sign.tsx)
+- [Lucide Animated GeorgianLari, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/georgian-lari.tsx)
+- [Lucide Animated PhilippinePeso, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/philippine-peso.tsx)
+- [Lucide Animated SaudiRiyal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/saudi-riyal.tsx)
+- [Lucide Animated TurkishLira, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/turkish-lira.tsx)
+- [Lucide Animated Downvote, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/downvote.tsx)
+- [Lucide Animated Upvote, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/upvote.tsx)
+- [Lucide Animated TrendingUpDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/trending-up-down.tsx)
+- [Lucide Animated MessageCircleDashed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-circle-dashed.tsx)
+- [Lucide Animated MessageSquareDashed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-square-dashed.tsx)
+
 ## Lucide Animated
 
 MIT License

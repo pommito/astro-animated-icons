@@ -13,7 +13,7 @@ document.addEventListener("sorting-trends-seek", event => {
   if (returnFrom !== undefined) {
     for (const row of document.querySelectorAll("tr[data-icon^=trending]")) {
       sampleReference(row.querySelector("[data-reference] svg")!, returnFrom + milliseconds, { properties: ["x", "y", "translateX", "translateY"] });
-      row.querySelectorAll("[data-reference] polyline").forEach(shape => sampleReference(shape, returnFrom! + milliseconds, { properties: ["pathOffset"] }));
+      row.querySelectorAll("[data-reference] polyline, [data-reference] path").forEach(shape => sampleReference(shape, returnFrom! + milliseconds, { properties: ["pathOffset"] }));
     }
   }
   document.querySelectorAll<SVGPathElement>("[data-adapter] path").forEach(path => {

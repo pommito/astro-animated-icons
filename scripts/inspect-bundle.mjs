@@ -55,6 +55,16 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "circle-dollar-sign": "circle-dollar-sign-single",
+  "georgian-lari": "georgian-lari-single",
+  "philippine-peso": "philippine-peso-single",
+  "saudi-riyal": "saudi-riyal-single",
+  "turkish-lira": "turkish-lira-single",
+  "downvote": "downvote-single",
+  "upvote": "upvote-single",
+  "trending-up-down": "trending-up-down-single",
+  "message-circle-dashed": "message-circle-dashed-single",
+  "message-square-dashed": "message-square-dashed-single",
   "chrome": "chrome-single",
   "discord": "discord-single",
   "dribbble": "dribbble-single",
@@ -540,6 +550,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["circle-dollar-sign-combined", "arrow-left", "circle-dollar-sign"],
+  ["georgian-lari-combined", "arrow-left", "georgian-lari"],
+  ["philippine-peso-combined", "arrow-left", "philippine-peso"],
+  ["saudi-riyal-combined", "arrow-left", "saudi-riyal"],
+  ["turkish-lira-combined", "arrow-left", "turkish-lira"],
+  ["downvote-combined", "arrow-left", "downvote"],
+  ["upvote-combined", "arrow-left", "upvote"],
+  ["trending-up-down-combined", "arrow-left", "trending-up-down"],
+  ["message-circle-dashed-combined", "arrow-left", "message-circle-dashed"],
+  ["message-square-dashed-combined", "arrow-left", "message-square-dashed"],
   ["chrome-combined", "arrow-left", "chrome"],
   ["discord-combined", "arrow-left", "discord"],
   ["dribbble-combined", "arrow-left", "dribbble"],

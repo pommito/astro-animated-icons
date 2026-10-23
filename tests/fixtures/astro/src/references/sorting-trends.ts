@@ -8,3 +8,4 @@ export { SquareArrowRightIcon as SquareArrowRight } from "./sorting-trends/squar
 export { SquareArrowUpIcon as SquareArrowUp } from "./sorting-trends/square-arrow-up";
 export { TrendingDownIcon as TrendingDown } from "./sorting-trends/trending-down";
 export { TrendingUpIcon as TrendingUp } from "./sorting-trends/trending-up";
+export { Downvote, Upvote, TrendingUpDown } from "./currency-feedback";

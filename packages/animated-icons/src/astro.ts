@@ -1193,6 +1193,26 @@ export type { HardDriveUploadIconHandle } from "./icons/hard-drive-upload/elemen
 export { default as Shredder } from "./icons/shredder/Shredder.astro";
 export type { ShredderIconHandle } from "./icons/shredder/element";
 
+export { default as CircleDollarSign } from "./icons/circle-dollar-sign/CircleDollarSign.astro";
+export type { CircleDollarSignIconHandle } from "./icons/circle-dollar-sign/element";
+export { default as GeorgianLari } from "./icons/georgian-lari/GeorgianLari.astro";
+export type { GeorgianLariIconHandle } from "./icons/georgian-lari/element";
+export { default as PhilippinePeso } from "./icons/philippine-peso/PhilippinePeso.astro";
+export type { PhilippinePesoIconHandle } from "./icons/philippine-peso/element";
+export { default as SaudiRiyal } from "./icons/saudi-riyal/SaudiRiyal.astro";
+export type { SaudiRiyalIconHandle } from "./icons/saudi-riyal/element";
+export { default as TurkishLira } from "./icons/turkish-lira/TurkishLira.astro";
+export type { TurkishLiraIconHandle } from "./icons/turkish-lira/element";
+export { default as Downvote } from "./icons/downvote/Downvote.astro";
+export type { DownvoteIconHandle } from "./icons/downvote/element";
+export { default as Upvote } from "./icons/upvote/Upvote.astro";
+export type { UpvoteIconHandle } from "./icons/upvote/element";
+export { default as TrendingUpDown } from "./icons/trending-up-down/TrendingUpDown.astro";
+export type { TrendingUpDownIconHandle } from "./icons/trending-up-down/element";
+export { default as MessageCircleDashed } from "./icons/message-circle-dashed/MessageCircleDashed.astro";
+export type { MessageCircleDashedIconHandle } from "./icons/message-circle-dashed/element";
+export { default as MessageSquareDashed } from "./icons/message-square-dashed/MessageSquareDashed.astro";
+export type { MessageSquareDashedIconHandle } from "./icons/message-square-dashed/element";
 export { default as Chrome } from "./icons/chrome/Chrome.astro";
 export type { ChromeIconHandle } from "./icons/chrome/element";
 export { default as Discord } from "./icons/discord/Discord.astro";

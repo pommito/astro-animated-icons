@@ -1,0 +1,10 @@
+export { CircleDollarSignIcon as CircleDollarSign } from "./currency-feedback/circle-dollar-sign";
+export { GeorgianLariIcon as GeorgianLari } from "./currency-feedback/georgian-lari";
+export { PhilippinePesoIcon as PhilippinePeso } from "./currency-feedback/philippine-peso";
+export { SaudiRiyalIcon as SaudiRiyal } from "./currency-feedback/saudi-riyal";
+export { TurkishLiraIcon as TurkishLira } from "./currency-feedback/turkish-lira";
+export { DownvoteIcon as Downvote } from "./currency-feedback/downvote";
+export { UpvoteIcon as Upvote } from "./currency-feedback/upvote";
+export { TrendingUpDownIcon as TrendingUpDown } from "./currency-feedback/trending-up-down";
+export { MessageCircleDashedIcon as MessageCircleDashed } from "./currency-feedback/message-circle-dashed";
+export { MessageSquareDashedIcon as MessageSquareDashed } from "./currency-feedback/message-square-dashed";
