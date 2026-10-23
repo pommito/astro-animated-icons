@@ -1,0 +1,62 @@
+{
+  "browser": "ChatGPT in-app Chromium 155.0.0.0 on macOS, no CPU throttling",
+  "route": "http://127.0.0.1:45322/css-pilot/",
+  "playback": {
+    "assertions": 592,
+    "snapshots": 496,
+    "failures": [],
+    "maxAngleErrorDegrees": 0.013984397194736431,
+    "maxTranslationErrorViewBoxUnits": 0,
+    "sizes": [
+      14,
+      16,
+      24,
+      28
+    ]
+  },
+  "lifecycle": {
+    "touchIgnored": true,
+    "parentMouseStarts": true,
+    "disconnectCancels": true,
+    "disabledIgnored": true,
+    "controlledIgnored": true,
+    "startReturnsVoid": true,
+    "manualStarts": true,
+    "stopReturnsVoid": true,
+    "preferenceChangeClears": true,
+    "reducedManualStatic": true,
+    "replayAfterPreference": true,
+    "oldParentDetached": true,
+    "newParentAttached": true,
+    "templateCloneStarts": true
+  },
+  "preferenceTest": "Isolated matchMedia stub. Native function and listeners restored. No OS-level reduced-motion emulation.",
+  "actualMouse": {
+    "target": "Bell standalone SVG",
+    "entryStateObserved": "entry"
+  },
+  "consoleErrors": [],
+  "preparation": {
+    "instances": 20,
+    "warmupBatches": 5,
+    "measuredBatches": 30,
+    "alternatingOrder": true,
+    "original": {
+      "medianMs": 3.5,
+      "p95Ms": 6.399999991059303
+    },
+    "css": {
+      "medianMs": 3.4000000059604645,
+      "p95Ms": 4.700000002980232
+    },
+    "scope": "One exploratory run of synchronous startAnimation() work. Cleanup excluded. No frame-pacing conclusion."
+  },
+  "pending": [
+    "User visual acceptance",
+    "Safari",
+    "Firefox",
+    "Real touch and hybrid hardware",
+    "Native reduced-motion emulation",
+    "OS preference changes during playback"
+  ]
+}

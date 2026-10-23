@@ -7,6 +7,7 @@ const stages = [
   ["Types", "pnpm", ["check"]],
   ["Fixture", process.execPath, ["scripts/fixture.mjs", "build"]],
   ["Bundles", process.execPath, ["scripts/inspect-bundle.mjs"]],
+  ["CSS pilot", process.execPath, ["scripts/check-css-pilot.mjs"]],
   ["Drawings", process.execPath, ["scripts/check-drawings.mjs"]],
   ["Validator tests", process.execPath, ["--test", "--test-concurrency=1", ...tests]],
 ];

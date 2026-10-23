@@ -4,8 +4,15 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { readCatalog } from "./catalog.mjs";
+import { evaluateTypeScriptData } from "./typescript-data.mjs";
 
-function inspectRoute(output, route, log, chunkCache) {
+const load = path => evaluateTypeScriptData(readFileSync(new URL(path, import.meta.url), "utf8"));
+const { cycleCSS } = await load("../packages/animated-icons/src/shared/cycle-css.ts");
+const { bellCycle } = await load("../packages/animated-icons/src/icons/bell/cycle.ts");
+const { chevronRightCycle } = await load("../packages/animated-icons/src/icons/chevron-right/cycle.ts");
+const generatedCSS = new Map([bellCycle, chevronRightCycle].map(cycle => [cycle.id, cycleCSS(cycle)]));
+
+export function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)];
   const entries = scripts.flatMap(([, attributes]) => [...attributes.matchAll(/\bsrc="([^"]+)"/g)].map((match) => match[1]));
@@ -49,7 +56,7 @@ function inspectRoute(output, route, log, chunkCache) {
   for (const [path, chunk] of chunks) {
     log(`  ${path}: ${chunk.bytes} bytes, ${chunk.gzip} bytes gzip`);
   }
-  return { entries, chunks, inline, css, source: [...chunks.values()].map(chunk => chunk.source).concat(inline).join("\n") };
+  return { entries, chunks, inline, css, styles, source: [...chunks.values()].map(chunk => chunk.source).concat(inline).join("\n") };
 }
 
 
@@ -935,12 +942,15 @@ export function verifyBundles(output, log = console.log) {
     routes.set(expected.route, inspectRoute(output, route, log, chunkCache));
   }
   const sharedCSS = routes.get("single").css;
+  for (const icon of [...exported, "bundle-probe"]) {
+    assert.ok(!sharedCSS.includes(`grave-${icon}`), `single: icon-specific CSS for ${icon} must not load`);
+  }
   assert.ok(sharedCSS.includes("[data-grave-icon]"), "single: shared wrapper CSS is missing");
   for (const expected of cases) {
     const actual = routes.get(expected.route);
     const context = expected.route || "index";
     const expectedTags = new Set(expected.icons.map((icon) => `grave-${icon}`));
-    const actualTags = new Set([...actual.source.matchAll(/["'`](grave-[a-z0-9-]+)["'`]/g)].map((match) => match[1]));
+    const actualTags = new Set([...actual.source.matchAll(/["'`](grave-[a-z0-9]+(?:-[a-z0-9]+)*)["'`]/g)].map((match) => match[1]));
     for (const tag of actualTags) {
       assert.ok(expectedTags.has(tag), `${context}: unused registration ${tag} must not load`);
     }
@@ -949,7 +959,12 @@ export function verifyBundles(output, log = console.log) {
     }
     assert.equal(actual.entries.length, expected.entries, `${context}: external entry count`);
     assert.equal(actual.inline.length, expected.inline, `${context}: inline script count`);
-    assert.equal(actual.css, expected.icons.length ? sharedCSS : "", `${context}: shared CSS`);
+    const sheets = expected.icons.filter(icon => generatedCSS.has(icon)).map(icon => generatedCSS.get(icon));
+    const expectedStyles = expected.icons.length ? [...routes.get("single").styles, ...sheets] : [];
+    assert.deepEqual([...actual.styles].sort(), expectedStyles.sort(), `${context}: selected generated CSS and shared CSS`);
+    if (expected.icons.length && expected.icons.every(icon => generatedCSS.has(icon))) {
+      assert.ok([...actual.chunks.values()].reduce((sum, chunk) => sum + chunk.bytes, 0) < 8000, `${context}: CSS-only JavaScript budget excludes Motion`);
+    }
     for (const icon of [...exported, "bundle-probe"]) {
       assert.ok(!actual.css.includes(`grave-${icon}`), `${context}: icon-specific CSS for ${icon} must not load`);
     }
@@ -964,7 +979,7 @@ export function verifyBundles(output, log = console.log) {
     assert.deepEqual(new Set(routes.get(route).chunks.keys()), expected, `${route}: combined chunks must equal the union of individual chunks`);
   }
   log(`Verified ${exported.length} icons across ${cases.length} bundle cases.`);
-  log("Selective loading verified: shared CSS only, unused icon behavior excluded.");
+  log("Selective loading verified: selected generated CSS, unused icon behavior excluded.");
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {

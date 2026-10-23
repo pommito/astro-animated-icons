@@ -1,6 +1,6 @@
 # Astro animated icons
 
-Animated Lucide icons for Astro, with complete SVG output and Motion animations managed by Web Components.
+Animated Lucide icons for Astro, with complete SVG output and animations managed by Web Components. Animation engines are selected internally to preserve each icon's playback behavior.
 
 Astro renders each icon before JavaScript runs. The browser adds animation to the existing drawing. Each rendered icon loads its own registration script and shares the common runtime and CSS. No hydration directive is needed.
 
