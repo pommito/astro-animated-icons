@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-twitch">
+  <g>
+    <path d="M21 2H3v16h5v4l4-4h5l4-4V2z" pathLength="1" data-part="0" />
+    <path d="M11 11V7" pathLength="1" data-part="1" />
+    <path d="M16 11V7" pathLength="1" data-part="2" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -1,0 +1,10 @@
+export { ChromeIcon as Chrome } from "./brands-display/chrome";
+export { DiscordIcon as Discord } from "./brands-display/discord";
+export { DribbbleIcon as Dribbble } from "./brands-display/dribbble";
+export { FacebookIcon as Facebook } from "./brands-display/facebook";
+export { InstagramIcon as Instagram } from "./brands-display/instagram";
+export { TwitchIcon as Twitch } from "./brands-display/twitch";
+export { TwitterIcon as Twitter } from "./brands-display/twitter";
+export { YoutubeIcon as Youtube } from "./brands-display/youtube";
+export { ConnectIcon as Connect } from "./brands-display/connect";
+export { ContrastIcon as Contrast } from "./brands-display/contrast";
