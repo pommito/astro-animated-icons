@@ -1,0 +1,24 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-washing-machine">
+  <g>
+    <g data-body>
+    <path d="M3 6h3" />
+    <path d="M17 6h.01" />
+    <rect height="20" rx="2" width="18" x="3" y="2" />
+    </g>
+    <g data-drum style="transform-box: fill-box; transform-origin: center;">
+    <g data-spin style="transform-box: fill-box; transform-origin: center;">
+    <circle cx="12" cy="13" r="5" />
+    <path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5" />
+    </g></g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

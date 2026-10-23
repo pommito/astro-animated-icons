@@ -807,6 +807,19 @@ The directional arrow adapters use these pinned sources. Their copied comparison
 
 The commerce and currency adapters use these pinned sources. Their copied comparison sources change only the class utility import. Cart retains independent scale and repeated vertical timing, including its implicit easeOut curve and continued vertical pulses during the scale return. Currency paths keep their main and secondary assignments, opacity timings, delays, and offsets. Native sampled transforms replace upstream JavaScript transforms. Replays preserve the current transform pose under the shared playback protocol.
 
+- [Lucide Animated AirVent, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/air-vent.tsx)
+- [Lucide Animated AlarmSmoke, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-smoke.tsx)
+- [Lucide Animated BellElectric, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bell-electric.tsx)
+- [Lucide Animated ConciergeBell, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/concierge-bell.tsx)
+- [Lucide Animated Fan, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/fan.tsx)
+- [Lucide Animated PlugZap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/plug-zap.tsx)
+- [Lucide Animated ShowerHead, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shower-head.tsx)
+- [Lucide Animated WashingMachine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/washing-machine.tsx)
+- [Lucide Animated Zap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/zap.tsx)
+- [Lucide Animated ZapOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/zap-off.tsx)
+
+The home and energy adapters use these pinned recipes. Their comparison sources change only the class utility import and execute the original React components. ConciergeBell retains its automatic return through a cancellable sequence. ZapOff retains simultaneous paths because its custom values are unused upstream. Native sampled transforms replace React transforms. Visual acceptance and interrupted spring velocity parity remain subject to manual review.
+
 ## Lucide and Feather
 
 ISC License

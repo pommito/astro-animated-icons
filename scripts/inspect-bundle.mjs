@@ -55,6 +55,17 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "air-vent": "air-vent-single",
+  "alarm-smoke": "alarm-smoke-single",
+  "bell-electric": "bell-electric-single",
+  "concierge-bell": "concierge-bell-single",
+  "fan": "fan-single",
+  "plug-zap": "plug-zap-single",
+  "shower-head": "shower-head-single",
+  "washing-machine": "washing-machine-single",
+  "zap": "zap-single",
+  "zap-off": "zap-off-single",
+
   "accessibility": "accessibility-single",
   "activity": "activity-single",
   "square-activity": "square-activity-single",
@@ -485,6 +496,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["air-vent-combined", "arrow-left", "air-vent"],
+  ["alarm-smoke-combined", "arrow-left", "alarm-smoke"],
+  ["bell-electric-combined", "arrow-left", "bell-electric"],
+  ["concierge-bell-combined", "arrow-left", "concierge-bell"],
+  ["fan-combined", "arrow-left", "fan"],
+  ["plug-zap-combined", "arrow-left", "plug-zap"],
+  ["shower-head-combined", "arrow-left", "shower-head"],
+  ["washing-machine-combined", "arrow-left", "washing-machine"],
+  ["zap-combined", "arrow-left", "zap"],
+  ["zap-off-combined", "arrow-left", "zap-off"],
+
   ["accessibility-combined", "arrow-left", "accessibility"],
   ["activity-combined", "arrow-left", "activity"],
   ["square-activity-combined", "arrow-left", "square-activity"],
