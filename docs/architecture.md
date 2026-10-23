@@ -44,7 +44,7 @@ Motion mini eases the whole opacity effect, while CSS eases each interval. The o
 
 ### Generated styles and templates
 
-Astro renders complete initial SVG regardless of engine. The CSS wrappers emit marked inline styles only for rendered recipes, using request-local sets to deduplicate repeated instances. Static per-icon style blocks would let unused barrel imports accumulate CSS.
+Astro renders complete initial SVG regardless of engine. The CSS wrappers emit marked inline styles only for rendered recipes, using request-local sets to deduplicate repeated instances. Static per-icon style blocks would let unused barrel imports accumulate CSS. Unused imports may retain the common wrapper CSS, but must add no recipe CSS or registration script.
 
 The [shared stylesheet helper](../packages/animated-icons/src/shared/cycle-css.ts) also runs on connection and before playback. A style in an inactive template is unavailable to an independently cloned drawing. The helper finds an active marked sheet or regenerates it in the drawing's document. It reconciles late sheets when the original template is mounted. The compiler therefore reaches the browser for recovery as well as running during server rendering. Include that code in payload measurements.
 
@@ -63,4 +63,3 @@ For a particular icon's geometry, timing, finish policy, and interrupted returns
 The inspector reads the same catalogue as the drawing checker. It caches each chunk's source and byte and gzip sizes for one inspection. A later inspection reads the files again, including any changes made by a test.
 
 Its [negative tests](../scripts/inspect-bundle.test.mjs) share one temporary copy of the built fixture and restore each modified file after its check. See [contribution validation](../CONTRIBUTING.md#validate-the-change) for the commands. Past measurements are preserved in [the dated verification record](history/2026-10-16-verification.md).
-
