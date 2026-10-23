@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "icons": [
+    {
+      "slug": "bell",
+      "name": "Bell",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "css-pilot"
+    },
+    {
+      "slug": "calendar-days",
+      "name": "CalendarDays",
+      "engine": "timed-opacity-parts",
+      "finish": "hold",
+      "replay": "current-per-active-part",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "chevron-down",
+      "name": "ChevronDown",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "chevron-first",
+      "name": "ChevronFirst",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "chevron-left",
+      "name": "ChevronLeft",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "chevron-right",
+      "name": "ChevronRight",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "chevron-up",
+      "name": "ChevronUp",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "circle-chevron-down",
+      "name": "CircleChevronDown",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "circle-chevron-left",
+      "name": "CircleChevronLeft",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "circle-chevron-right",
+      "name": "CircleChevronRight",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "circle-chevron-up",
+      "name": "CircleChevronUp",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "circle-dashed",
+      "name": "CircleDashed",
+      "engine": "timed-opacity-parts",
+      "finish": "hold",
+      "replay": "current-per-active-part",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "circle-help",
+      "name": "CircleHelp",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder",
+      "name": "Folder",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "folder-css"
+    },
+    {
+      "slug": "folder-down",
+      "name": "FolderDown",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder-input",
+      "name": "FolderInput",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder-output",
+      "name": "FolderOutput",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder-up",
+      "name": "FolderUp",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "css-capabilities"
+    },
+    {
+      "slug": "square-chevron-down",
+      "name": "SquareChevronDown",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "square-chevron-left",
+      "name": "SquareChevronLeft",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "square-chevron-right",
+      "name": "SquareChevronRight",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    },
+    {
+      "slug": "square-chevron-up",
+      "name": "SquareChevronUp",
+      "engine": "finite-transform-cycle",
+      "finish": "restore",
+      "replay": "restart",
+      "comparison": "css-chevrons"
+    }
+  ],
+  "cases": {
+    "bell": [
+      "bell"
+    ],
+    "calendar-days": [
+      "calendar-days"
+    ],
+    "chevron-down": [
+      "chevron-down"
+    ],
+    "chevron-first": [
+      "chevron-first"
+    ],
+    "chevron-left": [
+      "chevron-left"
+    ],
+    "chevron-right": [
+      "chevron-right"
+    ],
+    "chevron-up": [
+      "chevron-up"
+    ],
+    "circle-chevron-down": [
+      "circle-chevron-down"
+    ],
+    "circle-chevron-left": [
+      "circle-chevron-left"
+    ],
+    "circle-chevron-right": [
+      "circle-chevron-right"
+    ],
+    "circle-chevron-up": [
+      "circle-chevron-up"
+    ],
+    "circle-dashed": [
+      "circle-dashed"
+    ],
+    "circle-help": [
+      "circle-help"
+    ],
+    "folder": [
+      "folder"
+    ],
+    "folder-down": [
+      "folder-down"
+    ],
+    "folder-input": [
+      "folder-input"
+    ],
+    "folder-output": [
+      "folder-output"
+    ],
+    "folder-up": [
+      "folder-up"
+    ],
+    "square-chevron-down": [
+      "square-chevron-down"
+    ],
+    "square-chevron-left": [
+      "square-chevron-left"
+    ],
+    "square-chevron-right": [
+      "square-chevron-right"
+    ],
+    "square-chevron-up": [
+      "square-chevron-up"
+    ],
+    "chevrons": [
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up"
+    ],
+    "folders": [
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up"
+    ],
+    "opacity": [
+      "calendar-days",
+      "circle-dashed"
+    ],
+    "all": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up"
+    ],
+    "repeated": [
+      "bell",
+      "bell",
+      "bell",
+      "calendar-days",
+      "calendar-days",
+      "calendar-days",
+      "chevron-down",
+      "chevron-down",
+      "chevron-down",
+      "chevron-first",
+      "chevron-first",
+      "chevron-first",
+      "chevron-left",
+      "chevron-left",
+      "chevron-left",
+      "chevron-right",
+      "chevron-right",
+      "chevron-right",
+      "chevron-up",
+      "chevron-up",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-down",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-left",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-right",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-chevron-up",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-help",
+      "circle-help",
+      "circle-help",
+      "folder",
+      "folder",
+      "folder",
+      "folder-down",
+      "folder-down",
+      "folder-down",
+      "folder-input",
+      "folder-input",
+      "folder-input",
+      "folder-output",
+      "folder-output",
+      "folder-output",
+      "folder-up",
+      "folder-up",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-down",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-left",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-right",
+      "square-chevron-right",
+      "square-chevron-up",
+      "square-chevron-up",
+      "square-chevron-up"
+    ],
+    "mixed-loader": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up",
+      "loader-circle"
+    ],
+    "mixed-arrow": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up",
+      "arrow-left"
+    ],
+    "interface": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days"
+    ],
+    "interface-loader": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days",
+      "loader-circle"
+    ],
+    "unused": []
+  }
+}

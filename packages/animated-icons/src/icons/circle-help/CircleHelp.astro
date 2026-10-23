@@ -1,19 +1,11 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssIcon from "../../CssIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { circleHelpCycle } from "./cycle";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-circle-help">
-  <g>
-    <circle cx="12" cy="12" r="10" />
-    <g style="transform-box: fill-box; transform-origin: center">
-      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-      <path d="M12 17h.01" />
-    </g>
-  </g>
-</Icon>
-
+<CssIcon cycle={circleHelpCycle} {...Astro.props} tag="grave-circle-help"><Drawing /></CssIcon>
 <script>
   import "./element";
 </script>

@@ -6,34 +6,34 @@ const icons = [
   { name: "Bell", slug: "bell", Original: Bell, Managed: BellManaged },
   { name: "ChevronRight", slug: "chevron-right", Original: ChevronRight, Managed: ChevronRightManaged },
 ];
+import ComparisonPage from "../../components/ComparisonPage.astro";
+import ComparisonSection from "../../components/ComparisonSection.astro";
 ---
-<html lang="en">
-  <head><meta charset="utf-8" /><title>CSS playback parity pilot</title></head>
-  <body>
-    <h1>CSS playback parity pilot</h1>
-    <p>Bell and ChevronRight share one cycle definition between the current Motion recipe and generated CSS. The existing lifecycle handles mouse, touch filtering, disabled controls, manual playback, reduced motion, and cleanup. Bell replays from its current pose. ChevronRight restarts from zero and clears on completion. LoaderCircle keeps its current Motion recipe.</p>
-    <p>The numerical comparison seeks native animations and compares rendered matrices. Bell allows 0.03 degrees of error because Motion samples its curve every 5 ms while CSS interpolates the curve directly. ChevronRight allows 0.005 viewBox units. Passing these checks supports manual visual review.</p>
-    <button type="button" id="play">Play both</button>
-    <button type="button" id="stop">Stop both</button>
-    <label>Seek time in ms <input id="time" type="number" min="0" value="200" /></label>
-    <button type="button" id="seek">Seek and pause</button>
-    {icons.map(({ name, slug, Original, Managed }) => <section data-kind={slug}>
-      <h2>{name}</h2>
+<ComparisonPage title="CSS playback parity pilot">
+    {icons.map(({ name, slug, Original, Managed }) => <ComparisonSection slug={slug} name={name}>
       <table>
         <thead><tr><th>Size</th><th>Motion reference</th><th>CSS with preserved playback</th></tr></thead>
         <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
-          <th>{size} px</th>
+          <th scope="row">{size} px</th>
           <td><Original size={size} controlled data-sample data-engine="motion" /></td>
           <td><Managed size={size} controlled data-sample data-engine="css" /></td>
         </tr>)}</tbody>
       </table>
       <p><a href="#destination" data-parent><Managed /> Parent link hover</a> <button type="button" disabled><Managed /> Disabled</button> <a href="#destination" aria-disabled="true"><Managed /> Aria-disabled link</a></p>
       <p><Managed label={name + " standalone"} /></p>
-    </section>)}
+    </ComparisonSection>)}
     <h2>LoaderCircle stays on Motion</h2>
     <button type="button"><LoaderCircle /> Parent hover</button>
     <LoaderCircle controlled data-sample id="motion-loader" />
-    <h2>Verification</h2>
+    <p id="destination">Link destination</p>
+
+  <Fragment slot="checks">
+
+    <p>Bell and ChevronRight share one cycle definition between the current Motion recipe and generated CSS. The existing lifecycle handles mouse, touch filtering, disabled controls, manual playback, reduced motion, and cleanup. Bell replays from its current pose. ChevronRight restarts from zero and clears on completion. LoaderCircle keeps its current Motion recipe.</p>
+    <p>The numerical comparison seeks native animations and compares rendered matrices. Bell allows 0.03 degrees of error because Motion samples its curve every 5 ms while CSS interpolates the curve directly. ChevronRight allows 0.005 viewBox units. Passing these checks supports manual visual review.</p>
+    <label>Seek time in ms <input id="time" type="number" min="0" value="200" /></label>
+    <button type="button" id="seek">Seek and pause</button>
+
     <p><a href="/css-pilot/templates/">Check independent template clones</a></p>
     <button id="parity" type="button">Run playback comparisons</button>
     <output id="parity-result"></output>
@@ -46,9 +46,9 @@ const icons = [
     <output id="benchmark-result"></output>
     <div id="bench-original">{Array.from({ length: 20 }, () => <Bell controlled />)}</div>
     <div id="bench-managed">{Array.from({ length: 20 }, () => <BellManaged controlled />)}</div>
-    <p id="destination">Link destination</p>
-  </body>
-</html>
+    </Fragment>
+</ComparisonPage>
+
 <script>
   import "../../css-pilot-checks";
 </script>

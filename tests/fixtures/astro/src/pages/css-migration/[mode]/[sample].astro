@@ -1,0 +1,13 @@
+---
+import catalogue from "../../../../../../../tests/helpers/css-migration-cases.json";
+import { migrationIcons } from "../../../css-migration-catalogue";
+export function getStaticPaths() {
+  return ["baseline", "managed"].flatMap(mode => Object.keys(catalogue.cases).map(sample => ({ params: { mode, sample } })));
+}
+const { mode, sample } = Astro.params;
+const cases = catalogue.cases as Record<string, string[]>;
+const selected = cases[sample!].map(slug => migrationIcons.find(icon => icon.slug === slug)!);
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Integrated CSS migration payload</title></head><body>
+  {selected.map(icon => { const Component = mode === "managed" ? icon.Managed : icon.Reference; return <Component />; })}
+</body></html>

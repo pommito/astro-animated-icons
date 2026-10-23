@@ -1,23 +1,11 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
+import CssOpacityIcon from "../../CssOpacityIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { calendarDaysParts } from "./parts";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-calendar-days">
-  <g>
-    <path d="M8 2v4" />
-    <path d="M16 2v4" />
-    <rect height="18" rx="2" width="18" x="3" y="4" />
-    <path d="M3 10h18" />
-    <circle cx="8" cy="14" fill="currentColor" r="1" stroke="none" data-part="0" style="transform-box: fill-box; transform-origin: center;" />
-    <circle cx="12" cy="14" fill="currentColor" r="1" stroke="none" data-part="1" style="transform-box: fill-box; transform-origin: center;" />
-    <circle cx="16" cy="14" fill="currentColor" r="1" stroke="none" data-part="2" style="transform-box: fill-box; transform-origin: center;" />
-    <circle cx="8" cy="18" fill="currentColor" r="1" stroke="none" data-part="3" style="transform-box: fill-box; transform-origin: center;" />
-    <circle cx="12" cy="18" fill="currentColor" r="1" stroke="none" data-part="4" style="transform-box: fill-box; transform-origin: center;" />
-    <circle cx="16" cy="18" fill="currentColor" r="1" stroke="none" data-part="5" style="transform-box: fill-box; transform-origin: center;" />
-  </g>
-</Icon>
-
+<CssOpacityIcon parts={calendarDaysParts} {...Astro.props} tag="grave-calendar-days"><Drawing /></CssOpacityIcon>
 <script>
   import "./element";
 </script>

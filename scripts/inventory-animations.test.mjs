@@ -36,6 +36,20 @@ test("inventory covers each export once and retains shared defaults and mixed me
     assert.ok(icon.sources.some(path => path.endsWith("/css-cycle.ts")));
     assert.ok(result.sources[`packages/animated-icons/src/icons/${slug}/cycle.ts`].constants.some(fact => fact.expression.includes("replay")));
   }
+  const finiteChevrons = result.icons.filter(icon => icon.slug.includes("chevron") && icon.sources.some(path => path.endsWith("/cycle.ts")));
+  assert.equal(finiteChevrons.length, 13);
+  assert.ok(finiteChevrons.every(icon => icon.engine === "css" && icon.classification.status === "supported"));
+  const springs = result.icons.filter(icon => icon.sources.some(path => path.endsWith("/chevron-spring.ts")));
+  assert.equal(springs.length, 4);
+  assert.ok(springs.every(icon => icon.engine === "motion" && icon.classification.capability === "inherited-velocity"));
+  for (const slug of ["folder-down", "folder-up", "folder-input", "folder-output", "circle-help", "calendar-days", "circle-dashed"]) {
+    const icon = result.icons.find(icon => icon.slug === slug);
+    assert.equal(icon.engine, "css");
+    assert.equal(icon.migrationState, "migrated");
+    assert.equal(icon.classification.capability, ["calendar-days", "circle-dashed"].includes(slug) ? "timed-opacity-parts" : "finite-transform-cycle");
+  }
+  assert.equal(result.icons.find(icon => icon.slug === "user-round-cog").migrationState, "supported-but-deferred");
+  assert.equal(result.icons.find(icon => icon.slug === "wifi-sync").migrationState, "retained-on-motion");
   assert.deepEqual(result, inventoryAnimations());
 });
 
@@ -60,5 +74,21 @@ test("a spring word does not classify a recipe and unknown calls require review"
     const icon = inventoryAnimations(root).icons[0];
     assert.equal(icon.classification.status, "review");
     assert.ok(icon.uncertainty.some(text => text.includes("not evaluated")));
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+
+test("reviewed source drift cannot retain a supported classification", () => {
+  const root = mkdtempSync(join(tmpdir(), "animation-reviewed-drift-"));
+  try {
+    const src = join(root, "packages/animated-icons/src");
+    mkdirSync(join(src, "icons/user-round-cog"), { recursive: true });
+    writeFileSync(join(src, "astro.ts"), 'export { default as UserRoundCog } from "./icons/user-round-cog/UserRoundCog.astro";');
+    writeFileSync(join(src, "icons/user-round-cog/UserRoundCog.astro"), "<svg />");
+    writeFileSync(join(src, "icons/user-round-cog/definition.ts"), 'export const recipe = changedRecipe({ duration: unknown });');
+    const icon = inventoryAnimations(root).icons[0];
+    assert.equal(icon.classification.status, "review");
+    assert.equal(icon.classification.capability, "changed-reviewed-source");
+    assert.equal(icon.migrationState, "needs-review");
   } finally { rmSync(root, { recursive: true, force: true }); }
 });

@@ -1,0 +1,70 @@
+---
+import { capabilities } from "../../css-capability-catalogue";
+
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Independent CSS icon templates</title></head>
+  <body>
+    <h1>Independent CSS icon templates</h1>
+    <p>The second template is cloned before and after registration while the first stays inert. The check then mounts a clone of the first template to verify stylesheet deduplication.</p>
+    <template id="first">{capabilities.map(({ Managed }) => <Managed controlled />)}</template>
+    <template id="second">{capabilities.map(({ Managed }) => <Managed controlled />)}</template>
+    <section id="before"><h2>Cloned before registration</h2></section>
+    <script is:inline>
+      const template = document.querySelector("#second");
+      const early = document.querySelector("#before");
+      early.append(template.content.cloneNode(true));
+      early.dataset.beforeRegistration = String([...early.querySelectorAll("[data-grave-icon]")].every(icon => typeof icon.startAnimation === "undefined"));
+    </script>
+    <section id="after"><h2>Cloned after registration</h2></section>
+    <button id="check-templates" type="button">Check independent templates</button>
+    <output id="template-result"></output>
+  </body>
+</html>
+<script>
+  import type { FolderDownIconHandle as IconHandle } from "@grave/animated-icons/astro";
+  const slugs = ["folder-down", "folder-up", "folder-input", "folder-output", "circle-help", "calendar-days", "circle-dashed"];
+  await Promise.all(slugs.map(slug => "grave-" + slug).map(tag => customElements.whenDefined(tag)));
+  const template = document.querySelector<HTMLTemplateElement>("#second")!;
+  document.querySelector("#after")!.append(template.content.cloneNode(true));
+  document.querySelector("#check-templates")!.addEventListener("click", () => {
+    const results: Record<string, boolean> = {};
+    results.clonedBeforeRegistration = document.querySelector<HTMLElement>("#before")!.dataset.beforeRegistration === "true";
+    results.firstTemplateStillInert = document.querySelector<HTMLTemplateElement>("#first")!.content.querySelectorAll("[data-grave-icon]").length === 7;
+    results.reducedMotionDisabled = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    for (const location of ["before", "after"]) for (const kind of slugs) {
+      const icon = document.querySelector<HTMLElement & IconHandle>("#" + location + " grave-" + kind)!;
+      const count = kind === "calendar-days" ? 6 : kind === "circle-dashed" ? 8 : 1;
+      const animations = () => icon.getAnimations({ subtree: true });
+      icon.startAnimation();
+      const entry = animations();
+      entry.forEach(animation => { animation.pause(); animation.currentTime = 125; });
+      results[location + "/" + kind + "/entry"] = entry.length === count;
+      icon.stopAnimation();
+      results[location + "/" + kind + "/return"] = animations().length === count;
+      const parent = icon.parentElement!;
+      icon.remove();
+      results[location + "/" + kind + "/disconnect"] = animations().length === 0 && !icon.hasAttribute("data-cycle-state") && !icon.hasAttribute("data-opacity-state");
+      parent.append(icon);
+      icon.startAnimation();
+      results[location + "/" + kind + "/reconnect"] = animations().length === count;
+      icon.remove(); parent.append(icon);
+    }
+    for (const kind of slugs) {
+      results[kind + "/oneActiveSheet"] = document.querySelectorAll('[data-grave-cycle-style="' + kind + '"]').length === 1;
+    }
+    const late = document.createElement("section");
+    document.body.append(late);
+    late.append(document.querySelector<HTMLTemplateElement>("#first")!.content.cloneNode(true));
+    for (const kind of slugs) {
+      const icon = late.querySelector<HTMLElement & IconHandle>("grave-" + kind)!;
+      const sheetCount = () => document.querySelectorAll('[data-grave-cycle-style="' + kind + '"]').length;
+      results[kind + "/lateTemplateOnConnect"] = sheetCount() === 1;
+      const count = kind === "calendar-days" ? 6 : kind === "circle-dashed" ? 8 : 1;
+      icon.startAnimation();
+      results[kind + "/lateTemplatePlayback"] = icon.getAnimations({ subtree: true }).length === count && sheetCount() === 1;
+    }
+    late.remove();
+    document.querySelector("#template-result")!.textContent = JSON.stringify({ results, failures: Object.keys(results).filter(key => !results[key]) });
+  });
+</script>

@@ -1,0 +1,11 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/square-chevron-up/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-square-chevron-up"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { squareChevronUpRecipe } from "./square-chevron-up";
+  if (!customElements.get("grave-reference-square-chevron-up")) customElements.define("grave-reference-square-chevron-up", createIconElement(squareChevronUpRecipe));
+</script>

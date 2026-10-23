@@ -14,7 +14,7 @@ import MotionFolder from "../css-references/Folder.astro";
       <h1>Folder</h1>
       <p>Hover a row to play both versions. Use Stop while the icon moves to compare the returns.</p>
       <p>The entry drawing and 400 ms rotation are shared. The previous Motion version returns with a velocity-dependent spring. CSS returns from the displayed angle over 200 ms with ease-out. The return difference is intentional.</p>
-      <section aria-label="Motion and CSS samples">
+      <section data-kind="folder" aria-label="Motion and CSS samples">
         <div class="row headings"><span>Size</span><span>Previous Motion</span><span>Public CSS</span><span>Controls</span></div>
         {[14, 16, 24, 28].map(size => <div class="row" data-pair data-size={size}>
           <span>{size} px</span>

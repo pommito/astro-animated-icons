@@ -1,0 +1,4 @@
+---
+import { chevronFirstPaths } from "./definition";
+---
+<g>{chevronFirstPaths.map((d, index) => <path d={d} data-chevron={index === 0 ? "" : undefined} />)}</g>

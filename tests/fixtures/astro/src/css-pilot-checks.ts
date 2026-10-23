@@ -1,3 +1,4 @@
+import { checkSyntheticLifecycle } from "./synthetic-lifecycle";
 import type { IconHandle } from "../../../../packages/animated-icons/src/element";
 
 type Handle = HTMLElement & IconHandle;
@@ -90,57 +91,7 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
 });
 
 document.querySelector("#runtime")!.addEventListener("click", () => {
-  const results: Record<string, boolean> = {};
-  const nativeMatchMedia = window.matchMedia;
-  let reduced = false;
-  const preference = new EventTarget() as MediaQueryList;
-  Object.defineProperty(preference, "matches", { get: () => reduced });
-  const parent = document.querySelector<HTMLElement>("[data-parent]")!;
-  const icon = parent.querySelector<Handle>("[data-css-cycle]")!;
-  const clean = () => reconnect(icon);
-  try {
-    window.matchMedia = query => query === "(prefers-reduced-motion: reduce)" ? preference : nativeMatchMedia.call(window, query);
-    clean();
-    parent.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "touch" }));
-    results.touchIgnored = animations(icon).length === 0;
-    parent.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "mouse" }));
-    results.parentMouseStarts = animations(icon).length === 1;
-    clean(); results.disconnectCancels = animations(icon).length === 0;
-    parent.setAttribute("aria-disabled", "true");
-    parent.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "mouse" }));
-    results.disabledIgnored = animations(icon).length === 0;
-    parent.removeAttribute("aria-disabled");
-    icon.dataset.controlled = "";
-    parent.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "mouse" }));
-    results.controlledIgnored = animations(icon).length === 0;
-    results.startReturnsVoid = icon.startAnimation() === undefined;
-    results.manualStarts = animations(icon).length === 1;
-    results.stopReturnsVoid = icon.stopAnimation() === undefined;
-    reduced = true; preference.dispatchEvent(new Event("change"));
-    results.preferenceChangeClears = animations(icon).length === 0 && !icon.hasAttribute("data-cycle-state");
-    icon.startAnimation(); results.reducedManualStatic = animations(icon).length === 0;
-    reduced = false; preference.dispatchEvent(new Event("change"));
-    icon.startAnimation(); results.replayAfterPreference = animations(icon).length === 1;
-    clean(); delete icon.dataset.controlled;
-    const other = document.createElement("button");
-    document.body.append(other); icon.remove(); other.append(icon);
-    parent.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "mouse" }));
-    results.oldParentDetached = animations(icon).length === 0;
-    other.dispatchEvent(new PointerEvent("pointerenter", { pointerType: "mouse" }));
-    results.newParentAttached = animations(icon).length === 1;
-    icon.remove(); parent.append(icon); other.remove();
-    const template = document.createElement("template");
-    template.content.append(icon.cloneNode(true));
-    parent.append(template.content.cloneNode(true));
-    const clone = parent.lastElementChild as Handle;
-    clone.startAnimation(); results.templateCloneStarts = animations(clone).length === 1;
-    clone.remove();
-  } finally {
-    window.matchMedia = nativeMatchMedia;
-    parent.removeAttribute("aria-disabled");
-    delete icon.dataset.controlled;
-    clean();
-  }
+  const results = checkSyntheticLifecycle(document.querySelector<HTMLElement>("[data-parent]")!);
   document.querySelector("#runtime-result")!.textContent = JSON.stringify(results);
 });
 

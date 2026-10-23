@@ -1,0 +1,147 @@
+{
+  "comparison": {
+    "assertions": 4452,
+    "failures": [],
+    "maxMatrixError": 0.0007800000000000029,
+    "maxOpacityError": 0,
+    "rows": 28,
+    "snapshots": 2108,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "lifecycle": {
+    "calendar-days": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "circle-dashed": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "circle-help": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "folder-down": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "folder-input": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "folder-output": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    },
+    "folder-up": {
+      "controlledIgnored": true,
+      "disabledIgnored": true,
+      "disconnectCancels": true,
+      "manualStarts": true,
+      "newParentAttached": true,
+      "oldParentDetached": true,
+      "parentMouseStarts": true,
+      "preferenceChangeClears": true,
+      "reducedManualStatic": true,
+      "replayAfterPreference": true,
+      "startReturnsVoid": true,
+      "stopReturnsVoid": true,
+      "templateCloneStarts": true,
+      "touchIgnored": true
+    }
+  },
+  "stylesheetLoaded": true,
+  "reviewChecks": {
+    "stickyToolbarAfterScroll": {
+      "scrollY": 2592.5,
+      "toolbarTop": 0
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "pageWidth": 375,
+      "toolbarTop": 0,
+      "toolbarBottom": 72,
+      "viewportResetAfterCheck": true
+    },
+    "localPlayback": "CircleDashed Play pair set entry on its four controlled sizes; unrelated FolderDown samples stayed at rest",
+    "rowHover": "Native pointer entry into CircleDashed 24 px set that row to entry; previous row entered return on pointer leave",
+    "chevronPage": {
+      "pairControls": 13,
+      "toolbarPosition": "sticky"
+    },
+    "payloadComparison": "Recomputed all 31 baseline and managed compositions; JS, CSS, HTML and whole-page raw/gzip fields unchanged"
+  }
+}
