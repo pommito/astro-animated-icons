@@ -1,0 +1,17 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+const { size = 28 } = Astro.props;
+---
+
+<Icon {...Astro.props} tag="grave-facebook">
+  <g>
+    <svg data-source width="24" height="24" viewBox={`0 0 ${size} ${size}`} overflow="hidden">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" pathLength="1" data-part="0" />
+    </svg>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -1,0 +1,18 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-chrome">
+  <g>
+    <circle cx="12" cy="12" r="10" data-part="0" />
+    <circle cx="12" cy="12" r="4" pathLength="1" data-part="1" />
+    <line x1="21.17" x2="12" y1="8" y2="8" pathLength="1" data-part="2" />
+    <line x1="3.95" x2="8.54" y1="6.06" y2="14" pathLength="1" data-part="3" />
+    <line x1="10.88" x2="15.46" y1="21.94" y2="14" pathLength="1" data-part="4" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

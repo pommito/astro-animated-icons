@@ -55,6 +55,17 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "chrome": "chrome-single",
+  "discord": "discord-single",
+  "dribbble": "dribbble-single",
+  "facebook": "facebook-single",
+  "instagram": "instagram-single",
+  "twitch": "twitch-single",
+  "twitter": "twitter-single",
+  "youtube": "youtube-single",
+  "connect": "connect-single",
+  "contrast": "contrast-single",
+
   "earth": "earth-single",
   "rabbit": "rabbit-single",
   "roller-coaster": "roller-coaster-single",
@@ -529,6 +540,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["chrome-combined", "arrow-left", "chrome"],
+  ["discord-combined", "arrow-left", "discord"],
+  ["dribbble-combined", "arrow-left", "dribbble"],
+  ["facebook-combined", "arrow-left", "facebook"],
+  ["instagram-combined", "arrow-left", "instagram"],
+  ["twitch-combined", "arrow-left", "twitch"],
+  ["twitter-combined", "arrow-left", "twitter"],
+  ["youtube-combined", "arrow-left", "youtube"],
+  ["connect-combined", "arrow-left", "connect"],
+  ["contrast-combined", "arrow-left", "contrast"],
+
   ["earth-combined", "arrow-left", "earth"],
   ["rabbit-combined", "arrow-left", "rabbit"],
   ["roller-coaster-combined", "arrow-left", "roller-coaster"],

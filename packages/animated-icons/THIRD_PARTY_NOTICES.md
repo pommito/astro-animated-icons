@@ -2,6 +2,25 @@
 
 The numerical comparison and browser-test descriptions below document the earlier validation strategy used during adaptation. Current [validation](../../docs/validation.md) runs without a browser; the comparison fixtures remain available for the user's manual review.
 
+Chrome, Discord, Dribbble, Facebook, Instagram, Twitch, Twitter, Youtube, Connect, and Contrast adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Chrome reveals its inner circle over 300 ms and its spokes after a 300 ms delay. Opacity uses a separate 150 ms delay and the default 300 ms easing. Dribbble, Facebook, Instagram, Twitch, Twitter, and Youtube reuse Activity's 600 ms linear trace, 100 ms opacity, and 400 ms return. Each drawing retains its pinned geometry.
+
+Discord preserves the original 44-unit viewport, stroke width 3, and six translation keyframes over 400 ms with ease-in-out. Its 200 ms return restores each path. Facebook's source has no viewBox, so its nested viewport retains fixed pixel geometry and clipping at every requested size. Contrast holds its 180-degree turn around the left fill-box center using stiffness 80 and damping 12, then uses Motion's implicit rotation spring on return. Connect preserves the four path morphs and opposing plug and socket translations using stiffness 500 and damping 30. Its path morphs use Motion's native SVG attribute animation, as Archive does.
+
+The `/brands-display-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect the class utility import to the local equivalent. React stays confined to comparison pages. Automated validation checks types, catalogue membership, bundles, initial drawings, and validation scripts without a browser. Runtime registration, animation, interruption, stop, replay, cleanup, and visual acceptance remain for manual review.
+
+- [Lucide Animated Chrome, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chrome.tsx)
+- [Lucide Animated Discord, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/discord.tsx)
+- [Lucide Animated Dribbble, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/dribbble.tsx)
+- [Lucide Animated Facebook, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/facebook.tsx)
+- [Lucide Animated Instagram, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/instagram.tsx)
+- [Lucide Animated Twitch, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/twitch.tsx)
+- [Lucide Animated Twitter, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/twitter.tsx)
+- [Lucide Animated Youtube, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/youtube.tsx)
+- [Lucide Animated Connect, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/connect.tsx)
+- [Lucide Animated Contrast, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/contrast.tsx)
+
 Earth, Rabbit, RollerCoaster, SatelliteDish, ShipWheel, Waves, WavesArrowDown, WavesArrowUp, WavesLadder, and Sparkles adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Earth preserves its 700 ms continent traces after 500 ms and its separate 300 ms circle trace after 100 ms. Opacity retains its independent delays and default durations. Rabbit keeps its 600 ms translations and rotation. RollerCoaster traces its supports immediately and its rail after 200 ms. Supports omit custom values upstream; their non-finite delays behave as zero, which the adapter records explicitly.
