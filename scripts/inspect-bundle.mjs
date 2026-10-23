@@ -65,6 +65,19 @@ const singleRoutes = {
   "youtube": "youtube-single",
   "connect": "connect-single",
   "contrast": "contrast-single",
+
+  "earth": "earth-single",
+  "rabbit": "rabbit-single",
+  "roller-coaster": "roller-coaster-single",
+  "satellite-dish": "satellite-dish-single",
+  "ship-wheel": "ship-wheel-single",
+  "waves": "waves-single",
+  "waves-arrow-down": "waves-arrow-down-single",
+  "waves-arrow-up": "waves-arrow-up-single",
+  "waves-ladder": "waves-ladder-single",
+  "sparkles": "sparkles-single",
+
+
   "book-text": "book-text-single",
   "graduation-cap": "graduation-cap-single",
   "languages": "languages-single",
@@ -537,6 +550,19 @@ const combinations = [
   ["youtube-combined", "arrow-left", "youtube"],
   ["connect-combined", "arrow-left", "connect"],
   ["contrast-combined", "arrow-left", "contrast"],
+
+  ["earth-combined", "arrow-left", "earth"],
+  ["rabbit-combined", "arrow-left", "rabbit"],
+  ["roller-coaster-combined", "arrow-left", "roller-coaster"],
+  ["satellite-dish-combined", "arrow-left", "satellite-dish"],
+  ["ship-wheel-combined", "arrow-left", "ship-wheel"],
+  ["waves-combined", "arrow-left", "waves"],
+  ["waves-arrow-down-combined", "arrow-left", "waves-arrow-down"],
+  ["waves-arrow-up-combined", "arrow-left", "waves-arrow-up"],
+  ["waves-ladder-combined", "arrow-left", "waves-ladder"],
+  ["sparkles-combined", "arrow-left", "sparkles"],
+
+
   ["book-text-combined", "arrow-left", "book-text"],
   ["graduation-cap-combined", "arrow-left", "graduation-cap"],
   ["languages-combined", "arrow-left", "languages"],

@@ -21,6 +21,27 @@ The `/brands-display-comparison/` fixture executes all ten pinned React sources 
 - [Lucide Animated Connect, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/connect.tsx)
 - [Lucide Animated Contrast, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/contrast.tsx)
 
+Earth, Rabbit, RollerCoaster, SatelliteDish, ShipWheel, Waves, WavesArrowDown, WavesArrowUp, WavesLadder, and Sparkles adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Earth preserves its 700 ms continent traces after 500 ms and its separate 300 ms circle trace after 100 ms. Opacity retains its independent delays and default durations. Rabbit keeps its 600 ms translations and rotation. RollerCoaster traces its supports immediately and its rail after 200 ms. Supports omit custom values upstream; their non-finite delays behave as zero, which the adapter records explicitly.
+
+SatelliteDish keeps its 1500 ms movement and awaits the 1100 ms fade of both signal arcs before their staggered spring reveals. The existing cancellable sequence prevents a stopped, replayed, removed, or reduced-motion instance from starting a stale reveal. Each new playback releases the previous spring effect before the native fade, so the next reveal reads the displayed opacity instead of a retained spring value. ShipWheel reuses the whole-SVG 180-degree spring with stiffness 50 and damping 10. Waves traces three paths together over 400 ms. WavesArrowDown and WavesArrowUp keep their opposite 500 ms displacement and shaft scale around the bottom-right fill-box origin. WavesLadder retains its 1000 ms ladder rise with opacity hidden for the first half.
+
+Sparkles keeps its 1000 ms main-star movement and currentColor fill. Its `starControls.start("blink", { delay: 1 })` call replaces the variant transition, so its seven opacity keyframes use Motion's implicit 800 ms ease-out after 1000 ms. The declared multiframe spring does not run. The adapter keeps this override and restores fill during cleanup.
+
+The `/nature-navigation-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copies only redirect the class utility import to the existing local equivalent. React stays confined to comparison pages. Seek samples the currently active sequence phase; it does not advance SatelliteDish's awaited fade to the next phase. No browser measurements or visual acceptance have been performed for this batch. Runtime registration, animation timing, interrupted spring velocity, stop/replay, and cleanup remain subject to manual review.
+
+- [Lucide Animated Earth, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/earth.tsx)
+- [Lucide Animated Rabbit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rabbit.tsx)
+- [Lucide Animated RollerCoaster, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/roller-coaster.tsx)
+- [Lucide Animated SatelliteDish, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/satellite-dish.tsx)
+- [Lucide Animated ShipWheel, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ship-wheel.tsx)
+- [Lucide Animated Waves, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves.tsx)
+- [Lucide Animated WavesArrowDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-arrow-down.tsx)
+- [Lucide Animated WavesArrowUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-arrow-up.tsx)
+- [Lucide Animated WavesLadder, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-ladder.tsx)
+- [Lucide Animated Sparkles, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sparkles.tsx)
+
 Accessibility, Activity, SquareActivity, CursorClick, CheckCheck, Link2, CalendarDays, CalendarCog, UsersRound, and BotMessageSquare adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Accessibility preserves its displaced circle, nested group rotations, delayed full turn, and path morph. Its real idle variant is `initial`. Upstream manual stop uses that variant, but mouse leave targets a nonexistent `normal`. The adapter restores `initial` for either input so the package's idle contract holds. Its path rotates around the top-right fill-box corner.
