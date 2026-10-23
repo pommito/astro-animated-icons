@@ -1161,3 +1161,24 @@ export { default as HardDriveUpload } from "./icons/hard-drive-upload/HardDriveU
 export type { HardDriveUploadIconHandle } from "./icons/hard-drive-upload/element";
 export { default as Shredder } from "./icons/shredder/Shredder.astro";
 export type { ShredderIconHandle } from "./icons/shredder/element";
+
+export { default as Chrome } from "./icons/chrome/Chrome.astro";
+export type { ChromeIconHandle } from "./icons/chrome/element";
+export { default as Discord } from "./icons/discord/Discord.astro";
+export type { DiscordIconHandle } from "./icons/discord/element";
+export { default as Dribbble } from "./icons/dribbble/Dribbble.astro";
+export type { DribbbleIconHandle } from "./icons/dribbble/element";
+export { default as Facebook } from "./icons/facebook/Facebook.astro";
+export type { FacebookIconHandle } from "./icons/facebook/element";
+export { default as Instagram } from "./icons/instagram/Instagram.astro";
+export type { InstagramIconHandle } from "./icons/instagram/element";
+export { default as Twitch } from "./icons/twitch/Twitch.astro";
+export type { TwitchIconHandle } from "./icons/twitch/element";
+export { default as Twitter } from "./icons/twitter/Twitter.astro";
+export type { TwitterIconHandle } from "./icons/twitter/element";
+export { default as Youtube } from "./icons/youtube/Youtube.astro";
+export type { YoutubeIconHandle } from "./icons/youtube/element";
+export { default as Connect } from "./icons/connect/Connect.astro";
+export type { ConnectIconHandle } from "./icons/connect/element";
+export { default as Contrast } from "./icons/contrast/Contrast.astro";
+export type { ContrastIconHandle } from "./icons/contrast/element";

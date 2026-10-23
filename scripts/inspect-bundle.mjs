@@ -55,6 +55,16 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "chrome": "chrome-single",
+  "discord": "discord-single",
+  "dribbble": "dribbble-single",
+  "facebook": "facebook-single",
+  "instagram": "instagram-single",
+  "twitch": "twitch-single",
+  "twitter": "twitter-single",
+  "youtube": "youtube-single",
+  "connect": "connect-single",
+  "contrast": "contrast-single",
   "book-text": "book-text-single",
   "graduation-cap": "graduation-cap-single",
   "languages": "languages-single",
@@ -517,6 +527,16 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["chrome-combined", "arrow-left", "chrome"],
+  ["discord-combined", "arrow-left", "discord"],
+  ["dribbble-combined", "arrow-left", "dribbble"],
+  ["facebook-combined", "arrow-left", "facebook"],
+  ["instagram-combined", "arrow-left", "instagram"],
+  ["twitch-combined", "arrow-left", "twitch"],
+  ["twitter-combined", "arrow-left", "twitter"],
+  ["youtube-combined", "arrow-left", "youtube"],
+  ["connect-combined", "arrow-left", "connect"],
+  ["contrast-combined", "arrow-left", "contrast"],
   ["book-text-combined", "arrow-left", "book-text"],
   ["graduation-cap-combined", "arrow-left", "graduation-cap"],
   ["languages-combined", "arrow-left", "languages"],
