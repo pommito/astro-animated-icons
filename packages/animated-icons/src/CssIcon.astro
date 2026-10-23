@@ -1,0 +1,19 @@
+---
+import Icon, { type IconProps } from "./Icon.astro";
+import type { FiniteTransformCycle } from "./shared/finite-transform-cycle";
+import { cycleCSS } from "./shared/cycle-css";
+
+interface Props extends IconProps {
+  cycle: FiniteTransformCycle;
+  tag: `grave-${string}`;
+}
+const { cycle, tag, ...props } = Astro.props;
+const locals = Astro.locals as { cssCycleSheets?: Set<string> };
+const seen = locals.cssCycleSheets ??= new Set<string>();
+const include = !seen.has(cycle.id);
+seen.add(cycle.id);
+---
+{include && <style is:inline data-grave-cycle-style={cycle.id} set:html={cycleCSS(cycle)} />}
+<Icon {...props} tag={tag} data-css-cycle={cycle.id}>
+  <slot />
+</Icon>

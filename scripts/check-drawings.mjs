@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import ts from "typescript";
+import { evaluateTypeScriptData } from "./typescript-data.mjs";
 import { readCatalog } from "./catalog.mjs";
 
 const root = new URL("../", import.meta.url);
@@ -69,8 +69,7 @@ async function drawings() {
   for (const file of readdirSync(new URL("tests/helpers/", root)).filter(name => name.endsWith(".ts"))) {
     const source = readFileSync(new URL(`tests/helpers/${file}`, root), "utf8");
     if (!source.startsWith("export const ")) continue;
-    const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ESNext } }).outputText;
-    const data = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
+    const data = await evaluateTypeScriptData(source);
     for (const icons of Object.values(data).filter(Array.isArray)) for (const icon of icons) {
       let drawing = icon.drawing ?? icon.geometry?.map(shape => ({ tag: shape.tag, attrs: shape.attributes }));
       if (icon.paths) {

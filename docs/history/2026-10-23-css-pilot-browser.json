@@ -1,0 +1,57 @@
+{
+  "browser": "ChatGPT in-app Chromium 155.0.0.0, macOS, no CPU throttling",
+  "route": "http://127.0.0.1:45322/css-pilot/",
+  "syntheticLifecycle": {
+    "touchIgnored": true,
+    "parentMouseStarts": true,
+    "disconnectCancels": true,
+    "disabledParentIgnored": true,
+    "controlledHoverIgnored": true,
+    "startReturnsVoid": true,
+    "manualStarts": true,
+    "stopReturnsVoid": true
+  },
+  "preparation": {
+    "icon": "Bell",
+    "instances": 20,
+    "warmupBatches": 5,
+    "measuredBatches": 30,
+    "alternatingOrder": true,
+    "original": {
+      "medianMs": 2.1000000089406967,
+      "p95Ms": 3.5999999940395355
+    },
+    "managed": {
+      "medianMs": 2.2999999970197678,
+      "p95Ms": 4
+    },
+    "scope": "Synchronous startAnimation only. Includes CSS forced style resolution. Cleanup outside timed interval. Single exploratory run. No frame-rate conclusion."
+  },
+  "pending": [
+    "Visual acceptance",
+    "Real touch hardware",
+    "Hybrid mouse and touch hardware",
+    "Reduced-motion emulation and live preference changes",
+    "Safari",
+    "Firefox"
+  ],
+  "realMouse": {
+    "bell": {
+      "durationMs": 500,
+      "iterations": 1,
+      "stateOnEntry": "running"
+    },
+    "chevron": {
+      "durationMs": 500,
+      "iterations": 1,
+      "stateOnEntry": "running"
+    },
+    "loader": {
+      "durationMs": 800,
+      "stateOnEntry": "running",
+      "animationsOnExit": 0,
+      "infiniteIterationsSerializedAsNull": true
+    }
+  },
+  "consoleErrorsOnFinalPage": []
+}

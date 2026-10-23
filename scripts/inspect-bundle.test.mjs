@@ -26,7 +26,7 @@ function withFile(path, change, run) {
 test("the production fixture satisfies every bundle case", () => {
   const messages = [];
   verifyBundles(built, (message) => messages.push(message));
-  assert.equal(messages.at(-1), "Selective loading verified: shared CSS only, unused icon behavior excluded.");
+  assert.equal(messages.at(-1), "Selective loading verified: selected generated CSS, unused icon behavior excluded.");
 });
 
 test("an unused registration reports its route and exact tag", () => {
@@ -57,5 +57,22 @@ test("missing shared CSS cannot become the baseline for every icon", () => {
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, "")
     .replace(/<link\b[^>]*rel="stylesheet"[^>]*>/g, ""), () => {
     assert.throws(() => verifyBundles(output, () => {}), /single: shared wrapper CSS is missing/);
+  });
+});
+
+test("a production CSS recipe rejects missing, changed, or duplicated generated styles", () => {
+  const file = new URL("bell-single/index.html", output);
+  for (const change of [
+    html => html.replace(/<style[^>]*>@keyframes grave-cycle-bell[\s\S]*?<\/style>/, ""),
+    html => html.replace("animation-duration:0.5s", "animation-duration:0.7s"),
+    html => html + html.match(/<style[^>]*>@keyframes grave-cycle-bell[\s\S]*?<\/style>/)[0],
+  ]) withFile(file, change, () => {
+    assert.throws(() => verifyBundles(output, () => {}), /bell-single: selected generated CSS and shared CSS/);
+  });
+});
+
+test("generated CSS for an unused recipe cannot enter production", () => {
+  withFile(new URL("single/index.html", output), html => html + "<style>@keyframes grave-cycle-bell-entry{to{transform:rotate(0deg)}}</style>", () => {
+    assert.throws(() => verifyBundles(output, () => {}), /selected generated CSS and shared CSS/);
   });
 });
