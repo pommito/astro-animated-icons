@@ -55,6 +55,17 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "earth": "earth-single",
+  "rabbit": "rabbit-single",
+  "roller-coaster": "roller-coaster-single",
+  "satellite-dish": "satellite-dish-single",
+  "ship-wheel": "ship-wheel-single",
+  "waves": "waves-single",
+  "waves-arrow-down": "waves-arrow-down-single",
+  "waves-arrow-up": "waves-arrow-up-single",
+  "waves-ladder": "waves-ladder-single",
+  "sparkles": "sparkles-single",
+
   "accessibility": "accessibility-single",
   "activity": "activity-single",
   "square-activity": "square-activity-single",
@@ -485,6 +496,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["earth-combined", "arrow-left", "earth"],
+  ["rabbit-combined", "arrow-left", "rabbit"],
+  ["roller-coaster-combined", "arrow-left", "roller-coaster"],
+  ["satellite-dish-combined", "arrow-left", "satellite-dish"],
+  ["ship-wheel-combined", "arrow-left", "ship-wheel"],
+  ["waves-combined", "arrow-left", "waves"],
+  ["waves-arrow-down-combined", "arrow-left", "waves-arrow-down"],
+  ["waves-arrow-up-combined", "arrow-left", "waves-arrow-up"],
+  ["waves-ladder-combined", "arrow-left", "waves-ladder"],
+  ["sparkles-combined", "arrow-left", "sparkles"],
+
   ["accessibility-combined", "arrow-left", "accessibility"],
   ["activity-combined", "arrow-left", "activity"],
   ["square-activity-combined", "arrow-left", "square-activity"],
