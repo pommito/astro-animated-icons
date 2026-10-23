@@ -4,13 +4,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { readCatalog } from "./catalog.mjs";
-import { evaluateTypeScriptData } from "./typescript-data.mjs";
-
-const load = path => evaluateTypeScriptData(readFileSync(new URL(path, import.meta.url), "utf8"));
-const { cycleCSS } = await load("../packages/animated-icons/src/shared/cycle-css.ts");
-const { bellCycle } = await load("../packages/animated-icons/src/icons/bell/cycle.ts");
-const { chevronRightCycle } = await load("../packages/animated-icons/src/icons/chevron-right/cycle.ts");
-const generatedCSS = new Map([bellCycle, chevronRightCycle].map(cycle => [cycle.id, cycleCSS(cycle)]));
+import { generatedCSS } from "./css-cycles.mjs";
 
 export function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");

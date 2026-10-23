@@ -1,0 +1,11 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/chevron-first/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-chevron-first"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { chevronFirstRecipe } from "./chevron-first";
+  if (!customElements.get("grave-reference-chevron-first")) customElements.define("grave-reference-chevron-first", createIconElement(chevronFirstRecipe));
+</script>

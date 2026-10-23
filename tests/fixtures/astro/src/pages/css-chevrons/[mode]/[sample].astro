@@ -1,0 +1,15 @@
+---
+import { chevrons, LoaderCircle } from "../../../css-chevron-catalogue";
+
+export function getStaticPaths() {
+  const samples = [...chevrons.map(icon => icon.slug), "family", "repeated", "mixed"];
+  return ["baseline", "managed"].flatMap(mode => samples.map(sample => ({ params: { mode, sample } })));
+}
+const { mode, sample } = Astro.params;
+const selected = sample === "repeated" ? Array.from({ length: 20 }, () => chevrons[0])
+  : ["family", "mixed"].includes(sample!) ? chevrons : chevrons.filter(icon => icon.slug === sample);
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Chevron payload fixture</title></head><body>
+  {selected.map(icon => { const Component = mode === "managed" ? icon.Managed : icon.Reference; return <Component />; })}
+  {sample === "mixed" && <LoaderCircle />}
+</body></html>
