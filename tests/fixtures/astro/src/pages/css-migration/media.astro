@@ -1,0 +1,15 @@
+---
+import catalogue from "../../../../../../tests/helpers/css-migration-cases.json";
+import { migrationIcons } from "../../css-migration-catalogue";
+const selected = catalogue.icons.map(icon => migrationIcons.find(candidate => candidate.slug === icon.slug)!);
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Native reduced-motion migration probe</title></head><body>
+  <h1>Native reduced-motion migration probe</h1>
+  <p>Disable reduced motion, prepare paused entry, then enable reduced motion in browser developer tools or the operating system and check cancellation. Disable reduced motion again and check replay. This page uses native matchMedia without a stub.</p>
+  <button id="prepare" type="button">Prepare paused entry</button>
+  <button id="check-reduced" type="button" disabled>Check reduced motion</button>
+  <button id="check-restored" type="button" disabled>Check restored playback</button>
+  <output id="media-result"></output>
+  {selected.map(({ Managed, name }) => <p><Managed controlled /> {name}</p>)}
+</body></html>
+<script>import "../../css-migration-media";</script>
