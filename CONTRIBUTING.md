@@ -31,6 +31,8 @@ Follow a comparable icon's files and update:
 - Single-icon and combined-route cases in [the bundle inspector](scripts/inspect-bundle.mjs), with matching fixture pages.
 - Source attribution and applicable [third-party notices](packages/animated-icons/THIRD_PARTY_NOTICES.md).
 
+Keep one maintained recipe definition for each icon. Choose an existing animation mechanism after checking its timing, replay, return, completion, and cleanup policies against the recipe. Engine selection is internal; do not add an engine prop or a second consumer component. Keep Motion when an existing CSS mechanism cannot preserve the behavior, including velocity-dependent springs. Record family decisions in the [migration plan](docs/css-migration-plan.md).
+
 Pin the upstream recipe revision used for the adaptation. Provide a comparison fixture for visual review and describe how its reference is produced, including whether it executes the upstream component.
 
 Run `pnpm validate` after adding an icon. The user reviews its rendering and animation in the comparison fixture.

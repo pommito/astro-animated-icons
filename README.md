@@ -1,6 +1,6 @@
 # Astro animated icons
 
-Animated Lucide icons for Astro, with complete SVG output and Motion animations managed by Web Components.
+Animated Lucide icons for Astro, with complete SVG output and per-icon loading. Animation engines are selected internally to preserve each icon's playback behavior.
 
 Astro renders each icon before JavaScript runs. The browser adds animation to the existing drawing. Each rendered icon loads its own registration script and shares the common runtime and CSS. No hydration directive is needed.
 
@@ -89,6 +89,14 @@ import { ArrowLeft } from "@grave/animated-icons/astro";
 `startAnimation()` starts or replays the icon's recipe. Depending on the recipe, playback completes one cycle, holds a pose, or loops until stopped. `stopAnimation()` returns the drawing toward rest. Both methods return `void`.
 
 Attach browser listeners in a client script. The consumer owns operations such as navigation, copying, and uploading, as well as success or error feedback. The icon owns its drawing and animation.
+
+## Loading and animation engines
+
+Astro renders the complete initial SVG before JavaScript runs. Each rendered icon loads its registration script and shares runtime code and CSS with other icons that need them. Importing through the shared entry point does not require loading the entire catalogue. Repeated instances share their resources.
+
+The package chooses an engine internally. Eligible recipes use generated CSS keyframes with JavaScript playback control. Other recipes use Motion. Consumers keep the same imports, tags, props, and `startAnimation()` and `stopAnimation()` methods. No engine prop or alternate import is required.
+
+Payload depends on the icons rendered together. A page that also needs Motion can retain its shared chunks while adding generated CSS. Measure the complete page before claiming a saving. See the [migration plan](docs/css-migration-plan.md) for decisions and dated evidence.
 
 ## Contributing
 
