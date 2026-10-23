@@ -1,0 +1,19 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-cigarette-off">
+  <g>
+    <path d="M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13" />
+    <path d="M18 8c0-2.5-2-2.5-2-5" data-part="0" />
+    <path d="m2 2 20 20" data-slash pathLength="1" />
+    <path d="M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866" />
+    <path d="M22 8c0-2.5-2-2.5-2-5" data-part="1" />
+    <path d="M7 12v4" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

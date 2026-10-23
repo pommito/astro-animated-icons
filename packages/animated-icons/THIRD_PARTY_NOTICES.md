@@ -901,6 +901,14 @@ The `/reading-leisure-comparison/` fixture executes all ten pinned original Reac
 - [Lucide Animated ChessPawn, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-pawn.tsx)
 - [Lucide Animated RockingChair, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rocking-chair.tsx)
 
+- [Lucide Animated Bone, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bone.tsx)
+- [Lucide Animated Cigarette, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cigarette.tsx)
+- [Lucide Animated CigaretteOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cigarette-off.tsx)
+- [Lucide Animated HatGlasses, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hat-glasses.tsx)
+- [Lucide Animated SprayCan, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/spray-can.tsx)
+
+The objects and symbols adapters use these pinned recipes. Their comparison copies change only the class utility import and execute the original React components at 14, 16, 24, and 28 px. Bone preserves the effective easeOut curve because its rotate-specific transition replaces the parent circIn easing in Motion 13.5.1. Cigarette retains its 20 and 60 ms smoke delays. CigaretteOff omits custom values upstream, so Motion resolves its invalid delays to zero; both smoke paths start together. Its slash draws over 400 ms. HatGlasses retains the hat's 500 ms keyframes, its fill-box origin at 12px 11px, and the glasses' 280 ms delay and 320 ms movement. SprayCan retains six independently timed opacity loops and its 200 ms return. The common playback API supports replay, stop, reduced motion, and cleanup through the existing lifecycle. Automated validation checks static output and bundles; animation timing, interrupted spring velocity, interactions, and cleanup remain for manual review.
+
 ## Lucide Animated
 
 MIT License
