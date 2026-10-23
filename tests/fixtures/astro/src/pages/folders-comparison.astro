@@ -8,7 +8,8 @@ const sizes = [14, 16, 24, 28];
   <head><meta charset="utf-8" /><title>Folder recipe comparisons</title></head>
   <body>
     <h1>Folder recipe comparisons</h1>
-    <p>The reference runs the original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26. Only their class utility import points to a local equivalent. React is confined to this comparison page.</p>
+    <p>The references run the original Lucide Animated React components from revision 4662fff2b60fdcf4751b32013606756caf7c4c26, with their class utility import redirected locally. Folder adapts that revision's FolderOpen component with the supplied classic folder path, rotation keyframes [0, -4, 3, -2, 0], a 400 ms duration, and an explicit fill-box center. It is a modified React reference, not an upstream Folder component. React is confined to this comparison page.</p>
+    <p>Folder now uses CSS with a 200 ms ease-out return instead of the reference's velocity-dependent spring. Its entry is unchanged. <a href="/folder-css/">Compare Folder with the previous Motion adapter</a>.</p>
     <p>Hover a row or use its Replay button to animate both versions together. Play all starts every sample. Stop all returns them to rest. Seek pauses both versions at the selected time in the current playback.</p>
     <button type="button" id="play">Play all</button>
     <button type="button" id="stop">Stop all</button>
@@ -16,11 +17,11 @@ const sizes = [14, 16, 24, 28];
     <button type="button" id="seek">Seek and pause</button>
     {folders.map(icon => {
       const Component = icons[icon.name];
-      return <section>
+      return <section id={icon.slug}>
         <h2>{icon.name}</h2>
-        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug}.tsx`}>Pinned upstream recipe</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
+        <p><a href={`https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/${icon.slug === "folder" ? "folder-open" : icon.slug}.tsx`}>Pinned recipe source</a> · <a href={`/${icon.slug}/`}>Manual controls and lifecycle</a></p>
         <table>
-          <thead><tr><th>Size</th><th>Astro adapter</th><th>Upstream React component</th><th>Playback</th></tr></thead>
+          <thead><tr><th>Size</th><th>Astro adapter</th><th>React reference</th><th>Playback</th></tr></thead>
           <tbody>{sizes.map(size => <tr data-icon={icon.slug} data-size={size}>
             <th scope="row">{size} px</th>
             <td data-adapter><Component size={size} controlled /></td>

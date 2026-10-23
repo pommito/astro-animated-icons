@@ -1,3 +1,4 @@
+export { FolderIcon as Folder } from "./folders/folder";
 export { FolderArchiveIcon as FolderArchive } from "./folders/folder-archive";
 export { FolderCheckIcon as FolderCheck } from "./folders/folder-check";
 export { FolderClockIcon as FolderClock } from "./folders/folder-clock";

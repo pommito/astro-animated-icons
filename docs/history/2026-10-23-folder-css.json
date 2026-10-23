@@ -1,0 +1,143 @@
+{
+  "payloads": {
+    "node": "v22.20.0",
+    "compression": "Node zlib defaults per unique reachable JS chunk and style source; cold cache; HTML, headers and Brotli excluded; inline CSS compressed separately as an estimate",
+    "cases": {
+      "folder": {
+        "motion": {
+          "javascript": {
+            "raw": 71709,
+            "gzip": 30224
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 71833,
+            "gzip": 30340
+          },
+          "chunks": [
+            "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js",
+            "/_astro/cycle.CG7_q7XV.js"
+          ]
+        },
+        "css": {
+          "javascript": {
+            "raw": 4098,
+            "gzip": 1948
+          },
+          "css": {
+            "raw": 920,
+            "gzip": 411
+          },
+          "total": {
+            "raw": 5018,
+            "gzip": 2359
+          },
+          "chunks": [
+            "/_astro/Folder.astro_astro_type_script_index_0_lang.Crgwhf62.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/css-cycle.DQADCFmq.js",
+            "/_astro/cycle.CG7_q7XV.js"
+          ]
+        },
+        "saved": {
+          "raw": 66815,
+          "gzip": 27981
+        }
+      },
+      "folder-file-text": {
+        "motion": {
+          "javascript": {
+            "raw": 73083,
+            "gzip": 30992
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 73207,
+            "gzip": 31108
+          },
+          "chunks": [
+            "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js",
+            "/_astro/cycle.CG7_q7XV.js",
+            "/_astro/FileText.astro_astro_type_script_index_0_lang.XA03XW9_.js"
+          ]
+        },
+        "css": {
+          "javascript": {
+            "raw": 18292,
+            "gzip": 8427
+          },
+          "css": {
+            "raw": 920,
+            "gzip": 411
+          },
+          "total": {
+            "raw": 19212,
+            "gzip": 8838
+          },
+          "chunks": [
+            "/_astro/Folder.astro_astro_type_script_index_0_lang.Crgwhf62.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/css-cycle.DQADCFmq.js",
+            "/_astro/cycle.CG7_q7XV.js",
+            "/_astro/FileText.astro_astro_type_script_index_0_lang.XA03XW9_.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/border-radius.CDzYrzJo.js"
+          ]
+        },
+        "saved": {
+          "raw": 53995,
+          "gzip": 22270
+        }
+      }
+    }
+  },
+  "browser": {
+    "surface": "in-app browser",
+    "assertions": 182,
+    "entrySnapshots": 32,
+    "maxEntryAngleErrorDegrees": 0.005012785107937567,
+    "entryAngleToleranceDegrees": 0.03,
+    "maxReturnAngleErrorDegrees": 0.000002082498991251569,
+    "returnAngleToleranceDegrees": 0.003,
+    "failures": [],
+    "syntheticChecks": "Pointer events and reduced-motion changes use synthetic events and a matchMedia stub.",
+    "visualAcceptance": "The owner accepted the CSS implementation and its intentional 200 ms return on 2026-10-23."
+  }
+}

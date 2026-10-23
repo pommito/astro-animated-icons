@@ -146,6 +146,8 @@ export type { FolderLockIconHandle } from "./icons/folder-lock/element";
 export { default as FolderMinus } from "./icons/folder-minus/FolderMinus.astro";
 export type { FolderMinusIconHandle } from "./icons/folder-minus/element";
 
+export { default as Folder } from "./icons/folder/Folder.astro";
+export type { FolderIconHandle } from "./icons/folder/element";
 export { default as FolderOpen } from "./icons/folder-open/FolderOpen.astro";
 export type { FolderOpenIconHandle } from "./icons/folder-open/element";
 
