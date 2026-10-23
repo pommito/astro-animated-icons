@@ -1,0 +1,11 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/calendar-days/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-calendar-days"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { calendarDaysRecipe } from "./calendar-days";
+  if (!customElements.get("grave-reference-calendar-days")) customElements.define("grave-reference-calendar-days", createIconElement(calendarDaysRecipe));
+</script>

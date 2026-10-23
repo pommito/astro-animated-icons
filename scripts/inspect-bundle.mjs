@@ -4,7 +4,10 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { readCatalog } from "./catalog.mjs";
-import { generatedCSS } from "./css-cycles.mjs";
+import { generatedCSS as transformCSS } from "./css-cycles.mjs";
+import { generatedOpacityCSS } from "./css-opacity.mjs";
+
+const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS]);
 
 export function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");
