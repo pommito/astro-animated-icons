@@ -1,0 +1,18 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-id-card">
+  <g>
+    <path d="M16 10h2" pathLength="1" data-part="0" />
+    <path d="M16 14h2" pathLength="1" data-part="1" />
+    <path d="M6.17 15a3 3 0 0 1 5.66 0" pathLength="1" data-part="2" />
+    <circle cx="9" cy="11" r="2" pathLength="1" data-part="3" />
+    <rect height="14" rx="2" width="20" x="2" y="5" data-part="4" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

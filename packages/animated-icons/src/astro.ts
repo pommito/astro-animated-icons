@@ -1112,6 +1112,36 @@ export type { WavesLadderIconHandle } from "./icons/waves-ladder/element";
 export { default as Sparkles } from "./icons/sparkles/Sparkles.astro";
 export type { SparklesIconHandle } from "./icons/sparkles/element";
 
+
+export { default as BookText } from "./icons/book-text/BookText.astro";
+export type { BookTextIconHandle } from "./icons/book-text/element";
+
+export { default as GraduationCap } from "./icons/graduation-cap/GraduationCap.astro";
+export type { GraduationCapIconHandle } from "./icons/graduation-cap/element";
+
+export { default as Languages } from "./icons/languages/Languages.astro";
+export type { LanguagesIconHandle } from "./icons/languages/element";
+
+export { default as IdCard } from "./icons/id-card/IdCard.astro";
+export type { IdCardIconHandle } from "./icons/id-card/element";
+
+export { default as Ticket } from "./icons/ticket/Ticket.astro";
+export type { TicketIconHandle } from "./icons/ticket/element";
+
+export { default as ChessBishop } from "./icons/chess-bishop/ChessBishop.astro";
+export type { ChessBishopIconHandle } from "./icons/chess-bishop/element";
+
+export { default as ChessKing } from "./icons/chess-king/ChessKing.astro";
+export type { ChessKingIconHandle } from "./icons/chess-king/element";
+
+export { default as ChessKnight } from "./icons/chess-knight/ChessKnight.astro";
+export type { ChessKnightIconHandle } from "./icons/chess-knight/element";
+
+export { default as ChessPawn } from "./icons/chess-pawn/ChessPawn.astro";
+export type { ChessPawnIconHandle } from "./icons/chess-pawn/element";
+
+export { default as RockingChair } from "./icons/rocking-chair/RockingChair.astro";
+export type { RockingChairIconHandle } from "./icons/rocking-chair/element";
 export { default as AirVent } from "./icons/air-vent/AirVent.astro";
 export type { AirVentIconHandle } from "./icons/air-vent/element";
 

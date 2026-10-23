@@ -901,6 +901,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+BookText, GraduationCap, Languages, IdCard, Ticket, ChessBishop, ChessKing, ChessKnight, ChessPawn, and RockingChair adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+BookText retains its independent scale, rotation, and vertical keyframes over 600 ms. GraduationCap keeps its 600 ms cap movement and 800 ms tassel rotation after a 100 ms delay. Its normal variant omits y, so stopping allows the current vertical motion to finish while rotation returns. Languages retains the custom delays of 300, 200, 100, 0, 300, and 300 ms for its opacity and zero-bounce 500 ms path-length spring. The adapter samples that spring every 5 ms and remaps its whole curve from the current path length on an interrupted replay. Its independently controlled paths do not inherit the SVG stagger. Path offset uses the default 300 ms transition without a custom delay. IdCard staggers its four reveals over 300 ms and leaves the frame static. Ticket holds opposite three-unit translations with spring stiffness 300 and damping 20; its right half also rotates four degrees.
+
+ChessBishop keeps its eight-stage diagonal movement and disappearance over 1400 ms. ChessKing keeps its seven-stage 1100 ms rotation and lift. ChessKnight keeps its eight-stage 900 ms jump. ChessPawn preserves independent 1800 ms body rotation and 2400 ms head movement. Their return springs keep the original stiffness and damping. RockingChair repeats its symmetric 1200 ms rotation until stopped, with a 10% 90% SVG origin. The symmetric mirror and reverse cycles are equivalent. Its child spring transitions have no variants to animate; the SVG normal return uses Motion's default spring.
+
+Motion 13.5.1's SVG renderer replaces the source's static transform-origin styles when it builds transforms. The adapters follow those effective centers: view-box center for the chess groups, fill-box center for GraduationCap and its tassel, and fill-box center for Ticket's right half. These choices follow the installed renderer source; browser geometry and interrupted spring velocity parity remain unmeasured.
+
+The `/reading-leisure-comparison/` fixture executes all ten pinned original React components at 14, 16, 24, and 28 px. Copied sources only redirect their class utility import to the local equivalent. React remains confined to comparison fixtures. Automated validation covers static output and selective loading; animation playback, interruption, cleanup, and visual acceptance remain for manual review.
+
+- [Lucide Animated BookText, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/book-text.tsx)
+- [Lucide Animated GraduationCap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/graduation-cap.tsx)
+- [Lucide Animated Languages, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/languages.tsx)
+- [Lucide Animated IdCard, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/id-card.tsx)
+- [Lucide Animated Ticket, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ticket.tsx)
+- [Lucide Animated ChessBishop, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-bishop.tsx)
+- [Lucide Animated ChessKing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-king.tsx)
+- [Lucide Animated ChessKnight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-knight.tsx)
+- [Lucide Animated ChessPawn, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-pawn.tsx)
+- [Lucide Animated RockingChair, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rocking-chair.tsx)
+
 ## Lucide Animated
 
 MIT License

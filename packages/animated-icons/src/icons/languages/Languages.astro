@@ -1,0 +1,19 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-languages">
+  <g>
+    <path d="m5 8 6 6" pathLength="1" data-part="0" />
+    <path d="m4 14 6-6 3-3" pathLength="1" data-part="1" />
+    <path d="M2 5h12" pathLength="1" data-part="2" />
+    <path d="M7 2h1" pathLength="1" data-part="3" />
+    <path d="m22 22-5-10-5 10" pathLength="1" data-part="4" />
+    <path d="M14 18h6" pathLength="1" data-part="5" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
