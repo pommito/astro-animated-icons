@@ -30,6 +30,28 @@ track((onComplete) => animate(path, { opacity: [0, 1] }, {
 
 The recipe does not count tracks or decide when to clear a whole playback. A completed return always restores the drawing. Callbacks from an older playback cannot clear a newer one, but can repair late writes after reset. The lifecycle also accepts factories with custom stop and cancel operations, preserving Archive's Motion values and the velocity sampling used by interrupted springs.
 
+## Internal animation engines
+
+Each icon selects its mechanism through imports inside the package. Consumers use the same Astro component and playback handle. There is no catalogue-wide client registry or engine prop. CSS keyframes still require JavaScript for triggers, manual playback, interruption, and cleanup. The shared lifecycle owns those behaviors for both engines.
+
+Finite transforms keep their data in `src/icons/<name>/cycle.ts`. [FiniteTransformCycle](../packages/animated-icons/src/shared/finite-transform-cycle.ts) describes one target and one rotation or translation property, values, offsets, entry and optional return timing, replay policy, and finish policy. [CssIcon.astro](../packages/animated-icons/src/CssIcon.astro) renders the drawing and generated styles. The [CSS cycle adapter](../packages/animated-icons/src/shared/css-cycle.ts) implements the track protocol.
+
+Before replacing playback, the adapter captures the displayed transform. Bell and CircleHelp replay from that pose. Finite chevrons and folder translations restart at their first explicit value. Return starts at the displayed pose. ChevronFirst has a 600 ms entry and a 300 ms return with different easing. The other finite chevrons use 500 ms entry and return. Finite chevrons restore on completion; Bell, folder translations, and CircleHelp hold their completed pose. Clear removes playback attributes, captured-pose variables, retained transforms, and temporary origins.
+
+Folder uses the same adapter for a path rotation with current-pose replay and hold completion. It has a 400 ms entry and a separate 200 ms return. Optional return timing falls back to entry timing for other recipes. Its fixture-only Motion reference at `/folder-css/` shares the drawing and entry data, but retains the previous spring return to expose the intentional behavior change accepted in [PR #92](https://github.com/pommito/astro-animated-icons/pull/92).
+
+CalendarDays and CircleDashed keep their opacity data in `parts.ts`. [CssOpacityIcon.astro](../packages/animated-icons/src/CssOpacityIcon.astro) uses the [opacity compiler](../packages/animated-icons/src/shared/opacity-css.ts) and [track adapter](../packages/animated-icons/src/shared/css-opacity.ts). Each target has its own delay, duration, completion state, and captured opacity. An interrupted active target resumes from its displayed value; a finished target restarts from the declared entry value. Cancelling one target does not cancel the other targets before their poses have been captured.
+
+Motion mini eases the whole opacity effect, while CSS eases each interval. The opacity compiler splits the original cubic Bezier into equivalent interval offsets and easing. Playback does not sample the curve. Both engines still report track completion to the shared lifecycle, which guards newer playback against stale callbacks.
+
+### Generated styles and templates
+
+Astro renders complete initial SVG regardless of engine. The CSS wrappers emit marked inline styles only for rendered recipes, using request-local sets to deduplicate repeated instances. Static per-icon style blocks would let unused barrel imports accumulate CSS. Unused imports may retain the common wrapper CSS, but must add no recipe CSS or registration script.
+
+The [shared stylesheet helper](../packages/animated-icons/src/shared/cycle-css.ts) also runs on connection and before playback. A style in an inactive template is unavailable to an independently cloned drawing. The helper finds an active marked sheet or regenerates it in the drawing's document. It reconciles late sheets when the original template is mounted. The compiler therefore reaches the browser for recovery as well as running during server rendering. Include that code in payload measurements.
+
+Fixture-only Motion references consume the same recipe data and drawings through the previous mechanisms. They compare the refactor with its preceding local implementation; they do not execute upstream React components. References remain outside consumer imports. The [migration plan](css-migration-plan.md) records family decisions and retained Motion behavior.
+
 ## Reuse and icon boundaries
 
 Each direct directory in `src/icons/` contains one exported icon. `src/shared/` contains mechanisms used by at least two icons, including [arrow.ts](../packages/animated-icons/src/shared/arrow.ts) and [diagonal-arrow.ts](../packages/animated-icons/src/shared/diagonal-arrow.ts). Reuse these mechanisms when they fit, and keep geometry, origins, and transition choices in the icon's own files.
@@ -43,9 +65,3 @@ For a particular icon's geometry, timing, finish policy, and interrupted returns
 The inspector reads the same catalogue as the drawing checker. It caches each chunk's source and byte and gzip sizes for one inspection. A later inspection reads the files again, including any changes made by a test.
 
 Its [negative tests](../scripts/inspect-bundle.test.mjs) share one temporary copy of the built fixture and restore each modified file after its check. See [contribution validation](../CONTRIBUTING.md#validate-the-change) for the commands. Past measurements are preserved in [the dated verification record](history/2026-10-16-verification.md).
-
-## CSS playback
-
-Folder also uses the shared CSS cycle adapter. Its cycle targets the folder path and defines a separate 200 ms return duration. Optional return timing falls back to entry timing for existing recipes. The drawing and entry data are shared with a fixture-only Motion reference at `/folder-css/`; the reference retains the previous spring return to expose the intentional behavior change.
-
-Bell and ChevronRight use generated CSS keyframes through the public adapters. Their cycle.ts files also drive fixture-only Motion references with distinct tags. CssIcon.astro emits each rendered cycle once per request and marks its style element by recipe. On connection and before playback, the CSS adapter reuses an active marked sheet or generates the missing sheet in the owning document. It removes duplicate marked sheets when a later template brings its server sheet into the document. This covers independent template clones when the server sheet remains in another inert template. Server emission and client recovery use the same generator. The CSS track adapter reuses element.ts and captures the rendered transform before interruption. Bell replays from that pose; ChevronRight restarts from zero and restores on completion. LoaderCircle keeps Motion. The dated [parity follow-up](history/2026-10-23-css-parity.md) records the preceding pilot and its limits.
