@@ -1,0 +1,11 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/folder-down/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-folder-down"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { folderDownRecipe } from "./folder-down";
+  if (!customElements.get("grave-reference-folder-down")) customElements.define("grave-reference-folder-down", createIconElement(folderDownRecipe));
+</script>
