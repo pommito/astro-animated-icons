@@ -1,4 +1,5 @@
 import { opacityTiming, type OpacityPart } from "./opacity-parts";
+import { ensureRecipeCSS } from "./cycle-css";
 
 type Point = [number, number];
 function split(points: Point[], t: number) {
@@ -52,4 +53,8 @@ export function opacityCSS(id: string, parts: OpacityPart[]) {
       host + '[data-opacity-state="entry"] ' + part.selector + "{animation-name:" + name + "-entry;" + timing(entry, "linear") + "}" +
       host + '[data-opacity-state="return"] ' + part.selector + "{animation-name:" + name + "-return;" + timing(back, "cubic-bezier(" + back.ease.join(",") + ")") + "}}";
   }).join("");
+}
+
+export function ensureOpacityCSS(id: string, parts: OpacityPart[], document: Document) {
+  ensureRecipeCSS(id, document, () => opacityCSS(id, parts));
 }

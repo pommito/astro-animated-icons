@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
+import { ensureOpacityCSS, opacityParts, generatedOpacityCSS } from "./css-opacity.mjs";
 import { evaluateTypeScriptData } from "./typescript-data.mjs";
 
 const source = new URL("../packages/animated-icons/src/", import.meta.url);
@@ -66,4 +67,24 @@ test("a late server sheet is reconciled with an existing recovered sheet", () =>
   assert.equal(document.sheets.length, 2);
   assert.equal(document.sheets[0], retained);
   assert.equal(document.sheets[1].id, "chevron-right");
+});
+
+
+test("opacity sheets recover per document and reconcile late server sheets", () => {
+  for (const [id, parts] of opacityParts) {
+    const document = documentWithSheets();
+    ensureOpacityCSS(id, parts, document);
+    ensureOpacityCSS(id, parts, document);
+    assert.equal(document.sheets.length, 1);
+    assert.equal(document.sheets[0].textContent, generatedOpacityCSS.get(id));
+    document.head.append({ id, textContent: generatedOpacityCSS.get(id) });
+    ensureOpacityCSS(id, parts, document);
+    assert.equal(document.sheets.length, 1);
+    document.sheets.pop();
+    ensureOpacityCSS(id, parts, document);
+    assert.equal(document.sheets[0].textContent, generatedOpacityCSS.get(id));
+    const other = documentWithSheets();
+    ensureOpacityCSS(id, parts, other);
+    assert.equal(other.sheets.length, 1);
+  }
 });

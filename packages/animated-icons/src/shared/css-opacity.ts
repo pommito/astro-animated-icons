@@ -1,13 +1,16 @@
 import type { IconRecipe } from "../element";
 import type { OpacityPart } from "./opacity-parts";
+import { ensureOpacityCSS } from "./opacity-css";
 
 export function createCSSOpacityRecipe(id: string, parts: OpacityPart[]): IconRecipe {
   const playbacks = new WeakMap<SVGElement, { active: boolean; animation?: Animation }>();
   const elements = (drawing: SVGGElement) => parts.map(part => drawing.querySelector<SVGElement>(part.selector)!);
   return {
     finish: "hold",
+    connect(host) { ensureOpacityCSS(id, parts, host.ownerDocument); },
     animate(drawing, returning, track) {
       const host = drawing.closest<HTMLElement>("[data-css-opacity]")!;
+      ensureOpacityCSS(id, parts, host.ownerDocument);
       const targets = elements(drawing);
       const from = targets.map(target => getComputedStyle(target).opacity);
       host.removeAttribute("data-opacity-state");

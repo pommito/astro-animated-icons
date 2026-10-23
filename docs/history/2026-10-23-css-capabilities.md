@@ -1,6 +1,6 @@
 # CSS capability migration evidence
 
-This stage extends the integrated finite-chevron implementation at `28dd4ef839954136095d403f880f9bfc4d01b25d`. It addresses [issue #85](https://github.com/pommito/astro-animated-icons/issues/85) under [parent #81](https://github.com/pommito/astro-animated-icons/issues/81). Seven more public icons use CSS, with their existing tags, props and void playback methods. LoaderCircle stays on Motion. Owner visual acceptance of these seven migrations is pending.
+This stage extends the integrated finite-chevron implementation at `28dd4ef839954136095d403f880f9bfc4d01b25d`. It addresses [issue #85](https://github.com/pommito/astro-animated-icons/issues/85) under [parent #81](https://github.com/pommito/astro-animated-icons/issues/81). Seven more public icons use CSS, with their existing tags, props and void playback methods. LoaderCircle stays on Motion. Owner visual acceptance of these seven migrations is pending. The branch also integrates promotion correction `b620895ea40923a435845f729e24726b77ca83bb`, published while this stage was running. It fixes CSS availability for independent template clones.
 
 ## Candidate queue and decisions
 
@@ -29,17 +29,21 @@ Each migrated icon keeps one drawing and one maintained recipe data source. The 
 
 Fixture-only Motion references use those data and drawings with the previous shared mechanisms. They compare this refactor with the preceding local implementation. They do not execute upstream React components. The [transcription audit](2026-10-23-css-capabilities-transcription.json) records the prior definition hashes and data checks. Initial SVG remains covered by the existing drawing baselines.
 
-Opacity tracks preserve each displayed value before cancellation. Cancellation leaves other targets' animations intact until their own track is stopped. Completion is tracked per target, including immediate replay before queued finish events. The existing lifecycle still owns input, controlled mode, reduced motion, playback identifiers, completion ordering, disconnect and reconnection.
+Opacity tracks preserve each displayed value before cancellation. Cancellation leaves other targets' animations intact until their own track is stopped. Completion is tracked per target, including immediate replay before queued finish events. Both CSS mechanisms share active-stylesheet reconciliation on connection and before playback. Server sheets have recipe markers. Missing sheets are regenerated from the same data; late server sheets are deduplicated. The existing lifecycle still owns input, controlled mode, reduced motion, playback identifiers, completion ordering, disconnect and reconnection.
 
-Motion mini applies easing to the whole opacity effect. CSS normally applies easing separately between keyframes. The server generator splits the cubic Bezier at the original offsets and emits equivalent interval offsets and easing. The browser adapter performs no curve sampling. CalendarDays exercises the multi-keyframe case; CircleDashed exercises the default return curve.
+Motion mini applies easing to the whole opacity effect. CSS normally applies easing separately between keyframes. The CSS generator splits the cubic Bezier at the original offsets and emits equivalent interval offsets and easing. It runs during server rendering and when a missing stylesheet must be recovered for a template clone. Playback performs no curve sampling. CalendarDays exercises the multi-keyframe case; CircleDashed exercises the default return curve.
 
 ## Browser evidence
+
+The [independent-template page](../../tests/fixtures/astro/src/pages/css-capabilities/templates.astro) checks clones of a second template while the first template stays inert, before and after registration. It then mounts the first template and checks deduplication. All 80 checks passed in Chromium 154 after integration.
 
 The [comparison page](../../tests/fixtures/astro/src/pages/css-capabilities/index.astro) was served at `http://127.0.0.1:45333/css-capabilities/` from this isolated worktree. Its controls expose playback comparisons and synthetic lifecycle checks separately from routine validation.
 
 Chromium 154 passed 4,452 assertions across 2,108 pose comparisons and 28 rows at 14, 16, 24 and 28 px. Maximum matrix-component error was 0.0007800000000000029 against a 0.005 tolerance. Opacity error was zero against a 0.001 tolerance. The prior helper samples every 5 ms, while CSS evaluates its easing continuously. The [browser report](2026-10-23-css-capabilities-browser.json) contains the full result.
 
 The probes cover entry, durations and delays, stop, replay, return interruption, completed entry, completed return, queued finish events, one finished opacity track among active tracks, disconnect and reconnection. Another 98 synthetic lifecycle checks passed across all seven icons, including parent mouse input, touch filtering, disabled controls, controlled mode, void methods, preference-change cleanup, template clones and control reassociation.
+
+The report supersedes the pre-template-correction measurements in commit `7f76bea`. CSS generators now reach the browser for missing-sheet recovery, so their delivery cost is included.
 
 These checks establish numerical behavior in this Chromium run. Safari, Firefox, real touch/hybrid hardware, operating-system reduced motion and owner visual review remain unverified. Frame pacing and preparation performance were not measured.
 
@@ -51,29 +55,29 @@ All values below are bytes. `repeated` renders 20 FolderDown instances. `mixed` 
 
 | Composition | Motion raw / gzip | CSS raw / gzip | Gzip saved |
 | --- | ---: | ---: | ---: |
-| folder-down | 26058 / 11864 | 3696 / 1805 | 10059 |
-| folder-up | 26053 / 11864 | 3678 / 1803 | 10061 |
-| folder-input | 26061 / 11864 | 3706 / 1810 | 10054 |
-| folder-output | 26065 / 11868 | 3718 / 1814 | 10054 |
-| circle-help | 26076 / 11877 | 3740 / 1823 | 10054 |
-| calendar-days | 71627 / 30216 | 8871 / 2168 | 28048 |
-| circle-dashed | 71588 / 30199 | 9908 / 2151 | 28048 |
-| family | 75069 / 32796 | 22867 / 6482 | 26314 |
-| folders | 27857 / 13203 | 7199 / 3635 | 9568 |
-| opacity | 72056 / 30554 | 16015 / 2986 | 27568 |
-| group | 26076 / 11877 | 3740 / 1823 | 10054 |
-| repeated | 26058 / 11864 | 3696 / 1805 | 10059 |
-| mixed | 75459 / 33074 | 92862 / 35858 | -2784 |
-| folders-mixed | 73946 / 31923 | 77194 / 33011 | -1088 |
-| opacity-mixed | 72446 / 30832 | 86010 / 32362 | -1530 |
+| folder-down | 26076 / 11872 | 5030 / 2503 | 9369 |
+| folder-up | 26071 / 11871 | 5012 / 2500 | 9371 |
+| folder-input | 26079 / 11872 | 5040 / 2503 | 9369 |
+| folder-output | 26083 / 11875 | 5052 / 2509 | 9366 |
+| circle-help | 26094 / 11885 | 5074 / 2516 | 9369 |
+| calendar-days | 71645 / 30224 | 12016 / 3659 | 26565 |
+| circle-dashed | 71606 / 30207 | 13053 / 3644 | 26563 |
+| family | 75087 / 32796 | 26109 / 8019 | 24777 |
+| folders | 27875 / 13206 | 8533 / 4327 | 8879 |
+| opacity | 72074 / 30561 | 19160 / 4477 | 26084 |
+| group | 26094 / 11885 | 5074 / 2516 | 9369 |
+| repeated | 26076 / 11872 | 5030 / 2503 | 9369 |
+| mixed | 75477 / 33073 | 96104 / 37394 | -4321 |
+| folders-mixed | 73964 / 31925 | 78528 / 33702 | -1777 |
+| opacity-mixed | 72464 / 30838 | 89155 / 33852 | -3014 |
 
-The complete seven-icon page saves 26,314 gzip bytes in this build. Adding LoaderCircle makes the same CSS page larger than its Motion reference. Savings depend on page composition and cannot be summed across single-icon rows.
+The complete seven-icon page saves 24,777 gzip bytes in this build. Adding LoaderCircle makes the same CSS page larger than its Motion reference. Savings depend on page composition and cannot be summed across single-icon rows.
 
 ## Commands and limits
 
 All shell commands used the required `rtk` prefix. Dependency installation used `rtk pnpm install --frozen-lockfile`. Types were checked with `rtk pnpm check`. Full validation used `rtk proxy sh -c 'pnpm validate > .artifacts/capabilities-validate.log 2>&1'`.
 
-The final `pnpm validate` passed in 86.309 seconds with zero type diagnostics. Its relevant output was:
+The final `pnpm validate` passed in 91.081 seconds with zero type diagnostics. Its relevant output was:
 
 ```text
 Verified 404 icons across 811 bundle cases.
@@ -81,12 +85,12 @@ Verified 7 CSS parity routes: SVG parity, selective generated CSS, resource reus
 Verified 16 chevron routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
 Verified 15 capability routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
 Verified 404 production drawings and native controls; 404 public exports have recorded drawing baselines.
-tests 35
-pass 35
+tests 41
+pass 41
 fail 0
-Validation: 86.309 seconds
+Validation: 91.081 seconds
 ```
 
-The lines above retain the counts from the full log in `.artifacts/capabilities-validate.log`. `git diff --check` also passed. Validation remains browser-free. It checks Astro/TypeScript, all initial drawings and production bundle cases, the existing pilot and chevron routes, fifteen capability compositions and the Node validator tests. New negative tests reject opacity delay drift, return-easing drift, group rotation drift and changed reviewed sources. The existing bundle inspector also checks the new generated opacity sheets.
+The lines above retain the counts from the full log in `.artifacts/capabilities-validate.log`. `git diff --check` also passed. Validation remains browser-free. It checks Astro/TypeScript, all initial drawings and production bundle cases, the existing pilot and chevron routes, fifteen capability compositions and the Node validator tests. New negative tests reject opacity delay drift, return-easing drift, group rotation drift and changed reviewed sources. The existing bundle inspector also checks the new generated opacity sheets. The shared stylesheet tests cover recovery in separate documents, removed sheets and late duplicates.
 
-The inventory was regenerated with `rtk pnpm inventory:animations --summary --output .artifacts/animation-inventory.json`. Payloads were measured with `CAPABILITY_RESULT=docs/history/2026-10-23-css-capabilities-payload.json node scripts/measure-css-capabilities.mjs` through `rtk proxy sh -c`. Browser probes ran only through the comparison page's controls. No issue was closed and no branch was merged.
+The inventory was regenerated with `rtk pnpm inventory:animations --summary --output .artifacts/animation-inventory.json`. Payloads were measured with `CAPABILITY_RESULT=docs/history/2026-10-23-css-capabilities-payload.json node scripts/measure-css-capabilities.mjs` through `rtk proxy sh -c`. Browser probes ran only through the comparison page's controls. This stage closed no issue and merged no pull request. Its local branch integrates the already approved promotion correction.
