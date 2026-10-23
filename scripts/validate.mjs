@@ -10,6 +10,7 @@ const stages = [
   ["CSS pilot", process.execPath, ["scripts/check-css-pilot.mjs"]],
   ["CSS chevrons", process.execPath, ["scripts/check-css-chevrons.mjs"]],
   ["CSS capabilities", process.execPath, ["scripts/check-css-capabilities.mjs"]],
+  ["CSS migration", process.execPath, ["scripts/check-css-migration.mjs"]],
   ["Drawings", process.execPath, ["scripts/check-drawings.mjs"]],
   ["Validator tests", process.execPath, ["--test", "--test-concurrency=1", ...tests]],
 ];

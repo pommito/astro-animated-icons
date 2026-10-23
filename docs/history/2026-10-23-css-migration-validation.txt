@@ -1,0 +1,30 @@
+Command: rtk pnpm validate
+
+Result (1324 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+Result (1776 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+Types: 66.797 seconds
+Fixture: 18.329 seconds
+Verified 404 icons across 811 bundle cases.
+Bundles: 0.850 seconds
+Verified 7 CSS parity routes: SVG parity, selective generated CSS, resource reuse, combined chunk unions, managed budget, and unchanged Motion loader.
+CSS pilot: 0.412 seconds
+Verified 16 chevron routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
+CSS chevrons: 0.489 seconds
+Verified 15 capability routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
+CSS capabilities: 0.422 seconds
+Verified 21 migrated recipes across 31 integrated compositions, including unused barrel imports and repeated mixed families.
+CSS migration: 1.206 seconds
+Verified 404 production drawings and native controls; 404 public exports have recorded drawing baselines.
+Drawings: 0.615 seconds
+# tests 49
+# pass 49
+# fail 0
+# duration_ms 16935.445292
+Validator tests: 16.975 seconds
+Validation: 106.099 seconds
