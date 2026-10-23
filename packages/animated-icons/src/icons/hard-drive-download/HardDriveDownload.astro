@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-hard-drive-download">
+  <g>
+    <rect height="8" rx="2" width="20" x="2" y="14" data-part="0" />
+    <path d="M6 18h.01" data-part="1" />
+    <path d="M10 18h.01" data-part="2" />
+    <g data-arrow style="transform: translateY(-1px);">
+      <path d="M12 2v8" data-part="3" />
+      <path d="m16 6-4 4-4-4" data-part="4" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

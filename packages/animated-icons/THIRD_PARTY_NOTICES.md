@@ -820,6 +820,20 @@ The commerce and currency adapters use these pinned sources. Their copied compar
 
 The home and energy adapters use these pinned recipes. Their comparison sources change only the class utility import and execute the original React components. ConciergeBell retains its automatic return through a cancellable sequence. ZapOff retains simultaneous paths because its custom values are unused upstream. Native sampled transforms replace React transforms. Visual acceptance and interrupted spring velocity parity remain subject to manual review.
 
+
+- [Lucide Animated Axe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/axe.tsx)
+- [Lucide Animated Pickaxe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/pickaxe.tsx)
+- [Lucide Animated Gavel, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gavel.tsx)
+- [Lucide Animated Construction, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/construction.tsx)
+- [Lucide Animated Box, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/box.tsx)
+- [Lucide Animated Boxes, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/boxes.tsx)
+- [Lucide Animated BriefcaseBusiness, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/briefcase-business.tsx)
+- [Lucide Animated HardDriveDownload, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hard-drive-download.tsx)
+- [Lucide Animated HardDriveUpload, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hard-drive-upload.tsx)
+- [Lucide Animated Shredder, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shredder.tsx)
+
+The tools and logistics adapters and copied React comparisons use these pinned sources. Comparison copies redirect the class utility import. Construction assigns a unique pattern ID per instance in both versions. Its adapter renews the pattern ID on connection so template clones animate independently. HardDriveDownload initializes its declared normal variant in both versions, avoiding an inert first playback. Shredder supplies zero for the final strip's missing custom delay in both versions, avoiding an undefined delay calculation. The recipes retain upstream geometry, springs, keyframes, and timing. React remains confined to comparison pages.
+
 ## Lucide and Feather
 
 ISC License
