@@ -4,7 +4,7 @@ import type { IconRecipe } from "../element";
 import { animateSvgPart, clearSvgPart, type SvgPart } from "./svg-parts";
 import { animateSvgTransform, clearSvgTransform } from "./svg-transform";
 
-export function createTrendingRecipe(direction: number): IconRecipe {
+export function createTrendingRecipe(direction?: number): IconRecipe {
   const offsets = new WeakMap<SVGElement, { elapsed: number; origin: number }>();
   const parts: SvgPart[] = [false, true].map(head => ({
     selector: head ? "[data-part=head]" : "[data-part=line]",
@@ -23,11 +23,10 @@ export function createTrendingRecipe(direction: number): IconRecipe {
     finish: "hold",
     animate(drawing, returning, track) {
       animateSvgTransform(drawing.ownerSVGElement!, returning, track,
-        { x: 0, y: [0, direction, 0], translateX: [0, 2, 0] },
+        { x: 0, y: direction === undefined ? 0 : [0, direction, 0], translateX: [0, 2, 0] },
         { duration: 0.5, ease: "easeOut", preservePose: true },
         { x: { continueOnReturn: true }, y: { continueOnReturn: true }, translateX: { continueOnReturn: true } });
-      for (const [index, part] of parts.entries()) {
-        const shape = drawing.querySelector<SVGElement>(part.selector)!;
+      for (const [index, part] of parts.entries()) for (const shape of drawing.querySelectorAll<SVGElement>(part.selector)) {
         animateSvgPart(shape, part, returning, track);
         const duration = index ? 0.3 : 0.4;
         const delay = index ? 0.3 : 0;
@@ -62,8 +61,7 @@ export function createTrendingRecipe(direction: number): IconRecipe {
     },
     clear(drawing) {
       clearSvgTransform(drawing.ownerSVGElement!);
-      for (const part of parts) {
-        const shape = drawing.querySelector<SVGElement>(part.selector)!;
+      for (const part of parts) for (const shape of drawing.querySelectorAll<SVGElement>(part.selector)) {
         offsets.delete(shape);
         clearSvgPart(shape, part);
       }

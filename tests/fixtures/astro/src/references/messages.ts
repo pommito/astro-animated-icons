@@ -8,3 +8,4 @@ export { MessageSquareCheckIcon as MessageSquareCheck } from "./messages/message
 export { MessageSquareMoreIcon as MessageSquareMore } from "./messages/message-square-more";
 export { MessageSquarePlusIcon as MessageSquarePlus } from "./messages/message-square-plus";
 export { MessageSquareXIcon as MessageSquareX } from "./messages/message-square-x";
+export { MessageCircleDashed, MessageSquareDashed } from "./currency-feedback";
