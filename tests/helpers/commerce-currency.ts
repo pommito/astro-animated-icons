@@ -237,5 +237,144 @@ export const commerceCurrencyIcons = [
         }
       }
     ]
+  },
+  {
+    "name": "CircleDollarSign",
+    "slug": "circle-dollar-sign",
+    "tag": "grave-circle-dollar-sign",
+    "drawing": [
+      {
+        "tag": "circle",
+        "attrs": {
+          "cx": "12",
+          "cy": "12",
+          "r": "10"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M12 18V6"
+        }
+      }
+    ]
+  },
+  {
+    "name": "GeorgianLari",
+    "slug": "georgian-lari",
+    "tag": "grave-georgian-lari",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M11.5 21a7.5 7.5 0 1 1 7.35-9"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M4 21h16"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M9 12V3"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M13 12V3"
+        }
+      }
+    ]
+  },
+  {
+    "name": "PhilippinePeso",
+    "slug": "philippine-peso",
+    "tag": "grave-philippine-peso",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M20 7H4"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M20 11H4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "SaudiRiyal",
+    "slug": "saudi-riyal",
+    "tag": "grave-saudi-riyal",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "m20 19.5-5.5 1.2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M14.5 4v11.22a1 1 0 0 0 1.242.97L20 15.2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "m2.978 19.351 5.549-1.363A2 2 0 0 0 10 16V2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M20 10 4 13.5"
+        }
+      }
+    ]
+  },
+  {
+    "name": "TurkishLira",
+    "slug": "turkish-lira",
+    "tag": "grave-turkish-lira",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M18 12a9 9 0 0 1-9 9V3"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M15 4 5 9"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "m15 8.5-10 5"
+        }
+      }
+    ]
   }
 ] as const;

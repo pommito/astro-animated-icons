@@ -8,3 +8,4 @@ export { IndianRupeeIcon as IndianRupee } from "./commerce-currency/indian-rupee
 export { JapaneseYenIcon as JapaneseYen } from "./commerce-currency/japanese-yen";
 export { RussianRubleIcon as RussianRuble } from "./commerce-currency/russian-ruble";
 export { SwissFrancIcon as SwissFranc } from "./commerce-currency/swiss-franc";
+export { CircleDollarSign, GeorgianLari, PhilippinePeso, SaudiRiyal, TurkishLira } from "./currency-feedback";
