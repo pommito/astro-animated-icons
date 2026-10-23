@@ -1,0 +1,10 @@
+export { AirVentIcon as AirVent } from "./home-energy/air-vent";
+export { AlarmSmokeIcon as AlarmSmoke } from "./home-energy/alarm-smoke";
+export { BellElectricIcon as BellElectric } from "./home-energy/bell-electric";
+export { ConciergeBellIcon as ConciergeBell } from "./home-energy/concierge-bell";
+export { FanIcon as Fan } from "./home-energy/fan";
+export { PlugZapIcon as PlugZap } from "./home-energy/plug-zap";
+export { ShowerHeadIcon as ShowerHead } from "./home-energy/shower-head";
+export { WashingMachineIcon as WashingMachine } from "./home-energy/washing-machine";
+export { ZapIcon as Zap } from "./home-energy/zap";
+export { ZapOffIcon as ZapOff } from "./home-energy/zap-off";
