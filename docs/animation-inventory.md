@@ -1,6 +1,13 @@
 # Animation inventory
 
-Run `pnpm inventory:animations --summary --output .artifacts/animation-inventory.json` from the repository root after installing dependencies. The command reads the current checkout without building the fixture or opening a browser. Without arguments it prints JSON. `--summary` prints capability groups and counts. Generated output belongs in `.artifacts/`, rather than a maintained catalogue table.
+From the repository root, install dependencies and create the output directory before generating the inventory.
+
+```sh
+mkdir -p .artifacts
+pnpm inventory:animations --summary --output .artifacts/animation-inventory.json
+```
+
+The command reads the current checkout without building the fixture or opening a browser. Without arguments it prints JSON. `--summary` prints capability groups and counts. Generated output belongs in `.artifacts/`, rather than a maintained catalogue table.
 
 The inventory uses the public Astro exports as its membership list. It emits one entry per slug and rejects duplicate slugs or missing definitions. It follows runtime TypeScript imports and re-exports from each definition and registration, excluding the common lifecycle module. Shared sources appear once in the JSON, and each icon lists its source paths. Multiple mechanisms can appear in one entry.
 
