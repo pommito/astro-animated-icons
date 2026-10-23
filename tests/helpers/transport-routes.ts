@@ -467,5 +467,125 @@ export const transportRoutes = [
         }
       }
     ]
+  },
+  {
+    "name": "RollerCoaster",
+    "slug": "roller-coaster",
+    "tag": "grave-roller-coaster",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M6 19V5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M10 19V6.8"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M14 19v-7.8"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M18 5v4"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M18 19v-6"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M22 19V9"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65"
+        }
+      }
+    ]
+  },
+  {
+    "name": "ShipWheel",
+    "slug": "ship-wheel",
+    "tag": "grave-ship-wheel",
+    "drawing": [
+      {
+        "tag": "circle",
+        "attrs": {
+          "cx": "12",
+          "cy": "12",
+          "r": "8"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M12 2v7.5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "m19 5-5.23 5.23"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M22 12h-7.5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "m19 19-5.23-5.23"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M12 14.5V22"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M10.23 13.77 5 19"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M9.5 12H2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M10.23 10.23 5 5"
+        }
+      },
+      {
+        "tag": "circle",
+        "attrs": {
+          "cx": "12",
+          "cy": "12",
+          "r": "2.5"
+        }
+      }
+    ]
   }
 ] as const;

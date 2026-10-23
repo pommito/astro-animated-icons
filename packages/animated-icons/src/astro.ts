@@ -1082,6 +1082,37 @@ export type { TreePineIconHandle } from "./icons/tree-pine/element";
 export { default as FishSymbol } from "./icons/fish-symbol/FishSymbol.astro";
 export type { FishSymbolIconHandle } from "./icons/fish-symbol/element";
 
+export { default as Earth } from "./icons/earth/Earth.astro";
+export type { EarthIconHandle } from "./icons/earth/element";
+
+export { default as Rabbit } from "./icons/rabbit/Rabbit.astro";
+export type { RabbitIconHandle } from "./icons/rabbit/element";
+
+export { default as RollerCoaster } from "./icons/roller-coaster/RollerCoaster.astro";
+export type { RollerCoasterIconHandle } from "./icons/roller-coaster/element";
+
+export { default as SatelliteDish } from "./icons/satellite-dish/SatelliteDish.astro";
+export type { SatelliteDishIconHandle } from "./icons/satellite-dish/element";
+
+export { default as ShipWheel } from "./icons/ship-wheel/ShipWheel.astro";
+export type { ShipWheelIconHandle } from "./icons/ship-wheel/element";
+
+export { default as Waves } from "./icons/waves/Waves.astro";
+export type { WavesIconHandle } from "./icons/waves/element";
+
+export { default as WavesArrowDown } from "./icons/waves-arrow-down/WavesArrowDown.astro";
+export type { WavesArrowDownIconHandle } from "./icons/waves-arrow-down/element";
+
+export { default as WavesArrowUp } from "./icons/waves-arrow-up/WavesArrowUp.astro";
+export type { WavesArrowUpIconHandle } from "./icons/waves-arrow-up/element";
+
+export { default as WavesLadder } from "./icons/waves-ladder/WavesLadder.astro";
+export type { WavesLadderIconHandle } from "./icons/waves-ladder/element";
+
+export { default as Sparkles } from "./icons/sparkles/Sparkles.astro";
+export type { SparklesIconHandle } from "./icons/sparkles/element";
+
+
 export { default as BookText } from "./icons/book-text/BookText.astro";
 export type { BookTextIconHandle } from "./icons/book-text/element";
 
