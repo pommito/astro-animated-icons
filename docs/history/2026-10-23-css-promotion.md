@@ -52,4 +52,8 @@ The production comparison page at /css-pilot/ ran in the Codex in-app browser. I
 
 All 14 lifecycle checks passed, including synthetic touch filtering, parent mouse triggering, disabled and controlled mode, void handle results, disconnect, reconnection, template cloning, and preference-change cleanup through an isolated matchMedia stub. The [browser JSON](2026-10-23-css-promotion-browser.json) records results and limits.
 
-Safari, Firefox, real touch/hybrid hardware, native operating-system reduced-motion behavior, and owner visual acceptance remain pending. No new preparation benchmark or frame-pacing measurement was performed. No merge or issue closure is authorized by these checks.
+Safari, Firefox, real touch/hybrid hardware, and native operating-system reduced-motion behavior remain pending. No new preparation benchmark or frame-pacing measurement was performed. No merge or issue closure is authorized by these checks.
+
+## Owner visual review
+
+On 2026-10-23, the owner confirmed visual acceptance of Bell and ChevronRight on the [production comparison page](http://127.0.0.1:45331/css-pilot/) after the review requested in this chat. This acceptance applies to promotion commit 28d3e5dbea1f0ec4a8dca59ff1cf7ee5fcbd628e. It does not cover later migrations. The owner did not report additional browser or hardware coverage.
