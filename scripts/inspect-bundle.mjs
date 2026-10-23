@@ -55,6 +55,17 @@ function inspectRoute(output, route, log, chunkCache) {
 
 const singleRoutes = {
   "arrow-left": "single",
+  "axe": "axe-single",
+  "pickaxe": "pickaxe-single",
+  "gavel": "gavel-single",
+  "construction": "construction-single",
+  "box": "box-single",
+  "boxes": "boxes-single",
+  "briefcase-business": "briefcase-business-single",
+  "hard-drive-download": "hard-drive-download-single",
+  "hard-drive-upload": "hard-drive-upload-single",
+  "shredder": "shredder-single",
+
   "accessibility": "accessibility-single",
   "activity": "activity-single",
   "square-activity": "square-activity-single",
@@ -485,6 +496,17 @@ const singleRoutes = {
 };
 
 const combinations = [
+  ["axe-combined", "arrow-left", "axe"],
+  ["pickaxe-combined", "arrow-left", "pickaxe"],
+  ["gavel-combined", "arrow-left", "gavel"],
+  ["construction-combined", "arrow-left", "construction"],
+  ["box-combined", "arrow-left", "box"],
+  ["boxes-combined", "arrow-left", "boxes"],
+  ["briefcase-business-combined", "arrow-left", "briefcase-business"],
+  ["hard-drive-download-combined", "arrow-left", "hard-drive-download"],
+  ["hard-drive-upload-combined", "arrow-left", "hard-drive-upload"],
+  ["shredder-combined", "arrow-left", "shredder"],
+
   ["accessibility-combined", "arrow-left", "accessibility"],
   ["activity-combined", "arrow-left", "activity"],
   ["square-activity-combined", "arrow-left", "square-activity"],

@@ -1,0 +1,10 @@
+export { AxeIcon as Axe } from "./tools-logistics/axe";
+export { PickaxeIcon as Pickaxe } from "./tools-logistics/pickaxe";
+export { GavelIcon as Gavel } from "./tools-logistics/gavel";
+export { ConstructionIcon as Construction } from "./tools-logistics/construction";
+export { BoxIcon as Box } from "./tools-logistics/box";
+export { BoxesIcon as Boxes } from "./tools-logistics/boxes";
+export { BriefcaseBusinessIcon as BriefcaseBusiness } from "./tools-logistics/briefcase-business";
+export { HardDriveDownloadIcon as HardDriveDownload } from "./tools-logistics/hard-drive-download";
+export { HardDriveUploadIcon as HardDriveUpload } from "./tools-logistics/hard-drive-upload";
+export { ShredderIcon as Shredder } from "./tools-logistics/shredder";
