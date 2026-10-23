@@ -1,13 +1,15 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-import { squareChevronLeftPaths } from "./definition";
+import CssIcon from "../../CssIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { squareChevronLeftCycle } from "./cycle";
+import Drawing from "./Drawing.astro";
 
 type Props = IconProps;
 ---
 
-<Icon {...Astro.props} tag="grave-square-chevron-left">
-  <g><rect height="18" rx="2" width="18" x="3" y="3" />{squareChevronLeftPaths.map((d) => <path d={d} data-chevron />)}</g>
-</Icon>
+<CssIcon cycle={squareChevronLeftCycle} {...Astro.props} tag="grave-square-chevron-left">
+  <Drawing />
+</CssIcon>
 
 <script>
   import "./element";

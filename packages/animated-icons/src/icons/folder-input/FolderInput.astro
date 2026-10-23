@@ -1,19 +1,11 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssIcon from "../../CssIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { folderInputCycle } from "./cycle";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-folder-input">
-  <g>
-    <path d="M2 9V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1" />
-    <g data-motion="0" style="transform-box: fill-box; transform-origin: 50% 50%">
-      <path d="M2 13h10" />
-      <path d="m9 16 3-3-3-3" />
-    </g>
-  </g>
-</Icon>
-
+<CssIcon cycle={folderInputCycle} {...Astro.props} tag="grave-folder-input"><Drawing /></CssIcon>
 <script>
   import "./element";
 </script>

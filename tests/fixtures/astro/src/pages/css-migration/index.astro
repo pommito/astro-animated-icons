@@ -1,0 +1,11 @@
+---
+import catalogue from "../../../../../../tests/helpers/css-migration-cases.json";
+---
+<html lang="en"><head><meta charset="utf-8" /><title>CSS migration acceptance</title></head><body>
+  <h1>CSS migration acceptance</h1>
+  <p>The generated catalogue covers every migrated recipe. Comparison pages seek native animations and compare poses at 14, 16, 24, and 28 px. Their lifecycle controls use synthetic pointer events and a matchMedia stub. Passing checks does not grant visual acceptance.</p>
+  <p><a href="/css-migration/media/">Native reduced-motion probe</a></p>
+  <ul>{catalogue.icons.map(icon => <li><a href={"/" + icon.comparison + "/"}>{icon.name}</a>, finish {icon.finish}, replay {icon.replay}</li>)}</ul>
+  <h2>Consumer payload cases</h2>
+  <ul>{Object.entries(catalogue.cases).map(([name, icons]) => <li>{name}, {icons.length} instances, <a href={"/css-migration/baseline/" + name + "/"}>Motion reference</a>, <a href={"/css-migration/managed/" + name + "/"}>public implementation</a></li>)}</ul>
+</body></html>

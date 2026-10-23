@@ -1,0 +1,2930 @@
+{
+  "environment": {
+    "node": "v22.20.0",
+    "platform": "darwin",
+    "release": "27.0.0",
+    "arch": "arm64",
+    "cpu": "Apple M1 Pro"
+  },
+  "compression": "Node zlib defaults per resource. Reachable static/dynamic JS chunks and external CSS URLs count once per route, cold cache. total sums JS and CSS with each inline style compressed independently as a normalized estimate. page compresses actual HTML once, including all inline styles/scripts, plus each external JS/CSS resource once. No headers, latency, Brotli, warm cache, frame pacing, or preparation timing.",
+  "modes": {
+    "baseline": {
+      "bell": {
+        "javascript": {
+          "raw": 26308,
+          "gzip": 12023
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26432,
+          "gzip": 12139
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js"
+        ],
+        "html": {
+          "raw": 777,
+          "gzip": 498
+        },
+        "page": {
+          "raw": 27085,
+          "gzip": 12521
+        },
+        "externalCSS": []
+      },
+      "calendar-days": {
+        "javascript": {
+          "raw": 71521,
+          "gzip": 30108
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 71645,
+          "gzip": 30224
+        },
+        "chunks": [
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js"
+        ],
+        "html": {
+          "raw": 1700,
+          "gzip": 614
+        },
+        "page": {
+          "raw": 73221,
+          "gzip": 30722
+        },
+        "externalCSS": []
+      },
+      "chevron-down": {
+        "javascript": {
+          "raw": 11137,
+          "gzip": 5192
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11261,
+          "gzip": 5308
+        },
+        "chunks": [
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 736,
+          "gzip": 468
+        },
+        "page": {
+          "raw": 11873,
+          "gzip": 5660
+        },
+        "externalCSS": []
+      },
+      "chevron-first": {
+        "javascript": {
+          "raw": 11188,
+          "gzip": 5218
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11312,
+          "gzip": 5334
+        },
+        "chunks": [
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 766,
+          "gzip": 482
+        },
+        "page": {
+          "raw": 11954,
+          "gzip": 5700
+        },
+        "externalCSS": []
+      },
+      "chevron-left": {
+        "javascript": {
+          "raw": 11138,
+          "gzip": 5194
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11262,
+          "gzip": 5310
+        },
+        "chunks": [
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 738,
+          "gzip": 473
+        },
+        "page": {
+          "raw": 11876,
+          "gzip": 5667
+        },
+        "externalCSS": []
+      },
+      "chevron-right": {
+        "javascript": {
+          "raw": 11140,
+          "gzip": 5192
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11264,
+          "gzip": 5308
+        },
+        "chunks": [
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 740,
+          "gzip": 467
+        },
+        "page": {
+          "raw": 11880,
+          "gzip": 5659
+        },
+        "externalCSS": []
+      },
+      "chevron-up": {
+        "javascript": {
+          "raw": 11132,
+          "gzip": 5191
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11256,
+          "gzip": 5307
+        },
+        "chunks": [
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 732,
+          "gzip": 469
+        },
+        "page": {
+          "raw": 11864,
+          "gzip": 5660
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-down": {
+        "javascript": {
+          "raw": 11168,
+          "gzip": 5204
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11292,
+          "gzip": 5320
+        },
+        "chunks": [
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.YLwE8lhU.js"
+        ],
+        "html": {
+          "raw": 798,
+          "gzip": 498
+        },
+        "page": {
+          "raw": 11966,
+          "gzip": 5702
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-left": {
+        "javascript": {
+          "raw": 11169,
+          "gzip": 5204
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11293,
+          "gzip": 5320
+        },
+        "chunks": [
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.BHDVCtWt.js"
+        ],
+        "html": {
+          "raw": 798,
+          "gzip": 497
+        },
+        "page": {
+          "raw": 11967,
+          "gzip": 5701
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-right": {
+        "javascript": {
+          "raw": 11171,
+          "gzip": 5204
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11295,
+          "gzip": 5320
+        },
+        "chunks": [
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.Bg0a94Pe.js"
+        ],
+        "html": {
+          "raw": 800,
+          "gzip": 497
+        },
+        "page": {
+          "raw": 11971,
+          "gzip": 5701
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-up": {
+        "javascript": {
+          "raw": 11163,
+          "gzip": 5199
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11287,
+          "gzip": 5315
+        },
+        "chunks": [
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.Daodt5ht.js"
+        ],
+        "html": {
+          "raw": 791,
+          "gzip": 495
+        },
+        "page": {
+          "raw": 11954,
+          "gzip": 5694
+        },
+        "externalCSS": []
+      },
+      "circle-dashed": {
+        "javascript": {
+          "raw": 71482,
+          "gzip": 30091
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 71606,
+          "gzip": 30207
+        },
+        "chunks": [
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.4H9uKrLl.js"
+        ],
+        "html": {
+          "raw": 1206,
+          "gzip": 603
+        },
+        "page": {
+          "raw": 72688,
+          "gzip": 30694
+        },
+        "externalCSS": []
+      },
+      "circle-help": {
+        "javascript": {
+          "raw": 25970,
+          "gzip": 11769
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26094,
+          "gzip": 11885
+        },
+        "chunks": [
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.ChQuhiGQ.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.BJzqoFPF.js"
+        ],
+        "html": {
+          "raw": 877,
+          "gzip": 543
+        },
+        "page": {
+          "raw": 26847,
+          "gzip": 12312
+        },
+        "externalCSS": []
+      },
+      "folder": {
+        "javascript": {
+          "raw": 71709,
+          "gzip": 30224
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 71833,
+          "gzip": 30340
+        },
+        "chunks": [
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/cycle.CG7_q7XV.js"
+        ],
+        "html": {
+          "raw": 887,
+          "gzip": 555
+        },
+        "page": {
+          "raw": 72596,
+          "gzip": 30779
+        },
+        "externalCSS": []
+      },
+      "folder-down": {
+        "javascript": {
+          "raw": 25952,
+          "gzip": 11756
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26076,
+          "gzip": 11872
+        },
+        "chunks": [
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.D5P2jQCi.js"
+        ],
+        "html": {
+          "raw": 966,
+          "gzip": 585
+        },
+        "page": {
+          "raw": 26918,
+          "gzip": 12341
+        },
+        "externalCSS": []
+      },
+      "folder-input": {
+        "javascript": {
+          "raw": 25955,
+          "gzip": 11756
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26079,
+          "gzip": 11872
+        },
+        "chunks": [
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.Bf7A5cl-.js"
+        ],
+        "html": {
+          "raw": 969,
+          "gzip": 579
+        },
+        "page": {
+          "raw": 26924,
+          "gzip": 12335
+        },
+        "externalCSS": []
+      },
+      "folder-output": {
+        "javascript": {
+          "raw": 25959,
+          "gzip": 11759
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26083,
+          "gzip": 11875
+        },
+        "chunks": [
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.emW8g7RI.js"
+        ],
+        "html": {
+          "raw": 973,
+          "gzip": 581
+        },
+        "page": {
+          "raw": 26932,
+          "gzip": 12340
+        },
+        "externalCSS": []
+      },
+      "folder-up": {
+        "javascript": {
+          "raw": 25947,
+          "gzip": 11755
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 26071,
+          "gzip": 11871
+        },
+        "chunks": [
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.DYXp3-ZM.js"
+        ],
+        "html": {
+          "raw": 959,
+          "gzip": 583
+        },
+        "page": {
+          "raw": 26906,
+          "gzip": 12338
+        },
+        "externalCSS": []
+      },
+      "square-chevron-down": {
+        "javascript": {
+          "raw": 11168,
+          "gzip": 5204
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11292,
+          "gzip": 5320
+        },
+        "chunks": [
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.DGYUV39D.js"
+        ],
+        "html": {
+          "raw": 813,
+          "gzip": 504
+        },
+        "page": {
+          "raw": 11981,
+          "gzip": 5708
+        },
+        "externalCSS": []
+      },
+      "square-chevron-left": {
+        "javascript": {
+          "raw": 11169,
+          "gzip": 5204
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11293,
+          "gzip": 5320
+        },
+        "chunks": [
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.rd9D7HZN.js"
+        ],
+        "html": {
+          "raw": 813,
+          "gzip": 507
+        },
+        "page": {
+          "raw": 11982,
+          "gzip": 5711
+        },
+        "externalCSS": []
+      },
+      "square-chevron-right": {
+        "javascript": {
+          "raw": 11171,
+          "gzip": 5207
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11295,
+          "gzip": 5323
+        },
+        "chunks": [
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.Cnx8T9EH.js"
+        ],
+        "html": {
+          "raw": 815,
+          "gzip": 505
+        },
+        "page": {
+          "raw": 11986,
+          "gzip": 5712
+        },
+        "externalCSS": []
+      },
+      "square-chevron-up": {
+        "javascript": {
+          "raw": 11163,
+          "gzip": 5203
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 11287,
+          "gzip": 5319
+        },
+        "chunks": [
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 806,
+          "gzip": 500
+        },
+        "page": {
+          "raw": 11969,
+          "gzip": 5703
+        },
+        "externalCSS": []
+      },
+      "chevrons": {
+        "javascript": {
+          "raw": 17229,
+          "gzip": 9740
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 17353,
+          "gzip": 9856
+        },
+        "chunks": [
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 6882,
+          "gzip": 924
+        },
+        "page": {
+          "raw": 24111,
+          "gzip": 10664
+        },
+        "externalCSS": []
+      },
+      "folders": {
+        "javascript": {
+          "raw": 74106,
+          "gzip": 32002
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 74230,
+          "gzip": 32118
+        },
+        "chunks": [
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/cycle.DYXp3-ZM.js"
+        ],
+        "html": {
+          "raw": 3666,
+          "gzip": 802
+        },
+        "page": {
+          "raw": 77772,
+          "gzip": 32804
+        },
+        "externalCSS": []
+      },
+      "opacity": {
+        "javascript": {
+          "raw": 71950,
+          "gzip": 30445
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 72074,
+          "gzip": 30561
+        },
+        "chunks": [
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/parts.4H9uKrLl.js"
+        ],
+        "html": {
+          "raw": 2634,
+          "gzip": 798
+        },
+        "page": {
+          "raw": 74584,
+          "gzip": 31243
+        },
+        "externalCSS": []
+      },
+      "all": {
+        "javascript": {
+          "raw": 83615,
+          "gzip": 39083
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 83739,
+          "gzip": 39199
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.ChQuhiGQ.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 13748,
+          "gzip": 1720
+        },
+        "page": {
+          "raw": 97363,
+          "gzip": 40803
+        },
+        "externalCSS": []
+      },
+      "repeated": {
+        "javascript": {
+          "raw": 83615,
+          "gzip": 39083
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 83739,
+          "gzip": 39199
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.ChQuhiGQ.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 35972,
+          "gzip": 2017
+        },
+        "page": {
+          "raw": 119587,
+          "gzip": 41100
+        },
+        "externalCSS": []
+      },
+      "mixed-loader": {
+        "javascript": {
+          "raw": 84005,
+          "gzip": 39360
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 84129,
+          "gzip": 39476
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.ChQuhiGQ.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/cycle.CkpJivTz.js",
+          "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js"
+        ],
+        "html": {
+          "raw": 14265,
+          "gzip": 1786
+        },
+        "page": {
+          "raw": 98270,
+          "gzip": 41146
+        },
+        "externalCSS": []
+      },
+      "mixed-arrow": {
+        "javascript": {
+          "raw": 84578,
+          "gzip": 39707
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 84702,
+          "gzip": 39823
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.DaztUlD0.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DWsnBNdc.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.OKKISAnl.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.hE359N2O.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BXIOP126.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.Y3uQCyms.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.C77OenNQ.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BeVp9TTq.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.C5hgHOX3.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.ChQuhiGQ.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CtECmzmu.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.HJqM2SOI.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BCHftEBR.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.BFBJGlRB.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.BMQ5ggd8.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.DGWzWFsg.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.CMJin8zT.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.BzAgEgiB.js",
+          "/_astro/cycle.CkpJivTz.js",
+          "/_astro/ArrowLeft.astro_astro_type_script_index_0_lang.CNXc6D9i.js",
+          "/_astro/arrow.ZjdwWNdp.js"
+        ],
+        "html": {
+          "raw": 14201,
+          "gzip": 1770
+        },
+        "page": {
+          "raw": 98779,
+          "gzip": 41477
+        },
+        "externalCSS": []
+      },
+      "interface": {
+        "javascript": {
+          "raw": 74026,
+          "gzip": 31937
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 74150,
+          "gzip": 32053
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js"
+        ],
+        "html": {
+          "raw": 3367,
+          "gzip": 888
+        },
+        "page": {
+          "raw": 77393,
+          "gzip": 32825
+        },
+        "externalCSS": []
+      },
+      "interface-loader": {
+        "javascript": {
+          "raw": 74416,
+          "gzip": 32214
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 74540,
+          "gzip": 32330
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.Bf1NUCu-.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/svg-keyframes.ExPHxAFB.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.BjbBhTEg.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/chevron.DdqF-3hY.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.BEHvQ3ji.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.DMLkyVsY.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/sequence.efB8P2z6.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js"
+        ],
+        "html": {
+          "raw": 3884,
+          "gzip": 954
+        },
+        "page": {
+          "raw": 78300,
+          "gzip": 33168
+        },
+        "externalCSS": []
+      },
+      "unused": {
+        "javascript": {
+          "raw": 0,
+          "gzip": 0
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "chunks": [],
+        "html": {
+          "raw": 272,
+          "gzip": 217
+        },
+        "page": {
+          "raw": 272,
+          "gzip": 217
+        },
+        "externalCSS": []
+      }
+    },
+    "managed": {
+      "bell": {
+        "javascript": {
+          "raw": 4142,
+          "gzip": 2111
+        },
+        "css": {
+          "raw": 877,
+          "gzip": 404
+        },
+        "total": {
+          "raw": 5019,
+          "gzip": 2515
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js"
+        ],
+        "html": {
+          "raw": 1577,
+          "gzip": 750
+        },
+        "page": {
+          "raw": 5719,
+          "gzip": 2861
+        },
+        "externalCSS": []
+      },
+      "calendar-days": {
+        "javascript": {
+          "raw": 6250,
+          "gzip": 3064
+        },
+        "css": {
+          "raw": 5766,
+          "gzip": 595
+        },
+        "total": {
+          "raw": 12016,
+          "gzip": 3659
+        },
+        "chunks": [
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/parts.hp4P9Nj3.js"
+        ],
+        "html": {
+          "raw": 7409,
+          "gzip": 1067
+        },
+        "page": {
+          "raw": 13659,
+          "gzip": 4131
+        },
+        "externalCSS": []
+      },
+      "chevron-down": {
+        "javascript": {
+          "raw": 4148,
+          "gzip": 2103
+        },
+        "css": {
+          "raw": 883,
+          "gzip": 394
+        },
+        "total": {
+          "raw": 5031,
+          "gzip": 2497
+        },
+        "chunks": [
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.BjYpAL66.js"
+        ],
+        "html": {
+          "raw": 1558,
+          "gzip": 699
+        },
+        "page": {
+          "raw": 5706,
+          "gzip": 2802
+        },
+        "externalCSS": []
+      },
+      "chevron-first": {
+        "javascript": {
+          "raw": 4199,
+          "gzip": 2130
+        },
+        "css": {
+          "raw": 925,
+          "gzip": 411
+        },
+        "total": {
+          "raw": 5124,
+          "gzip": 2541
+        },
+        "chunks": [
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.JjvBjZCM.js"
+        ],
+        "html": {
+          "raw": 1632,
+          "gzip": 732
+        },
+        "page": {
+          "raw": 5831,
+          "gzip": 2862
+        },
+        "externalCSS": []
+      },
+      "chevron-left": {
+        "javascript": {
+          "raw": 4149,
+          "gzip": 2107
+        },
+        "css": {
+          "raw": 884,
+          "gzip": 394
+        },
+        "total": {
+          "raw": 5033,
+          "gzip": 2501
+        },
+        "chunks": [
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.DR57JORT.js"
+        ],
+        "html": {
+          "raw": 1561,
+          "gzip": 706
+        },
+        "page": {
+          "raw": 5710,
+          "gzip": 2813
+        },
+        "externalCSS": []
+      },
+      "chevron-right": {
+        "javascript": {
+          "raw": 4151,
+          "gzip": 2105
+        },
+        "css": {
+          "raw": 890,
+          "gzip": 395
+        },
+        "total": {
+          "raw": 5041,
+          "gzip": 2500
+        },
+        "chunks": [
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.DHhmUJs7.js"
+        ],
+        "html": {
+          "raw": 1571,
+          "gzip": 702
+        },
+        "page": {
+          "raw": 5722,
+          "gzip": 2807
+        },
+        "externalCSS": []
+      },
+      "chevron-up": {
+        "javascript": {
+          "raw": 4143,
+          "gzip": 2104
+        },
+        "css": {
+          "raw": 870,
+          "gzip": 392
+        },
+        "total": {
+          "raw": 5013,
+          "gzip": 2496
+        },
+        "chunks": [
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.DRZwpoKU.js"
+        ],
+        "html": {
+          "raw": 1537,
+          "gzip": 701
+        },
+        "page": {
+          "raw": 5680,
+          "gzip": 2805
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-down": {
+        "javascript": {
+          "raw": 4169,
+          "gzip": 2115
+        },
+        "css": {
+          "raw": 932,
+          "gzip": 397
+        },
+        "total": {
+          "raw": 5101,
+          "gzip": 2512
+        },
+        "chunks": [
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.YLwE8lhU.js"
+        ],
+        "html": {
+          "raw": 1683,
+          "gzip": 736
+        },
+        "page": {
+          "raw": 5852,
+          "gzip": 2851
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-left": {
+        "javascript": {
+          "raw": 4170,
+          "gzip": 2113
+        },
+        "css": {
+          "raw": 933,
+          "gzip": 397
+        },
+        "total": {
+          "raw": 5103,
+          "gzip": 2510
+        },
+        "chunks": [
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.BHDVCtWt.js"
+        ],
+        "html": {
+          "raw": 1684,
+          "gzip": 735
+        },
+        "page": {
+          "raw": 5854,
+          "gzip": 2848
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-right": {
+        "javascript": {
+          "raw": 4172,
+          "gzip": 2115
+        },
+        "css": {
+          "raw": 939,
+          "gzip": 398
+        },
+        "total": {
+          "raw": 5111,
+          "gzip": 2513
+        },
+        "chunks": [
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.Bg0a94Pe.js"
+        ],
+        "html": {
+          "raw": 1694,
+          "gzip": 735
+        },
+        "page": {
+          "raw": 5866,
+          "gzip": 2850
+        },
+        "externalCSS": []
+      },
+      "circle-chevron-up": {
+        "javascript": {
+          "raw": 4164,
+          "gzip": 2110
+        },
+        "css": {
+          "raw": 919,
+          "gzip": 396
+        },
+        "total": {
+          "raw": 5083,
+          "gzip": 2506
+        },
+        "chunks": [
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.Daodt5ht.js"
+        ],
+        "html": {
+          "raw": 1659,
+          "gzip": 730
+        },
+        "page": {
+          "raw": 5823,
+          "gzip": 2840
+        },
+        "externalCSS": []
+      },
+      "circle-dashed": {
+        "javascript": {
+          "raw": 6211,
+          "gzip": 3051
+        },
+        "css": {
+          "raw": 6842,
+          "gzip": 593
+        },
+        "total": {
+          "raw": 13053,
+          "gzip": 3644
+        },
+        "chunks": [
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/parts.4H9uKrLl.js"
+        ],
+        "html": {
+          "raw": 7991,
+          "gzip": 1053
+        },
+        "page": {
+          "raw": 14202,
+          "gzip": 4104
+        },
+        "externalCSS": []
+      },
+      "circle-help": {
+        "javascript": {
+          "raw": 4148,
+          "gzip": 2109
+        },
+        "css": {
+          "raw": 926,
+          "gzip": 407
+        },
+        "total": {
+          "raw": 5074,
+          "gzip": 2516
+        },
+        "chunks": [
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.CSUdL7a1.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.BJzqoFPF.js"
+        ],
+        "html": {
+          "raw": 1740,
+          "gzip": 789
+        },
+        "page": {
+          "raw": 5888,
+          "gzip": 2898
+        },
+        "externalCSS": []
+      },
+      "folder": {
+        "javascript": {
+          "raw": 4179,
+          "gzip": 2124
+        },
+        "css": {
+          "raw": 920,
+          "gzip": 411
+        },
+        "total": {
+          "raw": 5099,
+          "gzip": 2535
+        },
+        "chunks": [
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CG7_q7XV.js"
+        ],
+        "html": {
+          "raw": 1734,
+          "gzip": 802
+        },
+        "page": {
+          "raw": 5913,
+          "gzip": 2926
+        },
+        "externalCSS": []
+      },
+      "folder-down": {
+        "javascript": {
+          "raw": 4145,
+          "gzip": 2108
+        },
+        "css": {
+          "raw": 885,
+          "gzip": 395
+        },
+        "total": {
+          "raw": 5030,
+          "gzip": 2503
+        },
+        "chunks": [
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.D5P2jQCi.js"
+        ],
+        "html": {
+          "raw": 1788,
+          "gzip": 810
+        },
+        "page": {
+          "raw": 5933,
+          "gzip": 2918
+        },
+        "externalCSS": []
+      },
+      "folder-input": {
+        "javascript": {
+          "raw": 4148,
+          "gzip": 2106
+        },
+        "css": {
+          "raw": 892,
+          "gzip": 397
+        },
+        "total": {
+          "raw": 5040,
+          "gzip": 2503
+        },
+        "chunks": [
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.Bf7A5cl-.js"
+        ],
+        "html": {
+          "raw": 1800,
+          "gzip": 804
+        },
+        "page": {
+          "raw": 5948,
+          "gzip": 2910
+        },
+        "externalCSS": []
+      },
+      "folder-output": {
+        "javascript": {
+          "raw": 4152,
+          "gzip": 2110
+        },
+        "css": {
+          "raw": 900,
+          "gzip": 399
+        },
+        "total": {
+          "raw": 5052,
+          "gzip": 2509
+        },
+        "chunks": [
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.emW8g7RI.js"
+        ],
+        "html": {
+          "raw": 1814,
+          "gzip": 808
+        },
+        "page": {
+          "raw": 5966,
+          "gzip": 2918
+        },
+        "externalCSS": []
+      },
+      "folder-up": {
+        "javascript": {
+          "raw": 4140,
+          "gzip": 2106
+        },
+        "css": {
+          "raw": 872,
+          "gzip": 394
+        },
+        "total": {
+          "raw": 5012,
+          "gzip": 2500
+        },
+        "chunks": [
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.DYXp3-ZM.js"
+        ],
+        "html": {
+          "raw": 1764,
+          "gzip": 809
+        },
+        "page": {
+          "raw": 5904,
+          "gzip": 2915
+        },
+        "externalCSS": []
+      },
+      "square-chevron-down": {
+        "javascript": {
+          "raw": 4169,
+          "gzip": 2116
+        },
+        "css": {
+          "raw": 932,
+          "gzip": 398
+        },
+        "total": {
+          "raw": 5101,
+          "gzip": 2514
+        },
+        "chunks": [
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.DGYUV39D.js"
+        ],
+        "html": {
+          "raw": 1698,
+          "gzip": 744
+        },
+        "page": {
+          "raw": 5867,
+          "gzip": 2860
+        },
+        "externalCSS": []
+      },
+      "square-chevron-left": {
+        "javascript": {
+          "raw": 4170,
+          "gzip": 2116
+        },
+        "css": {
+          "raw": 933,
+          "gzip": 398
+        },
+        "total": {
+          "raw": 5103,
+          "gzip": 2514
+        },
+        "chunks": [
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.rd9D7HZN.js"
+        ],
+        "html": {
+          "raw": 1699,
+          "gzip": 744
+        },
+        "page": {
+          "raw": 5869,
+          "gzip": 2860
+        },
+        "externalCSS": []
+      },
+      "square-chevron-right": {
+        "javascript": {
+          "raw": 4172,
+          "gzip": 2116
+        },
+        "css": {
+          "raw": 939,
+          "gzip": 399
+        },
+        "total": {
+          "raw": 5111,
+          "gzip": 2515
+        },
+        "chunks": [
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.Cnx8T9EH.js"
+        ],
+        "html": {
+          "raw": 1709,
+          "gzip": 743
+        },
+        "page": {
+          "raw": 5881,
+          "gzip": 2859
+        },
+        "externalCSS": []
+      },
+      "square-chevron-up": {
+        "javascript": {
+          "raw": 4164,
+          "gzip": 2112
+        },
+        "css": {
+          "raw": 919,
+          "gzip": 397
+        },
+        "total": {
+          "raw": 5083,
+          "gzip": 2509
+        },
+        "chunks": [
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 1674,
+          "gzip": 742
+        },
+        "page": {
+          "raw": 5838,
+          "gzip": 2854
+        },
+        "externalCSS": []
+      },
+      "chevrons": {
+        "javascript": {
+          "raw": 9224,
+          "gzip": 6102
+        },
+        "css": {
+          "raw": 10410,
+          "gzip": 3774
+        },
+        "total": {
+          "raw": 19634,
+          "gzip": 9876
+        },
+        "chunks": [
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 18095,
+          "gzip": 1695
+        },
+        "page": {
+          "raw": 27319,
+          "gzip": 7797
+        },
+        "externalCSS": []
+      },
+      "folders": {
+        "javascript": {
+          "raw": 5792,
+          "gzip": 3434
+        },
+        "css": {
+          "raw": 3973,
+          "gzip": 1532
+        },
+        "total": {
+          "raw": 9765,
+          "gzip": 4966
+        },
+        "chunks": [
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/cycle.DYXp3-ZM.js"
+        ],
+        "html": {
+          "raw": 7812,
+          "gzip": 1286
+        },
+        "page": {
+          "raw": 13604,
+          "gzip": 4720
+        },
+        "externalCSS": []
+      },
+      "opacity": {
+        "javascript": {
+          "raw": 6676,
+          "gzip": 3405
+        },
+        "css": {
+          "raw": 12484,
+          "gzip": 1072
+        },
+        "total": {
+          "raw": 19160,
+          "gzip": 4477
+        },
+        "chunks": [
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/parts.4H9uKrLl.js"
+        ],
+        "html": {
+          "raw": 15128,
+          "gzip": 1540
+        },
+        "page": {
+          "raw": 21804,
+          "gzip": 4945
+        },
+        "externalCSS": []
+      },
+      "all": {
+        "javascript": {
+          "raw": 16086,
+          "gzip": 10532
+        },
+        "css": {
+          "raw": 28174,
+          "gzip": 6725
+        },
+        "total": {
+          "raw": 44260,
+          "gzip": 17257
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.CSUdL7a1.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 43264,
+          "gzip": 3562
+        },
+        "page": {
+          "raw": 59350,
+          "gzip": 14094
+        },
+        "externalCSS": []
+      },
+      "repeated": {
+        "javascript": {
+          "raw": 16086,
+          "gzip": 10532
+        },
+        "css": {
+          "raw": 28174,
+          "gzip": 6725
+        },
+        "total": {
+          "raw": 44260,
+          "gzip": 17257
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.CSUdL7a1.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/cycle.CkpJivTz.js"
+        ],
+        "html": {
+          "raw": 66012,
+          "gzip": 4057
+        },
+        "page": {
+          "raw": 82098,
+          "gzip": 14589
+        },
+        "externalCSS": []
+      },
+      "mixed-loader": {
+        "javascript": {
+          "raw": 86081,
+          "gzip": 39907
+        },
+        "css": {
+          "raw": 28174,
+          "gzip": 6725
+        },
+        "total": {
+          "raw": 114255,
+          "gzip": 46632
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.CSUdL7a1.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/cycle.CkpJivTz.js",
+          "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js"
+        ],
+        "html": {
+          "raw": 43781,
+          "gzip": 3629
+        },
+        "page": {
+          "raw": 129862,
+          "gzip": 43536
+        },
+        "externalCSS": []
+      },
+      "mixed-arrow": {
+        "javascript": {
+          "raw": 25788,
+          "gzip": 15018
+        },
+        "css": {
+          "raw": 28174,
+          "gzip": 6725
+        },
+        "total": {
+          "raw": 53962,
+          "gzip": 21743
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/ChevronDown.astro_astro_type_script_index_0_lang.rKPx7lgj.js",
+          "/_astro/cycle.BjYpAL66.js",
+          "/_astro/ChevronFirst.astro_astro_type_script_index_0_lang.DkQz2Woq.js",
+          "/_astro/cycle.JjvBjZCM.js",
+          "/_astro/ChevronLeft.astro_astro_type_script_index_0_lang.DDzPc3nZ.js",
+          "/_astro/cycle.DR57JORT.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/ChevronUp.astro_astro_type_script_index_0_lang.D3QGCxKi.js",
+          "/_astro/cycle.DRZwpoKU.js",
+          "/_astro/CircleChevronDown.astro_astro_type_script_index_0_lang.BuR9u6-B.js",
+          "/_astro/cycle.YLwE8lhU.js",
+          "/_astro/CircleChevronLeft.astro_astro_type_script_index_0_lang.DHTPBRBd.js",
+          "/_astro/cycle.BHDVCtWt.js",
+          "/_astro/CircleChevronRight.astro_astro_type_script_index_0_lang.b8wPZUow.js",
+          "/_astro/cycle.Bg0a94Pe.js",
+          "/_astro/CircleChevronUp.astro_astro_type_script_index_0_lang.BRhfZDiI.js",
+          "/_astro/cycle.Daodt5ht.js",
+          "/_astro/CircleDashed.astro_astro_type_script_index_0_lang.vSoyTWOy.js",
+          "/_astro/parts.4H9uKrLl.js",
+          "/_astro/CircleHelp.astro_astro_type_script_index_0_lang.CSUdL7a1.js",
+          "/_astro/cycle.BJzqoFPF.js",
+          "/_astro/Folder.astro_astro_type_script_index_0_lang.CRR3d1vN.js",
+          "/_astro/cycle.CG7_q7XV.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/FolderInput.astro_astro_type_script_index_0_lang.CU0MHfLw.js",
+          "/_astro/cycle.Bf7A5cl-.js",
+          "/_astro/FolderOutput.astro_astro_type_script_index_0_lang.BXWBR-5M.js",
+          "/_astro/cycle.emW8g7RI.js",
+          "/_astro/FolderUp.astro_astro_type_script_index_0_lang.CvWDgfyA.js",
+          "/_astro/cycle.DYXp3-ZM.js",
+          "/_astro/SquareChevronDown.astro_astro_type_script_index_0_lang.rGaYVB3J.js",
+          "/_astro/cycle.DGYUV39D.js",
+          "/_astro/SquareChevronLeft.astro_astro_type_script_index_0_lang.BviG3_re.js",
+          "/_astro/cycle.rd9D7HZN.js",
+          "/_astro/SquareChevronRight.astro_astro_type_script_index_0_lang.DpupzUHR.js",
+          "/_astro/cycle.Cnx8T9EH.js",
+          "/_astro/SquareChevronUp.astro_astro_type_script_index_0_lang.C2nHYN6t.js",
+          "/_astro/cycle.CkpJivTz.js",
+          "/_astro/ArrowLeft.astro_astro_type_script_index_0_lang.CNXc6D9i.js",
+          "/_astro/arrow.ZjdwWNdp.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/border-radius.CDzYrzJo.js"
+        ],
+        "html": {
+          "raw": 43717,
+          "gzip": 3619
+        },
+        "page": {
+          "raw": 69505,
+          "gzip": 18637
+        },
+        "externalCSS": []
+      },
+      "interface": {
+        "javascript": {
+          "raw": 8535,
+          "gzip": 4539
+        },
+        "css": {
+          "raw": 8046,
+          "gzip": 1441
+        },
+        "total": {
+          "raw": 16581,
+          "gzip": 5980
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js"
+        ],
+        "html": {
+          "raw": 11529,
+          "gzip": 1614
+        },
+        "page": {
+          "raw": 20064,
+          "gzip": 6153
+        },
+        "externalCSS": []
+      },
+      "interface-loader": {
+        "javascript": {
+          "raw": 78530,
+          "gzip": 33914
+        },
+        "css": {
+          "raw": 8046,
+          "gzip": 1441
+        },
+        "total": {
+          "raw": 86576,
+          "gzip": 35355
+        },
+        "chunks": [
+          "/_astro/Bell.astro_astro_type_script_index_0_lang.B9RfQ_Z7.js",
+          "/_astro/element.DawF6gnr.js",
+          "/_astro/css-cycle.BqpwdK68.js",
+          "/_astro/cycle-css.Dl5GLYRw.js",
+          "/_astro/cycle.CooIHY6u.js",
+          "/_astro/ChevronRight.astro_astro_type_script_index_0_lang.hY-krFNW.js",
+          "/_astro/cycle.DHhmUJs7.js",
+          "/_astro/FolderDown.astro_astro_type_script_index_0_lang.CC7gx7yN.js",
+          "/_astro/cycle.D5P2jQCi.js",
+          "/_astro/CalendarDays.astro_astro_type_script_index_0_lang.wEZhm_nT.js",
+          "/_astro/css-opacity.Cj1RPop3.js",
+          "/_astro/parts.hp4P9Nj3.js",
+          "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+          "/_astro/svg-parts.sKFpcPUl.js",
+          "/_astro/interpolate.CZ6mVftw.js",
+          "/_astro/spring.DMCwaqNl.js",
+          "/_astro/resolve-elements.RFbo_LEe.js",
+          "/_astro/animate.D_SH5Zqa.js",
+          "/_astro/single-value.CHiIGpB4.js",
+          "/_astro/ease.ClIG0ww7.js",
+          "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+          "/_astro/svg.COIR82T0.js",
+          "/_astro/animate-style.C213RdDV.js",
+          "/_astro/border-radius.CDzYrzJo.js",
+          "/_astro/svg-transform.DKJ_5fMN.js",
+          "/_astro/sequence.efB8P2z6.js"
+        ],
+        "html": {
+          "raw": 12046,
+          "gzip": 1682
+        },
+        "page": {
+          "raw": 90576,
+          "gzip": 35596
+        },
+        "externalCSS": []
+      },
+      "unused": {
+        "javascript": {
+          "raw": 0,
+          "gzip": 0
+        },
+        "css": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "total": {
+          "raw": 124,
+          "gzip": 116
+        },
+        "chunks": [],
+        "html": {
+          "raw": 272,
+          "gzip": 217
+        },
+        "page": {
+          "raw": 272,
+          "gzip": 217
+        },
+        "externalCSS": []
+      }
+    }
+  },
+  "savings": {
+    "bell": {
+      "total": {
+        "raw": 21413,
+        "gzip": 9624
+      },
+      "page": {
+        "raw": 21366,
+        "gzip": 9660
+      }
+    },
+    "calendar-days": {
+      "total": {
+        "raw": 59629,
+        "gzip": 26565
+      },
+      "page": {
+        "raw": 59562,
+        "gzip": 26591
+      }
+    },
+    "chevron-down": {
+      "total": {
+        "raw": 6230,
+        "gzip": 2811
+      },
+      "page": {
+        "raw": 6167,
+        "gzip": 2858
+      }
+    },
+    "chevron-first": {
+      "total": {
+        "raw": 6188,
+        "gzip": 2793
+      },
+      "page": {
+        "raw": 6123,
+        "gzip": 2838
+      }
+    },
+    "chevron-left": {
+      "total": {
+        "raw": 6229,
+        "gzip": 2809
+      },
+      "page": {
+        "raw": 6166,
+        "gzip": 2854
+      }
+    },
+    "chevron-right": {
+      "total": {
+        "raw": 6223,
+        "gzip": 2808
+      },
+      "page": {
+        "raw": 6158,
+        "gzip": 2852
+      }
+    },
+    "chevron-up": {
+      "total": {
+        "raw": 6243,
+        "gzip": 2811
+      },
+      "page": {
+        "raw": 6184,
+        "gzip": 2855
+      }
+    },
+    "circle-chevron-down": {
+      "total": {
+        "raw": 6191,
+        "gzip": 2808
+      },
+      "page": {
+        "raw": 6114,
+        "gzip": 2851
+      }
+    },
+    "circle-chevron-left": {
+      "total": {
+        "raw": 6190,
+        "gzip": 2810
+      },
+      "page": {
+        "raw": 6113,
+        "gzip": 2853
+      }
+    },
+    "circle-chevron-right": {
+      "total": {
+        "raw": 6184,
+        "gzip": 2807
+      },
+      "page": {
+        "raw": 6105,
+        "gzip": 2851
+      }
+    },
+    "circle-chevron-up": {
+      "total": {
+        "raw": 6204,
+        "gzip": 2809
+      },
+      "page": {
+        "raw": 6131,
+        "gzip": 2854
+      }
+    },
+    "circle-dashed": {
+      "total": {
+        "raw": 58553,
+        "gzip": 26563
+      },
+      "page": {
+        "raw": 58486,
+        "gzip": 26590
+      }
+    },
+    "circle-help": {
+      "total": {
+        "raw": 21020,
+        "gzip": 9369
+      },
+      "page": {
+        "raw": 20959,
+        "gzip": 9414
+      }
+    },
+    "folder": {
+      "total": {
+        "raw": 66734,
+        "gzip": 27805
+      },
+      "page": {
+        "raw": 66683,
+        "gzip": 27853
+      }
+    },
+    "folder-down": {
+      "total": {
+        "raw": 21046,
+        "gzip": 9369
+      },
+      "page": {
+        "raw": 20985,
+        "gzip": 9423
+      }
+    },
+    "folder-input": {
+      "total": {
+        "raw": 21039,
+        "gzip": 9369
+      },
+      "page": {
+        "raw": 20976,
+        "gzip": 9425
+      }
+    },
+    "folder-output": {
+      "total": {
+        "raw": 21031,
+        "gzip": 9366
+      },
+      "page": {
+        "raw": 20966,
+        "gzip": 9422
+      }
+    },
+    "folder-up": {
+      "total": {
+        "raw": 21059,
+        "gzip": 9371
+      },
+      "page": {
+        "raw": 21002,
+        "gzip": 9423
+      }
+    },
+    "square-chevron-down": {
+      "total": {
+        "raw": 6191,
+        "gzip": 2806
+      },
+      "page": {
+        "raw": 6114,
+        "gzip": 2848
+      }
+    },
+    "square-chevron-left": {
+      "total": {
+        "raw": 6190,
+        "gzip": 2806
+      },
+      "page": {
+        "raw": 6113,
+        "gzip": 2851
+      }
+    },
+    "square-chevron-right": {
+      "total": {
+        "raw": 6184,
+        "gzip": 2808
+      },
+      "page": {
+        "raw": 6105,
+        "gzip": 2853
+      }
+    },
+    "square-chevron-up": {
+      "total": {
+        "raw": 6204,
+        "gzip": 2810
+      },
+      "page": {
+        "raw": 6131,
+        "gzip": 2849
+      }
+    },
+    "chevrons": {
+      "total": {
+        "raw": -2281,
+        "gzip": -20
+      },
+      "page": {
+        "raw": -3208,
+        "gzip": 2867
+      }
+    },
+    "folders": {
+      "total": {
+        "raw": 64465,
+        "gzip": 27152
+      },
+      "page": {
+        "raw": 64168,
+        "gzip": 28084
+      }
+    },
+    "opacity": {
+      "total": {
+        "raw": 52914,
+        "gzip": 26084
+      },
+      "page": {
+        "raw": 52780,
+        "gzip": 26298
+      }
+    },
+    "all": {
+      "total": {
+        "raw": 39479,
+        "gzip": 21942
+      },
+      "page": {
+        "raw": 38013,
+        "gzip": 26709
+      }
+    },
+    "repeated": {
+      "total": {
+        "raw": 39479,
+        "gzip": 21942
+      },
+      "page": {
+        "raw": 37489,
+        "gzip": 26511
+      }
+    },
+    "mixed-loader": {
+      "total": {
+        "raw": -30126,
+        "gzip": -7156
+      },
+      "page": {
+        "raw": -31592,
+        "gzip": -2390
+      }
+    },
+    "mixed-arrow": {
+      "total": {
+        "raw": 30740,
+        "gzip": 18080
+      },
+      "page": {
+        "raw": 29274,
+        "gzip": 22840
+      }
+    },
+    "interface": {
+      "total": {
+        "raw": 57569,
+        "gzip": 26073
+      },
+      "page": {
+        "raw": 57329,
+        "gzip": 26672
+      }
+    },
+    "interface-loader": {
+      "total": {
+        "raw": -12036,
+        "gzip": -3025
+      },
+      "page": {
+        "raw": -12276,
+        "gzip": -2428
+      }
+    },
+    "unused": {
+      "total": {
+        "raw": 0,
+        "gzip": 0
+      },
+      "page": {
+        "raw": 0,
+        "gzip": 0
+      }
+    }
+  }
+}

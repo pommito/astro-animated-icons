@@ -1,0 +1,47 @@
+{
+  "baselineCommit": "28dd4ef839954136095d403f880f9bfc4d01b25d",
+  "recipes": [
+    {
+      "slug": "folder-down",
+      "baselineDefinitionSha256": "95a32525b74daccd82da503c566f04db1063417cbb986e1f44f981ada8fb286f",
+      "dataMatches": true,
+      "verification": "Original property values match; null current-pose origin maps to replay current; timing and hold policy reviewed against original helper defaults"
+    },
+    {
+      "slug": "folder-up",
+      "baselineDefinitionSha256": "ad8288be2c28050494cd088315a0ab38d37293967c51de5a15f0ae30effda427",
+      "dataMatches": true,
+      "verification": "Original property values match; null current-pose origin maps to replay current; timing and hold policy reviewed against original helper defaults"
+    },
+    {
+      "slug": "folder-input",
+      "baselineDefinitionSha256": "420fd3defe47702f3046d4ecb3b25baf7a7041c6ab24ac0d06f9db104a463294",
+      "dataMatches": true,
+      "verification": "Original property values match; null current-pose origin maps to replay current; timing and hold policy reviewed against original helper defaults"
+    },
+    {
+      "slug": "folder-output",
+      "baselineDefinitionSha256": "c81424e06e7423de0a3386f5c7d21aa49d28c49235c14eb720dbb3ced21c4eed",
+      "dataMatches": true,
+      "verification": "Original property values match; null current-pose origin maps to replay current; timing and hold policy reviewed against original helper defaults"
+    },
+    {
+      "slug": "circle-help",
+      "baselineDefinitionSha256": "3660258b08d1bf442279cf904e387ead81ef38b4900d7abf19034d4047b332b9",
+      "dataMatches": true,
+      "verification": "Original property values match; null current-pose origin maps to replay current; timing and hold policy reviewed against original helper defaults"
+    },
+    {
+      "slug": "calendar-days",
+      "baselineDefinitionSha256": "07464fd6f0054cb66caf990b83ebc9b054754e1979e4ae37fc41c11b0ae95ef7",
+      "dataMatches": true,
+      "verification": "Opacity part expression preserved verbatim"
+    },
+    {
+      "slug": "circle-dashed",
+      "baselineDefinitionSha256": "dab3df38377f01564e9cc4dfbe4752e80ad7a7eea99a81c7d15e2a596c193a73",
+      "dataMatches": true,
+      "verification": "Opacity part expression preserved verbatim"
+    }
+  ]
+}

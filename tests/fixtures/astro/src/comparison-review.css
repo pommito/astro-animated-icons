@@ -1,0 +1,63 @@
+:root {
+  --review-paper: oklch(99% 0 none);
+  --review-surface: oklch(96.5% 0.005 255);
+  --review-ink: oklch(25% 0.025 255);
+  --review-muted: oklch(48% 0.025 255);
+  --review-line: oklch(88% 0.012 255);
+  --review-accent: oklch(48% 0.18 260);
+  --review-tint: color-mix(in oklch, var(--review-accent) 5%, var(--review-paper));
+  --review-gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --review-title: clamp(1.6rem, 1.2rem + 1.7vw, 2.5rem);
+  --review-toolbar: 4.5rem;
+  scroll-padding-block-start: calc(var(--review-toolbar) + 1rem);
+  scrollbar-gutter: stable;
+}
+.comparison-review { margin: 0; background: var(--review-surface); color: var(--review-ink); font: 1rem/1.55 system-ui, sans-serif; }
+.comparison-review *, .comparison-review *::before, .comparison-review *::after { box-sizing: border-box; }
+.comparison-review :is(h1, h2, p) { margin: 0; }
+.comparison-review h1 { font-size: var(--review-title); line-height: 1.15; letter-spacing: -0.035em; text-wrap: balance; }
+.comparison-review h2 { font: 600 1.05rem/1.4 ui-monospace, monospace; overflow-wrap: anywhere; }
+.comparison-review a { color: var(--review-accent); text-underline-offset: 0.2em; }
+.comparison-review :is(a, button, input):focus-visible { outline: 3px solid var(--review-accent); outline-offset: 3px; }
+.comparison-review :is(a, button) { touch-action: manipulation; }
+.comparison-review a:active { color: var(--review-ink); }
+.review-navigation, .review-intro, .comparison-review main, .review-footer { inline-size: min(calc(100% - var(--review-gutter) * 2), 64rem); margin-inline: auto; }
+.review-navigation { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding-block: 1.25rem; font-size: 0.875rem; }
+.review-intro { display: grid; gap: 0.875rem; padding-block: 1rem 2rem; }
+.review-intro > p:last-child { max-inline-size: 68ch; color: var(--review-muted); }
+.review-eyebrow { color: var(--review-accent); font: 0.75rem/1.5 ui-monospace, monospace; }
+.review-toolbar { position: sticky; inset-block-start: 0; z-index: 2; display: flex; align-items: center; justify-content: end; gap: 0.5rem; block-size: var(--review-toolbar); padding-inline: max(var(--review-gutter), calc((100% - 64rem) / 2)); background: var(--review-paper); border-block: 1px solid var(--review-line); }
+.review-toolbar > strong { margin-inline-end: auto; font-size: 0.875rem; font-weight: 600; }
+.comparison-review button { min-block-size: 2.75rem; padding-block: 0.5rem; padding-inline: 0.875rem; border: 1px solid var(--review-line); border-radius: 0.4rem; background: var(--review-paper); color: var(--review-ink); font: 500 0.875rem/1.3 system-ui, sans-serif; cursor: pointer; }
+.comparison-review :is(#play, [data-pair-play]) { background: var(--review-accent); border-color: var(--review-accent); color: var(--review-paper); }
+.comparison-review button:active { background: color-mix(in oklch, var(--review-ink) 12%, var(--review-paper)); color: var(--review-ink); }
+.comparison-review button:disabled { cursor: default; opacity: 0.55; }
+.comparison-review main { display: grid; gap: 1.5rem; padding-block: 1.5rem 2.5rem; }
+.comparison-section { background: var(--review-paper); border: 1px solid var(--review-line); border-radius: 0.75rem; scroll-margin-block-start: calc(var(--review-toolbar) + 1rem); }
+.pair-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; padding: 1rem; border-block-end: 1px solid var(--review-line); }
+.pair-heading > h2 { flex: 1 1 12rem; }
+.pair-heading > div { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.comparison-review table { inline-size: 100%; table-layout: fixed; border-collapse: collapse; }
+.comparison-review th, .comparison-review td { padding-block: 0.875rem; padding-inline: 0.5rem; text-align: center; }
+.comparison-review thead { color: var(--review-muted); font-size: 0.75rem; }
+.comparison-review thead th:first-child { inline-size: 4.5rem; }
+.comparison-review tbody th { color: var(--review-muted); font: 0.75rem/1.5 ui-monospace, monospace; }
+.comparison-review tbody tr { block-size: 4rem; border-block-start: 1px solid var(--review-line); }
+.comparison-review tbody td:last-child { background: var(--review-tint); }
+.comparison-section > :is(a, p) { margin-block: 1rem; margin-inline: 1rem; }
+.comparison-section > a, .comparison-section > p > a { display: inline-flex; align-items: center; gap: 0.5rem; min-block-size: 2.75rem; }
+.comparison-section > a { padding-inline: 0.75rem; border: 1px solid var(--review-line); border-radius: 0.4rem; text-decoration: none; font-size: 0.875rem; }
+.review-checks { padding: 1.25rem; background: var(--review-paper); border: 1px solid var(--review-line); border-radius: 0.75rem; }
+.review-checks summary { cursor: pointer; font-weight: 600; }
+.review-checks summary:focus-visible { outline: 3px solid var(--review-accent); outline-offset: 3px; }
+.review-checks summary:active { color: var(--review-accent); }
+.review-checks > div { display: grid; gap: 1rem; padding-block-start: 1rem; }
+.review-checks output { display: block; max-inline-size: 100%; overflow-wrap: anywhere; white-space: pre-wrap; font: 0.75rem/1.6 ui-monospace, monospace; }
+.review-checks input { max-inline-size: 8rem; padding: 0.5rem; font: inherit; }
+.review-footer { padding-block: 0 2rem; color: var(--review-muted); font-size: 0.875rem; }
+@media (hover: hover) and (pointer: fine) {
+  .comparison-review tbody tr:hover { background: var(--review-surface); }
+  .comparison-review button:not(:disabled):hover { border-color: var(--review-accent); }
+  .comparison-section > a:hover { background: var(--review-tint); }
+  .review-navigation a:hover { color: var(--review-ink); }
+}

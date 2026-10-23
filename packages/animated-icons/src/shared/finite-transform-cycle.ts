@@ -1,7 +1,7 @@
 export interface FiniteTransformCycle {
   id: string;
-  target: "svg" | "[data-chevron]" | '[data-motion="0"]';
-  property: "rotate" | "translateX";
+  target: "svg" | "[data-chevron]" | '[data-motion="0"]' | "g > g";
+  property: "rotate" | "translateX" | "translateY";
   values: number[];
   duration: number;
   times: number[];
