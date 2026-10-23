@@ -1112,6 +1112,36 @@ export type { WavesLadderIconHandle } from "./icons/waves-ladder/element";
 export { default as Sparkles } from "./icons/sparkles/Sparkles.astro";
 export type { SparklesIconHandle } from "./icons/sparkles/element";
 
+export { default as AirVent } from "./icons/air-vent/AirVent.astro";
+export type { AirVentIconHandle } from "./icons/air-vent/element";
+
+export { default as AlarmSmoke } from "./icons/alarm-smoke/AlarmSmoke.astro";
+export type { AlarmSmokeIconHandle } from "./icons/alarm-smoke/element";
+
+export { default as BellElectric } from "./icons/bell-electric/BellElectric.astro";
+export type { BellElectricIconHandle } from "./icons/bell-electric/element";
+
+export { default as ConciergeBell } from "./icons/concierge-bell/ConciergeBell.astro";
+export type { ConciergeBellIconHandle } from "./icons/concierge-bell/element";
+
+export { default as Fan } from "./icons/fan/Fan.astro";
+export type { FanIconHandle } from "./icons/fan/element";
+
+export { default as PlugZap } from "./icons/plug-zap/PlugZap.astro";
+export type { PlugZapIconHandle } from "./icons/plug-zap/element";
+
+export { default as ShowerHead } from "./icons/shower-head/ShowerHead.astro";
+export type { ShowerHeadIconHandle } from "./icons/shower-head/element";
+
+export { default as WashingMachine } from "./icons/washing-machine/WashingMachine.astro";
+export type { WashingMachineIconHandle } from "./icons/washing-machine/element";
+
+export { default as Zap } from "./icons/zap/Zap.astro";
+export type { ZapIconHandle } from "./icons/zap/element";
+
+export { default as ZapOff } from "./icons/zap-off/ZapOff.astro";
+export type { ZapOffIconHandle } from "./icons/zap-off/element";
+
 export { default as Axe } from "./icons/axe/Axe.astro";
 export type { AxeIconHandle } from "./icons/axe/element";
 export { default as Pickaxe } from "./icons/pickaxe/Pickaxe.astro";
