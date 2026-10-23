@@ -37,3 +37,13 @@ The user owns visual acceptance. Report which manual checks were actually perfor
 The fixture cache hashes sources, shared fixture data, manifests, lockfiles, installed dependency metadata, Node version, and the build environment. It verifies output contents and rejects sources changed during a build. The lock in `.artifacts/fixture.lock` protects served output. Check its recorded PID before removing a lock left by a stopped process.
 
 Report executed commands, relevant results, and anything unverified. Historical entries in `docs/history/` record earlier test strategies and executions; they do not define current requirements.
+
+## CSS migration comparisons
+
+Keep routine validation browser-free, following [issue #47](https://github.com/pommito/astro-animated-icons/issues/47) and [PR #73](https://github.com/pommito/astro-animated-icons/pull/73). Use comparison fixtures for numerical browser probes and owner review. A fixture reference must identify its recipe source and whether it executes upstream code.
+
+For each migrated family, compare entry, interrupted replay, stop, stop during return, replay during return, completion, stale callbacks, disconnect, reconnection, and reduced motion. Include parent hover, touch filtering, disabled controls, and controlled mode when shared input code changes. Separate real browser input and media-query coverage from synthetic events or matchMedia stubs. Record the browser, sizes, sample times, tolerances, measured maxima, and failure count.
+
+Measure total reachable JavaScript and CSS for single icons, families, repeated instances, and mixtures that retain Motion. Count shared resources once per route. Report raw and gzip sizes, production build versions, and compression settings. State whether HTML, inline CSS compression, headers, cache, and network costs are included. Do not infer frame pacing from payload sizes or one preparation benchmark.
+
+Preserve dated evidence under [docs/history/](history/). The [migration plan](css-migration-plan.md) links the final evidence and records pending visual acceptance.

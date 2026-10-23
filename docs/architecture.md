@@ -29,6 +29,18 @@ track((onComplete) => animate(path, { opacity: [0, 1] }, {
 
 The recipe does not count tracks or decide when to clear a whole playback. A completed return always restores the drawing. Callbacks from an older playback cannot clear a newer one, but can repair late writes after reset. The lifecycle also accepts factories with custom stop and cancel operations, preserving Archive's Motion values and the velocity sampling used by interrupted springs.
 
+## Internal animation engines
+
+Each icon selects its mechanism inside the package. Consumers use the same Astro component and playback handle. CSS keyframes still require JavaScript for triggers, manual playback, interruption, and cleanup. The shared lifecycle owns those behaviors for both engines.
+
+A CSS recipe keeps its values, offsets, timing, target, replay policy, and finish policy in one definition. The server generates CSS from that definition. A fixture reference may consume the same definition through Motion, but reference adapters belong to fixtures and must not enter consumer bundles.
+
+The CSS adapter implements the existing track protocol. Before replacing playback, it captures the rendered pose. The recipe determines whether entry restarts at zero or uses that pose. Return begins at the captured pose. Completion and stale callbacks still pass through the shared lifecycle. Clear removes playback state, temporary custom properties, and retained transforms.
+
+Generated styles must be emitted only for rendered recipes and deduplicated within a render. Avoid per-icon static style blocks collected from unused barrel imports. Keep engine code selective too; an unrelated Motion recipe must not cause the full catalogue to load.
+
+The [migration plan](css-migration-plan.md) records family decisions. LoaderCircle retains Motion because its interrupted return uses a spring with inherited angular velocity.
+
 ## Reuse and icon boundaries
 
 Each direct directory in `src/icons/` contains one exported icon. `src/shared/` contains mechanisms used by at least two icons, including [arrow.ts](../packages/animated-icons/src/shared/arrow.ts) and [diagonal-arrow.ts](../packages/animated-icons/src/shared/diagonal-arrow.ts). Reuse these mechanisms when they fit, and keep geometry, origins, and transition choices in the icon's own files.
