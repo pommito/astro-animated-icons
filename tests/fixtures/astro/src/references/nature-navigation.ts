@@ -1,0 +1,10 @@
+export { EarthIcon as Earth } from "./nature-navigation/earth";
+export { RabbitIcon as Rabbit } from "./nature-navigation/rabbit";
+export { RollerCoasterIcon as RollerCoaster } from "./nature-navigation/roller-coaster";
+export { SatelliteDishIcon as SatelliteDish } from "./nature-navigation/satellite-dish";
+export { ShipWheelIcon as ShipWheel } from "./nature-navigation/ship-wheel";
+export { WavesIcon as Waves } from "./nature-navigation/waves";
+export { WavesArrowDownIcon as WavesArrowDown } from "./nature-navigation/waves-arrow-down";
+export { WavesArrowUpIcon as WavesArrowUp } from "./nature-navigation/waves-arrow-up";
+export { WavesLadderIcon as WavesLadder } from "./nature-navigation/waves-ladder";
+export { SparklesIcon as Sparkles } from "./nature-navigation/sparkles";
