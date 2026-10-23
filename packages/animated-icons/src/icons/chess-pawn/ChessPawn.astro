@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-chess-pawn">
+  <g>
+    <g data-body style="transform-box: view-box; transform-origin: center">
+      <path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" data-part="0" />
+      <path d="m14.5 10 1.5 8" data-part="1" />
+      <path d="M7 10h10" data-part="2" />
+      <path d="m8 18 1.5-8" data-part="3" />
+    </g>
+    <circle cx="12" cy="6" r="4" data-part="4" style="transform-box: fill-box; transform-origin: center" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>
