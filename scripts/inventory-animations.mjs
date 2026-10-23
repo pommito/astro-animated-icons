@@ -67,11 +67,17 @@ export function readModule(root, path) {
   return { path, sha256: createHash("sha256").update(source).digest("hex"), imports, dependencies, facts, calls };
 }
 
-function decision(modules, engine) {
+const reviewed = JSON.parse(readFileSync(new URL("./animation-decisions.json", import.meta.url), "utf8"));
+
+function decision(modules, engine, slug) {
   const names = modules.map(module => module.path);
   const localCalls = modules.filter(module => /\/icons\//.test(module.path)).flatMap(module => module.calls);
   const cycle = localCalls.find(call => call.name === "animateChevronCycle")?.arguments[3];
-  if (engine === "css") return { status: "supported", capability: "finite-transform-cycle", reason: "Production adapter selects CSS; cycle data and engine wiring are included as evidence." };
+  if (engine === "css") return { status: "supported", capability: names.some(name => name.endsWith("/css-opacity.ts")) ? "timed-opacity-parts" : "finite-transform-cycle", reason: "Production adapter selects CSS; recipe data and engine wiring are included as evidence." };
+  if (reviewed[slug]) {
+    const sourceHash = createHash("sha256").update(JSON.stringify(modules.map(module => [module.path, module.sha256]))).digest("hex");
+    return sourceHash === reviewed[slug].sourceHash ? reviewed[slug] : { status: "review", capability: "changed-reviewed-source", reason: "Recipe or shared dependencies changed after the recorded review; resolve the effective settings again.", previousDecision: reviewed[slug] };
+  }
   if (cycle && ["X", "Y"].includes(cycle.axis) && Array.isArray(cycle.values) && cycle.values.every(value => typeof value === "number") && typeof cycle.duration === "number") {
     const requiredCapabilities = [
       ...(cycle.axis === "Y" ? ["translateY"] : []),
@@ -117,10 +123,11 @@ export function inventoryAnimations(root = defaultRoot) {
     const adapterPath = `${directory}/${icon.name}.astro`;
     const adapter = existsSync(resolve(root, adapterPath)) ? adapterPath : undefined;
     const adapterSource = adapter ? readFileSync(resolve(root, adapter), "utf8") : "";
-    const engine = /css-cycle|CssIcon|cycle-css/.test(adapterSource) || files.some(file => /\/css-cycle\.ts$/.test(file)) ? "css" : "motion";
+    const engine = /css-cycle|CssIcon|cycle-css|CssOpacityIcon/.test(adapterSource) || files.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
     const modules = files.map(load);
-    const classification = decision(modules, engine);
-    return { ...icon, definition, adapter: adapter ?? null, engine, mechanisms: files.filter(file => file.includes("/shared/") || file.includes("/css-")), sources: files, classification,
+    const classification = decision(modules, engine, icon.slug);
+    const migrationState = engine === "css" ? "migrated" : classification.status === "supported" ? "supported-but-deferred" : classification.status === "motion" ? "retained-on-motion" : classification.status === "candidate" ? "capability-needed" : "needs-review";
+    return { ...icon, definition, adapter: adapter ?? null, engine, mechanisms: files.filter(file => file.includes("/shared/") || file.includes("/css-")), sources: files, classification, migrationState,
       uncertainty: ["Static source analysis does not establish browser parity or visual acceptance.", ...(classification.status === "review" ? ["Expressions are traceable evidence, not evaluated effective settings. Review the referenced call paths and defaults."] : []), ...(!adapter ? ["Adapter filename did not match the component export; engine requires review."] : [])],
       lifecycle: { source: "packages/animated-icons/src/element.ts", completion: "Completed return clears; entry follows recipe finish policy.", interruption: "Lifecycle stops and cancels old tracks; recipe chooses retained pose and velocity.", replay: "See cycle replay or local and shared animate expressions.", return: "See local returning branches and shared defaults in sources." } };
   });
@@ -132,7 +139,7 @@ export function inventoryAnimations(root = defaultRoot) {
     "shared/svg-transform": "duration defaults to 0.3 s; ease defaults to easeOut. Rest is 1 for scale/opacity, otherwise 0 unless normal overrides it. Springs use previous velocity. Property overrides, repeat, preservePose and continueOnReturn affect interruption.",
     "shared/svg-parts": "finish hold. Pose transition overrides part transition. Scalar transforms without duration/type spring get spring defaults: scale stiffness 550/damping 30, other transforms 500/25, restSpeed 10. Timed transforms default to 0.8 s for >2 keyframes, otherwise 0.3 s. Paint properties use property transition overrides. Review normal and animate independently.",
   };
-  const families = ["chevron", "svg-keyframes", "svg-parts", "svg-transform", "css-cycle"].map(name => {
+  const families = ["chevron", "svg-keyframes", "svg-parts", "svg-transform", "css-cycle", "css-opacity"].map(name => {
     const path = `packages/animated-icons/src/shared/${name}.ts`;
     return { mechanism: path, directDefinitions: icons.filter(icon => load(icon.definition).dependencies.includes(path)).length, transitiveRecipes: icons.filter(icon => icon.sources.includes(path)).length };
   });

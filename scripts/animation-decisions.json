@@ -1,0 +1,110 @@
+{
+  "user-round-cog": {
+    "status": "supported",
+    "capability": "finite-transform-cycle",
+    "reason": "Fixed 300 ms easeOut group rotation to 180 degrees, hold completion and current-pose scalar replay fit the cycle adapter. Deferred until half-turn decomposition, interrupted return and payload are measured.",
+    "sourceHash": "502d6ce5c7179fa123981a7d814a39074bdfbe1ed6c8b76e6fb4807e6b9c282a"
+  },
+  "wifi-sync": {
+    "status": "motion",
+    "capability": "unwrapped-rotation",
+    "reason": "Entry rotates the group through -360 degrees. A computed matrix loses completed turns; return must retain the unwrapped angle. No replacement has proved this behavior.",
+    "sourceHash": "fa0c1ddde2fb10cbbbba9bf77a61b38caa777d4ceb210b43160883bd917a064c"
+  },
+  "key-square": {
+    "status": "candidate",
+    "capability": "combined-finite-transforms",
+    "reason": "Finite rotate and scale tracks share timing, but the cycle adapter supports one transform property. Preserve transform order and independent current values before migration.",
+    "sourceHash": "4de9c84910d96442c0f3b5d809869e84f0ba4d22c33b9d4d2a39ae72d92c2183"
+  },
+  "wallet": {
+    "status": "candidate",
+    "capability": "combined-finite-transforms",
+    "reason": "Finite y and rotate keyframes have explicit entry/return timing. Combined transform interpolation and current-pose replay need a separate capability and proof.",
+    "sourceHash": "0297eaf382a9bec8e942fba9a5adacfadba5b8f9474893cc611f2191d6351de8"
+  },
+  "key-circle": {
+    "status": "candidate",
+    "capability": "combined-finite-transforms",
+    "reason": "Finite y and rotate arrays have different lengths. Each property needs its own offsets before transforms can be composed faithfully.",
+    "sourceHash": "a5d074ee1ce84c99cbfdaaf2f0393563c98485b5bb4eeb6dc3996e26e60f9b66"
+  },
+  "cart": {
+    "status": "motion",
+    "capability": "continue-on-return",
+    "reason": "Return continues the interrupted y sampler while scale returns independently; y repeats and has a property delay.",
+    "sourceHash": "f448ec984afd3c3b06ad78d5218998a9bbbb165f0b4777b5848266aa5b494b5f"
+  },
+  "snowflake": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Finite rotation entry returns with a stiffness 500/damping 25 spring that inherits interrupted angular velocity.",
+    "sourceHash": "6879825c291f66c0caf14472dcfe3e2ce1e31b1bd4695ab4cfe62c70b466e0cc"
+  },
+  "key": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Rotation returns with a stiffness 120/damping 14 spring and retained angular velocity.",
+    "sourceHash": "aa31e6efe1189c8a1651dc5f62f788864700f8125aad7206398fe9a04834d4e5"
+  },
+  "refresh-cw-off": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Finite x shake returns with a stiffness 500/damping 20 spring and retained velocity.",
+    "sourceHash": "52f487ab400ff56fd7a1c68209dc43c037badb08bbaec91141680568bb60c8c1"
+  },
+  "phone": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Rotation and scale have distinct velocity-dependent spring return settings.",
+    "sourceHash": "3f108a1775b6c369c673abb64b3bef5986cedde819bc47ff120f533494152945"
+  },
+  "phone-call": {
+    "status": "motion",
+    "capability": "spring-and-signal",
+    "reason": "Rotation and scale return through distinct springs, combined with the signal mechanism on child paths.",
+    "sourceHash": "00c2eba9241605553e1d07dc7add0f19f3d79b8a351e495dd53bcb57a2eb288d"
+  },
+  "phone-forwarded": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "SVG pulse and child transforms use different velocity-dependent spring returns.",
+    "sourceHash": "866a0ec736460b94b3520c197090f57e20a02ed271fa53dc6b831432b2306f3a"
+  },
+  "badge-alert": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Scale and rotation use distinct keyframe arrays and velocity-dependent spring returns.",
+    "sourceHash": "556d6e4f0627edd6eb800de01017884b1140da1b005a1627d1c152d4ff22b8b2"
+  },
+  "cursor-click": {
+    "status": "motion",
+    "capability": "implicit-spring-return",
+    "reason": "Timed multitransform entry combines delayed opacity. Scalar x/y normal poses have no duration and inherit svg-parts spring defaults.",
+    "sourceHash": "ed2e5d45ecdd8d625313e236ac19078b0352df82c06142e8dfcbefdb9d96e134"
+  },
+  "eye": {
+    "status": "candidate",
+    "capability": "opacity-and-scale",
+    "reason": "Finite opacity runs on path and circle alongside scaleY and scale. Opacity support alone does not cover transform replay and return.",
+    "sourceHash": "6328dd62382ae41c29b71e9076f17a579563c62e025a6de65f933a97adb7d5a2"
+  },
+  "cpu": {
+    "status": "candidate",
+    "capability": "opacity-scale-and-repeat",
+    "reason": "Pins combine opacity and axis-dependent scale with repeated entry tracks. Repeat boundaries and interruption need separate proof.",
+    "sourceHash": "ab47527d14b3671bf951ccbeaf9ae7cd3281f5cfe16a7fbf8e72606eadd388d2"
+  },
+  "keyboard": {
+    "status": "motion",
+    "capability": "random-delays",
+    "reason": "Each playback samples Math.random for per-key delays and clears immediately on return. A static timed sequence would change the recipe.",
+    "sourceHash": "0a993df8cb53646db9e08f60170abfa5058532a39ce87cf36abb246d81c46682"
+  },
+  "airplay": {
+    "status": "motion",
+    "capability": "custom-sequence",
+    "reason": "Entry queues a path reveal and triangle transform phase followed by return; interruption cancels queued phases.",
+    "sourceHash": "7379a359b1abdeb401c9e4bbc1efcd6cb03512de0009d75d46ed615649278daf"
+  }
+}
