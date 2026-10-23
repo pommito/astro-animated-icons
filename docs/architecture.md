@@ -12,8 +12,9 @@ All icons use the lifecycle and trigger code in `src/element.ts`. Each instance 
 
 `src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Its registration script stays in that adapter so rendering one icon loads only that icon's behavior. The shared module has no registration script.
 
-Each `src/icons/<name>/definition.ts` exports an internal recipe with three responsibilities:
+Each `src/icons/<name>/definition.ts` exports an internal recipe with these responsibilities:
 
+- Optional `connect(host)` prepares document resources when an instance connects.
 - `finish` declares whether completed entry restores the drawing or holds its final pose.
 - `animate(drawing, returning, track)` registers the animation tracks.
 - `clear(drawing)` restores the drawing, including any attributes or retained motion state.
@@ -57,4 +58,4 @@ Its [negative tests](../scripts/inspect-bundle.test.mjs) share one temporary cop
 
 ## CSS playback
 
-Bell and ChevronRight use generated CSS keyframes through the public adapters. Their cycle.ts files also drive fixture-only Motion references with distinct tags. CssIcon.astro emits each rendered cycle once per request. The CSS track adapter reuses element.ts and captures the rendered transform before interruption. Bell replays from that pose; ChevronRight restarts from zero and restores on completion. LoaderCircle keeps Motion. The dated [parity follow-up](history/2026-10-23-css-parity.md) records the preceding pilot and its limits.
+Bell and ChevronRight use generated CSS keyframes through the public adapters. Their cycle.ts files also drive fixture-only Motion references with distinct tags. CssIcon.astro emits each rendered cycle once per request and marks its style element by recipe. On connection and before playback, the CSS adapter reuses an active marked sheet or generates the missing sheet in the owning document. It removes duplicate marked sheets when a later template brings its server sheet into the document. This covers independent template clones when the server sheet remains in another inert template. Server emission and client recovery use the same generator. The CSS track adapter reuses element.ts and captures the rendered transform before interruption. Bell replays from that pose; ChevronRight restarts from zero and restores on completion. LoaderCircle keeps Motion. The dated [parity follow-up](history/2026-10-23-css-parity.md) records the preceding pilot and its limits.

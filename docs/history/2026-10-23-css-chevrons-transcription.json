@@ -1,0 +1,260 @@
+{
+  "baselineCommit": "d6daa02cf55dcc9de266839b41b6ffb49f40f100",
+  "checkedRecipes": 12,
+  "results": [
+    {
+      "icon": "chevron-down",
+      "axis": "Y",
+      "values": [
+        0,
+        2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "chevron-first",
+      "axis": "X",
+      "values": [
+        -2,
+        1,
+        -1,
+        0
+      ],
+      "duration": 0.6,
+      "times": [
+        0,
+        0.3,
+        0.7,
+        1
+      ],
+      "ease": "easeInOut",
+      "returnDuration": 0.3,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "chevron-left",
+      "axis": "X",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "chevron-up",
+      "axis": "Y",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "circle-chevron-down",
+      "axis": "Y",
+      "values": [
+        0,
+        2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "circle-chevron-left",
+      "axis": "X",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "circle-chevron-right",
+      "axis": "X",
+      "values": [
+        0,
+        2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "circle-chevron-up",
+      "axis": "Y",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "square-chevron-down",
+      "axis": "Y",
+      "values": [
+        0,
+        2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "square-chevron-left",
+      "axis": "X",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "square-chevron-right",
+      "axis": "X",
+      "values": [
+        0,
+        2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    },
+    {
+      "icon": "square-chevron-up",
+      "axis": "Y",
+      "values": [
+        0,
+        -2,
+        0
+      ],
+      "duration": 0.5,
+      "times": [
+        0,
+        0.4,
+        1
+      ],
+      "ease": "easeOut",
+      "returnDuration": 0.5,
+      "returnEase": "easeOut",
+      "drawing": "unchanged",
+      "replay": "restart",
+      "finish": "restore"
+    }
+  ]
+}

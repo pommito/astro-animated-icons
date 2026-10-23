@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "./Icon.astro";
+import type { OpacityPart } from "./shared/opacity-parts";
+import { opacityCSS } from "./shared/opacity-css";
+
+interface Props extends IconProps {
+  parts: OpacityPart[];
+  tag: `grave-${string}`;
+}
+const { parts, tag, ...props } = Astro.props;
+const id = tag.slice(6);
+const locals = Astro.locals as { cssOpacitySheets?: Set<string> };
+const seen = locals.cssOpacitySheets ??= new Set<string>();
+const include = !seen.has(id);
+seen.add(id);
+---
+{include && <style is:inline data-grave-cycle-style={id} set:html={opacityCSS(id, parts)} />}
+<Icon {...props} tag={tag} data-css-opacity={id}>
+  <slot />
+</Icon>

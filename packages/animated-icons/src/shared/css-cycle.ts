@@ -1,3 +1,4 @@
+import { ensureCycleCSS } from "./cycle-css";
 import type { IconRecipe } from "../element";
 import type { FiniteTransformCycle } from "./finite-transform-cycle";
 
@@ -6,8 +7,10 @@ export function createCSSCycleRecipe(cycle: FiniteTransformCycle): IconRecipe {
     ? drawing.ownerSVGElement! : drawing.querySelector<SVGElement>(cycle.target)!;
   return {
     finish: cycle.finish,
+    connect(host) { ensureCycleCSS(cycle, host.ownerDocument); },
     animate(drawing, returning, track) {
       const host = drawing.closest<HTMLElement>("[data-css-cycle]")!;
+      ensureCycleCSS(cycle, host.ownerDocument);
       const target = targetFor(drawing);
       const from = getComputedStyle(target).transform;
       if (cycle.origin) target.style.transformOrigin = cycle.origin;

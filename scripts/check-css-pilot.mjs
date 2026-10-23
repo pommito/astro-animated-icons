@@ -33,7 +33,11 @@ export function verifyCssPilot(output, log = console.log) {
     for (const kind of ["bell", "chevron-right", "loader"]) {
       assert.equal(route.css.includes("@keyframes grave-cycle-" + kind), expected[name].includes(kind), context + ": only rendered icon CSS, " + kind);
     }
-    for (const kind of expected[name]) assert.ok(route.css.includes(generated.get(kind)), context + ": CSS matches the shared recipe, " + kind);
+    for (const kind of expected[name]) {
+      assert.ok(route.css.includes(generated.get(kind)), context + ": CSS matches the shared recipe, " + kind);
+      const marked = [...html("managed").matchAll(/<style\b([^>]*)>/g)].filter(([, attributes]) => attributes.includes('data-grave-cycle-style="' + kind + '"'));
+      assert.equal(marked.length, 1, context + ": active sheet marker for " + kind);
+    }
     assert.equal(route.styles.length, 1 + expected[name].length, context + ": styles emitted once per rendered kind");
     assert.equal(route.inline.length, 0, context + ": no inline scripts");
     assert.equal(route.entries.length, name === "repeated" ? 1 : name === "three" ? 3 : ["pair", "mixed"].includes(name) ? 2 : 1, context + ": script entries");

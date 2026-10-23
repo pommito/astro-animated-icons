@@ -1,20 +1,4 @@
-import type { IconRecipe, IconTrack } from "../../element";
-import { animateSvgTransform, clearSvgTransform } from "../../shared/svg-transform";
+import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { folderDownCycle } from "./cycle";
 
-function animateFolderDown(drawing: SVGGElement, returning: boolean, track: IconTrack) {
-  animateSvgTransform(
-    drawing.querySelector<SVGElement>('[data-motion="0"]')!,
-    returning,
-    track,
-    { y: [0, 2, 0] },
-    { ease: "easeOut", duration: 0.5, times: [0, 0.4, 1] },
-  );
-}
-
-export const folderDownRecipe = {
-  finish: "hold",
-  animate: animateFolderDown,
-  clear(drawing) {
-    clearSvgTransform(drawing.querySelector<SVGElement>('[data-motion="0"]')!);
-  },
-} satisfies IconRecipe;
+export const folderDownRecipe = createCSSCycleRecipe(folderDownCycle);
