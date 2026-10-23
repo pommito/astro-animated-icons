@@ -234,5 +234,121 @@ export const messageIcons = [
     ],
     "tag": "grave-message-square-x",
     "animationCount": 4
+  },
+  {
+    "name": "MessageCircleDashed",
+    "slug": "message-circle-dashed",
+    "tag": "grave-message-circle-dashed",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M13.5 3.1c-.5 0-1-.1-1.5-.1s-1 .1-1.5.1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M19.3 6.8a10.45 10.45 0 0 0-2.1-2.1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M20.9 13.5c.1-.5.1-1 .1-1.5s-.1-1-.1-1.5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M17.2 19.3a10.45 10.45 0 0 0 2.1-2.1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M10.5 20.9c.5.1 1 .1 1.5.1s1-.1 1.5-.1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M3.5 17.5 2 22l4.5-1.5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M3.1 10.5c0 .5-.1 1-.1 1.5s.1 1 .1 1.5"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M6.8 4.7a10.45 10.45 0 0 0-2.1 2.1"
+        }
+      }
+    ]
+  },
+  {
+    "name": "MessageSquareDashed",
+    "slug": "message-square-dashed",
+    "tag": "grave-message-square-dashed",
+    "drawing": [
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M14 3h1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M14 17h1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M10 17H7l-4 4v-7"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M9 3h1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M19 3a2 2 0 0 1 2 2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M3 9v1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M21 9v1"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M21 14v1a2 2 0 0 1-2 2"
+        }
+      },
+      {
+        "tag": "path",
+        "attrs": {
+          "d": "M5 3a2 2 0 0 0-2 2"
+        }
+      }
+    ]
   }
 ] as const;

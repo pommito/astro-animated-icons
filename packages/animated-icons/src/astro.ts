@@ -146,6 +146,8 @@ export type { FolderLockIconHandle } from "./icons/folder-lock/element";
 export { default as FolderMinus } from "./icons/folder-minus/FolderMinus.astro";
 export type { FolderMinusIconHandle } from "./icons/folder-minus/element";
 
+export { default as Folder } from "./icons/folder/Folder.astro";
+export type { FolderIconHandle } from "./icons/folder/element";
 export { default as FolderOpen } from "./icons/folder-open/FolderOpen.astro";
 export type { FolderOpenIconHandle } from "./icons/folder-open/element";
 
@@ -1081,3 +1083,165 @@ export type { TreePineIconHandle } from "./icons/tree-pine/element";
 
 export { default as FishSymbol } from "./icons/fish-symbol/FishSymbol.astro";
 export type { FishSymbolIconHandle } from "./icons/fish-symbol/element";
+
+export { default as Earth } from "./icons/earth/Earth.astro";
+export type { EarthIconHandle } from "./icons/earth/element";
+
+export { default as Rabbit } from "./icons/rabbit/Rabbit.astro";
+export type { RabbitIconHandle } from "./icons/rabbit/element";
+
+export { default as RollerCoaster } from "./icons/roller-coaster/RollerCoaster.astro";
+export type { RollerCoasterIconHandle } from "./icons/roller-coaster/element";
+
+export { default as SatelliteDish } from "./icons/satellite-dish/SatelliteDish.astro";
+export type { SatelliteDishIconHandle } from "./icons/satellite-dish/element";
+
+export { default as ShipWheel } from "./icons/ship-wheel/ShipWheel.astro";
+export type { ShipWheelIconHandle } from "./icons/ship-wheel/element";
+
+export { default as Waves } from "./icons/waves/Waves.astro";
+export type { WavesIconHandle } from "./icons/waves/element";
+
+export { default as WavesArrowDown } from "./icons/waves-arrow-down/WavesArrowDown.astro";
+export type { WavesArrowDownIconHandle } from "./icons/waves-arrow-down/element";
+
+export { default as WavesArrowUp } from "./icons/waves-arrow-up/WavesArrowUp.astro";
+export type { WavesArrowUpIconHandle } from "./icons/waves-arrow-up/element";
+
+export { default as WavesLadder } from "./icons/waves-ladder/WavesLadder.astro";
+export type { WavesLadderIconHandle } from "./icons/waves-ladder/element";
+
+export { default as Sparkles } from "./icons/sparkles/Sparkles.astro";
+export type { SparklesIconHandle } from "./icons/sparkles/element";
+
+
+export { default as BookText } from "./icons/book-text/BookText.astro";
+export type { BookTextIconHandle } from "./icons/book-text/element";
+
+export { default as GraduationCap } from "./icons/graduation-cap/GraduationCap.astro";
+export type { GraduationCapIconHandle } from "./icons/graduation-cap/element";
+
+export { default as Languages } from "./icons/languages/Languages.astro";
+export type { LanguagesIconHandle } from "./icons/languages/element";
+
+export { default as IdCard } from "./icons/id-card/IdCard.astro";
+export type { IdCardIconHandle } from "./icons/id-card/element";
+
+export { default as Ticket } from "./icons/ticket/Ticket.astro";
+export type { TicketIconHandle } from "./icons/ticket/element";
+
+export { default as ChessBishop } from "./icons/chess-bishop/ChessBishop.astro";
+export type { ChessBishopIconHandle } from "./icons/chess-bishop/element";
+
+export { default as ChessKing } from "./icons/chess-king/ChessKing.astro";
+export type { ChessKingIconHandle } from "./icons/chess-king/element";
+
+export { default as ChessKnight } from "./icons/chess-knight/ChessKnight.astro";
+export type { ChessKnightIconHandle } from "./icons/chess-knight/element";
+
+export { default as ChessPawn } from "./icons/chess-pawn/ChessPawn.astro";
+export type { ChessPawnIconHandle } from "./icons/chess-pawn/element";
+
+export { default as RockingChair } from "./icons/rocking-chair/RockingChair.astro";
+export type { RockingChairIconHandle } from "./icons/rocking-chair/element";
+export { default as AirVent } from "./icons/air-vent/AirVent.astro";
+export type { AirVentIconHandle } from "./icons/air-vent/element";
+
+export { default as AlarmSmoke } from "./icons/alarm-smoke/AlarmSmoke.astro";
+export type { AlarmSmokeIconHandle } from "./icons/alarm-smoke/element";
+
+export { default as BellElectric } from "./icons/bell-electric/BellElectric.astro";
+export type { BellElectricIconHandle } from "./icons/bell-electric/element";
+
+export { default as ConciergeBell } from "./icons/concierge-bell/ConciergeBell.astro";
+export type { ConciergeBellIconHandle } from "./icons/concierge-bell/element";
+
+export { default as Fan } from "./icons/fan/Fan.astro";
+export type { FanIconHandle } from "./icons/fan/element";
+
+export { default as PlugZap } from "./icons/plug-zap/PlugZap.astro";
+export type { PlugZapIconHandle } from "./icons/plug-zap/element";
+
+export { default as ShowerHead } from "./icons/shower-head/ShowerHead.astro";
+export type { ShowerHeadIconHandle } from "./icons/shower-head/element";
+
+export { default as WashingMachine } from "./icons/washing-machine/WashingMachine.astro";
+export type { WashingMachineIconHandle } from "./icons/washing-machine/element";
+
+export { default as Zap } from "./icons/zap/Zap.astro";
+export type { ZapIconHandle } from "./icons/zap/element";
+
+export { default as ZapOff } from "./icons/zap-off/ZapOff.astro";
+export type { ZapOffIconHandle } from "./icons/zap-off/element";
+
+export { default as Axe } from "./icons/axe/Axe.astro";
+export type { AxeIconHandle } from "./icons/axe/element";
+export { default as Pickaxe } from "./icons/pickaxe/Pickaxe.astro";
+export type { PickaxeIconHandle } from "./icons/pickaxe/element";
+export { default as Gavel } from "./icons/gavel/Gavel.astro";
+export type { GavelIconHandle } from "./icons/gavel/element";
+export { default as Construction } from "./icons/construction/Construction.astro";
+export type { ConstructionIconHandle } from "./icons/construction/element";
+export { default as Box } from "./icons/box/Box.astro";
+export type { BoxIconHandle } from "./icons/box/element";
+export { default as Boxes } from "./icons/boxes/Boxes.astro";
+export type { BoxesIconHandle } from "./icons/boxes/element";
+export { default as BriefcaseBusiness } from "./icons/briefcase-business/BriefcaseBusiness.astro";
+export type { BriefcaseBusinessIconHandle } from "./icons/briefcase-business/element";
+export { default as HardDriveDownload } from "./icons/hard-drive-download/HardDriveDownload.astro";
+export type { HardDriveDownloadIconHandle } from "./icons/hard-drive-download/element";
+export { default as HardDriveUpload } from "./icons/hard-drive-upload/HardDriveUpload.astro";
+export type { HardDriveUploadIconHandle } from "./icons/hard-drive-upload/element";
+export { default as Shredder } from "./icons/shredder/Shredder.astro";
+export type { ShredderIconHandle } from "./icons/shredder/element";
+
+export { default as Bone } from "./icons/bone/Bone.astro";
+export type { BoneIconHandle } from "./icons/bone/element";
+export { default as Cigarette } from "./icons/cigarette/Cigarette.astro";
+export type { CigaretteIconHandle } from "./icons/cigarette/element";
+export { default as CigaretteOff } from "./icons/cigarette-off/CigaretteOff.astro";
+export type { CigaretteOffIconHandle } from "./icons/cigarette-off/element";
+export { default as HatGlasses } from "./icons/hat-glasses/HatGlasses.astro";
+export type { HatGlassesIconHandle } from "./icons/hat-glasses/element";
+export { default as SprayCan } from "./icons/spray-can/SprayCan.astro";
+export type { SprayCanIconHandle } from "./icons/spray-can/element";
+export { default as CircleDollarSign } from "./icons/circle-dollar-sign/CircleDollarSign.astro";
+export type { CircleDollarSignIconHandle } from "./icons/circle-dollar-sign/element";
+export { default as GeorgianLari } from "./icons/georgian-lari/GeorgianLari.astro";
+export type { GeorgianLariIconHandle } from "./icons/georgian-lari/element";
+export { default as PhilippinePeso } from "./icons/philippine-peso/PhilippinePeso.astro";
+export type { PhilippinePesoIconHandle } from "./icons/philippine-peso/element";
+export { default as SaudiRiyal } from "./icons/saudi-riyal/SaudiRiyal.astro";
+export type { SaudiRiyalIconHandle } from "./icons/saudi-riyal/element";
+export { default as TurkishLira } from "./icons/turkish-lira/TurkishLira.astro";
+export type { TurkishLiraIconHandle } from "./icons/turkish-lira/element";
+export { default as Downvote } from "./icons/downvote/Downvote.astro";
+export type { DownvoteIconHandle } from "./icons/downvote/element";
+export { default as Upvote } from "./icons/upvote/Upvote.astro";
+export type { UpvoteIconHandle } from "./icons/upvote/element";
+export { default as TrendingUpDown } from "./icons/trending-up-down/TrendingUpDown.astro";
+export type { TrendingUpDownIconHandle } from "./icons/trending-up-down/element";
+export { default as MessageCircleDashed } from "./icons/message-circle-dashed/MessageCircleDashed.astro";
+export type { MessageCircleDashedIconHandle } from "./icons/message-circle-dashed/element";
+export { default as MessageSquareDashed } from "./icons/message-square-dashed/MessageSquareDashed.astro";
+export type { MessageSquareDashedIconHandle } from "./icons/message-square-dashed/element";
+export { default as Chrome } from "./icons/chrome/Chrome.astro";
+export type { ChromeIconHandle } from "./icons/chrome/element";
+export { default as Discord } from "./icons/discord/Discord.astro";
+export type { DiscordIconHandle } from "./icons/discord/element";
+export { default as Dribbble } from "./icons/dribbble/Dribbble.astro";
+export type { DribbbleIconHandle } from "./icons/dribbble/element";
+export { default as Facebook } from "./icons/facebook/Facebook.astro";
+export type { FacebookIconHandle } from "./icons/facebook/element";
+export { default as Instagram } from "./icons/instagram/Instagram.astro";
+export type { InstagramIconHandle } from "./icons/instagram/element";
+export { default as Twitch } from "./icons/twitch/Twitch.astro";
+export type { TwitchIconHandle } from "./icons/twitch/element";
+export { default as Twitter } from "./icons/twitter/Twitter.astro";
+export type { TwitterIconHandle } from "./icons/twitter/element";
+export { default as Youtube } from "./icons/youtube/Youtube.astro";
+export type { YoutubeIconHandle } from "./icons/youtube/element";
+export { default as Connect } from "./icons/connect/Connect.astro";
+export type { ConnectIconHandle } from "./icons/connect/element";
+export { default as Contrast } from "./icons/contrast/Contrast.astro";
+export type { ContrastIconHandle } from "./icons/contrast/element";

@@ -2,6 +2,46 @@
 
 The numerical comparison and browser-test descriptions below document the earlier validation strategy used during adaptation. Current [validation](../../docs/validation.md) runs without a browser; the comparison fixtures remain available for the user's manual review.
 
+Chrome, Discord, Dribbble, Facebook, Instagram, Twitch, Twitter, Youtube, Connect, and Contrast adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Chrome reveals its inner circle over 300 ms and its spokes after a 300 ms delay. Opacity uses a separate 150 ms delay and the default 300 ms easing. Dribbble, Facebook, Instagram, Twitch, Twitter, and Youtube reuse Activity's 600 ms linear trace, 100 ms opacity, and 400 ms return. Each drawing retains its pinned geometry.
+
+Discord preserves the original 44-unit viewport, stroke width 3, and six translation keyframes over 400 ms with ease-in-out. Its 200 ms return restores each path. Facebook's source has no viewBox, so its nested viewport retains fixed pixel geometry and clipping at every requested size. Contrast holds its 180-degree turn around the left fill-box center using stiffness 80 and damping 12, then uses Motion's implicit rotation spring on return. Connect preserves the four path morphs and opposing plug and socket translations using stiffness 500 and damping 30. Its path morphs use Motion's native SVG attribute animation, as Archive does.
+
+The `/brands-display-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect the class utility import to the local equivalent. React stays confined to comparison pages. Automated validation checks types, catalogue membership, bundles, initial drawings, and validation scripts without a browser. Runtime registration, animation, interruption, stop, replay, cleanup, and visual acceptance remain for manual review.
+
+- [Lucide Animated Chrome, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chrome.tsx)
+- [Lucide Animated Discord, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/discord.tsx)
+- [Lucide Animated Dribbble, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/dribbble.tsx)
+- [Lucide Animated Facebook, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/facebook.tsx)
+- [Lucide Animated Instagram, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/instagram.tsx)
+- [Lucide Animated Twitch, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/twitch.tsx)
+- [Lucide Animated Twitter, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/twitter.tsx)
+- [Lucide Animated Youtube, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/youtube.tsx)
+- [Lucide Animated Connect, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/connect.tsx)
+- [Lucide Animated Contrast, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/contrast.tsx)
+
+Earth, Rabbit, RollerCoaster, SatelliteDish, ShipWheel, Waves, WavesArrowDown, WavesArrowUp, WavesLadder, and Sparkles adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+Earth preserves its 700 ms continent traces after 500 ms and its separate 300 ms circle trace after 100 ms. Opacity retains its independent delays and default durations. Rabbit keeps its 600 ms translations and rotation. RollerCoaster traces its supports immediately and its rail after 200 ms. Supports omit custom values upstream; their non-finite delays behave as zero, which the adapter records explicitly.
+
+SatelliteDish keeps its 1500 ms movement and awaits the 1100 ms fade of both signal arcs before their staggered spring reveals. The existing cancellable sequence prevents a stopped, replayed, removed, or reduced-motion instance from starting a stale reveal. Each new playback releases the previous spring effect before the native fade, so the next reveal reads the displayed opacity instead of a retained spring value. ShipWheel reuses the whole-SVG 180-degree spring with stiffness 50 and damping 10. Waves traces three paths together over 400 ms. WavesArrowDown and WavesArrowUp keep their opposite 500 ms displacement and shaft scale around the bottom-right fill-box origin. WavesLadder retains its 1000 ms ladder rise with opacity hidden for the first half.
+
+Sparkles keeps its 1000 ms main-star movement and currentColor fill. Its `starControls.start("blink", { delay: 1 })` call replaces the variant transition, so its seven opacity keyframes use Motion's implicit 800 ms ease-out after 1000 ms. The declared multiframe spring does not run. The adapter keeps this override and restores fill during cleanup.
+
+The `/nature-navigation-comparison/` fixture executes all ten pinned React sources at 14, 16, 24, and 28 px. Copies only redirect the class utility import to the existing local equivalent. React stays confined to comparison pages. Seek samples the currently active sequence phase; it does not advance SatelliteDish's awaited fade to the next phase. No browser measurements or visual acceptance have been performed for this batch. Runtime registration, animation timing, interrupted spring velocity, stop/replay, and cleanup remain subject to manual review.
+
+- [Lucide Animated Earth, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/earth.tsx)
+- [Lucide Animated Rabbit, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rabbit.tsx)
+- [Lucide Animated RollerCoaster, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/roller-coaster.tsx)
+- [Lucide Animated SatelliteDish, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/satellite-dish.tsx)
+- [Lucide Animated ShipWheel, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ship-wheel.tsx)
+- [Lucide Animated Waves, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves.tsx)
+- [Lucide Animated WavesArrowDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-arrow-down.tsx)
+- [Lucide Animated WavesArrowUp, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-arrow-up.tsx)
+- [Lucide Animated WavesLadder, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/waves-ladder.tsx)
+- [Lucide Animated Sparkles, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/sparkles.tsx)
+
 Accessibility, Activity, SquareActivity, CursorClick, CheckCheck, Link2, CalendarDays, CalendarCog, UsersRound, and BotMessageSquare adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
 
 Accessibility preserves its displaced circle, nested group rotations, delayed full turn, and path morph. Its real idle variant is `initial`. Upstream manual stop uses that variant, but mouse leave targets a nonexistent `normal`. The adapter restores `initial` for either input so the package's idle contract holds. Its path rotates around the top-right fill-box corner.
@@ -516,6 +556,8 @@ Grip, GripHorizontal, and GripVertical adapt Lucide Animated revision `4662fff2b
 
 The 24 folder variants adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26` and use Lucide geometry. Native stroke dashes reproduce progressive drawing and path offsets, including separate opacity timings and delayed returns. Native transform keyframes sample the source tweens and springs in SVG units and preserve interruption velocity. FolderHeart, FolderKanban, FolderKey, FolderLock, and FolderRoot loop until stopped. The shared lifecycle restores each initial drawing on disconnection or reduced motion. The comparison fixture at `/folders-comparison/` runs the original React components at 14, 16, 24, and 28 px. Its vendored sources under `tests/fixtures/astro/src/references/folders/` change only the class utility import. React remains a test fixture dependency.
 
+Folder preserves the classic Lucide SVG path supplied for this package, which matches the outline in the pinned FolderCheck source. Its recipe adapts FolderOpen at the same revision, reducing rotation to 0, -4, 3, -2, and 0 degrees over 400 ms with ease-out per segment. Rotation uses the path's fill-box center. The public adapter generates CSS from one cycle definition and returns from the displayed angle over 200 ms with ease-out. This intentionally replaces the earlier velocity-dependent spring return. The shared CSS adapter and lifecycle provide interruption, hover, manual playback, cleanup, and reduced motion without loading Motion for Folder alone. The `/folder-css/` fixture shares the drawing and entry data with a fixture-only Motion reference retaining the earlier spring return. The Folder row at `/folders-comparison/#folder` runs a modified copy of the pinned FolderOpen React component with the supplied path, reduced angles and duration, and explicit fill-box center. That React reference is an adaptation, not an upstream Folder component, and retains its spring return.
+
 Sun uses the pinned Lucide Animated drawing and recipe. Its eight rays fade in clockwise, each over 300 ms with delays from 100 to 800 ms and Motion's default curve. The center stays visible. Returning restores ray opacity over 300 ms without delay. It reuses the staggered reveal recipe and holds the complete drawing until stopped.
 
 Moon uses Lucide geometry derived from Feather and adapts the pinned Lucide Animated recipe. The drawing rotates through 0, -10, 10, -5, 5, and 0 degrees over 1200 ms with ease-in-out per segment around the SVG center (12, 12). Returning starts from the current pose and uses a 1200 ms ease-in-out tween. Completed playback restores the drawing.
@@ -807,6 +849,33 @@ The directional arrow adapters use these pinned sources. Their copied comparison
 
 The commerce and currency adapters use these pinned sources. Their copied comparison sources change only the class utility import. Cart retains independent scale and repeated vertical timing, including its implicit easeOut curve and continued vertical pulses during the scale return. Currency paths keep their main and secondary assignments, opacity timings, delays, and offsets. Native sampled transforms replace upstream JavaScript transforms. Replays preserve the current transform pose under the shared playback protocol.
 
+- [Lucide Animated AirVent, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/air-vent.tsx)
+- [Lucide Animated AlarmSmoke, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/alarm-smoke.tsx)
+- [Lucide Animated BellElectric, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bell-electric.tsx)
+- [Lucide Animated ConciergeBell, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/concierge-bell.tsx)
+- [Lucide Animated Fan, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/fan.tsx)
+- [Lucide Animated PlugZap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/plug-zap.tsx)
+- [Lucide Animated ShowerHead, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shower-head.tsx)
+- [Lucide Animated WashingMachine, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/washing-machine.tsx)
+- [Lucide Animated Zap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/zap.tsx)
+- [Lucide Animated ZapOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/zap-off.tsx)
+
+The home and energy adapters use these pinned recipes. Their comparison sources change only the class utility import and execute the original React components. ConciergeBell retains its automatic return through a cancellable sequence. ZapOff retains simultaneous paths because its custom values are unused upstream. Native sampled transforms replace React transforms. Visual acceptance and interrupted spring velocity parity remain subject to manual review.
+
+
+- [Lucide Animated Axe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/axe.tsx)
+- [Lucide Animated Pickaxe, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/pickaxe.tsx)
+- [Lucide Animated Gavel, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/gavel.tsx)
+- [Lucide Animated Construction, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/construction.tsx)
+- [Lucide Animated Box, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/box.tsx)
+- [Lucide Animated Boxes, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/boxes.tsx)
+- [Lucide Animated BriefcaseBusiness, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/briefcase-business.tsx)
+- [Lucide Animated HardDriveDownload, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hard-drive-download.tsx)
+- [Lucide Animated HardDriveUpload, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hard-drive-upload.tsx)
+- [Lucide Animated Shredder, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/shredder.tsx)
+
+The tools and logistics adapters and copied React comparisons use these pinned sources. Comparison copies redirect the class utility import. Construction assigns a unique pattern ID per instance in both versions. Its adapter renews the pattern ID on connection so template clones animate independently. HardDriveDownload initializes its declared normal variant in both versions, avoiding an inert first playback. Shredder supplies zero for the final strip's missing custom delay in both versions, avoiding an undefined delay calculation. The recipes retain upstream geometry, springs, keyframes, and timing. React remains confined to comparison pages.
+
 ## Lucide and Feather
 
 ISC License
@@ -852,6 +921,56 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+BookText, GraduationCap, Languages, IdCard, Ticket, ChessBishop, ChessKing, ChessKnight, ChessPawn, and RockingChair adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+BookText retains its independent scale, rotation, and vertical keyframes over 600 ms. GraduationCap keeps its 600 ms cap movement and 800 ms tassel rotation after a 100 ms delay. Its normal variant omits y, so stopping allows the current vertical motion to finish while rotation returns. Languages retains the custom delays of 300, 200, 100, 0, 300, and 300 ms for its opacity and zero-bounce 500 ms path-length spring. The adapter samples that spring every 5 ms and remaps its whole curve from the current path length on an interrupted replay. Its independently controlled paths do not inherit the SVG stagger. Path offset uses the default 300 ms transition without a custom delay. IdCard staggers its four reveals over 300 ms and leaves the frame static. Ticket holds opposite three-unit translations with spring stiffness 300 and damping 20; its right half also rotates four degrees.
+
+ChessBishop keeps its eight-stage diagonal movement and disappearance over 1400 ms. ChessKing keeps its seven-stage 1100 ms rotation and lift. ChessKnight keeps its eight-stage 900 ms jump. ChessPawn preserves independent 1800 ms body rotation and 2400 ms head movement. Their return springs keep the original stiffness and damping. RockingChair repeats its symmetric 1200 ms rotation until stopped, with a 10% 90% SVG origin. The symmetric mirror and reverse cycles are equivalent. Its child spring transitions have no variants to animate; the SVG normal return uses Motion's default spring.
+
+Motion 13.5.1's SVG renderer replaces the source's static transform-origin styles when it builds transforms. The adapters follow those effective centers: view-box center for the chess groups, fill-box center for GraduationCap and its tassel, and fill-box center for Ticket's right half. These choices follow the installed renderer source; browser geometry and interrupted spring velocity parity remain unmeasured.
+
+The `/reading-leisure-comparison/` fixture executes all ten pinned original React components at 14, 16, 24, and 28 px. Copied sources only redirect their class utility import to the local equivalent. React remains confined to comparison fixtures. Automated validation covers static output and selective loading; animation playback, interruption, cleanup, and visual acceptance remain for manual review.
+
+- [Lucide Animated BookText, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/book-text.tsx)
+- [Lucide Animated GraduationCap, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/graduation-cap.tsx)
+- [Lucide Animated Languages, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/languages.tsx)
+- [Lucide Animated IdCard, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/id-card.tsx)
+- [Lucide Animated Ticket, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/ticket.tsx)
+- [Lucide Animated ChessBishop, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-bishop.tsx)
+- [Lucide Animated ChessKing, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-king.tsx)
+- [Lucide Animated ChessKnight, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-knight.tsx)
+- [Lucide Animated ChessPawn, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/chess-pawn.tsx)
+- [Lucide Animated RockingChair, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/rocking-chair.tsx)
+
+- [Lucide Animated Bone, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/bone.tsx)
+- [Lucide Animated Cigarette, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cigarette.tsx)
+- [Lucide Animated CigaretteOff, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/cigarette-off.tsx)
+- [Lucide Animated HatGlasses, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/hat-glasses.tsx)
+- [Lucide Animated SprayCan, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/spray-can.tsx)
+
+The objects and symbols adapters use these pinned recipes. Their comparison copies change only the class utility import and execute the original React components at 14, 16, 24, and 28 px. Bone preserves the effective easeOut curve because its rotate-specific transition replaces the parent circIn easing in Motion 13.5.1. Cigarette retains its 20 and 60 ms smoke delays. CigaretteOff omits custom values upstream, so Motion resolves its invalid delays to zero; both smoke paths start together. Its slash draws over 400 ms. HatGlasses retains the hat's 500 ms keyframes, its fill-box origin at 12px 11px, and the glasses' 280 ms delay and 320 ms movement. SprayCan retains six independently timed opacity loops and its 200 ms return. The common playback API supports replay, stop, reduced motion, and cleanup through the existing lifecycle. Automated validation checks static output and bundles; animation timing, interrupted spring velocity, interactions, and cleanup remain for manual review.
+
+CircleDollarSign, GeorgianLari, PhilippinePeso, SaudiRiyal, TurkishLira, Downvote, Upvote, TrendingUpDown, MessageCircleDashed, and MessageSquareDashed adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.
+
+The currencies keep their 600 ms main path reveals and independent 100 ms opacity transitions. Secondary strokes begin after 500 ms and draw over 400 ms with path offset from one to zero. Their normal return waits 300 ms and lasts 300 ms; main paths return over 400 ms. SaudiRiyal draws all four strokes together. CircleDollarSign keeps its circle static.
+
+Downvote and Upvote hold a one-pixel left translation, a two-pixel downward or upward translation, and a -12-degree rotation. Entry and return use spring stiffness 250 and damping 25 around the SVG center. TrendingUpDown keeps its 500 ms horizontal movement, 400 ms line reveals with path offset from one, and 300 ms arrowhead reveals delayed by 300 ms with path offset from one half. Its normal variants omit SVG movement and path offset, so those tracks continue to finish during a stop. The shared trending mechanism now applies each part recipe to all matching paths; existing TrendingUp and TrendingDown retain their single line and head.
+
+MessageCircleDashed and MessageSquareDashed fade eight and nine segments from zero to one over 300 ms, delayed by 100 ms times their one-based source order. Their normal opacity uses Motion's default 300 ms transition. All ten recipes hold their completed pose until stopped and use the common lifecycle for reduced motion, interruption, replay, and cleanup.
+
+The `/currency-feedback-comparison/` fixture executes all ten original pinned React sources at 14, 16, 24, and 28 px. Copied sources only redirect their class utility import to the local equivalent. React remains confined to comparison fixtures. Automated validation checks types, static drawings, catalogue and bundle relationships. Browser rendering, runtime registration, animation timing, interactions, interruption, cleanup, and visual acceptance remain unverified until manual review.
+
+- [Lucide Animated CircleDollarSign, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/circle-dollar-sign.tsx)
+- [Lucide Animated GeorgianLari, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/georgian-lari.tsx)
+- [Lucide Animated PhilippinePeso, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/philippine-peso.tsx)
+- [Lucide Animated SaudiRiyal, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/saudi-riyal.tsx)
+- [Lucide Animated TurkishLira, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/turkish-lira.tsx)
+- [Lucide Animated Downvote, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/downvote.tsx)
+- [Lucide Animated Upvote, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/upvote.tsx)
+- [Lucide Animated TrendingUpDown, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/trending-up-down.tsx)
+- [Lucide Animated MessageCircleDashed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-circle-dashed.tsx)
+- [Lucide Animated MessageSquareDashed, pinned source](https://github.com/pqoqubbw/icons/blob/4662fff2b60fdcf4751b32013606756caf7c4c26/icons/message-square-dashed.tsx)
 
 ## Lucide Animated
 

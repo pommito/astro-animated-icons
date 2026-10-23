@@ -47,7 +47,7 @@ For each migrated family, compare entry, interrupted replay, stop, stop during r
 
 Measure total reachable JavaScript and CSS for single icons, families, repeated instances, and mixtures that retain Motion. Count shared resources once per route. Report raw and gzip sizes, production build versions, and compression settings. State whether HTML, inline CSS compression, headers, cache, and network costs are included. Do not infer frame pacing from payload sizes or one preparation benchmark.
 
-Preserve dated evidence under [docs/history/](history/). The [migration plan](css-migration-plan.md) links the final evidence and records pending visual acceptance.
+Preserve dated evidence under [docs/history/](history/). The [migration plan](css-migration-plan.md) links the current evidence and records the scope of owner visual acceptance.
 
 ### Recipe manifests and numerical thresholds
 
@@ -60,19 +60,23 @@ pnpm validate
 
 The manifest is [tests/helpers/css-migration-cases.json](../tests/helpers/css-migration-cases.json). It derives membership and finish/replay policies from current recipes and compiler data. Validation rejects a stale manifest or a migrated recipe without comparison coverage. The integrated cases include each migrated icon, families, repeated mixed families, all migrated icons, Motion mixtures, and unused barrel imports. The unused route may retain common wrapper CSS; it must contain no scripts or recipe CSS.
 
+The chevron, capability, and integrated validators share [the CSS route contract](../scripts/css-route-contract.mjs). It checks expected SVG count and parity, exact stylesheet selection and active markers, registrations, script entries, JavaScript budgets, and chunk unions. Family callers keep their compositions and budgets. These checks inspect production output without executing playback.
+
 Numerical comparisons use 14, 16, 24, and 28 px drawings. The current Bell rotation tolerance is 0.03 degrees because its previous Motion helper samples easing while CSS evaluates the curve continuously. Translation and matrix-component tolerance is 0.005; opacity tolerance is 0.001. Inspect all failures and record the measured maximum. Do not enlarge a tolerance to conceal a behavior change. Shared recipe data can hide a wrong value in both engines, so compare extracted data with the preceding definition as well as comparing poses.
 
-The final [dated verification record](history/2026-10-23-css-migration.md) contains actual results and limitations. Its thresholds are comparison tolerances, not visual acceptance.
+The current [integration record](history/2026-10-23-css-integration.md) and original [21-recipe verification](history/2026-10-23-css-migration.md) contain dated results and limitations. Their thresholds are comparison tolerances, not visual acceptance.
 
 ### Reproduce browser and payload evidence
 
 Serve the fixture on an unused port, for example:
 
 ```sh
-ICON_TEST_PORT=45335 pnpm fixture:serve
+ICON_TEST_PORT=45337 pnpm fixture:serve
 ```
 
 Open `/css-migration/` for the acceptance index. Run playback and lifecycle controls on `/css-pilot/`, `/css-chevrons/`, and `/css-capabilities/`; inspect their JSON results. Run independent-template controls on `/css-pilot/templates/` and `/css-capabilities/templates/`. These compare the previous local Motion mechanisms with the public CSS components using shared data and drawings. They do not execute upstream React components.
+
+The three comparison pages have sticky `Play all` and `Stop all` controls, per-icon play and stop buttons, synchronized mouse row hover, and collapsible numerical checks. Folder has a separate `/folder-css/` comparison. Its entry shares recipe data with the Motion reference; its intentional 200 ms CSS return differs from the reference's spring and has separate owner acceptance in PR #92.
 
 On `/css-migration/media/`, disable reduced motion and select `Prepare paused entry`. Enable reduced motion in DevTools and select `Check reduced motion`. Disable it again and select `Check restored playback`. This uses native matchMedia with browser media emulation. Report it separately from matchMedia stubs and operating-system preference changes.
 

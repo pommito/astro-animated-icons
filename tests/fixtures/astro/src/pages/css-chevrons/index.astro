@@ -1,30 +1,30 @@
 ---
 import { chevrons } from "../../css-chevron-catalogue";
+import ComparisonPage from "../../components/ComparisonPage.astro";
+import ComparisonSection from "../../components/ComparisonSection.astro";
 ---
-<html lang="en">
-  <head><meta charset="utf-8" /><title>Finite chevron CSS comparisons</title></head>
-  <body>
-    <h1>Finite chevron CSS comparisons</h1>
+<ComparisonPage title="Finite chevron CSS comparisons">
+    {chevrons.map(({ slug, name, Reference, Managed }) => <ComparisonSection slug={slug} name={name}>
+      <table><thead><tr><th>Size</th><th>Motion reference</th><th>Public CSS icon</th></tr></thead>
+        <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
+          <th scope="row">{size} px</th><td><Reference size={size} controlled data-sample /></td><td><Managed size={size} controlled data-sample /></td>
+        </tr>)}</tbody>
+      </table>
+      <a href="#destination" data-parent><Managed /> Parent hover</a>
+    </ComparisonSection>)}
+    <p id="destination">Link destination</p>
+
+  <Fragment slot="checks">
+
     <p>Each public CSS icon shares its drawing and cycle data with a fixture-only Motion reference using the previous chevron mechanism. Comparisons sample both translation axes at 14, 16, 24, and 28 px. The tolerance is 0.005 viewBox units. Passing numerical checks does not grant visual acceptance.</p>
-    <button id="play" type="button">Play both</button>
-    <button id="stop" type="button">Stop both</button>
     <button id="parity" type="button">Compare playback</button>
     <output id="parity-result"></output>
     <button id="runtime" type="button">Check synthetic lifecycle</button>
     <output id="runtime-result"></output>
     <p>The lifecycle probes dispatch synthetic pointer events and replace matchMedia temporarily. Real touch hardware and operating-system preferences require manual review.</p>
-    {chevrons.map(({ slug, name, Reference, Managed }) => <section data-kind={slug}>
-      <h2>{name}</h2>
-      <table><thead><tr><th>Size</th><th>Motion reference</th><th>Public CSS icon</th></tr></thead>
-        <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
-          <th>{size} px</th><td><Reference size={size} controlled data-sample /></td><td><Managed size={size} controlled data-sample /></td>
-        </tr>)}</tbody>
-      </table>
-      <a href="#destination" data-parent><Managed /> Parent hover</a>
-    </section>)}
-    <p id="destination">Link destination</p>
-  </body>
-</html>
+  </Fragment>
+</ComparisonPage>
+
 <script>
   import "../../css-chevron-checks";
 </script>

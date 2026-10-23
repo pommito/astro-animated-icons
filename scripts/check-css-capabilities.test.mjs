@@ -16,6 +16,7 @@ function change(name, transform, expected) {
   finally { writeFileSync(path, original); }
 }
 test("capabilities preserve drawings, selected styles and exact chunk unions", () => verifyCssCapabilities(output, () => {}));
-test("opacity delay drift is rejected", () => change("calendar-days", html => html.replace("animation-delay:0.1s", "animation-delay:0.2s"), /CSS agrees with cycle calendar-days/));
-test("opacity return easing drift is rejected", () => change("circle-dashed", html => html.replaceAll("cubic-bezier(0.25,0.1,0.35,1)", "linear"), /CSS agrees with cycle circle-dashed/));
-test("group rotation drift is rejected", () => change("circle-help", html => html.replace("rotate(-10deg)", "rotate(-20deg)"), /CSS agrees with cycle circle-help/));
+test("opacity delay drift is rejected", () => change("calendar-days", html => html.replace("animation-delay:0.1s", "animation-delay:0.2s"), /exact generated CSS selection/));
+test("opacity return easing drift is rejected", () => change("circle-dashed", html => html.replaceAll("cubic-bezier(0.25,0.1,0.35,1)", "linear"), /exact generated CSS selection/));
+test("group rotation drift is rejected", () => change("circle-help", html => html.replace("rotate(-10deg)", "rotate(-20deg)"), /exact generated CSS selection/));
+test("an unmarked capability sheet is rejected", () => change("calendar-days", html => html.replace('data-grave-cycle-style="calendar-days"', ''), /one active sheet marker for calendar-days/));

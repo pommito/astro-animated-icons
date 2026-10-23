@@ -1,0 +1,32 @@
+Result (1527 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+Result (2072 files):
+- 0 errors
+- 0 warnings
+- 0 hints
+Types: 71.027 seconds
+Fixture: 0.766 seconds
+Verified 470 icons across 944 bundle cases.
+Selective loading verified: selected generated CSS, unused icon behavior excluded.
+Bundles: 0.810 seconds
+Verified 7 CSS parity routes: SVG parity, selective generated CSS, resource reuse, combined chunk unions, managed budget, and unchanged Motion loader.
+CSS pilot: 0.419 seconds
+Verified 16 chevron routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
+CSS chevrons: 0.416 seconds
+Verified 15 capability routes: drawings, selected generated styles, registrations, deduplication, and chunk unions.
+CSS capabilities: 0.398 seconds
+Verified 22 migrated recipes across 32 integrated compositions, including unused barrel imports and repeated mixed families.
+CSS migration: 0.773 seconds
+Verified 470 production drawings and native controls; 470 public exports have recorded drawing baselines.
+Drawings: 0.501 seconds
+# tests 52
+# pass 52
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16593.947333
+Validator tests: 16.630 seconds
+Validation: 91.743 seconds

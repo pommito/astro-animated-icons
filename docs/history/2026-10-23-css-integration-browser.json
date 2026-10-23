@@ -1,0 +1,38 @@
+{
+  "browser": "In-app Chromium 155 on macOS",
+  "preview": "http://127.0.0.1:45336",
+  "scope": "Final integrated production fixture after review corrections. Existing visible comparison controls invoked through the in-app browser. No browser dependency added to validation.",
+  "chevrons": {
+    "assertions": 4836,
+    "snapshots": 3276,
+    "failures": [],
+    "maxTranslationError": 0,
+    "rows": 52,
+    "syntheticChecks": 182
+  },
+  "capabilities": {
+    "assertions": 4452,
+    "snapshots": 2108,
+    "failures": [],
+    "maxMatrixError": 0.0007800000000000029,
+    "maxOpacityError": 0,
+    "rows": 28,
+    "syntheticChecks": 98
+  },
+  "pilot": {
+    "assertions": 592,
+    "snapshots": 496,
+    "failures": [],
+    "maxAngleError": 0.013984397194736431,
+    "maxTranslationError": 0,
+    "syntheticChecks": 14
+  },
+  "consoleErrors": [],
+  "syntheticFailures": [],
+  "limits": [
+    "Synthetic pointer events and matchMedia stubs do not establish physical touch or operating-system preference changes.",
+    "Safari, Firefox, frame pacing and preparation timing were not tested in this continuation.",
+    "Independent template and DevTools media-emulation results remain historical evidence from the original stages, not repeated here.",
+    "Owner visual acceptance is separately recorded in documentation commit a15da807152638b99161abfcca73a92d484b78b7. Folder acceptance is recorded in PR #92."
+  ]
+}

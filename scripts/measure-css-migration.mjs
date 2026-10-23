@@ -1,29 +1,16 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { arch, platform, release, cpus } from "node:os";
 import { fileURLToPath } from "node:url";
-import { gzipSync } from "node:zlib";
-import { inspectRoute } from "./inspect-bundle.mjs";
+import { measureRoute } from "./measure-resources.mjs";
 import { migration } from "./check-css-migration.mjs";
 
-const output = new URL("../tests/fixtures/astro/dist/", import.meta.url);
-const sizes = sources => ({ raw: sources.reduce((sum, source) => sum + Buffer.byteLength(source), 0), gzip: sources.reduce((sum, source) => sum + gzipSync(source).length, 0) });
 export function measureMigration(mode) {
   const cache = new Map();
-  return Object.fromEntries(Object.keys(migration.cases).map(name => {
-    const route = `css-migration/${mode}/${name}/index.html`;
-    const result = inspectRoute(output, route, () => {}, cache);
-    const html = readFileSync(new URL(route, output), "utf8");
-    const externalCSS = new Map([...html.matchAll(/<link\b([^>]*)>/g)].filter(([, attributes]) => /\brel="stylesheet"/.test(attributes)).map(([, attributes]) => {
-      const href = attributes.match(/\bhref="([^"]+)"/)[1];
-      return [href, readFileSync(new URL(href.slice(1), output), "utf8")];
-    }));
-    const javascript = sizes([...result.chunks.values()].map(chunk => chunk.source).concat(result.inline));
-    const css = sizes(result.styles);
-    const total = { raw: javascript.raw + css.raw, gzip: javascript.gzip + css.gzip };
-    const page = sizes([html, ...result.chunks.values()].map(value => typeof value === "string" ? value : value.source).concat([...externalCSS.values()]));
-    return [name, { javascript, css, total, html: sizes([html]), page, chunks: [...result.chunks.keys()], externalCSS: [...externalCSS.keys()] }];
-  }));
+  return Object.fromEntries(Object.keys(migration.cases).map(name => [name,
+    measureRoute(`css-migration/${mode}/${name}/index.html`, { cache, includePage: true }),
+  ]));
 }
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const modes = Object.fromEntries(["baseline", "managed"].map(mode => [mode, measureMigration(mode)]));
   const savings = Object.fromEntries(Object.keys(migration.cases).map(name => [name, Object.fromEntries(["total", "page"].map(field => [field, { raw: modes.baseline[name][field].raw - modes.managed[name][field].raw, gzip: modes.baseline[name][field].gzip - modes.managed[name][field].gzip }]))]));

@@ -1,0 +1,18 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-trending-up-down">
+  <g>
+    <path d="M21 21 14.828 14.828" pathLength="1" data-part="line" />
+    <path d="M21 16v5h-5" pathLength="1" data-part="head" />
+    <path d="m21 3-9 9-4-4-6 6" pathLength="1" data-part="line" />
+    <path d="M21 8V3h-5" pathLength="1" data-part="head" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

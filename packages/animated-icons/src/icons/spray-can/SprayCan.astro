@@ -1,0 +1,25 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-spray-can">
+  <g>
+    <rect height="4" width="4" x="15" y="5" />
+    <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
+    <path d="m13 14 8-2" />
+    <path d="m13 19 8-2" />
+    <g>
+      <path d="M11 7h.01" data-dot="0" />
+      <path d="M7 5h.01" data-dot="1" />
+      <path d="M7 9h.01" data-dot="2" />
+      <path d="M3 3h.01" data-dot="3" />
+      <path d="M3 7h.01" data-dot="4" />
+      <path d="M3 11h.01" data-dot="5" />
+    </g>
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

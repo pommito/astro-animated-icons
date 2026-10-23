@@ -1,0 +1,23 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-ship-wheel">
+  <g>
+    <circle cx="12" cy="12" r="8" data-part="0" />
+    <path d="M12 2v7.5" data-part="1" />
+    <path d="m19 5-5.23 5.23" data-part="2" />
+    <path d="M22 12h-7.5" data-part="3" />
+    <path d="m19 19-5.23-5.23" data-part="4" />
+    <path d="M12 14.5V22" data-part="5" />
+    <path d="M10.23 13.77 5 19" data-part="6" />
+    <path d="M9.5 12H2" data-part="7" />
+    <path d="M10.23 10.23 5 5" data-part="8" />
+    <circle cx="12" cy="12" r="2.5" data-part="9" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

@@ -1,0 +1,20 @@
+---
+import Icon, { type IconProps } from "../../Icon.astro";
+type Props = IconProps;
+---
+
+<Icon {...Astro.props} tag="grave-roller-coaster">
+  <g>
+    <path d="M6 19V5" data-part="0" pathLength="1" />
+    <path d="M10 19V6.8" data-part="1" pathLength="1" />
+    <path d="M14 19v-7.8" data-part="2" pathLength="1" />
+    <path d="M18 5v4" data-part="3" pathLength="1" />
+    <path d="M18 19v-6" data-part="4" pathLength="1" />
+    <path d="M22 19V9" data-part="5" pathLength="1" />
+    <path d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65" data-part="6" pathLength="1" />
+  </g>
+</Icon>
+
+<script>
+  import "./element";
+</script>

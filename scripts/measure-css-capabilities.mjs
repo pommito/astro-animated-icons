@@ -1,7 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { gzipSync } from "node:zlib";
-import { inspectRoute } from "./inspect-bundle.mjs";
+import { measureRoute } from "./measure-resources.mjs";
 
 
 export const capabilitySlugs = ["folder-down", "folder-up", "folder-input", "folder-output", "circle-help", "calendar-days", "circle-dashed"];
@@ -9,15 +8,9 @@ export const capabilityCases = [...capabilitySlugs, "family", "folders", "opacit
 export const selectedSlugs = name => name === "repeated" ? [capabilitySlugs[0]] : ["family", "mixed"].includes(name) ? capabilitySlugs : name.startsWith("folders") ? capabilitySlugs.slice(0, 4) : name.startsWith("opacity") ? capabilitySlugs.slice(5) : name === "group" ? ["circle-help"] : [name];
 export const output = new URL("../tests/fixtures/astro/dist/", import.meta.url);
 export function measureCapabilities(mode) {
-  return Object.fromEntries(capabilityCases.map(name => {
-    const route = `css-capabilities/${mode}/${name}/index.html`;
-    const result = inspectRoute(output, route, () => {}, new Map());
-    const sizes = sources => ({ raw: sources.reduce((sum, source) => sum + Buffer.byteLength(source), 0), gzip: sources.reduce((sum, source) => sum + gzipSync(source).length, 0) });
-    const javascript = sizes([...result.chunks.values()].map(chunk => chunk.source).concat(result.inline));
-    const css = sizes(result.styles);
-    return [name, { javascript, css, total: { raw: javascript.raw + css.raw, gzip: javascript.gzip + css.gzip }, chunks: [...result.chunks.keys()] }];
-  }));
+  return Object.fromEntries(capabilityCases.map(name => [name, measureRoute(`css-capabilities/${mode}/${name}/index.html`)]));
 }
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const modes = Object.fromEntries(["baseline", "managed"].map(mode => [mode, measureCapabilities(mode)]));
   const savings = Object.fromEntries(capabilityCases.map(name => [name, { raw: modes.baseline[name].total.raw - modes.managed[name].total.raw, gzip: modes.baseline[name].total.gzip - modes.managed[name].total.gzip }]));

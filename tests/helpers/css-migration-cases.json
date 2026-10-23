@@ -106,6 +106,14 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "folder",
+      "name": "Folder",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "folder-css"
+    },
+    {
       "slug": "folder-down",
       "name": "FolderDown",
       "engine": "finite-transform-cycle",
@@ -210,6 +218,9 @@
     "circle-help": [
       "circle-help"
     ],
+    "folder": [
+      "folder"
+    ],
     "folder-down": [
       "folder-down"
     ],
@@ -250,6 +261,7 @@
       "square-chevron-up"
     ],
     "folders": [
+      "folder",
       "folder-down",
       "folder-input",
       "folder-output",
@@ -273,6 +285,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "folder",
       "folder-down",
       "folder-input",
       "folder-output",
@@ -322,6 +335,9 @@
       "circle-help",
       "circle-help",
       "circle-help",
+      "folder",
+      "folder",
+      "folder",
       "folder-down",
       "folder-down",
       "folder-down",
@@ -361,6 +377,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "folder",
       "folder-down",
       "folder-input",
       "folder-output",
@@ -385,6 +402,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "folder",
       "folder-down",
       "folder-input",
       "folder-output",

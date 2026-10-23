@@ -1,0 +1,16 @@
+---
+import CssIcon from "../../CssIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import Drawing from "./Drawing.astro";
+import { folderCycle } from "./cycle";
+
+type Props = IconProps;
+---
+
+<CssIcon cycle={folderCycle} {...Astro.props} tag="grave-folder">
+  <Drawing />
+</CssIcon>
+
+<script>
+  import "./element";
+</script>
