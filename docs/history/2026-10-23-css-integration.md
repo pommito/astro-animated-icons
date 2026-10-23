@@ -71,3 +71,15 @@ Both duplication findings were corrected. The follow-up review found no remainin
 The review found no missing, incorrect or out-of-scope requirement for #84, #85 or #86. It confirmed preserved playback policies, retained Motion recipes and complete validation coverage. The follow-up confirmed that shared proof helpers preserve measurement conventions and all 14 synthetic outcomes. The reviewer did not rerun browser checks or full validation.
 
 Both axes have zero remaining findings. The owner had already accepted all 21 migration recipes in the documentation stage at [a15da807](https://github.com/pommito/astro-animated-icons/blob/a15da807152638b99161abfcca73a92d484b78b7/docs/history/2026-10-23-css-chevron-acceptance.md), with [capability acceptance](https://github.com/pommito/astro-animated-icons/blob/a15da807152638b99161abfcca73a92d484b78b7/docs/history/2026-10-23-css-capability-acceptance.md). Folder has separate acceptance in [PR #92](https://github.com/pommito/astro-animated-icons/pull/92). This continuation adds no visual approval, merge or issue closure.
+
+## Shared validation contract follow-up
+
+The PR review found a third duplication in the CSS route validators. `scripts/css-route-contract.mjs` now owns the common SVG count and parity checks, exact generated styles and markers, script entries, registrations, reference exclusion, JavaScript budgets and chunk unions. The three callers keep their family compositions, repeated counts and budgets. A fresh chunk cache belongs to each verification run, preserving the negative tests' ability to read modified files.
+
+The 17 existing focused tests passed before extraction. Two added cases remove a stylesheet marker from a chevron or opacity route. Each first failed with `Missing expected exception`, then passed after its family adopted the common contract. All 19 focused tests pass after extraction. Their entry points remain the existing HTML validators.
+
+`rtk pnpm validate` passed in 91.743 seconds after the correction, with zero type diagnostics, 470 drawings, 944 bundle cases, 22 CSS recipes across 32 integrated compositions and all 52 Node tests. The [follow-up validation excerpt](2026-10-23-css-route-contract-validation.txt) records the output. `rtk proxy git diff --cached --check` passed.
+
+Both independent follow-up reviewers inspected the correction from `07d2162d47003d83748b36dc597370059af61475` to immutable tree `5292f8ca7e0839bc1b7241d1a76563ef6c424772`. Standards confirmed that the duplication finding is resolved. Spec found no lost drawing, loading, deduplication, budget, union or catalogue guarantee. Both axes have zero remaining findings.
+
+The correction changes validation scripts and tests only. `git diff` confirmed no package runtime, production fixture or drawing-data change. No browser or payload measurement was repeated for this correction. The earlier browser evidence, owner acceptance and stated browser/hardware limits remain unchanged.

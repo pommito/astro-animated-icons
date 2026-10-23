@@ -17,7 +17,8 @@ function change(name, transform, expected) {
   finally { writeFileSync(path, original); }
 }
 test("finite chevrons satisfy drawing and loading contracts", () => verifyCssChevrons(output, () => {}));
-test("vertical transform drift is rejected", () => change("chevron-up", html => html.replace("translateY(-2px)", "translateX(-2px)"), /CSS agrees with cycle chevron-up/));
-test("independent return duration drift is rejected", () => change("chevron-first", html => html.replace("animation-duration:0.3s", "animation-duration:0.6s"), /CSS agrees with cycle chevron-first/));
-test("unrendered chevron CSS is rejected", () => change("chevron-left", html => html + '<style>@keyframes grave-cycle-chevron-up-entry{to{transform:none}}</style>', /selected CSS for chevron-up/));
-test("repeated cycle styles are rejected", () => change("repeated", html => html + html.match(/<style[^>]*>@keyframes grave-cycle[\s\S]*?<\/style>/)[0], /one sheet per rendered cycle/));
+test("vertical transform drift is rejected", () => change("chevron-up", html => html.replace("translateY(-2px)", "translateX(-2px)"), /exact generated CSS selection/));
+test("independent return duration drift is rejected", () => change("chevron-first", html => html.replace("animation-duration:0.3s", "animation-duration:0.6s"), /exact generated CSS selection/));
+test("unrendered chevron CSS is rejected", () => change("chevron-left", html => html + '<style>@keyframes grave-cycle-chevron-up-entry{to{transform:none}}</style>', /exact generated CSS selection/));
+test("repeated cycle styles are rejected", () => change("repeated", html => html + html.match(/<style[^>]*>@keyframes grave-cycle[\s\S]*?<\/style>/)[0], /exact generated CSS selection and deduplication/));
+test("an unmarked chevron sheet is rejected", () => change("chevron-down", html => html.replace('data-grave-cycle-style="chevron-down"', ''), /one active sheet marker for chevron-down/));
