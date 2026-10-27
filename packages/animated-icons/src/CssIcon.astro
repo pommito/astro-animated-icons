@@ -2,6 +2,7 @@
 import Icon, { type IconProps } from "./Icon.astro";
 import type { FiniteTransformCycle } from "./shared/finite-transform-cycle";
 import { cycleCSS } from "./shared/cycle-css";
+import { serializeRecipe } from "./shared/recipe-data";
 
 interface Props extends IconProps {
   cycle: FiniteTransformCycle;
@@ -14,6 +15,9 @@ const include = !seen.has(cycle.id);
 seen.add(cycle.id);
 ---
 {include && <style is:inline data-grave-cycle-style={cycle.id} set:html={cycleCSS(cycle)} />}
-<Icon {...props} tag={tag} data-css-cycle={cycle.id}>
+<Icon {...props} tag={tag} data-css-cycle={cycle.id} data-grave-cycle-recipe={serializeRecipe(cycle)}>
   <slot />
 </Icon>
+<script>
+  import "./shared/register-css-cycle";
+</script>

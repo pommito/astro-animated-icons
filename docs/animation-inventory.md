@@ -15,7 +15,7 @@ The inventory uses the public Astro exports as its membership list. It emits one
 
 `schemaVersion` is currently `1`. Output contains no timestamp or absolute checkout path. Icons, source paths and queue groups use stable ordering. Identical sources produce identical JSON.
 
-Each icon records its export name, slug, tag, definition, Astro adapter, detected engine, mechanisms, source paths, classification, migration state, lifecycle contract and uncertainty. Engine detection checks the adapter and registration dependency graph for the CSS cycle and opacity adapters. It describes current wiring, not migration eligibility.
+Each icon records its export name, slug, tag, definition, Astro adapter, registration entry, detected engine, mechanisms, source paths, classification, migration state, lifecycle contract and uncertainty. CSS registration entries point to the shared cycle or opacity bootstrap and include that dependency graph. Motion entries remain icon-local. Engine detection checks the adapter and registration dependency graph for the CSS cycle and opacity adapters. It describes current wiring, not migration eligibility.
 
 `sources` maps repository-relative paths to their SHA256, imports, resolved dependencies and evidence lists. Each evidence item contains a one-based source line and the original expression. Evidence includes target properties and selectors, timing, offsets, repetition, completion and replay settings, constants, calls, geometry measurements, spring/value calls and custom sequencing. Expressions such as `returning ? ...`, `Infinity`, computed delays and property overrides stay intact. The command never executes recipe code.
 

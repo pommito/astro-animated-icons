@@ -6,6 +6,7 @@ import { gzipSync } from "node:zlib";
 import { readCatalog } from "./catalog.mjs";
 import { generatedCSS as transformCSS } from "./css-cycles.mjs";
 import { generatedOpacityCSS } from "./css-opacity.mjs";
+import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
 const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS]);
 
@@ -1069,8 +1070,8 @@ export function verifyBundles(output, log = console.log) {
 
   const cases = [
     { route: "plain", icons: [], entries: 0, inline: 0 },
-    ...Object.entries(singleRoutes).map(([icon, route]) => ({ route, icons: [icon], entries: 1, inline: 0 })),
-    ...combinations.map(([route, ...icons]) => ({ route, icons, entries: icons.length, inline: 0 })),
+    ...Object.entries(singleRoutes).map(([icon, route]) => ({ route, icons: [icon], entries: registrationEntries([icon]), inline: 0 })),
+    ...combinations.map(([route, ...icons]) => ({ route, icons, entries: registrationEntries(icons), inline: 0 })),
     { route: "selective", icons: ["arrow-left"], entries: 1, inline: 0 },
     { route: "probe", icons: ["bundle-probe"], entries: 0, inline: 1 },
     { route: "", icons: ["arrow-left"], entries: 2, inline: 1 },
@@ -1089,14 +1090,7 @@ export function verifyBundles(output, log = console.log) {
   for (const expected of cases) {
     const actual = routes.get(expected.route);
     const context = expected.route || "index";
-    const expectedTags = new Set(expected.icons.map((icon) => `grave-${icon}`));
-    const actualTags = new Set([...actual.source.matchAll(/["'`](grave-[a-z0-9]+(?:-[a-z0-9]+)*)["'`]/g)].map((match) => match[1]));
-    for (const tag of actualTags) {
-      assert.ok(expectedTags.has(tag), `${context}: unused registration ${tag} must not load`);
-    }
-    for (const tag of expectedTags) {
-      assert.ok(actualTags.has(tag), `${context}: expected registration ${tag} is missing`);
-    }
+    verifyRegistrations(actual, readFileSync(new URL((expected.route ? expected.route + "/" : "") + "index.html", output), "utf8"), expected.icons, context);
     assert.equal(actual.entries.length, expected.entries, `${context}: external entry count`);
     assert.equal(actual.inline.length, expected.inline, `${context}: inline script count`);
     const sheets = expected.icons.filter(icon => generatedCSS.has(icon)).map(icon => generatedCSS.get(icon));

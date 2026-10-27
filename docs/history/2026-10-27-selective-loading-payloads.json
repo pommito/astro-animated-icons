@@ -1,0 +1,3671 @@
+{
+  "baselineRevision": "cd14772c0818dc4e31116211e15b32c645c2285d",
+  "baselineReport": "2026-10-27-page-loading-baseline.json",
+  "environment": {
+    "node": "v22.20.0",
+    "packageManager": "pnpm@12.5.1",
+    "astro": "7.3.8",
+    "motion": "13.5.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M1 Pro"
+  },
+  "assumptions": {
+    "cold": "Reachable static and literal dynamic imports count once per URL. These are resource counts, not observed browser requests.",
+    "compression": "Node zlib gzip defaults per external resource. total compresses inline styles/scripts separately. page compresses HTML with inline content once plus external JS/CSS.",
+    "warm": "A second document navigation in the same build reuses every external URL reached by the first route, with no eviction or revalidation. HTML is fetched again. This is a cache model, not a browser measurement.",
+    "modules": "Rollup renderedLength identifies source contributions before final minification. It is not an additive allocation of final raw or gzip bytes. Mixed chunks may contain several roles.",
+    "minimal": "The isolated project contains only the measurement routes, uses the same public barrel imports and installed package links, and has no reference implementation. It is not a packed-package installation.",
+    "excluded": "Headers, latency, Brotli, HTTP cache policy, cross-build cache reuse, frame pacing, preparation timing and browser behavior."
+  },
+  "cases": {
+    "one": [
+      "circle-dashed"
+    ],
+    "four": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days"
+    ],
+    "ten": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days",
+      "circle-dashed",
+      "folder",
+      "circle-help",
+      "chevron-down",
+      "folder-up",
+      "square-chevron-right"
+    ],
+    "legacy-21": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up"
+    ],
+    "all": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up"
+    ],
+    "repeated": [
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed"
+    ],
+    "repeated-all": [
+      "bell",
+      "bell",
+      "bell",
+      "calendar-days",
+      "calendar-days",
+      "calendar-days",
+      "chevron-down",
+      "chevron-down",
+      "chevron-down",
+      "chevron-first",
+      "chevron-first",
+      "chevron-first",
+      "chevron-left",
+      "chevron-left",
+      "chevron-left",
+      "chevron-right",
+      "chevron-right",
+      "chevron-right",
+      "chevron-up",
+      "chevron-up",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-down",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-left",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-right",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-chevron-up",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-dashed",
+      "circle-help",
+      "circle-help",
+      "circle-help",
+      "folder",
+      "folder",
+      "folder",
+      "folder-down",
+      "folder-down",
+      "folder-down",
+      "folder-input",
+      "folder-input",
+      "folder-input",
+      "folder-output",
+      "folder-output",
+      "folder-output",
+      "folder-up",
+      "folder-up",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-down",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-left",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-right",
+      "square-chevron-right",
+      "square-chevron-up",
+      "square-chevron-up",
+      "square-chevron-up"
+    ],
+    "loader": [
+      "loader-circle"
+    ],
+    "one-loader": [
+      "circle-dashed",
+      "loader-circle"
+    ],
+    "four-loader": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days",
+      "loader-circle"
+    ],
+    "ten-loader": [
+      "bell",
+      "chevron-right",
+      "folder-down",
+      "calendar-days",
+      "circle-dashed",
+      "folder",
+      "circle-help",
+      "chevron-down",
+      "folder-up",
+      "square-chevron-right",
+      "loader-circle"
+    ],
+    "all-loader": [
+      "bell",
+      "calendar-days",
+      "chevron-down",
+      "chevron-first",
+      "chevron-left",
+      "chevron-right",
+      "chevron-up",
+      "circle-chevron-down",
+      "circle-chevron-left",
+      "circle-chevron-right",
+      "circle-chevron-up",
+      "circle-dashed",
+      "circle-help",
+      "folder",
+      "folder-down",
+      "folder-input",
+      "folder-output",
+      "folder-up",
+      "square-chevron-down",
+      "square-chevron-left",
+      "square-chevron-right",
+      "square-chevron-up",
+      "loader-circle"
+    ],
+    "unused": []
+  },
+  "modes": {
+    "full": {
+      "routes": {
+        "one": {
+          "icons": 1,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 2128,
+            "gzip": 240
+          },
+          "javascript": {
+            "raw": 5312,
+            "gzip": 2554
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 12154,
+            "gzip": 3147
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js"
+          ],
+          "html": {
+            "raw": 10114,
+            "gzip": 1224
+          },
+          "page": {
+            "raw": 15426,
+            "gzip": 3778
+          },
+          "externalCSS": []
+        },
+        "four": {
+          "icons": 4,
+          "distinctIcons": 4,
+          "entries": 2,
+          "javascriptFiles": 6,
+          "inlineScripts": 0,
+          "registrations": 4,
+          "recipeData": {
+            "raw": 3120,
+            "gzip": 810
+          },
+          "javascript": {
+            "raw": 7426,
+            "gzip": 3507
+          },
+          "css": {
+            "raw": 8046,
+            "gzip": 1441
+          },
+          "total": {
+            "raw": 15472,
+            "gzip": 4948
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 14438,
+            "gzip": 1923
+          },
+          "page": {
+            "raw": 21864,
+            "gzip": 5430
+          },
+          "externalCSS": []
+        },
+        "ten": {
+          "icons": 10,
+          "distinctIcons": 10,
+          "entries": 2,
+          "javascriptFiles": 6,
+          "inlineScripts": 0,
+          "registrations": 10,
+          "recipeData": {
+            "raw": 7127,
+            "gzip": 2014
+          },
+          "javascript": {
+            "raw": 7426,
+            "gzip": 3507
+          },
+          "css": {
+            "raw": 18684,
+            "gzip": 3343
+          },
+          "total": {
+            "raw": 26110,
+            "gzip": 6850
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 32680,
+            "gzip": 2996
+          },
+          "page": {
+            "raw": 40106,
+            "gzip": 6503
+          },
+          "externalCSS": []
+        },
+        "legacy-21": {
+          "icons": 21,
+          "distinctIcons": 21,
+          "entries": 2,
+          "javascriptFiles": 6,
+          "inlineScripts": 0,
+          "registrations": 21,
+          "recipeData": {
+            "raw": 11068,
+            "gzip": 4071
+          },
+          "javascript": {
+            "raw": 7426,
+            "gzip": 3507
+          },
+          "css": {
+            "raw": 27378,
+            "gzip": 6430
+          },
+          "total": {
+            "raw": 34804,
+            "gzip": 9937
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 50831,
+            "gzip": 3943
+          },
+          "page": {
+            "raw": 58257,
+            "gzip": 7450
+          },
+          "externalCSS": []
+        },
+        "all": {
+          "icons": 22,
+          "distinctIcons": 22,
+          "entries": 2,
+          "javascriptFiles": 6,
+          "inlineScripts": 0,
+          "registrations": 22,
+          "recipeData": {
+            "raw": 11512,
+            "gzip": 4281
+          },
+          "javascript": {
+            "raw": 7426,
+            "gzip": 3507
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 35600,
+            "gzip": 10232
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 52637,
+            "gzip": 4049
+          },
+          "page": {
+            "raw": 60063,
+            "gzip": 7556
+          },
+          "externalCSS": []
+        },
+        "repeated": {
+          "icons": 20,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 42560,
+            "gzip": 4800
+          },
+          "javascript": {
+            "raw": 5312,
+            "gzip": 2554
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 12154,
+            "gzip": 3147
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js"
+          ],
+          "html": {
+            "raw": 66525,
+            "gzip": 1778
+          },
+          "page": {
+            "raw": 71837,
+            "gzip": 4332
+          },
+          "externalCSS": []
+        },
+        "repeated-all": {
+          "icons": 66,
+          "distinctIcons": 22,
+          "entries": 2,
+          "javascriptFiles": 6,
+          "inlineScripts": 0,
+          "registrations": 22,
+          "recipeData": {
+            "raw": 34536,
+            "gzip": 12843
+          },
+          "javascript": {
+            "raw": 7426,
+            "gzip": 3507
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 35600,
+            "gzip": 10232
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 98453,
+            "gzip": 4798
+          },
+          "page": {
+            "raw": 105879,
+            "gzip": 8305
+          },
+          "externalCSS": []
+        },
+        "loader": {
+          "icons": 1,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 15,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "javascript": {
+            "raw": 71443,
+            "gzip": 30031
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 71567,
+            "gzip": 30147
+          },
+          "chunks": [
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 781,
+            "gzip": 500
+          },
+          "page": {
+            "raw": 72224,
+            "gzip": 30531
+          },
+          "externalCSS": []
+        },
+        "one-loader": {
+          "icons": 2,
+          "distinctIcons": 2,
+          "entries": 2,
+          "javascriptFiles": 18,
+          "inlineScripts": 0,
+          "registrations": 2,
+          "recipeData": {
+            "raw": 2128,
+            "gzip": 240
+          },
+          "javascript": {
+            "raw": 75307,
+            "gzip": 31929
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 82149,
+            "gzip": 32522
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 10631,
+            "gzip": 1319
+          },
+          "page": {
+            "raw": 85938,
+            "gzip": 33248
+          },
+          "externalCSS": []
+        },
+        "four-loader": {
+          "icons": 5,
+          "distinctIcons": 5,
+          "entries": 3,
+          "javascriptFiles": 20,
+          "inlineScripts": 0,
+          "registrations": 5,
+          "recipeData": {
+            "raw": 3120,
+            "gzip": 810
+          },
+          "javascript": {
+            "raw": 77421,
+            "gzip": 32882
+          },
+          "css": {
+            "raw": 8046,
+            "gzip": 1441
+          },
+          "total": {
+            "raw": 85467,
+            "gzip": 34323
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 14955,
+            "gzip": 1994
+          },
+          "page": {
+            "raw": 92376,
+            "gzip": 34876
+          },
+          "externalCSS": []
+        },
+        "ten-loader": {
+          "icons": 11,
+          "distinctIcons": 11,
+          "entries": 3,
+          "javascriptFiles": 20,
+          "inlineScripts": 0,
+          "registrations": 11,
+          "recipeData": {
+            "raw": 7127,
+            "gzip": 2014
+          },
+          "javascript": {
+            "raw": 77421,
+            "gzip": 32882
+          },
+          "css": {
+            "raw": 18684,
+            "gzip": 3343
+          },
+          "total": {
+            "raw": 96105,
+            "gzip": 36225
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 33197,
+            "gzip": 3069
+          },
+          "page": {
+            "raw": 110618,
+            "gzip": 35951
+          },
+          "externalCSS": []
+        },
+        "all-loader": {
+          "icons": 23,
+          "distinctIcons": 23,
+          "entries": 3,
+          "javascriptFiles": 20,
+          "inlineScripts": 0,
+          "registrations": 23,
+          "recipeData": {
+            "raw": 11512,
+            "gzip": 4281
+          },
+          "javascript": {
+            "raw": 77421,
+            "gzip": 32882
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 105595,
+            "gzip": 39607
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 53154,
+            "gzip": 4166
+          },
+          "page": {
+            "raw": 130575,
+            "gzip": 37048
+          },
+          "externalCSS": []
+        },
+        "unused": {
+          "icons": 0,
+          "distinctIcons": 0,
+          "entries": 0,
+          "javascriptFiles": 0,
+          "inlineScripts": 0,
+          "registrations": 0,
+          "recipeData": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "javascript": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "chunks": [],
+          "html": {
+            "raw": 264,
+            "gzip": 209
+          },
+          "page": {
+            "raw": 264,
+            "gzip": 209
+          },
+          "externalCSS": []
+        }
+      },
+      "warm": [
+        {
+          "from": "one",
+          "to": "four",
+          "requested": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js"
+          ],
+          "javascriptFiles": 2,
+          "page": {
+            "raw": 16552,
+            "gzip": 2876
+          }
+        },
+        {
+          "from": "four",
+          "to": "ten",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 32680,
+            "gzip": 2996
+          }
+        },
+        {
+          "from": "ten",
+          "to": "all",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 52637,
+            "gzip": 4049
+          }
+        },
+        {
+          "from": "all",
+          "to": "one",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 10114,
+            "gzip": 1224
+          }
+        },
+        {
+          "from": "all",
+          "to": "all-loader",
+          "requested": [
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js",
+            "/_astro/svg-parts.sKFpcPUl.js",
+            "/_astro/interpolate.CZ6mVftw.js",
+            "/_astro/spring.DMCwaqNl.js",
+            "/_astro/resolve-elements.RFbo_LEe.js",
+            "/_astro/animate.D_SH5Zqa.js",
+            "/_astro/single-value.CHiIGpB4.js",
+            "/_astro/ease.ClIG0ww7.js",
+            "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+            "/_astro/svg.COIR82T0.js",
+            "/_astro/animate-style.C213RdDV.js",
+            "/_astro/border-radius.CDzYrzJo.js",
+            "/_astro/svg-transform.DKJ_5fMN.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "javascriptFiles": 14,
+          "page": {
+            "raw": 123149,
+            "gzip": 33541
+          }
+        },
+        {
+          "from": "loader",
+          "to": "all-loader",
+          "requested": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js",
+            "/_astro/register-css-cycle.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js",
+            "/_astro/register-css-opacity.BENGTQdE.js"
+          ],
+          "javascriptFiles": 5,
+          "page": {
+            "raw": 59132,
+            "gzip": 7017
+          }
+        },
+        {
+          "from": "all-loader",
+          "to": "four",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 14438,
+            "gzip": 1923
+          }
+        },
+        {
+          "from": "one",
+          "to": "repeated",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 66525,
+            "gzip": 1778
+          }
+        },
+        {
+          "from": "all",
+          "to": "repeated-all",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 98453,
+            "gzip": 4798
+          }
+        }
+      ],
+      "resources": {
+        "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.CePFH8OA.js": {
+          "raw": 43,
+          "gzip": 63,
+          "entry": true,
+          "sha256": "2d6f4181d37643f5a66859b5d2b89a77df8b29fa3b4aa62766f0edddfe5c2ed4",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/register-css-opacity.BENGTQdE.js": {
+          "raw": 3158,
+          "gzip": 1433,
+          "entry": false,
+          "sha256": "7bdec18971ed33eb9e087d693015aa37eca56464b3624862d6db79c836e170cf",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/opacity-parts.ts",
+              "role": "other-shared",
+              "renderedLength": 567
+            },
+            {
+              "id": "packages/animated-icons/src/shared/opacity-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 2837
+            },
+            {
+              "id": "packages/animated-icons/src/shared/css-opacity.ts",
+              "role": "css-adapter",
+              "renderedLength": 2387
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "role": "registration",
+              "renderedLength": 195
+            }
+          ]
+        },
+        "/_astro/register-css.DDow9PrR.js": {
+          "raw": 663,
+          "gzip": 402,
+          "entry": false,
+          "sha256": "b5d1b2c961cbd67bf7cd6ea812a0585a1903e3bde0acc177fe02c2666dab3777",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/recipe-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 473
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css.ts",
+              "role": "registration",
+              "renderedLength": 636
+            }
+          ]
+        },
+        "/_astro/element.DawF6gnr.js": {
+          "raw": 1448,
+          "gzip": 656,
+          "entry": false,
+          "sha256": "498bfe9c79d9f8f951c2ea5625e644b6edfc58929ed75cede5be2be0388b358e",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/element.ts",
+              "role": "lifecycle",
+              "renderedLength": 2534
+            }
+          ]
+        },
+        "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CswTAZun.js": {
+          "raw": 41,
+          "gzip": 61,
+          "entry": true,
+          "sha256": "c6094b87aa9e3f9bd6ddb9237d715e601b877b1711b6717b817cec737d9f9d0f",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/register-css-cycle.CcamOesq.js": {
+          "raw": 2073,
+          "gzip": 892,
+          "entry": false,
+          "sha256": "21c59845ce7004c89e4348da1f2ecd38c8e421d7341775127b4e89bea3a1211b",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/cycle-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 1590
+            },
+            {
+              "id": "packages/animated-icons/src/shared/css-cycle.ts",
+              "role": "css-adapter",
+              "renderedLength": 1778
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "role": "registration",
+              "renderedLength": 158
+            }
+          ]
+        },
+        "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.WDRSVOv5.js": {
+          "raw": 390,
+          "gzip": 277,
+          "entry": true,
+          "sha256": "2121208d718e051479a7365d653f5aafff630db27da35d2c9873bdebbdef1c0e",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/definition.ts",
+              "role": "recipe",
+              "renderedLength": 425
+            },
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/element.ts",
+              "role": "registration",
+              "renderedLength": 271
+            },
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/svg-parts.sKFpcPUl.js": {
+          "raw": 3975,
+          "gzip": 1762,
+          "entry": false,
+          "sha256": "12a969dd222800fbbee10e362476346c23081b9deb075fba8fb1e09b362ae274",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/svg-parts.ts",
+              "role": "other-shared",
+              "renderedLength": 7373
+            }
+          ]
+        },
+        "/_astro/interpolate.CZ6mVftw.js": {
+          "raw": 7172,
+          "gzip": 3055,
+          "entry": false,
+          "sha256": "b674033d7471bbd1cb09b840b55e0ad859e017dbf0208604985d8ff8efc9e2c2",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "role": "dependency",
+              "renderedLength": 193
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "role": "dependency",
+              "renderedLength": 256
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "role": "dependency",
+              "renderedLength": 181
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "role": "dependency",
+              "renderedLength": 785
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "role": "dependency",
+              "renderedLength": 331
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "role": "dependency",
+              "renderedLength": 179
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 284
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "role": "dependency",
+              "renderedLength": 634
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "role": "dependency",
+              "renderedLength": 582
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "role": "dependency",
+              "renderedLength": 707
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "role": "dependency",
+              "renderedLength": 724
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "role": "dependency",
+              "renderedLength": 518
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "role": "dependency",
+              "renderedLength": 589
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 270
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "role": "dependency",
+              "renderedLength": 2755
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "role": "dependency",
+              "renderedLength": 927
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "role": "dependency",
+              "renderedLength": 187
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "role": "dependency",
+              "renderedLength": 208
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "role": "dependency",
+              "renderedLength": 1203
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "role": "dependency",
+              "renderedLength": 356
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "role": "dependency",
+              "renderedLength": 2476
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "role": "dependency",
+              "renderedLength": 782
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "role": "dependency",
+              "renderedLength": 1566
+            }
+          ]
+        },
+        "/_astro/spring.DMCwaqNl.js": {
+          "raw": 4081,
+          "gzip": 1849,
+          "entry": false,
+          "sha256": "69b186b0f8a9c4e2f91f4f9cf6dc9ac213459526814dbe14d666ebff68fd843c",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "role": "dependency",
+              "renderedLength": 212
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "role": "dependency",
+              "renderedLength": 574
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 563
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "role": "dependency",
+              "renderedLength": 9475
+            }
+          ]
+        },
+        "/_astro/resolve-elements.RFbo_LEe.js": {
+          "raw": 5371,
+          "gzip": 2285,
+          "entry": false,
+          "sha256": "8e06f35f22dc8e7bae6edfb8cafee4b34134e657e6106c473ca6b0b509e505f4",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "role": "dependency",
+              "renderedLength": 166
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "role": "dependency",
+              "renderedLength": 152
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "role": "dependency",
+              "renderedLength": 166
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 301
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "role": "dependency",
+              "renderedLength": 194
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "role": "dependency",
+              "renderedLength": 428
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "role": "dependency",
+              "renderedLength": 458
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "role": "dependency",
+              "renderedLength": 537
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "role": "dependency",
+              "renderedLength": 842
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "role": "dependency",
+              "renderedLength": 639
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "role": "dependency",
+              "renderedLength": 279
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "role": "dependency",
+              "renderedLength": 175
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "role": "dependency",
+              "renderedLength": 258
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "role": "dependency",
+              "renderedLength": 150
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "role": "dependency",
+              "renderedLength": 266
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "role": "dependency",
+              "renderedLength": 253
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 356
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "role": "dependency",
+              "renderedLength": 225
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "role": "dependency",
+              "renderedLength": 576
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 611
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "role": "dependency",
+              "renderedLength": 853
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "role": "dependency",
+              "renderedLength": 240
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "role": "dependency",
+              "renderedLength": 409
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 3486
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "role": "dependency",
+              "renderedLength": 369
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "role": "dependency",
+              "renderedLength": 393
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "role": "dependency",
+              "renderedLength": 650
+            }
+          ]
+        },
+        "/_astro/animate.D_SH5Zqa.js": {
+          "raw": 6726,
+          "gzip": 3174,
+          "entry": false,
+          "sha256": "08153aca21cab89aef6398dc6fe49b27da5bf3a699819a396705e480f4e93225",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "role": "dependency",
+              "renderedLength": 240
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "role": "dependency",
+              "renderedLength": 290
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "role": "dependency",
+              "renderedLength": 2421
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "role": "dependency",
+              "renderedLength": 1063
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "role": "dependency",
+              "renderedLength": 465
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "role": "dependency",
+              "renderedLength": 251
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "role": "dependency",
+              "renderedLength": 534
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "role": "dependency",
+              "renderedLength": 281
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "role": "dependency",
+              "renderedLength": 514
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "role": "dependency",
+              "renderedLength": 691
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "role": "dependency",
+              "renderedLength": 351
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "role": "dependency",
+              "renderedLength": 305
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "role": "dependency",
+              "renderedLength": 7638
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "role": "dependency",
+              "renderedLength": 1382
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "role": "dependency",
+              "renderedLength": 877
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1579
+            }
+          ]
+        },
+        "/_astro/single-value.CHiIGpB4.js": {
+          "raw": 30404,
+          "gzip": 11401,
+          "entry": false,
+          "sha256": "8ffcce251ac197c7d83cdf6d1eccbdd872a0a693bb34612e08a34cda0c2350ba",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "role": "dependency",
+              "renderedLength": 308
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "role": "dependency",
+              "renderedLength": 200
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "role": "dependency",
+              "renderedLength": 190
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "role": "dependency",
+              "renderedLength": 184
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "role": "dependency",
+              "renderedLength": 781
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "role": "dependency",
+              "renderedLength": 259
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "role": "dependency",
+              "renderedLength": 219
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "role": "dependency",
+              "renderedLength": 286
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "role": "dependency",
+              "renderedLength": 235
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "role": "dependency",
+              "renderedLength": 244
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "role": "dependency",
+              "renderedLength": 260
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "role": "dependency",
+              "renderedLength": 844
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "role": "dependency",
+              "renderedLength": 247
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "role": "dependency",
+              "renderedLength": 1367
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "role": "dependency",
+              "renderedLength": 1917
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "role": "dependency",
+              "renderedLength": 318
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "role": "dependency",
+              "renderedLength": 427
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "role": "dependency",
+              "renderedLength": 1851
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "role": "dependency",
+              "renderedLength": 366
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "role": "dependency",
+              "renderedLength": 247
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "role": "dependency",
+              "renderedLength": 231
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "role": "dependency",
+              "renderedLength": 1534
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "role": "dependency",
+              "renderedLength": 600
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "role": "dependency",
+              "renderedLength": 383
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 7530
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "role": "dependency",
+              "renderedLength": 834
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "role": "dependency",
+              "renderedLength": 368
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "role": "dependency",
+              "renderedLength": 171
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "role": "dependency",
+              "renderedLength": 593
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "role": "dependency",
+              "renderedLength": 1229
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "role": "dependency",
+              "renderedLength": 506
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "role": "dependency",
+              "renderedLength": 455
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 2291
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 469
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 2081
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "role": "dependency",
+              "renderedLength": 4143
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 487
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "role": "dependency",
+              "renderedLength": 1183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "role": "dependency",
+              "renderedLength": 414
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "role": "dependency",
+              "renderedLength": 1149
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "role": "dependency",
+              "renderedLength": 239
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "role": "dependency",
+              "renderedLength": 269
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "role": "dependency",
+              "renderedLength": 428
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "role": "dependency",
+              "renderedLength": 1155
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 3978
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "role": "dependency",
+              "renderedLength": 4706
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "role": "dependency",
+              "renderedLength": 798
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "role": "dependency",
+              "renderedLength": 474
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "role": "dependency",
+              "renderedLength": 2140
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 1062
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "role": "dependency",
+              "renderedLength": 265
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "role": "dependency",
+              "renderedLength": 201
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "role": "dependency",
+              "renderedLength": 237
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "role": "dependency",
+              "renderedLength": 183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "role": "dependency",
+              "renderedLength": 173
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "role": "dependency",
+              "renderedLength": 289
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "role": "dependency",
+              "renderedLength": 333
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "role": "dependency",
+              "renderedLength": 861
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "role": "dependency",
+              "renderedLength": 3426
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "role": "dependency",
+              "renderedLength": 254
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "role": "dependency",
+              "renderedLength": 220
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "role": "dependency",
+              "renderedLength": 253
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 1625
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-styles.mjs",
+              "role": "dependency",
+              "renderedLength": 1140
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/path.mjs",
+              "role": "dependency",
+              "renderedLength": 520
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "role": "dependency",
+              "renderedLength": 1256
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 758
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/has-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 697
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/delta-apply.mjs",
+              "role": "dependency",
+              "renderedLength": 2786
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "role": "dependency",
+              "renderedLength": 615
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "role": "dependency",
+              "renderedLength": 174
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "role": "dependency",
+              "renderedLength": 383
+            }
+          ]
+        },
+        "/_astro/ease.ClIG0ww7.js": {
+          "raw": 416,
+          "gzip": 305,
+          "entry": false,
+          "sha256": "0118fd1812935572b337b0763c0862eaff0c41992d096b2de91311493905fcd0",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "role": "dependency",
+              "renderedLength": 950
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "role": "dependency",
+              "renderedLength": 289
+            }
+          ]
+        },
+        "/_astro/GroupAnimationWithThen.CIuyc_1X.js": {
+          "raw": 1131,
+          "gzip": 478,
+          "entry": false,
+          "sha256": "054c21e8e4845c6dd7acfbd5937573d0deff1b0c7970637b46e8d589ba147057",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 1736
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "role": "dependency",
+              "renderedLength": 292
+            }
+          ]
+        },
+        "/_astro/svg.COIR82T0.js": {
+          "raw": 4275,
+          "gzip": 1885,
+          "entry": false,
+          "sha256": "0037e069dcad08610ac68c6be0d272310af0ef5ef2776f16cdcaf6440dcd4e65",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "role": "dependency",
+              "renderedLength": 629
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "role": "dependency",
+              "renderedLength": 1781
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "role": "dependency",
+              "renderedLength": 853
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "role": "dependency",
+              "renderedLength": 1013
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "role": "dependency",
+              "renderedLength": 2266
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1002
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1869
+            }
+          ]
+        },
+        "/_astro/animate-style.C213RdDV.js": {
+          "raw": 2118,
+          "gzip": 1015,
+          "entry": false,
+          "sha256": "b1571f4c0e780234351f231305d9b90c908a4ea4ad13f768003006c5964d3827",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "role": "dependency",
+              "renderedLength": 446
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "role": "dependency",
+              "renderedLength": 972
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "role": "dependency",
+              "renderedLength": 335
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "role": "dependency",
+              "renderedLength": 318
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "role": "dependency",
+              "renderedLength": 2543
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs",
+              "role": "dependency",
+              "renderedLength": 449
+            }
+          ]
+        },
+        "/_astro/border-radius.CDzYrzJo.js": {
+          "raw": 119,
+          "gzip": 84,
+          "entry": false,
+          "sha256": "6fe725c722d5717ce5f6076bc9c4a0716ab4e1f95591d363c6cea316f96c4d05",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs",
+              "role": "dependency",
+              "renderedLength": 257
+            }
+          ]
+        },
+        "/_astro/svg-transform.DKJ_5fMN.js": {
+          "raw": 3498,
+          "gzip": 1585,
+          "entry": false,
+          "sha256": "3e885639b4bb4e9875f38b11a02e6a4f4ecaadcbe785adad72fd1d58d52d433b",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/svg-transform.ts",
+              "role": "other-shared",
+              "renderedLength": 7354
+            }
+          ]
+        },
+        "/_astro/sequence.efB8P2z6.js": {
+          "raw": 319,
+          "gzip": 220,
+          "entry": false,
+          "sha256": "d3f0cd048a2471419b2c1e99599ea136a21f6479c1682511814d6f5fe421bded",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/sequence.ts",
+              "role": "other-shared",
+              "renderedLength": 992
+            }
+          ]
+        }
+      }
+    },
+    "minimal": {
+      "routes": {
+        "one": {
+          "icons": 1,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 3,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 2128,
+            "gzip": 240
+          },
+          "javascript": {
+            "raw": 5269,
+            "gzip": 2491
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 12111,
+            "gzip": 3084
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js"
+          ],
+          "html": {
+            "raw": 10114,
+            "gzip": 1226
+          },
+          "page": {
+            "raw": 15383,
+            "gzip": 3717
+          },
+          "externalCSS": []
+        },
+        "four": {
+          "icons": 4,
+          "distinctIcons": 4,
+          "entries": 2,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 4,
+          "recipeData": {
+            "raw": 3120,
+            "gzip": 810
+          },
+          "javascript": {
+            "raw": 7342,
+            "gzip": 3383
+          },
+          "css": {
+            "raw": 8046,
+            "gzip": 1441
+          },
+          "total": {
+            "raw": 15388,
+            "gzip": 4824
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 14438,
+            "gzip": 1927
+          },
+          "page": {
+            "raw": 21780,
+            "gzip": 5310
+          },
+          "externalCSS": []
+        },
+        "ten": {
+          "icons": 10,
+          "distinctIcons": 10,
+          "entries": 2,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 10,
+          "recipeData": {
+            "raw": 7127,
+            "gzip": 2014
+          },
+          "javascript": {
+            "raw": 7342,
+            "gzip": 3383
+          },
+          "css": {
+            "raw": 18684,
+            "gzip": 3343
+          },
+          "total": {
+            "raw": 26026,
+            "gzip": 6726
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 32680,
+            "gzip": 2998
+          },
+          "page": {
+            "raw": 40022,
+            "gzip": 6381
+          },
+          "externalCSS": []
+        },
+        "legacy-21": {
+          "icons": 21,
+          "distinctIcons": 21,
+          "entries": 2,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 21,
+          "recipeData": {
+            "raw": 11068,
+            "gzip": 4071
+          },
+          "javascript": {
+            "raw": 7342,
+            "gzip": 3383
+          },
+          "css": {
+            "raw": 27378,
+            "gzip": 6430
+          },
+          "total": {
+            "raw": 34720,
+            "gzip": 9813
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 50831,
+            "gzip": 3945
+          },
+          "page": {
+            "raw": 58173,
+            "gzip": 7328
+          },
+          "externalCSS": []
+        },
+        "all": {
+          "icons": 22,
+          "distinctIcons": 22,
+          "entries": 2,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 22,
+          "recipeData": {
+            "raw": 11512,
+            "gzip": 4281
+          },
+          "javascript": {
+            "raw": 7342,
+            "gzip": 3383
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 35516,
+            "gzip": 10108
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 52637,
+            "gzip": 4051
+          },
+          "page": {
+            "raw": 59979,
+            "gzip": 7434
+          },
+          "externalCSS": []
+        },
+        "repeated": {
+          "icons": 20,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 3,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 42560,
+            "gzip": 4800
+          },
+          "javascript": {
+            "raw": 5269,
+            "gzip": 2491
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 12111,
+            "gzip": 3084
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js"
+          ],
+          "html": {
+            "raw": 66525,
+            "gzip": 1778
+          },
+          "page": {
+            "raw": 71794,
+            "gzip": 4269
+          },
+          "externalCSS": []
+        },
+        "repeated-all": {
+          "icons": 66,
+          "distinctIcons": 22,
+          "entries": 2,
+          "javascriptFiles": 4,
+          "inlineScripts": 0,
+          "registrations": 22,
+          "recipeData": {
+            "raw": 34536,
+            "gzip": 12843
+          },
+          "javascript": {
+            "raw": 7342,
+            "gzip": 3383
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 35516,
+            "gzip": 10108
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "html": {
+            "raw": 98453,
+            "gzip": 4799
+          },
+          "page": {
+            "raw": 105795,
+            "gzip": 8182
+          },
+          "externalCSS": []
+        },
+        "loader": {
+          "icons": 1,
+          "distinctIcons": 1,
+          "entries": 1,
+          "javascriptFiles": 11,
+          "inlineScripts": 0,
+          "registrations": 1,
+          "recipeData": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "javascript": {
+            "raw": 66943,
+            "gzip": 27112
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 67067,
+            "gzip": 27228
+          },
+          "chunks": [
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 781,
+            "gzip": 498
+          },
+          "page": {
+            "raw": 67724,
+            "gzip": 27610
+          },
+          "externalCSS": []
+        },
+        "one-loader": {
+          "icons": 2,
+          "distinctIcons": 2,
+          "entries": 2,
+          "javascriptFiles": 13,
+          "inlineScripts": 0,
+          "registrations": 2,
+          "recipeData": {
+            "raw": 2128,
+            "gzip": 240
+          },
+          "javascript": {
+            "raw": 70764,
+            "gzip": 28947
+          },
+          "css": {
+            "raw": 6842,
+            "gzip": 593
+          },
+          "total": {
+            "raw": 77606,
+            "gzip": 29540
+          },
+          "chunks": [
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 10631,
+            "gzip": 1316
+          },
+          "page": {
+            "raw": 81395,
+            "gzip": 30263
+          },
+          "externalCSS": []
+        },
+        "four-loader": {
+          "icons": 5,
+          "distinctIcons": 5,
+          "entries": 3,
+          "javascriptFiles": 14,
+          "inlineScripts": 0,
+          "registrations": 5,
+          "recipeData": {
+            "raw": 3120,
+            "gzip": 810
+          },
+          "javascript": {
+            "raw": 72837,
+            "gzip": 29839
+          },
+          "css": {
+            "raw": 8046,
+            "gzip": 1441
+          },
+          "total": {
+            "raw": 80883,
+            "gzip": 31280
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 14955,
+            "gzip": 1993
+          },
+          "page": {
+            "raw": 87792,
+            "gzip": 31832
+          },
+          "externalCSS": []
+        },
+        "ten-loader": {
+          "icons": 11,
+          "distinctIcons": 11,
+          "entries": 3,
+          "javascriptFiles": 14,
+          "inlineScripts": 0,
+          "registrations": 11,
+          "recipeData": {
+            "raw": 7127,
+            "gzip": 2014
+          },
+          "javascript": {
+            "raw": 72837,
+            "gzip": 29839
+          },
+          "css": {
+            "raw": 18684,
+            "gzip": 3343
+          },
+          "total": {
+            "raw": 91521,
+            "gzip": 33182
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 33197,
+            "gzip": 3067
+          },
+          "page": {
+            "raw": 106034,
+            "gzip": 32906
+          },
+          "externalCSS": []
+        },
+        "all-loader": {
+          "icons": 23,
+          "distinctIcons": 23,
+          "entries": 3,
+          "javascriptFiles": 14,
+          "inlineScripts": 0,
+          "registrations": 23,
+          "recipeData": {
+            "raw": 11512,
+            "gzip": 4281
+          },
+          "javascript": {
+            "raw": 72837,
+            "gzip": 29839
+          },
+          "css": {
+            "raw": 28174,
+            "gzip": 6725
+          },
+          "total": {
+            "raw": 101011,
+            "gzip": 36564
+          },
+          "chunks": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/element.DawF6gnr.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "html": {
+            "raw": 53154,
+            "gzip": 4166
+          },
+          "page": {
+            "raw": 125991,
+            "gzip": 34005
+          },
+          "externalCSS": []
+        },
+        "unused": {
+          "icons": 0,
+          "distinctIcons": 0,
+          "entries": 0,
+          "javascriptFiles": 0,
+          "inlineScripts": 0,
+          "registrations": 0,
+          "recipeData": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "javascript": {
+            "raw": 0,
+            "gzip": 0
+          },
+          "css": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "total": {
+            "raw": 124,
+            "gzip": 116
+          },
+          "chunks": [],
+          "html": {
+            "raw": 264,
+            "gzip": 209
+          },
+          "page": {
+            "raw": 264,
+            "gzip": 209
+          },
+          "externalCSS": []
+        }
+      },
+      "warm": [
+        {
+          "from": "one",
+          "to": "four",
+          "requested": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js"
+          ],
+          "javascriptFiles": 1,
+          "page": {
+            "raw": 16511,
+            "gzip": 2819
+          }
+        },
+        {
+          "from": "four",
+          "to": "ten",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 32680,
+            "gzip": 2998
+          }
+        },
+        {
+          "from": "ten",
+          "to": "all",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 52637,
+            "gzip": 4051
+          }
+        },
+        {
+          "from": "all",
+          "to": "one",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 10114,
+            "gzip": 1226
+          }
+        },
+        {
+          "from": "all",
+          "to": "all-loader",
+          "requested": [
+            "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+            "/_astro/svg-parts.CGgDZ5LR.js",
+            "/_astro/animate.Dmvq2wBV.js",
+            "/_astro/spring.BTrCZkUi.js",
+            "/_astro/resolve-elements.BfTnYGPJ.js",
+            "/_astro/interpolate.D1oTUab4.js",
+            "/_astro/ease.SXrjam8y.js",
+            "/_astro/animate-style.BUFqNLlb.js",
+            "/_astro/svg-transform.C3n5ANox.js",
+            "/_astro/sequence.efB8P2z6.js"
+          ],
+          "javascriptFiles": 10,
+          "page": {
+            "raw": 118649,
+            "gzip": 30622
+          }
+        },
+        {
+          "from": "loader",
+          "to": "all-loader",
+          "requested": [
+            "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js",
+            "/_astro/register-css.DDow9PrR.js",
+            "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js"
+          ],
+          "javascriptFiles": 3,
+          "page": {
+            "raw": 59048,
+            "gzip": 6893
+          }
+        },
+        {
+          "from": "all-loader",
+          "to": "four",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 14438,
+            "gzip": 1927
+          }
+        },
+        {
+          "from": "one",
+          "to": "repeated",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 66525,
+            "gzip": 1778
+          }
+        },
+        {
+          "from": "all",
+          "to": "repeated-all",
+          "requested": [],
+          "javascriptFiles": 0,
+          "page": {
+            "raw": 98453,
+            "gzip": 4799
+          }
+        }
+      ],
+      "resources": {
+        "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js": {
+          "raw": 3158,
+          "gzip": 1433,
+          "entry": true,
+          "sha256": "7bdec18971ed33eb9e087d693015aa37eca56464b3624862d6db79c836e170cf",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/opacity-parts.ts",
+              "role": "other-shared",
+              "renderedLength": 567
+            },
+            {
+              "id": "packages/animated-icons/src/shared/opacity-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 2837
+            },
+            {
+              "id": "packages/animated-icons/src/shared/css-opacity.ts",
+              "role": "css-adapter",
+              "renderedLength": 2387
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "role": "registration",
+              "renderedLength": 195
+            },
+            {
+              "id": "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/register-css.DDow9PrR.js": {
+          "raw": 663,
+          "gzip": 402,
+          "entry": false,
+          "sha256": "b5d1b2c961cbd67bf7cd6ea812a0585a1903e3bde0acc177fe02c2666dab3777",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/recipe-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 473
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css.ts",
+              "role": "registration",
+              "renderedLength": 636
+            }
+          ]
+        },
+        "/_astro/element.DawF6gnr.js": {
+          "raw": 1448,
+          "gzip": 656,
+          "entry": false,
+          "sha256": "498bfe9c79d9f8f951c2ea5625e644b6edfc58929ed75cede5be2be0388b358e",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/element.ts",
+              "role": "lifecycle",
+              "renderedLength": 2534
+            }
+          ]
+        },
+        "/_astro/CssIcon.astro_astro_type_script_index_0_lang.CcamOesq.js": {
+          "raw": 2073,
+          "gzip": 892,
+          "entry": true,
+          "sha256": "21c59845ce7004c89e4348da1f2ecd38c8e421d7341775127b4e89bea3a1211b",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/cycle-css.ts",
+              "role": "stylesheet-compiler-and-recovery",
+              "renderedLength": 1590
+            },
+            {
+              "id": "packages/animated-icons/src/shared/css-cycle.ts",
+              "role": "css-adapter",
+              "renderedLength": 1778
+            },
+            {
+              "id": "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "role": "registration",
+              "renderedLength": 158
+            },
+            {
+              "id": "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js": {
+          "raw": 390,
+          "gzip": 278,
+          "entry": true,
+          "sha256": "2d96850c17b475ac0b4680c16ec42ba9628ab3372e4e186724b3d9e68e455df3",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/definition.ts",
+              "role": "recipe",
+              "renderedLength": 425
+            },
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/element.ts",
+              "role": "registration",
+              "renderedLength": 271
+            },
+            {
+              "id": "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts",
+              "role": "registration",
+              "renderedLength": 0
+            }
+          ]
+        },
+        "/_astro/svg-parts.CGgDZ5LR.js": {
+          "raw": 3944,
+          "gzip": 1756,
+          "entry": false,
+          "sha256": "b90fa7a9394317ff13e04fabeeb10c235e0a743e49577b6242082f49bf6cc9eb",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/svg-parts.ts",
+              "role": "other-shared",
+              "renderedLength": 7373
+            }
+          ]
+        },
+        "/_astro/animate.Dmvq2wBV.js": {
+          "raw": 37314,
+          "gzip": 13869,
+          "entry": false,
+          "sha256": "c1b0fbdad1cde780df59da30f3b1c6dab8509b693a6f309b76be127026889fda",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "role": "dependency",
+              "renderedLength": 308
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "role": "dependency",
+              "renderedLength": 200
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "role": "dependency",
+              "renderedLength": 190
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "role": "dependency",
+              "renderedLength": 184
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "role": "dependency",
+              "renderedLength": 781
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "role": "dependency",
+              "renderedLength": 240
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "role": "dependency",
+              "renderedLength": 259
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "role": "dependency",
+              "renderedLength": 219
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "role": "dependency",
+              "renderedLength": 286
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "role": "dependency",
+              "renderedLength": 235
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "role": "dependency",
+              "renderedLength": 244
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "role": "dependency",
+              "renderedLength": 260
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "role": "dependency",
+              "renderedLength": 290
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "role": "dependency",
+              "renderedLength": 844
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "role": "dependency",
+              "renderedLength": 247
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "role": "dependency",
+              "renderedLength": 1367
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "role": "dependency",
+              "renderedLength": 1917
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "role": "dependency",
+              "renderedLength": 318
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "role": "dependency",
+              "renderedLength": 427
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "role": "dependency",
+              "renderedLength": 1851
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "role": "dependency",
+              "renderedLength": 366
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "role": "dependency",
+              "renderedLength": 247
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "role": "dependency",
+              "renderedLength": 231
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "role": "dependency",
+              "renderedLength": 1534
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "role": "dependency",
+              "renderedLength": 600
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "role": "dependency",
+              "renderedLength": 383
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 7530
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "role": "dependency",
+              "renderedLength": 834
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "role": "dependency",
+              "renderedLength": 368
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "role": "dependency",
+              "renderedLength": 171
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "role": "dependency",
+              "renderedLength": 593
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "role": "dependency",
+              "renderedLength": 1229
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "role": "dependency",
+              "renderedLength": 506
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "role": "dependency",
+              "renderedLength": 455
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 2291
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "role": "dependency",
+              "renderedLength": 469
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 2081
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "role": "dependency",
+              "renderedLength": 4143
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 487
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "role": "dependency",
+              "renderedLength": 1183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "role": "dependency",
+              "renderedLength": 414
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "role": "dependency",
+              "renderedLength": 1149
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "role": "dependency",
+              "renderedLength": 239
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "role": "dependency",
+              "renderedLength": 269
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "role": "dependency",
+              "renderedLength": 428
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "role": "dependency",
+              "renderedLength": 1155
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 3978
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "role": "dependency",
+              "renderedLength": 4706
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "role": "dependency",
+              "renderedLength": 798
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "role": "dependency",
+              "renderedLength": 474
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "role": "dependency",
+              "renderedLength": 2142
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 1062
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "role": "dependency",
+              "renderedLength": 265
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "role": "dependency",
+              "renderedLength": 201
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "role": "dependency",
+              "renderedLength": 237
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "role": "dependency",
+              "renderedLength": 183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "role": "dependency",
+              "renderedLength": 173
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "role": "dependency",
+              "renderedLength": 289
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "role": "dependency",
+              "renderedLength": 333
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "role": "dependency",
+              "renderedLength": 861
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "role": "dependency",
+              "renderedLength": 3426
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "role": "dependency",
+              "renderedLength": 2421
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "role": "dependency",
+              "renderedLength": 254
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "role": "dependency",
+              "renderedLength": 220
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "role": "dependency",
+              "renderedLength": 253
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "role": "dependency",
+              "renderedLength": 629
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "role": "dependency",
+              "renderedLength": 1781
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "role": "dependency",
+              "renderedLength": 853
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "role": "dependency",
+              "renderedLength": 1013
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "role": "dependency",
+              "renderedLength": 2266
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "role": "dependency",
+              "renderedLength": 257
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1002
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1869
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 636
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "role": "dependency",
+              "renderedLength": 291
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "role": "dependency",
+              "renderedLength": 1063
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "role": "dependency",
+              "renderedLength": 465
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "role": "dependency",
+              "renderedLength": 174
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "role": "dependency",
+              "renderedLength": 383
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "role": "dependency",
+              "renderedLength": 251
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "role": "dependency",
+              "renderedLength": 534
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "role": "dependency",
+              "renderedLength": 281
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "role": "dependency",
+              "renderedLength": 514
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "role": "dependency",
+              "renderedLength": 691
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "role": "dependency",
+              "renderedLength": 351
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "role": "dependency",
+              "renderedLength": 305
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "role": "dependency",
+              "renderedLength": 7638
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "role": "dependency",
+              "renderedLength": 1382
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "role": "dependency",
+              "renderedLength": 877
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "role": "dependency",
+              "renderedLength": 1579
+            }
+          ]
+        },
+        "/_astro/spring.BTrCZkUi.js": {
+          "raw": 4081,
+          "gzip": 1853,
+          "entry": false,
+          "sha256": "ce391ce9897574296823fa0cbb54b6bf1541bad230d34e8c5100c7debdb4c24c",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "role": "dependency",
+              "renderedLength": 212
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "role": "dependency",
+              "renderedLength": 574
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 563
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "role": "dependency",
+              "renderedLength": 9475
+            }
+          ]
+        },
+        "/_astro/resolve-elements.BfTnYGPJ.js": {
+          "raw": 6357,
+          "gzip": 2566,
+          "entry": false,
+          "sha256": "d115bd43612ec8423e4e48b97a6c1252b67f773e5c91ea9d7e5b8271942d03e9",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "role": "dependency",
+              "renderedLength": 166
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "role": "dependency",
+              "renderedLength": 152
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "role": "dependency",
+              "renderedLength": 166
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "role": "dependency",
+              "renderedLength": 301
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "role": "dependency",
+              "renderedLength": 263
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "role": "dependency",
+              "renderedLength": 194
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "role": "dependency",
+              "renderedLength": 428
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "role": "dependency",
+              "renderedLength": 458
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "role": "dependency",
+              "renderedLength": 537
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "role": "dependency",
+              "renderedLength": 617
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "role": "dependency",
+              "renderedLength": 639
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "role": "dependency",
+              "renderedLength": 279
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "role": "dependency",
+              "renderedLength": 175
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "role": "dependency",
+              "renderedLength": 258
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "role": "dependency",
+              "renderedLength": 150
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "role": "dependency",
+              "renderedLength": 266
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "role": "dependency",
+              "renderedLength": 253
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 356
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "role": "dependency",
+              "renderedLength": 225
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "role": "dependency",
+              "renderedLength": 576
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "role": "dependency",
+              "renderedLength": 611
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "role": "dependency",
+              "renderedLength": 853
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "role": "dependency",
+              "renderedLength": 240
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "role": "dependency",
+              "renderedLength": 409
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 3486
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "role": "dependency",
+              "renderedLength": 1736
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "role": "dependency",
+              "renderedLength": 292
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "role": "dependency",
+              "renderedLength": 369
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "role": "dependency",
+              "renderedLength": 393
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "role": "dependency",
+              "renderedLength": 650
+            }
+          ]
+        },
+        "/_astro/interpolate.D1oTUab4.js": {
+          "raw": 7154,
+          "gzip": 3049,
+          "entry": false,
+          "sha256": "733252ddf3d26bac1996e7787e5929de19e5db92faae4cf6c6d095662c772b00",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "role": "dependency",
+              "renderedLength": 193
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "role": "dependency",
+              "renderedLength": 256
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "role": "dependency",
+              "renderedLength": 181
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "role": "dependency",
+              "renderedLength": 718
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "role": "dependency",
+              "renderedLength": 331
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 183
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "role": "dependency",
+              "renderedLength": 179
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 284
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "role": "dependency",
+              "renderedLength": 634
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "role": "dependency",
+              "renderedLength": 582
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "role": "dependency",
+              "renderedLength": 707
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "role": "dependency",
+              "renderedLength": 724
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "role": "dependency",
+              "renderedLength": 518
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "role": "dependency",
+              "renderedLength": 589
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "role": "dependency",
+              "renderedLength": 270
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "role": "dependency",
+              "renderedLength": 2755
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "role": "dependency",
+              "renderedLength": 927
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "role": "dependency",
+              "renderedLength": 187
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "role": "dependency",
+              "renderedLength": 208
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "role": "dependency",
+              "renderedLength": 1203
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "role": "dependency",
+              "renderedLength": 356
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "role": "dependency",
+              "renderedLength": 2476
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "role": "dependency",
+              "renderedLength": 782
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "role": "dependency",
+              "renderedLength": 1566
+            }
+          ]
+        },
+        "/_astro/ease.SXrjam8y.js": {
+          "raw": 416,
+          "gzip": 307,
+          "entry": false,
+          "sha256": "5d54fcc645e6ad0f91266b126b63ce9911a3b0d56343baaadc6e36dbab6ad64e",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "role": "dependency",
+              "renderedLength": 950
+            },
+            {
+              "id": "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "role": "dependency",
+              "renderedLength": 289
+            }
+          ]
+        },
+        "/_astro/animate-style.BUFqNLlb.js": {
+          "raw": 2022,
+          "gzip": 974,
+          "entry": false,
+          "sha256": "ebc2e42f40b8412b565730132e9db3f7a5fb3723c18c11c676631d083820b893",
+          "modules": [
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "role": "dependency",
+              "renderedLength": 446
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs",
+              "role": "dependency",
+              "renderedLength": 257
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "role": "dependency",
+              "renderedLength": 972
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "role": "dependency",
+              "renderedLength": 335
+            },
+            {
+              "id": "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "role": "dependency",
+              "renderedLength": 318
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "role": "dependency",
+              "renderedLength": 2543
+            },
+            {
+              "id": "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs",
+              "role": "dependency",
+              "renderedLength": 449
+            }
+          ]
+        },
+        "/_astro/svg-transform.C3n5ANox.js": {
+          "raw": 3498,
+          "gzip": 1584,
+          "entry": false,
+          "sha256": "6d2d564ade8bb792d65d2a5b8fa652a8bc798637ddd6a6c48ef490654884aaaa",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/svg-transform.ts",
+              "role": "other-shared",
+              "renderedLength": 7354
+            }
+          ]
+        },
+        "/_astro/sequence.efB8P2z6.js": {
+          "raw": 319,
+          "gzip": 220,
+          "entry": false,
+          "sha256": "d3f0cd048a2471419b2c1e99599ea136a21f6479c1682511814d6f5fe421bded",
+          "modules": [
+            {
+              "id": "packages/animated-icons/src/shared/sequence.ts",
+              "role": "other-shared",
+              "renderedLength": 992
+            }
+          ]
+        }
+      }
+    }
+  }
+}

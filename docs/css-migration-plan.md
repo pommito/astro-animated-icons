@@ -53,6 +53,8 @@ These are implementation stages, not blanket visual approval or release status. 
 
 All six initial stages are integrated into main and their issues are closed. Documentation PR #90 merged on 2026-10-27. JavaScript chunk consolidation remains open in [#91](https://github.com/pommito/astro-animated-icons/issues/91). The [2026-10-27 loading baseline](history/2026-10-27-page-loading-baseline.md) measures both the full fixture and a minimal consumer.
 
+The [selective registration implementation](history/2026-10-27-selective-loading.md) shares one entry per rendered CSS mechanism and carries selected recipe data in HTML. It needs no consumer configuration. For all 22 CSS icons, the minimal consumer reaches four JavaScript files instead of 26 and saves 4950 whole-page gzip bytes. Twenty CircleDashed instances cost 126 additional whole-page gzip bytes. Some warm transitions also transfer more HTML. PR #96 contains the implementation and evidence for owner review; #91 remains open.
+
 [Issue #94](https://github.com/pommito/astro-animated-icons/issues/94) prepares UserRoundCog with the existing CSS cycle, subject to half-turn parity and payload evidence. [Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) prepares combined transforms for KeySquare, Wallet and KeyCircle, with an architecture decision before implementation. Both require owner visual review for any migration.
 
 ## Measurements and acceptance

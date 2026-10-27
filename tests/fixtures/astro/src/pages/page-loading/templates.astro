@@ -1,0 +1,74 @@
+---
+import { Bell, CircleDashed } from "@grave/animated-icons/astro";
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Recipe registration templates</title></head><body>
+  <h1>Recipe registration templates</h1>
+  <p>The original template is removed before registration. Independent host clones keep their recipe data and recover their styles.</p>
+  <template id="source"><Bell controlled /><CircleDashed controlled /></template>
+  <section id="early"></section>
+  <script is:inline>
+    window.loadingSource = document.querySelector("#source");
+    const early = document.querySelector("#early");
+    early.append(...[...window.loadingSource.content.querySelectorAll("[data-grave-icon]")].map(icon => icon.cloneNode(true)));
+    window.loadingSource.remove();
+    early.dataset.beforeRegistration = String([...early.children].every(icon => typeof icon.startAnimation === "undefined"));
+  </script>
+  <button id="check-loading" type="button">Check registration and templates</button>
+  <output id="loading-result"></output>
+</body></html>
+<script>
+  import type { BellIconHandle as IconHandle } from "@grave/animated-icons/astro";
+  // Load registration outside the removed template to isolate recipe-data recovery.
+  import "../../../../../../packages/animated-icons/src/shared/register-css-cycle";
+  import "../../../../../../packages/animated-icons/src/shared/register-css-opacity";
+  type Handle = HTMLElement & IconHandle;
+  declare global { interface Window { loadingSource: HTMLTemplateElement } }
+  await Promise.all(["grave-bell", "grave-circle-dashed"].map(tag => customElements.whenDefined(tag)));
+  let sequence = 0;
+  document.querySelector("#check-loading")!.addEventListener("click", () => {
+    const results: Record<string, boolean> = {
+      originalRemoved: !document.querySelector("#source"),
+      clonedBeforeRegistration: document.querySelector<HTMLElement>("#early")!.dataset.beforeRegistration === "true",
+      motionAllowed: !matchMedia("(prefers-reduced-motion: reduce)").matches,
+    };
+    const late = document.createElement("section");
+    document.body.append(late);
+    late.append(...[...window.loadingSource.content.querySelectorAll("[data-grave-icon]")].map(icon => icon.cloneNode(true)));
+    for (const [location, parent] of [["early", document.querySelector("#early")!], ["late", late]] as const) {
+      for (const icon of parent.querySelectorAll<Handle>("[data-grave-icon]")) {
+        const count = icon.localName === "grave-bell" ? 1 : 8;
+        icon.startAnimation();
+        results[location + "/" + icon.localName + "/entry"] = icon.getAnimations({ subtree: true }).length === count;
+        icon.stopAnimation();
+        results[location + "/" + icon.localName + "/return"] = icon.getAnimations({ subtree: true }).length === count;
+        icon.remove();
+        results[location + "/" + icon.localName + "/disconnect"] = icon.getAnimations({ subtree: true }).length === 0;
+        parent.append(icon);
+        icon.startAnimation();
+        results[location + "/" + icon.localName + "/reconnect"] = icon.getAnimations({ subtree: true }).length === count;
+        icon.remove(); parent.append(icon);
+      }
+    }
+    const tag = "grave-loading-probe-" + ++sequence;
+    const probe = document.createElement(tag) as Handle;
+    const bell = document.querySelector<Handle>("#early grave-bell")!;
+    for (const attribute of bell.attributes) probe.setAttribute(attribute.name, attribute.value);
+    probe.append(bell.querySelector("svg")!.cloneNode(true));
+    const outer = document.createElement("template");
+    const inner = document.createElement("template");
+    inner.content.append(probe);
+    outer.content.append(inner);
+    document.body.append(outer);
+    results.newTagInitiallyUnknown = !customElements.get(tag);
+    document.dispatchEvent(new Event("astro:page-load"));
+    results.nestedTemplateRegistered = !!customElements.get(tag);
+    document.body.append(probe);
+    probe.startAnimation();
+    results.nestedClonePlayback = probe.getAnimations({ subtree: true }).length === 1;
+    probe.remove(); outer.remove(); late.remove();
+    for (const id of ["bell", "circle-dashed"]) {
+      results[id + "/oneActiveSheet"] = document.querySelectorAll('style[data-grave-cycle-style="' + id + '"]').length === 1;
+    }
+    document.querySelector("#loading-result")!.textContent = JSON.stringify({ userAgent: navigator.userAgent, results, failures: Object.keys(results).filter(key => !results[key]) });
+  });
+</script>

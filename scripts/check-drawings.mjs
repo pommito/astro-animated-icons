@@ -1,25 +1,16 @@
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
-import { createRequire } from "node:module";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { evaluateTypeScriptData } from "./typescript-data.mjs";
 import { readCatalog } from "./catalog.mjs";
+import { elements, htmlElements } from "./html.mjs";
 
 const root = new URL("../", import.meta.url);
-const fixtureRequire = createRequire(new URL("../tests/fixtures/astro/package.json", import.meta.url));
-const astroRequire = createRequire(fixtureRequire.resolve("astro/package.json"));
-const parserPackage = astroRequire.resolve("ultrahtml/package.json");
-const parserExports = JSON.parse(readFileSync(parserPackage, "utf8")).exports["."].import;
-const { parse } = await import(pathToFileURL(resolve(dirname(parserPackage), parserExports)).href);
 const shapeNames = new Set(["path", "circle", "rect", "line", "polyline", "polygon", "ellipse"]);
 
-function elements(node) {
-  return [node, ...(node.children ?? []).flatMap(elements)];
-}
-
 export function checkDrawing(html, icon, drawing) {
-  const nodes = elements(parse(html));
+  const nodes = htmlElements(html);
   const primary = nodes.find(node => node.attributes?.id === "primary");
   assert.ok(primary, `${icon.slug}: primary control`);
   assert.equal(primary.name, "a", `${icon.slug}: native link`);

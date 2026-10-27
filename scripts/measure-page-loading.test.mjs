@@ -8,6 +8,7 @@ import { pathToFileURL } from "node:url";
 import { gzipSync } from "node:zlib";
 import { chunkRole, measureLoading } from "./measure-page-loading.mjs";
 import { loadingCases, loadingIcons } from "./page-loading-cases.mjs";
+import { clientRecipes } from "./registration-contract.mjs";
 
 function consumer(run) {
   const directory = mkdtempSync(join(tmpdir(), "icon-page-loading-"));
@@ -19,17 +20,23 @@ function consumer(run) {
     writeFileSync(join(directory, "assets/shared.css"), "[data-grave-icon]{display:inline-flex}");
     const evidence = path => ({ sha256: createHash("sha256").update(readFileSync(new URL(path.slice(1), output))).digest("hex"), modules: [] });
     metadata["/assets/runtime.js"] = { entry: false, ...evidence("/assets/runtime.js") };
-    for (const icon of loadingIcons) {
-      const url = "/assets/" + icon.slug + ".js";
-      writeFileSync(new URL(url.slice(1), output), 'import {register} from "./runtime.js"; register("grave-' + icon.slug + '");');
+    const entryFor = slug => clientRecipes.get(slug)?.attribute ?? slug;
+    for (const entry of new Set(loadingIcons.map(icon => entryFor(icon.slug)))) {
+      const url = "/assets/" + entry + ".js";
+      writeFileSync(new URL(url.slice(1), output), 'import {register} from "./runtime.js"; '
+        + (entry.startsWith("data-") ? 'export const selector="' + entry + '";' : 'register("grave-' + entry + '");'));
       metadata[url] = { entry: true, ...evidence(url) };
     }
     for (const [name, icons] of Object.entries(loadingCases)) {
       mkdirSync(join(directory, "page-loading", name), { recursive: true });
       writeFileSync(join(directory, "page-loading", name, "index.html"),
         '<html><head><link rel="stylesheet" href="/assets/shared.css"></head><body>'
-        + [...new Set(icons)].map(slug => '<script type="module" src="/assets/' + slug + '.js"></script>').join("")
-        + icons.map(() => "<svg></svg>").join("") + "</body></html>");
+        + [...new Set(icons.map(entryFor))].map(entry => '<script type="module" src="/assets/' + entry + '.js"></script>').join("")
+        + icons.map(slug => {
+          const recipe = clientRecipes.get(slug);
+          const data = recipe ? ' ' + recipe.attribute + '="' + JSON.stringify(recipe.data).replaceAll(">", "\\u003e").replaceAll('"', "&quot;") + '"' : "";
+          return "<grave-" + slug + " data-grave-icon" + data + "><svg></svg></grave-" + slug + ">";
+        }).join("") + "</body></html>");
     }
     return run(output, metadata);
   } finally { rmSync(directory, { recursive: true, force: true }); }
@@ -38,7 +45,7 @@ function consumer(run) {
 test("cold totals compress HTML once and count a shared dependency once", () => consumer((output, metadata) => {
   const { routes } = measureLoading(output, metadata);
   const route = routes.four;
-  assert.equal(route.javascriptFiles, 5);
+  assert.equal(route.javascriptFiles, 3);
   const files = ["page-loading/four/index.html", ...route.chunks.map(url => url.slice(1)), "assets/shared.css"];
   const sources = files.map(file => readFileSync(new URL(file, output)));
   assert.equal(route.page.raw, sources.reduce((sum, source) => sum + source.length, 0));
@@ -52,15 +59,15 @@ test("warm transitions reuse URLs and still charge the second HTML document", ()
   assert.equal(repeated.javascriptFiles, 0);
   assert.deepEqual(repeated.page, routes.repeated.html);
   const adding = warm.find(value => value.from === "four" && value.to === "ten");
-  assert.equal(adding.javascriptFiles, 6);
-  assert.ok(adding.requested.every(url => !routes.four.chunks.includes(url)));
+  assert.equal(adding.javascriptFiles, 0);
+  assert.deepEqual(adding.page, routes.ten.html);
 }));
 
 test("measurement rejects unused registrations and missing module evidence", () => consumer((output, metadata) => {
-  const entry = new URL("assets/circle-dashed.js", output);
+  const entry = new URL("assets/data-grave-opacity-recipe.js", output);
   const source = readFileSync(entry, "utf8");
   writeFileSync(entry, source + '\nregister("grave-unused");');
-  assert.throws(() => measureLoading(output, metadata), /one: exact registrations/);
+  assert.throws(() => measureLoading(output, metadata), /one: unused registration grave-unused/);
   writeFileSync(entry, source);
   delete metadata["/assets/runtime.js"];
   assert.throws(() => measureLoading(output, metadata), /one: module evidence/);

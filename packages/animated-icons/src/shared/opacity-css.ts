@@ -1,5 +1,5 @@
 import { opacityTiming, type OpacityPart } from "./opacity-parts";
-import { ensureRecipeCSS } from "./cycle-css";
+import { ensureRecipeCSS } from "./recipe-css";
 
 type Point = [number, number];
 function split(points: Point[], t: number) {

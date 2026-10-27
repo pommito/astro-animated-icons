@@ -9,6 +9,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { measureRoute, resourceSizes } from "./measure-resources.mjs";
 import { loadingCases } from "./page-loading-cases.mjs";
+import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const fixture = join(root, "tests/fixtures/astro");
@@ -29,10 +30,11 @@ function build(cwd, config) {
 }
 
 export function chunkRole(id) {
+  if (/\/src\/shared\/register-css/.test(id) || /\/src\/Css(?:Opacity)?Icon\.astro\?astro&type=script/.test(id)) return "registration";
   if (/\/src\/icons\/[^/]+\/(?:element\.ts$|[^/]+\.astro\?astro&type=script)/.test(id)) return "registration";
   if (/\/src\/icons\//.test(id)) return "recipe";
   if (/\/src\/element\.ts$/.test(id)) return "lifecycle";
-  if (/\/src\/shared\/(?:cycle-css|opacity-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/(?:cycle-css|opacity-css|recipe-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
   if (/\/src\/shared\/css-(?:cycle|opacity)\.ts$/.test(id)) return "css-adapter";
   if (/\/node_modules\//.test(id)) return "dependency";
   return "other-shared";
@@ -65,12 +67,11 @@ export function measureLoading(output, metadata) {
     const route = "page-loading/" + name + "/index.html";
     const inspection = inspectRoute(output, route, () => {}, cache);
     const payload = measureRoute(route, { output, cache, includePage: true });
-    const registrations = new Set([...inspection.source.matchAll(/["'`](grave-[a-z0-9]+(?:-[a-z0-9]+)*)["'`]/g)].map(match => match[1]));
-    assert.deepEqual(registrations, new Set(slugs.map(slug => "grave-" + slug)), name + ": exact registrations");
-    assert.equal(inspection.entries.length, new Set(slugs).size, name + ": entry deduplication");
+    const html = readFileSync(new URL(route, output), "utf8");
+    verifyRegistrations(inspection, html, slugs, name);
+    assert.equal(inspection.entries.length, registrationEntries(slugs), name + ": entry deduplication");
     assert.equal(inspection.inline.length, 0, name + ": no inline reference scripts");
     assert.ok(!/react(?:-dom)?|reference-/.test(inspection.source), name + ": no comparison implementations");
-    const html = readFileSync(new URL(route, output), "utf8");
     assert.equal((html.match(/<svg\b/g) ?? []).length, slugs.length, name + ": SVG count");
     if (!slugs.length) assert.equal(inspection.chunks.size, 0, "unused: JavaScript must not load");
     for (const [url, chunk] of inspection.chunks) {
@@ -80,7 +81,8 @@ export function measureLoading(output, metadata) {
     }
     for (const url of payload.externalCSS) resources[url] = { ...resourceSizes([readFileSync(new URL(url.slice(1), output), "utf8")]), kind: "stylesheet" };
     return [name, { icons: slugs.length, distinctIcons: new Set(slugs).size, entries: inspection.entries.length,
-      javascriptFiles: inspection.chunks.size, inlineScripts: inspection.inline.length, registrations: registrations.size, ...payload }];
+      javascriptFiles: inspection.chunks.size, inlineScripts: inspection.inline.length, registrations: new Set(slugs).size,
+      recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
   }));
   const transitions = [["one", "four"], ["four", "ten"], ["ten", "all"], ["all", "one"], ["all", "all-loader"],
     ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"]];

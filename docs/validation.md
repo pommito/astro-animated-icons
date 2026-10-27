@@ -10,7 +10,7 @@ Run `pnpm validate` before completing an icon, runtime, export, dependency, fixt
 - A production fixture build, reusing output when its inputs and contents match.
 - Catalogue membership, public exports, registrations in generated bundles, shared CSS, selective loading, and combined-route chunk unions.
 - Initial SVG geometry, attributes, native links, custom-element tags, and accessible SVG markup for every exported icon.
-- Recipe/compiler agreement, generated stylesheet selection and markers, repeated-instance deduplication, cross-family chunk unions, unused barrel imports, and comparison coverage for migrated recipes.
+- Recipe/compiler agreement, exact serialized recipe records and selected registration mechanisms, generated stylesheet selection and markers, repeated-instance deduplication, cross-family chunk unions, unused barrel imports, and comparison coverage for migrated recipes.
 - The drawing checker, bundle inspector, CSS validators, and fixture cache through Node tests, including deliberately broken inputs.
 
 The drawing checker reads built HTML and the recorded expectations in `tests/helpers/`. It does not execute animation code. A passing build and bundle inspection do not establish that custom elements register successfully at runtime.
@@ -78,6 +78,10 @@ Open `/css-migration/` for the acceptance index. Run playback and lifecycle cont
 
 The three comparison pages have sticky `Play all` and `Stop all` controls, per-icon play and stop buttons, synchronized mouse row hover, and collapsible numerical checks. Folder has a separate `/folder-css/` comparison. Its entry shares recipe data with the Motion reference; its intentional 200 ms CSS return differs from the reference's spring and has separate owner acceptance in PR #92.
 
+On `/page-loading/templates/`, run `Check registration and templates`. The page removes the source template and its generated sheets before the shared registration scripts run. Independent host clones must register from their own data, recover styles, play, return, disconnect and reconnect. The control also checks nested inert templates through a synthetic `astro:page-load` event. Report that event separately from a real Astro navigation.
+
+Use `/page-loading/navigation/a/` and its link to page B for a real ClientRouter transition. Bell and CalendarDays appear on A; CircleHelp and CircleDashed first appear on B. Confirm that the document stays loaded, the new tags register, and their playback works while the existing CSS mechanism scripts remain reused.
+
 On `/css-migration/media/`, disable reduced motion and select `Prepare paused entry`. Enable reduced motion in DevTools and select `Check reduced motion`. Disable it again and select `Check restored playback`. This uses native matchMedia with browser media emulation. Report it separately from matchMedia stubs and operating-system preference changes.
 
 Stop the fixture server before rebuilding in the same worktree. For payloads, prepare one production build, then run:
@@ -89,3 +93,5 @@ MIGRATION_RESULT=.artifacts/css-migration-payloads.json node scripts/measure-css
 ```
 
 The measurement covers generated compositions from the same manifest. Positive savings mean the public implementation is smaller. Compare `total` for normalized JavaScript plus CSS, and `page` for HTML compressed with its inline content plus external resources. The normalized total compresses inline styles independently and excludes HTML. Whole-page totals avoid counting inline content twice. Both count reachable shared chunks and external CSS URLs once per route, using Node zlib gzip defaults and a cold cache. Report Node, pnpm, Astro, Motion, TypeScript, OS, and hardware versions with the result. Include regressions when Motion is already loaded.
+
+Run `node scripts/measure-page-loading.mjs` for the full fixture and the minimal production consumer. It builds isolated outputs under `.artifacts/page-loading/` and records one, four, ten, all migrated icons, repeated instances, Motion mixtures and unused imports. Compare the current output with the dated baseline before a loading change. The `recipeData` field measures encoded recipe attributes separately; it is already included in HTML and must not be added to `page`. Warm transitions model same-build external URL reuse and always fetch the second HTML document again.

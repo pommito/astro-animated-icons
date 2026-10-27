@@ -117,17 +117,19 @@ export function inventoryAnimations(root = defaultRoot) {
     const definition = `${directory}/definition.ts`;
     assert.ok(existsSync(resolve(root, definition)), `${icon.slug}: missing definition`);
     const recipeFiles = closure(definition);
-    const registration = `${directory}/element.ts`;
-    if (existsSync(resolve(root, registration))) closure(registration, recipeFiles);
-    const files = [...recipeFiles].sort();
     const adapterPath = `${directory}/${icon.name}.astro`;
     const adapter = existsSync(resolve(root, adapterPath)) ? adapterPath : undefined;
     const adapterSource = adapter ? readFileSync(resolve(root, adapter), "utf8") : "";
+    const registration = adapterSource.includes("CssOpacityIcon")
+      ? "packages/animated-icons/src/shared/register-css-opacity.ts"
+      : adapterSource.includes("CssIcon") ? "packages/animated-icons/src/shared/register-css-cycle.ts" : `${directory}/element.ts`;
+    if (existsSync(resolve(root, registration))) closure(registration, recipeFiles);
+    const files = [...recipeFiles].sort();
     const engine = /css-cycle|CssIcon|cycle-css|CssOpacityIcon/.test(adapterSource) || files.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
     const modules = files.map(load);
     const classification = decision(modules, engine, icon.slug);
     const migrationState = engine === "css" ? "migrated" : classification.status === "supported" ? "supported-but-deferred" : classification.status === "motion" ? "retained-on-motion" : classification.status === "candidate" ? "capability-needed" : "needs-review";
-    return { ...icon, definition, adapter: adapter ?? null, engine, mechanisms: files.filter(file => file.includes("/shared/") || file.includes("/css-")), sources: files, classification, migrationState,
+    return { ...icon, definition, adapter: adapter ?? null, registration, engine, mechanisms: files.filter(file => file.includes("/shared/") || file.includes("/css-")), sources: files, classification, migrationState,
       uncertainty: ["Static source analysis does not establish browser parity or visual acceptance.", ...(classification.status === "review" ? ["Expressions are traceable evidence, not evaluated effective settings. Review the referenced call paths and defaults."] : []), ...(!adapter ? ["Adapter filename did not match the component export; engine requires review."] : [])],
       lifecycle: { source: "packages/animated-icons/src/element.ts", completion: "Completed return clears; entry follows recipe finish policy.", interruption: "Lifecycle stops and cancels old tracks; recipe chooses retained pose and velocity.", replay: "See cycle replay or local and shared animate expressions.", return: "See local returning branches and shared defaults in sources." } };
   });

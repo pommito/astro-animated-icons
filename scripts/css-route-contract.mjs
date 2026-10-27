@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { generatedCSS as transformCSS } from "./css-cycles.mjs";
 import { generatedOpacityCSS } from "./css-opacity.mjs";
+import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
 const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS]);
 
@@ -28,10 +29,9 @@ export function createCSSRouteVerifier(output, javascriptBudget) {
         const matches = [...html.matchAll(/<style\b([^>]*)>/g)].filter(([, attributes]) => attributes.includes('data-grave-cycle-style="' + id + '"'));
         assert.equal(matches.length, 1, context + ": one active sheet marker for " + id);
       }
-      assert.equal(actual.entries.length, selected.length, context + ": selective script entries");
+      assert.equal(actual.entries.length, registrationEntries(selected), context + ": selective script entries");
       assert.equal(actual.inline.length, 0, context + ": no fixture scripts in consumer payload");
-      const tags = new Set([...actual.source.matchAll(/["'`](grave-[a-z0-9]+(?:-[a-z0-9]+)*)["'`]/g)].map(match => match[1]));
-      assert.deepEqual(tags, new Set(selected.map(id => "grave-" + id)), context + ": selective registrations");
+      verifyRegistrations(actual, html, selected, context);
       assert.ok(!/react(?:-dom)?|react\/jsx-runtime|reference-/.test(actual.source), context + ": fixture references excluded");
       if (selected.length && selected.every(id => generatedCSS.has(id))) {
         assert.ok([...actual.chunks.values()].reduce((sum, chunk) => sum + chunk.bytes, 0) < javascriptBudget, context + ": CSS-only JS budget excludes Motion");

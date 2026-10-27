@@ -10,7 +10,7 @@ All icons use the lifecycle and trigger code in `src/element.ts`. Each instance 
 
 `src/icon.css` contains the shared wrapper and SVG styles. Keep drawing-specific settings with the rendered drawing or client recipe. Astro can collect styles from unused components imported through an export barrel, so per-icon `<style>` blocks would make the catalogue's CSS accumulate on consumer pages.
 
-`src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Its registration script stays in that adapter so rendering one icon loads only that icon's behavior. The shared module has no registration script.
+`src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Motion registration scripts stay in the icon adapters. CSS registration scripts belong to `CssIcon.astro` and `CssOpacityIcon.astro`, so icons using the same mechanism share an entry. The base `Icon.astro` has no registration script.
 
 Each `src/icons/<name>/definition.ts` exports an internal recipe with these responsibilities:
 
@@ -48,7 +48,7 @@ Motion mini eases the whole opacity effect, while CSS eases each interval. The o
 
 Astro renders complete initial SVG regardless of engine. The CSS wrappers emit marked inline styles only for rendered recipes, using request-local sets to deduplicate repeated instances. Static per-icon style blocks would let unused barrel imports accumulate CSS. Unused imports may retain the common wrapper CSS, but must add no recipe CSS or registration script.
 
-The [shared stylesheet helper](../packages/animated-icons/src/shared/cycle-css.ts) also runs on connection and before playback. A style in an inactive template is unavailable to an independently cloned drawing. The helper finds an active marked sheet or regenerates it in the drawing's document. It reconciles late sheets when the original template is mounted. The compiler therefore reaches the browser for recovery as well as running during server rendering. Include that code in payload measurements.
+The [shared stylesheet helper](../packages/animated-icons/src/shared/recipe-css.ts) also runs on connection and before playback. A style in an inactive template is unavailable to an independently cloned drawing. The helper finds an active marked sheet or regenerates it in the drawing's document. It reconciles late sheets when the original template is mounted. Each mechanism's compiler therefore reaches the browser for recovery as well as running during server rendering. Opacity imports the recovery helper directly, so it does not need the transform compiler. Include that code in payload measurements.
 
 Fixture-only Motion references consume the same recipe data and drawings through the previous mechanisms. They compare the refactor with its preceding local implementation; they do not execute upstream React components. References remain outside consumer imports. The [migration plan](css-migration-plan.md) records family decisions and retained Motion behavior.
 
@@ -60,7 +60,17 @@ For a particular icon's geometry, timing, finish policy, and interrupted returns
 
 ## Loading contract
 
+The CSS wrappers serialize the existing cycle or opacity data into each rendered host's `data-grave-cycle-recipe` or `data-grave-opacity-recipe` attribute. [The serializer](../packages/animated-icons/src/shared/recipe-data.ts) escapes angle brackets before Astro escapes the attribute. The complete SVG and generated stylesheet still render on the server. Recipe data remains defined once in `cycle.ts` or `parts.ts`; serialization creates no second maintained definition.
+
+[Transform registration](../packages/animated-icons/src/shared/register-css-cycle.ts) and [opacity registration](../packages/animated-icons/src/shared/register-css-opacity.ts) each import only their own adapter. Their shared [discovery helper](../packages/animated-icons/src/shared/register-css.ts) reads rendered hosts and recursively scans inert templates. It defines each public tag once through the existing lifecycle factory. The `astro:page-load` event repeats discovery after Astro navigation. Later clones of a discovered icon reuse its registered class.
+
+Every host carries complete recipe data so a clone mounted before registration still works after its source template and styles have been removed. Repeated instances share registration, runtime and generated styles, while their recipe attributes repeat in HTML. Whole-page compression accounts for that cost. No catalogue registry, build integration or consumer configuration is required.
+
+The registration module must still load. A processed script held only in an inert template does not execute until its fragment is mounted. The removed-source fixture loads the bootstraps outside that template to isolate recipe-data and stylesheet recovery.
+
 [The bundle inspector](../scripts/inspect-bundle.mjs) applies one contract to single-icon and combined routes. It checks registrations, script counts, shared CSS, absence of React, and exact chunk unions for combined routes. It also checks agreement between icon directories, Astro exports, and single-icon cases.
+
+[The registration contract](../scripts/registration-contract.mjs) compares every serialized CSS record with its source data, rejects unused records, and verifies that the selected mechanism's bootstrap is reachable. Motion tags remain literal registrations in the JavaScript graph. Entry counts combine distinct CSS mechanisms with distinct Motion icons. Exact combined-route chunk unions still apply.
 
 The inspector reads the same catalogue as the drawing checker. It caches each chunk's source and byte and gzip sizes for one inspection. A later inspection reads the files again, including any changes made by a test.
 
