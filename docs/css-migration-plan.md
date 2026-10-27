@@ -47,11 +47,13 @@ For the next family, resolve its source expressions and transitive defaults, cho
 | Migrate finite chevrons | [#84](https://github.com/pommito/astro-animated-icons/issues/84) | `28dd4ef`, on inventory |
 | Extend deterministic capabilities | [#85](https://github.com/pommito/astro-animated-icons/issues/85) | `e4fa797`, including template recovery for both engines |
 | Validate integrated implementation | [#86](https://github.com/pommito/astro-animated-icons/issues/86) | Original `e6197ce`, comparison controls `4986004`, integration `07d2162`, shared route contract `7b4a57c`; merged in [#93](https://github.com/pommito/astro-animated-icons/pull/93) at `da69ce6` |
-| Document engines and workflow | [#87](https://github.com/pommito/astro-animated-icons/issues/87) | [Draft #90](https://github.com/pommito/astro-animated-icons/pull/90), integrated with current main for documentation review |
+| Document engines and workflow | [#87](https://github.com/pommito/astro-animated-icons/issues/87) | [PR #90](https://github.com/pommito/astro-animated-icons/pull/90), merged into main at `392f580` on 2026-10-27 |
 
 These are implementation stages, not blanket visual approval or release status. The source pilot patch was promoted once; downstream stages integrate prerequisite commits.
 
-The implementation dependencies are integrated into main. Documentation PR #90 targets main and remains a draft for owner review. JavaScript chunk consolidation remains separate in [#91](https://github.com/pommito/astro-animated-icons/issues/91).
+All six initial stages are integrated into main and their issues are closed. Documentation PR #90 merged on 2026-10-27. JavaScript chunk consolidation remains open in [#91](https://github.com/pommito/astro-animated-icons/issues/91). The [2026-10-27 loading baseline](history/2026-10-27-page-loading-baseline.md) measures both the full fixture and a minimal consumer.
+
+[Issue #94](https://github.com/pommito/astro-animated-icons/issues/94) prepares UserRoundCog with the existing CSS cycle, subject to half-turn parity and payload evidence. [Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) prepares combined transforms for KeySquare, Wallet and KeyCircle, with an architecture decision before implementation. Both require owner visual review for any migration.
 
 ## Measurements and acceptance
 
