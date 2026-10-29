@@ -1,6 +1,7 @@
 import migration from "../tests/helpers/css-migration-cases.json" with { type: "json" };
 const all = migration.icons.map(icon => icon.slug);
 const ten = ["bell", "chevron-right", "folder-down", "calendar-days", "circle-dashed", "folder", "circle-help", "chevron-down", "folder-up", "square-chevron-right"];
+const combined = ["key-square", "wallet", "key-circle"];
 
 export const loadingCases = {
   one: ["circle-dashed"],
@@ -21,6 +22,15 @@ export const loadingCases = {
   "cog-css": ["user-round-cog", "bell", "circle-dashed"],
   "cog-loader": ["user-round-cog", "loader-circle"],
   "cog-css-loader": ["user-round-cog", "bell", "circle-dashed", "loader-circle"],
+  ...Object.fromEntries([...combined.map(slug => [slug, [slug]]), ["combined", combined]].flatMap(([name, slugs]) => [
+    [name, slugs],
+    [name + "-repeated", Array.from({ length: 20 }, () => slugs).flat()],
+    [name + "-css", [...slugs, "bell", "circle-dashed", "user-round-cog"]],
+    [name + "-loader", [...slugs, "loader-circle"]],
+    [name + "-css-loader", [...slugs, "bell", "circle-dashed", "user-round-cog", "loader-circle"]],
+  ])),
 };
 
-export const loadingIcons = [...new Map([...migration.icons, { slug: "user-round-cog", name: "UserRoundCog" }, { slug: "loader-circle", name: "LoaderCircle" }].map(icon => [icon.slug, icon])).values()];
+export const loadingIcons = [...new Map([...migration.icons, { slug: "user-round-cog", name: "UserRoundCog" }, { slug: "loader-circle", name: "LoaderCircle" },
+  { slug: "key-square", name: "KeySquare" }, { slug: "wallet", name: "Wallet" }, { slug: "key-circle", name: "KeyCircle" },
+].map(icon => [icon.slug, icon])).values()];

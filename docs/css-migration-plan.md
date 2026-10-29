@@ -26,6 +26,8 @@ Keep one maintained definition per recipe. Reuse an existing mechanism only when
 
 ## Inventory and next work
 
+[Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) has a [proposed combined-transform decision](adr/0001-combined-finite-transforms.md) and [pre-implementation Motion and payload evidence](history/2026-10-29-combined-transform-decision.md) at main `92523bd`. Owner architecture review is pending. KeySquare, Wallet, and KeyCircle remain on Motion. [#98](https://github.com/pommito/astro-animated-icons/issues/98) owns systematic source review of all 470 exports; [#99](https://github.com/pommito/astro-animated-icons/issues/99) owns migration of complete reviewed compatible families after capability proof. There is no arbitrary two- or three-icon limit on later family batches.
+
 Generate detailed status from the current code rather than maintaining another per-icon table:
 
 ```sh

@@ -1,0 +1,28 @@
+---
+import { KeySquare, Wallet, KeyCircle } from "@grave/animated-icons/astro";
+const icons = [
+  { slug: "key-square", name: "KeySquare", Component: KeySquare },
+  { slug: "wallet", name: "Wallet", Component: Wallet },
+  { slug: "key-circle", name: "KeyCircle", Component: KeyCircle },
+];
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Combined transform Motion baseline</title></head>
+  <body>
+    <h1>Combined transform Motion baseline</h1>
+    <p>These public components still run their preceding local Motion recipes. This page captures behavior before recipe extraction. No CSS replacement is implemented. Architecture review and visual acceptance are pending.</p>
+    {icons.map(({ slug, name, Component }) => <section data-kind={slug} id={slug}>
+      <h2>{name}</h2>
+      <button type="button" data-pair-play>Play {name}</button>
+      <button type="button" data-pair-stop>Stop {name}</button>
+      <table><thead><tr><th>Size</th><th>Public Motion icon</th></tr></thead>
+        <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
+          <th scope="row">{size} px</th><td><Component size={size} controlled data-sample /></td>
+        </tr>)}</tbody>
+      </table>
+    </section>)}
+  </body>
+</html>
+<script>
+  import "../comparison-controls";
+</script>

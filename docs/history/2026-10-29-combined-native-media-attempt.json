@@ -1,0 +1,9 @@
+{
+  "baseline": "92523bd5c8f2a8daf58c57f507755b0678419bfb",
+  "browser": "Chrome 154, macOS",
+  "method": "DevTools prefersReducedMotion emulation with native matchMedia. All 12 public Motion entries were paused at 83 ms. An additional MediaQueryList was retained on window and observed for change events. The result was read after two requestAnimationFrame callbacks.",
+  "before": { "matches": false, "pausedEntries": 12 },
+  "afterReduce": { "matches": true, "observedChangeEvents": [], "clearedEntries": 0, "staticAfterManualStart": 0, "total": 12 },
+  "afterRestoringPreferenceAndReset": { "matches": false, "restartedEntries": 12, "cleanEntries": 12 },
+  "conclusion": "Native media-query change cancellation was not established. The cause of missing change events in this tool environment remains unresolved. This is separate from the 36 passing synthetic preference flags in the saved Motion capture. No production runtime changed."
+}

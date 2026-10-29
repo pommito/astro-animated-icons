@@ -87,7 +87,11 @@ export function measureLoading(output, metadata) {
   const transitions = [["one", "four"], ["four", "ten"], ["ten", "all"], ["all", "one"], ["all", "all-loader"],
     ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"],
     ["cog", "cog-repeated"], ["cog", "cog-css"], ["cog-css", "cog-css-loader"],
-    ["loader", "cog-loader"], ["cog-css-loader", "cog"]];
+    ["loader", "cog-loader"], ["cog-css-loader", "cog"],
+    ...["key-square", "wallet", "key-circle", "combined"].flatMap(name => [
+      [name, name + "-repeated"], [name, name + "-css"], [name + "-css", name + "-css-loader"],
+      ["loader", name + "-loader"], [name + "-css-loader", name],
+    ])];
   const warm = transitions.map(([from, to]) => {
     const cached = new Set([...routes[from].chunks, ...routes[from].externalCSS]);
     const requested = [...routes[to].chunks, ...routes[to].externalCSS].filter(url => !cached.has(url));
@@ -101,6 +105,10 @@ export function measureLoading(output, metadata) {
   assert.deepEqual(routes.all.css, routes["repeated-all"].css, "repeated families must reuse generated CSS");
   assert.deepEqual(routes.cog.chunks, routes["cog-repeated"].chunks, "repeated UserRoundCog must reuse JavaScript");
   assert.deepEqual(routes.cog.css, routes["cog-repeated"].css, "repeated UserRoundCog must reuse generated CSS");
+  for (const name of ["key-square", "wallet", "key-circle", "combined"]) {
+    assert.deepEqual(routes[name].chunks, routes[name + "-repeated"].chunks, name + ": repeated instances must reuse JavaScript");
+    assert.deepEqual(routes[name].css, routes[name + "-repeated"].css, name + ": repeated instances must reuse generated CSS");
+  }
   return { routes, warm, resources };
 }
 

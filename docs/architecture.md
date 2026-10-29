@@ -32,6 +32,10 @@ The recipe does not count tracks or decide when to clear a whole playback. A com
 
 ## Internal animation engines
 
+[ADR 0001](adr/0001-combined-finite-transforms.md) proposes independent property channels for combined finite transforms. Owner architecture review is pending. The [pre-implementation evidence](history/2026-10-29-combined-transform-decision.md) captures KeySquare, Wallet, and KeyCircle on Motion before recipe extraction. The current mechanisms below are unchanged.
+
+The [playback vocabulary](../GLOSSARY.md) distinguishes the displayed pose from the retained property pose used by interrupted combined transforms.
+
 Each icon selects its mechanism through imports inside the package. Consumers use the same Astro component and playback handle. There is no catalogue-wide client registry or engine prop. CSS keyframes still require JavaScript for triggers, manual playback, interruption, and cleanup. The shared lifecycle owns those behaviors for both engines.
 
 Finite transforms keep their data in `src/icons/<name>/cycle.ts`. [FiniteTransformCycle](../packages/animated-icons/src/shared/finite-transform-cycle.ts) describes one target and one rotation or translation property, values, offsets, entry and optional return timing, replay policy, and finish policy. [CssIcon.astro](../packages/animated-icons/src/CssIcon.astro) renders the drawing and generated styles. The [CSS cycle adapter](../packages/animated-icons/src/shared/css-cycle.ts) implements the track protocol.
