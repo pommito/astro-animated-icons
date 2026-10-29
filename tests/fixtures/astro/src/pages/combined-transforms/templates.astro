@@ -1,0 +1,24 @@
+---
+import { combinedTransforms } from "../../combined-transform-catalogue";
+
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Independent CSS icon templates</title></head>
+  <body>
+    <h1>Independent CSS icon templates</h1>
+    <p>The second template is cloned before and after registration while the first stays inert. The check then mounts a clone of the first template to verify stylesheet deduplication.</p>
+    <template id="first">{combinedTransforms.map(({ Managed }) => <Managed controlled />)}</template>
+    <template id="second">{combinedTransforms.map(({ Managed }) => <Managed controlled />)}</template>
+    <section id="before"><h2>Cloned before registration</h2></section>
+    <script is:inline>
+      const template = document.querySelector("#second");
+      const early = document.querySelector("#before");
+      early.append(template.content.cloneNode(true));
+      early.dataset.beforeRegistration = String([...early.querySelectorAll("[data-grave-icon]")].every(icon => typeof icon.startAnimation === "undefined"));
+    </script>
+    <section id="after"><h2>Cloned after registration</h2></section>
+    <button id="check-templates" type="button">Check independent templates</button>
+    <output id="template-result"></output>
+  </body>
+</html>
+<script>import "../../independent-template-checks";</script>

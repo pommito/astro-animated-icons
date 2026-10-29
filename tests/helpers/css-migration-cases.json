@@ -146,6 +146,22 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "key-circle",
+      "name": "KeyCircle",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "combined-transforms"
+    },
+    {
+      "slug": "key-square",
+      "name": "KeySquare",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "combined-transforms"
+    },
+    {
       "slug": "square-chevron-down",
       "name": "SquareChevronDown",
       "engine": "finite-transform-cycle",
@@ -184,6 +200,14 @@
       "finish": "hold",
       "replay": "current",
       "comparison": "css-capabilities"
+    },
+    {
+      "slug": "wallet",
+      "name": "Wallet",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "combined-transforms"
     }
   ],
   "cases": {
@@ -241,6 +265,12 @@
     "folder-up": [
       "folder-up"
     ],
+    "key-circle": [
+      "key-circle"
+    ],
+    "key-square": [
+      "key-square"
+    ],
     "square-chevron-down": [
       "square-chevron-down"
     ],
@@ -255,6 +285,9 @@
     ],
     "user-round-cog": [
       "user-round-cog"
+    ],
+    "wallet": [
+      "wallet"
     ],
     "chevrons": [
       "chevron-down",
@@ -301,11 +334,14 @@
       "folder-input",
       "folder-output",
       "folder-up",
+      "key-circle",
+      "key-square",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
-      "user-round-cog"
+      "user-round-cog",
+      "wallet"
     ],
     "repeated": [
       "bell",
@@ -362,6 +398,12 @@
       "folder-up",
       "folder-up",
       "folder-up",
+      "key-circle",
+      "key-circle",
+      "key-circle",
+      "key-square",
+      "key-square",
+      "key-square",
       "square-chevron-down",
       "square-chevron-down",
       "square-chevron-down",
@@ -376,7 +418,10 @@
       "square-chevron-up",
       "user-round-cog",
       "user-round-cog",
-      "user-round-cog"
+      "user-round-cog",
+      "wallet",
+      "wallet",
+      "wallet"
     ],
     "mixed-loader": [
       "bell",
@@ -397,11 +442,14 @@
       "folder-input",
       "folder-output",
       "folder-up",
+      "key-circle",
+      "key-square",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
       "user-round-cog",
+      "wallet",
       "loader-circle"
     ],
     "mixed-arrow": [
@@ -423,11 +471,14 @@
       "folder-input",
       "folder-output",
       "folder-up",
+      "key-circle",
+      "key-square",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
       "user-round-cog",
+      "wallet",
       "arrow-left"
     ],
     "interface": [

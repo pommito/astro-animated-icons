@@ -1,5 +1,5 @@
-import type { FiniteTransformCycle } from "./finite-transform-cycle";
+import type { TransformCycle } from "./finite-transform-cycle";
 import { createCSSCycleRecipe } from "./css-cycle";
 import { registerCSSRecipes } from "./register-css";
 
-registerCSSRecipes<FiniteTransformCycle>("data-grave-cycle-recipe", createCSSCycleRecipe);
+registerCSSRecipes<TransformCycle>("data-grave-cycle-recipe", createCSSCycleRecipe);

@@ -1,5 +1,9 @@
 # Third-party notices
 
+KeySquare, Wallet, and KeyCircle use the shared combined CSS cycle after owner approval of ADR 0001 on 2026-10-29. Their drawings and pinned Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26` remain unchanged. `/combined-transforms/` compares the production icons with fixture-only references using the preceding local Motion helpers and the same cycle data and drawings. Saved Motion poses predate extraction. These references do not execute upstream React components. Numerical evidence is recorded in the [combined-transform report](../../docs/history/2026-10-29-combined-transforms.md). The owner [visually accepted these three recipes](../../docs/history/2026-10-29-combined-transform-acceptance.md) on 2026-10-29 at `df1ad33`.
+
+The combined sampler adapts the cubic-Bezier subdivision used by `motion-utils` 13.5.0, which credits Gaëtan Renaudeau's BezierEasing. The Motion and BezierEasing notices below cover this adaptation. No Motion runtime import is required by the combined CSS mechanism.
+
 UserRoundCog now uses the shared CSS cycle for its positive 180-degree cog rotation, with 300 ms easeOut entry and return, current-pose replay, and hold completion. Its drawing and pinned Lucide Animated revision remain unchanged. The fixture-only Motion reference at `/css-capabilities/#user-round-cog` consumes the same cycle and drawing through the previous local scalar transform helper. It does not execute the upstream React component. [Migration evidence](../../docs/history/2026-10-29-user-round-cog.md) records numerical checks separately from owner visual acceptance.
 
 The numerical comparison and browser-test descriptions below document the earlier validation strategy used during adaptation. Current [validation](../../docs/validation.md) runs without a browser; the comparison fixtures remain available for the user's manual review.
@@ -979,6 +983,33 @@ The `/currency-feedback-comparison/` fixture executes all ten original pinned Re
 MIT License
 
 Copyright (c) 2024-2026 pqoqubbw
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Motion easing and BezierEasing
+
+The combined finite sampler adapts the subdivision in motion-utils 13.5.0. Its upstream source credits [BezierEasing](https://github.com/gre/bezier-easing) and its [MIT license](https://github.com/gre/bezier-easing/blob/master/LICENSE).
+
+The MIT License (MIT)
+
+Copyright (c) 2024 [Motion](https://motion.dev) B.V.
+Copyright (c) 2014 Gaëtan Renaudeau
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

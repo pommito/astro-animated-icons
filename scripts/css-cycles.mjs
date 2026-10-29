@@ -3,8 +3,10 @@ import { readCatalog } from "./catalog.mjs";
 import { evaluateTypeScriptData } from "./typescript-data.mjs";
 
 const source = new URL("../packages/animated-icons/src/", import.meta.url);
-export const { cycleCSS, ensureCycleCSS } = await evaluateTypeScriptData(
+export const { cycleCSS, ensureCycleCSS, combinedFrames, combinedPose } = await evaluateTypeScriptData(
   readFileSync(new URL("shared/recipe-css.ts", source), "utf8")
+  + readFileSync(new URL("shared/combined-transform-cycle.ts", source), "utf8").replace(/^import .*;\n/gm, "")
+  + readFileSync(new URL("shared/combined-transform-css.ts", source), "utf8").replace(/^import .*;\n/gm, "")
   + readFileSync(new URL("shared/cycle-css.ts", source), "utf8").replace(/^import .*;\n/gm, ""),
 );
 export const cycles = new Map();

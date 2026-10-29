@@ -102,4 +102,16 @@ test("module evidence separates registration, recipe, lifecycle and CSS support"
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/css-cycle.ts"), "css-adapter");
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/cycle-css.ts"), "stylesheet-compiler-and-recovery");
   assert.equal(chunkRole("/repo/node_modules/motion/index.js"), "dependency");
+  assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-css.ts"), "stylesheet-compiler-and-recovery");
+  assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-cycle.ts"), "transform-sampling");
 });
+
+test("combined-transform baseline rejects repeated stylesheet payloads", () => consumer((output, metadata) => {
+  const { routes, warm } = measureLoading(output, metadata);
+  const repeated = warm.find(value => value.from === "combined" && value.to === "combined-repeated");
+  assert.deepEqual(repeated.requested, []);
+  assert.deepEqual(repeated.page, routes["combined-repeated"].html);
+  const page = new URL("page-loading/combined-repeated/index.html", output);
+  writeFileSync(page, readFileSync(page, "utf8").replace("</head>", '<link rel="stylesheet" href="/assets/shared.css"></head>'));
+  assert.throws(() => measureLoading(output, metadata), /combined: repeated instances must reuse generated CSS/);
+}));
