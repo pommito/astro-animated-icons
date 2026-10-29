@@ -84,7 +84,7 @@ async () => {
       const compare = (scenario, motion, firstMatrix, parameters) => {
         const candidateAnimation = runCSS(motion, firstMatrix, parameters);
         let maximum = 0;
-        const times = [...new Set([0, 1, 2.5, 4.9, 5, 31, 83, 125, 199, motion.duration / 3, motion.duration * 0.45, motion.duration / 2, motion.duration * 2 / 3, motion.duration - 1, motion.duration])];
+        const times = [...new Set([0, 1, 2.5, 4.9, 5, 31, 83, 125, 199, motion.duration / 4, motion.duration / 3, motion.duration * 0.45, motion.duration / 2, motion.duration * 2 / 3, motion.duration * 3 / 4, motion.duration - 1, motion.duration])];
         for (const time of times) {
           seek(icon, time); candidateAnimation.currentTime = time;
           const error = matrixError(matrices(svg), matrices(candidate)); comparisons++;

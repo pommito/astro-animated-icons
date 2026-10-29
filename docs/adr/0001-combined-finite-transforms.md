@@ -6,7 +6,7 @@ status: proposed
 
 [Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) needs one finite CSS transform track for KeySquare, Wallet, and KeyCircle. I recommend ordered property channels with independent offsets, compiled onto the preceding Motion helper's 5 ms grid. Preserve both the displayed matrix and the retained property pose when playback changes. This proposal needs owner review before shared-engine implementation.
 
-The [source review and experiments](../history/2026-10-29-combined-transform-decision.md) capture unmodified production behavior at `92523bd`, before any recipe extraction. An isolated CSS experiment passed 4500 matrix comparisons at 14, 16, 24, and 28 px with maximum error 0.000010000000000065512 against the existing 0.005 threshold. These experiments establish feasibility for the sampled poses. They do not validate a production compiler or adapter.
+The [source review and experiments](../history/2026-10-29-combined-transform-decision.md) capture unmodified production behavior at `92523bd`, before any recipe extraction. An isolated CSS experiment passed 5100 matrix comparisons at 14, 16, 24, and 28 px with maximum error 0.000010000000000065512 against the existing 0.005 threshold. These experiments establish feasibility for the sampled poses. They do not validate a production compiler or adapter.
 
 ## Proposed representation
 

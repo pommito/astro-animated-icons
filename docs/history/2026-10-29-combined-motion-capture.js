@@ -28,7 +28,7 @@ async () => {
     const entry = animation.effect.getKeyframes();
     if (size === 14) contracts[slug] = { entryTiming: animation.effect.getTiming(), entryFrames: entry };
     check(tracks(icon).length === 1, context + " has one native transform track");
-    const samples = [...new Set([0, 1, 2.5, 4.9, 5, 31, 83, 125, 199, duration / 3, duration * 0.45, duration / 2, duration * 2 / 3, duration - 1, duration])].sort((a, b) => a - b);
+    const samples = [...new Set([0, 1, 2.5, 4.9, 5, 31, 83, 125, 199, duration / 4, duration / 3, duration * 0.45, duration / 2, duration * 2 / 3, duration * 3 / 4, duration - 1, duration])].sort((a, b) => a - b);
     samples.forEach(time => snap("entry", time));
     const interruptions = [31, 83, 199, duration - 1, duration];
     for (const interrupted of interruptions) for (const operation of ["stop", "replay"]) {

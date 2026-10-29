@@ -68,7 +68,7 @@
       "origin": "50% 50%"
     }
   },
-  "comparisons": 4500,
+  "comparisons": 5100,
   "maxError": 0.000010000000000065512,
   "wrongOffsetMaxError": 0.05114726,
   "wrongOrderMaxError": 0.209269,
@@ -78,2100 +78,2100 @@
       "slug": "key-square",
       "size": 14,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 14,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 16,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 24,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000009999999999843467
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay from 599",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay from 600",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "key-square",
       "size": 28,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.000010000000000065512
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 14,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 16,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 24,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.600000000000721e-8
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay from 549",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.0000000000287557e-7
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay from 550",
-      "samples": 15,
+      "samples": 17,
       "maxError": 3.000000000025552e-8
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 4.999999999997411e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "wallet",
       "size": 28,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 2.0000000000314905e-9
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 14,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 16,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 24,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "entry",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay from 31",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0.0000010000000000287557
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay from 83",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop from 199",
-      "samples": 15,
-      "maxError": 1.0000000000114084e-7
+      "samples": 17,
+      "maxError": 9.999999999732445e-7
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay from 199",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.799999999999805e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay from 899",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 0
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay from 900",
-      "samples": 15,
+      "samples": 17,
       "maxError": 9.999999999593667e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized stop during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.110000000000401e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     },
     {
       "slug": "key-circle",
       "size": 28,
       "scenario": "parameterized replay during return",
-      "samples": 15,
+      "samples": 17,
       "maxError": 1.4000000000003593e-8
     }
   ]
