@@ -1,10 +1,10 @@
 ---
-import { Bell, CircleDashed } from "@grave/animated-icons/astro";
+import { Bell, CircleDashed, UserRoundCog } from "@grave/animated-icons/astro";
 ---
 <html lang="en"><head><meta charset="utf-8" /><title>Recipe registration templates</title></head><body>
   <h1>Recipe registration templates</h1>
   <p>The original template is removed before registration. Independent host clones keep their recipe data and recover their styles.</p>
-  <template id="source"><Bell controlled /><CircleDashed controlled /></template>
+  <template id="source"><Bell controlled /><CircleDashed controlled /><UserRoundCog controlled /></template>
   <section id="early"></section>
   <script is:inline>
     window.loadingSource = document.querySelector("#source");
@@ -23,7 +23,7 @@ import { Bell, CircleDashed } from "@grave/animated-icons/astro";
   import "../../../../../../packages/animated-icons/src/shared/register-css-opacity";
   type Handle = HTMLElement & IconHandle;
   declare global { interface Window { loadingSource: HTMLTemplateElement } }
-  await Promise.all(["grave-bell", "grave-circle-dashed"].map(tag => customElements.whenDefined(tag)));
+  await Promise.all(["grave-bell", "grave-circle-dashed", "grave-user-round-cog"].map(tag => customElements.whenDefined(tag)));
   let sequence = 0;
   document.querySelector("#check-loading")!.addEventListener("click", () => {
     const results: Record<string, boolean> = {
@@ -36,7 +36,7 @@ import { Bell, CircleDashed } from "@grave/animated-icons/astro";
     late.append(...[...window.loadingSource.content.querySelectorAll("[data-grave-icon]")].map(icon => icon.cloneNode(true)));
     for (const [location, parent] of [["early", document.querySelector("#early")!], ["late", late]] as const) {
       for (const icon of parent.querySelectorAll<Handle>("[data-grave-icon]")) {
-        const count = icon.localName === "grave-bell" ? 1 : 8;
+        const count = icon.localName === "grave-circle-dashed" ? 8 : 1;
         icon.startAnimation();
         results[location + "/" + icon.localName + "/entry"] = icon.getAnimations({ subtree: true }).length === count;
         icon.stopAnimation();
@@ -66,7 +66,7 @@ import { Bell, CircleDashed } from "@grave/animated-icons/astro";
     probe.startAnimation();
     results.nestedClonePlayback = probe.getAnimations({ subtree: true }).length === 1;
     probe.remove(); outer.remove(); late.remove();
-    for (const id of ["bell", "circle-dashed"]) {
+    for (const id of ["bell", "circle-dashed", "user-round-cog"]) {
       results[id + "/oneActiveSheet"] = document.querySelectorAll('style[data-grave-cycle-style="' + id + '"]').length === 1;
     }
     document.querySelector("#loading-result")!.textContent = JSON.stringify({ userAgent: navigator.userAgent, results, failures: Object.keys(results).filter(key => !results[key]) });

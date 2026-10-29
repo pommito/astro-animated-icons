@@ -28,7 +28,7 @@ test("inventory covers each export once and retains shared defaults and mixed me
     assert.equal(first.classification.resolvedPlayback.returnDuration, 0.3);
     assert.equal(first.classification.resolvedPlayback.returnEase, "easeOut");
   }
-  for (const slug of ["bell", "chevron-right"]) {
+  for (const slug of ["bell", "chevron-right", "user-round-cog"]) {
     const icon = result.icons.find(icon => icon.slug === slug);
     assert.equal(icon.engine, "css");
     assert.equal(icon.classification.status, "supported");
@@ -50,7 +50,7 @@ test("inventory covers each export once and retains shared defaults and mixed me
     assert.equal(icon.migrationState, "migrated");
     assert.equal(icon.classification.capability, ["calendar-days", "circle-dashed"].includes(slug) ? "timed-opacity-parts" : "finite-transform-cycle");
   }
-  assert.equal(result.icons.find(icon => icon.slug === "user-round-cog").migrationState, "supported-but-deferred");
+  assert.equal(result.icons.find(icon => icon.slug === "user-round-cog").migrationState, "migrated");
   assert.equal(result.icons.find(icon => icon.slug === "wifi-sync").migrationState, "retained-on-motion");
   assert.deepEqual(result, inventoryAnimations());
 });
@@ -80,14 +80,14 @@ test("a spring word does not classify a recipe and unknown calls require review"
 });
 
 
-test("reviewed source drift cannot retain a supported classification", () => {
+test("reviewed source drift cannot retain its recorded classification", () => {
   const root = mkdtempSync(join(tmpdir(), "animation-reviewed-drift-"));
   try {
     const src = join(root, "packages/animated-icons/src");
-    mkdirSync(join(src, "icons/user-round-cog"), { recursive: true });
-    writeFileSync(join(src, "astro.ts"), 'export { default as UserRoundCog } from "./icons/user-round-cog/UserRoundCog.astro";');
-    writeFileSync(join(src, "icons/user-round-cog/UserRoundCog.astro"), "<svg />");
-    writeFileSync(join(src, "icons/user-round-cog/definition.ts"), 'export const recipe = changedRecipe({ duration: unknown });');
+    mkdirSync(join(src, "icons/wifi-sync"), { recursive: true });
+    writeFileSync(join(src, "astro.ts"), 'export { default as WifiSync } from "./icons/wifi-sync/WifiSync.astro";');
+    writeFileSync(join(src, "icons/wifi-sync/WifiSync.astro"), "<svg />");
+    writeFileSync(join(src, "icons/wifi-sync/definition.ts"), 'export const recipe = changedRecipe({ duration: unknown });');
     const icon = inventoryAnimations(root).icons[0];
     assert.equal(icon.classification.status, "review");
     assert.equal(icon.classification.capability, "changed-reviewed-source");

@@ -85,6 +85,16 @@ test("measurement rejects repeated stylesheet payloads", () => consumer((output,
   assert.throws(() => measureLoading(output, metadata), /repeated icons must reuse generated CSS/);
 }));
 
+test("repeated UserRoundCog instances must reuse stylesheet payloads", () => consumer((output, metadata) => {
+  const { routes, warm } = measureLoading(output, metadata);
+  const repeated = warm.find(value => value.from === "cog" && value.to === "cog-repeated");
+  assert.deepEqual(repeated.requested, []);
+  assert.deepEqual(repeated.page, routes["cog-repeated"].html);
+  const page = new URL("page-loading/cog-repeated/index.html", output);
+  writeFileSync(page, readFileSync(page, "utf8").replace("</head>", '<link rel="stylesheet" href="/assets/shared.css"></head>'));
+  assert.throws(() => measureLoading(output, metadata), /repeated UserRoundCog must reuse generated CSS/);
+}));
+
 test("module evidence separates registration, recipe, lifecycle and CSS support", () => {
   assert.equal(chunkRole("/repo/packages/animated-icons/src/icons/bell/element.ts"), "registration");
   assert.equal(chunkRole("/repo/packages/animated-icons/src/icons/bell/cycle.ts"), "recipe");

@@ -6,7 +6,7 @@ export const loadingCases = {
   one: ["circle-dashed"],
   four: migration.cases.interface,
   ten,
-  "legacy-21": all.filter(slug => slug !== "folder"),
+  "legacy-21": all.filter(slug => !["folder", "user-round-cog"].includes(slug)),
   all,
   repeated: Array(20).fill("circle-dashed"),
   "repeated-all": all.flatMap(slug => [slug, slug, slug]),
@@ -16,6 +16,11 @@ export const loadingCases = {
   "ten-loader": [...ten, "loader-circle"],
   "all-loader": [...all, "loader-circle"],
   unused: [],
+  cog: ["user-round-cog"],
+  "cog-repeated": Array(20).fill("user-round-cog"),
+  "cog-css": ["user-round-cog", "bell", "circle-dashed"],
+  "cog-loader": ["user-round-cog", "loader-circle"],
+  "cog-css-loader": ["user-round-cog", "bell", "circle-dashed", "loader-circle"],
 };
 
-export const loadingIcons = [...migration.icons, { slug: "loader-circle", name: "LoaderCircle" }];
+export const loadingIcons = [...new Map([...migration.icons, { slug: "user-round-cog", name: "UserRoundCog" }, { slug: "loader-circle", name: "LoaderCircle" }].map(icon => [icon.slug, icon])).values()];

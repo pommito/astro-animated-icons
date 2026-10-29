@@ -1,0 +1,4542 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "source": "3efe4f237e83ff8fb8abc9c264f82905785b4d0a",
+  "poses": [
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 31,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 83,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 125,
+      "matrix": [
+        -0.281214,
+        0.959645,
+        -0.959645,
+        -0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 150,
+      "matrix": [
+        -0.548033,
+        0.836456,
+        -0.836456,
+        -0.548033,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 199,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 250,
+      "matrix": [
+        -0.990278,
+        0.139102,
+        -0.139102,
+        -0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "entry",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 31,
+      "matrix": [
+        0.907322,
+        0.420437,
+        -0.420437,
+        0.907322,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 125,
+      "matrix": [
+        0.97744,
+        0.211213,
+        -0.211213,
+        0.97744,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 250,
+      "matrix": [
+        0.999733,
+        0.023097,
+        -0.023097,
+        0.999733,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 299,
+      "matrix": [
+        1,
+        5.17867e-05,
+        -5.17867e-05,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 31",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 31,
+      "matrix": [
+        0.466499,
+        0.884522,
+        -0.884522,
+        0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 125,
+      "matrix": [
+        0.861613,
+        0.507566,
+        -0.507566,
+        0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 250,
+      "matrix": [
+        0.998331,
+        0.0577501,
+        -0.0577501,
+        0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000129545,
+        -0.000129545,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 83",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 31,
+      "matrix": [
+        -0.592842,
+        0.805319,
+        -0.805319,
+        -0.592842,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 125,
+      "matrix": [
+        0.46991,
+        0.882715,
+        -0.882715,
+        0.46991,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 250,
+      "matrix": [
+        0.993117,
+        0.117129,
+        -0.117129,
+        0.993117,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000263201,
+        -0.000263201,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 199",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 31,
+      "matrix": [
+        -0.867691,
+        0.497104,
+        -0.497104,
+        -0.867691,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 125,
+      "matrix": [
+        0.281337,
+        0.959609,
+        -0.959609,
+        0.281337,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 250,
+      "matrix": [
+        0.99028,
+        0.139088,
+        -0.139088,
+        0.99028,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312843,
+        -0.000312843,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 299",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 31,
+      "matrix": [
+        -0.867821,
+        0.496877,
+        -0.496877,
+        -0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 125,
+      "matrix": [
+        0.281214,
+        0.959645,
+        -0.959645,
+        0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 250,
+      "matrix": [
+        0.990278,
+        0.139102,
+        -0.139102,
+        0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312874,
+        -0.000312874,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop from 300",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 31,
+      "matrix": [
+        0.578487,
+        0.815692,
+        -0.815692,
+        0.578487,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 125,
+      "matrix": [
+        -0.477559,
+        0.878599,
+        -0.878599,
+        -0.477559,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 250,
+      "matrix": [
+        -0.993227,
+        0.116192,
+        -0.116192,
+        -0.993227,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 31",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 31,
+      "matrix": [
+        -0.034661,
+        0.999399,
+        -0.999399,
+        -0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 125,
+      "matrix": [
+        -0.729381,
+        0.684108,
+        -0.684108,
+        -0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 250,
+      "matrix": [
+        -0.996659,
+        0.081681,
+        -0.081681,
+        -0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.00018333,
+        -0.00018333,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 83",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 31,
+      "matrix": [
+        -0.914625,
+        0.404302,
+        -0.404302,
+        -0.914625,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 125,
+      "matrix": [
+        -0.979238,
+        0.202714,
+        -0.202714,
+        -0.979238,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 250,
+      "matrix": [
+        -0.999755,
+        0.0221544,
+        -0.0221544,
+        -0.999755,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 299,
+      "matrix": [
+        -1,
+        4.96735e-05,
+        -4.96735e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 199",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 31,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 125,
+      "matrix": [
+        -1,
+        0.00012805,
+        -0.00012805,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 250,
+      "matrix": [
+        -1,
+        1.38998e-05,
+        -1.38998e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 299,
+      "matrix": [
+        -1,
+        3.14159e-08,
+        -3.14159e-08,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 299",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 31,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 125,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 250,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 299,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay from 300",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 31,
+      "matrix": [
+        0.034661,
+        0.999399,
+        -0.999399,
+        0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 125,
+      "matrix": [
+        0.729381,
+        0.684108,
+        -0.684108,
+        0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 250,
+      "matrix": [
+        0.996659,
+        0.081681,
+        -0.081681,
+        0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000183329,
+        -0.000183329,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "stop during return",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 31,
+      "matrix": [
+        -0.466499,
+        0.884522,
+        -0.884522,
+        -0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 125,
+      "matrix": [
+        -0.861613,
+        0.507566,
+        -0.507566,
+        -0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 250,
+      "matrix": [
+        -0.998331,
+        0.0577501,
+        -0.0577501,
+        -0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000129545,
+        -0.000129545,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 14,
+      "scenario": "replay during return",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 31,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 83,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 125,
+      "matrix": [
+        -0.281214,
+        0.959645,
+        -0.959645,
+        -0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 150,
+      "matrix": [
+        -0.548033,
+        0.836456,
+        -0.836456,
+        -0.548033,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 199,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 250,
+      "matrix": [
+        -0.990278,
+        0.139102,
+        -0.139102,
+        -0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "entry",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 31,
+      "matrix": [
+        0.907322,
+        0.420437,
+        -0.420437,
+        0.907322,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 125,
+      "matrix": [
+        0.97744,
+        0.211213,
+        -0.211213,
+        0.97744,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 250,
+      "matrix": [
+        0.999733,
+        0.023097,
+        -0.023097,
+        0.999733,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 299,
+      "matrix": [
+        1,
+        5.17867e-05,
+        -5.17867e-05,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 31",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 31,
+      "matrix": [
+        0.466499,
+        0.884522,
+        -0.884522,
+        0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 125,
+      "matrix": [
+        0.861613,
+        0.507566,
+        -0.507566,
+        0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 250,
+      "matrix": [
+        0.998331,
+        0.0577501,
+        -0.0577501,
+        0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000129545,
+        -0.000129545,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 83",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 31,
+      "matrix": [
+        -0.592842,
+        0.805319,
+        -0.805319,
+        -0.592842,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 125,
+      "matrix": [
+        0.46991,
+        0.882715,
+        -0.882715,
+        0.46991,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 250,
+      "matrix": [
+        0.993117,
+        0.117129,
+        -0.117129,
+        0.993117,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000263201,
+        -0.000263201,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 199",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 31,
+      "matrix": [
+        -0.867691,
+        0.497104,
+        -0.497104,
+        -0.867691,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 125,
+      "matrix": [
+        0.281337,
+        0.959609,
+        -0.959609,
+        0.281337,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 250,
+      "matrix": [
+        0.99028,
+        0.139088,
+        -0.139088,
+        0.99028,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312843,
+        -0.000312843,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 299",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 31,
+      "matrix": [
+        -0.867821,
+        0.496877,
+        -0.496877,
+        -0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 125,
+      "matrix": [
+        0.281214,
+        0.959645,
+        -0.959645,
+        0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 250,
+      "matrix": [
+        0.990278,
+        0.139102,
+        -0.139102,
+        0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312874,
+        -0.000312874,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop from 300",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 31,
+      "matrix": [
+        0.578487,
+        0.815692,
+        -0.815692,
+        0.578487,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 125,
+      "matrix": [
+        -0.477559,
+        0.878599,
+        -0.878599,
+        -0.477559,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 250,
+      "matrix": [
+        -0.993227,
+        0.116192,
+        -0.116192,
+        -0.993227,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 31",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 31,
+      "matrix": [
+        -0.034661,
+        0.999399,
+        -0.999399,
+        -0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 125,
+      "matrix": [
+        -0.729381,
+        0.684108,
+        -0.684108,
+        -0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 250,
+      "matrix": [
+        -0.996659,
+        0.081681,
+        -0.081681,
+        -0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.00018333,
+        -0.00018333,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 83",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 31,
+      "matrix": [
+        -0.914625,
+        0.404302,
+        -0.404302,
+        -0.914625,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 125,
+      "matrix": [
+        -0.979238,
+        0.202714,
+        -0.202714,
+        -0.979238,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 250,
+      "matrix": [
+        -0.999755,
+        0.0221544,
+        -0.0221544,
+        -0.999755,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 299,
+      "matrix": [
+        -1,
+        4.96735e-05,
+        -4.96735e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 199",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 31,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 125,
+      "matrix": [
+        -1,
+        0.00012805,
+        -0.00012805,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 250,
+      "matrix": [
+        -1,
+        1.38998e-05,
+        -1.38998e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 299,
+      "matrix": [
+        -1,
+        3.14159e-08,
+        -3.14159e-08,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 299",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 31,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 125,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 250,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 299,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay from 300",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 31,
+      "matrix": [
+        0.034661,
+        0.999399,
+        -0.999399,
+        0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 125,
+      "matrix": [
+        0.729381,
+        0.684108,
+        -0.684108,
+        0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 250,
+      "matrix": [
+        0.996659,
+        0.081681,
+        -0.081681,
+        0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000183329,
+        -0.000183329,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "stop during return",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 31,
+      "matrix": [
+        -0.466499,
+        0.884522,
+        -0.884522,
+        -0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 125,
+      "matrix": [
+        -0.861613,
+        0.507566,
+        -0.507566,
+        -0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 250,
+      "matrix": [
+        -0.998331,
+        0.0577501,
+        -0.0577501,
+        -0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000129545,
+        -0.000129545,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 16,
+      "scenario": "replay during return",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 31,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 83,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 125,
+      "matrix": [
+        -0.281214,
+        0.959645,
+        -0.959645,
+        -0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 150,
+      "matrix": [
+        -0.548033,
+        0.836456,
+        -0.836456,
+        -0.548033,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 199,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 250,
+      "matrix": [
+        -0.990278,
+        0.139102,
+        -0.139102,
+        -0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "entry",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 31,
+      "matrix": [
+        0.907322,
+        0.420437,
+        -0.420437,
+        0.907322,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 125,
+      "matrix": [
+        0.97744,
+        0.211213,
+        -0.211213,
+        0.97744,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 250,
+      "matrix": [
+        0.999733,
+        0.023097,
+        -0.023097,
+        0.999733,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 299,
+      "matrix": [
+        1,
+        5.17867e-05,
+        -5.17867e-05,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 31",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 31,
+      "matrix": [
+        0.466499,
+        0.884522,
+        -0.884522,
+        0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 125,
+      "matrix": [
+        0.861613,
+        0.507566,
+        -0.507566,
+        0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 250,
+      "matrix": [
+        0.998331,
+        0.0577501,
+        -0.0577501,
+        0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000129545,
+        -0.000129545,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 83",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 31,
+      "matrix": [
+        -0.592842,
+        0.805319,
+        -0.805319,
+        -0.592842,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 125,
+      "matrix": [
+        0.46991,
+        0.882715,
+        -0.882715,
+        0.46991,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 250,
+      "matrix": [
+        0.993117,
+        0.117129,
+        -0.117129,
+        0.993117,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000263201,
+        -0.000263201,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 199",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 31,
+      "matrix": [
+        -0.867691,
+        0.497104,
+        -0.497104,
+        -0.867691,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 125,
+      "matrix": [
+        0.281337,
+        0.959609,
+        -0.959609,
+        0.281337,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 250,
+      "matrix": [
+        0.99028,
+        0.139088,
+        -0.139088,
+        0.99028,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312843,
+        -0.000312843,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 299",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 31,
+      "matrix": [
+        -0.867821,
+        0.496877,
+        -0.496877,
+        -0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 125,
+      "matrix": [
+        0.281214,
+        0.959645,
+        -0.959645,
+        0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 250,
+      "matrix": [
+        0.990278,
+        0.139102,
+        -0.139102,
+        0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312874,
+        -0.000312874,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop from 300",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 31,
+      "matrix": [
+        0.578487,
+        0.815692,
+        -0.815692,
+        0.578487,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 125,
+      "matrix": [
+        -0.477559,
+        0.878599,
+        -0.878599,
+        -0.477559,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 250,
+      "matrix": [
+        -0.993227,
+        0.116192,
+        -0.116192,
+        -0.993227,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 31",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 31,
+      "matrix": [
+        -0.034661,
+        0.999399,
+        -0.999399,
+        -0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 125,
+      "matrix": [
+        -0.729381,
+        0.684108,
+        -0.684108,
+        -0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 250,
+      "matrix": [
+        -0.996659,
+        0.081681,
+        -0.081681,
+        -0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.00018333,
+        -0.00018333,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 83",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 31,
+      "matrix": [
+        -0.914625,
+        0.404302,
+        -0.404302,
+        -0.914625,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 125,
+      "matrix": [
+        -0.979238,
+        0.202714,
+        -0.202714,
+        -0.979238,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 250,
+      "matrix": [
+        -0.999755,
+        0.0221544,
+        -0.0221544,
+        -0.999755,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 299,
+      "matrix": [
+        -1,
+        4.96735e-05,
+        -4.96735e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 199",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 31,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 125,
+      "matrix": [
+        -1,
+        0.00012805,
+        -0.00012805,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 250,
+      "matrix": [
+        -1,
+        1.38998e-05,
+        -1.38998e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 299,
+      "matrix": [
+        -1,
+        3.14159e-08,
+        -3.14159e-08,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 299",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 31,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 125,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 250,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 299,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay from 300",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 31,
+      "matrix": [
+        0.034661,
+        0.999399,
+        -0.999399,
+        0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 125,
+      "matrix": [
+        0.729381,
+        0.684108,
+        -0.684108,
+        0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 250,
+      "matrix": [
+        0.996659,
+        0.081681,
+        -0.081681,
+        0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000183329,
+        -0.000183329,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "stop during return",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 31,
+      "matrix": [
+        -0.466499,
+        0.884522,
+        -0.884522,
+        -0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 125,
+      "matrix": [
+        -0.861613,
+        0.507566,
+        -0.507566,
+        -0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 250,
+      "matrix": [
+        -0.998331,
+        0.0577501,
+        -0.0577501,
+        -0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000129545,
+        -0.000129545,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 24,
+      "scenario": "replay during return",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 31,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 83,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 125,
+      "matrix": [
+        -0.281214,
+        0.959645,
+        -0.959645,
+        -0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 150,
+      "matrix": [
+        -0.548033,
+        0.836456,
+        -0.836456,
+        -0.548033,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 199,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 250,
+      "matrix": [
+        -0.990278,
+        0.139102,
+        -0.139102,
+        -0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "entry",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 31,
+      "matrix": [
+        0.907322,
+        0.420437,
+        -0.420437,
+        0.907322,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 125,
+      "matrix": [
+        0.97744,
+        0.211213,
+        -0.211213,
+        0.97744,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 250,
+      "matrix": [
+        0.999733,
+        0.023097,
+        -0.023097,
+        0.999733,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 299,
+      "matrix": [
+        1,
+        5.17867e-05,
+        -5.17867e-05,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 31",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 31,
+      "matrix": [
+        0.466499,
+        0.884522,
+        -0.884522,
+        0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 125,
+      "matrix": [
+        0.861613,
+        0.507566,
+        -0.507566,
+        0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 250,
+      "matrix": [
+        0.998331,
+        0.0577501,
+        -0.0577501,
+        0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000129545,
+        -0.000129545,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 83",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 31,
+      "matrix": [
+        -0.592842,
+        0.805319,
+        -0.805319,
+        -0.592842,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 125,
+      "matrix": [
+        0.46991,
+        0.882715,
+        -0.882715,
+        0.46991,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 250,
+      "matrix": [
+        0.993117,
+        0.117129,
+        -0.117129,
+        0.993117,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000263201,
+        -0.000263201,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 199",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 31,
+      "matrix": [
+        -0.867691,
+        0.497104,
+        -0.497104,
+        -0.867691,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 125,
+      "matrix": [
+        0.281337,
+        0.959609,
+        -0.959609,
+        0.281337,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 250,
+      "matrix": [
+        0.99028,
+        0.139088,
+        -0.139088,
+        0.99028,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312843,
+        -0.000312843,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 299",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 31,
+      "matrix": [
+        -0.867821,
+        0.496877,
+        -0.496877,
+        -0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 125,
+      "matrix": [
+        0.281214,
+        0.959645,
+        -0.959645,
+        0.281214,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 250,
+      "matrix": [
+        0.990278,
+        0.139102,
+        -0.139102,
+        0.990278,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000312874,
+        -0.000312874,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop from 300",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 0,
+      "matrix": [
+        0.867821,
+        0.496877,
+        -0.496877,
+        0.867821,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 31,
+      "matrix": [
+        0.578487,
+        0.815692,
+        -0.815692,
+        0.578487,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 125,
+      "matrix": [
+        -0.477559,
+        0.878599,
+        -0.878599,
+        -0.477559,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 250,
+      "matrix": [
+        -0.993227,
+        0.116192,
+        -0.116192,
+        -0.993227,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 31",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 0,
+      "matrix": [
+        0.266756,
+        0.963764,
+        -0.963764,
+        0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 31,
+      "matrix": [
+        -0.034661,
+        0.999399,
+        -0.999399,
+        -0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 125,
+      "matrix": [
+        -0.729381,
+        0.684108,
+        -0.684108,
+        -0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 250,
+      "matrix": [
+        -0.996659,
+        0.081681,
+        -0.081681,
+        -0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.00018333,
+        -0.00018333,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 83",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 0,
+      "matrix": [
+        -0.87817,
+        0.478348,
+        -0.478348,
+        -0.87817,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 31,
+      "matrix": [
+        -0.914625,
+        0.404302,
+        -0.404302,
+        -0.914625,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 125,
+      "matrix": [
+        -0.979238,
+        0.202714,
+        -0.202714,
+        -0.979238,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 250,
+      "matrix": [
+        -0.999755,
+        0.0221544,
+        -0.0221544,
+        -0.999755,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 299,
+      "matrix": [
+        -1,
+        4.96735e-05,
+        -4.96735e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 199",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 0,
+      "matrix": [
+        -1,
+        0.000312875,
+        -0.000312875,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 31,
+      "matrix": [
+        -1,
+        0.000261088,
+        -0.000261088,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 125,
+      "matrix": [
+        -1,
+        0.00012805,
+        -0.00012805,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 250,
+      "matrix": [
+        -1,
+        1.38998e-05,
+        -1.38998e-05,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 299,
+      "matrix": [
+        -1,
+        3.14159e-08,
+        -3.14159e-08,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 299",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 0,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 31,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 125,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 250,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 299,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay from 300",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 31,
+      "matrix": [
+        0.034661,
+        0.999399,
+        -0.999399,
+        0.034661,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 125,
+      "matrix": [
+        0.729381,
+        0.684108,
+        -0.684108,
+        0.729381,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 250,
+      "matrix": [
+        0.996659,
+        0.081681,
+        -0.081681,
+        0.996659,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 299,
+      "matrix": [
+        1,
+        0.000183329,
+        -0.000183329,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "stop during return",
+      "time": 300,
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 0,
+      "matrix": [
+        -0.266756,
+        0.963764,
+        -0.963764,
+        -0.266756,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 31,
+      "matrix": [
+        -0.466499,
+        0.884522,
+        -0.884522,
+        -0.466499,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 125,
+      "matrix": [
+        -0.861613,
+        0.507566,
+        -0.507566,
+        -0.861613,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 250,
+      "matrix": [
+        -0.998331,
+        0.0577501,
+        -0.0577501,
+        -0.998331,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 299,
+      "matrix": [
+        -1,
+        0.000129545,
+        -0.000129545,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    },
+    {
+      "size": 28,
+      "scenario": "replay during return",
+      "time": 300,
+      "matrix": [
+        -1,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "origin": "3.6955px 3.6955px"
+    }
+  ]
+}

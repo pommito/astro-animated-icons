@@ -1,0 +1,85 @@
+{
+  "browser": "Chromium 156, Codex in-app browser",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "numerical": {
+    "route": "/css-capabilities/",
+    "sizes": [
+      14,
+      16,
+      24,
+      28
+    ],
+    "assertions": 5348,
+    "snapshots": 2440,
+    "failures": [],
+    "maxMatrixError": 0.0008850000000000247,
+    "maxOpacityError": 0,
+    "matrixTolerance": 0.005,
+    "opacityTolerance": 0.001,
+    "capturedCogSnapshots": 324,
+    "maxCapturedCogError": 0.0007956000000000005,
+    "rows": 32
+  },
+  "syntheticLifecycle": {
+    "folder-down": {
+      "checks": 14,
+      "failures": []
+    },
+    "folder-up": {
+      "checks": 14,
+      "failures": []
+    },
+    "folder-input": {
+      "checks": 14,
+      "failures": []
+    },
+    "folder-output": {
+      "checks": 14,
+      "failures": []
+    },
+    "circle-help": {
+      "checks": 14,
+      "failures": []
+    },
+    "calendar-days": {
+      "checks": 14,
+      "failures": []
+    },
+    "circle-dashed": {
+      "checks": 14,
+      "failures": []
+    },
+    "user-round-cog": {
+      "checks": 14,
+      "failures": []
+    }
+  },
+  "templates": {
+    "independent": {
+      "route": "/css-capabilities/templates/",
+      "checks": 91,
+      "failures": []
+    },
+    "removedSource": {
+      "route": "/page-loading/templates/",
+      "checks": 33,
+      "failures": [],
+      "astroPageLoad": "synthetic event"
+    }
+  },
+  "ownerVisualAcceptance": {
+    "status": "accepted",
+    "date": "2026-10-29",
+    "commit": "7f30ce7189cf6c2c38d1c81e77ccda71c0af7f0d",
+    "route": "/css-capabilities/#user-round-cog",
+    "source": "Owner confirmation in this chat"
+  },
+  "unverified": [
+    "Safari",
+    "Firefox",
+    "real touch/hybrid hardware",
+    "native operating-system preference changes",
+    "frame pacing",
+    "preparation timing"
+  ]
+}

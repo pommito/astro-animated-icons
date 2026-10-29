@@ -6,6 +6,25 @@ const bellCycle = cycles.get("bell");
 const chevronRightCycle = cycles.get("chevron-right");
 const folderCycle = cycles.get("folder");
 
+test("UserRoundCog preserves the positive half-turn and 300 ms current-pose entry and return", () => {
+  const cycle = cycles.get("user-round-cog");
+  assert.ok(cycle, "UserRoundCog uses the shared cycle compiler");
+  assert.equal(cycle.target, "[data-cog]");
+  assert.equal(cycle.property, "rotate");
+  assert.deepEqual(cycle.values, [0, 180]);
+  assert.deepEqual(cycle.times, [0, 1]);
+  assert.equal(cycle.duration, 0.3);
+  assert.equal(cycle.returnDuration ?? cycle.duration, 0.3);
+  assert.equal(cycle.ease, "easeOut");
+  assert.equal(cycle.returnEase ?? cycle.ease, "easeOut");
+  assert.equal(cycle.finish, "hold");
+  assert.equal(cycle.replay, "current");
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes("0%{transform:var(--grave-cycle-from,rotate(0deg));}100%{transform:rotate(180deg);}"));
+  assert.ok(css.includes("-return{from{transform:var(--grave-cycle-from);}to{transform:rotate(0deg);}}"));
+  assert.ok(css.includes('[data-css-cycle="user-round-cog"] [data-cog]{animation-duration:0.3s;animation-timing-function:cubic-bezier(0,0,.58,1);'));
+});
+
 test("return timing can differ from entry while existing cycles keep their defaults", () => {
   const css = cycleCSS(folderCycle);
   assert.ok(css.includes('[data-css-cycle="folder"] [data-motion="0"]{animation-duration:0.4s;'));
