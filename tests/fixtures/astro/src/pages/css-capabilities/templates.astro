@@ -23,14 +23,14 @@ import { capabilities } from "../../css-capability-catalogue";
 </html>
 <script>
   import type { FolderDownIconHandle as IconHandle } from "@grave/animated-icons/astro";
-  const slugs = ["folder-down", "folder-up", "folder-input", "folder-output", "circle-help", "calendar-days", "circle-dashed"];
+  const slugs = ["folder-down", "folder-up", "folder-input", "folder-output", "circle-help", "calendar-days", "circle-dashed", "user-round-cog"];
   await Promise.all(slugs.map(slug => "grave-" + slug).map(tag => customElements.whenDefined(tag)));
   const template = document.querySelector<HTMLTemplateElement>("#second")!;
   document.querySelector("#after")!.append(template.content.cloneNode(true));
   document.querySelector("#check-templates")!.addEventListener("click", () => {
     const results: Record<string, boolean> = {};
     results.clonedBeforeRegistration = document.querySelector<HTMLElement>("#before")!.dataset.beforeRegistration === "true";
-    results.firstTemplateStillInert = document.querySelector<HTMLTemplateElement>("#first")!.content.querySelectorAll("[data-grave-icon]").length === 7;
+    results.firstTemplateStillInert = document.querySelector<HTMLTemplateElement>("#first")!.content.querySelectorAll("[data-grave-icon]").length === slugs.length;
     results.reducedMotionDisabled = !matchMedia("(prefers-reduced-motion: reduce)").matches;
     for (const location of ["before", "after"]) for (const kind of slugs) {
       const icon = document.querySelector<HTMLElement & IconHandle>("#" + location + " grave-" + kind)!;

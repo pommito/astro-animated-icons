@@ -85,7 +85,9 @@ export function measureLoading(output, metadata) {
       recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
   }));
   const transitions = [["one", "four"], ["four", "ten"], ["ten", "all"], ["all", "one"], ["all", "all-loader"],
-    ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"]];
+    ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"],
+    ["cog", "cog-repeated"], ["cog", "cog-css"], ["cog-css", "cog-css-loader"],
+    ["loader", "cog-loader"], ["cog-css-loader", "cog"]];
   const warm = transitions.map(([from, to]) => {
     const cached = new Set([...routes[from].chunks, ...routes[from].externalCSS]);
     const requested = [...routes[to].chunks, ...routes[to].externalCSS].filter(url => !cached.has(url));
@@ -97,6 +99,8 @@ export function measureLoading(output, metadata) {
   assert.deepEqual(routes.all.chunks, routes["repeated-all"].chunks, "repeated families must reuse JavaScript");
   assert.deepEqual(routes.one.css, routes.repeated.css, "repeated icons must reuse generated CSS");
   assert.deepEqual(routes.all.css, routes["repeated-all"].css, "repeated families must reuse generated CSS");
+  assert.deepEqual(routes.cog.chunks, routes["cog-repeated"].chunks, "repeated UserRoundCog must reuse JavaScript");
+  assert.deepEqual(routes.cog.css, routes["cog-repeated"].css, "repeated UserRoundCog must reuse generated CSS");
   return { routes, warm, resources };
 }
 

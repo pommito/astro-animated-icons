@@ -1,0 +1,11 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/user-round-cog/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-user-round-cog"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { userRoundCogRecipe } from "./user-round-cog";
+  if (!customElements.get("grave-reference-user-round-cog")) customElements.define("grave-reference-user-round-cog", createIconElement(userRoundCogRecipe));
+</script>

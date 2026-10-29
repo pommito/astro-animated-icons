@@ -1,6 +1,6 @@
 export interface FiniteTransformCycle {
   id: string;
-  target: "svg" | "[data-chevron]" | '[data-motion="0"]' | "g > g";
+  target: "svg" | "[data-cog]" | "[data-chevron]" | '[data-motion="0"]' | "g > g";
   property: "rotate" | "translateX" | "translateY";
   values: number[];
   duration: number;

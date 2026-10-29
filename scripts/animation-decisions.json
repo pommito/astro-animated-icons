@@ -1,10 +1,4 @@
 {
-  "user-round-cog": {
-    "status": "supported",
-    "capability": "finite-transform-cycle",
-    "reason": "Fixed 300 ms easeOut group rotation to 180 degrees, hold completion and current-pose scalar replay fit the cycle adapter. Deferred until half-turn decomposition, interrupted return and payload are measured.",
-    "sourceHash": "502d6ce5c7179fa123981a7d814a39074bdfbe1ed6c8b76e6fb4807e6b9c282a"
-  },
   "wifi-sync": {
     "status": "motion",
     "capability": "unwrapped-rotation",

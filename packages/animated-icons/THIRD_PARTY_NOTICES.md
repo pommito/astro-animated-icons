@@ -1,5 +1,7 @@
 # Third-party notices
 
+UserRoundCog now uses the shared CSS cycle for its positive 180-degree cog rotation, with 300 ms easeOut entry and return, current-pose replay, and hold completion. Its drawing and pinned Lucide Animated revision remain unchanged. The fixture-only Motion reference at `/css-capabilities/#user-round-cog` consumes the same cycle and drawing through the previous local scalar transform helper. It does not execute the upstream React component. [Migration evidence](../../docs/history/2026-10-29-user-round-cog.md) records numerical checks separately from owner visual acceptance.
+
 The numerical comparison and browser-test descriptions below document the earlier validation strategy used during adaptation. Current [validation](../../docs/validation.md) runs without a browser; the comparison fixtures remain available for the user's manual review.
 
 Chrome, Discord, Dribbble, Facebook, Instagram, Twitch, Twitter, Youtube, Connect, and Contrast adapt Lucide Animated revision `4662fff2b60fdcf4751b32013606756caf7c4c26`.

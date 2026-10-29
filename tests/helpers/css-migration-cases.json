@@ -176,6 +176,14 @@
       "finish": "restore",
       "replay": "restart",
       "comparison": "css-chevrons"
+    },
+    {
+      "slug": "user-round-cog",
+      "name": "UserRoundCog",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "css-capabilities"
     }
   ],
   "cases": {
@@ -245,6 +253,9 @@
     "square-chevron-up": [
       "square-chevron-up"
     ],
+    "user-round-cog": [
+      "user-round-cog"
+    ],
     "chevrons": [
       "chevron-down",
       "chevron-first",
@@ -293,7 +304,8 @@
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
-      "square-chevron-up"
+      "square-chevron-up",
+      "user-round-cog"
     ],
     "repeated": [
       "bell",
@@ -361,7 +373,10 @@
       "square-chevron-right",
       "square-chevron-up",
       "square-chevron-up",
-      "square-chevron-up"
+      "square-chevron-up",
+      "user-round-cog",
+      "user-round-cog",
+      "user-round-cog"
     ],
     "mixed-loader": [
       "bell",
@@ -386,6 +401,7 @@
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "user-round-cog",
       "loader-circle"
     ],
     "mixed-arrow": [
@@ -411,6 +427,7 @@
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "user-round-cog",
       "arrow-left"
     ],
     "interface": [

@@ -1,4 +1,5 @@
 import { checkSyntheticLifecycle } from "./synthetic-lifecycle";
+import capturedCog from "../../../../docs/history/2026-10-29-user-round-cog-motion-before.json";
 import type { IconHandle } from "../../../../packages/animated-icons/src/element";
 type Handle = HTMLElement & IconHandle;
 const rows = [...document.querySelectorAll<HTMLElement>("[data-pair]")];
@@ -19,6 +20,8 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
   let snapshots = 0;
   let maxMatrixError = 0;
   let maxOpacityError = 0;
+  let maxCapturedCogError = 0;
+  let capturedCogSnapshots = 0;
   const failures: string[] = [];
   const check = (pass: boolean, message: string) => { assertions++; if (!pass) failures.push(message); };
   for (const row of rows) {
@@ -27,7 +30,7 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
     const context = kind + "/" + row.dataset.size;
     const opacity = ["calendar-days", "circle-dashed"].includes(kind);
     const count = kind === "calendar-days" ? 6 : kind === "circle-dashed" ? 8 : 1;
-    const duration = kind === "calendar-days" ? 900 : kind === "circle-dashed" ? 1100 : 500;
+    const duration = kind === "user-round-cog" ? 300 : kind === "calendar-days" ? 900 : kind === "circle-dashed" ? 1100 : 500;
     const reset = () => icons.forEach(reconnect);
     const start = () => icons.forEach(icon => icon.startAnimation());
     const stop = () => icons.forEach(icon => icon.stopAnimation());
@@ -52,7 +55,7 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
         const tracks = animations(icon);
         check(tracks.length === count, context + ": track count " + tracks.length);
         tracks.forEach((animation, index) => {
-          const expectedDuration = kind === "calendar-days" ? returning ? 200 : 400 : kind === "circle-dashed" ? 300 : 500;
+          const expectedDuration = kind === "user-round-cog" ? 300 : kind === "calendar-days" ? returning ? 200 : 400 : kind === "circle-dashed" ? 300 : 500;
           const expectedDelay = returning ? 0 : kind === "calendar-days" ? index * 100 : kind === "circle-dashed" ? (index + 1) * 100 : 0;
           const timing = animation.effect!.getTiming();
           check(Math.abs(Number(timing.duration) - expectedDuration) < 0.01 && Math.abs(Number(timing.delay) - expectedDelay) < 0.01, context + ": track duration and delay");
@@ -60,10 +63,16 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
       });
     };
     reset(); start(); checkTiming(false);
+    if (kind === "user-round-cog") {
+      pause(83);
+      check(icons.every(icon => new DOMMatrix(getComputedStyle(icon.querySelector("[data-cog]")!).transform).b > 0), context + ": positive rotation before the half-turn");
+      pause(300); compare("exact positive half-turn");
+      check(icons.every(icon => { const matrix = new DOMMatrix(getComputedStyle(icon.querySelector("[data-cog]")!).transform); return Math.abs(matrix.a + 1) <= 0.005 && Math.abs(matrix.b) <= 0.005 && Math.abs(matrix.d + 1) <= 0.005; }), context + ": half-turn matrix");
+    }
     for (const time of [0, 31, 83, 125, 199, 250, 371, 499, 650, duration - 1]) { pause(Math.min(time, duration - 1)); compare("entry at " + time); }
-    for (const interrupted of [31, 83, 199, 371, 650]) {
+    for (const interrupted of kind === "user-round-cog" ? [31, 83, 199, 299, 300] : [31, 83, 199, 371, 650]) {
       for (const operation of ["stop", "replay"] as const) {
-        reset(); start(); pause(Math.min(interrupted, duration - 1));
+        reset(); start(); pause(Math.min(interrupted, duration));
         if (operation === "stop") stop(); else start();
         checkTiming(operation === "stop");
         for (const time of [0, 31, 125, 250, 499]) { pause(time); compare(operation + " from " + interrupted + " at " + time); }
@@ -77,6 +86,13 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
     reset(); start();
     icons.forEach(icon => animations(icon).forEach(animation => animation.finish()));
     await settle(); compare("completed entry");
+    if (kind === "user-round-cog") {
+      stop(); checkTiming(true);
+      for (const time of [0, 31, 83, 150, 250, 299, 300]) { pause(time); compare("return from completed half-turn at " + time); }
+      reset(); start();
+      icons.forEach(icon => animations(icon).forEach(animation => animation.finish()));
+      await settle();
+    }
     start(); pause(83); compare("replay after completion");
     stop(); icons.forEach(icon => animations(icon).forEach(animation => animation.finish()));
     await settle(); compare("completed return");
@@ -87,6 +103,36 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
     check(icons.every(icon => animations(icon).length === 0 && !icon.hasAttribute("data-cycle-state") && !icon.hasAttribute("data-opacity-state")), context + ": disconnect clears");
     [...row.querySelectorAll("td")].forEach((cell, index) => cell.append(icons[index]));
     start(); pause(83); compare("reconnected replay"); reset();
+    start(); icons.forEach(icon => animations(icon).forEach(animation => animation.finish()));
+    icons.forEach(icon => icon.remove()); await settle();
+    check(icons.every(icon => animations(icon).length === 0 && [...icon.querySelectorAll<SVGElement>("svg, g, path, rect")].every(element => element.style.transform === "" && element.style.opacity === "")), context + ": stale completion after disconnect stays clean");
+    [...row.querySelectorAll("td")].forEach((cell, index) => cell.append(icons[index]));
+    if (kind === "user-round-cog") {
+      const icon = icons[1];
+      let scenario = "";
+      for (const pose of capturedCog.poses.filter(pose => pose.size === Number(row.dataset.size))) {
+        if (pose.scenario !== scenario) {
+          reset(); icon.startAnimation();
+          scenario = pose.scenario;
+          const interrupted = /^(stop|replay) from (\d+)$/.exec(scenario);
+          if (interrupted) {
+            seek(icon, Number(interrupted[2]));
+            if (interrupted[1] === "stop") icon.stopAnimation(); else icon.startAnimation();
+          } else if (scenario.endsWith("during return")) {
+            seek(icon, 300); icon.stopAnimation(); seek(icon, 83);
+            if (scenario.startsWith("stop")) icon.stopAnimation(); else icon.startAnimation();
+          }
+        }
+        seek(icon, pose.time);
+        const target = icon.querySelector("[data-cog]")!;
+        const matrix = new DOMMatrix(getComputedStyle(target).transform);
+        const error = Math.max(...[matrix.a, matrix.b, matrix.c, matrix.d, matrix.e, matrix.f].map((value, index) => Math.abs(value - pose.matrix[index])));
+        maxCapturedCogError = Math.max(maxCapturedCogError, error);
+        capturedCogSnapshots++;
+        check(error <= 0.005 && getComputedStyle(target).transformOrigin === pose.origin, context + ": captured Motion " + scenario + " at " + pose.time + " matrix=" + error);
+      }
+      reset();
+    }
     if (opacity) {
       reset(); start();
       const early = icons.map(icon => animations(icon)[0]);
@@ -95,7 +141,7 @@ document.querySelector<HTMLButtonElement>("#parity")!.addEventListener("click", 
       start(); pause(0); compare("replay with one completed track"); reset();
     }
   }
-  result.textContent = JSON.stringify({ userAgent: navigator.userAgent, assertions, snapshots, failures, maxMatrixError, maxOpacityError, rows: rows.length });
+  result.textContent = JSON.stringify({ userAgent: navigator.userAgent, assertions, snapshots, failures, maxMatrixError, maxOpacityError, capturedCogSnapshots, maxCapturedCogError, rows: rows.length });
   button.disabled = false;
 });
 
