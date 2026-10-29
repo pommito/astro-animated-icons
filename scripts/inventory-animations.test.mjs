@@ -34,6 +34,8 @@ test("inventory covers each export once and retains shared defaults and mixed me
     assert.equal(icon.classification.status, "supported");
     assert.ok(icon.sources.some(path => path.endsWith(`/${slug}/cycle.ts`)));
     assert.ok(icon.sources.some(path => path.endsWith("/css-cycle.ts")));
+    assert.ok(icon.sources.some(path => path.endsWith("/register-css-cycle.ts")));
+    assert.ok(!icon.sources.some(path => path.endsWith(`/icons/${slug}/element.ts`)));
     assert.ok(result.sources[`packages/animated-icons/src/icons/${slug}/cycle.ts`].constants.some(fact => fact.expression.includes("replay")));
   }
   const finiteChevrons = result.icons.filter(icon => icon.slug.includes("chevron") && icon.sources.some(path => path.endsWith("/cycle.ts")));

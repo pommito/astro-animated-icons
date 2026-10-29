@@ -1,14 +1,10 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { ensureOpacityCSS, opacityParts, generatedOpacityCSS } from "./css-opacity.mjs";
-import { evaluateTypeScriptData } from "./typescript-data.mjs";
-
-const source = new URL("../packages/animated-icons/src/", import.meta.url);
-const load = path => evaluateTypeScriptData(readFileSync(new URL(path, source), "utf8"));
-const [{ cycleCSS, ensureCycleCSS }, { bellCycle }, { chevronRightCycle }, { folderCycle }] = await Promise.all([
-  load("shared/cycle-css.ts"), load("icons/bell/cycle.ts"), load("icons/chevron-right/cycle.ts"), load("icons/folder/cycle.ts"),
-]);
+import { cycleCSS, ensureCycleCSS, cycles } from "./css-cycles.mjs";
+const bellCycle = cycles.get("bell");
+const chevronRightCycle = cycles.get("chevron-right");
+const folderCycle = cycles.get("folder");
 
 test("return timing can differ from entry while existing cycles keep their defaults", () => {
   const css = cycleCSS(folderCycle);

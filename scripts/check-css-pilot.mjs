@@ -4,11 +4,13 @@ import { fileURLToPath } from "node:url";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { pilotCases } from "./measure-css-pilot.mjs";
 import { evaluateTypeScriptData } from "./typescript-data.mjs";
+import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
+import { cycleCSS } from "./css-cycles.mjs";
 
 const source = new URL("../packages/animated-icons/src/", import.meta.url);
 const load = path => evaluateTypeScriptData(readFileSync(new URL(path, source), "utf8"));
-const [{ cycleCSS }, { bellCycle }, { chevronRightCycle }] = await Promise.all([
-  load("shared/cycle-css.ts"), load("icons/bell/cycle.ts"), load("icons/chevron-right/cycle.ts"),
+const [{ bellCycle }, { chevronRightCycle }] = await Promise.all([
+  load("icons/bell/cycle.ts"), load("icons/chevron-right/cycle.ts"),
 ]);
 const generated = new Map([bellCycle, chevronRightCycle].map(cycle => [cycle.id, cycleCSS(cycle)]));
 
@@ -40,8 +42,9 @@ export function verifyCssPilot(output, log = console.log) {
     }
     assert.equal(route.styles.length, 1 + expected[name].length, context + ": styles emitted once per rendered kind");
     assert.equal(route.inline.length, 0, context + ": no inline scripts");
-    assert.equal(route.entries.length, name === "repeated" ? 1 : name === "three" ? 3 : ["pair", "mixed"].includes(name) ? 2 : 1, context + ": script entries");
-    for (const kind of expected[name]) assert.ok(route.source.includes("grave-" + kind), context + ": CSS registration for " + kind);
+    const icons = [...expected[name], ...(["loader", "three"].includes(name) ? ["loader-circle"] : name === "mixed" ? ["arrow-left"] : [])];
+    assert.equal(route.entries.length, registrationEntries(icons), context + ": script entries");
+    verifyRegistrations(route, html("managed"), icons, context);
     if (["bell", "chevron", "pair", "repeated"].includes(name)) {
       assert.ok([...route.chunks.values()].reduce((sum, chunk) => sum + chunk.bytes, 0) < 8000, context + ": managed JS budget excludes Motion");
     }

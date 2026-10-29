@@ -2,13 +2,13 @@ import { readFileSync } from "node:fs";
 import { gzipSync } from "node:zlib";
 import { inspectRoute } from "./inspect-bundle.mjs";
 
-const output = new URL("../tests/fixtures/astro/dist/", import.meta.url);
+const fixtureOutput = new URL("../tests/fixtures/astro/dist/", import.meta.url);
 export const resourceSizes = sources => ({
   raw: sources.reduce((sum, source) => sum + Buffer.byteLength(source), 0),
   gzip: sources.reduce((sum, source) => sum + gzipSync(source).length, 0),
 });
 
-export function measureRoute(route, { cache = new Map(), includePage = false } = {}) {
+export function measureRoute(route, { cache = new Map(), includePage = false, output = fixtureOutput } = {}) {
   const result = inspectRoute(output, route, () => {}, cache);
   const javascript = resourceSizes([...result.chunks.values()].map(chunk => chunk.source).concat(result.inline));
   const css = resourceSizes(result.styles);

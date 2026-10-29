@@ -2,6 +2,7 @@
 import Icon, { type IconProps } from "./Icon.astro";
 import type { OpacityPart } from "./shared/opacity-parts";
 import { opacityCSS } from "./shared/opacity-css";
+import { serializeRecipe } from "./shared/recipe-data";
 
 interface Props extends IconProps {
   parts: OpacityPart[];
@@ -15,6 +16,9 @@ const include = !seen.has(id);
 seen.add(id);
 ---
 {include && <style is:inline data-grave-cycle-style={id} set:html={opacityCSS(id, parts)} />}
-<Icon {...props} tag={tag} data-css-opacity={id}>
+<Icon {...props} tag={tag} data-css-opacity={id} data-grave-opacity-recipe={serializeRecipe({ id, parts })}>
   <slot />
 </Icon>
+<script>
+  import "./shared/register-css-opacity";
+</script>

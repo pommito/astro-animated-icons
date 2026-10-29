@@ -1,0 +1,15 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Bell, CircleHelp, CalendarDays, CircleDashed } from "@grave/animated-icons/astro";
+export function getStaticPaths() {
+  return ["a", "b"].map(page => ({ params: { page } }));
+}
+const first = Astro.params.page === "a";
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Registration navigation</title><ClientRouter /></head><body>
+  <h1>Registration navigation</h1>
+  <a id="next" href={first ? "/page-loading/navigation/b/" : "/page-loading/navigation/a/"}>Next page</a>
+  <main data-page={Astro.params.page}>
+    {first ? <><Bell controlled /><CalendarDays controlled /></> : <><CircleHelp controlled /><CircleDashed controlled /></>}
+  </main>
+</body></html>
