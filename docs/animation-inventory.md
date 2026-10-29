@@ -15,7 +15,7 @@ The public Astro exports define membership. Each export occurs once in `icons` a
 
 [animation-decisions.json](../scripts/animation-decisions.json) stores each export's reviewed family, local contract, source hash and family hash. [animation-families.json](../scripts/animation-families.json) stores the shared playback contracts and concrete compatibility decisions. Read both contracts together. They are review records, not production recipe definitions or a client registry. Production never imports them.
 
-The review starts at merged main `1bbd0e272043b4c6150828deeb3c0ff8c15f394a`, after #95. It accounts for all 470 exports: 26 migrated, six supported but deferred, 196 needing specified capabilities, and 242 retained on Motion. No entry remains generically unreviewed. The [migration plan](css-migration-plan.md) identifies the six compatible recipes and the remaining families. The [review record](history/2026-10-29-catalogue-source-review.md) explains the scope and evidence.
+The review starts at merged main `1bbd0e272043b4c6150828deeb3c0ff8c15f394a`, after #95. Its #98 snapshot accounted for all 470 exports with 26 migrated, six supported but deferred, 196 needing specified capabilities and 242 retained on Motion. The [#99 six-icon batch](history/2026-10-29-supported-six.md) now reports 32 migrated, zero supported but deferred, the same 196 capability candidates and the same 242 Motion retentions. No entry remains generically unreviewed. The [migration plan](css-migration-plan.md) identifies the six compatible recipes and the remaining families. The [review record](history/2026-10-29-catalogue-source-review.md) explains the scope and evidence.
 
 `migrationState` has these meanings:
 

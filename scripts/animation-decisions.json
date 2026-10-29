@@ -2107,7 +2107,7 @@
         }
       ]
     },
-    "sourceHash": "766d771de369a9888f87418033e45b622f9a4819b57788553afb19f026ee6244",
+    "sourceHash": "ae79c8adb87a407ebb5d036917d50ffd09911aac1ceee79eb5b2a519847cefb2",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "bell-electric": {
@@ -3633,7 +3633,7 @@
   "briefcase-business": {
     "family": "finite-svg-parts-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/svg-parts.ts",
           "factory": "createSvgPartsRecipe",
@@ -3664,10 +3664,24 @@
           ]
         }
       ],
-      "review": "The SVG rotates through [0, 4, -3, 2, 0] degrees over 0.9 seconds with easeInOut and quarter offsets. Return is explicitly timed at 0.3 seconds with easeOut. The origin remains 12px 4px. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose and temporary origin."
+      "review": "The SVG rotates through [0, 4, -3, 2, 0] degrees over 0.9 seconds with easeInOut and quarter offsets. Return is explicitly timed at 0.3 seconds with easeOut. The origin remains 12px 4px. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose and temporary origin. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "briefcase-business",
+        "target": "svg",
+        "property": "rotate",
+        "values": [0, 4, -3, 2, 0],
+        "times": [0, 0.25, 0.5, 0.75, 1],
+        "duration": 0.9,
+        "ease": "easeInOut",
+        "returnDuration": 0.3,
+        "returnEase": "easeOut",
+        "origin": "12px 4px",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "5d841efc4dc1185c0e12141706d7b2fef39f947f91e31017143b0a5f25554aa1",
-    "familyHash": "793ac29409e4ab0ac3a090548f60550dd5e2a8305c3eb68247135065f8be9063"
+    "sourceHash": "faad9237a0d1ff1807efc98cce153773275129d860fdd893a637a875e3ea3e9c",
+    "familyHash": "4b18380433fb4c345c9dfb05d5ba698f2a7b85ce71145686df2f3577592ab1db"
   },
   "calendar-check": {
     "family": "runtime-path-reveal",
@@ -4917,7 +4931,7 @@
         }
       ]
     },
-    "sourceHash": "0c98460a5098d583d8061729fa457dd50f9eecbc3338acb1bf8cd34051d214fb",
+    "sourceHash": "b9195121c5785b9ffdaea6c8757db5841a572dd16d86de1d35f0bc797b0b6383",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-first": {
@@ -4945,7 +4959,7 @@
         }
       ]
     },
-    "sourceHash": "c140d3c9174e9b0645164061a60205c55189409033be12d197ccdac770f23e79",
+    "sourceHash": "d27461cbfecb62a5edb8a6703e42a7485e27e6396d60e7a9cc9bb9406cb77b4d",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-left": {
@@ -4971,7 +4985,7 @@
         }
       ]
     },
-    "sourceHash": "128eb884f886c190729093cca9cfa990578f66ae94686a8c354b87ff7a1e4b76",
+    "sourceHash": "b7d1652f94920209d585ba76f271993e6ff45edf993dd7da5fec64349631c354",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-right": {
@@ -4997,7 +5011,7 @@
         }
       ]
     },
-    "sourceHash": "d29c4636d9453ce9e68d57b6876cdb41e09c9ceffa29279b3b4ddedd78406562",
+    "sourceHash": "4651dce69e5ea1f6e01fb18c866341bed9eceb9c9cd0e52d2dfb4635434bcf0f",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-up": {
@@ -5023,7 +5037,7 @@
         }
       ]
     },
-    "sourceHash": "ff271fb7e441995002b7f6870d0eeea520d30fbe13deb2785f1d0608bb337d57",
+    "sourceHash": "1f66afe28af46c2a78ec0e0f08af6e4add02fb08b798fa698adbb9b6cdf5b2f8",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevrons-down-up": {
@@ -5360,7 +5374,7 @@
         }
       ]
     },
-    "sourceHash": "74461d2b8303ef8de6a2700a3e74346e266f5f38bc0069f9140b76c1c2a8c976",
+    "sourceHash": "101196eafe9ddb4b972e3627d36d451aecc03ab00e79eaa3aeffb1cabfd52b75",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-left": {
@@ -5386,7 +5400,7 @@
         }
       ]
     },
-    "sourceHash": "de68ae3c456b3783f6ef785c05b997f184dab5dc1a24f84db51b2149dc9d51ce",
+    "sourceHash": "2ec864b74749c52b4152a87cdfd2a832d7cf0f0c6ff75f12c0ffeb248bb5cd89",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-right": {
@@ -5412,7 +5426,7 @@
         }
       ]
     },
-    "sourceHash": "8ae317021126b0a17c7a05d32de843c014b39d5da9757eaaa84df7fad774c2ac",
+    "sourceHash": "c627ed42fa3e75079f3198a08a9315d909a94192be3a27ce8e7672bff2c7667b",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-up": {
@@ -5438,7 +5452,7 @@
         }
       ]
     },
-    "sourceHash": "d23ab85cc93b997f2ddfa4cd0e3a2b7700aaf67f05543e15a655f967032e02db",
+    "sourceHash": "5941164dc5eadf4c7fc421d7577c8bbe68ea01c3341ecd777650d9e3a0ba9208",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-dashed": {
@@ -5669,7 +5683,7 @@
         }
       ]
     },
-    "sourceHash": "9b7e541a0837824eaaf5278d18551bed9c974c162d7952ac6c766cb8b85fa63c",
+    "sourceHash": "1f0de56f4e4a2831b396112557ef6c03e3983653f3b18c5c34aeaadca2e0edd7",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "clap": {
@@ -7342,7 +7356,7 @@
   "disc-3": {
     "family": "finite-group-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/group-transform.ts",
           "factory": "createGroupTransformRecipe",
@@ -7357,10 +7371,21 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 rotates to 90 degrees over 0.4 seconds with easeInOut. Return uses the same timing to zero, and scalar replay starts from the retained pose. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes group pose state."
+      "review": "The existing motion target 0 rotates to 90 degrees over 0.4 seconds with easeInOut. Return uses the same timing to zero, and scalar replay starts from the retained pose. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes group pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "disc-3",
+        "target": "[data-motion=\"0\"]",
+        "property": "rotate",
+        "values": [0, 90],
+        "times": [0, 1],
+        "duration": 0.4,
+        "ease": "easeInOut",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "57ccad2e166424390a8b3e0b393eabf04172a7535d3eb955c63bcaa5db43d7c1",
-    "familyHash": "516527a31b166827c9cfa6a53610210b5f33a451078068633dfc63f8e448a5b5"
+    "sourceHash": "b51016bdc6fb272c10dbb3a568a059466fa914ea832e911ff2660ea131195698",
+    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
   },
   "discord": {
     "family": "parts-finite-transform",
@@ -8434,7 +8459,7 @@
         }
       ]
     },
-    "sourceHash": "e2a8734e9f9aaa6312547842b5b301f911a1efad0521c00326ed5e32a3afc221",
+    "sourceHash": "5e072e7d6779266edf7a2c00fc4d6884373bfb4982750a5300ac9972070a0cba",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-archive": {
@@ -8523,7 +8548,7 @@
         }
       ]
     },
-    "sourceHash": "8b8181ba9dfec3c76179af5b677443152e983fb2e6d9d65d25b7c234bada6868",
+    "sourceHash": "e658cdab5c41d02df29b46d1c11271195d55113129a84e6e3cf939737b98fbd6",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-git": {
@@ -8619,7 +8644,7 @@
         }
       ]
     },
-    "sourceHash": "ad29f00d87d903735a2d41e28d65734e565c87b586d7e8af96adc463078803bb",
+    "sourceHash": "2b5082e09d9965f652a4993c3a8330b0be373f50d7eec4d4d618a496810acc91",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-kanban": {
@@ -8685,7 +8710,7 @@
         }
       ]
     },
-    "sourceHash": "1d8fc3bcd822489f879ef25d6d85c51046e25e21265a22e9d1aa3dff1a4b25f9",
+    "sourceHash": "b2bc7bbf4a8451437c749092563a5d228a4fe8382b782c7cc8e1af85d55dd4af",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-plus": {
@@ -8758,7 +8783,7 @@
         }
       ]
     },
-    "sourceHash": "20f9b4982a916560ce80a0135c4b51e9a4e7b681d5ec9eb0968bf2a4a1f18cae",
+    "sourceHash": "ab3e80a9f275e80b9c1d7aa8312e882ad2e3a675205039c294333657c67ac879",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-x": {
@@ -11392,7 +11417,7 @@
         }
       ]
     },
-    "sourceHash": "4de21cbc7bbcdda3991aea085db109105f56b2dd771df732d8811e0b5b360f34",
+    "sourceHash": "a54cb268ca736e98efdb58501f7b02f165c83cff40b03a05e2b760650ad1f104",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "key-square": {
@@ -11432,7 +11457,7 @@
         }
       ]
     },
-    "sourceHash": "7ec688dd48a26270e7a8acd7193fcb33f6f1509cc316389aced53ecc57dc335f",
+    "sourceHash": "9404230e28536bbbafe57d8599d656c39f0c61e29119084f567925c11ef2657b",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "keyboard": {
@@ -13659,7 +13684,7 @@
   "panel-left-close": {
     "family": "finite-group-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/group-transform.ts",
           "factory": "createGroupTransformRecipe",
@@ -13675,15 +13700,26 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state."
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "panel-left-close",
+        "target": "[data-motion=\"0\"]",
+        "property": "translateX",
+        "values": [0, -1.5, 0],
+        "times": [0, 0.4, 1],
+        "duration": 0.5,
+        "ease": "easeOut",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "570b8eef5f733c81686ad502d745952c6f11899526981fc21bd66c9c93e3a2b3",
-    "familyHash": "516527a31b166827c9cfa6a53610210b5f33a451078068633dfc63f8e448a5b5"
+    "sourceHash": "5c47750e26c9f2ea83cde7f4f60e4320c6e652e0b6bf1c49075a4e920558fae9",
+    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
   },
   "panel-left-open": {
     "family": "finite-group-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/group-transform.ts",
           "factory": "createGroupTransformRecipe",
@@ -13699,15 +13735,26 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state."
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "panel-left-open",
+        "target": "[data-motion=\"0\"]",
+        "property": "translateX",
+        "values": [0, 1.5, 0],
+        "times": [0, 0.4, 1],
+        "duration": 0.5,
+        "ease": "easeOut",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "7f55fab661e606b8a7953d2b93e87c7bfc083fb4d37cce7e0f967e88187d047f",
-    "familyHash": "516527a31b166827c9cfa6a53610210b5f33a451078068633dfc63f8e448a5b5"
+    "sourceHash": "6fde3efc3ae5f9a417e27cfcff0f42f2fb071edbb0cebe50f779dd2b6b0d987b",
+    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
   },
   "panel-right-open": {
     "family": "finite-group-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/group-transform.ts",
           "factory": "createGroupTransformRecipe",
@@ -13723,10 +13770,21 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state."
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "panel-right-open",
+        "target": "[data-motion=\"0\"]",
+        "property": "translateX",
+        "values": [0, -1.5, 0],
+        "times": [0, 0.4, 1],
+        "duration": 0.5,
+        "ease": "easeOut",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "311575808599f2f7209aaefe39f232228373dc2ea1c3fe9970c297874173e8c0",
-    "familyHash": "516527a31b166827c9cfa6a53610210b5f33a451078068633dfc63f8e448a5b5"
+    "sourceHash": "e03fdc6d905bd9d57a8e971ebeca1f9979b741e2fd0543ffdba6eba27285f4b7",
+    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
   },
   "party-popper": {
     "family": "parts-springs",
@@ -17241,7 +17299,7 @@
         }
       ]
     },
-    "sourceHash": "3197451a2130555788c6ea6f71ba7ca8c80d817324125595e7e698d594e4661c",
+    "sourceHash": "2ba8fd02a98c9198f464823c32bbdaf6c55bf978e5323c063f9310ba6c20ac55",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-left": {
@@ -17267,7 +17325,7 @@
         }
       ]
     },
-    "sourceHash": "9d764cff2cb900674da0e7ce49890574301f78fd7273f8c6135d7ce9c3c4c4f4",
+    "sourceHash": "3d60d3c1c3c476f4a7f9fc8590778199f147ecd99037d14bc9ff7e2da601865a",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-right": {
@@ -17293,7 +17351,7 @@
         }
       ]
     },
-    "sourceHash": "8faaee880bb5f9107c38e40e9b9e23c77c675a25f3a1667ca2cc19c105144404",
+    "sourceHash": "1c7a845801203e1f89c36029c297f7790ce98c0c0e17a02d5f57b4a21518f0f3",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-up": {
@@ -17319,7 +17377,7 @@
         }
       ]
     },
-    "sourceHash": "0d0202b8c07e2aa00613c01807c0b59d98d76f592c46b8830c790ee8a4dad9c1",
+    "sourceHash": "5fb05d11b68c2ace3953276c096aa047c38f632874e9b8737eb3aacb1ceb970c",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-pen": {
@@ -18684,7 +18742,7 @@
   "tree-pine": {
     "family": "finite-svg-parts-cycle",
     "contract": {
-      "construction": [
+      "precedingConstruction": [
         {
           "source": "packages/animated-icons/src/shared/svg-parts.ts",
           "factory": "createSvgPartsRecipe",
@@ -18709,10 +18767,21 @@
           ]
         }
       ],
-      "review": "The SVG rotates through [0, -10, 10, -10, 0] degrees over 0.5 seconds with easeInOut. The part transition also explicitly times return at 0.5 seconds. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose."
+      "review": "The SVG rotates through [0, -10, 10, -10, 0] degrees over 0.5 seconds with easeInOut. The part transition also explicitly times return at 0.5 seconds. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "cycle": {
+        "id": "tree-pine",
+        "target": "svg",
+        "property": "rotate",
+        "values": [0, -10, 10, -10, 0],
+        "times": [0, 0.25, 0.5, 0.75, 1],
+        "duration": 0.5,
+        "ease": "easeInOut",
+        "finish": "hold",
+        "replay": "current"
+      }
     },
-    "sourceHash": "00f3926e5187717aa365aa3b08dbfc37772bd194c4e999e5d6bbc8b595c56f5f",
-    "familyHash": "793ac29409e4ab0ac3a090548f60550dd5e2a8305c3eb68247135065f8be9063"
+    "sourceHash": "d3299061d845df67e6d10286b95008e812555817e835db7f17ac4608838e6605",
+    "familyHash": "4b18380433fb4c345c9dfb05d5ba698f2a7b85ce71145686df2f3577592ab1db"
   },
   "trending-down": {
     "family": "continued-samplers",
@@ -19217,7 +19286,7 @@
         }
       ]
     },
-    "sourceHash": "03f3047a5faca54cc9e9bc557ea4e833d147d08648657585afe0aff3b1de5f40",
+    "sourceHash": "7037aae5f0d05d76a4b80d6ebced4f05671310f0ca50668b53a87882b83ec1ab",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "user-round-plus": {
@@ -19400,7 +19469,7 @@
         }
       ]
     },
-    "sourceHash": "96643377fcd8e1675cc07d6676977ed184bdb22aebd0940a7db7269f4e1e68bd",
+    "sourceHash": "7c05a0596c44252b4cdafa98c6f4a13d34ea48f71d5ef0ec067cd46965059450",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "washing-machine": {

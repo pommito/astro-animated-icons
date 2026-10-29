@@ -1,10 +1,10 @@
 ---
-import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle } from "@grave/animated-icons/astro";
+import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness, TreePine } from "@grave/animated-icons/astro";
 ---
 <html lang="en"><head><meta charset="utf-8" /><title>Recipe registration templates</title></head><body>
   <h1>Recipe registration templates</h1>
   <p>The original template is removed before registration. Independent host clones keep their recipe data and recover their styles.</p>
-  <template id="source"><Bell controlled /><CircleDashed controlled /><UserRoundCog controlled /><KeySquare controlled /><Wallet controlled /><KeyCircle controlled /></template>
+  <template id="source"><Bell controlled /><CircleDashed controlled /><UserRoundCog controlled /><KeySquare controlled /><Wallet controlled /><KeyCircle controlled /><Disc3 controlled /><PanelLeftClose controlled /><PanelLeftOpen controlled /><PanelRightOpen controlled /><BriefcaseBusiness controlled /><TreePine controlled /></template>
   <section id="early"></section>
   <script is:inline>
     window.loadingSource = document.querySelector("#source");
@@ -23,7 +23,7 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle } from "
   import "../../../../../../packages/animated-icons/src/shared/register-css-opacity";
   type Handle = HTMLElement & IconHandle;
   declare global { interface Window { loadingSource: HTMLTemplateElement } }
-  await Promise.all(["grave-bell", "grave-circle-dashed", "grave-user-round-cog", "grave-key-square", "grave-wallet", "grave-key-circle"].map(tag => customElements.whenDefined(tag)));
+  await Promise.all(["grave-bell", "grave-circle-dashed", "grave-user-round-cog", "grave-key-square", "grave-wallet", "grave-key-circle", "grave-disc-3", "grave-panel-left-close", "grave-panel-left-open", "grave-panel-right-open", "grave-briefcase-business", "grave-tree-pine"].map(tag => customElements.whenDefined(tag)));
   let sequence = 0;
   document.querySelector("#check-loading")!.addEventListener("click", () => {
     const results: Record<string, boolean> = {
@@ -66,7 +66,7 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle } from "
     probe.startAnimation();
     results.nestedClonePlayback = probe.getAnimations({ subtree: true }).length === 1;
     probe.remove(); outer.remove(); late.remove();
-    for (const id of ["bell", "circle-dashed", "user-round-cog", "key-square", "wallet", "key-circle"]) {
+    for (const id of ["bell", "circle-dashed", "user-round-cog", "key-square", "wallet", "key-circle", "disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"]) {
       results[id + "/oneActiveSheet"] = document.querySelectorAll('style[data-grave-cycle-style="' + id + '"]').length === 1;
     }
     document.querySelector("#loading-result")!.textContent = JSON.stringify({ userAgent: navigator.userAgent, results, failures: Object.keys(results).filter(key => !results[key]) });

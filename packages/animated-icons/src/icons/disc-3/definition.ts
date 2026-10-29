@@ -1,3 +1,4 @@
-import { createGroupTransformRecipe } from "../../shared/group-transform";
+import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { disc3Cycle } from "./cycle";
 
-export const disc3Recipe = createGroupTransformRecipe({ rotate: 90 }, { duration: 0.4, ease: "easeInOut" });
+export const disc3Recipe = createCSSCycleRecipe(disc3Cycle);

@@ -178,12 +178,12 @@ test("strict review rejects missing exports, orphan records and incomplete contr
   });
 });
 
-test("a deferred recipe loses support when its proven CSS mechanism changes", () => {
+test("a migrated finite group loses review when its CSS mechanism changes", () => {
   withReviewedCopy(root => {
     const path = join(root, "packages/animated-icons/src/shared/css-cycle.ts");
     writeFileSync(path, readFileSync(path, "utf8") + "\n");
     const icon = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
-    assert.equal(icon.engine, "motion");
+    assert.equal(icon.engine, "css");
     assert.equal(icon.migrationState, "needs-review");
   });
 });
@@ -214,4 +214,15 @@ test("direct morphs keep their full-options family apart from SVG-part morphs", 
   const family = result.familyQueue.find(group => group.family === "direct-path-morph");
   assert.deepEqual(family.icons, ["connect", "rocket"]);
   assert.deepEqual(result.familyQueue.find(group => group.family === "parts-morph").icons, ["accessibility", "frown", "smile"]);
+});
+
+test("the complete supported six-icon batch has current migrated decisions", () => {
+  const inventory = inventoryAnimations(undefined, { requireReviewed: true });
+  for (const slug of ["disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"]) {
+    const icon = inventory.icons.find(icon => icon.slug === slug);
+    assert.equal(icon.engine, "css");
+    assert.equal(icon.migrationState, "migrated");
+    assert.ok(icon.runtimeSources.some(path => path.endsWith("/register-css-cycle.ts")));
+    assert.ok(!icon.runtimeSources.some(path => path.endsWith("/svg-parts.ts") || path.endsWith("/group-transform.ts")));
+  }
 });

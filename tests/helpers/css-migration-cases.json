@@ -10,6 +10,14 @@
       "comparison": "css-pilot"
     },
     {
+      "slug": "briefcase-business",
+      "name": "BriefcaseBusiness",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
       "slug": "calendar-days",
       "name": "CalendarDays",
       "engine": "timed-opacity-parts",
@@ -106,6 +114,14 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "disc-3",
+      "name": "Disc3",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
       "slug": "folder",
       "name": "Folder",
       "engine": "finite-transform-cycle",
@@ -162,6 +178,30 @@
       "comparison": "combined-transforms"
     },
     {
+      "slug": "panel-left-close",
+      "name": "PanelLeftClose",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
+      "slug": "panel-left-open",
+      "name": "PanelLeftOpen",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
+      "slug": "panel-right-open",
+      "name": "PanelRightOpen",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
       "slug": "square-chevron-down",
       "name": "SquareChevronDown",
       "engine": "finite-transform-cycle",
@@ -194,6 +234,14 @@
       "comparison": "css-chevrons"
     },
     {
+      "slug": "tree-pine",
+      "name": "TreePine",
+      "engine": "finite-transform-cycle",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "supported-six"
+    },
+    {
       "slug": "user-round-cog",
       "name": "UserRoundCog",
       "engine": "finite-transform-cycle",
@@ -213,6 +261,9 @@
   "cases": {
     "bell": [
       "bell"
+    ],
+    "briefcase-business": [
+      "briefcase-business"
     ],
     "calendar-days": [
       "calendar-days"
@@ -250,6 +301,9 @@
     "circle-help": [
       "circle-help"
     ],
+    "disc-3": [
+      "disc-3"
+    ],
     "folder": [
       "folder"
     ],
@@ -271,6 +325,15 @@
     "key-square": [
       "key-square"
     ],
+    "panel-left-close": [
+      "panel-left-close"
+    ],
+    "panel-left-open": [
+      "panel-left-open"
+    ],
+    "panel-right-open": [
+      "panel-right-open"
+    ],
     "square-chevron-down": [
       "square-chevron-down"
     ],
@@ -283,11 +346,22 @@
     "square-chevron-up": [
       "square-chevron-up"
     ],
+    "tree-pine": [
+      "tree-pine"
+    ],
     "user-round-cog": [
       "user-round-cog"
     ],
     "wallet": [
       "wallet"
+    ],
+    "supported-six": [
+      "disc-3",
+      "panel-left-close",
+      "panel-left-open",
+      "panel-right-open",
+      "briefcase-business",
+      "tree-pine"
     ],
     "chevrons": [
       "chevron-down",
@@ -317,6 +391,7 @@
     ],
     "all": [
       "bell",
+      "briefcase-business",
       "calendar-days",
       "chevron-down",
       "chevron-first",
@@ -329,6 +404,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "disc-3",
       "folder",
       "folder-down",
       "folder-input",
@@ -336,10 +412,14 @@
       "folder-up",
       "key-circle",
       "key-square",
+      "panel-left-close",
+      "panel-left-open",
+      "panel-right-open",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "tree-pine",
       "user-round-cog",
       "wallet"
     ],
@@ -347,6 +427,9 @@
       "bell",
       "bell",
       "bell",
+      "briefcase-business",
+      "briefcase-business",
+      "briefcase-business",
       "calendar-days",
       "calendar-days",
       "calendar-days",
@@ -383,6 +466,9 @@
       "circle-help",
       "circle-help",
       "circle-help",
+      "disc-3",
+      "disc-3",
+      "disc-3",
       "folder",
       "folder",
       "folder",
@@ -404,6 +490,15 @@
       "key-square",
       "key-square",
       "key-square",
+      "panel-left-close",
+      "panel-left-close",
+      "panel-left-close",
+      "panel-left-open",
+      "panel-left-open",
+      "panel-left-open",
+      "panel-right-open",
+      "panel-right-open",
+      "panel-right-open",
       "square-chevron-down",
       "square-chevron-down",
       "square-chevron-down",
@@ -416,6 +511,9 @@
       "square-chevron-up",
       "square-chevron-up",
       "square-chevron-up",
+      "tree-pine",
+      "tree-pine",
+      "tree-pine",
       "user-round-cog",
       "user-round-cog",
       "user-round-cog",
@@ -425,6 +523,7 @@
     ],
     "mixed-loader": [
       "bell",
+      "briefcase-business",
       "calendar-days",
       "chevron-down",
       "chevron-first",
@@ -437,6 +536,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "disc-3",
       "folder",
       "folder-down",
       "folder-input",
@@ -444,16 +544,21 @@
       "folder-up",
       "key-circle",
       "key-square",
+      "panel-left-close",
+      "panel-left-open",
+      "panel-right-open",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "tree-pine",
       "user-round-cog",
       "wallet",
       "loader-circle"
     ],
     "mixed-arrow": [
       "bell",
+      "briefcase-business",
       "calendar-days",
       "chevron-down",
       "chevron-first",
@@ -466,6 +571,7 @@
       "circle-chevron-up",
       "circle-dashed",
       "circle-help",
+      "disc-3",
       "folder",
       "folder-down",
       "folder-input",
@@ -473,10 +579,14 @@
       "folder-up",
       "key-circle",
       "key-square",
+      "panel-left-close",
+      "panel-left-open",
+      "panel-right-open",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "tree-pine",
       "user-round-cog",
       "wallet",
       "arrow-left"

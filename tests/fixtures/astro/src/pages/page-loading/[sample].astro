@@ -1,6 +1,6 @@
 ---
 import { loadingCases, loadingIcons } from "../../../../../../scripts/page-loading-cases.mjs";
-import { Bell, CalendarDays, ChevronDown, ChevronFirst, ChevronLeft, ChevronRight, ChevronUp, CircleChevronDown, CircleChevronLeft, CircleChevronRight, CircleChevronUp, CircleDashed, CircleHelp, Folder, FolderDown, FolderInput, FolderOutput, FolderUp, SquareChevronDown, SquareChevronLeft, SquareChevronRight, SquareChevronUp, LoaderCircle, UserRoundCog, KeySquare, Wallet, KeyCircle } from "@grave/animated-icons/astro";
+import { Bell, CalendarDays, ChevronDown, ChevronFirst, ChevronLeft, ChevronRight, ChevronUp, CircleChevronDown, CircleChevronLeft, CircleChevronRight, CircleChevronUp, CircleDashed, CircleHelp, Folder, FolderDown, FolderInput, FolderOutput, FolderUp, SquareChevronDown, SquareChevronLeft, SquareChevronRight, SquareChevronUp, LoaderCircle, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness, TreePine } from "@grave/animated-icons/astro";
 
 interface Props {
   slugs: string[];
@@ -9,7 +9,7 @@ interface Props {
 export function getStaticPaths() {
   return Object.entries(loadingCases).map(([sample, slugs]) => ({ params: { sample }, props: { slugs } }));
 }
-const components = { Bell, CalendarDays, ChevronDown, ChevronFirst, ChevronLeft, ChevronRight, ChevronUp, CircleChevronDown, CircleChevronLeft, CircleChevronRight, CircleChevronUp, CircleDashed, CircleHelp, Folder, FolderDown, FolderInput, FolderOutput, FolderUp, SquareChevronDown, SquareChevronLeft, SquareChevronRight, SquareChevronUp, LoaderCircle, UserRoundCog, KeySquare, Wallet, KeyCircle };
+const components = { Bell, CalendarDays, ChevronDown, ChevronFirst, ChevronLeft, ChevronRight, ChevronUp, CircleChevronDown, CircleChevronLeft, CircleChevronRight, CircleChevronUp, CircleDashed, CircleHelp, Folder, FolderDown, FolderInput, FolderOutput, FolderUp, SquareChevronDown, SquareChevronLeft, SquareChevronRight, SquareChevronUp, LoaderCircle, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness, TreePine };
 const selected = Astro.props.slugs.map((slug: string) => loadingIcons.find(icon => icon.slug === slug)!);
 ---
 <html lang="en"><head><meta charset="utf-8" /><title>Page loading measurement</title></head><body>

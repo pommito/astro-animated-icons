@@ -1,0 +1,27 @@
+---
+import { supportedSix } from "../supported-six-catalogue";
+import ComparisonPage from "../components/ComparisonPage.astro";
+import ComparisonSection from "../components/ComparisonSection.astro";
+---
+<ComparisonPage title="Supported finite cycle comparisons">
+    {supportedSix.map(({ slug, name, Managed, Reference }) => <ComparisonSection slug={slug} name={name}>
+      <table><thead><tr><th>Size</th><th>Previous local Motion</th><th>Public CSS icon</th></tr></thead>
+        <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
+          <th scope="row">{size} px</th><td><Reference size={size} controlled data-sample /></td><td><Managed size={size} controlled data-sample /></td>
+        </tr>)}</tbody>
+      </table>
+      <a href="#destination" data-parent><Managed /> Parent hover</a>
+    </ComparisonSection>)}
+    <p id="destination">Link destination</p>
+    <Fragment slot="checks">
+      <p>These references run the preceding local group and SVG-parts helpers with the same cycle data and drawings. They do not execute upstream React components. Saved Motion poses were captured before extraction. Matrix tolerance remains 0.005. Visual acceptance is pending.</p>
+      <button type="button" id="parity">Compare playback and saved Motion poses</button>
+      <output id="parity-result"></output>
+      <button type="button" id="runtime">Check synthetic lifecycle</button>
+      <output id="runtime-result"></output>
+      <p><a href="/page-loading/templates/">Source-removed registration and template recovery</a>. <a href="/supported-six/templates/">Independent templates and late sheets</a>. <a href="/css-migration/media/">Native reduced-motion probe</a>.</p>
+    </Fragment>
+</ComparisonPage>
+<script>
+  import "../supported-six-checks";
+</script>

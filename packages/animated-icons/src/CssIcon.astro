@@ -6,6 +6,7 @@ import { serializeRecipe } from "./shared/recipe-data";
 
 interface Props extends IconProps {
   cycle: TransformCycle;
+  svgStyle?: string;
   tag: `grave-${string}`;
 }
 const { cycle, tag, ...props } = Astro.props;

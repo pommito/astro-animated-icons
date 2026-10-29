@@ -33,21 +33,23 @@
   "finite-group-cycle": {
     "status": "supported",
     "capability": "finite-transform-cycle",
-    "reason": "The resolved single-target translation or rotation uses the existing target and current-pose finite cycle.",
-    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "reason": "Production uses the existing single-property CSS cycle after source review of the preceding Motion playback.",
+    "followUp": "#99: complete browser and payload evidence; owner visual acceptance is required before merging the six-icon batch.",
     "contract": {
-      "mechanism": "shared/group-transform.ts -> shared/svg-transform.ts",
-      "playback": "[data-motion=\"0\"], hold completion. Scalar entry starts at retained value; null first array value captures retained value. Uniform offsets unless times match. Timed return to zero uses the same duration/ease and [0,1]. No spring/delay/repeat/property override/geometry/sequence. Order has one channel. Origins stay on the pinned drawing. Clear removes transform and retained state."
+      "preceding": "shared/group-transform.ts -> shared/svg-transform.ts",
+      "mechanism": "cycle.ts -> CssIcon.astro -> shared/css-cycle.ts",
+      "playback": "[data-motion=\"0\"], hold completion. Scalar entry starts at retained value; null first array value captures retained value. Uniform offsets unless times match. Timed return to zero uses the same duration/ease and [0,1]. No spring/delay/repeat/property override/geometry/sequence. Order has one channel. Origins stay on the pinned drawing. Clear removes transform and retained state. The production finite cycle captures the displayed matrix for replay and return, uses unchanged timing and drawing origins, holds entry completion, and clears state through the shared lifecycle. Serialized recipes and stylesheet recovery use the existing shared registration entry."
     }
   },
   "finite-svg-parts-cycle": {
     "status": "supported",
     "capability": "finite-transform-cycle",
-    "reason": "This SVG rotation has explicitly timed entry and normal poses. No inherited spring branch is used.",
-    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "reason": "Production uses the existing single-property CSS cycle after source review of the preceding Motion playback.",
+    "followUp": "#99: complete browser and payload evidence; owner visual acceptance is required before merging the six-icon batch.",
     "contract": {
-      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
-      "playback": "One SVG rotate target; hold completion. Active replay replaces first array value with retained value. Finished entry ends at zero, so its explicit first zero equals the current pose. Normal transition is timed, and returns from retained angle to zero. No repeat, delay, geometry or sequence. Clear removes transform and any temporary origin."
+      "preceding": "shared/svg-parts.ts -> shared/svg-transform.ts",
+      "mechanism": "cycle.ts -> CssIcon.astro -> shared/css-cycle.ts",
+      "playback": "One SVG rotate target; hold completion. Active replay replaces first array value with retained value. Finished entry ends at zero, so its explicit first zero equals the current pose. Normal transition is timed, and returns from retained angle to zero. No repeat, delay, geometry or sequence. Clear removes transform and any temporary origin. The production finite cycle captures the displayed matrix for replay and return, uses unchanged timing and drawing origins, holds entry completion, and clears state through the shared lifecycle. Serialized recipes and stylesheet recovery use the existing shared registration entry."
     }
   },
   "parts-springs": {

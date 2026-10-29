@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/disc-3/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-disc-3"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { disc3Cycle } from "../../../../../packages/animated-icons/src/icons/disc-3/cycle";
+  import { precedingFiniteRecipe } from "./preceding-finite";
+  if (!customElements.get("grave-reference-disc-3")) customElements.define("grave-reference-disc-3", createIconElement(precedingFiniteRecipe(disc3Cycle)));
+</script>
