@@ -85,6 +85,20 @@ rtk pnpm validate
 rtk proxy env ICON_TEST_PORT=45352 pnpm fixture:serve
 ```
 
+### Final validation
+
+The first complete validation passed 89 Node tests in 109.025 seconds at the implementation stage. After independent review corrections, the final `rtk pnpm validate` passed all 90 tests in 151.158 seconds. It rebuilt the production fixture, verified 470 drawings and native controls, 944 bundle cases and 32 migrated recipes across 43 integrated compositions. Astro package and fixture checks reported zero errors, warnings or hints. The build retained existing upstream reference warnings about use client directives. No production recipe changed after its recorded browser and payload checks. All 35 fixed-membership full-consumer routes were compared again with the recorded after payloads and had no JavaScript/CSS/HTML/page or file-count drift. The minimal consumer has no comparison-page imports and remains unchanged by the fixture-only review fixes. All 76 local documentation links resolve.
+
+### Standards
+
+Independent review of `3479eaa...4656b1e` found two actionable issues. The deferred-compatible Motion proof test had become a migrated-CSS test and no longer exercised schema 2's proof-only dependency branch. The correction reconstructs the preceding Disc3 recipe only inside a temporary copy, establishes supported-but-deferred, then changes its proven CSS dependency and requires needs-review while the engine remains Motion. All 13 inventory tests pass.
+
+The new independent-template page also copied the existing combined-transform page. Both now use IndependentTemplatesPage.astro with their catalogue, preserving inline clones before registration and the processed check script. The targeted Standards re-review found zero remaining issues.
+
+### Spec
+
+Independent Spec review found zero actionable issues. Its targeted re-review confirmed that the added Motion case stays inside the test copy and that the template extraction changes no production recipe or capability. The two template routes are checked again after the final rebuild. Owner visual acceptance remains separate.
+
 ## Owner acceptance
 
 The complete migrated set awaits owner visual acceptance at /supported-six/. Neither the targeted pre-merge Motion inspection for PR #101 nor earlier approvals of UserRoundCog, KeySquare, Wallet and KeyCircle approve these CSS migrations. Leave the animation PR in draft, merge pending and #99 open until the owner accepts all six. #81 continues to coordinate the remaining specified capabilities and concrete Motion retentions.
