@@ -1,18 +1,18 @@
 ---
-status: proposed
+status: accepted
 ---
 
 # Preserve independent property poses in combined finite transforms
 
-[Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) needs one finite CSS transform track for KeySquare, Wallet, and KeyCircle. I recommend ordered property channels with independent offsets, compiled onto the preceding Motion helper's 5 ms grid. Preserve both the displayed matrix and the retained property pose when playback changes. This proposal needs owner review before shared-engine implementation.
+[Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) needs one finite CSS transform track for KeySquare, Wallet, and KeyCircle. Use ordered property channels with independent offsets, compiled onto the preceding Motion helper's 5 ms grid. Preserve both the displayed matrix and the retained property pose when playback changes. The owner approved this representation in this implementation chat on 2026-10-29, before shared-engine implementation.
 
 The [source review and experiments](../history/2026-10-29-combined-transform-decision.md) capture unmodified production behavior at `92523bd`, before any recipe extraction. An isolated CSS experiment passed 5100 matrix comparisons at 14, 16, 24, and 28 px with maximum error 0.000010000000000065512 against the existing 0.005 threshold. These experiments establish feasibility for the sampled poses. They do not validate a production compiler or adapter.
 
-## Proposed representation
+## Representation
 
 Keep `FiniteTransformCycle` for existing single-property recipes. Add a narrow internal `CombinedTransformCycle` and use their union at the existing CSS transform wrapper, compiler, adapter, and registration boundary. The ordered `tracks` array defines the transform list, rather than object insertion order. Each track owns `values`, `times`, and `rest`. The cycle owns target, timing, origin, replay, and completion.
 
-For example, KeyCircle would declare:
+KeyCircle declares:
 
 ```ts
 {
@@ -34,7 +34,7 @@ For example, KeyCircle would declare:
 
 The initial capability supports only SVG targets, finite translateY, uniform scale, and rotation channels with shared entry timing and shared return timing. Values remain in CSS pixels, degrees, or unitless scale. Springs, repeats, delayed channels, opacity, runtime geometry, and arbitrary transform functions require separate source review and capability work.
 
-The production cycle will be the single maintained recipe definition. A fixture-only adapter will pass its ordered channel data back to `createSvgKeyframesRecipe` and `animateSvgTransform`, including per-property entry offsets. The existing drawing remains shared with that reference. The dated experiment's frozen source expectations are evidence snapshots, not another maintained production recipe.
+The production cycle is the single maintained recipe definition. A fixture-only adapter passes its ordered channel data back to `createSvgKeyframesRecipe` and `animateSvgTransform`, including per-property entry offsets. The existing drawing remains shared with that reference. The dated experiment's frozen source expectations are evidence snapshots, not another maintained production recipe.
 
 ## Compilation and playback
 
@@ -51,7 +51,7 @@ The production cycle will be the single maintained recipe definition. A fixture-
 
 Reuse `CssIcon.astro`, the existing transform registration entry, serialized recipe attributes, request-local sheet deduplication, stylesheet recovery, and `createIconElement`. Broaden only the internal transform recipe union. Do not add icon-local processed scripts, a catalogue registry, or consumer configuration. The extra compiler and adapter code can increase existing single-property CSS pages because they share this mechanism. Measure those control pages and all mixed-Motion compositions before claiming a saving.
 
-The sampled representation emits 776 keyframes across the three entry and three return sheets before minification. This favors compatibility and native transform playback at the cost of more generated CSS than sparse keyframes. Repeated instances share those sheets. Final raw/gzip costs and whether the migration saves complete-page bytes remain unmeasured until implementation.
+The sampled representation emits 776 keyframes across the three entry and three return sheets before minification. This favors compatibility and native transform playback at the cost of more generated CSS than sparse keyframes. Repeated instances share those sheets. The implementation stores captured deviations from rest in the variables and rounds serialized CSS numbers to six decimal places, while retaining full scalar sampling precision. [Measured raw/gzip costs](../history/2026-10-29-combined-transforms.md) show unit-page savings, family and mixed-Motion regressions, and extra shared runtime cost on existing CSS pages.
 
 Sparse full-transform keyframes with a common offset list cannot describe KeyCircle's independent breakpoints without another interpolation mechanism. Padding its rotation values onto the translation offsets produced matrix error 0.05114726. Reversing Wallet's transform order produced error 0.209269. Both exceed the unchanged threshold.
 
@@ -59,6 +59,6 @@ Animating individual CSS transform properties or registered custom properties wo
 
 ## Approval and implementation gate
 
-Owner architecture review is pending. No production recipe, engine, or registration implementation changes in this decision branch. Approval would authorize implementing this representation for these three recipes, followed by compiler and loading tests, production comparisons against the saved capture, lifecycle and template checks, full validation, and fresh payload comparisons. It would not grant visual acceptance or approve other catalogue recipes.
+The owner approved this representation on 2026-10-29 and authorized implementation for these three recipes. Implementation still requires compiler and loading tests, production comparisons against the saved capture, lifecycle and template checks, full validation, and fresh payload comparisons. Architecture approval grants no visual acceptance and approves no other catalogue recipes.
 
 Keep Motion for any recipe whose production implementation fails the unchanged tolerances or playback contract. [#98](https://github.com/pommito/astro-animated-icons/issues/98) owns full-catalogue classification. [#99](https://github.com/pommito/astro-animated-icons/issues/99) owns later migration of complete compatible families. This decision supplies reusable compatibility criteria, without imposing a two- or three-icon limit on that later work.

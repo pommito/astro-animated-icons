@@ -1,28 +1,27 @@
 ---
-import { KeySquare, Wallet, KeyCircle } from "@grave/animated-icons/astro";
-const icons = [
-  { slug: "key-square", name: "KeySquare", Component: KeySquare },
-  { slug: "wallet", name: "Wallet", Component: Wallet },
-  { slug: "key-circle", name: "KeyCircle", Component: KeyCircle },
-];
+import { combinedTransforms } from "../combined-transform-catalogue";
+import ComparisonPage from "../components/ComparisonPage.astro";
+import ComparisonSection from "../components/ComparisonSection.astro";
 ---
-<html lang="en">
-  <head><meta charset="utf-8" /><title>Combined transform Motion baseline</title></head>
-  <body>
-    <h1>Combined transform Motion baseline</h1>
-    <p>These public components still run their preceding local Motion recipes. This page captures behavior before recipe extraction. No CSS replacement is implemented. Architecture review and visual acceptance are pending.</p>
-    {icons.map(({ slug, name, Component }) => <section data-kind={slug} id={slug}>
-      <h2>{name}</h2>
-      <button type="button" data-pair-play>Play {name}</button>
-      <button type="button" data-pair-stop>Stop {name}</button>
-      <table><thead><tr><th>Size</th><th>Public Motion icon</th></tr></thead>
+<ComparisonPage title="Combined finite transform comparisons">
+    {combinedTransforms.map(({ slug, name, Managed, Reference }) => <ComparisonSection slug={slug} name={name}>
+      <table><thead><tr><th>Size</th><th>Previous local Motion</th><th>Public CSS icon</th></tr></thead>
         <tbody>{[14, 16, 24, 28].map(size => <tr data-pair data-size={size}>
-          <th scope="row">{size} px</th><td><Component size={size} controlled data-sample /></td>
+          <th scope="row">{size} px</th><td><Reference size={size} controlled data-sample /></td><td><Managed size={size} controlled data-sample /></td>
         </tr>)}</tbody>
       </table>
-    </section>)}
-  </body>
-</html>
+      <a href="#destination" data-parent><Managed /> Parent hover</a>
+    </ComparisonSection>)}
+    <p id="destination">Link destination</p>
+    <Fragment slot="checks">
+      <p>The owner approved ADR 0001 before implementation. These references run the previous local SVG keyframe and transform helpers with the same cycle data and drawings. They do not execute upstream React components. Saved Motion poses were captured before extraction. Matrix tolerance remains 0.005. Visual acceptance is pending.</p>
+      <button type="button" id="parity">Compare playback and saved Motion poses</button>
+      <output id="parity-result"></output>
+      <button type="button" id="runtime">Check synthetic lifecycle</button>
+      <output id="runtime-result"></output>
+      <p><a href="/page-loading/templates/">Source-removed registration and template recovery</a>. <a href="/combined-transforms/templates/">Independent templates and late sheets</a>. <a href="/css-migration/media/">Native reduced-motion probe</a>.</p>
+    </Fragment>
+</ComparisonPage>
 <script>
-  import "../comparison-controls";
+  import "../combined-transform-checks";
 </script>

@@ -34,7 +34,8 @@ export function chunkRole(id) {
   if (/\/src\/icons\/[^/]+\/(?:element\.ts$|[^/]+\.astro\?astro&type=script)/.test(id)) return "registration";
   if (/\/src\/icons\//.test(id)) return "recipe";
   if (/\/src\/element\.ts$/.test(id)) return "lifecycle";
-  if (/\/src\/shared\/(?:cycle-css|opacity-css|recipe-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/(?:cycle-css|opacity-css|recipe-css|combined-transform-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/combined-transform-cycle\.ts$/.test(id)) return "transform-sampling";
   if (/\/src\/shared\/css-(?:cycle|opacity)\.ts$/.test(id)) return "css-adapter";
   if (/\/node_modules\//.test(id)) return "dependency";
   return "other-shared";

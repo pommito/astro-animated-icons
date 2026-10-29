@@ -1,11 +1,11 @@
 ---
 import Icon, { type IconProps } from "./Icon.astro";
-import type { FiniteTransformCycle } from "./shared/finite-transform-cycle";
+import type { TransformCycle } from "./shared/finite-transform-cycle";
 import { cycleCSS } from "./shared/cycle-css";
 import { serializeRecipe } from "./shared/recipe-data";
 
 interface Props extends IconProps {
-  cycle: FiniteTransformCycle;
+  cycle: TransformCycle;
   tag: `grave-${string}`;
 }
 const { cycle, tag, ...props } = Astro.props;

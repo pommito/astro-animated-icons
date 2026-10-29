@@ -76,3 +76,11 @@ test("generated CSS for an unused recipe cannot enter production", () => {
     assert.throws(() => verifyBundles(output, () => {}), /selected generated CSS and shared CSS/);
   });
 });
+
+test("combined-transform records reject changed independent offsets", () => {
+  withFile(new URL("key-circle-single/index.html", output), html => {
+    const changed = html.replace("[0,0.25,0.5,0.75,1]", "[0,0.2,0.5,0.75,1]");
+    assert.notEqual(changed, html);
+    return changed;
+  }, () => assert.throws(() => verifyBundles(output, () => {}), /key-circle-single: serialized recipe matches key-circle/));
+});

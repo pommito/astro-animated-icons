@@ -102,6 +102,8 @@ test("module evidence separates registration, recipe, lifecycle and CSS support"
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/css-cycle.ts"), "css-adapter");
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/cycle-css.ts"), "stylesheet-compiler-and-recovery");
   assert.equal(chunkRole("/repo/node_modules/motion/index.js"), "dependency");
+  assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-css.ts"), "stylesheet-compiler-and-recovery");
+  assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-cycle.ts"), "transform-sampling");
 });
 
 test("combined-transform baseline rejects repeated stylesheet payloads", () => consumer((output, metadata) => {

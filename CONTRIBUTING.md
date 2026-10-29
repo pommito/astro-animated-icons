@@ -39,6 +39,8 @@ For an existing finite transform, add its data to `cycle.ts` and use the CSS wra
 
 Pin the upstream recipe revision used for the adaptation. Provide a comparison fixture for visual review and describe how its reference is produced, including whether it executes the upstream component.
 
+For finite combined transforms, follow [ADR 0001](docs/adr/0001-combined-finite-transforms.md). Keep ordered channels and independent offsets in `cycle.ts`, and use the same CSS wrapper and registration entry. Capture the preceding Motion behavior before extraction. Shared imports do not prove that another recipe fits this capability; resolve its timing, origins, interruption, and return first.
+
 Run `pnpm validate` after adding an icon. The user reviews its rendering and animation in the comparison fixture.
 
 Update the README when the common API or setup changes. Keep icon-specific details with the affected recipe, tests, and attribution.

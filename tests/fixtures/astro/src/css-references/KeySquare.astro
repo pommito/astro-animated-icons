@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/key-square/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-key-square"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { keySquareCycle } from "../../../../../packages/animated-icons/src/icons/key-square/cycle";
+  import { previousCombinedRecipe } from "./combined-transform";
+  if (!customElements.get("grave-reference-key-square")) customElements.define("grave-reference-key-square", createIconElement(previousCombinedRecipe(keySquareCycle)));
+</script>

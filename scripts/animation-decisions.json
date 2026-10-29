@@ -6,22 +6,22 @@
     "sourceHash": "fa0c1ddde2fb10cbbbba9bf77a61b38caa777d4ceb210b43160883bd917a064c"
   },
   "key-square": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "combined-finite-transforms",
-    "reason": "Finite rotate and scale tracks share timing, but the cycle adapter supports one transform property. Preserve transform order and independent current values before migration.",
-    "sourceHash": "4de9c84910d96442c0f3b5d809869e84f0ba4d22c33b9d4d2a39ae72d92c2183"
+    "reason": "Owner approved ADR 0001 before implementation on 2026-10-29. Ordered independent channels preserve the original timing, origins, transform order, retained property poses, replay, return and hold completion. Production CSS is compared with the preceding local Motion implementation and the saved pre-extraction capture; visual acceptance remains pending.",
+    "sourceHash": "3ef390d8be75724ea7d74f6022d5623bac521904640773b9e88a55715b82e82f"
   },
   "wallet": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "combined-finite-transforms",
-    "reason": "Finite y and rotate keyframes have explicit entry/return timing. Combined transform interpolation and current-pose replay need a separate capability and proof.",
-    "sourceHash": "0297eaf382a9bec8e942fba9a5adacfadba5b8f9474893cc611f2191d6351de8"
+    "reason": "Owner approved ADR 0001 before implementation on 2026-10-29. Ordered independent channels preserve the original timing, origins, transform order, retained property poses, replay, return and hold completion. Production CSS is compared with the preceding local Motion implementation and the saved pre-extraction capture; visual acceptance remains pending.",
+    "sourceHash": "850a3030544f6f150de817d855b1f008c177911384fb6034535470315724fc29"
   },
   "key-circle": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "combined-finite-transforms",
-    "reason": "Finite y and rotate arrays have different lengths. Each property needs its own offsets before transforms can be composed faithfully.",
-    "sourceHash": "a5d074ee1ce84c99cbfdaaf2f0393563c98485b5bb4eeb6dc3996e26e60f9b66"
+    "reason": "Owner approved ADR 0001 before implementation on 2026-10-29. Ordered independent channels preserve the original timing, origins, transform order, retained property poses, replay, return and hold completion. Production CSS is compared with the preceding local Motion implementation and the saved pre-extraction capture; visual acceptance remains pending.",
+    "sourceHash": "e4313dad4f9b85605c9eebf7064b1e2cb4656cddf8f8f545cfd516127414de22"
   },
   "cart": {
     "status": "motion",

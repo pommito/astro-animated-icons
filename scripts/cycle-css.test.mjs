@@ -1,10 +1,75 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { ensureOpacityCSS, opacityParts, generatedOpacityCSS } from "./css-opacity.mjs";
-import { cycleCSS, ensureCycleCSS, cycles } from "./css-cycles.mjs";
+import { cycleCSS, ensureCycleCSS, cycles, combinedFrames, combinedPose } from "./css-cycles.mjs";
+import captured from "../docs/history/2026-10-29-combined-motion-before.json" with { type: "json" };
 const bellCycle = cycles.get("bell");
 const chevronRightCycle = cycles.get("chevron-right");
 const folderCycle = cycles.get("folder");
+
+test("KeySquare compiles ordered scale and rotation channels with its original timing", () => {
+  const cycle = cycles.get("key-square");
+  assert.ok(cycle, "KeySquare has one shared cycle definition");
+  assert.deepEqual(cycle.tracks, [
+    { property: "scale", values: [1, 1.05, 1, 1], times: [0, 1 / 3, 2 / 3, 1], rest: 1 },
+    { property: "rotate", values: [0, 15, -15, 0], times: [0, 1 / 3, 2 / 3, 1], rest: 0 },
+  ]);
+  assert.equal(cycle.duration, 0.6);
+  assert.equal(cycle.returnDuration, 0.6);
+  assert.equal(cycle.ease, "easeOut");
+  assert.equal(cycle.returnEase, "easeOut");
+  assert.equal(cycle.origin, "50% 50%");
+  assert.equal(cycle.finish, "hold");
+  assert.equal(cycle.replay, "current");
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,scale(1) rotate(0deg));}'));
+  assert.ok(css.includes('animation-duration:0.6s;animation-timing-function:linear;'));
+  assert.equal([...css.matchAll(/%\{transform:/g)].length, 242);
+});
+
+test("Wallet keeps nonuniform entry offsets and its independent 300 ms return", () => {
+  const cycle = cycles.get("wallet");
+  assert.ok(cycle, "Wallet has one shared cycle definition");
+  assert.deepEqual(cycle.tracks, [
+    { property: "translateY", values: [0, -3, 0], times: [0, 0.45, 1], rest: 0 },
+    { property: "rotate", values: [0, -4, 0], times: [0, 0.45, 1], rest: 0 },
+  ]);
+  assert.equal(cycle.duration, 0.55);
+  assert.equal(cycle.returnDuration, 0.3);
+  assert.equal(cycle.ease, "easeInOut");
+  assert.equal(cycle.returnEase, "easeOut");
+  assert.equal(cycle.origin, "12px 12px");
+  const css = cycleCSS(cycle);
+  assert.equal([...css.matchAll(/%\{transform:/g)].length, 172);
+  assert.ok(css.includes('-return;animation-duration:0.3s;animation-timing-function:linear;'));
+});
+
+test("KeyCircle keeps unequal channel lengths and independent offsets", () => {
+  const cycle = cycles.get("key-circle");
+  assert.ok(cycle, "KeyCircle has one shared cycle definition");
+  assert.deepEqual(cycle.tracks, [
+    { property: "translateY", values: [0, -3, 0, -2, 0], times: [0, 0.25, 0.5, 0.75, 1], rest: 0 },
+    { property: "rotate", values: [0, 3, -3, 0], times: [0, 1 / 3, 2 / 3, 1], rest: 0 },
+  ]);
+  assert.equal(cycle.duration, 0.9);
+  assert.equal(cycle.returnDuration, 0.9);
+  assert.equal(cycle.ease, "easeOut");
+  assert.equal(cycle.returnEase, "easeOut");
+  assert.equal([...cycleCSS(cycle).matchAll(/%\{transform:/g)].length, 362);
+});
+
+test("combined scalar sampling preserves independently captured Motion entry matrices", () => {
+  for (const pose of captured.poses.filter(pose => pose.scenario === "entry" && pose.size === 14)) {
+    const cycle = cycles.get(pose.slug);
+    const values = combinedPose(combinedFrames(cycle, false), cycle.duration * 1000, pose.time);
+    const channels = Object.fromEntries(cycle.tracks.map((track, index) => [track.property, values[index]]));
+    const scale = channels.scale ?? 1;
+    const angle = channels.rotate * Math.PI / 180;
+    const matrix = [scale * Math.cos(angle), scale * Math.sin(angle), -scale * Math.sin(angle), scale * Math.cos(angle), 0, channels.translateY ?? 0];
+    const difference = Math.max(...matrix.map((value, index) => Math.abs(value - pose.matrix[index])));
+    assert.ok(difference <= 0.005, pose.slug + " at " + pose.time + " ms: " + difference);
+  }
+});
 
 test("UserRoundCog preserves the positive half-turn and 300 ms current-pose entry and return", () => {
   const cycle = cycles.get("user-round-cog");

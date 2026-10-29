@@ -1,6 +1,4 @@
-import { createSvgKeyframesRecipe } from "../../shared/svg-keyframes";
+import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { keyCircleCycle } from "./cycle";
 
-export const keyCircleRecipe = createSvgKeyframesRecipe(
-  { y: [0, -3, 0, -2, 0], rotate: [0, 3, -3, 0] },
-  { duration: 0.9, ease: "easeOut" },
-);
+export const keyCircleRecipe = createCSSCycleRecipe(keyCircleCycle);

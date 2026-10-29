@@ -1,5 +1,7 @@
 # Combined transform architecture evidence
 
+This record preserves the preparation phase. The owner subsequently approved ADR 0001 on 2026-10-29 before implementation. The [implementation report](2026-10-29-combined-transforms.md) records the resulting migrations and pending visual acceptance.
+
 This is the pre-implementation review package for [issue #95](https://github.com/pommito/astro-animated-icons/issues/95), titled "refactor(icons): specify combined CSS transforms for three finite recipes" when fetched on 2026-10-29. The [proposed architecture](../adr/0001-combined-finite-transforms.md) needs owner review. No production icon, recipe, drawing, lifecycle, or registration source has changed.
 
 The fresh managed worktree starts at updated main `92523bd5c8f2a8daf58c57f507755b0678419bfb`, after merged #97 and closed #94. The earlier UserRoundCog acceptance does not approve combined transforms. The current [parent #81](https://github.com/pommito/astro-animated-icons/issues/81) assigns full-catalogue review to [#98](https://github.com/pommito/astro-animated-icons/issues/98) and compatible-family rollout to [#99](https://github.com/pommito/astro-animated-icons/issues/99). This branch does neither of those implementations.
