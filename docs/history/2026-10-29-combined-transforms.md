@@ -1,6 +1,6 @@
 # Combined finite transform implementation
 
-The owner approved [ADR 0001](../adr/0001-combined-finite-transforms.md) in this chat on 2026-10-29 before shared-engine implementation. KeySquare, Wallet, and KeyCircle now use its ordered combined CSS cycle. [Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) and [draft PR #100](https://github.com/pommito/astro-animated-icons/pull/100) remain open for owner visual acceptance. This record grants no visual approval and implements no work from #98 or #99.
+The owner approved [ADR 0001](../adr/0001-combined-finite-transforms.md) in this chat on 2026-10-29 before shared-engine implementation. KeySquare, Wallet, and KeyCircle now use its ordered combined CSS cycle. The owner subsequently [visually accepted all three recipes](2026-10-29-combined-transform-acceptance.md) on 2026-10-29 at `df1ad33` in [PR #100](https://github.com/pommito/astro-animated-icons/pull/100) for [issue #95](https://github.com/pommito/astro-animated-icons/issues/95). This acceptance implements no work from #98 or #99.
 
 ## Preserved behavior
 
@@ -22,7 +22,7 @@ The native media probe passes 234 flags for all 26 CSS recipes with the page sel
 
 The existing Bell/ChevronRight comparison passes 592 assertions across 496 comparisons, with Bell angle error 0.013984397194736431 below its unchanged 0.03-degree threshold. Finite chevrons pass 4836 assertions across 3276 comparisons with zero translation error. Capability recipes pass 5348 assertions across 2440 live comparisons plus 324 saved cog poses; maximum matrix error is 0.000885 and saved cog error is 0.0007956, below 0.005. No comparison reported a failure.
 
-Owner visual acceptance is pending. Safari, Firefox, real touch or hybrid hardware, operating-system preference changes, frame pacing, and preparation timing remain unverified.
+The owner visually accepted the three migrated recipes on 2026-10-29. Safari, Firefox, real touch or hybrid hardware, operating-system preference changes, frame pacing, and preparation timing remain unverified.
 
 ## Production payloads
 
@@ -129,4 +129,4 @@ rtk pnpm validate
 rtk proxy env ICON_TEST_PORT=45343 pnpm fixture:serve
 ```
 
-`pnpm validate` passed in 111.531 seconds with zero Astro errors, warnings, or hints. It verified 470 initial drawings and native controls, 944 bundle cases, 26 migrated recipes across 36 integrated compositions, the existing pilot, chevron and capability routes, and all 73 Node tests. Routine validation stayed browser-free and added no Playwright dependency. Local documentation paths and all after-measurement source hashes were verified against this worktree. Owner review uses `/combined-transforms/` with play/stop controls and synchronized row hover. Keep the PR in draft and #95 open until the owner accepts the three migrated recipes.
+`pnpm validate` passed in 111.531 seconds with zero Astro errors, warnings, or hints. It verified 470 initial drawings and native controls, 944 bundle cases, 26 migrated recipes across 36 integrated compositions, the existing pilot, chevron and capability routes, and all 73 Node tests. Routine validation stayed browser-free and added no Playwright dependency. Local documentation paths and all after-measurement source hashes were verified against this worktree. Owner review uses `/combined-transforms/` with play/stop controls and synchronized row hover. The owner acceptance is recorded separately at the reviewed implementation commit. PR integration and issue closure remain separate repository actions.

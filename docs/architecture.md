@@ -32,7 +32,7 @@ The recipe does not count tracks or decide when to clear a whole playback. A com
 
 ## Internal animation engines
 
-[ADR 0001](adr/0001-combined-finite-transforms.md) defines independent property channels for combined finite transforms. The owner approved the representation on 2026-10-29 before implementation. The [pre-implementation evidence](history/2026-10-29-combined-transform-decision.md) captures KeySquare, Wallet, and KeyCircle on Motion before recipe extraction. Their [implementation evidence](history/2026-10-29-combined-transforms.md) keeps visual acceptance pending.
+[ADR 0001](adr/0001-combined-finite-transforms.md) defines independent property channels for combined finite transforms. The owner approved the representation on 2026-10-29 before implementation. The [pre-implementation evidence](history/2026-10-29-combined-transform-decision.md) captures KeySquare, Wallet, and KeyCircle on Motion before recipe extraction. Their [implementation evidence](history/2026-10-29-combined-transforms.md) and [owner visual acceptance](history/2026-10-29-combined-transform-acceptance.md) identify the reviewed implementation.
 
 The [playback vocabulary](../GLOSSARY.md) distinguishes the displayed pose from the retained property pose used by interrupted combined transforms.
 
