@@ -321,7 +321,7 @@
   "airplane": {
     "family": "timed-transform-parts",
     "contract": {
-      "review": "The plane translates to x = 3 px and y = -3 px and scales to 0.8 over 0.5 seconds with easeOut on entry and return. Each streak enters with opacity 1, an identity transform and dash offset values [-1, -2] px over 0.15 seconds, after a delay of (index + 1) * 0.1 seconds. Streak return takes 0.3 seconds without delay and targets opacity 0, translate(-3px, 3px) and dash offset -1 px. Entry holds. Clear removes the plane pose and streak transforms and paint."
+      "review": "The plane enters at x = 3 px, y = -3 px and scale 0.8 over 0.5 seconds with easeOut. Its return targets x = 0 px, y = 0 px and scale 1 with the same duration and easing. Each streak enters with opacity 1, an identity transform and dash offset values [-1, -2] px over 0.15 seconds, after a delay of (index + 1) * 0.1 seconds. Streak return takes 0.3 seconds without delay and targets opacity 0, translate(-3px, 3px) and dash offset -1 px. Entry holds. Clear removes the plane pose and streak transforms and paint."
     },
     "sourceHash": "f7c15d3f144dae9ffe1f21983a4cb906f8b7a105c930134f85590cb4ac7ee683",
     "familyHash": "721ba0d6c055785858caf47b2b97c1eb9de1f0ef47c6823608cd052be556c667"
@@ -15580,7 +15580,7 @@
   "send": {
     "family": "timed-transform-parts",
     "contract": {
-      "review": "Child 0 translates to x = 3 px and y = -3 px and scales to 0.8 over 0.5 seconds with easeOut in both directions. The trail enters over 0.55 seconds after a 0.1-second delay, targeting opacity 1, dash array 1px 1px and translation (0px, 0px). Its 0.3-second return has no delay and targets opacity 0, dash array 0px 1px and translation (-3px, 3px). Entry holds. Clear removes both poses and the trail paint."
+      "review": "Child 0 enters at x = 3 px, y = -3 px and scale 0.8 over 0.5 seconds with easeOut. Its return targets x = 0 px, y = 0 px and scale 1 with the same duration and easing. The trail enters over 0.55 seconds after a 0.1-second delay, targeting opacity 1, dash array 1px 1px and translation (0px, 0px). Its 0.3-second return has no delay and targets opacity 0, dash array 0px 1px and translation (-3px, 3px). Entry holds. Clear removes both poses and the trail paint."
     },
     "sourceHash": "e29887292a3f261eb6ef9b580c5f05eede2632809f88ad9cf357f72e239fb5ed",
     "familyHash": "721ba0d6c055785858caf47b2b97c1eb9de1f0ef47c6823608cd052be556c667"

@@ -36,6 +36,8 @@ rtk pnpm inventory:animations --check --summary --output .artifacts/animation-in
 rtk pnpm validate
 ```
 
-`pnpm validate` passed in 131.563 seconds. Astro reported zero errors, warnings or hints. The production checks verified 470 drawings and native controls, 944 bundle cases, 26 migrated recipes across 36 integrated compositions, and all 78 Node tests. The fixture build reported warnings about existing upstream reference files' `use client` directives. No production source or reference changed here.
+The initial `pnpm validate` passed in 131.563 seconds with 78 Node tests. After independent review corrections, the final run passed in 114.088 seconds with all 80 Node tests and reused the unchanged production fixture. Astro reported zero errors, warnings or hints. The production checks verified 470 drawings and native controls, 944 bundle cases and 26 migrated recipes across 36 integrated compositions. The initial fixture build reported warnings about existing upstream reference files' `use client` directives. No production source or reference changed here.
+
+Standards review found compressed custom contracts and repeated CSS-delivery detection. The corrections name units and spring settings, retain structured numeric part data, and share the wrapper/registration descriptor. Targeted re-review also clarified Airplane and Send's return targets as x = 0 px, y = 0 px and scale 1. Spec review corrected ChartScatter and the direct morph family as described above. Both axes have zero remaining findings after targeted re-review.
 
 Routine validation stays browser-free and adds no browser dependency. #98 performs no browser animation, hardware, frame-pacing or new payload checks. The user retains visual acceptance of later migrations. #99 remains separate work, and #81 remains open for rollout and capability follow-ups.
