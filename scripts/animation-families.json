@@ -383,5 +383,15 @@
       "mechanism": "icons/languages/definition.ts -> shared/svg-parts.ts",
       "playback": "Fixed spring keyframes[0,1],duration500ms,bounce0 sampled101 values at5ms. Six parts custom[3,2,1,0,3,3]. Entry opacity[0,1] .01 delay=custom*.1; pathLength sample .5/linear/same delay; pathOffset[1,0] .3 easeOut. Partial dash in(0,1) remaps all length values to current+(1-current)*sample. Return normal scalar opacity1/pathLength1/pathOffset0 uses .3 default cubic. Hold; clear normalized paint and svgEffect."
     }
+  },
+  "direct-path-morph": {
+    "status": "motion",
+    "capability": "path-morph",
+    "reason": "The direct path-morph helper forwards spring or repeat settings to Motion attribute animation. The CSS mechanisms cannot preserve these morphs.",
+    "followUp": "#81: retain the direct Motion morphs until a replacement preserves their curves, repeats and cancellation.",
+    "contract": {
+      "mechanism": "shared/path-morph.ts",
+      "playback": "animatePathMorph forwards the complete options object to Motion animate with attrD. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
+    }
   }
 }

@@ -201,3 +201,17 @@ test("CSS wiring cannot upgrade a reviewed capability requirement", () => {
     assert.equal(icon.migrationState, "capability-needed");
   });
 });
+
+test("unused geometry does not place ChartScatter in the measured-paint family", () => {
+  const icon = inventoryAnimations().icons.find(icon => icon.slug === "chart-scatter");
+  assert.equal(icon.classification.capability, "opacity-restart-easing-and-completion");
+  assert.equal(icon.migrationState, "capability-needed");
+  assert.ok(icon.sources.some(path => path.endsWith("/staggered-cycle.ts")));
+});
+
+test("direct morphs keep their full-options family apart from SVG-part morphs", () => {
+  const result = inventoryAnimations();
+  const family = result.familyQueue.find(group => group.family === "direct-path-morph");
+  assert.deepEqual(family.icons, ["connect", "rocket"]);
+  assert.deepEqual(result.familyQueue.find(group => group.family === "parts-morph").icons, ["accessibility", "frown", "smile"]);
+});

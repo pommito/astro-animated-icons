@@ -35,16 +35,17 @@ This table is the 2026-10-29 source-review snapshot. Full slug membership and co
 | `css-finite-cycle` | 21 | Supported | `finite-transform-cycle` |
 | `css-opacity-parts` | 2 | Supported | `timed-opacity-parts` |
 | `currency-path-reveal` | 21 | Capability needed | `runtime-path-paint` |
+| `direct-path-morph` | 2 | Motion retained | `path-morph` |
 | `finite-group-cycle` | 4 | Supported | `finite-transform-cycle` |
 | `finite-svg-parts-cycle` | 2 | Supported | `finite-transform-cycle` |
 | `fixed-spring-paint` | 1 | Capability needed | `sampled-spring-paint` |
 | `geometry-with-transforms` | 9 | Capability needed | `runtime-path-paint-and-transforms` |
 | `native-springs` | 6 | Motion retained | `native-spring` |
 | `opacity-loop` | 7 | Capability needed | `repeated-opacity` |
-| `opacity-restart` | 13 | Capability needed | `opacity-restart-easing-and-completion` |
+| `opacity-restart` | 14 | Capability needed | `opacity-restart-easing-and-completion` |
 | `parts-finite-paint` | 30 | Capability needed | `normalized-svg-paint` |
 | `parts-finite-transform` | 12 | Capability needed | `multiple-targets-transform-channels-and-repeat` |
-| `parts-morph` | 5 | Motion retained | `path-morph` |
+| `parts-morph` | 3 | Motion retained | `path-morph` |
 | `parts-repeated-opacity` | 5 | Capability needed | `repeated-opacity-with-replay-phases` |
 | `parts-springs` | 68 | Motion retained | `inherited-velocity` |
 | `queued-sequences` | 10 | Motion retained | `custom-sequence` |
@@ -59,7 +60,7 @@ This table is the 2026-10-29 source-review snapshot. Full slug membership and co
 | `spring-return-phone-symbol` | 2 | Motion retained | `inherited-velocity` |
 | `spring-return-pulse` | 3 | Motion retained | `inherited-velocity` |
 | `spring-transforms` | 90 | Motion retained | `inherited-velocity` |
-| `staggered-path-cycle` | 7 | Capability needed | `runtime-path-cycle` |
+| `staggered-path-cycle` | 6 | Capability needed | `runtime-path-cycle` |
 | `staggered-path-reveal` | 23 | Capability needed | `runtime-path-paint` |
 | `symbol-path-reveal` | 12 | Capability needed | `runtime-path-paint` |
 | `timed-paint` | 4 | Capability needed | `finite-svg-paint` |

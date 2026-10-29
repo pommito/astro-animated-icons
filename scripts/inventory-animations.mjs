@@ -73,8 +73,13 @@ export function readModule(root, path) {
 const reviewDirectory = fileURLToPath(new URL("./", import.meta.url));
 const reviewContext = ["packages/animated-icons/src/element.ts", "packages/animated-icons/src/Icon.astro", "packages/animated-icons/src/icon.css", "packages/animated-icons/src/shared/finite-transform-cycle.ts", "packages/animated-icons/src/shared/opacity-parts.ts", "pnpm-lock.yaml"];
 
-function engineWrapper(source) {
-  return source.includes("CssOpacityIcon") ? "packages/animated-icons/src/CssOpacityIcon.astro" : source.includes("CssIcon") ? "packages/animated-icons/src/CssIcon.astro" : undefined;
+function cssDelivery(source) {
+  const mechanism = source.includes("CssOpacityIcon") ? "opacity" : source.includes("CssIcon") ? "cycle" : undefined;
+  if (!mechanism) return undefined;
+  return {
+    wrapper: `packages/animated-icons/src/${mechanism === "opacity" ? "CssOpacityIcon" : "CssIcon"}.astro`,
+    registration: `packages/animated-icons/src/shared/register-css-${mechanism}.ts`,
+  };
 }
 
 function decision(modules, slug, reviewed, families) {
@@ -122,12 +127,11 @@ export function inventoryAnimations(root = defaultRoot, { requireReviewed = fals
     const adapterPath = `${directory}/${icon.name}.astro`;
     const adapter = existsSync(resolve(root, adapterPath)) ? adapterPath : undefined;
     const adapterSource = adapter ? readFileSync(resolve(root, adapter), "utf8") : "";
-    const registration = adapterSource.includes("CssOpacityIcon")
-      ? "packages/animated-icons/src/shared/register-css-opacity.ts"
-      : adapterSource.includes("CssIcon") ? "packages/animated-icons/src/shared/register-css-cycle.ts" : `${directory}/element.ts`;
+    const delivery = cssDelivery(adapterSource);
+    const registration = delivery?.registration ?? `${directory}/element.ts`;
     if (existsSync(resolve(root, registration))) closure(registration, recipeFiles);
     const runtimeSources = [...recipeFiles].sort();
-    const engine = /css-cycle|CssIcon|cycle-css|CssOpacityIcon/.test(adapterSource) || runtimeSources.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
+    const engine = delivery || runtimeSources.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
     const provenMechanismSources = engine === "motion" && reviewedFamilies[reviewed[icon.slug]?.family]?.status === "supported"
       ? [...closure("packages/animated-icons/src/shared/register-css-cycle.ts"), "packages/animated-icons/src/CssIcon.astro"].sort() : [];
     for (const path of provenMechanismSources) recipeFiles.add(path);
@@ -140,7 +144,7 @@ export function inventoryAnimations(root = defaultRoot, { requireReviewed = fals
       }
     }
     for (const path of reviewContext) if (existsSync(resolve(root, path))) recipeFiles.add(path);
-    if (engineWrapper(adapterSource)) recipeFiles.add(engineWrapper(adapterSource));
+    if (delivery) recipeFiles.add(delivery.wrapper);
     const files = [...recipeFiles].sort();
     const modules = files.map(load);
     const classification = decision(modules, icon.slug, reviewed, reviewedFamilies);

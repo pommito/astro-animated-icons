@@ -24,6 +24,8 @@ The focused inventory test first failed because the complete reviewed family par
 
 Negative cases reject missing reviews, orphan records, empty contracts, unknown families and attempted per-export outcome overrides. Drawing, adapter, lifecycle, dependency lock, family and shared compiler changes invalidate decisions, including CSS icons. Unknown calls and source words still cannot confer eligibility. Repeated inventory generation produces identical data.
 
+Independent review corrected two branch distinctions. ChartScatter belongs to opacity interval easing because its measured length contributes to no track. Connect and Rocket now have a separate direct-morph family because animatePathMorph forwards the complete options object, including springs, repeats and offsets. The three SVG-part morph recipes retain that helper's restricted d options. Focused inventory regressions cover both distinctions. Per-recipe notes now spell out units and spring settings; structured SVG-part records carry the numeric values directly. The final queue has 38 families.
+
 Commands executed use the required `rtk` prefix:
 
 ```sh
