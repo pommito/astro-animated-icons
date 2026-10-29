@@ -1,6 +1,6 @@
 # UserRoundCog CSS migration evidence
 
-Recorded on 2026-10-29 for [issue #94](https://github.com/pommito/astro-animated-icons/issues/94). Owner visual acceptance is pending. Issue #95 is outside this change.
+Recorded on 2026-10-29 for [issue #94](https://github.com/pommito/astro-animated-icons/issues/94). The owner visually accepted UserRoundCog on `/css-capabilities/#user-round-cog` on 2026-10-29 at commit `7f30ce7189cf6c2c38d1c81e77ccda71c0af7f0d`. Issue #95 is outside this change.
 
 ## Preserved behavior
 
@@ -80,4 +80,4 @@ Reproduce owner review with `ICON_TEST_PORT=45341 pnpm fixture:serve` and open `
 
 Independent Standards and Spec reviews checked the staged change against `3efe4f2`. Standards found one English punctuation issue, which was corrected and re-reviewed. Both axes ended with zero actionable findings. The production fixture was rebuilt after that prose correction.
 
-Safari, Firefox, real touch or hybrid hardware, native operating-system preference changes, frame pacing, and preparation timing remain unverified. The synthetic matchMedia checks do not establish native preference coverage. Owner review is required before merge or issue closure.
+Safari, Firefox, real touch or hybrid hardware, native operating-system preference changes, frame pacing, and preparation timing remain unverified. The synthetic matchMedia checks do not establish native preference coverage. Owner visual acceptance covers this UserRoundCog preview; the unverified platform coverage above remains unchanged.

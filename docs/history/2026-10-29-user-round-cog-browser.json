@@ -67,7 +67,13 @@
       "astroPageLoad": "synthetic event"
     }
   },
-  "ownerVisualAcceptance": "pending",
+  "ownerVisualAcceptance": {
+    "status": "accepted",
+    "date": "2026-10-29",
+    "commit": "7f30ce7189cf6c2c38d1c81e77ccda71c0af7f0d",
+    "route": "/css-capabilities/#user-round-cog",
+    "source": "Owner confirmation in this chat"
+  },
   "unverified": [
     "Safari",
     "Firefox",
