@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import ts from "typescript";
@@ -33,7 +33,10 @@ function literal(node) {
 export function readModule(root, path) {
   const source = readFileSync(resolve(root, path), "utf8");
   const ast = ts.createSourceFile(path, source, ts.ScriptTarget.Latest, true);
-  const facts = { targets: [], timing: [], policies: [], selectors: [], measurements: [], velocity: [], sequencing: [], constants: [], calls: [] };
+  const facts = { targets: [], timing: [], policies: [], selectors: [], measurements: [], velocity: [], sequencing: [], constants: [], calls: [], drawing: [] };
+  if (path.endsWith(".astro")) source.split("\n").forEach((expression, index) => {
+    if (/transform-origin|transform-box|svgStyle|data-(?:part|motion|spin|rotation|cog|chevron)/.test(expression)) facts.drawing.push({ line: index + 1, expression });
+  });
   const imports = [];
   const calls = [];
   const record = (group, node, expression = node.getText(ast)) => facts[group].push({ line: ast.getLineAndCharacterOfPosition(node.getStart(ast)).line + 1, expression });
@@ -67,40 +70,44 @@ export function readModule(root, path) {
   return { path, sha256: createHash("sha256").update(source).digest("hex"), imports, dependencies, facts, calls };
 }
 
-const reviewed = JSON.parse(readFileSync(new URL("./animation-decisions.json", import.meta.url), "utf8"));
+const reviewDirectory = fileURLToPath(new URL("./", import.meta.url));
+const reviewContext = ["packages/animated-icons/src/element.ts", "packages/animated-icons/src/Icon.astro", "packages/animated-icons/src/icon.css", "packages/animated-icons/src/shared/finite-transform-cycle.ts", "packages/animated-icons/src/shared/opacity-parts.ts", "pnpm-lock.yaml"];
 
-function decision(modules, engine, slug) {
-  const names = modules.map(module => module.path);
-  const localCalls = modules.filter(module => /\/icons\//.test(module.path)).flatMap(module => module.calls);
-  const cycle = localCalls.find(call => call.name === "animateChevronCycle")?.arguments[3];
-  if (engine === "css") return { status: "supported", capability: names.some(name => name.endsWith("/css-opacity.ts")) ? "timed-opacity-parts" : "finite-transform-cycle", reason: "Production adapter selects CSS; recipe data and engine wiring are included as evidence." };
-  if (reviewed[slug]) {
-    const sourceHash = createHash("sha256").update(JSON.stringify(modules.map(module => [module.path, module.sha256]))).digest("hex");
-    return sourceHash === reviewed[slug].sourceHash ? reviewed[slug] : { status: "review", capability: "changed-reviewed-source", reason: "Recipe or shared dependencies changed after the recorded review; resolve the effective settings again.", previousDecision: reviewed[slug] };
-  }
-  if (cycle && ["X", "Y"].includes(cycle.axis) && Array.isArray(cycle.values) && cycle.values.every(value => typeof value === "number") && typeof cycle.duration === "number") {
-    const requiredCapabilities = [
-      ...(cycle.axis === "Y" ? ["translateY"] : []),
-      ...((cycle.returnDuration ?? cycle.duration) !== cycle.duration || cycle.ease !== "easeOut" ? ["independent-return-timing"] : []),
-    ];
-    return { status: requiredCapabilities.length ? "candidate" : "supported", capability: requiredCapabilities.length ? `finite-transform-cycle+${requiredCapabilities.join("+")}` : "finite-transform-cycle", requiredCapabilities, reason: "Resolved finite chevron cycle. Preserve its explicit offsets, restart entry, restore completion, and return duration. Engine records whether migration has happened; parity still needs fixture evidence.", resolvedCycle: cycle,
-      resolvedPlayback: { target: "[data-chevron]", property: `translate${cycle.axis}`, repeat: 0, replay: "restart", finish: "restore", returnDuration: cycle.returnDuration ?? cycle.duration, returnEase: "easeOut" } };
-  }
-  if (names.some(name => name.endsWith("/chevron-spring.ts"))) return { status: "motion", capability: "inherited-velocity", reason: "Chevron spring samples interrupted position and velocity and passes that velocity into the next spring." };
-  if (names.some(name => name.endsWith("/loader-circle/definition.ts"))) return { status: "motion", capability: "inherited-velocity", reason: "LoaderCircle loops rotation, preserves the cycle end, and returns through svg-parts' spring using svg-transform's retained angular velocity." };
-  if (names.some(name => name.endsWith("/archive/definition.ts"))) return { status: "motion", capability: "motion-value-and-morph", reason: "Archive retains a Motion value for the lid spring and morphs body and handle paths." };
-  const keyframes = localCalls.find(call => call.name === "createSvgKeyframesRecipe");
-  if (keyframes && keyframes.arguments.slice(0, 2).every(Boolean) && Object.keys(keyframes.arguments[0]).length === 1 && Array.isArray(keyframes.arguments[0].rotate) && keyframes.arguments[1].duration && !keyframes.arguments[1].type && !keyframes.arguments[1].repeat && keyframes.arguments.length <= 3) {
-    return { status: "review", capability: "finite-rotation-cycle", reason: "Resolved single rotation keyframes with finite timing. Review easing compatibility and extract cycle data before choosing CSS; current-pose replay and return need parity evidence.", resolvedTargets: keyframes.arguments[0], resolvedTransition: keyframes.arguments[1] };
-  }
-  const measurement = modules.some(module => module.facts.measurements.length);
-  const parts = names.some(name => name.endsWith("/svg-parts.ts"));
-  return { status: "review", capability: measurement ? "runtime-geometry" : parts ? "svg-parts-property-transitions" : "custom-recipe", reason: measurement ? "Runtime geometry feeds playback; review measurement use and interrupted return before choosing an engine." : parts ? "Resolve each part's normal/animate transition and property overrides. Scalar transforms can inherit spring defaults even without a local spring setting." : "Static evidence records local and shared expressions; branch-dependent playback and return behavior need recipe review." };
+function cssDelivery(source) {
+  const mechanism = source.includes("CssOpacityIcon") ? "opacity" : source.includes("CssIcon") ? "cycle" : undefined;
+  if (!mechanism) return undefined;
+  return {
+    wrapper: `packages/animated-icons/src/${mechanism === "opacity" ? "CssOpacityIcon" : "CssIcon"}.astro`,
+    registration: `packages/animated-icons/src/shared/register-css-${mechanism}.ts`,
+  };
 }
 
-export function inventoryAnimations(root = defaultRoot) {
+function decision(modules, slug, reviewed, families) {
+  const record = reviewed[slug];
+  if (!record) return { status: "review", capability: "unreviewed-source", reason: "No maintained source review exists. Review the complete recipe and add a pinned decision.", followUp: "#98: review this export before adding it to a rollout family." };
+  assert.ok(Object.keys(record).every(key => ["family", "contract", "sourceHash", "familyHash"].includes(key)), `${slug}: unexpected decision field`);
+  const family = families[record.family];
+  assert.ok(family, `${slug}: unknown reviewed family ${record.family}`);
+  assert.ok(["supported", "candidate", "motion"].includes(family.status), `${slug}: invalid reviewed outcome`);
+  assert.ok(family.capability && family.reason && family.followUp && family.contract?.playback, `${slug}: incomplete family review`);
+  assert.ok(record.contract && (record.contract.review || record.contract.construction?.length || record.contract.effectiveParts?.length), `${slug}: missing recipe contract`);
+  const sourceHash = createHash("sha256").update(JSON.stringify(modules.map(module => [module.path, module.sha256]))).digest("hex");
+  const familyHash = createHash("sha256").update(JSON.stringify(family)).digest("hex");
+  if (sourceHash !== record.sourceHash || familyHash !== record.familyHash) return {
+    status: "review", capability: "changed-reviewed-source", reason: "Recipe, drawing, delivery, lifecycle, dependency lock or family contract changed after review. Recheck the affected call paths before renewing the decision.",
+    followUp: "#98: resolve source drift and update the reviewed contract and hashes.", observedSourceHash: sourceHash, observedFamilyHash: familyHash, previousDecision: record,
+  };
+  return { ...family, ...record, reviewed: true };
+}
+
+export function inventoryAnimations(root = defaultRoot, { requireReviewed = false } = {}) {
   const catalog = readCatalog(readFileSync(resolve(root, "packages/animated-icons/src/astro.ts"), "utf8")).sort((a, b) => a.slug.localeCompare(b.slug, "en"));
   assert.equal(new Set(catalog.map(icon => icon.slug)).size, catalog.length, "Duplicate exported slug");
+  const recordsPath = resolve(root, "scripts/animation-decisions.json");
+  const familiesPath = resolve(root, "scripts/animation-families.json");
+  const reviewed = JSON.parse(readFileSync(existsSync(recordsPath) ? recordsPath : resolve(reviewDirectory, "animation-decisions.json"), "utf8"));
+  const reviewedFamilies = JSON.parse(readFileSync(existsSync(familiesPath) ? familiesPath : resolve(reviewDirectory, "animation-families.json"), "utf8"));
+  if (requireReviewed) for (const slug of Object.keys(reviewed)) assert.ok(catalog.some(icon => icon.slug === slug), `Orphan reviewed export: ${slug}`);
   const cache = new Map();
   function load(path) {
     if (!cache.has(path)) cache.set(path, readModule(root, path));
@@ -120,19 +127,36 @@ export function inventoryAnimations(root = defaultRoot) {
     const adapterPath = `${directory}/${icon.name}.astro`;
     const adapter = existsSync(resolve(root, adapterPath)) ? adapterPath : undefined;
     const adapterSource = adapter ? readFileSync(resolve(root, adapter), "utf8") : "";
-    const registration = adapterSource.includes("CssOpacityIcon")
-      ? "packages/animated-icons/src/shared/register-css-opacity.ts"
-      : adapterSource.includes("CssIcon") ? "packages/animated-icons/src/shared/register-css-cycle.ts" : `${directory}/element.ts`;
+    const delivery = cssDelivery(adapterSource);
+    const registration = delivery?.registration ?? `${directory}/element.ts`;
     if (existsSync(resolve(root, registration))) closure(registration, recipeFiles);
+    const runtimeSources = [...recipeFiles].sort();
+    const engine = delivery || runtimeSources.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
+    const provenMechanismSources = engine === "motion" && reviewedFamilies[reviewed[icon.slug]?.family]?.status === "supported"
+      ? [...closure("packages/animated-icons/src/shared/register-css-cycle.ts"), "packages/animated-icons/src/CssIcon.astro"].sort() : [];
+    for (const path of provenMechanismSources) recipeFiles.add(path);
+    if (adapter) recipeFiles.add(adapter);
+    for (const file of readdirSync(resolve(root, directory))) {
+      if (/\.(ts|astro)$/.test(file)) {
+        const path = `${directory}/${file}`;
+        recipeFiles.add(path);
+        if (file.endsWith(".ts")) for (const dependency of closure(path)) recipeFiles.add(dependency);
+      }
+    }
+    for (const path of reviewContext) if (existsSync(resolve(root, path))) recipeFiles.add(path);
+    if (delivery) recipeFiles.add(delivery.wrapper);
     const files = [...recipeFiles].sort();
-    const engine = /css-cycle|CssIcon|cycle-css|CssOpacityIcon/.test(adapterSource) || files.some(file => /\/css-(?:cycle|opacity)\.ts$/.test(file)) ? "css" : "motion";
     const modules = files.map(load);
-    const classification = decision(modules, engine, icon.slug);
-    const migrationState = engine === "css" ? "migrated" : classification.status === "supported" ? "supported-but-deferred" : classification.status === "motion" ? "retained-on-motion" : classification.status === "candidate" ? "capability-needed" : "needs-review";
-    return { ...icon, definition, adapter: adapter ?? null, registration, engine, mechanisms: files.filter(file => file.includes("/shared/") || file.includes("/css-")), sources: files, classification, migrationState,
+    const classification = decision(modules, icon.slug, reviewed, reviewedFamilies);
+    const migrationState = classification.status === "supported" ? engine === "css" ? "migrated" : "supported-but-deferred" : classification.status === "motion" ? "retained-on-motion" : classification.status === "candidate" ? "capability-needed" : "needs-review";
+    return { ...icon, definition, adapter: adapter ?? null, registration, engine, mechanisms: runtimeSources.filter(file => file.includes("/shared/") || file.includes("/css-")), runtimeSources, provenMechanismSources, sources: files, classification, migrationState,
       uncertainty: ["Static source analysis does not establish browser parity or visual acceptance.", ...(classification.status === "review" ? ["Expressions are traceable evidence, not evaluated effective settings. Review the referenced call paths and defaults."] : []), ...(!adapter ? ["Adapter filename did not match the component export; engine requires review."] : [])],
       lifecycle: { source: "packages/animated-icons/src/element.ts", completion: "Completed return clears; entry follows recipe finish policy.", interruption: "Lifecycle stops and cancels old tracks; recipe chooses retained pose and velocity.", replay: "See cycle replay or local and shared animate expressions.", return: "See local returning branches and shared defaults in sources." } };
   });
+  if (requireReviewed) assert.ok(icons.every(icon => icon.classification.reviewed), "Catalogue contains missing or stale source reviews: " + icons.filter(icon => !icon.classification.reviewed).map(icon => icon.slug).join(", "));
+  const familyQueue = [...new Set(icons.map(icon => icon.classification.family ?? "unreviewed"))].sort().map(family => ({
+    family, ...(reviewedFamilies[family] ?? {}), icons: icons.filter(icon => (icon.classification.family ?? "unreviewed") === family).map(icon => icon.slug),
+  }));
   const queue = ["supported", "candidate", "motion", "review"].flatMap(status => [...new Set(icons.filter(icon => icon.classification.status === status).map(icon => icon.classification.capability))].sort().map(capability => ({ status, capability, icons: icons.filter(icon => icon.classification.status === status && icon.classification.capability === capability).map(icon => icon.slug) })));
   const sources = Object.fromEntries([...cache].sort(([a], [b]) => a.localeCompare(b, "en")).map(([path, module]) => [path, { sha256: module.sha256, imports: module.imports, dependencies: module.dependencies, ...module.facts }]));
   const sharedDefaults = {
@@ -143,19 +167,20 @@ export function inventoryAnimations(root = defaultRoot) {
   };
   const families = ["chevron", "svg-keyframes", "svg-parts", "svg-transform", "css-cycle", "css-opacity"].map(name => {
     const path = `packages/animated-icons/src/shared/${name}.ts`;
-    return { mechanism: path, directDefinitions: icons.filter(icon => load(icon.definition).dependencies.includes(path)).length, transitiveRecipes: icons.filter(icon => icon.sources.includes(path)).length };
+    return { mechanism: path, directDefinitions: icons.filter(icon => load(icon.definition).dependencies.includes(path)).length, transitiveRecipes: icons.filter(icon => icon.runtimeSources.includes(path)).length };
   });
-  return { schemaVersion: 1, scope: "Exported Astro icons. Shared-source evidence may contain branches unused by a particular caller; it is not an eligibility certificate.", count: icons.length, sharedDefaults, families, queue, icons, sources };
+  return { schemaVersion: 2, reviewedCount: icons.filter(icon => icon.classification.reviewed).length, familyQueue, scope: "Exported Astro icons. Shared-source evidence may contain branches unused by a particular caller; it is not an eligibility certificate.", count: icons.length, sharedDefaults, families, queue, icons, sources };
 }
 
 export function summarizeInventory(inventory) {
-  return [`Animation inventory: ${inventory.count} exported icons`, ...inventory.families.map(family => `${family.mechanism}: ${family.directDefinitions} direct, ${family.transitiveRecipes} transitive`), ...inventory.queue.map(group => `${group.status} / ${group.capability}: ${group.icons.length}`), "Visual acceptance: pending"].join("\n");
+  const states = ["migrated", "supported-but-deferred", "capability-needed", "retained-on-motion", "needs-review"];
+  return [`Animation inventory: ${inventory.count} exported icons`, ...states.map(state => `${state}: ${inventory.icons.filter(icon => icon.migrationState === state).length}`), ...inventory.families.map(family => `${family.mechanism}: ${family.directDefinitions} direct, ${family.transitiveRecipes} transitive`), ...inventory.queue.map(group => `${group.status} / ${group.capability}: ${group.icons.length}`), "Source reviews: " + inventory.reviewedCount + "/" + inventory.count, "Visual acceptance: see separately scoped owner records in docs/css-migration-plan.md"].join("\n");
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const args = process.argv.slice(2);
-  assert.ok(args.every((arg, index) => arg === "--summary" || arg === "--output" || args[index - 1] === "--output"), "Usage: inventory-animations.mjs [--summary] [--output FILE]");
-  const inventory = inventoryAnimations();
+  assert.ok(args.every((arg, index) => arg === "--check" || arg === "--summary" || arg === "--output" || args[index - 1] === "--output"), "Usage: inventory-animations.mjs [--check] [--summary] [--output FILE]");
+  const inventory = inventoryAnimations(defaultRoot, { requireReviewed: args.includes("--check") });
   const outputIndex = args.indexOf("--output");
   if (outputIndex >= 0) {
     assert.ok(args[outputIndex + 1], "--output needs a path");

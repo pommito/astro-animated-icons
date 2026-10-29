@@ -1,0 +1,397 @@
+{
+  "css-finite-cycle": {
+    "status": "supported",
+    "capability": "finite-transform-cycle",
+    "reason": "Production uses the validated single-property CSS cycle.",
+    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "contract": {
+      "mechanism": "shared/css-cycle.ts",
+      "playback": "Read the pinned cycle object. Current or restart replay, independent return timing, hold or restore completion, and origin are explicit. No velocity-dependent spring, delay, repeat, geometry or queued phase. Clear removes state and captured matrix."
+    }
+  },
+  "css-combined-cycle": {
+    "status": "supported",
+    "capability": "combined-finite-transforms",
+    "reason": "Production uses the ordered sampled channels approved in ADR 0001.",
+    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "contract": {
+      "mechanism": "shared/combined-transform-cycle.ts",
+      "playback": "Ordered translateY/scale/rotate channels, independent offsets, 5 ms Motion sampling grid, retained scalar poses and first displayed-matrix bridge. Full entry/return durations and hold completion. No inherited velocity. Clear removes scalar state and variables.",
+      "payload": "Behavioral compatibility is separate from delivery cost. The three-icon family adds 2267/2529 page gzip bytes; LoaderCircle mixtures add 12990/12931; cog controls add 845/846, full/minimal. docs/history/2026-10-29-combined-transforms.md."
+    }
+  },
+  "css-opacity-parts": {
+    "status": "supported",
+    "capability": "timed-opacity-parts",
+    "reason": "Production uses the validated timed opacity adapter.",
+    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "contract": {
+      "mechanism": "shared/css-opacity.ts",
+      "playback": "Pinned parts contain target, normal/entry values, independent timing and offsets. Hold completion. Active replay captures displayed opacity; finished targets restart. Return captures all targets before cancellation. Clear removes opacity, playback state and variables."
+    }
+  },
+  "finite-group-cycle": {
+    "status": "supported",
+    "capability": "finite-transform-cycle",
+    "reason": "The resolved single-target translation or rotation uses the existing target and current-pose finite cycle.",
+    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "contract": {
+      "mechanism": "shared/group-transform.ts -> shared/svg-transform.ts",
+      "playback": "[data-motion=\"0\"], hold completion. Scalar entry starts at retained value; null first array value captures retained value. Uniform offsets unless times match. Timed return to zero uses the same duration/ease and [0,1]. No spring/delay/repeat/property override/geometry/sequence. Order has one channel. Origins stay on the pinned drawing. Clear removes transform and retained state."
+    }
+  },
+  "finite-svg-parts-cycle": {
+    "status": "supported",
+    "capability": "finite-transform-cycle",
+    "reason": "This SVG rotation has explicitly timed entry and normal poses. No inherited spring branch is used.",
+    "followUp": "#99: capture the preceding implementation, compare the complete family and measure complete pages before rollout.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
+      "playback": "One SVG rotate target; hold completion. Active replay replaces first array value with retained value. Finished entry ends at zero, so its explicit first zero equals the current pose. Normal transition is timed, and returns from retained angle to zero. No repeat, delay, geometry or sequence. Clear removes transform and any temporary origin."
+    }
+  },
+  "parts-springs": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "The resolved parts below use explicit or implicit transform springs. A fixed CSS timeline would discard the retained property velocities.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
+      "playback": "Effective parts record each pose separately. Pose transition replaces part transition. A scalar transform with no duration and no explicit spring gets scale 550/30 or other 500/25, restSpeed 10, overriding base stiffness/damping. A spring uses retained per-property velocity. Active entry arrays replace their first value; completed entry restarts explicit arrays. Repeating active entry first finishes one cycle then clears and loops via animateSequence. Hold completion. Clear deletes playback/pose state, releases svgEffect and restores normal d and paint styles.",
+      "transformOrder": [
+        "x",
+        "translateX",
+        "y",
+        "scale",
+        "scaleX",
+        "scaleY",
+        "rotateX",
+        "rotate"
+      ],
+      "returnGuard": "A transform return is registered only when that target has an inline transform. Paint returns still run. Native paint forwards repeat but not repeatType; d forwards only duration, ease and delay. Opacity with explicit type spring uses the separate Motion svgEffect branch."
+    }
+  },
+  "parts-finite-paint": {
+    "status": "candidate",
+    "capability": "normalized-svg-paint",
+    "reason": "Normalized pathLength/pathOffset/strokeWidth and property-specific paint timing are absent from the proven opacity/transform mechanisms.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts",
+      "playback": "Effective parts resolve normal and animate independently and replace pose-level transitions rather than merging. Paint property options replace base options, not merge. pathLength maps to value px 1px, pathOffset to negative px. More than two non-opacity paint values use per-interval easing sampled on a 5 ms grid; opacity uses native whole-effect easing. Active entry replaces first explicit array value, completed entry restarts. Hold completion. Clear releases effect state and paint styles. No runtime path measurement is required by these normalized parts.",
+      "returnGuard": "A transform return is registered only when that target has an inline transform. Paint returns still run. Native paint forwards repeat but not repeatType; d forwards only duration, ease and delay. Opacity with explicit type spring uses the separate Motion svgEffect branch."
+    }
+  },
+  "parts-finite-transform": {
+    "status": "candidate",
+    "capability": "multiple-targets-transform-channels-and-repeat",
+    "reason": "These resolved timed parts need additional targets, channels, interval easing or repeated transforms outside the validated cycle types.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
+      "playback": "Effective parts record values, offsets, transitions and origins. Retain the fixed transform order x, translateX, y, scale, scaleX, scaleY, rotateX, rotate. Current first value only during active entry; completed entry restarts. Each transform is sampled at 5 ms. Hold completion; clear deletes playback/pose state and temporary origins. No spring is inferred from shared-module membership.",
+      "repeats": "Heart keeps repeat2 from its part transition on both entry scale[1,1.08,1] and normal scalar return1, duration.45/default easeOut. The interrupted Infinity phase applies only to infinite repeats, not Heart.",
+      "returnGuard": "A transform return is registered only when that target has an inline transform. Paint returns still run. Native paint forwards repeat but not repeatType; d forwards only duration, ease and delay. Opacity with explicit type spring uses the separate Motion svgEffect branch."
+    }
+  },
+  "parts-repeated-opacity": {
+    "status": "candidate",
+    "capability": "repeated-opacity-with-replay-phases",
+    "reason": "The opacity adapter has no repeats or interrupted-loop continuation phase.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts",
+      "playback": "Opacity-only parts below contain finite or infinite repeat and their own delay/ease. Interrupted infinite entry queues a finite cycle, then clear and restart at delay zero. Normal return uses its own resolved duration/ease/repeat. Hold completion; clear removes playback map and opacity.",
+      "returnGuard": "A transform return is registered only when that target has an inline transform. Paint returns still run. Native paint forwards repeat but not repeatType; d forwards only duration, ease and delay. Opacity with explicit type spring uses the separate Motion svgEffect branch."
+    }
+  },
+  "parts-morph": {
+    "status": "motion",
+    "capability": "path-morph",
+    "reason": "The resolved part changes SVG d through Motion attrD and releases its effect state on clear.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/svg-parts.ts",
+      "playback": "Keep normal d, entry d, per-property transitions and replay from the current attribute. d uses Motion animate attrD with duration/ease/delay; its branch does not forward repeat/times. Other resolved channels may have independent springs or timing. Hold completion and restore normal attribute on clear.",
+      "returnGuard": "A transform return is registered only when that target has an inline transform. Paint returns still run. Native paint forwards repeat but not repeatType; d forwards only duration, ease and delay. Opacity with explicit type spring uses the separate Motion svgEffect branch."
+    }
+  },
+  "runtime-path-reveal": {
+    "status": "candidate",
+    "capability": "runtime-path-paint",
+    "reason": "Path lengths, dash values, optional offset/opacity tracks and replay policies need a geometry-aware paint capability.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/path-reveal.ts",
+      "playback": "Measure getTotalLength for each actual target. full=length px length px, entry dash starts at zero unless preservePose and active; preservePose until-clear remains active after completion. Return goes to full and zero offset. Opacity has independent duration/delay/ease; opacityDelay/ease default to main delay/ease. reverseOffset defaults pathOffset to 1. Entry offset=-pathOffset*length. No transforms or springs in this helper. Clear deletes playback state and opacity/dash styles. Caller controls finish and sequencing."
+    }
+  },
+  "staggered-path-reveal": {
+    "status": "candidate",
+    "capability": "runtime-path-paint",
+    "reason": "At least one resolved step draws measured stroke geometry; opacity-only sibling steps do not remove that requirement.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/staggered-reveal.ts -> shared/path-reveal.ts",
+      "playback": "One-based child indices. Entry delay=step.delay, opacityDelay=step.opacityDelay or delay. Return delay=returnDelay or zero. Entry stroke duration=step.duration or .3, return .3. Ease=easeOut unless defaultEase or returning, then [.25,.1,.35,1]. Opacity .3 and [.25,.1,.35,1]. opacityOnly bypasses geometry and uses preservePose-specific replay. Finish is caller argument or hold; clear deletes opacity playback map and path styles."
+    }
+  },
+  "currency-path-reveal": {
+    "status": "candidate",
+    "capability": "runtime-path-paint",
+    "reason": "The complete currency/receipt family reveals measured main and secondary strokes with distinct delays and return durations.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/currency-receipt.ts -> shared/path-reveal.ts",
+      "playback": "One-based child lists in construction. Main entry .6/return .4, delay zero. Secondary entry .4/delay .5, return .3/delay .3. easeOut and opacity .1. reverseSecondary adds negative-length offset to secondary strokes only. Entry restarts explicit zero because preservePose is absent. Hold completion; clear all selected path paint."
+    }
+  },
+  "symbol-path-reveal": {
+    "status": "candidate",
+    "capability": "runtime-path-paint",
+    "reason": "Symbol/check strokes use measured geometry and timed opacity that the opacity-only mechanism does not represent.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/symbol-reveal.ts -> shared/path-reveal.ts",
+      "playback": "Zero-based firstChild, strokes default 1, duration default .4. Entry duration argument, delay=index*.2, easeInOut, opacity same duration. Return .3, delay zero, [.25,.1,.35,1]. Entry restarts. Hold completion; clear selected geometry paint."
+    }
+  },
+  "wind-path-reveal": {
+    "status": "candidate",
+    "capability": "runtime-path-paint",
+    "reason": "Measured dash/offset tracks and until-clear replay require a paint capability.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/wind.ts -> shared/path-reveal.ts",
+      "playback": "Child index follows delays array. Entry .5, return .3, caller delay applies to both. easeInOut, opacity same duration, pathOffset=1 and preservePose=until-clear. Restore completion; clear selected paint. WindArrowDown adds timed translated opacity as detailed locally."
+    }
+  },
+  "staggered-path-cycle": {
+    "status": "candidate",
+    "capability": "runtime-path-cycle",
+    "reason": "Hide/hold/reveal offsets depend on measured geometry and per-step durations.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/staggered-cycle.ts",
+      "playback": "One-based child. revealStart=max(hideDelay)+hideDuration(default .3). Entry delay=hideDelay, duration=revealStart+revealDelay+.3-delay; offsets=[0,hideDuration/duration,(revealStart+revealDelay-delay)/duration,1]. Opacity [current,0,0,1], dash [current,empty,empty,full] unless opacityOnly. Entry interval easing easeOut,linear,easeOut. Return .3, no delay, default cubic. Hold completion; clear paint. getTotalLength is called even for opacityOnly."
+    }
+  },
+  "opacity-restart": {
+    "status": "candidate",
+    "capability": "opacity-restart-easing-and-completion",
+    "reason": "These opacity recipes restart explicit values on replay or need interval easing, restore completion or richer offsets absent from the current opacity contract.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "playback": "Keep each local target, values, timing and finish. Explicit first values restart on every entry; null uses displayed opacity. Return begins at displayed opacity. No velocity. The current adapter instead resumes every active target, always holds completion and derives easing from transition presence. Clear removes opacity.",
+      "grip": "Grip targets circles, supplied values/duration/offsets, entry per-interval ease and delay(index). Return1/.25/easeOut, restore completion. Explicit entry restarts. Horizontal/vertical variants also scale with the same timing and belong to the transform family."
+    }
+  },
+  "opacity-loop": {
+    "status": "candidate",
+    "capability": "repeated-opacity",
+    "reason": "Finite or infinite opacity repeats and their delays are not represented by the proven opacity adapter.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "playback": "Keep per-target entry repeat, offsets, delays and easing; return uses its independent repeat/duration/ease. Native explicit arrays restart on replay; scalar/null starts at displayed value. No geometry or transform velocity unless the local exception states otherwise. Hold completion except explicit restore; clear removes opacity.",
+      "weather": "Weather helper targets [data-weather]. Entry [1,minimum,1], duration argument, delay=index*stagger(default0), easeInOut/Infinity. Return1/.3/no delay/default cubic. Explicit arrays restart;hold,clear selected opacity."
+    }
+  },
+  "timed-paint": {
+    "status": "candidate",
+    "capability": "finite-svg-paint",
+    "reason": "Native dash, stroke width or width tracks require paint properties beyond opacity.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "playback": "Local contracts resolve target, entry/return values and timing. Native mini explicit arrays restart, null/scalar captures current. No inherited velocity or queued phase unless locally specified. Preserve drawing origins and finish; clear removes the named paint styles."
+    }
+  },
+  "timed-transform-parts": {
+    "status": "candidate",
+    "capability": "multiple-targets-and-transform-channels",
+    "reason": "Finite transforms require additional targets, x/scale axis channels, delays, easing or restart policies outside ADR 0001.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "shared/svg-transform.ts",
+      "playback": "Fixed order x,translateX,y,scale,scaleX,scaleY,rotateX,rotate. Rest=1 for scale/opacity, 0 otherwise. Scalar/null starts at retained property value, explicit arrays restart unless caller preservePose or replacement first null. Uniform offsets unless matching times. Duration defaults .3 and easeOut, sampled at 5 ms. No implicit spring in this helper. Global repeat/delay and property repeat/delay differ; preserve exactly. Hold unless local finish. Clear deletes retained scalars/velocities and transform/opacity.",
+      "grip": "GripHorizontal/Vertical circles scale[1,.85,1] and opacity[1,.4,1],1s/easeInOut per interval/offsets[0,.5,1],delay=(index%3)*.15+floor(index/3)*.25. Return .25/easeOut to1;restore completion,explicit entry restart,clear opacity/transform."
+    }
+  },
+  "spring-transforms": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "The reviewed entry or return is a spring that starts from retained property values and interrupted velocities.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/svg-transform.ts",
+      "playback": "Pinned caller targets/transitions resolve spring settings. Spring generator receives previous.velocities[property] or zero. Fixed transform order x,translateX,y,scale,scaleX,scaleY,rotateX,rotate. Stop samples the 5 ms grid and retains scalar values/velocity; completion retains final scalars with zero velocity. Full pose data is separate from displayed matrix. Hold/restore follows caller; clear deletes pose and styles."
+    }
+  },
+  "native-springs": {
+    "status": "motion",
+    "capability": "native-spring",
+    "reason": "The recipe deliberately uses native Motion spring playback; replacing it by a fixed timed cycle changes its spring curve and interruption policy.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "playback": "Keep each local spring generator/settings and native current-pose handling. Do not claim retained velocity where the caller does not sample it. Clear removes styles or releases svgEffect for attribute tracks."
+    }
+  },
+  "signal-springs": {
+    "status": "motion",
+    "capability": "signal-spring",
+    "reason": "Entry opacity springs depend on the displayed fade origin, even for callers with a timed return.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/signal.ts",
+      "playback": "One-based child/delay in construction. Fade duration argument or .3. Entry fade current opacity to zero with easeOut; spring starts at fadeDuration+delay, stiffness300/damping20, normalized distance100 and velocity=-current/.03. springReturn=false returns timed .4 easeOut; true uses retained sampled opacity velocity and starts after delay. Sample at 5 ms; stop retains velocity, completed/clear deletes it. Hold completion; clear opacity."
+    }
+  },
+  "vehicle-sequences": {
+    "status": "motion",
+    "capability": "custom-sequence-and-springs",
+    "reason": "Interrupted vehicle loops finish a retained cycle before clearing and restarting; body/speed returns use velocity-dependent springs.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/vehicle.ts",
+      "playback": "[data-body] y uses supplied values/duration easeInOut. [data-wheel] uses supplied ordered values, timed or spring return. [data-speed] x=[0,-4,-10,-16],scaleX=[.2,1,.8,.3], rest scaleX=0, offsets[0,.2,.6,1], delay=index*.08 except restart zero; parallel opacity[0,.7,.5,0]. Interrupted entry queues finite preserved cycle then clear/infinite restart. Return body/speed spring500/25/restSpeed10, speed scaleX550/2sqrt550. Hold; sequence cancellation blocks future phases; clear all pose/paint state."
+    }
+  },
+  "spring-return-pulse": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Pulse entry has timed scale/opacity tracks, but return scale is a 550/30 spring with retained velocity.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/pulse.ts",
+      "playback": "[data-pulse]. Supplied scale/opacity/duration/repeat, entry easeInOut; return scale spring550/30/restSpeed10, opacity .3 default cubic repeat0. Replay scale explicit first values, opacity explicit restart. Hold; clear transform/opacity and pose."
+    }
+  },
+  "spring-return-directions": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Directional pulses restore through per-property springs, including scale-specific return physics.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/directional-pulse.ts",
+      "playback": "Path list and null omissions in construction. Entry targets/duration/ease argument. Return spring500/25/restSpeed10, scale550/30/restSpeed10. Restore completion. Explicit entry arrays restart; null captures retained pose. Stop retains velocity; clear all paths."
+    }
+  },
+  "spring-return-corners": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Corner entry combines axis scale and translation, and returns through distinct retained-velocity springs.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/corner.ts",
+      "playback": "SVG origin50%50%. Axis determines scaleX/x or scaleY/y. Entry [current-or-rest,1.15,1] scale and [current-or-zero,displacement,0] translation, .45 easeInOut. Return500/25/restSpeed10 with scale550/30. Restore completion; clear pose and temporary origin."
+    }
+  },
+  "spring-return-marks": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Bookmark deformation returns through scale-axis springs while mark paint has separate replay state.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/bookmark.ts",
+      "playback": "First child scaleX=[current,.9,1.1,.95,1],scaleY=[current,1.3,.9,1.05,1], entry .6 easeOut, return550/30/restSpeed10. Other children dashoffset [active current or1,0], .3/index*.1 entry, .3 default cubic return; optional opacity [active current or0,1] .3. Hold; clear pose, mark playback map and paint."
+    }
+  },
+  "spring-return-map-symbol": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "SVG lift returns through a 500/25 spring; symbol entry uses measured path reveals.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/map-pin-symbol.ts",
+      "playback": "SVG y=[current-or0,-5,-3], .5 offsets[0,.6,1] easeOut, origin50%50%; return500/25/restSpeed10. Symbol child/duration/delay in construction, entry reveal opacity .1/easeOut; return opacity only .3 default cubic. Hold; clear lift and selected paint."
+    }
+  },
+  "spring-return-phone-symbol": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Handset and symbol transforms use different retained-velocity spring returns.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/phone-symbol.ts",
+      "playback": "Child1 scale=[current-or1,argument,1] entry .9 easeInOut, return550/30. Child0 supplied symbol values, current first arrays when style exists, .8 easeInOut; return500/25/restSpeed10 and scale550/30. Hold; clear children pose/opacity."
+    }
+  },
+  "spring-return-flight": {
+    "status": "motion",
+    "capability": "inherited-velocity",
+    "reason": "Flight entry combines ordered transforms and opacity; return keeps property-specific springs.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/plane-flight.ts",
+      "playback": "[data-plane], supplied x/y/scale/rotate arrays and optional offsets. Entry1.1 easing[.25,1,.5,1], opacity[0,1] or[0,1,1]; return500/25/restSpeed10, scale550/30/restSpeed10 and opacity .3 default cubic. Explicit entry restarts. Hold; clear pose/opacity."
+    }
+  },
+  "geometry-with-transforms": {
+    "status": "candidate",
+    "capability": "runtime-path-paint-and-transforms",
+    "reason": "Measured path paint is combined with timed transforms; neither proven mechanism preserves the complete recipe.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "playback": "Use local geometry and timing contract together with shared path/transform policies. A separately compatible transform channel does not make the whole recipe eligible. Preserve clear on all targets and caller completion."
+    }
+  },
+  "continued-samplers": {
+    "status": "motion",
+    "capability": "continue-on-return",
+    "reason": "Return continues selected interrupted samplers instead of replacing them with a return-to-rest timeline.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/svg-transform.ts",
+      "playback": "continueOnReturn uses previous sampler at previous.time and can extend duration to its remaining time. Other channels return independently, sometimes through springs. First displayed matrix bridges replacement. Stop retains sampler, time, scalar values and velocity; clear deletes them."
+    }
+  },
+  "queued-sequences": {
+    "status": "motion",
+    "capability": "custom-sequence",
+    "reason": "Completion queues later phases or replaces drawing branches. A flat CSS cycle would change cancellation and replay.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/sequence.ts or local track controller",
+      "playback": "All tracks in a phase finish before the next phase starts. Stop/cancel disables later phases and cancels only active controls. Local contracts identify phases, values, timing, return branches and drawing restoration. Keep lifecycle playback identifiers to guard stale completion."
+    }
+  },
+  "unwrapped-angle": {
+    "status": "motion",
+    "capability": "unwrapped-rotation",
+    "reason": "Retained full-turn angles and their return path cannot be recovered from the current single-channel computed matrix.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "shared/svg-transform.ts",
+      "playback": "Scalar rotation starts at retained angle, holds full turns, replays to the declared scalar angle and returns to zero over the declared duration. No spring. Clear deletes retained angle and transform. ADR 0001 proves independent scalars only for its sampled SVG combined cycles, not these group/scalar recipes."
+    }
+  },
+  "random-delays": {
+    "status": "motion",
+    "capability": "random-delays",
+    "reason": "Each entry samples new per-key delays; a static sequence would change playback.",
+    "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
+    "contract": {
+      "mechanism": "icons/keyboard/definition.ts",
+      "playback": "[data-key] opacity [1,.2,1], duration1.5/times[0,.5,1], delay=index*.2*random(), repeat1/reverse, default easeOut via svg-transform sampler. Returning clears immediately with no track. Hold completion; clear each key pose/opacity. No transform spring is used."
+    }
+  },
+  "fixed-spring-paint": {
+    "status": "candidate",
+    "capability": "sampled-spring-paint",
+    "reason": "This fixed spring has no inherited velocity but its sampled path-length curve and interrupted remapping need a paint capability.",
+    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "contract": {
+      "mechanism": "icons/languages/definition.ts -> shared/svg-parts.ts",
+      "playback": "Fixed spring keyframes[0,1],duration500ms,bounce0 sampled101 values at5ms. Six parts custom[3,2,1,0,3,3]. Entry opacity[0,1] .01 delay=custom*.1; pathLength sample .5/linear/same delay; pathOffset[1,0] .3 easeOut. Partial dash in(0,1) remaps all length values to current+(1-current)*sample. Return normal scalar opacity1/pathLength1/pathOffset0 uses .3 default cubic. Hold; clear normalized paint and svgEffect."
+    }
+  },
+  "direct-path-morph": {
+    "status": "motion",
+    "capability": "path-morph",
+    "reason": "The direct path-morph helper forwards spring or repeat settings to Motion attribute animation. The CSS mechanisms cannot preserve these morphs.",
+    "followUp": "#81: retain the direct Motion morphs until a replacement preserves their curves, repeats and cancellation.",
+    "contract": {
+      "mechanism": "shared/path-morph.ts",
+      "playback": "animatePathMorph forwards the complete options object to Motion animate with attrD. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
+    }
+  }
+}
