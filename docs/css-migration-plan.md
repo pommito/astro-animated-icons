@@ -8,22 +8,67 @@ The original 21 migrated recipes have owner visual acceptance. Bell and ChevronR
 
 ## Family decisions
 
-| Family | Current decision | Mechanism or reason |
-| --- | --- | --- |
-| Bell | CSS | Finite rotation, current-pose replay, hold completion |
-| 13 finite chevrons | CSS | One translation axis, explicit first entry value, restore completion; ChevronFirst keeps independent return timing |
-| Four folder translations | CSS | Inner-group translation, restart entry, hold completion |
-| Folder | CSS | Path rotation, current-pose replay, hold completion; intentional 200 ms return replaces the previous spring |
-| CircleHelp | CSS | Inner-group rotation, current-pose replay, hold completion |
-| UserRoundCog | CSS, owner visually accepted | Positive 180-degree cog rotation, 300 ms easeOut entry and return, current-pose replay, hold completion |
-| CalendarDays and CircleDashed | CSS | Timed opacity parts with per-target delays, completion, replay, and return policies |
-| LoaderCircle and four paired chevron springs | Motion retained | Interrupted returns inherit measured velocity and use springs |
-| Archive and other reviewed Motion recipes | Motion retained | Retained Motion values, morphs, spring defaults, unwrapped angles, random delays, or queued phases need their existing mechanisms |
-| KeySquare, Wallet, and KeyCircle | CSS, owner visually accepted | Ordered independent property channels, sampled combined transforms, current-pose replay, original entry and return timing, hold completion |
-| Opacity with scale and repeated combined tracks | Capability needed | The existing mechanisms do not represent these policies |
-| Other catalogue recipes | Source review required | Resolve effective settings and runtime branches before choosing a migration |
+The full source review for [#98](https://github.com/pommito/astro-animated-icons/issues/98) starts at merged main `1bbd0e2`, after #95. All 470 exports have a pinned outcome. The maintained [per-export contracts](../scripts/animation-decisions.json) and [family contracts](../scripts/animation-families.json) supply complete membership and playback decisions. The generated `familyQueue` partitions every export exactly once; it has no arbitrary batch-size limit.
 
-Keep one maintained definition per recipe. Reuse an existing mechanism only when it preserves the recipe behavior. A matching import is insufficient evidence. [The capability-stage record](history/2026-10-23-css-capabilities.md#candidate-queue-and-decisions) names reviewed recipes and their concrete retention reasons. LoaderCircle remains on Motion because a fixed CSS return would lose its angular velocity and spring behavior.
+| Outcome | Exports | Next action |
+| --- | ---: | --- |
+| Migrated | 26 | Preserve existing evidence and scoped owner approvals. |
+| Supported but deferred | 6 | #99 captures preceding behavior and migrates the complete compatible families. |
+| Specified capability needed | 196 | #81 coordinates capability design and proof before rollout. |
+| Retained on Motion | 242 | Preserve the concrete retained behavior. |
+| Needs source review | 0 | New or changed source must pass review before entering the queue. |
+
+The complete additional set supported by the existing finite cycle is `Disc3`, `PanelLeftClose`, `PanelLeftOpen`, `PanelRightOpen`, `BriefcaseBusiness`, and `TreePine`. The four group recipes use the already supported `[data-motion="0"]` target. Disc3 rotates to 90 degrees with 400 ms easeInOut; the panels translate on X for 500 ms with offsets `[0, .4, 1]` and easeOut. Their returns use the same duration/easing, current-pose replay and hold completion. Their drawing origins stay unchanged.
+
+BriefcaseBusiness and TreePine rotate the SVG. BriefcaseBusiness keeps its fixed `12px 4px` origin, 900 ms easeInOut entry and 300 ms easeOut return. TreePine uses 500 ms easeInOut in both directions. Both hold entry at zero and explicitly time their normal poses, so the shared SVG-parts spring defaults do not execute. Their active replay and completed replay fit the current-pose cycle. These six remain on Motion in #98. Source compatibility grants no browser parity or visual acceptance for their later migration.
+
+The queue also records the exceptions within shared helpers. Languages has fixed sampled spring paint without inherited velocity. Sun uses only opacity branches and performs no geometry measurement. Signals still use entry springs when their return is timed. LoaderCircle, Loader and LoaderPinwheel retain angular velocity and spring returns. Cart, GraduationCap and the trending family continue selected samplers during return. Archive keeps a Motion value and path morphs. Vehicle loops and explicit sequences retain their queued phases and cancellation guards. Full-turn scalar/group rotations keep their unwrapped angles. No shared import or word match establishes eligibility.
+
+### Complete family queue
+
+This table is the 2026-10-29 source-review snapshot. Full slug membership and contracts live in the maintained JSON above and in generated `familyQueue`; the table does not create another per-icon list.
+
+| Family | Exports | Outcome | Mechanism or required behavior |
+| --- | ---: | --- | --- |
+| `continued-samplers` | 5 | Motion retained | `continue-on-return` |
+| `css-combined-cycle` | 3 | Supported | `combined-finite-transforms` |
+| `css-finite-cycle` | 21 | Supported | `finite-transform-cycle` |
+| `css-opacity-parts` | 2 | Supported | `timed-opacity-parts` |
+| `currency-path-reveal` | 21 | Capability needed | `runtime-path-paint` |
+| `finite-group-cycle` | 4 | Supported | `finite-transform-cycle` |
+| `finite-svg-parts-cycle` | 2 | Supported | `finite-transform-cycle` |
+| `fixed-spring-paint` | 1 | Capability needed | `sampled-spring-paint` |
+| `geometry-with-transforms` | 9 | Capability needed | `runtime-path-paint-and-transforms` |
+| `native-springs` | 6 | Motion retained | `native-spring` |
+| `opacity-loop` | 7 | Capability needed | `repeated-opacity` |
+| `opacity-restart` | 13 | Capability needed | `opacity-restart-easing-and-completion` |
+| `parts-finite-paint` | 30 | Capability needed | `normalized-svg-paint` |
+| `parts-finite-transform` | 12 | Capability needed | `multiple-targets-transform-channels-and-repeat` |
+| `parts-morph` | 5 | Motion retained | `path-morph` |
+| `parts-repeated-opacity` | 5 | Capability needed | `repeated-opacity-with-replay-phases` |
+| `parts-springs` | 68 | Motion retained | `inherited-velocity` |
+| `queued-sequences` | 10 | Motion retained | `custom-sequence` |
+| `random-delays` | 1 | Motion retained | `random-delays` |
+| `runtime-path-reveal` | 30 | Capability needed | `runtime-path-paint` |
+| `signal-springs` | 8 | Motion retained | `signal-spring` |
+| `spring-return-corners` | 8 | Motion retained | `inherited-velocity` |
+| `spring-return-directions` | 10 | Motion retained | `inherited-velocity` |
+| `spring-return-flight` | 2 | Motion retained | `inherited-velocity` |
+| `spring-return-map-symbol` | 9 | Motion retained | `inherited-velocity` |
+| `spring-return-marks` | 5 | Motion retained | `inherited-velocity` |
+| `spring-return-phone-symbol` | 2 | Motion retained | `inherited-velocity` |
+| `spring-return-pulse` | 3 | Motion retained | `inherited-velocity` |
+| `spring-transforms` | 90 | Motion retained | `inherited-velocity` |
+| `staggered-path-cycle` | 7 | Capability needed | `runtime-path-cycle` |
+| `staggered-path-reveal` | 23 | Capability needed | `runtime-path-paint` |
+| `symbol-path-reveal` | 12 | Capability needed | `runtime-path-paint` |
+| `timed-paint` | 4 | Capability needed | `finite-svg-paint` |
+| `timed-transform-parts` | 19 | Capability needed | `multiple-targets-and-transform-channels` |
+| `unwrapped-angle` | 7 | Motion retained | `unwrapped-rotation` |
+| `vehicle-sequences` | 3 | Motion retained | `custom-sequence-and-springs` |
+| `wind-path-reveal` | 3 | Capability needed | `runtime-path-paint` |
+
+Motion retention reasons are explicit in the family and local contracts: retained spring velocity, native spring physics, `d` morphs, current-opacity signal springs, continuing samplers, unwrapped turns, randomized delays or queued phases. Capability candidates specify paint/geometry, target/channel support, repeat/replay policy or fixed sampled paint. They cannot silently count as eligible migrations.
 
 ## Inventory and next work
 
@@ -33,14 +78,20 @@ Generate detailed status from the current code rather than maintaining another p
 
 ```sh
 mkdir -p .artifacts
-pnpm inventory:animations --summary --output .artifacts/animation-inventory.json
+pnpm inventory:animations --check --summary --output .artifacts/animation-inventory.json
 ```
 
 Read [the inventory contract](animation-inventory.md) before interpreting its results. `engine` describes current wiring. `migrationState` distinguishes migrated, supported but deferred, capability needed, retained on Motion, and needs review. Reviewed decisions pin dependency hashes and return to review after source changes.
 
-The inventory regenerated on 2026-10-29 accounts for 26 migrated recipes, no supported but deferred recipe, two needing another capability, 18 explicit Motion retentions, and 424 entries needing review. These counts cover all 470 exports. They do not mean that every remaining recipe has been fully evaluated. The command's generic `Visual acceptance: pending` output describes the inventory's limits; the owner approvals above are separate evidence.
+The inventory regenerated for #98 accounts for 26 migrated recipes, six supported but deferred, 196 needing specified capabilities, 242 retained on Motion, and zero needing source review. The strict check rejects missing/orphan records and invalidates reviews when local definitions, transitive helpers, drawings, origins, lifecycle, delivery, recipe types, dependency lock or reviewed family policies change. Deferred recipes also pin the existing CSS mechanism that supports their compatibility decision. [Schema version 2](animation-inventory.md) separates production import graphs from this broader review dependency set. The [source-review record](history/2026-10-29-catalogue-source-review.md) preserves its validation and limits.
 
 For the next family, resolve its source expressions and transitive defaults, choose real representative recipes, and capture the previous behavior. Preserve the public contract and initial SVG. Extend a mechanism only for a proven requirement, then add comparison coverage, validate interruption and cleanup, and measure complete pages including Motion mixtures. Follow [CONTRIBUTING.md](../CONTRIBUTING.md#add-an-icon) and [Validation](validation.md).
+
+### Compatibility and payload cost
+
+ADR 0001 proves the sampled ordered-channel mechanism for its reviewed recipes. It does not imply that every combined transform fits. Existing types support SVG targets with translateY, uniform scale and rotation, shared channel timing, independent offsets and retained scalar poses. Other targets, horizontal/axis-scale channels, custom easing, delays, repeats, paint and queued phases remain explicit capabilities or retentions in the queue.
+
+The [merged before/after evidence](history/2026-10-29-combined-transforms.md#production-payloads) reports unit-page gzip savings but a 2267-byte full-consumer and 2529-byte minimal-consumer page gzip increase for the three-icon family. Adding LoaderCircle increases page gzip by 12990 and 12931 bytes. The broader shared transform runtime also adds 845 and 846 page gzip bytes to the unchanged UserRoundCog control. These are prior measured payload tradeoffs, not new measurements from #98. Preserve both behavioral compatibility and complete-page costs when #99 selects rollout batches. This issue neither optimizes that mechanism nor migrates another recipe.
 
 ## Completed dependencies
 
