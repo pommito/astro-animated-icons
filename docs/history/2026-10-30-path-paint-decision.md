@@ -38,6 +38,8 @@ The [native media result](2026-10-30-path-paint-native-media.json) separately re
 
 The [native pointer result](2026-10-30-path-paint-native-pointer.json) covers mouse enter/leave on the 14 px AtSign row. Both events report isTrusted true and pointerType mouse. Both engines hold their matching full dash pose after entry and remove it after return. Other recipes' paused/manual and synthetic checks are not native input evidence.
 
+The [native toolbar result](2026-10-30-path-paint-native-toolbar.json) records trusted Chrome clicks on Play all and Stop all after the control-wiring correction. Instrumentation forwards to the original methods and observes exactly 184 entry calls and 184 stop calls across the current samples. All native effects clear after return.
+
 The [geometry result](2026-10-30-path-paint-geometry.json) instruments one 24 px entry and return on each side of all 23 representative pairs. Across the 46 entries it records 116 length reads. Each measured target is read once per playback, and opacity-only targets read none. The output includes coarse preparation/geometry times in milliseconds, with instrumentation and no warmup. It establishes no timing advantage or frame-pacing result.
 
 ## Fresh production payload baseline and forecast
@@ -52,41 +54,41 @@ Negative changes mean fewer page gzip bytes. All counts below are bytes.
 
 | Consumer | Composition | JS files baseline / compact proof | Page gzip baseline / compact proof | Change |
 | --- | --- | ---: | ---: | ---: |
-| full | paint-at-sign | 6 / 4 | 5458 / 4035 | -1423 |
-| full | runtime-path-reveal | 37 / 4 | 17001 / 11794 | -5207 |
-| full | staggered-path-reveal | 30 / 4 | 12646 / 11316 | -1330 |
-| full | currency-path-reveal | 28 / 4 | 10661 / 8964 | -1697 |
-| full | symbol-path-reveal | 20 / 4 | 8471 / 5438 | -3033 |
-| full | wind-path-reveal | 14 / 15 | 13393 / 16344 | 2951 |
-| full | path-paint | 105 / 15 | 39790 / 38438 | -1352 |
-| full | path-paint-repeated | 105 / 15 | 127309 / 187664 | 60355 |
-| full | path-paint-css | 111 / 20 | 45051 / 43359 | -1692 |
-| full | path-paint-loader | 111 / 21 | 58602 / 57264 | -1338 |
-| full | path-paint-css-loader | 117 / 26 | 63838 / 62152 | -1686 |
-| minimal | paint-at-sign | 4 / 3 | 5138 / 3908 | -1230 |
-| minimal | runtime-path-reveal | 35 / 3 | 16718 / 11667 | -5051 |
-| minimal | staggered-path-reveal | 28 / 3 | 12259 / 11189 | -1070 |
-| minimal | currency-path-reveal | 26 / 3 | 10287 / 8838 | -1449 |
-| minimal | symbol-path-reveal | 18 / 3 | 8155 / 5310 | -2845 |
-| minimal | wind-path-reveal | 12 / 12 | 13075 / 15897 | 2822 |
-| minimal | path-paint | 103 / 12 | 39399 / 37989 | -1410 |
-| minimal | path-paint-repeated | 103 / 12 | 126918 / 187215 | 60297 |
-| minimal | path-paint-css | 106 / 15 | 44405 / 42784 | -1621 |
-| minimal | path-paint-loader | 107 / 16 | 55613 / 54218 | -1395 |
-| minimal | path-paint-css-loader | 110 / 19 | 60594 / 58981 | -1613 |
+| full | paint-at-sign | 6 / 4 | 5458 / 4027 | -1431 |
+| full | runtime-path-reveal | 37 / 4 | 17001 / 11785 | -5216 |
+| full | staggered-path-reveal | 30 / 4 | 12646 / 11306 | -1340 |
+| full | currency-path-reveal | 28 / 4 | 10661 / 8955 | -1706 |
+| full | symbol-path-reveal | 20 / 4 | 8471 / 5429 | -3042 |
+| full | wind-path-reveal | 14 / 15 | 13393 / 16335 | 2942 |
+| full | path-paint | 105 / 15 | 39790 / 38429 | -1361 |
+| full | path-paint-repeated | 105 / 15 | 127309 / 187656 | 60347 |
+| full | path-paint-css | 111 / 20 | 45051 / 43351 | -1700 |
+| full | path-paint-loader | 111 / 21 | 58602 / 57256 | -1346 |
+| full | path-paint-css-loader | 117 / 26 | 63838 / 62144 | -1694 |
+| minimal | paint-at-sign | 4 / 3 | 5138 / 3897 | -1241 |
+| minimal | runtime-path-reveal | 35 / 3 | 16718 / 11656 | -5062 |
+| minimal | staggered-path-reveal | 28 / 3 | 12259 / 11178 | -1081 |
+| minimal | currency-path-reveal | 26 / 3 | 10287 / 8825 | -1462 |
+| minimal | symbol-path-reveal | 18 / 3 | 8155 / 5299 | -2856 |
+| minimal | wind-path-reveal | 12 / 12 | 13075 / 15885 | 2810 |
+| minimal | path-paint | 103 / 12 | 39399 / 37978 | -1421 |
+| minimal | path-paint-repeated | 103 / 12 | 126918 / 187204 | 60286 |
+| minimal | path-paint-css | 106 / 15 | 44405 / 42774 | -1631 |
+| minimal | path-paint-loader | 107 / 16 | 55613 / 54205 | -1408 |
+| minimal | path-paint-css-loader | 110 / 19 | 60594 / 58970 | -1624 |
 
-The complete all-candidate route contains 88 CSS proof icons and retained WindArrowDown. Its twenty-repeat route contains 1780 instances. Full/minimal compact group savings are 1352/1410 page gzip bytes, but that repetition adds 60355/60297 bytes. The wind family adds 2951/2822 bytes because it loads both the paint runtime and WindArrowDown's Motion path. Symbol-family repetition saves 2641/2452 bytes; currency and staggered repetitions regress. The adjacent JSON retains every single and mixed result.
+The complete all-candidate route contains 88 CSS proof icons and retained WindArrowDown. Its twenty-repeat route contains 1780 instances. Full/minimal compact group savings are 1361/1421 page gzip bytes, but that repetition adds 60347/60286 bytes. The wind family adds 2942/2810 bytes because it loads both the paint runtime and WindArrowDown's Motion path. Symbol-family repetition saves 2649/2463 bytes; currency and staggered repetitions regress. The adjacent JSON retains every single and mixed result.
 
 | Consumer | Composition | JS raw / gzip | CSS raw / gzip | HTML raw / gzip | Page raw / gzip |
 | --- | --- | ---: | ---: | ---: | ---: |
-| full | path-paint | 32355 / 14819 | 343405 / 38664 | 427686 / 23619 | 460041 / 38438 |
-| full | path-paint-repeated | 32355 / 14819 | 343405 / 38664 | 1912878 / 172845 | 1945233 / 187664 |
-| minimal | path-paint | 31903 / 14372 | 343405 / 38664 | 427686 / 23617 | 459589 / 37989 |
-| minimal | path-paint-repeated | 31903 / 14372 | 343405 / 38664 | 1912878 / 172843 | 1944781 / 187215 |
+| full | path-paint | 32354 / 14810 | 343405 / 38664 | 427686 / 23619 | 460040 / 38429 |
+| full | path-paint-repeated | 32354 / 14810 | 343405 / 38664 | 1912878 / 172846 | 1945232 / 187656 |
+| minimal | path-paint | 31902 / 14362 | 343405 / 38664 | 427686 / 23616 | 459588 / 37978 |
+| minimal | path-paint-repeated | 31902 / 14362 | 343405 / 38664 | 1912878 / 172842 | 1944780 / 187204 |
 
 CSS is reported as a separately compressed normalized subtotal. Page totals compress actual HTML with inline CSS and recipe data once, then add external JavaScript and CSS. Do not add the normalized CSS subtotal to the HTML total.
 
-With the same final adapter and decoder on both sides, the verbose plan format adds 2879/2821 all-candidate page gzip bytes and 140321/140262 for twenty repetitions. Compact tuples reconstruct all 88 detailed plans exactly and reduce that cost, but the remaining repeated HTML still matters. The encoder refuses unsupported gaps rather than dropping values. Gzip cannot always reuse data across a long repeated family document. A future smaller source-oriented representation may help, but it needs another measured comparison while preserving source-removed clones.
+With the same final adapter and decoder on both sides, the verbose plan format adds 2871/2810 all-candidate page gzip bytes and 140313/140251 for twenty repetitions. Compact tuples reconstruct all 88 detailed plans exactly and reduce that cost, but the remaining repeated HTML still matters. The encoder refuses unsupported gaps rather than dropping values. Gzip cannot always reuse data across a long repeated family document. A future smaller source-oriented representation may help, but it needs another measured comparison while preserving source-removed clones.
 
 Both consumers use Node v22.20.0, pnpm 12.5.1, Astro 7.3.8, Motion 13.5.1 and TypeScript 6.0.3 on an Apple M1 Pro, arm64 macOS 27.0.1 build 26A434. Each cold route counts a shared external URL once. Gzip uses Node zlib defaults per resource. HTML includes inline data and styles. The baseline's warm transitions model same-build URL reuse with a fresh second HTML fetch; the proof forecast supplies cold totals only. Headers, latency, Brotli, cache revalidation/eviction, cross-build reuse, browser traffic, server render time, preparation advantage and frame pacing are excluded. The minimal consumers use installed workspace links, not packed packages.
 
@@ -94,11 +96,27 @@ Historical #95 results remain separate. Its combined family added 2267/2529 page
 
 ## Validation and review
 
-TDD first rejected missing compiler and codec boundaries, missing scope coverage, missing measurement compositions, changed serialized plans, hidden Motion dependencies and a non-unit gap. The corresponding vertical slices now pass. The 30 focused checks cover the compiler/geometry, wire format, comparison criteria, scope manifest, loading and existing inventory/hash contracts.
+TDD first rejected missing compiler and codec modules, missing scope coverage, missing measurement compositions, changed serialized plans, hidden Motion dependencies and a non-unit gap. The corresponding vertical slices now pass. Focused checks cover the compiler/geometry, wire format, comparison criteria, scope manifest, loading and existing inventory/hash contracts.
 
 The strict inventory still accounts for all 470 exports exactly once across 38 families. It reports 32 migrated, zero supported but deferred, 196 capability candidates, 242 Motion retentions and zero needing review. Schema 2 runtimeSources, broader sources and proof-dependency negative contracts are unchanged. No dependency hash was renewed because production dependencies did not change.
 
 The complete `rtk pnpm validate` passes in 163.957 seconds with all 98 Node tests. Package and fixture Astro checks report zero errors, warnings and hints. Production validation verifies 470 initial drawings and native controls, 944 bundle cases and the existing 32 migrated recipes across 43 compositions. The build retains existing upstream reference directive warnings. Routine validation launches no browser and adds no browser dependency. All 140 local links in the ADR, dated report, mapping and migration plan resolve.
+
+### Standards
+
+Independent review of `ab10cd2...828a181` found two actionable issues. The comparison only walked returned poses, so missing rows could shrink its scope without failing. The shared adapter also selected ReceiptText's initial full-dash fallback by icon name. Commit `f389fae` adds bidirectional sample-key multiplicity checks with a failing-then-passing missing/duplicate test and selects the fallback through the declared current replay policy. Targeted Standards re-review reports zero remaining actionable findings.
+
+The frozen capture contains 7816 records and 7804 unique pose keys. Its twelve duplicates are identical t=0 records in stop-after-completion for the three restored representatives at four sizes. The comparison requires those prescribed occurrences and rejects missing or excess samples. A [negative browser probe](2026-10-30-path-paint-negative-coverage.json) removes every proof cell. The comparison then reports zero actual records and 7804 coverage failures. It restores the same nodes afterward. The complete positive rerun still compares all 7816 records and 40096 shapes with zero error or failures.
+
+### Spec
+
+Independent Spec review found zero actionable Phase 1 mismatches. It checked all 281 frozen dependency sources against unchanged production files and all 88 plans against saved native channel counts, timings and easing. Its targeted re-review of `828a181...f389fae` confirms that the coverage and policy corrections preserve scope and source behavior. Architecture approval and production rollout remain pending.
+
+Commit `ddff137` connects the proof's global Play all and Stop all buttons through the existing comparison-control module. Paired buttons and row hover keep that module's existing behavior. Both Standards and Spec targeted re-reviews report zero remaining actionable findings for this fixture-only correction. The delivery measurements reach no comparison control code.
+
+### Final verification
+
+After the review corrections and final toolbar wiring, `rtk pnpm validate` passes all 99 tests in 151.205 seconds. Astro again reports zero errors, warnings and hints. Production validation still covers 470 drawings, 944 bundle cases and 32 CSS recipes across 43 compositions. All 549 current full-consumer baseline routes reproduce the saved JavaScript/CSS/HTML/page sizes and file counts. Both proof encodings were rebuilt with the corrected adapter and the measured results above replace the earlier experiment totals. All 142 current local links resolve. No production recipe, inventory decision or dependency hash changed.
 
 Commands executed use the required shell prefix. The capture command applies only before extraction at the baseline revision.
 

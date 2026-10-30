@@ -1,0 +1,17 @@
+{
+  "method": "Native Chrome clicks on global toolbar with method-call instrumentation; original methods remain in use.",
+  "samples": 184,
+  "play": 184,
+  "stop": 184,
+  "events": [
+    {
+      "id": "play",
+      "trusted": true
+    },
+    {
+      "id": "stop",
+      "trusted": true
+    }
+  ],
+  "clean": true
+}

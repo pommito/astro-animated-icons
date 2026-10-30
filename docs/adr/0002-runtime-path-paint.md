@@ -10,7 +10,7 @@ The [runnable proof](../../tests/fixtures/astro/src/pages/path-paint-proof.astro
 
 ## Interface and scope
 
-The experiment exposes `paintCSS(plan)`, `measureTargets(plan, drawing)`, `encodePaint(plan)`, `decodePaint(wire)` and `createPaintProof(plan)`. These are the compiler, geometry, delivery and track-adapter boundaries tested in Phase 1. They live entirely in the fixture. They do not define a new public icon API.
+The experiment exposes `paintCSS(plan)`, `measureTargets(plan, drawing)`, `encodePaint(plan)`, `decodePaint(wire)` and `createPaintProof(plan)`. These are the compiler, geometry, delivery and track-adapter seams tested in Phase 1. They live entirely in the fixture. They do not define a new public icon API.
 
 The proposed production authoring data stays readable and local to each icon. Each affected target owns its selector, optional measured dash values, signed offset values and opacity values. A phase owns duration, delay, effect easing, optional offsets and optional interval easing for each property. Missing return properties remain untouched until whole-playback cleanup. The recipe declares hold or restore completion. Replay is explicit and evaluated per target.
 

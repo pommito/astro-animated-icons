@@ -1,0 +1,31 @@
+{
+  "method": "Negative browser probe removes every proof cell, then restores the same nodes. A complete comparison must fail.",
+  "coverage": {
+    "expected": 7816,
+    "actual": 0,
+    "expectedUnique": 7804,
+    "actualUnique": 0
+  },
+  "poses": 0,
+  "failureCount": 7804,
+  "firstFailures": [
+    {
+      "key": "at-sign/14/entry/0",
+      "reason": "pose coverage mismatch",
+      "expected": 1,
+      "actual": 0
+    },
+    {
+      "key": "at-sign/14/entry/1",
+      "reason": "pose coverage mismatch",
+      "expected": 1,
+      "actual": 0
+    },
+    {
+      "key": "at-sign/14/entry/5",
+      "reason": "pose coverage mismatch",
+      "expected": 1,
+      "actual": 0
+    }
+  ]
+}

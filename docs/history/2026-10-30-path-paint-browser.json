@@ -7,6 +7,12 @@
     "opacity": 0.001,
     "matrix": 0.005
   },
+  "coverage": {
+    "expected": 7816,
+    "actual": 7816,
+    "expectedUnique": 7804,
+    "actualUnique": 7804
+  },
   "poses": 7816,
   "shapes": 40096,
   "maximum": {
