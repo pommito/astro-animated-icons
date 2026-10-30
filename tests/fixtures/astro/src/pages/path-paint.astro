@@ -5,7 +5,7 @@ import ComparisonPage from "../components/ComparisonPage.astro";
 import ComparisonSection from "../components/ComparisonSection.astro";
 ---
 <ComparisonPage title="Production measured path paint" eyebrow="Previous local Motion / Public CSS icons">
-  <p>All 88 migrated recipes appear below at four sizes. References use the preceding Motion mechanisms with the production data. Independent source captures check extraction. WindArrowDown remains entirely on Motion. Owner visual acceptance of this production set is pending.</p>
+  <p>All 88 migrated recipes appear below at four sizes. References use the preceding Motion mechanisms with the production data. Independent source captures check extraction. WindArrowDown remains entirely on Motion. The owner visually accepted this complete 88-icon production set on 2026-10-30 at f213a32.</p>
   <nav aria-label="Paint families">{[...new Set(pathPaint.map(icon=>icon.family))].map(family=><a href={"#"+family}>{family} </a>)}</nav>
   {[...new Set(pathPaint.map(icon=>icon.family))].map(family=><div><h2 id={family}>{family}</h2>{pathPaint.filter(icon=>icon.family===family).map(({slug,name,Managed,Reference})=><ComparisonSection slug={slug} name={name}>
     <table><thead><tr><th>Size</th><th>Previous local Motion</th><th>Public CSS</th></tr></thead><tbody>{[14,16,24,28].map(size=><tr data-pair data-size={size}><th scope="row">{size} px</th><td data-reference-holder><Reference size={size} controlled data-sample /></td><td data-production-holder><Managed size={size} controlled data-sample /></td></tr>)}</tbody></table>

@@ -1,5 +1,7 @@
 # Production measured paint rollout
 
+This report preserves the pre-acceptance execution state. The subsequent [owner acceptance](2026-10-30-production-path-paint-acceptance.md) records approval of all 88 production icons at `f213a32` and authorization to merge PR #104 and close #103.
+
 The owner approved ADR 0002 in the implementation chat on 2026-10-30 at proof revision `df7a852a1f83351ad81795da76ec20407bb89ea0`. The same instruction authorized every compatible family and retained WindArrowDown on Motion. Implementation starts at `00b9c89`. Production visual acceptance remains pending. Keep PR #104 in draft and #103 open.
 
 ## Scope and implementation
