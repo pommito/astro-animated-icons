@@ -178,12 +178,12 @@ test("strict review rejects missing exports, orphan records and incomplete contr
   });
 });
 
-test("a deferred recipe loses support when its proven CSS mechanism changes", () => {
+test("a migrated finite group loses review when its CSS mechanism changes", () => {
   withReviewedCopy(root => {
     const path = join(root, "packages/animated-icons/src/shared/css-cycle.ts");
     writeFileSync(path, readFileSync(path, "utf8") + "\n");
     const icon = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
-    assert.equal(icon.engine, "motion");
+    assert.equal(icon.engine, "css");
     assert.equal(icon.migrationState, "needs-review");
   });
 });
@@ -214,4 +214,40 @@ test("direct morphs keep their full-options family apart from SVG-part morphs", 
   const family = result.familyQueue.find(group => group.family === "direct-path-morph");
   assert.deepEqual(family.icons, ["connect", "rocket"]);
   assert.deepEqual(result.familyQueue.find(group => group.family === "parts-morph").icons, ["accessibility", "frown", "smile"]);
+});
+
+test("the complete supported six-icon batch has current migrated decisions", () => {
+  const inventory = inventoryAnimations(undefined, { requireReviewed: true });
+  for (const slug of ["disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"]) {
+    const icon = inventory.icons.find(icon => icon.slug === slug);
+    assert.equal(icon.engine, "css");
+    assert.equal(icon.migrationState, "migrated");
+    assert.ok(icon.runtimeSources.some(path => path.endsWith("/register-css-cycle.ts")));
+    assert.ok(!icon.runtimeSources.some(path => path.endsWith("/svg-parts.ts") || path.endsWith("/group-transform.ts")));
+  }
+});
+
+test("a deferred Motion recipe loses support when its proven CSS dependency changes", () => {
+  const saved = JSON.parse(readFileSync(new URL("../docs/history/2026-10-29-supported-six-source-before.json", import.meta.url), "utf8")).sources["disc-3"];
+  withReviewedCopy(root => {
+    const directory = join(root, "packages/animated-icons/src/icons/disc-3");
+    writeFileSync(join(directory, "definition.ts"), saved.definition);
+    writeFileSync(join(directory, "Disc3.astro"), saved.adapter);
+    rmSync(join(directory, "cycle.ts"));
+    rmSync(join(directory, "Drawing.astro"));
+    const recordsPath = join(root, "scripts/animation-decisions.json");
+    const records = JSON.parse(readFileSync(recordsPath, "utf8"));
+    const observed = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
+    assert.equal(observed.engine, "motion");
+    records["disc-3"].sourceHash = observed.classification.observedSourceHash;
+    writeFileSync(recordsPath, JSON.stringify(records));
+    const deferred = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
+    assert.equal(deferred.migrationState, "supported-but-deferred");
+    assert.ok(deferred.provenMechanismSources.includes("packages/animated-icons/src/shared/css-cycle.ts"));
+    const path = join(root, "packages/animated-icons/src/shared/css-cycle.ts");
+    writeFileSync(path, readFileSync(path, "utf8") + "\n");
+    const stale = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
+    assert.equal(stale.engine, "motion");
+    assert.equal(stale.migrationState, "needs-review");
+  });
 });

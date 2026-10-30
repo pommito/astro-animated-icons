@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/briefcase-business/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-briefcase-business" svgStyle="transform-origin: 12px 4px;"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { briefcaseBusinessCycle } from "../../../../../packages/animated-icons/src/icons/briefcase-business/cycle";
+  import { precedingFiniteRecipe } from "./preceding-finite";
+  if (!customElements.get("grave-reference-briefcase-business")) customElements.define("grave-reference-briefcase-business", createIconElement(precedingFiniteRecipe(briefcaseBusinessCycle)));
+</script>

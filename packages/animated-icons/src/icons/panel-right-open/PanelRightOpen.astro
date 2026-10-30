@@ -1,16 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
+import CssIcon from "../../CssIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { panelRightOpenCycle } from "./cycle";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-panel-right-open">
-  <g>
-    <rect height="18" rx="2" width="18" x="3" y="3" style="transform-box: fill-box; transform-origin: center" />
-    <path d="M15 3v18" style="transform-box: fill-box; transform-origin: center" />
-    <path d="m10 15-3-3 3-3" data-motion="0" style="transform-box: fill-box; transform-origin: center" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssIcon cycle={panelRightOpenCycle} {...Astro.props} tag="grave-panel-right-open"><Drawing /></CssIcon>

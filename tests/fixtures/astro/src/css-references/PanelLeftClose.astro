@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/panel-left-close/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-panel-left-close"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { panelLeftCloseCycle } from "../../../../../packages/animated-icons/src/icons/panel-left-close/cycle";
+  import { precedingFiniteRecipe } from "./preceding-finite";
+  if (!customElements.get("grave-reference-panel-left-close")) customElements.define("grave-reference-panel-left-close", createIconElement(precedingFiniteRecipe(panelLeftCloseCycle)));
+</script>

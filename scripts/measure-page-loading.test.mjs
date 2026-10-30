@@ -115,3 +115,16 @@ test("combined-transform baseline rejects repeated stylesheet payloads", () => c
   writeFileSync(page, readFileSync(page, "utf8").replace("</head>", '<link rel="stylesheet" href="/assets/shared.css"></head>'));
   assert.throws(() => measureLoading(output, metadata), /combined: repeated instances must reuse generated CSS/);
 }));
+
+test("the supported six-icon batch has complete measurement compositions", () => {
+  const batch = ["disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"];
+  assert.deepEqual(loadingCases["supported-six"], batch);
+  for (const name of [...batch, "supported-six"]) {
+    const slugs = name === "supported-six" ? batch : [name];
+    assert.deepEqual(loadingCases[name], slugs);
+    assert.deepEqual(loadingCases[name + "-repeated"], Array.from({ length: 20 }, () => slugs).flat());
+    assert.deepEqual(loadingCases[name + "-css"], [...slugs, "bell", "circle-dashed", "user-round-cog"]);
+    assert.deepEqual(loadingCases[name + "-loader"], [...slugs, "loader-circle"]);
+    assert.deepEqual(loadingCases[name + "-css-loader"], [...slugs, "bell", "circle-dashed", "user-round-cog", "loader-circle"]);
+  }
+});

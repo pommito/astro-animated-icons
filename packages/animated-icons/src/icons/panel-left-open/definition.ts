@@ -1,5 +1,4 @@
-import { createGroupTransformRecipe } from "../../shared/group-transform";
+import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { panelLeftOpenCycle } from "./cycle";
 
-export const panelLeftOpenRecipe = createGroupTransformRecipe(
-  { x: [null, 1.5, 0] }, { duration: 0.5, times: [0, 0.4, 1], ease: "easeOut" },
-);
+export const panelLeftOpenRecipe = createCSSCycleRecipe(panelLeftOpenCycle);

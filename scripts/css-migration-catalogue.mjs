@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { inventoryAnimations } from "./inventory-animations.mjs";
 import { cycles } from "./css-cycles.mjs";
+import { supportedSix } from "./page-loading-cases.mjs";
 import { opacityParts } from "./css-opacity.mjs";
 
 export const manifestPath = new URL("../tests/helpers/css-migration-cases.json", import.meta.url);
@@ -11,13 +12,14 @@ export function migrationCatalogue() {
     const cycle = cycles.get(icon.slug);
     const parts = opacityParts.get(icon.slug);
     assert.ok(Boolean(cycle) !== Boolean(parts), icon.slug + ": exactly one compiler data source");
-    return { slug: icon.slug, name: icon.name, engine: cycle ? "finite-transform-cycle" : "timed-opacity-parts", finish: cycle?.finish ?? "hold", replay: cycle?.replay ?? "current-per-active-part", comparison: cycle?.tracks ? "combined-transforms" : icon.slug === "folder" ? "folder-css" : icon.slug === "bell" ? "css-pilot" : icon.slug.includes("chevron") ? "css-chevrons" : "css-capabilities" };
+    return { slug: icon.slug, name: icon.name, engine: cycle ? "finite-transform-cycle" : "timed-opacity-parts", finish: cycle?.finish ?? "hold", replay: cycle?.replay ?? "current-per-active-part", comparison: supportedSix.includes(icon.slug) ? "supported-six" : cycle?.tracks ? "combined-transforms" : icon.slug === "folder" ? "folder-css" : icon.slug === "bell" ? "css-pilot" : icon.slug.includes("chevron") ? "css-chevrons" : "css-capabilities" };
   });
   assert.deepEqual(new Set(icons.map(icon => icon.slug)), new Set([...cycles.keys(), ...opacityParts.keys()]), "Compiler data matches migrated catalogue");
   const all = icons.map(icon => icon.slug);
   const selected = ["bell", "chevron-right", "folder-down", "calendar-days"];
   const cases = Object.fromEntries([
     ...all.map(slug => [slug, [slug]]),
+    ["supported-six", supportedSix],
     ["chevrons", all.filter(slug => slug.includes("chevron"))],
     ["folders", all.filter(slug => slug === "folder" || slug.startsWith("folder-"))],
     ["opacity", icons.filter(icon => icon.engine === "timed-opacity-parts").map(icon => icon.slug)],

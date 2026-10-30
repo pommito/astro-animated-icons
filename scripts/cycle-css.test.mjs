@@ -177,3 +177,51 @@ test("opacity sheets recover per document and reconcile late server sheets", () 
     assert.equal(other.sheets.length, 1);
   }
 });
+
+test("Disc3 preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("disc-3");
+  assert.deepEqual(cycle, {"id":"disc-3","target":"[data-motion=\"0\"]","property":"rotate","values":[0,90],"times":[0,1],"duration":0.4,"ease":"easeInOut","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,rotate(0deg));}'));
+  assert.ok(css.includes('-return;animation-duration:0.4s;animation-timing-function:cubic-bezier(.42,0,.58,1);'));
+});
+
+test("PanelLeftClose preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("panel-left-close");
+  assert.deepEqual(cycle, {"id":"panel-left-close","target":"[data-motion=\"0\"]","property":"translateX","values":[0,-1.5,0],"times":[0,0.4,1],"duration":0.5,"ease":"easeOut","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,translateX(0px));}'));
+  assert.ok(css.includes('-return;animation-duration:0.5s;animation-timing-function:cubic-bezier(0,0,.58,1);'));
+});
+
+test("PanelLeftOpen preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("panel-left-open");
+  assert.deepEqual(cycle, {"id":"panel-left-open","target":"[data-motion=\"0\"]","property":"translateX","values":[0,1.5,0],"times":[0,0.4,1],"duration":0.5,"ease":"easeOut","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,translateX(0px));}'));
+  assert.ok(css.includes('-return;animation-duration:0.5s;animation-timing-function:cubic-bezier(0,0,.58,1);'));
+});
+
+test("PanelRightOpen preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("panel-right-open");
+  assert.deepEqual(cycle, {"id":"panel-right-open","target":"[data-motion=\"0\"]","property":"translateX","values":[0,-1.5,0],"times":[0,0.4,1],"duration":0.5,"ease":"easeOut","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,translateX(0px));}'));
+  assert.ok(css.includes('-return;animation-duration:0.5s;animation-timing-function:cubic-bezier(0,0,.58,1);'));
+});
+
+test("BriefcaseBusiness preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("briefcase-business");
+  assert.deepEqual(cycle, {"id":"briefcase-business","target":"svg","property":"rotate","values":[0,4,-3,2,0],"times":[0,0.25,0.5,0.75,1],"duration":0.9,"ease":"easeInOut","returnDuration":0.3,"returnEase":"easeOut","origin":"12px 4px","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,rotate(0deg));}'));
+  assert.ok(css.includes('-return;animation-duration:0.3s;animation-timing-function:cubic-bezier(0,0,.58,1);'));
+});
+
+test("TreePine preserves the preceding finite cycle contract", () => {
+  const cycle = cycles.get("tree-pine");
+  assert.deepEqual(cycle, {"id":"tree-pine","target":"svg","property":"rotate","values":[0,-10,10,-10,0],"times":[0,0.25,0.5,0.75,1],"duration":0.5,"ease":"easeInOut","finish":"hold","replay":"current"});
+  const css = cycleCSS(cycle);
+  assert.ok(css.includes('0%{transform:var(--grave-cycle-from,rotate(0deg));}'));
+  assert.ok(css.includes('-return;animation-duration:0.5s;animation-timing-function:cubic-bezier(.42,0,.58,1);'));
+});

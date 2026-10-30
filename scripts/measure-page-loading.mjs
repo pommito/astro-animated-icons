@@ -8,7 +8,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { measureRoute, resourceSizes } from "./measure-resources.mjs";
-import { loadingCases } from "./page-loading-cases.mjs";
+import { loadingCases, supportedSix } from "./page-loading-cases.mjs";
 import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -89,7 +89,7 @@ export function measureLoading(output, metadata) {
     ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"],
     ["cog", "cog-repeated"], ["cog", "cog-css"], ["cog-css", "cog-css-loader"],
     ["loader", "cog-loader"], ["cog-css-loader", "cog"],
-    ...["key-square", "wallet", "key-circle", "combined"].flatMap(name => [
+    ...["key-square", "wallet", "key-circle", "combined", ...supportedSix, "supported-six"].flatMap(name => [
       [name, name + "-repeated"], [name, name + "-css"], [name + "-css", name + "-css-loader"],
       ["loader", name + "-loader"], [name + "-css-loader", name],
     ])];
@@ -106,7 +106,7 @@ export function measureLoading(output, metadata) {
   assert.deepEqual(routes.all.css, routes["repeated-all"].css, "repeated families must reuse generated CSS");
   assert.deepEqual(routes.cog.chunks, routes["cog-repeated"].chunks, "repeated UserRoundCog must reuse JavaScript");
   assert.deepEqual(routes.cog.css, routes["cog-repeated"].css, "repeated UserRoundCog must reuse generated CSS");
-  for (const name of ["key-square", "wallet", "key-circle", "combined"]) {
+  for (const name of ["key-square", "wallet", "key-circle", "combined", ...supportedSix, "supported-six"]) {
     assert.deepEqual(routes[name].chunks, routes[name + "-repeated"].chunks, name + ": repeated instances must reuse JavaScript");
     assert.deepEqual(routes[name].css, routes[name + "-repeated"].css, name + ": repeated instances must reuse generated CSS");
   }

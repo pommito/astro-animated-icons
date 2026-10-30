@@ -1,0 +1,29 @@
+{
+  "revision": "3479eaab02559358a6070f62e16a51dc2d1188b7",
+  "sources": {
+    "disc-3": {
+      "definition": "import { createGroupTransformRecipe } from \"../../shared/group-transform\";\n\nexport const disc3Recipe = createGroupTransformRecipe({ rotate: 90 }, { duration: 0.4, ease: \"easeInOut\" });\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\n\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-disc-3\">\n  <g>\n    <circle cx=\"12\" cy=\"12\" r=\"10\" />\n    <circle cx=\"12\" cy=\"12\" r=\"2\" />\n    <g data-motion=\"0\" style=\"transform-origin: 12px 12px\">\n      <path d=\"M6 12c0-1.7.7-3.2 1.8-4.2\" />\n      <path d=\"M18 12c0 1.7-.7 3.2-1.8 4.2\" />\n    </g>\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    },
+    "panel-left-close": {
+      "definition": "import { createGroupTransformRecipe } from \"../../shared/group-transform\";\n\nexport const panelLeftCloseRecipe = createGroupTransformRecipe(\n  { x: [null, -1.5, 0] }, { duration: 0.5, times: [0, 0.4, 1], ease: \"easeOut\" },\n);\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-panel-left-close\">\n  <g>\n    <rect height=\"18\" rx=\"2\" width=\"18\" x=\"3\" y=\"3\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"M9 3v18\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"m16 15-3-3 3-3\" data-motion=\"0\" style=\"transform-box: fill-box; transform-origin: center\" />\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    },
+    "panel-left-open": {
+      "definition": "import { createGroupTransformRecipe } from \"../../shared/group-transform\";\n\nexport const panelLeftOpenRecipe = createGroupTransformRecipe(\n  { x: [null, 1.5, 0] }, { duration: 0.5, times: [0, 0.4, 1], ease: \"easeOut\" },\n);\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-panel-left-open\">\n  <g>\n    <rect height=\"18\" rx=\"2\" width=\"18\" x=\"3\" y=\"3\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"M9 3v18\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"m14 9 3 3-3 3\" data-motion=\"0\" style=\"transform-box: fill-box; transform-origin: center\" />\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    },
+    "panel-right-open": {
+      "definition": "import { createGroupTransformRecipe } from \"../../shared/group-transform\";\n\nexport const panelRightOpenRecipe = createGroupTransformRecipe(\n  { x: [null, -1.5, 0] }, { duration: 0.5, times: [0, 0.4, 1], ease: \"easeOut\" },\n);\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-panel-right-open\">\n  <g>\n    <rect height=\"18\" rx=\"2\" width=\"18\" x=\"3\" y=\"3\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"M15 3v18\" style=\"transform-box: fill-box; transform-origin: center\" />\n    <path d=\"m10 15-3-3 3-3\" data-motion=\"0\" style=\"transform-box: fill-box; transform-origin: center\" />\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    },
+    "briefcase-business": {
+      "definition": "import { createSvgPartsRecipe } from \"../../shared/svg-parts\";\n\nexport const briefcaseBusinessRecipe = createSvgPartsRecipe([{\n  selector: \"svg\", origin: \"12px 4px\",\n  variants: {\n    normal: { rotate: 0, transition: { duration: 0.3, ease: \"easeOut\" } },\n    animate: { rotate: [0, 4, -3, 2, 0], transition: { duration: 0.9, ease: \"easeInOut\", times: [0, 0.25, 0.5, 0.75, 1] } },\n  },\n}]);\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-briefcase-business\" svgStyle=\"transform-origin: 12px 4px;\">\n  <g>\n    <path d=\"M12 12h.01\" data-part=\"0\" />\n    <path d=\"M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2\" data-part=\"1\" />\n    <path d=\"M22 13a18.15 18.15 0 0 1-20 0\" data-part=\"2\" />\n    <rect height=\"14\" rx=\"2\" width=\"20\" x=\"2\" y=\"6\" data-part=\"3\" />\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    },
+    "tree-pine": {
+      "definition": "import { createSvgPartsRecipe } from \"../../shared/svg-parts\";\n\nexport const treePineRecipe = createSvgPartsRecipe([{\n  selector: \"svg\", transition: { duration: 0.5, ease: \"easeInOut\" },\n  variants: {\n    normal: { rotate: 0 },\n    animate: { rotate: [0, -10, 10, -10, 0] },\n  },\n}]);\n",
+      "adapter": "---\nimport Icon, { type IconProps } from \"../../Icon.astro\";\ntype Props = IconProps;\n---\n\n<Icon {...Astro.props} tag=\"grave-tree-pine\">\n  <g>\n    <path d=\"m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z\" data-part=\"0\" />\n    <path d=\"M12 22v-3\" data-part=\"1\" />\n  </g>\n</Icon>\n\n<script>\n  import \"./element\";\n</script>\n"
+    }
+  }
+}
