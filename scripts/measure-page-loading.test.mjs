@@ -7,7 +7,7 @@ import { test } from "node:test";
 import { pathToFileURL } from "node:url";
 import { gzipSync } from "node:zlib";
 import { chunkRole, measureLoading } from "./measure-page-loading.mjs";
-import { loadingCases, loadingIcons } from "./page-loading-cases.mjs";
+import { loadingCases, loadingIcons, pathPaintFamilies } from "./page-loading-cases.mjs";
 import { clientRecipes } from "./registration-contract.mjs";
 
 function consumer(run) {
@@ -104,6 +104,19 @@ test("module evidence separates registration, recipe, lifecycle and CSS support"
   assert.equal(chunkRole("/repo/node_modules/motion/index.js"), "dependency");
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-css.ts"), "stylesheet-compiler-and-recovery");
   assert.equal(chunkRole("/repo/packages/animated-icons/src/shared/combined-transform-cycle.ts"), "transform-sampling");
+});
+
+test("the path-paint baseline covers complete reviewed families and their Motion mixtures", () => {
+  assert.deepEqual(Object.values(pathPaintFamilies).map(slugs=>slugs.length).sort((a,b)=>a-b),[3,12,21,23,30]);
+  const all=Object.values(pathPaintFamilies).flat();
+  assert.equal(new Set(all).size,89);
+  for(const [name,slugs] of Object.entries({...pathPaintFamilies,"path-paint":all})) {
+    assert.deepEqual(loadingCases[name],slugs);
+    assert.deepEqual(loadingCases[name+"-repeated"],Array.from({length:20},()=>slugs).flat());
+    assert.deepEqual(loadingCases[name+"-css"],[...slugs,"bell","circle-dashed","user-round-cog"]);
+    assert.deepEqual(loadingCases[name+"-loader"],[...slugs,"loader-circle"]);
+    assert.deepEqual(loadingCases[name+"-css-loader"],[...slugs,"bell","circle-dashed","user-round-cog","loader-circle"]);
+  }
 });
 
 test("combined-transform baseline rejects repeated stylesheet payloads", () => consumer((output, metadata) => {

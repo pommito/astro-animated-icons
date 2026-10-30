@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/phone-off/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-phone-off"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { phoneOffPaint } from "../../../../../packages/animated-icons/src/icons/phone-off/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-phone-off")) customElements.define("grave-reference-phone-off", createIconElement(precedingPaintRecipe(phoneOffPaint)));
+</script>

@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/attach-file/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-attach-file"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { attachFilePaint } from "../../../../../packages/animated-icons/src/icons/attach-file/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-attach-file")) customElements.define("grave-reference-attach-file", createIconElement(precedingPaintRecipe(attachFilePaint)));
+</script>

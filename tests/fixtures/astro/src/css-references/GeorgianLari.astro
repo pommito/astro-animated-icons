@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/georgian-lari/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-georgian-lari"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { georgianLariPaint } from "../../../../../packages/animated-icons/src/icons/georgian-lari/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-georgian-lari")) customElements.define("grave-reference-georgian-lari", createIconElement(precedingPaintRecipe(georgianLariPaint)));
+</script>

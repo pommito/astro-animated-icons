@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/git-compare-arrows/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-git-compare-arrows"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { gitCompareArrowsPaint } from "../../../../../packages/animated-icons/src/icons/git-compare-arrows/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-git-compare-arrows")) customElements.define("grave-reference-git-compare-arrows", createIconElement(precedingPaintRecipe(gitCompareArrowsPaint)));
+</script>

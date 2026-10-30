@@ -1,1 +1,4 @@
-export { calendarCheckRecipe as calendarCheck2Recipe } from "../../shared/calendar-check";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { calendarCheck2Paint } from "./paint";
+
+export const calendarCheck2Recipe = createCSSPaintRecipe(calendarCheck2Paint);

@@ -1,0 +1,742 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "One instrumented entry and return per 24px recipe, no warmup or performance claim. Times are milliseconds and include instrumentation. Fresh geometry per target per playback; no connection-time reads.",
+  "results": [
+    {
+      "slug": "at-sign",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.7999999821186066,
+        "total": 1.4000000059604645
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.6000000238418579
+      }
+    },
+    {
+      "slug": "at-sign",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.29999998211860657,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "attach-file",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.30000001192092896,
+        "total": 0.4000000059604645
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.30000001192092896
+      }
+    },
+    {
+      "slug": "attach-file",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.3999999761581421
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.20000001788139343
+      }
+    },
+    {
+      "slug": "ban",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.30000001192092896
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.19999998807907104
+      }
+    },
+    {
+      "slug": "ban",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.10000002384185791,
+        "total": 0.30000001192092896
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.30000001192092896
+      }
+    },
+    {
+      "slug": "bluetooth-connected",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "bluetooth-connected",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "droplet",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.30000001192092896
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.3999999761581421
+      }
+    },
+    {
+      "slug": "droplet",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.3999999761581421
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.29999998211860657,
+        "total": 0.5999999940395355
+      }
+    },
+    {
+      "slug": "eye-off",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0,
+        "total": 0.4000000059604645
+      }
+    },
+    {
+      "slug": "eye-off",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.4000000059604645
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0,
+        "total": 0.30000001192092896
+      }
+    },
+    {
+      "slug": "file-chart-line",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.19999998807907104
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0,
+        "total": 0.30000001192092896
+      }
+    },
+    {
+      "slug": "file-chart-line",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.19999998807907104
+      },
+      "returning": {
+        "calls": 1,
+        "unique": 1,
+        "geometryTime": 0,
+        "total": 0.30000001192092896
+      }
+    },
+    {
+      "slug": "fingerprint",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 9,
+        "unique": 9,
+        "geometryTime": 1.100000023841858,
+        "total": 1.5
+      },
+      "returning": {
+        "calls": 9,
+        "unique": 9,
+        "geometryTime": 0.5,
+        "total": 1.600000023841858
+      }
+    },
+    {
+      "slug": "fingerprint",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 9,
+        "unique": 9,
+        "geometryTime": 0.5999999940395355,
+        "total": 1.5999999940395355
+      },
+      "returning": {
+        "calls": 9,
+        "unique": 9,
+        "geometryTime": 0.29999998211860657,
+        "total": 1.7000000178813934
+      }
+    },
+    {
+      "slug": "folder-tree",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.6000000238418579,
+        "total": 1.0999999940395355
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.30000001192092896,
+        "total": 0.9000000059604645
+      }
+    },
+    {
+      "slug": "folder-tree",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.800000011920929
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.800000011920929
+      }
+    },
+    {
+      "slug": "git-compare-arrows",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.5,
+        "total": 0.800000011920929
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0,
+        "total": 1.199999988079071
+      }
+    },
+    {
+      "slug": "git-compare-arrows",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.9000000059604645
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0,
+        "total": 0.9000000059604645
+      }
+    },
+    {
+      "slug": "git-pull-request-closed",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.4000000059604645,
+        "total": 0.7000000178813934
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0,
+        "total": 1.0999999940395355
+      }
+    },
+    {
+      "slug": "git-pull-request-closed",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.30000001192092896,
+        "total": 0.9000000059604645
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.9000000059604645
+      }
+    },
+    {
+      "slug": "message-circle-dashed",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 0,
+        "unique": 0,
+        "geometryTime": 0,
+        "total": 0.09999999403953552
+      },
+      "returning": {
+        "calls": 0,
+        "unique": 0,
+        "geometryTime": 0,
+        "total": 1
+      }
+    },
+    {
+      "slug": "message-circle-dashed",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 0,
+        "unique": 0,
+        "geometryTime": 0,
+        "total": 0.7000000178813934
+      },
+      "returning": {
+        "calls": 0,
+        "unique": 0,
+        "geometryTime": 0,
+        "total": 0.7999999821186066
+      }
+    },
+    {
+      "slug": "receipt-euro",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.3999999761581421,
+        "total": 0.699999988079071
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "receipt-euro",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5999999940395355
+      }
+    },
+    {
+      "slug": "receipt",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.4000000059604645,
+        "total": 0.4000000059604645
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5999999940395355
+      }
+    },
+    {
+      "slug": "receipt",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.10000002384185791,
+        "total": 0.7000000178813934
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.699999988079071
+      }
+    },
+    {
+      "slug": "circle-dollar-sign",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.29999998211860657,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.699999988079071
+      }
+    },
+    {
+      "slug": "circle-dollar-sign",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.6000000238418579
+      }
+    },
+    {
+      "slug": "message-circle-plus",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.20000001788139343,
+        "total": 0.4000000059604645
+      }
+    },
+    {
+      "slug": "message-circle-plus",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "receipt-text",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.4000000059604645,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.5
+      }
+    },
+    {
+      "slug": "receipt-text",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.20000001788139343
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0,
+        "total": 0.29999998211860657
+      }
+    },
+    {
+      "slug": "route",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.4000000059604645,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.29999998211860657,
+        "total": 1.9000000059604645
+      }
+    },
+    {
+      "slug": "route",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.29999998211860657,
+        "total": 1
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.10000002384185791,
+        "total": 1.0999999940395355
+      }
+    },
+    {
+      "slug": "switch-camera",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.7000000178813934,
+        "total": 0.7000000178813934
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.7000000178813934
+      }
+    },
+    {
+      "slug": "switch-camera",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.30000001192092896,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 4,
+        "unique": 4,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.7000000178813934
+      }
+    },
+    {
+      "slug": "user-round-plus",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 0,
+        "unique": 0,
+        "geometryTime": 0,
+        "total": 0.4000000059604645
+      }
+    },
+    {
+      "slug": "user-round-plus",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.5
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.4000000059604645
+      }
+    },
+    {
+      "slug": "wind-arrow-down",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.4000000059604645,
+        "total": 1
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.10000002384185791,
+        "total": 1.800000011920929
+      }
+    },
+    {
+      "slug": "wind-arrow-down",
+      "engine": "retained-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.4000000059604645,
+        "total": 1.0999999940395355
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 2.300000011920929
+      }
+    },
+    {
+      "slug": "wind",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 1.0999999940395355,
+        "total": 1.199999988079071
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.40000003576278687,
+        "total": 2.0999999940395355
+      }
+    },
+    {
+      "slug": "wind",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.4000000059604645,
+        "total": 1.699999988079071
+      },
+      "returning": {
+        "calls": 3,
+        "unique": 3,
+        "geometryTime": 0.29999998211860657,
+        "total": 2.0999999940395355
+      }
+    },
+    {
+      "slug": "x",
+      "engine": "production-motion",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.5,
+        "total": 0.5999999940395355
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.19999998807907104,
+        "total": 0.699999988079071
+      }
+    },
+    {
+      "slug": "x",
+      "engine": "isolated-css",
+      "entry": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0,
+        "total": 0.6000000238418579
+      },
+      "returning": {
+        "calls": 2,
+        "unique": 2,
+        "geometryTime": 0.09999999403953552,
+        "total": 0.7999999821186066
+      }
+    }
+  ]
+}

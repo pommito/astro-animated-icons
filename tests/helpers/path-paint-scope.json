@@ -1,0 +1,447 @@
+[
+  {
+    "name": "AirVent",
+    "slug": "air-vent",
+    "family": "wind-path-reveal"
+  },
+  {
+    "name": "AtSign",
+    "slug": "at-sign",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "AttachFile",
+    "slug": "attach-file",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "Ban",
+    "slug": "ban",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "Bluetooth",
+    "slug": "bluetooth",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "BluetoothConnected",
+    "slug": "bluetooth-connected",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "BluetoothOff",
+    "slug": "bluetooth-off",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "CalendarCheck",
+    "slug": "calendar-check",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "CalendarCheck2",
+    "slug": "calendar-check-2",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "ChartLine",
+    "slug": "chart-line",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "ChartSpline",
+    "slug": "chart-spline",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "CircleCheck",
+    "slug": "circle-check",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "CircleDollarSign",
+    "slug": "circle-dollar-sign",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ClipboardCheck",
+    "slug": "clipboard-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "DollarSign",
+    "slug": "dollar-sign",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Droplet",
+    "slug": "droplet",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "Euro",
+    "slug": "euro",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "EyeOff",
+    "slug": "eye-off",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FileChartLine",
+    "slug": "file-chart-line",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FileCheck",
+    "slug": "file-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "FileCheck2",
+    "slug": "file-check-2",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "Fingerprint",
+    "slug": "fingerprint",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "Flame",
+    "slug": "flame",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FolderCheck",
+    "slug": "folder-check",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FolderGit",
+    "slug": "folder-git",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "FolderGit2",
+    "slug": "folder-git-2",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "FolderMinus",
+    "slug": "folder-minus",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FolderPlus",
+    "slug": "folder-plus",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FolderTree",
+    "slug": "folder-tree",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "FolderX",
+    "slug": "folder-x",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "GeorgianLari",
+    "slug": "georgian-lari",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "GitBranch",
+    "slug": "git-branch",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitCommitHorizontal",
+    "slug": "git-commit-horizontal",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitCommitVertical",
+    "slug": "git-commit-vertical",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitCompare",
+    "slug": "git-compare",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitCompareArrows",
+    "slug": "git-compare-arrows",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitFork",
+    "slug": "git-fork",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitGraph",
+    "slug": "git-graph",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitMerge",
+    "slug": "git-merge",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitPullRequest",
+    "slug": "git-pull-request",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitPullRequestClosed",
+    "slug": "git-pull-request-closed",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "GitPullRequestCreate",
+    "slug": "git-pull-request-create",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "Gitlab",
+    "slug": "gitlab",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "Home",
+    "slug": "home",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "IndianRupee",
+    "slug": "indian-rupee",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Italic",
+    "slug": "italic",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "JapaneseYen",
+    "slug": "japanese-yen",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Linkedin",
+    "slug": "linkedin",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "MailCheck",
+    "slug": "mail-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageCircleCheck",
+    "slug": "message-circle-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageCircleDashed",
+    "slug": "message-circle-dashed",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "MessageCirclePlus",
+    "slug": "message-circle-plus",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageCircleX",
+    "slug": "message-circle-x",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageSquareCheck",
+    "slug": "message-square-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageSquareDashed",
+    "slug": "message-square-dashed",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "MessageSquarePlus",
+    "slug": "message-square-plus",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MessageSquareX",
+    "slug": "message-square-x",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "MicOff",
+    "slug": "mic-off",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "PhilippinePeso",
+    "slug": "philippine-peso",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "PhoneOff",
+    "slug": "phone-off",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "PoundSterling",
+    "slug": "pound-sterling",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Receipt",
+    "slug": "receipt",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptCent",
+    "slug": "receipt-cent",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptEuro",
+    "slug": "receipt-euro",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptIndianRupee",
+    "slug": "receipt-indian-rupee",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptJapaneseYen",
+    "slug": "receipt-japanese-yen",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptPoundSterling",
+    "slug": "receipt-pound-sterling",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptRussianRuble",
+    "slug": "receipt-russian-ruble",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptSwissFranc",
+    "slug": "receipt-swiss-franc",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ReceiptText",
+    "slug": "receipt-text",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "ReceiptTurkishLira",
+    "slug": "receipt-turkish-lira",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Route",
+    "slug": "route",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "RussianRuble",
+    "slug": "russian-ruble",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "SaudiRiyal",
+    "slug": "saudi-riyal",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "ServerCrash",
+    "slug": "server-crash",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "SwissFranc",
+    "slug": "swiss-franc",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "SwitchCamera",
+    "slug": "switch-camera",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "TrainTrack",
+    "slug": "train-track",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "TurkishLira",
+    "slug": "turkish-lira",
+    "family": "currency-path-reveal"
+  },
+  {
+    "name": "Underline",
+    "slug": "underline",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "UserCheck",
+    "slug": "user-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "UserRoundCheck",
+    "slug": "user-round-check",
+    "family": "symbol-path-reveal"
+  },
+  {
+    "name": "UserRoundPlus",
+    "slug": "user-round-plus",
+    "family": "runtime-path-reveal"
+  },
+  {
+    "name": "Waypoints",
+    "slug": "waypoints",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "Webhook",
+    "slug": "webhook",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "Wind",
+    "slug": "wind",
+    "family": "wind-path-reveal"
+  },
+  {
+    "name": "WindArrowDown",
+    "slug": "wind-arrow-down",
+    "family": "wind-path-reveal"
+  },
+  {
+    "name": "Workflow",
+    "slug": "workflow",
+    "family": "staggered-path-reveal"
+  },
+  {
+    "name": "X",
+    "slug": "x",
+    "family": "staggered-path-reveal"
+  }
+]

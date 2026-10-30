@@ -1,0 +1,19 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import { loadingCases, loadingIcons } from "../../../../../../scripts/page-loading-cases.mjs";
+import plans from "../../../../../helpers/path-paint-proof-plans.json";
+import PaintProofIcon from "../../components/PaintProofIcon.astro";
+interface Props { slugs: string[]; }
+export function getStaticPaths() {
+  return Object.entries(loadingCases).filter(([name]) => name.startsWith("paint-") || name.includes("path-reveal") || name === "path-paint" || name.startsWith("path-paint-"))
+    .map(([sample, slugs]) => ({ params: { sample }, props: { slugs } }));
+}
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Page loading measurement</title></head><body>
+{Astro.props.slugs.map(slug => {
+  if (slug in plans) return <PaintProofIcon slug={slug as keyof typeof plans} />;
+  const name = loadingIcons.find(icon => icon.slug === slug)!.name;
+  const Component = icons[name as keyof typeof icons];
+  return <Component />;
+})}
+</body></html>

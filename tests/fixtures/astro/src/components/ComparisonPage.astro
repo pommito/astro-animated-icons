@@ -1,7 +1,7 @@
 ---
 import "../comparison-review.css";
-interface Props { title: string; }
-const { title } = Astro.props;
+interface Props { title: string; eyebrow?: string; }
+const { title, eyebrow = "Motion reference / Public CSS icon" } = Astro.props;
 ---
 <html lang="en">
   <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>{title}</title></head>
@@ -14,7 +14,7 @@ const { title } = Astro.props;
       <a href="/combined-transforms/">Combined transforms</a>
     </nav>
     <header class="review-intro">
-      <p class="review-eyebrow">Motion reference / Public CSS icon</p>
+      <p class="review-eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p>Hover a size row to play both versions. Use each pair's controls to replay or stop all four sizes.</p>
     </header>

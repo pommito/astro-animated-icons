@@ -1,0 +1,42 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import plans from "../../../../helpers/path-paint-proof-plans.json";
+import ComparisonPage from "../components/ComparisonPage.astro";
+import ComparisonSection from "../components/ComparisonSection.astro";
+import { encodePaint } from "../path-paint-proof/codec.mjs";
+import { pathPaint } from "../path-paint-catalogue";
+const representatives = ["AtSign", "AttachFile", "Ban", "BluetoothConnected", "Droplet", "EyeOff", "FileChartLine", "Fingerprint", "FolderTree", "GitCompareArrows", "GitPullRequestClosed", "MessageCircleDashed", "ReceiptEuro", "Receipt", "CircleDollarSign", "MessageCirclePlus", "ReceiptText", "Route", "SwitchCamera", "UserRoundPlus", "WindArrowDown", "Wind", "X"];
+const selected = representatives.map(name => ({ name, slug: name.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase(), Component: icons[name as keyof typeof icons] }));
+const referenceFor=(slug:string,Component:any)=>pathPaint.find(icon=>icon.slug===slug)?.Reference??Component;
+---
+<ComparisonPage title="Runtime path paint architecture proof" eyebrow="Public Motion / Isolated CSS experiment">
+  <p>This approved isolated experiment uses frozen native-effect transcripts. References now run the preceding Motion mechanisms with production data. <a href="/path-paint/">Review the complete production migration separately</a>. WindArrowDown remains entirely on Motion.</p>
+  {selected.map(({name,slug,Component}) => <ComparisonSection name={name} slug={slug}>
+    <table><thead><tr><th>Size</th><th>Public preceding Motion</th><th>{slug === "wind-arrow-down" ? "Retained Motion exception" : "Isolated CSS paint proof"}</th></tr></thead>
+    <tbody>{[14,16,24,28].map(size => <tr data-pair data-size={size}>
+      <th scope="row">{size} px</th><td>{(()=>{const Reference=referenceFor(slug,Component);return <Reference size={size} controlled data-sample />;})()}</td>
+      <td data-proof-holder data-pp-recipe={slug === "wind-arrow-down" ? undefined : JSON.stringify(encodePaint(plans[slug as keyof typeof plans]))}><Component size={size} controlled data-sample /></td>
+    </tr>)}</tbody></table>
+  </ComparisonSection>)}
+  <Fragment slot="checks"><p>The numerical script also checks independently saved pre-extraction Motion poses. Matrix and translation tolerances remain 0.005; opacity remains 0.001. The proposed absolute dash/offset tolerance is 0.005 SVG user units, with list length and sign checked. Architecture approval and visual acceptance are pending.</p>
+  <button id="parity" type="button">Compare playback and saved Motion</button><output id="parity-result"></output>
+  <button id="runtime" type="button">Check templates and cleanup</button><output id="runtime-result"></output></Fragment>
+</ComparisonPage>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { createPaintProof, type PaintProofPlan } from "../path-paint-proof/runtime";
+  import "../path-paint-proof/checks";
+  import { decodePaint } from "../path-paint-proof/codec.mjs";
+  for (const holder of document.querySelectorAll<HTMLElement>("[data-proof-holder][data-pp-recipe]")) {
+    const plan = decodePaint(JSON.parse(holder.dataset.ppRecipe!)) as PaintProofPlan;
+    const tag = "proof-path-" + plan.id;
+    if (!customElements.get(tag)) customElements.define(tag, createIconElement(createPaintProof(plan)));
+    const original = holder.querySelector<HTMLElement>("[data-sample]")!;
+    const host = document.createElement(tag);
+    for (const {name,value} of original.attributes) host.setAttribute(name,value);
+    host.setAttribute("data-pp-id", plan.id);
+    host.setAttribute("data-pp-recipe", holder.dataset.ppRecipe!);
+    host.innerHTML = original.innerHTML;
+    original.replaceWith(host);
+  }
+</script>

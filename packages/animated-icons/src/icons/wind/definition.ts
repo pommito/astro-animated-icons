@@ -1,3 +1,4 @@
-import { createWindRecipe } from "../../shared/wind";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { windPaint } from "./paint";
 
-export const windRecipe = createWindRecipe([0.2, 0, 0.4]);
+export const windRecipe = createCSSPaintRecipe(windPaint);

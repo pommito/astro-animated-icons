@@ -4,6 +4,12 @@ type Handle = HTMLElement & IconHandle;
 const samples = (root: ParentNode) => [...root.querySelectorAll<Handle>("[data-sample]")];
 await Promise.all([...new Set(samples(document).map(icon => icon.localName))].map(tag => customElements.whenDefined(tag)));
 const compareRunning = () => document.querySelector<HTMLButtonElement>("#parity")?.disabled;
+export function bindGlobalPlayback() {
+  for (const operation of ["play", "stop"]) document.querySelector("#" + operation)!.addEventListener("click", () => {
+    if (compareRunning()) return;
+    samples(document).forEach(icon => operation === "play" ? icon.startAnimation() : icon.stopAnimation());
+  });
+}
 for (const section of document.querySelectorAll<HTMLElement>("[data-kind]")) {
   section.querySelector("[data-pair-play]")!.addEventListener("click", () => {
     if (!compareRunning()) samples(section).forEach(icon => icon.startAnimation());

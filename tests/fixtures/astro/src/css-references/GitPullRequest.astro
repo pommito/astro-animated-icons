@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/git-pull-request/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-git-pull-request"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { gitPullRequestPaint } from "../../../../../packages/animated-icons/src/icons/git-pull-request/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-git-pull-request")) customElements.define("grave-reference-git-pull-request", createIconElement(precedingPaintRecipe(gitPullRequestPaint)));
+</script>

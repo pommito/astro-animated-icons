@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/chart-spline/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-chart-spline"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { chartSplinePaint } from "../../../../../packages/animated-icons/src/icons/chart-spline/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-chart-spline")) customElements.define("grave-reference-chart-spline", createIconElement(precedingPaintRecipe(chartSplinePaint)));
+</script>

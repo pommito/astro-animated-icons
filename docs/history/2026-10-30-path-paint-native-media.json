@@ -1,0 +1,17 @@
+{
+  "reduce": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "method": "Native matchMedia with DevTools reduced-motion emulation, no preference stub.",
+    "reduced": true,
+    "events": 1,
+    "icons": 88,
+    "dirty": [],
+    "blocked": true
+  },
+  "restore": {
+    "reduced": false,
+    "events": 2,
+    "icons": 88,
+    "active": 88
+  }
+}

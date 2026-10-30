@@ -1,16 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { chartSplinePaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-chart-spline">
-  <g>
-    <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-    <path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={chartSplinePaint} {...Astro.props} tag="grave-chart-spline"><Drawing /></CssPaintIcon>

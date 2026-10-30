@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/clipboard-check/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-clipboard-check"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { clipboardCheckPaint } from "../../../../../packages/animated-icons/src/icons/clipboard-check/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-clipboard-check")) customElements.define("grave-reference-clipboard-check", createIconElement(precedingPaintRecipe(clipboardCheckPaint)));
+</script>

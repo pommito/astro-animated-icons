@@ -1,3 +1,4 @@
-import { createWindRecipe } from "../../shared/wind";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { airVentPaint } from "./paint";
 
-export const airVentRecipe = createWindRecipe([0, 0.2]);
+export const airVentRecipe = createCSSPaintRecipe(airVentPaint);

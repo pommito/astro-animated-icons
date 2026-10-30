@@ -1,18 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { georgianLariPaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-georgian-lari">
-  <g>
-    <path d="M11.5 21a7.5 7.5 0 1 1 7.35-9" />
-    <path d="M4 21h16" />
-    <path d="M9 12V3" />
-    <path d="M13 12V3" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={georgianLariPaint} {...Astro.props} tag="grave-georgian-lari"><Drawing /></CssPaintIcon>

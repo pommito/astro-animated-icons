@@ -45,3 +45,13 @@ test("serialized recipe attributes preserve angle brackets and escaped selectors
   assert.deepEqual(JSON.parse(serialized), data);
   verifyRegistrations({ source: '"data-grave-cycle-recipe";' }, record("circle-help"), ["circle-help"], "group");
 });
+
+test("paint registration rejects changed compact channels and missing or unused bootstraps", () => {
+  const source = { source: '"data-grave-paint-recipe";' };
+  verifyRegistrations(source, record("eye-off"), ["eye-off"], "paint");
+  const changed = structuredClone(clientRecipes.get("eye-off").data);
+  changed[3][0][2] += 1;
+  assert.throws(() => verifyRegistrations(source, record("eye-off", changed), ["eye-off"], "paint"), /serialized recipe matches eye-off/);
+  assert.throws(() => verifyRegistrations({ source: "" }, record("eye-off"), ["eye-off"], "paint"), /registration bootstrap for eye-off/);
+  assert.throws(() => verifyRegistrations({ source: '"data-grave-cycle-recipe";"data-paint-state";' }, record("bell"), ["bell"], "paint"), /unused registration mechanism data-grave-paint-recipe/);
+});

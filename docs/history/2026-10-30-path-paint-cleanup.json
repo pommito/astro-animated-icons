@@ -1,0 +1,2911 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Synthetic template, lifecycle and matchMedia probes, not native input or OS preferences.",
+  "checks": [
+    {
+      "pass": true,
+      "context": "at-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "at-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "at-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "at-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "at-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "at-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "at-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "at-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "at-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "at-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "at-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "at-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "at-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "at-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "at-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "at-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "at-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "at-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "attach-file stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "attach-file independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "attach-file synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "attach-file restored playback"
+    },
+    {
+      "pass": true,
+      "context": "attach-file stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "attach-file independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "attach-file synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "attach-file restored playback"
+    },
+    {
+      "pass": true,
+      "context": "attach-file stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "attach-file independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "attach-file synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "attach-file restored playback"
+    },
+    {
+      "pass": true,
+      "context": "attach-file stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "attach-file independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "attach-file late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "attach-file synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "attach-file reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "attach-file restored playback"
+    },
+    {
+      "pass": true,
+      "context": "ban stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "ban independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "ban disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "ban reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "ban source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "ban late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "ban synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "ban reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "ban restored playback"
+    },
+    {
+      "pass": true,
+      "context": "ban stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "ban independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "ban disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "ban reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "ban late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "ban synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "ban reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "ban restored playback"
+    },
+    {
+      "pass": true,
+      "context": "ban stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "ban independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "ban disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "ban reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "ban late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "ban synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "ban reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "ban restored playback"
+    },
+    {
+      "pass": true,
+      "context": "ban stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "ban independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "ban disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "ban reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "ban late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "ban synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "ban reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "ban restored playback"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected restored playback"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected restored playback"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected restored playback"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "bluetooth-connected restored playback"
+    },
+    {
+      "pass": true,
+      "context": "droplet stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "droplet independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "droplet reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "droplet synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "droplet reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "droplet restored playback"
+    },
+    {
+      "pass": true,
+      "context": "droplet stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "droplet independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "droplet reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "droplet synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "droplet reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "droplet restored playback"
+    },
+    {
+      "pass": true,
+      "context": "droplet stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "droplet independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "droplet reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "droplet synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "droplet reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "droplet restored playback"
+    },
+    {
+      "pass": true,
+      "context": "droplet stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "droplet independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "droplet reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "droplet late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "droplet synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "droplet reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "droplet restored playback"
+    },
+    {
+      "pass": true,
+      "context": "eye-off stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "eye-off independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "eye-off synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "eye-off restored playback"
+    },
+    {
+      "pass": true,
+      "context": "eye-off stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "eye-off independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "eye-off synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "eye-off restored playback"
+    },
+    {
+      "pass": true,
+      "context": "eye-off stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "eye-off independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "eye-off synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "eye-off restored playback"
+    },
+    {
+      "pass": true,
+      "context": "eye-off stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "eye-off independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "eye-off late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "eye-off synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "eye-off reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "eye-off restored playback"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line restored playback"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line restored playback"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line restored playback"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "file-chart-line restored playback"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint restored playback"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint restored playback"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint restored playback"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "fingerprint restored playback"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree restored playback"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree restored playback"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree restored playback"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "folder-tree restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-compare-arrows restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "git-pull-request-closed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-dashed restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-euro restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt restored playback"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "circle-dollar-sign restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "message-circle-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text restored playback"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "receipt-text restored playback"
+    },
+    {
+      "pass": true,
+      "context": "route stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "route independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "route disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "route reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "route source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "route late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "route synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "route reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "route restored playback"
+    },
+    {
+      "pass": true,
+      "context": "route stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "route independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "route disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "route reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "route late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "route synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "route reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "route restored playback"
+    },
+    {
+      "pass": true,
+      "context": "route stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "route independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "route disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "route reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "route late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "route synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "route reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "route restored playback"
+    },
+    {
+      "pass": true,
+      "context": "route stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "route independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "route disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "route reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "route late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "route synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "route reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "route restored playback"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera restored playback"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera restored playback"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera restored playback"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "switch-camera restored playback"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "user-round-plus restored playback"
+    },
+    {
+      "pass": true,
+      "context": "wind stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "wind independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "wind disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "wind reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "wind source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "wind late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "wind synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "wind reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "wind restored playback"
+    },
+    {
+      "pass": true,
+      "context": "wind stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "wind independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "wind disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "wind reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "wind late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "wind synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "wind reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "wind restored playback"
+    },
+    {
+      "pass": true,
+      "context": "wind stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "wind independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "wind disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "wind reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "wind late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "wind synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "wind reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "wind restored playback"
+    },
+    {
+      "pass": true,
+      "context": "wind stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "wind independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "wind disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "wind reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "wind late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "wind synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "wind reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "wind restored playback"
+    },
+    {
+      "pass": true,
+      "context": "x stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "x independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "x disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "x reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "x source-removed clone before registration plays"
+    },
+    {
+      "pass": true,
+      "context": "x late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "x synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "x reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "x restored playback"
+    },
+    {
+      "pass": true,
+      "context": "x stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "x independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "x disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "x reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "x late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "x synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "x reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "x restored playback"
+    },
+    {
+      "pass": true,
+      "context": "x stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "x independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "x disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "x reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "x late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "x synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "x reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "x restored playback"
+    },
+    {
+      "pass": true,
+      "context": "x stylesheet recovery"
+    },
+    {
+      "pass": true,
+      "context": "x independent template clone plays"
+    },
+    {
+      "pass": true,
+      "context": "x disconnect clears variables and paint"
+    },
+    {
+      "pass": true,
+      "context": "x reconnect plays"
+    },
+    {
+      "pass": true,
+      "context": "x late sheets reconcile"
+    },
+    {
+      "pass": true,
+      "context": "x synthetic reduced motion cleans"
+    },
+    {
+      "pass": true,
+      "context": "x reduced playback stays static"
+    },
+    {
+      "pass": true,
+      "context": "x restored playback"
+    }
+  ],
+  "failures": []
+}

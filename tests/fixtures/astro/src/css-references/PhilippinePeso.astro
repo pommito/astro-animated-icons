@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/philippine-peso/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-philippine-peso"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { philippinePesoPaint } from "../../../../../packages/animated-icons/src/icons/philippine-peso/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-philippine-peso")) customElements.define("grave-reference-philippine-peso", createIconElement(precedingPaintRecipe(philippinePesoPaint)));
+</script>

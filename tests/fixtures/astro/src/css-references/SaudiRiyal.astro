@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/saudi-riyal/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-saudi-riyal"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { saudiRiyalPaint } from "../../../../../packages/animated-icons/src/icons/saudi-riyal/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-saudi-riyal")) customElements.define("grave-reference-saudi-riyal", createIconElement(precedingPaintRecipe(saudiRiyalPaint)));
+</script>

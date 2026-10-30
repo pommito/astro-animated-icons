@@ -1,7 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { workflowPaint } from "./paint";
 
-export const workflowRecipe = createStaggeredRevealRecipe([
-  { child: 1, delay: 0, opacityDelay: 0.15, preservePose: true },
-  { child: 2, delay: 0.3, opacityDelay: 0.15, preservePose: true },
-  { child: 3, delay: 0, opacityDelay: 0.15, preservePose: true },
-]);
+export const workflowRecipe = createCSSPaintRecipe(workflowPaint);

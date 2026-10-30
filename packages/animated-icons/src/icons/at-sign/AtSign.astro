@@ -1,14 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-import { atSignPath } from "./definition";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { atSignPaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-at-sign">
-  <g><circle cx="12" cy="12" r="4" /><path d={atSignPath} /></g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={atSignPaint} {...Astro.props} tag="grave-at-sign"><Drawing /></CssPaintIcon>

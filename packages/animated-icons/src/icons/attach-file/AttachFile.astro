@@ -1,14 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-import { attachFilePath } from "./definition";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { attachFilePaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-attach-file">
-  <g><path d={attachFilePath} /></g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={attachFilePaint} {...Astro.props} tag="grave-attach-file"><Drawing /></CssPaintIcon>

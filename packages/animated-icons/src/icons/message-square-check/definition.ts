@@ -1,3 +1,4 @@
-import { createSymbolRevealRecipe } from "../../shared/symbol-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { messageSquareCheckPaint } from "./paint";
 
-export const messageSquareCheckRecipe = createSymbolRevealRecipe(1);
+export const messageSquareCheckRecipe = createCSSPaintRecipe(messageSquareCheckPaint);

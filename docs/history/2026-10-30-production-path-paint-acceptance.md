@@ -1,0 +1,13 @@
+# Production measured paint visual acceptance
+
+The owner visually accepted all 88 migrated paint icons in this implementation chat on 2026-10-30 after reviewing `/path-paint/`. The accepted implementation was `f213a32968c3e56e8061c2cadc734799d957393f`, delivered in [PR #104](https://github.com/pommito/astro-animated-icons/pull/104) for [issue #103](https://github.com/pommito/astro-animated-icons/issues/103). The owner explicitly authorized merging #104 and closing #103, while keeping #81 and #105 open.
+
+The accepted set contains all 30 runtime-path-reveal, 23 staggered-path-reveal, 21 currency-path-reveal, 12 symbol-path-reveal and two compatible wind-path-reveal recipes. The [immutable original scope](../../tests/helpers/path-paint-scope.json) names its members. Exclude WindArrowDown from that original 89-candidate list. WindArrowDown retains its complete Motion implementation and its sampled-translation blocker in [#105](https://github.com/pommito/astro-animated-icons/issues/105).
+
+The preview paired the public CSS icons with fixture-only preceding local Motion references at 14, 16, 24 and 28 px. References shared recipe data and drawings, while independent pre-extraction captures checked the extracted behavior. Paired and global play/stop controls supported the review. The references did not execute upstream React components.
+
+This acceptance covers the complete 88-icon production set. It adds no browser or hardware coverage and approves no other recipe or capability. The other 107 capability candidates and original 242 Motion retentions preserve their outcomes. [#81](https://github.com/pommito/astro-animated-icons/issues/81) continues the remaining catalogue work.
+
+The [implementation report](2026-10-30-production-path-paint.md) preserves numerical comparisons, geometry and cleanup checks, loading costs, independent reviews and platform limits. Its source, browser and loading JSON remains unchanged. Pinned inventory review notes and the report preserve their pre-acceptance execution state; this record supplies the subsequent owner decision.
+
+The acceptance update changes documentation and the fixture's acceptance message. Production recipe, mechanism and drawing sources remain unchanged from the accepted revision. The acceptance update passed `rtk pnpm validate` on 2026-10-30 in 175.901 seconds with all 108 Node tests, 470 drawings, 944 bundle cases and 120 CSS recipes across 132 compositions. The strict inventory still has 120 migrated, zero deferred, 107 capability candidates, 243 Motion retentions and zero unresolved reviews. A link check found all 100 local documentation targets. No browser probes or payload measurements were repeated for this acceptance-only update.

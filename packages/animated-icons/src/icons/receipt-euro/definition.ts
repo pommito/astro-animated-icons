@@ -1,3 +1,4 @@
-import { createCurrencyReceiptRecipe } from "../../shared/currency-receipt";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { receiptEuroPaint } from "./paint";
 
-export const receiptEuroRecipe = createCurrencyReceiptRecipe([1], [3]);
+export const receiptEuroRecipe = createCSSPaintRecipe(receiptEuroPaint);

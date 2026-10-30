@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/receipt-japanese-yen/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-receipt-japanese-yen"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { receiptJapaneseYenPaint } from "../../../../../packages/animated-icons/src/icons/receipt-japanese-yen/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-receipt-japanese-yen")) customElements.define("grave-reference-receipt-japanese-yen", createIconElement(precedingPaintRecipe(receiptJapaneseYenPaint)));
+</script>

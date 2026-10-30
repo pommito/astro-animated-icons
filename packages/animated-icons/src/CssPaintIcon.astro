@@ -1,0 +1,16 @@
+---
+import Icon, { type IconProps } from "./Icon.astro";
+import type { PaintRecipe } from "./shared/paint-recipe";
+import { paintCSS } from "./shared/paint-css";
+import { encodePaint } from "./shared/paint-data";
+import { serializeRecipe } from "./shared/recipe-data";
+interface Props extends IconProps { paint: PaintRecipe; tag: `grave-${string}`; }
+const { paint, tag, ...props } = Astro.props;
+const locals = Astro.locals as { cssPaintSheets?: Set<string> };
+const seen = locals.cssPaintSheets ??= new Set<string>();
+const include = !seen.has(paint.id);
+seen.add(paint.id);
+---
+{include && <style is:inline data-grave-cycle-style={paint.id} set:html={paintCSS(paint)} />}
+<Icon {...props} tag={tag} data-css-paint={paint.id} data-grave-paint-recipe={serializeRecipe(encodePaint(paint))}><slot /></Icon>
+<script>import "./shared/register-css-paint";</script>

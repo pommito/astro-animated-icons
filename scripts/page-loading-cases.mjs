@@ -1,15 +1,25 @@
 import migration from "../tests/helpers/css-migration-cases.json" with { type: "json" };
+import paintScope from "../tests/helpers/path-paint-scope.json" with { type: "json" };
 const all = migration.icons.map(icon => icon.slug);
 const ten = ["bell", "chevron-right", "folder-down", "calendar-days", "circle-dashed", "folder", "circle-help", "chevron-down", "folder-up", "square-chevron-right"];
 export const supportedSix = ["disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"];
 const combined = ["key-square", "wallet", "key-circle"];
+export const pathPaintFamilies = Object.fromEntries([...new Set(paintScope.map(icon=>icon.family))].map(family=>[family,paintScope.filter(icon=>icon.family===family).map(icon=>icon.slug)]));
+const pathPaint = Object.values(pathPaintFamilies).flat();
+const compositions = (name, slugs) => [
+  [name, slugs],
+  [name + "-repeated", Array.from({ length: 20 }, () => slugs).flat()],
+  [name + "-css", [...slugs, "bell", "circle-dashed", "user-round-cog"]],
+  [name + "-loader", [...slugs, "loader-circle"]],
+  [name + "-css-loader", [...slugs, "bell", "circle-dashed", "user-round-cog", "loader-circle"]],
+];
 
 export const loadingCases = {
   one: ["circle-dashed"],
   four: migration.cases.interface,
   ten,
-  "legacy-21": all.filter(slug => !["folder", "user-round-cog", ...combined, ...supportedSix].includes(slug)),
-  "legacy-23": all.filter(slug => ![...combined, ...supportedSix].includes(slug)),
+  "legacy-21": all.filter(slug => !pathPaint.includes(slug) && !["folder", "user-round-cog", ...combined, ...supportedSix].includes(slug)),
+  "legacy-23": all.filter(slug => !pathPaint.includes(slug) && ![...combined, ...supportedSix].includes(slug)),
   all,
   repeated: Array(20).fill("circle-dashed"),
   "repeated-all": all.flatMap(slug => [slug, slug, slug]),
@@ -24,6 +34,8 @@ export const loadingCases = {
   "cog-css": ["user-round-cog", "bell", "circle-dashed"],
   "cog-loader": ["user-round-cog", "loader-circle"],
   "cog-css-loader": ["user-round-cog", "bell", "circle-dashed", "loader-circle"],
+  ...Object.fromEntries([...Object.entries(pathPaintFamilies), ["path-paint", pathPaint], ...pathPaint.map(slug => ["paint-" + slug, [slug]])]
+    .flatMap(([name, slugs]) => compositions(name, slugs))),
   ...Object.fromEntries([...[...combined, ...supportedSix].map(slug => [slug, [slug]]), ["combined", combined], ["supported-six", supportedSix]].flatMap(([name, slugs]) => [
     [name, slugs],
     [name + "-repeated", Array.from({ length: 20 }, () => slugs).flat()],
@@ -34,6 +46,7 @@ export const loadingCases = {
 };
 
 export const loadingIcons = [...new Map([...migration.icons,
+  ...pathPaint.map(slug => ({ slug, name: slug.split("-").map(part => part[0].toUpperCase() + part.slice(1)).join("") })),
   { slug: "disc-3", name: "Disc3" },
   { slug: "panel-left-close", name: "PanelLeftClose" },
   { slug: "panel-left-open", name: "PanelLeftOpen" },

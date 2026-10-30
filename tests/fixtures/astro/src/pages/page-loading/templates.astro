@@ -1,10 +1,11 @@
 ---
 import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness, TreePine } from "@grave/animated-icons/astro";
+import { pathPaint } from "../../path-paint-catalogue";
 ---
 <html lang="en"><head><meta charset="utf-8" /><title>Recipe registration templates</title></head><body>
   <h1>Recipe registration templates</h1>
   <p>The original template is removed before registration. Independent host clones keep their recipe data and recover their styles.</p>
-  <template id="source"><Bell controlled /><CircleDashed controlled /><UserRoundCog controlled /><KeySquare controlled /><Wallet controlled /><KeyCircle controlled /><Disc3 controlled /><PanelLeftClose controlled /><PanelLeftOpen controlled /><PanelRightOpen controlled /><BriefcaseBusiness controlled /><TreePine controlled /></template>
+  <template id="source"><Bell controlled /><CircleDashed controlled /><UserRoundCog controlled /><KeySquare controlled /><Wallet controlled /><KeyCircle controlled /><Disc3 controlled /><PanelLeftClose controlled /><PanelLeftOpen controlled /><PanelRightOpen controlled /><BriefcaseBusiness controlled /><TreePine controlled />{pathPaint.map(({Managed})=><Managed controlled />)}</template>
   <section id="early"></section>
   <script is:inline>
     window.loadingSource = document.querySelector("#source");
@@ -21,9 +22,15 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, 
   // Load registration outside the removed template to isolate recipe-data recovery.
   import "../../../../../../packages/animated-icons/src/shared/register-css-cycle";
   import "../../../../../../packages/animated-icons/src/shared/register-css-opacity";
+  import "../../../../../../packages/animated-icons/src/shared/register-css-paint";
   type Handle = HTMLElement & IconHandle;
   declare global { interface Window { loadingSource: HTMLTemplateElement } }
-  await Promise.all(["grave-bell", "grave-circle-dashed", "grave-user-round-cog", "grave-key-square", "grave-wallet", "grave-key-circle", "grave-disc-3", "grave-panel-left-close", "grave-panel-left-open", "grave-panel-right-open", "grave-briefcase-business", "grave-tree-pine"].map(tag => customElements.whenDefined(tag)));
+  const slugs=[...window.loadingSource.content.querySelectorAll("[data-grave-icon]")].map(icon=>icon.localName.slice(6));
+  await Promise.all(slugs.map(slug=>customElements.whenDefined("grave-"+slug)));
+  const countFor=(icon:HTMLElement,returning=false)=>{
+    const record=icon.getAttribute("data-grave-paint-recipe");
+    return record?JSON.parse(record)[returning?4:3].length:icon.localName==="grave-circle-dashed"?8:1;
+  };
   let sequence = 0;
   document.querySelector("#check-loading")!.addEventListener("click", () => {
     const results: Record<string, boolean> = {
@@ -36,11 +43,11 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, 
     late.append(...[...window.loadingSource.content.querySelectorAll("[data-grave-icon]")].map(icon => icon.cloneNode(true)));
     for (const [location, parent] of [["early", document.querySelector("#early")!], ["late", late]] as const) {
       for (const icon of parent.querySelectorAll<Handle>("[data-grave-icon]")) {
-        const count = icon.localName === "grave-circle-dashed" ? 8 : 1;
+        const count = countFor(icon);
         icon.startAnimation();
         results[location + "/" + icon.localName + "/entry"] = icon.getAnimations({ subtree: true }).length === count;
         icon.stopAnimation();
-        results[location + "/" + icon.localName + "/return"] = icon.getAnimations({ subtree: true }).length === count;
+        results[location + "/" + icon.localName + "/return"] = icon.getAnimations({ subtree: true }).length === countFor(icon,true);
         icon.remove();
         results[location + "/" + icon.localName + "/disconnect"] = icon.getAnimations({ subtree: true }).length === 0;
         parent.append(icon);
@@ -51,7 +58,7 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, 
     }
     const tag = "grave-loading-probe-" + ++sequence;
     const probe = document.createElement(tag) as Handle;
-    const bell = document.querySelector<Handle>("#early grave-bell")!;
+    const bell = document.querySelector<Handle>("#early [data-grave-paint-recipe]")!;
     for (const attribute of bell.attributes) probe.setAttribute(attribute.name, attribute.value);
     probe.append(bell.querySelector("svg")!.cloneNode(true));
     const outer = document.createElement("template");
@@ -64,11 +71,13 @@ import { Bell, CircleDashed, UserRoundCog, KeySquare, Wallet, KeyCircle, Disc3, 
     results.nestedTemplateRegistered = !!customElements.get(tag);
     document.body.append(probe);
     probe.startAnimation();
-    results.nestedClonePlayback = probe.getAnimations({ subtree: true }).length === 1;
+    results.nestedClonePlayback = probe.getAnimations({ subtree: true }).length === countFor(probe);
     probe.remove(); outer.remove(); late.remove();
-    for (const id of ["bell", "circle-dashed", "user-round-cog", "key-square", "wallet", "key-circle", "disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"]) {
+    const mounted=document.createElement("section");document.body.append(mounted);mounted.append(window.loadingSource.content.cloneNode(true));
+    for (const id of slugs) {
       results[id + "/oneActiveSheet"] = document.querySelectorAll('style[data-grave-cycle-style="' + id + '"]').length === 1;
     }
+    mounted.remove();
     document.querySelector("#loading-result")!.textContent = JSON.stringify({ userAgent: navigator.userAgent, results, failures: Object.keys(results).filter(key => !results[key]) });
   });
 </script>

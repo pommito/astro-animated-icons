@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/git-commit-horizontal/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-git-commit-horizontal"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { gitCommitHorizontalPaint } from "../../../../../packages/animated-icons/src/icons/git-commit-horizontal/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-git-commit-horizontal")) customElements.define("grave-reference-git-commit-horizontal", createIconElement(precedingPaintRecipe(gitCommitHorizontalPaint)));
+</script>

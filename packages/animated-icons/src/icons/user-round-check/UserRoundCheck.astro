@@ -1,17 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { userRoundCheckPaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-user-round-check">
-  <g>
-    <path d="M2 21a8 8 0 0 1 13.292-6" />
-    <circle cx="10" cy="8" r="5" />
-    <path d="m16 19 2 2 4-4" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={userRoundCheckPaint} {...Astro.props} tag="grave-user-round-check"><Drawing /></CssPaintIcon>
