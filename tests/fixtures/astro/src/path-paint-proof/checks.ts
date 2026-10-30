@@ -2,6 +2,7 @@ import { capture } from "./capture.mjs";
 import { createPaintProof, type PaintProofPlan } from "./runtime";
 import { decodePaint } from "./codec.mjs";
 import { paintDelta, poseCoverage } from "./comparison.mjs";
+import { bindGlobalPlayback } from "../comparison-controls";
 import { createIconElement, type IconHandle } from "../../../../../packages/animated-icons/src/element";
 
 type Handle = HTMLElement & IconHandle;
@@ -86,6 +87,7 @@ export async function checkPaintCleanup() {
 }
 
 Object.assign(window,{comparePaintProof,checkPaintCleanup});
+bindGlobalPlayback();
 for(const [buttonId,run] of [["parity",comparePaintProof],["runtime",checkPaintCleanup]] as const) {
   document.getElementById(buttonId)!.addEventListener("click",async()=>{
     const button=document.getElementById(buttonId) as HTMLButtonElement;
