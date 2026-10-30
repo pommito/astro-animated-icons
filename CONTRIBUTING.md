@@ -41,6 +41,8 @@ Pin the upstream recipe revision used for the adaptation. Provide a comparison f
 
 For finite combined transforms, follow [ADR 0001](docs/adr/0001-combined-finite-transforms.md). Keep ordered channels and independent offsets in `cycle.ts`, and use the same CSS wrapper and registration entry. Capture the preceding Motion behavior before extraction. Shared imports do not prove that another recipe fits this capability; resolve its timing, origins, interruption, and return first.
 
+For finite measured paint, follow [ADR 0002](docs/adr/0002-runtime-path-paint.md). Keep one readable `paint.ts` with measured dash coefficients, signed offset and opacity channels. Use `CssPaintIcon.astro` and the shared paint registration entry. Capture preceding Motion behavior before extraction, and preserve per-property timing, phase-specific geometry and the target replay policy. The compact codec is delivery data, not a second authoring format. WindArrowDown retains Motion until its separate composition blocker in #105 is resolved.
+
 Run `pnpm validate` after adding an icon. The user reviews its rendering and animation in the comparison fixture.
 
 Update the README when the common API or setup changes. Keep icon-specific details with the affected recipe, tests, and attribution.
