@@ -1,0 +1,17 @@
+---
+import * as icons from "@grave/animated-icons/astro";
+import decisions from "../../../../../scripts/animation-decisions.json";
+import families from "../../../../../scripts/animation-families.json";
+const scoped = Object.entries(decisions).filter(([, record]) => families[record.family as keyof typeof families].capability === "runtime-path-paint");
+const exports = import.meta.glob("../../../../../packages/animated-icons/src/icons/*/*.astro", { eager: true });
+const catalogue = scoped.map(([slug]) => {
+  const file = Object.keys(exports).find(path => path.includes(`/icons/${slug}/`) && !path.endsWith("/Drawing.astro"))!;
+  const name = file.split("/").at(-1)!.replace(".astro", "");
+  return { slug, name, Component: icons[name as keyof typeof icons] };
+});
+---
+<html lang="en"><head><meta charset="utf-8" /><title>Pre-extraction path paint Motion baseline</title></head><body>
+<h1>Pre-extraction path paint Motion baseline</h1>
+<p>Public production components. No shared-data extraction or CSS engine substitution.</p>
+{catalogue.map(({slug,name,Component}) => <section data-kind={slug}><h2>{name}</h2>{[14,16,24,28].map(size => <div data-size={size}><Component size={size} controlled data-sample /></div>)}</section>)}
+</body></html>

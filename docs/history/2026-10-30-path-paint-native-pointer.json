@@ -1,0 +1,66 @@
+{
+  "scope": "Native Chrome mouse on the 14 px AtSign comparison row, after the compact proof comparisons.",
+  "hover": {
+    "events": [
+      {
+        "type": "pointerenter",
+        "pointerType": "mouse",
+        "trusted": true
+      }
+    ],
+    "held": [
+      {
+        "tag": "grave-at-sign",
+        "tracks": 0,
+        "dash": [
+          "24.4917px, 24.4917px",
+          "68.9879px, 68.9879px"
+        ],
+        "state": null
+      },
+      {
+        "tag": "proof-path-at-sign",
+        "tracks": 0,
+        "dash": [
+          "24.4917px, 24.4917px",
+          "68.9879px, 68.9879px"
+        ],
+        "state": "entry"
+      }
+    ]
+  },
+  "leave": {
+    "events": [
+      {
+        "type": "pointerenter",
+        "pointerType": "mouse",
+        "trusted": true
+      },
+      {
+        "type": "pointerleave",
+        "pointerType": "mouse",
+        "trusted": true
+      }
+    ],
+    "returned": [
+      {
+        "tag": "grave-at-sign",
+        "tracks": 0,
+        "dash": [
+          "",
+          ""
+        ],
+        "state": null
+      },
+      {
+        "tag": "proof-path-at-sign",
+        "tracks": 0,
+        "dash": [
+          "",
+          ""
+        ],
+        "state": null
+      }
+    ]
+  }
+}

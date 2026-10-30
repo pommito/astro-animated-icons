@@ -19,7 +19,7 @@ const fixtureRequire = createRequire(join(fixture, "package.json"));
 const astroPackage = fixtureRequire.resolve("astro/package.json");
 const astroCLI = join(dirname(astroPackage), JSON.parse(readFileSync(astroPackage, "utf8")).bin.astro);
 
-function build(cwd, config) {
+export function build(cwd, config) {
   return new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [astroCLI, "build", "--config", relative(cwd, config)], {
       cwd, stdio: "inherit", env: { ...process.env, NODE_ENV: "production" },

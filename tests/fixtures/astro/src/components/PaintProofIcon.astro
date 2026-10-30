@@ -1,0 +1,25 @@
+---
+import { experimental_AstroContainer as AstroContainer } from "astro/container";
+import * as icons from "@grave/animated-icons/astro";
+import plans from "../../../../helpers/path-paint-proof-plans.json";
+import { paintCSS } from "../path-paint-proof/compiler.mjs";
+import { encodePaint } from "../path-paint-proof/codec.mjs";
+import { serializeRecipe } from "../../../../../packages/animated-icons/src/shared/recipe-data";
+interface Props { slug: keyof typeof plans; size?: number; }
+const { slug, size = 28 } = Astro.props;
+const name = slug.split("-").map(part => part[0].toUpperCase() + part.slice(1)).join("");
+const container = await AstroContainer.create();
+const rendered = await container.renderToString(icons[name as keyof typeof icons], { props: { size } });
+const drawing = rendered.match(/<svg\b[\s\S]*?<\/svg>/)?.[0];
+if (!drawing) throw Error("Missing source drawing: " + slug);
+const plan = plans[slug];
+const Tag = "proof-path-" + slug;
+const local = Astro.locals as { pathPaintProofSheets?: Set<string> };
+const sheets = local.pathPaintProofSheets ??= new Set();
+const css = sheets.has(slug) ? undefined : paintCSS(plan);
+const wire = process.env.PATH_PAINT_VERBOSE === "1" ? plan : encodePaint(plan);
+sheets.add(slug);
+---
+{css && <style is:inline data-grave-cycle-style={"proof-paint-" + slug} set:html={css} />}
+<Tag data-grave-icon data-pp-id={slug} data-pp-recipe={serializeRecipe(wire)}><Fragment set:html={drawing} /></Tag>
+<script>import "../path-paint-proof/register";</script>
