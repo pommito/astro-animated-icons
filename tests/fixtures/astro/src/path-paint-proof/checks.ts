@@ -1,7 +1,7 @@
 import { capture } from "./capture.mjs";
 import { createPaintProof, type PaintProofPlan } from "./runtime";
 import { decodePaint } from "./codec.mjs";
-import { paintDelta } from "./comparison.mjs";
+import { paintDelta, poseCoverage } from "./comparison.mjs";
 import { createIconElement, type IconHandle } from "../../../../../packages/animated-icons/src/element";
 
 type Handle = HTMLElement & IconHandle;
@@ -13,7 +13,8 @@ export async function comparePaintProof() {
   const baseline = await (await fetch("/path-paint-evidence.json")).json();
   const actual = await capture();
   const expected = new Map(baseline.poses.map((pose: any) => [[pose.slug,pose.size,pose.scenario,pose.time].join("/"),pose]));
-  const failures: unknown[] = [...actual.failures];
+  const coverage=poseCoverage(actual.poses,baseline.poses);
+  const failures: unknown[] = [...actual.failures,...coverage.failures];
   const maximum = { dash: 0, offset: 0, opacity: 0, matrix: 0 };
   let compared = 0;
   for (const pose of actual.poses) {
@@ -32,7 +33,7 @@ export async function comparePaintProof() {
     });
   }
   return { userAgent: navigator.userAgent, method: "Isolated CSS paint against independent saved public Motion poses; manual API, native timeline seeking and synthetic lifecycle. WindArrowDown is a retained Motion control, not a paint migration.",
-    tolerances: { dash:.005,offset:.005,opacity:.001,matrix:.005 }, poses:actual.poses.length, shapes:compared, maximum, checks:actual.checks, failureCount:failures.length, failures:failures.slice(0,100) };
+    tolerances: { dash:.005,offset:.005,opacity:.001,matrix:.005 }, coverage:coverage.counts, poses:actual.poses.length, shapes:compared, maximum, checks:actual.checks, failureCount:failures.length, failures:failures.slice(0,100) };
 }
 
 export async function checkPaintCleanup() {

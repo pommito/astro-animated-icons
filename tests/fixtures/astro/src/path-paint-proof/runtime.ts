@@ -52,7 +52,7 @@ export function createPaintProof(plan: PaintProofPlan): IconRecipe {
         const resume = returning || capture.resume;
         let value = resume ? capture.style[property] : channel.property === "opacity" ? String(first)
           : (first as number[]).map(coefficient => coefficient * capture.length + "px").join(" ");
-        if (value === "none" && plan.id === "receipt-text") value = `${capture.length}px ${capture.length}px`;
+        if (value === "none" && plan.replay === "current") value = `${capture.length}px ${capture.length}px`;
         capture.shape.style.setProperty("--pp-from-" + index, value);
         capture.shape.style.removeProperty(cssProperty(channel.property));
       });

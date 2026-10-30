@@ -9,3 +9,20 @@ export function paintDelta(property, actual, expected) {
   const a=[actual].flat(), b=[expected].flat();
   return a.length === b.length ? Math.max(0,...a.map((value,index)=>Math.abs(value-b[index]))) : Infinity;
 }
+
+export function poseCoverage(actual, expected) {
+  const count = poses => {
+    const records = new Map();
+    for (const pose of poses) {
+      const key = [pose.slug,pose.size,pose.scenario,pose.time].join("/");
+      records.set(key,(records.get(key) ?? 0) + 1);
+    }
+    return records;
+  };
+  const observed=count(actual), required=count(expected);
+  const failures=[];
+  for (const key of new Set([...required.keys(),...observed.keys()])) {
+    if (required.get(key) !== observed.get(key)) failures.push({key,reason:"pose coverage mismatch",expected:required.get(key) ?? 0,actual:observed.get(key) ?? 0});
+  }
+  return {failures,counts:{expected:expected.length,actual:actual.length,expectedUnique:required.size,actualUnique:observed.size}};
+}
