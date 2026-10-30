@@ -102,3 +102,7 @@ Independent Spec review found zero actionable issues. Its targeted re-review con
 ## Owner acceptance
 
 The complete migrated set awaits owner visual acceptance at /supported-six/. Neither the targeted pre-merge Motion inspection for PR #101 nor earlier approvals of UserRoundCog, KeySquare, Wallet and KeyCircle approve these CSS migrations. Leave the animation PR in draft, merge pending and #99 open until the owner accepts all six. #81 continues to coordinate the remaining specified capabilities and concrete Motion retentions.
+
+## Subsequent owner acceptance
+
+The owner visually accepted the complete six-icon migrated set on 2026-10-30 at `30b07aac9d24a056d57df17fabd69a8abd5c46ea` on /supported-six/. The [acceptance record](2026-10-30-supported-six-acceptance.md) supplies the decision after this report's pre-acceptance checks. Existing numerical and payload evidence remains unchanged.

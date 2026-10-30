@@ -3664,7 +3664,7 @@
           ]
         }
       ],
-      "review": "The SVG rotates through [0, 4, -3, 2, 0] degrees over 0.9 seconds with easeInOut and quarter offsets. Return is explicitly timed at 0.3 seconds with easeOut. The origin remains 12px 4px. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose and temporary origin. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The SVG rotates through [0, 4, -3, 2, 0] degrees over 0.9 seconds with easeInOut and quarter offsets. Return is explicitly timed at 0.3 seconds with easeOut. The origin remains 12px 4px. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose and temporary origin. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "briefcase-business",
         "target": "svg",
@@ -3681,7 +3681,7 @@
       }
     },
     "sourceHash": "faad9237a0d1ff1807efc98cce153773275129d860fdd893a637a875e3ea3e9c",
-    "familyHash": "4b18380433fb4c345c9dfb05d5ba698f2a7b85ce71145686df2f3577592ab1db"
+    "familyHash": "3fdc64cb4e1c8b851a497056c2a08e6c6f8a5446012cf955c9a8fd439bb1d30a"
   },
   "calendar-check": {
     "family": "runtime-path-reveal",
@@ -7371,7 +7371,7 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 rotates to 90 degrees over 0.4 seconds with easeInOut. Return uses the same timing to zero, and scalar replay starts from the retained pose. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes group pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The existing motion target 0 rotates to 90 degrees over 0.4 seconds with easeInOut. Return uses the same timing to zero, and scalar replay starts from the retained pose. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes group pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "disc-3",
         "target": "[data-motion=\"0\"]",
@@ -7385,7 +7385,7 @@
       }
     },
     "sourceHash": "b51016bdc6fb272c10dbb3a568a059466fa914ea832e911ff2660ea131195698",
-    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
+    "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "discord": {
     "family": "parts-finite-transform",
@@ -13700,7 +13700,7 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "panel-left-close",
         "target": "[data-motion=\"0\"]",
@@ -13714,7 +13714,7 @@
       }
     },
     "sourceHash": "5c47750e26c9f2ea83cde7f4f60e4320c6e652e0b6bf1c49075a4e920558fae9",
-    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
+    "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "panel-left-open": {
     "family": "finite-group-cycle",
@@ -13735,7 +13735,7 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "panel-left-open",
         "target": "[data-motion=\"0\"]",
@@ -13749,7 +13749,7 @@
       }
     },
     "sourceHash": "6fde3efc3ae5f9a417e27cfcff0f42f2fb071edbb0cebe50f779dd2b6b0d987b",
-    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
+    "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "panel-right-open": {
     "family": "finite-group-cycle",
@@ -13770,7 +13770,7 @@
           ]
         }
       ],
-      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The existing motion target 0 translates on X through [current, signed 1.5, 0] px, with the sign recorded in construction. Entry takes 0.5 seconds with easeOut and offsets [0, 0.4, 1]. Return uses the same duration and easing to zero. There are no property overrides, delays, repeats or springs. Entry holds. The drawing retains its origin. Clear deletes target pose state. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "panel-right-open",
         "target": "[data-motion=\"0\"]",
@@ -13784,7 +13784,7 @@
       }
     },
     "sourceHash": "e03fdc6d905bd9d57a8e971ebeca1f9979b741e2fd0543ffdba6eba27285f4b7",
-    "familyHash": "4baddca001af330b1de01ba686adbf1671bdb2d95a0106a0f889eee31c6243f5"
+    "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "party-popper": {
     "family": "parts-springs",
@@ -18767,7 +18767,7 @@
           ]
         }
       ],
-      "review": "The SVG rotates through [0, -10, 10, -10, 0] degrees over 0.5 seconds with easeInOut. The part transition also explicitly times return at 0.5 seconds. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. Owner visual acceptance remains pending.",
+      "review": "The SVG rotates through [0, -10, 10, -10, 0] degrees over 0.5 seconds with easeInOut. The part transition also explicitly times return at 0.5 seconds. Entry ends at zero and holds, so completed replay and current-pose replay agree. No normal-pose spring branch executes. Clear removes the SVG pose. Production now uses cycle.ts through CssIcon.astro, the existing finite CSS adapter, shared registration and serialized recipe data. The saved pre-extraction source and browser poses in docs/history/2026-10-29-supported-six-*-before.json independently check extraction. The owner visually accepted this recipe on 2026-10-30; see docs/history/2026-10-30-supported-six-acceptance.md.",
       "cycle": {
         "id": "tree-pine",
         "target": "svg",
@@ -18781,7 +18781,7 @@
       }
     },
     "sourceHash": "d3299061d845df67e6d10286b95008e812555817e835db7f17ac4608838e6605",
-    "familyHash": "4b18380433fb4c345c9dfb05d5ba698f2a7b85ce71145686df2f3577592ab1db"
+    "familyHash": "3fdc64cb4e1c8b851a497056c2a08e6c6f8a5446012cf955c9a8fd439bb1d30a"
   },
   "trending-down": {
     "family": "continued-samplers",

@@ -34,7 +34,7 @@
     "status": "supported",
     "capability": "finite-transform-cycle",
     "reason": "Production uses the existing single-property CSS cycle after source review of the preceding Motion playback.",
-    "followUp": "#99: complete browser and payload evidence; owner visual acceptance is required before merging the six-icon batch.",
+    "followUp": "#81: preserve the six-icon batch accepted on 2026-10-30; review later source drift before another rollout.",
     "contract": {
       "preceding": "shared/group-transform.ts -> shared/svg-transform.ts",
       "mechanism": "cycle.ts -> CssIcon.astro -> shared/css-cycle.ts",
@@ -45,7 +45,7 @@
     "status": "supported",
     "capability": "finite-transform-cycle",
     "reason": "Production uses the existing single-property CSS cycle after source review of the preceding Motion playback.",
-    "followUp": "#99: complete browser and payload evidence; owner visual acceptance is required before merging the six-icon batch.",
+    "followUp": "#81: preserve the six-icon batch accepted on 2026-10-30; review later source drift before another rollout.",
     "contract": {
       "preceding": "shared/svg-parts.ts -> shared/svg-transform.ts",
       "mechanism": "cycle.ts -> CssIcon.astro -> shared/css-cycle.ts",
