@@ -1,7 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { webhookPaint } from "./paint";
 
-export const webhookRecipe = createStaggeredRevealRecipe([
-  { child: 1, delay: 0.1, opacityDelay: 0.15, preservePose: true },
-  { child: 2, delay: 0.1, opacityDelay: 0.15, preservePose: true },
-  { child: 3, delay: 0.1, opacityDelay: 0.15, preservePose: true },
-]);
+export const webhookRecipe = createCSSPaintRecipe(webhookPaint);

@@ -1,0 +1,16 @@
+---
+import { pathPaint } from "../path-paint-catalogue";
+import { WindArrowDown } from "@grave/animated-icons/astro";
+import ComparisonPage from "../components/ComparisonPage.astro";
+import ComparisonSection from "../components/ComparisonSection.astro";
+---
+<ComparisonPage title="Production measured path paint" eyebrow="Previous local Motion / Public CSS icons">
+  <p>All 88 migrated recipes appear below at four sizes. References use the preceding Motion mechanisms with the production data. Independent source captures check extraction. WindArrowDown remains entirely on Motion. Owner visual acceptance of this production set is pending.</p>
+  <nav aria-label="Paint families">{[...new Set(pathPaint.map(icon=>icon.family))].map(family=><a href={"#"+family}>{family} </a>)}</nav>
+  {[...new Set(pathPaint.map(icon=>icon.family))].map(family=><div><h2 id={family}>{family}</h2>{pathPaint.filter(icon=>icon.family===family).map(({slug,name,Managed,Reference})=><ComparisonSection slug={slug} name={name}>
+    <table><thead><tr><th>Size</th><th>Previous local Motion</th><th>Public CSS</th></tr></thead><tbody>{[14,16,24,28].map(size=><tr data-pair data-size={size}><th scope="row">{size} px</th><td data-reference-holder><Reference size={size} controlled data-sample /></td><td data-production-holder><Managed size={size} controlled data-sample /></td></tr>)}</tbody></table>
+  </ComparisonSection>)}</div>)}
+  <ComparisonSection slug="wind-arrow-down" name="WindArrowDown, retained Motion"><table><tbody>{[14,16,24,28].map(size=><tr data-pair data-size={size}><th>{size} px</th><td><WindArrowDown size={size} controlled data-sample /></td></tr>)}</tbody></table><p><a href="https://github.com/pommito/astro-animated-icons/issues/105">Retained translation composition follow-up #105</a></p></ComparisonSection>
+  <Fragment slot="checks"><p>All family checks compare current CSS and the Motion references with their independently saved source-era poses. Dash/offset and matrix tolerance is 0.005; opacity is 0.001. These checks do not grant visual acceptance.</p><button id="parity" type="button">Compare all families with saved Motion</button><output id="parity-result"></output><button id="runtime" type="button">Check templates and cleanup</button><output id="runtime-result"></output></Fragment>
+</ComparisonPage>
+<script>import "../production-paint-checks";</script>

@@ -1,12 +1,10 @@
 import migration from "../tests/helpers/css-migration-cases.json" with { type: "json" };
-import decisions from "./animation-decisions.json" with { type: "json" };
-import families from "./animation-families.json" with { type: "json" };
+import paintScope from "../tests/helpers/path-paint-scope.json" with { type: "json" };
 const all = migration.icons.map(icon => icon.slug);
 const ten = ["bell", "chevron-right", "folder-down", "calendar-days", "circle-dashed", "folder", "circle-help", "chevron-down", "folder-up", "square-chevron-right"];
 export const supportedSix = ["disc-3", "panel-left-close", "panel-left-open", "panel-right-open", "briefcase-business", "tree-pine"];
 const combined = ["key-square", "wallet", "key-circle"];
-export const pathPaintFamilies = Object.fromEntries(Object.keys(families).filter(family => families[family].capability === "runtime-path-paint")
-  .map(family => [family, Object.keys(decisions).filter(slug => decisions[slug].family === family)]));
+export const pathPaintFamilies = Object.fromEntries([...new Set(paintScope.map(icon=>icon.family))].map(family=>[family,paintScope.filter(icon=>icon.family===family).map(icon=>icon.slug)]));
 const pathPaint = Object.values(pathPaintFamilies).flat();
 const compositions = (name, slugs) => [
   [name, slugs],
@@ -20,8 +18,8 @@ export const loadingCases = {
   one: ["circle-dashed"],
   four: migration.cases.interface,
   ten,
-  "legacy-21": all.filter(slug => !["folder", "user-round-cog", ...combined, ...supportedSix].includes(slug)),
-  "legacy-23": all.filter(slug => ![...combined, ...supportedSix].includes(slug)),
+  "legacy-21": all.filter(slug => !pathPaint.includes(slug) && !["folder", "user-round-cog", ...combined, ...supportedSix].includes(slug)),
+  "legacy-23": all.filter(slug => !pathPaint.includes(slug) && ![...combined, ...supportedSix].includes(slug)),
   all,
   repeated: Array(20).fill("circle-dashed"),
   "repeated-all": all.flatMap(slug => [slug, slug, slug]),

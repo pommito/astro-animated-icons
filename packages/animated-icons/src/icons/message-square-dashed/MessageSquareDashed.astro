@@ -1,23 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
-
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { messageSquareDashedPaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-message-square-dashed">
-  <g>
-    <path d="M14 3h1" />
-    <path d="M14 17h1" />
-    <path d="M10 17H7l-4 4v-7" />
-    <path d="M9 3h1" />
-    <path d="M19 3a2 2 0 0 1 2 2" />
-    <path d="M3 9v1" />
-    <path d="M21 9v1" />
-    <path d="M21 14v1a2 2 0 0 1-2 2" />
-    <path d="M5 3a2 2 0 0 0-2 2" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={messageSquareDashedPaint} {...Astro.props} tag="grave-message-square-dashed"><Drawing /></CssPaintIcon>

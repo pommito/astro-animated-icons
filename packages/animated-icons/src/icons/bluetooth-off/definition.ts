@@ -1,7 +1,4 @@
-import { createPathRevealRecipe } from "../../shared/path-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { bluetoothOffPaint } from "./paint";
 
-export const bluetoothOffRecipe = createPathRevealRecipe([
-  { duration: 0.3, ease: "easeOut", opacityDuration: 0.3, pathOffset: 1 },
-  { duration: 0.2, delay: 0.3, ease: "easeOut", opacityDuration: 0.2 },
-  { duration: 0.3, ease: "easeOut", opacityDuration: 0.3, pathOffset: 1 },
-]);
+export const bluetoothOffRecipe = createCSSPaintRecipe(bluetoothOffPaint);

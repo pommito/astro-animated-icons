@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/message-square-x/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-message-square-x"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { messageSquareXPaint } from "../../../../../packages/animated-icons/src/icons/message-square-x/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-message-square-x")) customElements.define("grave-reference-message-square-x", createIconElement(precedingPaintRecipe(messageSquareXPaint)));
+</script>

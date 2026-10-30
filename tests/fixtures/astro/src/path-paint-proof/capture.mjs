@@ -1,6 +1,6 @@
-export async function capture() {
-  const representatives = ["at-sign", "attach-file", "ban", "bluetooth-connected", "droplet", "eye-off", "file-chart-line", "fingerprint", "folder-tree", "git-compare-arrows", "git-pull-request-closed", "message-circle-dashed", "receipt-euro", "receipt", "circle-dollar-sign", "message-circle-plus", "receipt-text", "route", "switch-camera", "user-round-plus", "wind-arrow-down", "wind", "x"];
-  const icons = [...document.querySelectorAll("[data-proof-holder] [data-sample]")];
+export async function capture(options = {}) {
+  const representatives = options.representatives ?? ["at-sign", "attach-file", "ban", "bluetooth-connected", "droplet", "eye-off", "file-chart-line", "fingerprint", "folder-tree", "git-compare-arrows", "git-pull-request-closed", "message-circle-dashed", "receipt-euro", "receipt", "circle-dollar-sign", "message-circle-plus", "receipt-text", "route", "switch-camera", "user-round-plus", "wind-arrow-down", "wind", "x"];
+  const icons = [...document.querySelectorAll(options.selector ?? "[data-proof-holder] [data-sample]")];
   await Promise.all(icons.map(icon => customElements.whenDefined(icon.localName)));
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) throw Error("Disable reduced motion");
   const frames = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
@@ -61,5 +61,5 @@ export async function capture() {
     reset(icon);
   }
   return { baseline:"ab10cd2db4a54380934bdd49b0605a1a39ae9424", userAgent:navigator.userAgent, representatives,
-    method:"Public local Motion before extraction; paused native timelines, manual API and synthetic lifecycle. No upstream React execution or visual acceptance.",contracts,poses,checks,failures:checks.filter(x=>!x.pass) };
+    method:"Paused native timelines, manual API and synthetic lifecycle. The caller identifies the engine and source.",contracts,poses,checks,failures:checks.filter(x=>!x.pass) };
 }

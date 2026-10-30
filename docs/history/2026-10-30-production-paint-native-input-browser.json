@@ -1,0 +1,38 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Trusted Chrome pointer hover on native containing link. Paused entry and return to observe tracks.",
+  "events": [
+    {
+      "type": "pointerenter",
+      "trusted": true,
+      "state": "entry",
+      "tracks": 3
+    },
+    {
+      "type": "pointerleave",
+      "trusted": true,
+      "state": "return",
+      "tracks": 3
+    }
+  ],
+  "toolbar": [
+    {
+      "id": "play",
+      "trusted": true,
+      "icons": 352,
+      "active": 352,
+      "states": [
+        "entry"
+      ]
+    },
+    {
+      "id": "stop",
+      "trusted": true,
+      "icons": 352,
+      "active": 352,
+      "states": [
+        "return"
+      ]
+    }
+  ]
+}

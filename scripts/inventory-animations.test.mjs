@@ -21,6 +21,16 @@ test("reviewed family queue partitions the current catalogue without unresolved 
   }
 });
 
+test("all 88 paint recipes migrate while WindArrowDown keeps its linked Motion blocker", () => {
+  const inventory=inventoryAnimations(undefined,{requireReviewed:true});
+  const paint=inventory.icons.filter(icon=>icon.classification.capability==="runtime-path-paint");
+  assert.equal(paint.length,88);
+  assert.ok(paint.every(icon=>icon.engine==="css"&&icon.migrationState==="migrated"));
+  const wind=inventory.icons.find(icon=>icon.slug==="wind-arrow-down");
+  assert.equal(wind.migrationState,"retained-on-motion");
+  assert.match(wind.classification.followUp,/#105/);
+});
+
 test("inventory covers each export once and retains shared defaults and mixed mechanisms", () => {
   const result = inventoryAnimations();
   assert.equal(result.count, readCatalog().length);
@@ -185,6 +195,43 @@ test("a migrated finite group loses review when its CSS mechanism changes", () =
     const icon = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
     assert.equal(icon.engine, "css");
     assert.equal(icon.migrationState, "needs-review");
+  });
+});
+
+test("paint recipe, geometry, codec and type drift invalidate migrated reviews", () => {
+  withReviewedCopy(root => {
+    for (const file of ["icons/at-sign/paint.ts", "icons/at-sign/drawing.ts", "shared/paint-css.ts", "shared/paint-data.ts", "shared/paint-recipe.ts", "shared/register-css-paint.ts"]) {
+      const path = join(root, "packages/animated-icons/src", file);
+      const before = readFileSync(path, "utf8");
+      writeFileSync(path, before + "\n");
+      const icon = inventoryAnimations(root).icons.find(icon => icon.slug === "at-sign");
+      assert.equal(icon.engine, "css");
+      assert.equal(icon.migrationState, "needs-review", file);
+      writeFileSync(path, before);
+    }
+  });
+});
+
+test("a deferred Motion paint recipe pins the proved paint dependency graph", () => {
+  const saved = JSON.parse(readFileSync(new URL("../docs/history/2026-10-30-path-paint-source-before.json", import.meta.url), "utf8")).sources;
+  withReviewedCopy(root => {
+    const directory = "packages/animated-icons/src/icons/at-sign/";
+    for (const file of ["AtSign.astro", "definition.ts"]) writeFileSync(join(root, directory, file), saved[directory + file]);
+    for (const file of ["paint.ts", "Drawing.astro", "drawing.ts"]) rmSync(join(root, directory, file));
+    const recordsPath = join(root, "scripts/animation-decisions.json");
+    const records = JSON.parse(readFileSync(recordsPath, "utf8"));
+    const observed = inventoryAnimations(root).icons.find(icon => icon.slug === "at-sign");
+    assert.equal(observed.engine, "motion");
+    records["at-sign"].sourceHash = observed.classification.observedSourceHash;
+    writeFileSync(recordsPath, JSON.stringify(records));
+    const deferred = inventoryAnimations(root).icons.find(icon => icon.slug === "at-sign");
+    assert.equal(deferred.migrationState, "supported-but-deferred");
+    assert.ok(deferred.provenMechanismSources.includes("packages/animated-icons/src/shared/paint-data.ts"));
+    const path = join(root, "packages/animated-icons/src/shared/paint-data.ts");
+    writeFileSync(path, readFileSync(path, "utf8") + "\n");
+    const stale = inventoryAnimations(root).icons.find(icon => icon.slug === "at-sign");
+    assert.equal(stale.engine, "motion");
+    assert.equal(stale.migrationState, "needs-review");
   });
 });
 

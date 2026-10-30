@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/receipt-text/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-receipt-text"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { receiptTextPaint } from "../../../../../packages/animated-icons/src/icons/receipt-text/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-receipt-text")) customElements.define("grave-reference-receipt-text", createIconElement(precedingPaintRecipe(receiptTextPaint)));
+</script>

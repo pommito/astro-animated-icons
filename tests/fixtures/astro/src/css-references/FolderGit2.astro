@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/folder-git-2/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-folder-git-2"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { folderGit2Paint } from "../../../../../packages/animated-icons/src/icons/folder-git-2/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-folder-git-2")) customElements.define("grave-reference-folder-git-2", createIconElement(precedingPaintRecipe(folderGit2Paint)));
+</script>

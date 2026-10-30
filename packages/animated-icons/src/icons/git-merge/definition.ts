@@ -1,7 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { gitMergePaint } from "./paint";
 
-export const gitMergeRecipe = createStaggeredRevealRecipe([
-  { child: 1, delay: 0.1 },
-  { child: 2, delay: 0.7 },
-  { child: 3, delay: 0.4, reverseOffset: true },
-]);
+export const gitMergeRecipe = createCSSPaintRecipe(gitMergePaint);

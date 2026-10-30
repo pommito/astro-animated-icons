@@ -1,12 +1,12 @@
 ---
-status: proposed
+status: accepted
 ---
 
 # Preserve measured stroke playback with native CSS paint tracks
 
-[Issue #103](https://github.com/pommito/astro-animated-icons/issues/103) asks for a measured path-paint capability before complete-family rollout. I propose a narrow paint recipe with measured target lengths, independent native CSS property tracks and explicit replay policies. Use compact serialized data for clone recovery. Keep WindArrowDown on Motion until its retained translation has a separately proved composition adapter.
+[Issue #103](https://github.com/pommito/astro-animated-icons/issues/103) asks for a measured path-paint capability before complete-family rollout. The accepted decision uses a narrow paint recipe with measured target lengths, independent native CSS property tracks and explicit replay policies. Use compact serialized data for clone recovery. Keep WindArrowDown on Motion until its retained translation has a separately proved composition adapter.
 
-The [runnable proof](../../tests/fixtures/astro/src/pages/path-paint-proof.astro), [source mapping](../history/2026-10-30-path-paint-mapping.md) and [evidence](../history/2026-10-30-path-paint-decision.md) accompany this proposal. No production package source or engine selection changes. Architecture approval is pending.
+The owner approved this decision on 2026-10-30 at proof revision `df7a852a1f83351ad81795da76ec20407bb89ea0` and authorized all compatible families. The [runnable proof](../../tests/fixtures/astro/src/pages/path-paint-proof.astro), [source mapping](../history/2026-10-30-path-paint-mapping.md) and [evidence](../history/2026-10-30-path-paint-decision.md) preserve the preceding proposal and its measurements. Sections describing the experiment record Phase 1. Production uses the same model through `CssPaintIcon.astro` and shared paint modules, with local `paint.ts` definitions for 88 recipes. Production visual acceptance remains pending. [#105](https://github.com/pommito/astro-animated-icons/issues/105) tracks the retained WindArrowDown composition.
 
 ## Interface and scope
 
@@ -26,7 +26,7 @@ At each playback, measure `getTotalLength()` once per distinct target that actua
 
 [SVGGeometryElement](https://svgwg.org/svg2-draft/types.html#InterfaceSVGGeometryElement) defines the native length method. [SVG dashing](https://svgwg.org/svg2-draft/painting.html#StrokeDashing) defines dash and gap lists, offset direction and user units. Both engines use the same browser's geometry method. Comparing their computed dash values therefore checks the representation without introducing a second curve-length approximation. Cross-browser geometric precision remains a separate check.
 
-The prototype rejects missing geometry and non-finite or non-positive measured lengths. All reviewed animated geometry has positive lengths. Before production, either preserve the preceding behavior for zero-length geometry or document a narrower internal invariant with a focused test. This guard is an experiment limit, not an approved public behavior change.
+The prototype rejects missing geometry and non-finite or non-positive measured lengths. All reviewed animated geometry has positive lengths. Production preserves the preceding zero-length behavior and rejects only missing, negative or non-finite geometry. Focused tests cover zero length and phase-specific geometry reads, including UserRoundPlus's opacity-only return. Production variables use the `--grave-paint-` prefix.
 
 ## Compilation and native timing
 
@@ -78,7 +78,7 @@ Fresh production measurements cover singles, all five families, all 89 candidate
 
 The verbose encoding adds about 2.8 kB page gzip for all candidates and about 140 kB for the repeated group. Compact data changes the all-candidate result to about 1.4 kB saved. The twenty-repeat composition still adds about 60 kB. Its recipe attributes repeat, and long documents exceed gzip's useful back-reference distances. Family and mixed-Motion results differ; the dated evidence reports the exact counts and regressions. Do not add individual savings to predict family costs.
 
-I recommend approving the narrow geometry and native-effect model only if these delivery costs are acceptable for the first selected family. Start rollout with a complete compatible family and measure its final production representation again. The compact experiment does not justify a blanket 88-icon rollout, and WindArrowDown needs a separate composition decision. Further delivery factoring may reduce repeated HTML, but it must preserve source-removed clones and requires its own evidence.
+The proposal recommended deciding on delivery costs before rollout and measuring the final production representation again. The owner subsequently authorized all compatible families while retaining WindArrowDown. Production evidence must still report repeated-HTML and mixed-Motion regressions. Further delivery factoring may reduce repeated HTML, but it must preserve source-removed clones and requires its own evidence.
 
 Byte counts and CSS wiring establish no smoother frames. The instrumented geometry run checks calls and records coarse preparation times, without warmup or an advantage claim. Safari, Firefox, real touch/hybrid devices, operating-system preference changes, frame pacing, browser geometry differences and packed-package installation remain unverified.
 
@@ -86,4 +86,4 @@ Byte counts and CSS wiring establish no smoother frames. The instrumented geomet
 
 Issue #103 states, "This approval is required before extending production mechanisms or changing production engine selection."
 
-The owner has not approved this representation. Phase 1 supplies a runnable experiment, source review, measurements and this decision. Wait for an explicit owner decision before production implementation. Architecture approval grants no visual acceptance. Every later migrated set needs its own numerical evidence, full validation, independent review, payload report and owner visual acceptance before merge. Keep #103 and parent #81 open while scoped outcomes remain incomplete.
+The owner explicitly approved ADR 0002 in this implementation chat on 2026-10-30 and authorized production implementation and complete compatible-family migration, keeping WindArrowDown on Motion. The approved proof revision is `df7a852a1f83351ad81795da76ec20407bb89ea0`. The preceding rendered-proof approval covers the isolated experiment. Architecture approval grants no visual acceptance for production migrations. Every migrated set still needs its own numerical evidence, full validation, independent review, payload report and owner visual acceptance before merge. Keep #103 and parent #81 open while scoped outcomes remain incomplete.

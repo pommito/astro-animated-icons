@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import { cycles } from "./css-cycles.mjs";
 import { opacityParts } from "./css-opacity.mjs";
+import { paintRecipes, encodePaint } from "./css-paint.mjs";
 import { decodeAttribute, htmlElements } from "./html.mjs";
 
 export const clientRecipes = new Map([
   ...[...cycles].map(([id, data]) => [id, { attribute: "data-grave-cycle-recipe", data }]),
   ...[...opacityParts].map(([id, parts]) => [id, { attribute: "data-grave-opacity-recipe", data: { id, parts } }]),
+  ...[...paintRecipes].map(([id, paint]) => [id, { attribute: "data-grave-paint-recipe", data: encodePaint(paint) }]),
 ]);
 const recipeAttributes = [...new Set([...clientRecipes.values()].map(recipe => recipe.attribute))];
 
@@ -18,7 +20,7 @@ export function verifyRegistrations(actual, html, icons, context) {
   const literal = value => new RegExp('["\'`]' + value + '["\'`]').test(actual.source);
   const selectedAttributes = new Set([...selected].flatMap(id => clientRecipes.has(id) ? [clientRecipes.get(id).attribute] : []));
   for (const attribute of recipeAttributes) {
-    const state = attribute === "data-grave-cycle-recipe" ? "data-cycle-state" : "data-opacity-state";
+    const state = attribute === "data-grave-cycle-recipe" ? "data-cycle-state" : attribute === "data-grave-paint-recipe" ? "data-paint-state" : "data-opacity-state";
     if (literal(attribute) || literal(state)) assert.ok(selectedAttributes.has(attribute), context + ": unused registration mechanism " + attribute);
   }
   const staticTags = new Set([...actual.source.matchAll(/["'`](grave-[a-z0-9]+(?:-[a-z0-9]+)*)["'`]/g)].map(match => match[1]));

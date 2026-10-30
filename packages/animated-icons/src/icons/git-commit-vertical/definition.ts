@@ -1,7 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { gitCommitVerticalPaint } from "./paint";
 
-export const gitCommitVerticalRecipe = createStaggeredRevealRecipe([
-  { child: 1, delay: 0, defaultEase: true, opacityDelay: 0 },
-  { child: 2, delay: 0.15, defaultEase: true, opacityDelay: 0.1 },
-  { child: 3, delay: 0.3, defaultEase: true, opacityDelay: 0.2 },
-]);
+export const gitCommitVerticalRecipe = createCSSPaintRecipe(gitCommitVerticalPaint);

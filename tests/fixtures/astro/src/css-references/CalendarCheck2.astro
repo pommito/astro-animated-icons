@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/calendar-check-2/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-calendar-check-2"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { calendarCheck2Paint } from "../../../../../packages/animated-icons/src/icons/calendar-check-2/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-calendar-check-2")) customElements.define("grave-reference-calendar-check-2", createIconElement(precedingPaintRecipe(calendarCheck2Paint)));
+</script>

@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/user-round-check/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-user-round-check"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { userRoundCheckPaint } from "../../../../../packages/animated-icons/src/icons/user-round-check/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-user-round-check")) customElements.define("grave-reference-user-round-check", createIconElement(precedingPaintRecipe(userRoundCheckPaint)));
+</script>

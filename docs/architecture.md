@@ -10,7 +10,7 @@ All icons use the lifecycle and trigger code in `src/element.ts`. Each instance 
 
 `src/icon.css` contains the shared wrapper and SVG styles. Keep drawing-specific settings with the rendered drawing or client recipe. Astro can collect styles from unused components imported through an export barrel, so per-icon `<style>` blocks would make the catalogue's CSS accumulate on consumer pages.
 
-`src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Motion registration scripts stay in the icon adapters. CSS registration scripts belong to `CssIcon.astro` and `CssOpacityIcon.astro`, so icons using the same mechanism share an entry. The base `Icon.astro` has no registration script.
+`src/Icon.astro` owns the common props, wrapper attributes, SVG defaults, and accessible name. Each icon's Astro adapter supplies its fixed custom-element tag and drawing, including the drawing's `<g>` and origin styles. Motion registration scripts stay in the icon adapters. CSS registration scripts belong to `CssIcon.astro`, `CssOpacityIcon.astro` and `CssPaintIcon.astro`, so icons using the same mechanism share an entry. The base `Icon.astro` has no registration script.
 
 Each `src/icons/<name>/definition.ts` exports an internal recipe with these responsibilities:
 
@@ -56,6 +56,16 @@ CalendarDays and CircleDashed keep their opacity data in `parts.ts`. [CssOpacity
 
 Motion mini eases the whole opacity effect, while CSS eases each interval. The opacity compiler splits the original cubic Bezier into equivalent interval offsets and easing. Playback does not sample the curve. Both engines still report track completion to the shared lifecycle, which guards newer playback against stale callbacks.
 
+### Measured paint
+
+[ADR 0002](adr/0002-runtime-path-paint.md) defines finite measured dash, signed offset and opacity channels. The owner approved it on 2026-10-30 before production implementation. The complete compatible set contains 88 recipes. WindArrowDown retains Motion for its combined paint and sampled translation, tracked in [#105](https://github.com/pommito/astro-animated-icons/issues/105).
+
+Each icon keeps one readable `paint.ts` definition and its unchanged `Drawing.astro`. [PaintRecipe](../packages/animated-icons/src/shared/paint-recipe.ts) declares entry and return property tracks, timing, offsets, interval easing, replay and completion. [The compiler](../packages/animated-icons/src/shared/paint-css.ts) emits sparse native CSS keyframes. On each playback it reads `getTotalLength()` once per target with dash or offset in that phase. Opacity-only phases perform no geometry reads. Zero-length geometry preserves the preceding behavior. Static target-local length variables express coefficients in the browser's measured units.
+
+[The adapter](../packages/animated-icons/src/shared/css-paint.ts) captures computed paint before cancellation, installs first values and starts the selected phase. Each channel keeps its own duration and delay. Keyframe timing eases individual intervals; `AnimationEffect.updateTiming()` preserves Motion mini's overall effect easing. Target replay policies distinguish restart, active tracks, until-clear state, current dash and incomplete dash. Primary dash completion controls replay when opacity finishes earlier. UserRoundPlus returns only opacity and retains its dash pose until whole-playback cleanup.
+
+The existing lifecycle still owns input, cancellation, completion and reduced motion. Return completion, restore completion, disconnect and reduced motion remove paint state, inline paint and captured variables. A cancellation guard prevents stale completion writes. The [production comparison](../tests/fixtures/astro/src/pages/path-paint.astro) uses fixture-only Motion references and independent saved pre-extraction poses. Production owner visual acceptance remains pending.
+
 ### Generated styles and templates
 
 Astro renders complete initial SVG regardless of engine. The CSS wrappers emit marked inline styles only for rendered recipes, using request-local sets to deduplicate repeated instances. Static per-icon style blocks would let unused barrel imports accumulate CSS. Unused imports may retain the common wrapper CSS, but must add no recipe CSS or registration script.
@@ -72,9 +82,9 @@ For a particular icon's geometry, timing, finish policy, and interrupted returns
 
 ## Loading contract
 
-The CSS wrappers serialize the existing cycle or opacity data into each rendered host's `data-grave-cycle-recipe` or `data-grave-opacity-recipe` attribute. [The serializer](../packages/animated-icons/src/shared/recipe-data.ts) escapes angle brackets before Astro escapes the attribute. The complete SVG and generated stylesheet still render on the server. Recipe data remains defined once in `cycle.ts` or `parts.ts`; serialization creates no second maintained definition.
+The CSS wrappers serialize cycle, opacity or paint data into the corresponding `data-grave-*-recipe` attribute on each host. Paint uses the compact tuple codec in `src/shared/paint-data.ts`. [The serializer](../packages/animated-icons/src/shared/recipe-data.ts) escapes angle brackets before Astro escapes the attribute. The complete SVG and generated stylesheet still render on the server. Recipe data remains defined once in `cycle.ts`, `parts.ts` or `paint.ts`; serialization creates no second maintained definition.
 
-[Transform registration](../packages/animated-icons/src/shared/register-css-cycle.ts) and [opacity registration](../packages/animated-icons/src/shared/register-css-opacity.ts) each import only their own adapter. Their shared [discovery helper](../packages/animated-icons/src/shared/register-css.ts) reads rendered hosts and recursively scans inert templates. It defines each public tag once through the existing lifecycle factory. The `astro:page-load` event repeats discovery after Astro navigation. Later clones of a discovered icon reuse its registered class.
+[Transform registration](../packages/animated-icons/src/shared/register-css-cycle.ts), [opacity registration](../packages/animated-icons/src/shared/register-css-opacity.ts) and [paint registration](../packages/animated-icons/src/shared/register-css-paint.ts) each import only their own adapter. Their shared [discovery helper](../packages/animated-icons/src/shared/register-css.ts) reads rendered hosts and recursively scans inert templates. It defines each public tag once through the existing lifecycle factory. The `astro:page-load` event repeats discovery after Astro navigation. Later clones of a discovered icon reuse its registered class.
 
 Every host carries complete recipe data so a clone mounted before registration still works after its source template and styles have been removed. Repeated instances share registration, runtime and generated styles, while their recipe attributes repeat in HTML. Whole-page compression accounts for that cost. No catalogue registry, build integration or consumer configuration is required.
 

@@ -21,7 +21,7 @@ document.querySelector("#check-reduced")!.addEventListener("click", () => {
     const result = results[icon.localName];
     result.nativePreferenceMatches = matchMedia("(prefers-reduced-motion: reduce)").matches;
     result.nativePreferenceCancels = tracks(icon).length === 0;
-    result.nativePreferenceClears = !icon.hasAttribute("data-cycle-state") && !icon.hasAttribute("data-opacity-state") && [...icon.querySelectorAll<SVGElement>("svg,g,path,circle,rect")].every(element => !element.style.transform && !element.style.opacity && !element.style.getPropertyValue("--grave-cycle-from") && !element.style.getPropertyValue("--grave-opacity-from") && !element.style.getPropertyValue("--grave-opacity-entry-from"));
+    result.nativePreferenceClears = !icon.hasAttribute("data-cycle-state") && !icon.hasAttribute("data-opacity-state") && !icon.hasAttribute("data-paint-state") && [...icon.querySelectorAll<SVGElement>("svg,g,path,circle,rect,line,polyline,polygon,ellipse")].every(element => !element.style.transform && !element.style.opacity && !element.style.strokeDasharray && !element.style.strokeDashoffset && [...element.style].every(property => !property.startsWith("--grave-paint-")) && !element.style.getPropertyValue("--grave-cycle-from") && !element.style.getPropertyValue("--grave-opacity-from") && !element.style.getPropertyValue("--grave-opacity-entry-from"));
     result.capturedVariablesClear = [...icon.style].every(property => !property.startsWith("--grave-cycle-")) && !icon.querySelector<SVGElement>("svg")!.style.transformOrigin;
     icon.startAnimation();
     result.reducedManualStatic = tracks(icon).length === 0;

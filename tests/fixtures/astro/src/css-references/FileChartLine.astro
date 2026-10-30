@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/file-chart-line/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-file-chart-line"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { fileChartLinePaint } from "../../../../../packages/animated-icons/src/icons/file-chart-line/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-file-chart-line")) customElements.define("grave-reference-file-chart-line", createIconElement(precedingPaintRecipe(fileChartLinePaint)));
+</script>

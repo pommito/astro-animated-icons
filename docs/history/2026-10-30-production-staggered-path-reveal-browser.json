@@ -1,0 +1,3743 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Public production CSS and fixture-only preceding Motion mechanisms against independent pre-extraction captures. Paused timelines and manual API; no upstream React execution or visual acceptance.",
+  "results": [
+    {
+      "family": "staggered-path-reveal",
+      "production": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 7820,
+          "actual": 7820,
+          "expectedUnique": 7820,
+          "actualUnique": 7820
+        },
+        "poses": 7820,
+        "shapes": 42160,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "chart-line/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      },
+      "reference": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 7820,
+          "actual": 7820,
+          "expectedUnique": 7820,
+          "actualUnique": 7820
+        },
+        "poses": 7820,
+        "shapes": 42160,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "chart-line/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-line/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "chart-spline/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-git-2/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-branch/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-horizontal/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-commit-vertical/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-compare-arrows/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-fork/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-graph/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-merge/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-closed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "git-pull-request-create/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "gitlab/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-circle-dashed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "message-square-dashed/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "train-track/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "waypoints/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "webhook/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "workflow/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "x/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "x/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "x/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "x/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "x/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/swiss-franc/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-swiss-franc"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { swissFrancPaint } from "../../../../../packages/animated-icons/src/icons/swiss-franc/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-swiss-franc")) customElements.define("grave-reference-swiss-franc", createIconElement(precedingPaintRecipe(swissFrancPaint)));
+</script>

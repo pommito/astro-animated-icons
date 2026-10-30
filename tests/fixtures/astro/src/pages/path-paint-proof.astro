@@ -4,15 +4,17 @@ import plans from "../../../../helpers/path-paint-proof-plans.json";
 import ComparisonPage from "../components/ComparisonPage.astro";
 import ComparisonSection from "../components/ComparisonSection.astro";
 import { encodePaint } from "../path-paint-proof/codec.mjs";
+import { pathPaint } from "../path-paint-catalogue";
 const representatives = ["AtSign", "AttachFile", "Ban", "BluetoothConnected", "Droplet", "EyeOff", "FileChartLine", "Fingerprint", "FolderTree", "GitCompareArrows", "GitPullRequestClosed", "MessageCircleDashed", "ReceiptEuro", "Receipt", "CircleDollarSign", "MessageCirclePlus", "ReceiptText", "Route", "SwitchCamera", "UserRoundPlus", "WindArrowDown", "Wind", "X"];
 const selected = representatives.map(name => ({ name, slug: name.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase(), Component: icons[name as keyof typeof icons] }));
+const referenceFor=(slug:string,Component:any)=>pathPaint.find(icon=>icon.slug===slug)?.Reference??Component;
 ---
 <ComparisonPage title="Runtime path paint architecture proof" eyebrow="Public Motion / Isolated CSS experiment">
-  <p>This isolated experiment leaves all production recipes on their current engines. It uses frozen native-effect transcripts from the saved Motion capture. Production recipe extraction still needs independent source checks. WindArrowDown remains entirely on Motion because its retained translation is outside this paint representation.</p>
+  <p>This approved isolated experiment uses frozen native-effect transcripts. References now run the preceding Motion mechanisms with production data. <a href="/path-paint/">Review the complete production migration separately</a>. WindArrowDown remains entirely on Motion.</p>
   {selected.map(({name,slug,Component}) => <ComparisonSection name={name} slug={slug}>
     <table><thead><tr><th>Size</th><th>Public preceding Motion</th><th>{slug === "wind-arrow-down" ? "Retained Motion exception" : "Isolated CSS paint proof"}</th></tr></thead>
     <tbody>{[14,16,24,28].map(size => <tr data-pair data-size={size}>
-      <th scope="row">{size} px</th><td><Component size={size} controlled data-sample /></td>
+      <th scope="row">{size} px</th><td>{(()=>{const Reference=referenceFor(slug,Component);return <Reference size={size} controlled data-sample />;})()}</td>
       <td data-proof-holder data-pp-recipe={slug === "wind-arrow-down" ? undefined : JSON.stringify(encodePaint(plans[slug as keyof typeof plans]))}><Component size={size} controlled data-sample /></td>
     </tr>)}</tbody></table>
   </ComparisonSection>)}

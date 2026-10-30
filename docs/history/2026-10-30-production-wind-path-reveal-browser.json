@@ -1,0 +1,383 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Public production CSS and fixture-only preceding Motion mechanisms against independent pre-extraction captures. Paused timelines and manual API; no upstream React execution or visual acceptance.",
+  "results": [
+    {
+      "family": "wind-path-reveal",
+      "production": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 680,
+          "actual": 680,
+          "expectedUnique": 672,
+          "actualUnique": 672
+        },
+        "poses": 680,
+        "shapes": 2380,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "air-vent/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      },
+      "reference": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 680,
+          "actual": 680,
+          "expectedUnique": 672,
+          "actualUnique": 672
+        },
+        "poses": 680,
+        "shapes": 2380,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "air-vent/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "air-vent/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "wind/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      }
+    }
+  ]
+}

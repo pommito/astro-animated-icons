@@ -2,12 +2,68 @@
   "schemaVersion": 1,
   "icons": [
     {
+      "slug": "air-vent",
+      "name": "AirVent",
+      "engine": "runtime-path-paint",
+      "finish": "restore",
+      "replay": "until-clear",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "at-sign",
+      "name": "AtSign",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "attach-file",
+      "name": "AttachFile",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "ban",
+      "name": "Ban",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "bell",
       "name": "Bell",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "current",
       "comparison": "css-pilot"
+    },
+    {
+      "slug": "bluetooth",
+      "name": "Bluetooth",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "bluetooth-connected",
+      "name": "BluetoothConnected",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "bluetooth-off",
+      "name": "BluetoothOff",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "briefcase-business",
@@ -18,12 +74,44 @@
       "comparison": "supported-six"
     },
     {
+      "slug": "calendar-check",
+      "name": "CalendarCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "calendar-check-2",
+      "name": "CalendarCheck2",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "calendar-days",
       "name": "CalendarDays",
       "engine": "timed-opacity-parts",
       "finish": "hold",
       "replay": "current-per-active-part",
       "comparison": "css-capabilities"
+    },
+    {
+      "slug": "chart-line",
+      "name": "ChartLine",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "chart-spline",
+      "name": "ChartSpline",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "chevron-down",
@@ -66,6 +154,14 @@
       "comparison": "css-chevrons"
     },
     {
+      "slug": "circle-check",
+      "name": "CircleCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "circle-chevron-down",
       "name": "CircleChevronDown",
       "engine": "finite-transform-cycle",
@@ -106,12 +202,28 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "circle-dollar-sign",
+      "name": "CircleDollarSign",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "circle-help",
       "name": "CircleHelp",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "current",
       "comparison": "css-capabilities"
+    },
+    {
+      "slug": "clipboard-check",
+      "name": "ClipboardCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "disc-3",
@@ -122,12 +234,92 @@
       "comparison": "supported-six"
     },
     {
+      "slug": "dollar-sign",
+      "name": "DollarSign",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "droplet",
+      "name": "Droplet",
+      "engine": "runtime-path-paint",
+      "finish": "restore",
+      "replay": "until-clear",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "euro",
+      "name": "Euro",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "eye-off",
+      "name": "EyeOff",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "file-chart-line",
+      "name": "FileChartLine",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "file-check",
+      "name": "FileCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "file-check-2",
+      "name": "FileCheck2",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "fingerprint",
+      "name": "Fingerprint",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "dash-incomplete",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "flame",
+      "name": "Flame",
+      "engine": "runtime-path-paint",
+      "finish": "restore",
+      "replay": "until-clear",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "folder",
       "name": "Folder",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "current",
       "comparison": "folder-css"
+    },
+    {
+      "slug": "folder-check",
+      "name": "FolderCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "folder-down",
@@ -138,12 +330,36 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "folder-git",
+      "name": "FolderGit",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "folder-git-2",
+      "name": "FolderGit2",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "folder-input",
       "name": "FolderInput",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "restart",
       "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder-minus",
+      "name": "FolderMinus",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "folder-output",
@@ -154,12 +370,172 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "folder-plus",
+      "name": "FolderPlus",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "folder-tree",
+      "name": "FolderTree",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "folder-up",
       "name": "FolderUp",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "restart",
       "comparison": "css-capabilities"
+    },
+    {
+      "slug": "folder-x",
+      "name": "FolderX",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "georgian-lari",
+      "name": "GeorgianLari",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-branch",
+      "name": "GitBranch",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-commit-horizontal",
+      "name": "GitCommitHorizontal",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-commit-vertical",
+      "name": "GitCommitVertical",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-compare",
+      "name": "GitCompare",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-compare-arrows",
+      "name": "GitCompareArrows",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-fork",
+      "name": "GitFork",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-graph",
+      "name": "GitGraph",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-merge",
+      "name": "GitMerge",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-pull-request",
+      "name": "GitPullRequest",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-pull-request-closed",
+      "name": "GitPullRequestClosed",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "git-pull-request-create",
+      "name": "GitPullRequestCreate",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "gitlab",
+      "name": "Gitlab",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "home",
+      "name": "Home",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "indian-rupee",
+      "name": "IndianRupee",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "italic",
+      "name": "Italic",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "japanese-yen",
+      "name": "JapaneseYen",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "key-circle",
@@ -176,6 +552,94 @@
       "finish": "hold",
       "replay": "current",
       "comparison": "combined-transforms"
+    },
+    {
+      "slug": "linkedin",
+      "name": "Linkedin",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "mail-check",
+      "name": "MailCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-circle-check",
+      "name": "MessageCircleCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-circle-dashed",
+      "name": "MessageCircleDashed",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-circle-plus",
+      "name": "MessageCirclePlus",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-circle-x",
+      "name": "MessageCircleX",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-square-check",
+      "name": "MessageSquareCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-square-dashed",
+      "name": "MessageSquareDashed",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-square-plus",
+      "name": "MessageSquarePlus",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "message-square-x",
+      "name": "MessageSquareX",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "mic-off",
+      "name": "MicOff",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
     },
     {
       "slug": "panel-left-close",
@@ -200,6 +664,142 @@
       "finish": "hold",
       "replay": "current",
       "comparison": "supported-six"
+    },
+    {
+      "slug": "philippine-peso",
+      "name": "PhilippinePeso",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "phone-off",
+      "name": "PhoneOff",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "pound-sterling",
+      "name": "PoundSterling",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt",
+      "name": "Receipt",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-cent",
+      "name": "ReceiptCent",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-euro",
+      "name": "ReceiptEuro",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-indian-rupee",
+      "name": "ReceiptIndianRupee",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-japanese-yen",
+      "name": "ReceiptJapaneseYen",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-pound-sterling",
+      "name": "ReceiptPoundSterling",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-russian-ruble",
+      "name": "ReceiptRussianRuble",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-swiss-franc",
+      "name": "ReceiptSwissFranc",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-text",
+      "name": "ReceiptText",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "current",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "receipt-turkish-lira",
+      "name": "ReceiptTurkishLira",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "route",
+      "name": "Route",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "russian-ruble",
+      "name": "RussianRuble",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "saudi-riyal",
+      "name": "SaudiRiyal",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "server-crash",
+      "name": "ServerCrash",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
     },
     {
       "slug": "square-chevron-down",
@@ -234,12 +834,68 @@
       "comparison": "css-chevrons"
     },
     {
+      "slug": "swiss-franc",
+      "name": "SwissFranc",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "switch-camera",
+      "name": "SwitchCamera",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "train-track",
+      "name": "TrainTrack",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "tree-pine",
       "name": "TreePine",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "current",
       "comparison": "supported-six"
+    },
+    {
+      "slug": "turkish-lira",
+      "name": "TurkishLira",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "underline",
+      "name": "Underline",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "user-check",
+      "name": "UserCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "user-round-check",
+      "name": "UserRoundCheck",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     },
     {
       "slug": "user-round-cog",
@@ -250,23 +906,104 @@
       "comparison": "css-capabilities"
     },
     {
+      "slug": "user-round-plus",
+      "name": "UserRoundPlus",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
+    },
+    {
       "slug": "wallet",
       "name": "Wallet",
       "engine": "finite-transform-cycle",
       "finish": "hold",
       "replay": "current",
       "comparison": "combined-transforms"
+    },
+    {
+      "slug": "waypoints",
+      "name": "Waypoints",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "webhook",
+      "name": "Webhook",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "wind",
+      "name": "Wind",
+      "engine": "runtime-path-paint",
+      "finish": "restore",
+      "replay": "until-clear",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "workflow",
+      "name": "Workflow",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "active",
+      "comparison": "path-paint"
+    },
+    {
+      "slug": "x",
+      "name": "X",
+      "engine": "runtime-path-paint",
+      "finish": "hold",
+      "replay": "restart",
+      "comparison": "path-paint"
     }
   ],
   "cases": {
+    "air-vent": [
+      "air-vent"
+    ],
+    "at-sign": [
+      "at-sign"
+    ],
+    "attach-file": [
+      "attach-file"
+    ],
+    "ban": [
+      "ban"
+    ],
     "bell": [
       "bell"
+    ],
+    "bluetooth": [
+      "bluetooth"
+    ],
+    "bluetooth-connected": [
+      "bluetooth-connected"
+    ],
+    "bluetooth-off": [
+      "bluetooth-off"
     ],
     "briefcase-business": [
       "briefcase-business"
     ],
+    "calendar-check": [
+      "calendar-check"
+    ],
+    "calendar-check-2": [
+      "calendar-check-2"
+    ],
     "calendar-days": [
       "calendar-days"
+    ],
+    "chart-line": [
+      "chart-line"
+    ],
+    "chart-spline": [
+      "chart-spline"
     ],
     "chevron-down": [
       "chevron-down"
@@ -283,6 +1020,9 @@
     "chevron-up": [
       "chevron-up"
     ],
+    "circle-check": [
+      "circle-check"
+    ],
     "circle-chevron-down": [
       "circle-chevron-down"
     ],
@@ -298,32 +1038,170 @@
     "circle-dashed": [
       "circle-dashed"
     ],
+    "circle-dollar-sign": [
+      "circle-dollar-sign"
+    ],
     "circle-help": [
       "circle-help"
+    ],
+    "clipboard-check": [
+      "clipboard-check"
     ],
     "disc-3": [
       "disc-3"
     ],
+    "dollar-sign": [
+      "dollar-sign"
+    ],
+    "droplet": [
+      "droplet"
+    ],
+    "euro": [
+      "euro"
+    ],
+    "eye-off": [
+      "eye-off"
+    ],
+    "file-chart-line": [
+      "file-chart-line"
+    ],
+    "file-check": [
+      "file-check"
+    ],
+    "file-check-2": [
+      "file-check-2"
+    ],
+    "fingerprint": [
+      "fingerprint"
+    ],
+    "flame": [
+      "flame"
+    ],
     "folder": [
       "folder"
+    ],
+    "folder-check": [
+      "folder-check"
     ],
     "folder-down": [
       "folder-down"
     ],
+    "folder-git": [
+      "folder-git"
+    ],
+    "folder-git-2": [
+      "folder-git-2"
+    ],
     "folder-input": [
       "folder-input"
+    ],
+    "folder-minus": [
+      "folder-minus"
     ],
     "folder-output": [
       "folder-output"
     ],
+    "folder-plus": [
+      "folder-plus"
+    ],
+    "folder-tree": [
+      "folder-tree"
+    ],
     "folder-up": [
       "folder-up"
+    ],
+    "folder-x": [
+      "folder-x"
+    ],
+    "georgian-lari": [
+      "georgian-lari"
+    ],
+    "git-branch": [
+      "git-branch"
+    ],
+    "git-commit-horizontal": [
+      "git-commit-horizontal"
+    ],
+    "git-commit-vertical": [
+      "git-commit-vertical"
+    ],
+    "git-compare": [
+      "git-compare"
+    ],
+    "git-compare-arrows": [
+      "git-compare-arrows"
+    ],
+    "git-fork": [
+      "git-fork"
+    ],
+    "git-graph": [
+      "git-graph"
+    ],
+    "git-merge": [
+      "git-merge"
+    ],
+    "git-pull-request": [
+      "git-pull-request"
+    ],
+    "git-pull-request-closed": [
+      "git-pull-request-closed"
+    ],
+    "git-pull-request-create": [
+      "git-pull-request-create"
+    ],
+    "gitlab": [
+      "gitlab"
+    ],
+    "home": [
+      "home"
+    ],
+    "indian-rupee": [
+      "indian-rupee"
+    ],
+    "italic": [
+      "italic"
+    ],
+    "japanese-yen": [
+      "japanese-yen"
     ],
     "key-circle": [
       "key-circle"
     ],
     "key-square": [
       "key-square"
+    ],
+    "linkedin": [
+      "linkedin"
+    ],
+    "mail-check": [
+      "mail-check"
+    ],
+    "message-circle-check": [
+      "message-circle-check"
+    ],
+    "message-circle-dashed": [
+      "message-circle-dashed"
+    ],
+    "message-circle-plus": [
+      "message-circle-plus"
+    ],
+    "message-circle-x": [
+      "message-circle-x"
+    ],
+    "message-square-check": [
+      "message-square-check"
+    ],
+    "message-square-dashed": [
+      "message-square-dashed"
+    ],
+    "message-square-plus": [
+      "message-square-plus"
+    ],
+    "message-square-x": [
+      "message-square-x"
+    ],
+    "mic-off": [
+      "mic-off"
     ],
     "panel-left-close": [
       "panel-left-close"
@@ -333,6 +1211,57 @@
     ],
     "panel-right-open": [
       "panel-right-open"
+    ],
+    "philippine-peso": [
+      "philippine-peso"
+    ],
+    "phone-off": [
+      "phone-off"
+    ],
+    "pound-sterling": [
+      "pound-sterling"
+    ],
+    "receipt": [
+      "receipt"
+    ],
+    "receipt-cent": [
+      "receipt-cent"
+    ],
+    "receipt-euro": [
+      "receipt-euro"
+    ],
+    "receipt-indian-rupee": [
+      "receipt-indian-rupee"
+    ],
+    "receipt-japanese-yen": [
+      "receipt-japanese-yen"
+    ],
+    "receipt-pound-sterling": [
+      "receipt-pound-sterling"
+    ],
+    "receipt-russian-ruble": [
+      "receipt-russian-ruble"
+    ],
+    "receipt-swiss-franc": [
+      "receipt-swiss-franc"
+    ],
+    "receipt-text": [
+      "receipt-text"
+    ],
+    "receipt-turkish-lira": [
+      "receipt-turkish-lira"
+    ],
+    "route": [
+      "route"
+    ],
+    "russian-ruble": [
+      "russian-ruble"
+    ],
+    "saudi-riyal": [
+      "saudi-riyal"
+    ],
+    "server-crash": [
+      "server-crash"
     ],
     "square-chevron-down": [
       "square-chevron-down"
@@ -346,14 +1275,53 @@
     "square-chevron-up": [
       "square-chevron-up"
     ],
+    "swiss-franc": [
+      "swiss-franc"
+    ],
+    "switch-camera": [
+      "switch-camera"
+    ],
+    "train-track": [
+      "train-track"
+    ],
     "tree-pine": [
       "tree-pine"
+    ],
+    "turkish-lira": [
+      "turkish-lira"
+    ],
+    "underline": [
+      "underline"
+    ],
+    "user-check": [
+      "user-check"
+    ],
+    "user-round-check": [
+      "user-round-check"
     ],
     "user-round-cog": [
       "user-round-cog"
     ],
+    "user-round-plus": [
+      "user-round-plus"
+    ],
     "wallet": [
       "wallet"
+    ],
+    "waypoints": [
+      "waypoints"
+    ],
+    "webhook": [
+      "webhook"
+    ],
+    "wind": [
+      "wind"
+    ],
+    "workflow": [
+      "workflow"
+    ],
+    "x": [
+      "x"
     ],
     "supported-six": [
       "disc-3",
@@ -362,6 +1330,96 @@
       "panel-right-open",
       "briefcase-business",
       "tree-pine"
+    ],
+    "path-paint": [
+      "home",
+      "at-sign",
+      "attach-file",
+      "git-branch",
+      "folder-git",
+      "folder-git-2",
+      "git-commit-horizontal",
+      "git-commit-vertical",
+      "git-compare-arrows",
+      "git-compare",
+      "git-fork",
+      "git-graph",
+      "git-merge",
+      "git-pull-request-closed",
+      "git-pull-request-create",
+      "git-pull-request",
+      "gitlab",
+      "folder-check",
+      "folder-minus",
+      "folder-plus",
+      "folder-tree",
+      "folder-x",
+      "linkedin",
+      "user-check",
+      "user-round-check",
+      "user-round-plus",
+      "message-circle-check",
+      "message-circle-plus",
+      "message-circle-x",
+      "message-square-check",
+      "message-square-plus",
+      "message-square-x",
+      "clipboard-check",
+      "file-check",
+      "file-check-2",
+      "file-chart-line",
+      "x",
+      "eye-off",
+      "bluetooth",
+      "bluetooth-connected",
+      "bluetooth-off",
+      "fingerprint",
+      "calendar-check",
+      "calendar-check-2",
+      "chart-line",
+      "chart-spline",
+      "receipt",
+      "receipt-cent",
+      "receipt-euro",
+      "receipt-indian-rupee",
+      "receipt-japanese-yen",
+      "receipt-pound-sterling",
+      "receipt-russian-ruble",
+      "receipt-swiss-franc",
+      "receipt-text",
+      "receipt-turkish-lira",
+      "mic-off",
+      "switch-camera",
+      "phone-off",
+      "mail-check",
+      "dollar-sign",
+      "euro",
+      "pound-sterling",
+      "indian-rupee",
+      "japanese-yen",
+      "russian-ruble",
+      "swiss-franc",
+      "italic",
+      "underline",
+      "server-crash",
+      "webhook",
+      "workflow",
+      "circle-check",
+      "ban",
+      "route",
+      "train-track",
+      "waypoints",
+      "wind",
+      "droplet",
+      "flame",
+      "air-vent",
+      "circle-dollar-sign",
+      "georgian-lari",
+      "philippine-peso",
+      "saudi-riyal",
+      "turkish-lira",
+      "message-circle-dashed",
+      "message-square-dashed"
     ],
     "chevrons": [
       "chevron-down",
@@ -380,59 +1438,187 @@
     ],
     "folders": [
       "folder",
+      "folder-check",
       "folder-down",
+      "folder-git",
+      "folder-git-2",
       "folder-input",
+      "folder-minus",
       "folder-output",
-      "folder-up"
+      "folder-plus",
+      "folder-tree",
+      "folder-up",
+      "folder-x"
     ],
     "opacity": [
       "calendar-days",
       "circle-dashed"
     ],
     "all": [
+      "air-vent",
+      "at-sign",
+      "attach-file",
+      "ban",
       "bell",
+      "bluetooth",
+      "bluetooth-connected",
+      "bluetooth-off",
       "briefcase-business",
+      "calendar-check",
+      "calendar-check-2",
       "calendar-days",
+      "chart-line",
+      "chart-spline",
       "chevron-down",
       "chevron-first",
       "chevron-left",
       "chevron-right",
       "chevron-up",
+      "circle-check",
       "circle-chevron-down",
       "circle-chevron-left",
       "circle-chevron-right",
       "circle-chevron-up",
       "circle-dashed",
+      "circle-dollar-sign",
       "circle-help",
+      "clipboard-check",
       "disc-3",
+      "dollar-sign",
+      "droplet",
+      "euro",
+      "eye-off",
+      "file-chart-line",
+      "file-check",
+      "file-check-2",
+      "fingerprint",
+      "flame",
       "folder",
+      "folder-check",
       "folder-down",
+      "folder-git",
+      "folder-git-2",
       "folder-input",
+      "folder-minus",
       "folder-output",
+      "folder-plus",
+      "folder-tree",
       "folder-up",
+      "folder-x",
+      "georgian-lari",
+      "git-branch",
+      "git-commit-horizontal",
+      "git-commit-vertical",
+      "git-compare",
+      "git-compare-arrows",
+      "git-fork",
+      "git-graph",
+      "git-merge",
+      "git-pull-request",
+      "git-pull-request-closed",
+      "git-pull-request-create",
+      "gitlab",
+      "home",
+      "indian-rupee",
+      "italic",
+      "japanese-yen",
       "key-circle",
       "key-square",
+      "linkedin",
+      "mail-check",
+      "message-circle-check",
+      "message-circle-dashed",
+      "message-circle-plus",
+      "message-circle-x",
+      "message-square-check",
+      "message-square-dashed",
+      "message-square-plus",
+      "message-square-x",
+      "mic-off",
       "panel-left-close",
       "panel-left-open",
       "panel-right-open",
+      "philippine-peso",
+      "phone-off",
+      "pound-sterling",
+      "receipt",
+      "receipt-cent",
+      "receipt-euro",
+      "receipt-indian-rupee",
+      "receipt-japanese-yen",
+      "receipt-pound-sterling",
+      "receipt-russian-ruble",
+      "receipt-swiss-franc",
+      "receipt-text",
+      "receipt-turkish-lira",
+      "route",
+      "russian-ruble",
+      "saudi-riyal",
+      "server-crash",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "swiss-franc",
+      "switch-camera",
+      "train-track",
       "tree-pine",
+      "turkish-lira",
+      "underline",
+      "user-check",
+      "user-round-check",
       "user-round-cog",
-      "wallet"
+      "user-round-plus",
+      "wallet",
+      "waypoints",
+      "webhook",
+      "wind",
+      "workflow",
+      "x"
     ],
     "repeated": [
+      "air-vent",
+      "air-vent",
+      "air-vent",
+      "at-sign",
+      "at-sign",
+      "at-sign",
+      "attach-file",
+      "attach-file",
+      "attach-file",
+      "ban",
+      "ban",
+      "ban",
       "bell",
       "bell",
       "bell",
+      "bluetooth",
+      "bluetooth",
+      "bluetooth",
+      "bluetooth-connected",
+      "bluetooth-connected",
+      "bluetooth-connected",
+      "bluetooth-off",
+      "bluetooth-off",
+      "bluetooth-off",
       "briefcase-business",
       "briefcase-business",
       "briefcase-business",
+      "calendar-check",
+      "calendar-check",
+      "calendar-check",
+      "calendar-check-2",
+      "calendar-check-2",
+      "calendar-check-2",
       "calendar-days",
       "calendar-days",
       "calendar-days",
+      "chart-line",
+      "chart-line",
+      "chart-line",
+      "chart-spline",
+      "chart-spline",
+      "chart-spline",
       "chevron-down",
       "chevron-down",
       "chevron-down",
@@ -448,6 +1634,9 @@
       "chevron-up",
       "chevron-up",
       "chevron-up",
+      "circle-check",
+      "circle-check",
+      "circle-check",
       "circle-chevron-down",
       "circle-chevron-down",
       "circle-chevron-down",
@@ -463,33 +1652,171 @@
       "circle-dashed",
       "circle-dashed",
       "circle-dashed",
+      "circle-dollar-sign",
+      "circle-dollar-sign",
+      "circle-dollar-sign",
       "circle-help",
       "circle-help",
       "circle-help",
+      "clipboard-check",
+      "clipboard-check",
+      "clipboard-check",
       "disc-3",
       "disc-3",
       "disc-3",
+      "dollar-sign",
+      "dollar-sign",
+      "dollar-sign",
+      "droplet",
+      "droplet",
+      "droplet",
+      "euro",
+      "euro",
+      "euro",
+      "eye-off",
+      "eye-off",
+      "eye-off",
+      "file-chart-line",
+      "file-chart-line",
+      "file-chart-line",
+      "file-check",
+      "file-check",
+      "file-check",
+      "file-check-2",
+      "file-check-2",
+      "file-check-2",
+      "fingerprint",
+      "fingerprint",
+      "fingerprint",
+      "flame",
+      "flame",
+      "flame",
       "folder",
       "folder",
       "folder",
+      "folder-check",
+      "folder-check",
+      "folder-check",
       "folder-down",
       "folder-down",
       "folder-down",
+      "folder-git",
+      "folder-git",
+      "folder-git",
+      "folder-git-2",
+      "folder-git-2",
+      "folder-git-2",
       "folder-input",
       "folder-input",
       "folder-input",
+      "folder-minus",
+      "folder-minus",
+      "folder-minus",
       "folder-output",
       "folder-output",
       "folder-output",
+      "folder-plus",
+      "folder-plus",
+      "folder-plus",
+      "folder-tree",
+      "folder-tree",
+      "folder-tree",
       "folder-up",
       "folder-up",
       "folder-up",
+      "folder-x",
+      "folder-x",
+      "folder-x",
+      "georgian-lari",
+      "georgian-lari",
+      "georgian-lari",
+      "git-branch",
+      "git-branch",
+      "git-branch",
+      "git-commit-horizontal",
+      "git-commit-horizontal",
+      "git-commit-horizontal",
+      "git-commit-vertical",
+      "git-commit-vertical",
+      "git-commit-vertical",
+      "git-compare",
+      "git-compare",
+      "git-compare",
+      "git-compare-arrows",
+      "git-compare-arrows",
+      "git-compare-arrows",
+      "git-fork",
+      "git-fork",
+      "git-fork",
+      "git-graph",
+      "git-graph",
+      "git-graph",
+      "git-merge",
+      "git-merge",
+      "git-merge",
+      "git-pull-request",
+      "git-pull-request",
+      "git-pull-request",
+      "git-pull-request-closed",
+      "git-pull-request-closed",
+      "git-pull-request-closed",
+      "git-pull-request-create",
+      "git-pull-request-create",
+      "git-pull-request-create",
+      "gitlab",
+      "gitlab",
+      "gitlab",
+      "home",
+      "home",
+      "home",
+      "indian-rupee",
+      "indian-rupee",
+      "indian-rupee",
+      "italic",
+      "italic",
+      "italic",
+      "japanese-yen",
+      "japanese-yen",
+      "japanese-yen",
       "key-circle",
       "key-circle",
       "key-circle",
       "key-square",
       "key-square",
       "key-square",
+      "linkedin",
+      "linkedin",
+      "linkedin",
+      "mail-check",
+      "mail-check",
+      "mail-check",
+      "message-circle-check",
+      "message-circle-check",
+      "message-circle-check",
+      "message-circle-dashed",
+      "message-circle-dashed",
+      "message-circle-dashed",
+      "message-circle-plus",
+      "message-circle-plus",
+      "message-circle-plus",
+      "message-circle-x",
+      "message-circle-x",
+      "message-circle-x",
+      "message-square-check",
+      "message-square-check",
+      "message-square-check",
+      "message-square-dashed",
+      "message-square-dashed",
+      "message-square-dashed",
+      "message-square-plus",
+      "message-square-plus",
+      "message-square-plus",
+      "message-square-x",
+      "message-square-x",
+      "message-square-x",
+      "mic-off",
+      "mic-off",
+      "mic-off",
       "panel-left-close",
       "panel-left-close",
       "panel-left-close",
@@ -499,6 +1826,57 @@
       "panel-right-open",
       "panel-right-open",
       "panel-right-open",
+      "philippine-peso",
+      "philippine-peso",
+      "philippine-peso",
+      "phone-off",
+      "phone-off",
+      "phone-off",
+      "pound-sterling",
+      "pound-sterling",
+      "pound-sterling",
+      "receipt",
+      "receipt",
+      "receipt",
+      "receipt-cent",
+      "receipt-cent",
+      "receipt-cent",
+      "receipt-euro",
+      "receipt-euro",
+      "receipt-euro",
+      "receipt-indian-rupee",
+      "receipt-indian-rupee",
+      "receipt-indian-rupee",
+      "receipt-japanese-yen",
+      "receipt-japanese-yen",
+      "receipt-japanese-yen",
+      "receipt-pound-sterling",
+      "receipt-pound-sterling",
+      "receipt-pound-sterling",
+      "receipt-russian-ruble",
+      "receipt-russian-ruble",
+      "receipt-russian-ruble",
+      "receipt-swiss-franc",
+      "receipt-swiss-franc",
+      "receipt-swiss-franc",
+      "receipt-text",
+      "receipt-text",
+      "receipt-text",
+      "receipt-turkish-lira",
+      "receipt-turkish-lira",
+      "receipt-turkish-lira",
+      "route",
+      "route",
+      "route",
+      "russian-ruble",
+      "russian-ruble",
+      "russian-ruble",
+      "saudi-riyal",
+      "saudi-riyal",
+      "saudi-riyal",
+      "server-crash",
+      "server-crash",
+      "server-crash",
       "square-chevron-down",
       "square-chevron-down",
       "square-chevron-down",
@@ -511,84 +1889,299 @@
       "square-chevron-up",
       "square-chevron-up",
       "square-chevron-up",
+      "swiss-franc",
+      "swiss-franc",
+      "swiss-franc",
+      "switch-camera",
+      "switch-camera",
+      "switch-camera",
+      "train-track",
+      "train-track",
+      "train-track",
       "tree-pine",
       "tree-pine",
       "tree-pine",
+      "turkish-lira",
+      "turkish-lira",
+      "turkish-lira",
+      "underline",
+      "underline",
+      "underline",
+      "user-check",
+      "user-check",
+      "user-check",
+      "user-round-check",
+      "user-round-check",
+      "user-round-check",
       "user-round-cog",
       "user-round-cog",
       "user-round-cog",
+      "user-round-plus",
+      "user-round-plus",
+      "user-round-plus",
       "wallet",
       "wallet",
-      "wallet"
+      "wallet",
+      "waypoints",
+      "waypoints",
+      "waypoints",
+      "webhook",
+      "webhook",
+      "webhook",
+      "wind",
+      "wind",
+      "wind",
+      "workflow",
+      "workflow",
+      "workflow",
+      "x",
+      "x",
+      "x"
     ],
     "mixed-loader": [
+      "air-vent",
+      "at-sign",
+      "attach-file",
+      "ban",
       "bell",
+      "bluetooth",
+      "bluetooth-connected",
+      "bluetooth-off",
       "briefcase-business",
+      "calendar-check",
+      "calendar-check-2",
       "calendar-days",
+      "chart-line",
+      "chart-spline",
       "chevron-down",
       "chevron-first",
       "chevron-left",
       "chevron-right",
       "chevron-up",
+      "circle-check",
       "circle-chevron-down",
       "circle-chevron-left",
       "circle-chevron-right",
       "circle-chevron-up",
       "circle-dashed",
+      "circle-dollar-sign",
       "circle-help",
+      "clipboard-check",
       "disc-3",
+      "dollar-sign",
+      "droplet",
+      "euro",
+      "eye-off",
+      "file-chart-line",
+      "file-check",
+      "file-check-2",
+      "fingerprint",
+      "flame",
       "folder",
+      "folder-check",
       "folder-down",
+      "folder-git",
+      "folder-git-2",
       "folder-input",
+      "folder-minus",
       "folder-output",
+      "folder-plus",
+      "folder-tree",
       "folder-up",
+      "folder-x",
+      "georgian-lari",
+      "git-branch",
+      "git-commit-horizontal",
+      "git-commit-vertical",
+      "git-compare",
+      "git-compare-arrows",
+      "git-fork",
+      "git-graph",
+      "git-merge",
+      "git-pull-request",
+      "git-pull-request-closed",
+      "git-pull-request-create",
+      "gitlab",
+      "home",
+      "indian-rupee",
+      "italic",
+      "japanese-yen",
       "key-circle",
       "key-square",
+      "linkedin",
+      "mail-check",
+      "message-circle-check",
+      "message-circle-dashed",
+      "message-circle-plus",
+      "message-circle-x",
+      "message-square-check",
+      "message-square-dashed",
+      "message-square-plus",
+      "message-square-x",
+      "mic-off",
       "panel-left-close",
       "panel-left-open",
       "panel-right-open",
+      "philippine-peso",
+      "phone-off",
+      "pound-sterling",
+      "receipt",
+      "receipt-cent",
+      "receipt-euro",
+      "receipt-indian-rupee",
+      "receipt-japanese-yen",
+      "receipt-pound-sterling",
+      "receipt-russian-ruble",
+      "receipt-swiss-franc",
+      "receipt-text",
+      "receipt-turkish-lira",
+      "route",
+      "russian-ruble",
+      "saudi-riyal",
+      "server-crash",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "swiss-franc",
+      "switch-camera",
+      "train-track",
       "tree-pine",
+      "turkish-lira",
+      "underline",
+      "user-check",
+      "user-round-check",
       "user-round-cog",
+      "user-round-plus",
       "wallet",
+      "waypoints",
+      "webhook",
+      "wind",
+      "workflow",
+      "x",
       "loader-circle"
     ],
     "mixed-arrow": [
+      "air-vent",
+      "at-sign",
+      "attach-file",
+      "ban",
       "bell",
+      "bluetooth",
+      "bluetooth-connected",
+      "bluetooth-off",
       "briefcase-business",
+      "calendar-check",
+      "calendar-check-2",
       "calendar-days",
+      "chart-line",
+      "chart-spline",
       "chevron-down",
       "chevron-first",
       "chevron-left",
       "chevron-right",
       "chevron-up",
+      "circle-check",
       "circle-chevron-down",
       "circle-chevron-left",
       "circle-chevron-right",
       "circle-chevron-up",
       "circle-dashed",
+      "circle-dollar-sign",
       "circle-help",
+      "clipboard-check",
       "disc-3",
+      "dollar-sign",
+      "droplet",
+      "euro",
+      "eye-off",
+      "file-chart-line",
+      "file-check",
+      "file-check-2",
+      "fingerprint",
+      "flame",
       "folder",
+      "folder-check",
       "folder-down",
+      "folder-git",
+      "folder-git-2",
       "folder-input",
+      "folder-minus",
       "folder-output",
+      "folder-plus",
+      "folder-tree",
       "folder-up",
+      "folder-x",
+      "georgian-lari",
+      "git-branch",
+      "git-commit-horizontal",
+      "git-commit-vertical",
+      "git-compare",
+      "git-compare-arrows",
+      "git-fork",
+      "git-graph",
+      "git-merge",
+      "git-pull-request",
+      "git-pull-request-closed",
+      "git-pull-request-create",
+      "gitlab",
+      "home",
+      "indian-rupee",
+      "italic",
+      "japanese-yen",
       "key-circle",
       "key-square",
+      "linkedin",
+      "mail-check",
+      "message-circle-check",
+      "message-circle-dashed",
+      "message-circle-plus",
+      "message-circle-x",
+      "message-square-check",
+      "message-square-dashed",
+      "message-square-plus",
+      "message-square-x",
+      "mic-off",
       "panel-left-close",
       "panel-left-open",
       "panel-right-open",
+      "philippine-peso",
+      "phone-off",
+      "pound-sterling",
+      "receipt",
+      "receipt-cent",
+      "receipt-euro",
+      "receipt-indian-rupee",
+      "receipt-japanese-yen",
+      "receipt-pound-sterling",
+      "receipt-russian-ruble",
+      "receipt-swiss-franc",
+      "receipt-text",
+      "receipt-turkish-lira",
+      "route",
+      "russian-ruble",
+      "saudi-riyal",
+      "server-crash",
       "square-chevron-down",
       "square-chevron-left",
       "square-chevron-right",
       "square-chevron-up",
+      "swiss-franc",
+      "switch-camera",
+      "train-track",
       "tree-pine",
+      "turkish-lira",
+      "underline",
+      "user-check",
+      "user-round-check",
       "user-round-cog",
+      "user-round-plus",
       "wallet",
+      "waypoints",
+      "webhook",
+      "wind",
+      "workflow",
+      "x",
       "arrow-left"
     ],
     "interface": [

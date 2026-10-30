@@ -6,9 +6,10 @@ import { gzipSync } from "node:zlib";
 import { readCatalog } from "./catalog.mjs";
 import { generatedCSS as transformCSS } from "./css-cycles.mjs";
 import { generatedOpacityCSS } from "./css-opacity.mjs";
+import { generatedPaintCSS } from "./css-paint.mjs";
 import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
-const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS]);
+const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS, ...generatedPaintCSS]);
 
 export function inspectRoute(output, route, log, chunkCache) {
   const html = readFileSync(new URL(route, output), "utf8");

@@ -1,5 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { waypointsPaint } from "./paint";
 
-export const waypointsRecipe = createStaggeredRevealRecipe([0, 1, 0, 2, 0, 3, 0].map((index, position) => ({
-  child: position + 1, delay: index * 0.15, opacityDelay: index * 0.1, preservePose: true,
-})));
+export const waypointsRecipe = createCSSPaintRecipe(waypointsPaint);

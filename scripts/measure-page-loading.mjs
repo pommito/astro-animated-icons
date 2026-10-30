@@ -8,7 +8,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { measureRoute, resourceSizes } from "./measure-resources.mjs";
-import { loadingCases, supportedSix } from "./page-loading-cases.mjs";
+import { loadingCases, supportedSix, pathPaintFamilies } from "./page-loading-cases.mjs";
 import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -30,13 +30,14 @@ export function build(cwd, config) {
 }
 
 export function chunkRole(id) {
-  if (/\/src\/shared\/register-css/.test(id) || /\/src\/Css(?:Opacity)?Icon\.astro\?astro&type=script/.test(id)) return "registration";
+  if (/\/src\/shared\/register-css/.test(id) || /\/src\/Css(?:Opacity|Paint)?Icon\.astro\?astro&type=script/.test(id)) return "registration";
   if (/\/src\/icons\/[^/]+\/(?:element\.ts$|[^/]+\.astro\?astro&type=script)/.test(id)) return "registration";
   if (/\/src\/icons\//.test(id)) return "recipe";
   if (/\/src\/element\.ts$/.test(id)) return "lifecycle";
-  if (/\/src\/shared\/(?:cycle-css|opacity-css|recipe-css|combined-transform-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/(?:cycle-css|opacity-css|paint-css|recipe-css|combined-transform-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/paint-data\.ts$/.test(id)) return "recipe-serialization";
   if (/\/src\/shared\/combined-transform-cycle\.ts$/.test(id)) return "transform-sampling";
-  if (/\/src\/shared\/css-(?:cycle|opacity)\.ts$/.test(id)) return "css-adapter";
+  if (/\/src\/shared\/css-(?:cycle|opacity|paint)\.ts$/.test(id)) return "css-adapter";
   if (/\/node_modules\//.test(id)) return "dependency";
   return "other-shared";
 }
@@ -83,13 +84,13 @@ export function measureLoading(output, metadata) {
     for (const url of payload.externalCSS) resources[url] = { ...resourceSizes([readFileSync(new URL(url.slice(1), output), "utf8")]), kind: "stylesheet" };
     return [name, { icons: slugs.length, distinctIcons: new Set(slugs).size, entries: inspection.entries.length,
       javascriptFiles: inspection.chunks.size, inlineScripts: inspection.inline.length, registrations: new Set(slugs).size,
-      recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
+      recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity|paint)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
   }));
   const transitions = [["one", "four"], ["four", "ten"], ["ten", "all"], ["all", "one"], ["all", "all-loader"],
     ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"],
     ["cog", "cog-repeated"], ["cog", "cog-css"], ["cog-css", "cog-css-loader"],
     ["loader", "cog-loader"], ["cog-css-loader", "cog"],
-    ...["key-square", "wallet", "key-circle", "combined", ...supportedSix, "supported-six"].flatMap(name => [
+    ...["key-square", "wallet", "key-circle", "combined", ...supportedSix, "supported-six", ...Object.keys(pathPaintFamilies), "path-paint", "paint-eye-off"].flatMap(name => [
       [name, name + "-repeated"], [name, name + "-css"], [name + "-css", name + "-css-loader"],
       ["loader", name + "-loader"], [name + "-css-loader", name],
     ])];

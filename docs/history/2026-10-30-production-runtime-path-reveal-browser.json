@@ -1,0 +1,4863 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Public production CSS and fixture-only preceding Motion mechanisms against independent pre-extraction captures. Paused timelines and manual API; no upstream React execution or visual acceptance.",
+  "results": [
+    {
+      "family": "runtime-path-reveal",
+      "production": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 10164,
+          "actual": 10164,
+          "expectedUnique": 10156,
+          "actualUnique": 10156
+        },
+        "poses": 10164,
+        "shapes": 46080,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "at-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      },
+      "reference": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 10164,
+          "actual": 10164,
+          "expectedUnique": 10156,
+          "actualUnique": 10156
+        },
+        "poses": 10164,
+        "shapes": 46080,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "at-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "at-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "attach-file/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "ban/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-connected/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "bluetooth-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "calendar-check-2/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "droplet/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "eye-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "file-chart-line/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "fingerprint/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "flame/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-check/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-minus/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-plus/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-tree/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "folder-x/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "home/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "home/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "home/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "home/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "home/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "italic/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "linkedin/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "mic-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "phone-off/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-text/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "route/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "route/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "route/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "route/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "route/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "server-crash/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "switch-camera/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "underline/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "user-round-plus/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,3423 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "method": "Public production CSS and fixture-only preceding Motion mechanisms against independent pre-extraction captures. Paused timelines and manual API; no upstream React execution or visual acceptance.",
+  "results": [
+    {
+      "family": "currency-path-reveal",
+      "production": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 7140,
+          "actual": 7140,
+          "expectedUnique": 7140,
+          "actualUnique": 7140
+        },
+        "poses": 7140,
+        "shapes": 31280,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      },
+      "reference": {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "tolerances": {
+          "dash": 0.005,
+          "offset": 0.005,
+          "opacity": 0.001,
+          "matrix": 0.005
+        },
+        "coverage": {
+          "expected": 7140,
+          "actual": 7140,
+          "expectedUnique": 7140,
+          "actualUnique": 7140
+        },
+        "poses": 7140,
+        "shapes": 31280,
+        "maximum": {
+          "dash": 0,
+          "offset": 0,
+          "opacity": 0,
+          "matrix": 0
+        },
+        "checks": [
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "circle-dollar-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "dollar-sign/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "euro/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "georgian-lari/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "indian-rupee/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "japanese-yen/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "philippine-peso/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "pound-sterling/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-cent/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-euro/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-indian-rupee/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-japanese-yen/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-pound-sterling/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-russian-ruble/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-swiss-franc/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "receipt-turkish-lira/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "russian-ruble/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "saudi-riyal/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "swiss-franc/28 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/14 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/16 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/24 reconnect plays"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 completed return clears"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 idle stop"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 stale callbacks preserve newer playback"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 disconnect cleans animations"
+          },
+          {
+            "pass": true,
+            "context": "turkish-lira/28 reconnect plays"
+          }
+        ],
+        "failureCount": 0,
+        "failures": []
+      }
+    }
+  ]
+}

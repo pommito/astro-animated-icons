@@ -1,1 +1,4 @@
-export { userCheckRecipe } from "../../shared/user-check";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { userCheckPaint } from "./paint";
+
+export const userCheckRecipe = createCSSPaintRecipe(userCheckPaint);

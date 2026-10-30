@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/pound-sterling/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-pound-sterling"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { poundSterlingPaint } from "../../../../../packages/animated-icons/src/icons/pound-sterling/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-pound-sterling")) customElements.define("grave-reference-pound-sterling", createIconElement(precedingPaintRecipe(poundSterlingPaint)));
+</script>

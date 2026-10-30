@@ -3,9 +3,10 @@ import { readFileSync } from "node:fs";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { generatedCSS as transformCSS } from "./css-cycles.mjs";
 import { generatedOpacityCSS } from "./css-opacity.mjs";
+import { generatedPaintCSS } from "./css-paint.mjs";
 import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
 
-const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS]);
+const generatedCSS = new Map([...transformCSS, ...generatedOpacityCSS, ...generatedPaintCSS]);
 
 export function createCSSRouteVerifier(output, javascriptBudget) {
   const cache = new Map();

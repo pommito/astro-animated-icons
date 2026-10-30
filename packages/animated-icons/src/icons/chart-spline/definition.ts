@@ -1,5 +1,4 @@
-import { createStaggeredRevealRecipe } from "../../shared/staggered-reveal";
+import { createCSSPaintRecipe } from "../../shared/css-paint";
+import { chartSplinePaint } from "./paint";
 
-export const chartSplineRecipe = createStaggeredRevealRecipe([
-  { child: 2, delay: 0.15, opacityDelay: 0.1 },
-]);
+export const chartSplineRecipe = createCSSPaintRecipe(chartSplinePaint);

@@ -1,15 +1,8 @@
 ---
-import Icon, { type IconProps } from "../../Icon.astro";
+import CssPaintIcon from "../../CssPaintIcon.astro";
+import type { IconProps } from "../../Icon.astro";
+import { xPaint } from "./paint";
+import Drawing from "./Drawing.astro";
 type Props = IconProps;
 ---
-
-<Icon {...Astro.props} tag="grave-x">
-  <g>
-    <path d="M18 6 6 18" />
-    <path d="m6 6 12 12" />
-  </g>
-</Icon>
-
-<script>
-  import "./element";
-</script>
+<CssPaintIcon paint={xPaint} {...Astro.props} tag="grave-x"><Drawing /></CssPaintIcon>

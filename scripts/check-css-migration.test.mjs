@@ -24,6 +24,10 @@ test("a migrated recipe omitted from fixtures is rejected", () => {
 });
 test("an unmarked transform sheet is rejected", () => change("bell", html => html.replace('data-grave-cycle-style="bell"', ''), /one active sheet marker for bell/));
 test("an unmarked opacity sheet is rejected", () => change("calendar-days", html => html.replace('data-grave-cycle-style="calendar-days"', ''), /one active sheet marker for calendar-days/));
+test("a paint sheet cannot change the signed offset or lose its marker", () => {
+  change("eye-off", html => html.replace('data-grave-cycle-style="eye-off"', ''), /one active sheet marker for eye-off/);
+  change("eye-off", html => html.replace('var(--grave-paint-length) * -2', 'var(--grave-paint-length) * 2'), /exact generated CSS selection/);
+});
 test("a repeated cross-family stylesheet is rejected", () => change("repeated", html => html + html.match(/<style[^>]*data-grave-cycle-style="calendar-days"[^>]*>[\s\S]*?<\/style>/)[0], /exact generated CSS selection and deduplication/));
 test("an unused barrel import cannot emit styles", () => change("unused", html => html + '<style>@keyframes grave-cycle-bell-entry{to{transform:none}}</style>', /exact generated CSS selection/));
 test("an empty route cannot hide a missing selected drawing", () => change("folder-down", html => html.replace(/<svg\b[\s\S]*?<\/svg>/, ''), /every selected drawing rendered/));

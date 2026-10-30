@@ -1,0 +1,12 @@
+---
+import Icon, { type IconProps } from "../../../../../packages/animated-icons/src/Icon.astro";
+import Drawing from "../../../../../packages/animated-icons/src/icons/message-circle-plus/Drawing.astro";
+type Props = IconProps;
+---
+<Icon {...Astro.props} tag="grave-reference-message-circle-plus"><Drawing /></Icon>
+<script>
+  import { createIconElement } from "../../../../../packages/animated-icons/src/element";
+  import { messageCirclePlusPaint } from "../../../../../packages/animated-icons/src/icons/message-circle-plus/paint";
+  import { precedingPaintRecipe } from "./preceding-paint";
+  if (!customElements.get("grave-reference-message-circle-plus")) customElements.define("grave-reference-message-circle-plus", createIconElement(precedingPaintRecipe(messageCirclePlusPaint)));
+</script>

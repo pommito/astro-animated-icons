@@ -2,7 +2,7 @@
 
 The owner approved internal CSS engine selection in [issue #81](https://github.com/pommito/astro-animated-icons/issues/81). Consumers keep the existing imports, tags, props, and playback methods. Generated CSS keyframes use JavaScript playback control and the shared custom-element lifecycle.
 
-This branch has 32 CSS recipes among 470 exported icons. Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness and TreePine now use the existing finite cycle. The owner visually accepted the complete six-icon set on 2026-10-30 at `30b07aac9d24a056d57df17fabd69a8abd5c46ea` on `/supported-six/`. The [acceptance record](history/2026-10-30-supported-six-acceptance.md) links its [implementation and payload evidence](history/2026-10-29-supported-six.md). The owner visually accepted KeySquare, Wallet, and KeyCircle on 2026-10-29 at `df1ad33` on `/combined-transforms/`. The [acceptance record](history/2026-10-29-combined-transform-acceptance.md) identifies the reviewed scope. The owner visually accepted UserRoundCog on 2026-10-29 at `7f30ce7` on `/css-capabilities/#user-round-cog` for [PR #97](https://github.com/pommito/astro-animated-icons/pull/97). The [2026-10-29 record](history/2026-10-29-user-round-cog.md) compares it with the post-#91 baseline at `3efe4f2`. The earlier implementation at `da69ce6` had 22 CSS recipes. Its [integration record](history/2026-10-23-css-integration.md) contains evidence and measurements for 32 compositions, including 66 repeated instances. The [documentation integration check](history/2026-10-23-css-documentation-integration.md) records the inventory and command verification from that stage. The original [documentation check](history/2026-10-23-css-documentation.md) and [21-recipe verification](history/2026-10-23-css-migration.md) remain dated history.
+This branch has 120 CSS recipes among 470 exported icons. The owner approved [ADR 0002](adr/0002-runtime-path-paint.md) on 2026-10-30 and authorized all 88 compatible paint recipes. Their production visual acceptance remains pending on `/path-paint/`. WindArrowDown remains on Motion with [follow-up #105](https://github.com/pommito/astro-animated-icons/issues/105). Disc3, PanelLeftClose, PanelLeftOpen, PanelRightOpen, BriefcaseBusiness and TreePine now use the existing finite cycle. The owner visually accepted the complete six-icon set on 2026-10-30 at `30b07aac9d24a056d57df17fabd69a8abd5c46ea` on `/supported-six/`. The [acceptance record](history/2026-10-30-supported-six-acceptance.md) links its [implementation and payload evidence](history/2026-10-29-supported-six.md). The owner visually accepted KeySquare, Wallet, and KeyCircle on 2026-10-29 at `df1ad33` on `/combined-transforms/`. The [acceptance record](history/2026-10-29-combined-transform-acceptance.md) identifies the reviewed scope. The owner visually accepted UserRoundCog on 2026-10-29 at `7f30ce7` on `/css-capabilities/#user-round-cog` for [PR #97](https://github.com/pommito/astro-animated-icons/pull/97). The [2026-10-29 record](history/2026-10-29-user-round-cog.md) compares it with the post-#91 baseline at `3efe4f2`. The earlier implementation at `da69ce6` had 22 CSS recipes. Its [integration record](history/2026-10-23-css-integration.md) contains evidence and measurements for 32 compositions, including 66 repeated instances. The [documentation integration check](history/2026-10-23-css-documentation-integration.md) records the inventory and command verification from that stage. The original [documentation check](history/2026-10-23-css-documentation.md) and [21-recipe verification](history/2026-10-23-css-migration.md) remain dated history.
 
 The original 21 migrated recipes have owner visual acceptance. Bell and ChevronRight were accepted during promotion. The [chevron acceptance record](history/2026-10-23-css-chevron-acceptance.md) covers the other 12 finite chevrons. The [capability acceptance record](history/2026-10-23-css-capability-acceptance.md) covers seven icons. Folder has separate acceptance in [PR #92](https://github.com/pommito/astro-animated-icons/pull/92), including its intentional 200 ms return. Documentation integration adds no visual approval.
 
@@ -12,10 +12,10 @@ The full source review for [#98](https://github.com/pommito/astro-animated-icons
 
 | Outcome | Exports | Next action |
 | --- | ---: | --- |
-| Migrated | 32 | Preserve existing evidence and scoped owner approvals. |
+| Migrated | 120 | Preserve prior approvals; obtain production visual acceptance for the 88 paint recipes. |
 | Supported but deferred | 0 | No currently reviewed supported recipe remains to migrate. |
-| Specified capability needed | 196 | #81 coordinates capability design and proof before rollout. |
-| Retained on Motion | 242 | Preserve the concrete retained behavior. |
+| Specified capability needed | 107 | #81 coordinates capability design and proof before rollout. |
+| Retained on Motion | 243 | Preserve the concrete retained behavior. |
 | Needs source review | 0 | New or changed source must pass review before entering the queue. |
 
 The complete additional set supported by the existing finite cycle is `Disc3`, `PanelLeftClose`, `PanelLeftOpen`, `PanelRightOpen`, `BriefcaseBusiness`, and `TreePine`. The four group recipes use the already supported `[data-motion="0"]` target. Disc3 rotates to 90 degrees with 400 ms easeInOut; the panels translate on X for 500 ms with offsets `[0, .4, 1]` and easeOut. Their returns use the same duration/easing, current-pose replay and hold completion. Their drawing origins stay unchanged.
@@ -26,7 +26,7 @@ The queue also records the exceptions within shared helpers. Languages has fixed
 
 ### Complete family queue
 
-This table is the 2026-10-29 source-review snapshot. Full slug membership and contracts live in the maintained JSON above and in generated `familyQueue`; the table does not create another per-icon list.
+This table includes the approved 2026-10-30 paint rollout. Full slug membership and contracts live in the maintained JSON above and in generated `familyQueue`; the table does not create another per-icon list.
 
 | Family | Exports | Outcome | Mechanism or required behavior |
 | --- | ---: | --- | --- |
@@ -34,7 +34,7 @@ This table is the 2026-10-29 source-review snapshot. Full slug membership and co
 | `css-combined-cycle` | 3 | Supported | `combined-finite-transforms` |
 | `css-finite-cycle` | 21 | Supported | `finite-transform-cycle` |
 | `css-opacity-parts` | 2 | Supported | `timed-opacity-parts` |
-| `currency-path-reveal` | 21 | Capability needed | `runtime-path-paint` |
+| `currency-path-reveal` | 21 | Supported | `runtime-path-paint` |
 | `direct-path-morph` | 2 | Motion retained | `path-morph` |
 | `finite-group-cycle` | 4 | Supported | `finite-transform-cycle` |
 | `finite-svg-parts-cycle` | 2 | Supported | `finite-transform-cycle` |
@@ -50,7 +50,7 @@ This table is the 2026-10-29 source-review snapshot. Full slug membership and co
 | `parts-springs` | 68 | Motion retained | `inherited-velocity` |
 | `queued-sequences` | 10 | Motion retained | `custom-sequence` |
 | `random-delays` | 1 | Motion retained | `random-delays` |
-| `runtime-path-reveal` | 30 | Capability needed | `runtime-path-paint` |
+| `runtime-path-reveal` | 30 | Supported | `runtime-path-paint` |
 | `signal-springs` | 8 | Motion retained | `signal-spring` |
 | `spring-return-corners` | 8 | Motion retained | `inherited-velocity` |
 | `spring-return-directions` | 10 | Motion retained | `inherited-velocity` |
@@ -61,21 +61,22 @@ This table is the 2026-10-29 source-review snapshot. Full slug membership and co
 | `spring-return-pulse` | 3 | Motion retained | `inherited-velocity` |
 | `spring-transforms` | 90 | Motion retained | `inherited-velocity` |
 | `staggered-path-cycle` | 6 | Capability needed | `runtime-path-cycle` |
-| `staggered-path-reveal` | 23 | Capability needed | `runtime-path-paint` |
-| `symbol-path-reveal` | 12 | Capability needed | `runtime-path-paint` |
+| `staggered-path-reveal` | 23 | Supported | `runtime-path-paint` |
+| `symbol-path-reveal` | 12 | Supported | `runtime-path-paint` |
 | `timed-paint` | 4 | Capability needed | `finite-svg-paint` |
 | `timed-transform-parts` | 19 | Capability needed | `multiple-targets-and-transform-channels` |
 | `unwrapped-angle` | 7 | Motion retained | `unwrapped-rotation` |
 | `vehicle-sequences` | 3 | Motion retained | `custom-sequence-and-springs` |
-| `wind-path-reveal` | 3 | Capability needed | `runtime-path-paint` |
+| `wind-path-reveal` | 2 | Supported | `runtime-path-paint` |
+| `wind-path-translation` | 1 | Motion retained | `runtime-path-paint-and-retained-translation`; #105 |
 
 Motion retention reasons are explicit in the family and local contracts: retained spring velocity, native spring physics, `d` morphs, current-opacity signal springs, continuing samplers, unwrapped turns, randomized delays or queued phases. Capability candidates specify paint/geometry, target/channel support, repeat/replay policy or fixed sampled paint. They cannot silently count as eligible migrations.
 
 ## Inventory and next work
 
-[#103](https://github.com/pommito/astro-animated-icons/issues/103) now has an [ADR proposal](adr/0002-runtime-path-paint.md), a runnable `/path-paint-proof/` experiment, [independent source and Motion captures](history/2026-10-30-path-paint-decision.md), and a [complete mapping of its 89 candidates](history/2026-10-30-path-paint-mapping.md). Production package sources and engine selection remain unchanged. The strict queue still reports 32 migrated, 196 capability candidates and 242 Motion retentions, with no deferred or unresolved review. The other 107 capability candidates preserve their outcomes and dependency hashes.
+[#103](https://github.com/pommito/astro-animated-icons/issues/103) has an accepted [ADR](adr/0002-runtime-path-paint.md), the preserved `/path-paint-proof/` experiment and the production `/path-paint/` comparison. Production migrates the complete `runtime-path-reveal` set of 30, `staggered-path-reveal` set of 23, `currency-path-reveal` set of 21, `symbol-path-reveal` set of 12 and the compatible `wind-path-reveal` set of two. The immutable [scope](../tests/helpers/path-paint-scope.json) names the original 89 candidates. WindArrowDown moves to the retained `wind-path-translation` family with its concrete sampled-translation blocker and linked #105. No scoped candidate lacks an outcome.
 
-The proposed paint adapter covers measured dash/offset and independent opacity timing. WindArrowDown remains a complete Motion exception because it also retains sampled translation and opacity. The proof uses frozen native-effect transcripts for 88 paint candidates. It compares 22 CSS representatives and one retained Motion control with 7816 saved poses at four sizes. It establishes feasibility at those points, not production eligibility for every member. Compact delivery reduces the all-candidate forecast but still adds about 60 kB page gzip for twenty repetitions. The dated evidence records family and mixed-Motion regressions, browser limits and the separate architecture approval gate. No production rollout starts before the owner's explicit decision on ADR 0002. Later visual acceptance remains separate, and #103 stays open.
+Independent pre-extraction captures cover all 88 migrated recipes at four sizes. Shared-data Motion references supplement those captures. The production report records numerical comparisons, geometry, cleanup, loading costs and browser limits. The other 107 capability candidates and the original 242 Motion retentions retain their outcomes and dependency hashes. Keep #103 open until production visual acceptance and merge; architecture approval alone does not close it.
 
 [Issue #95](https://github.com/pommito/astro-animated-icons/issues/95) implements the [combined-transform decision](adr/0001-combined-finite-transforms.md) approved by the owner on 2026-10-29 before implementation. Its [pre-implementation Motion and payload evidence](history/2026-10-29-combined-transform-decision.md) starts at main `92523bd`. [Implementation evidence](history/2026-10-29-combined-transforms.md) records the preserved behavior, unit-page savings, family and mixed-Motion regressions for KeySquare, Wallet, and KeyCircle. The owner visually accepted all three on 2026-10-29 at `df1ad33`. [#98](https://github.com/pommito/astro-animated-icons/issues/98) owns systematic source review of all 470 exports; [#99](https://github.com/pommito/astro-animated-icons/issues/99) owns migration of complete reviewed compatible families after capability proof. There is no arbitrary two- or three-icon limit on later family batches.
 
@@ -88,7 +89,7 @@ pnpm inventory:animations --check --summary --output .artifacts/animation-invent
 
 Read [the inventory contract](animation-inventory.md) before interpreting its results. `engine` describes current wiring. `migrationState` distinguishes migrated, supported but deferred, capability needed, retained on Motion, and needs review. Reviewed decisions pin dependency hashes and return to review after source changes.
 
-The current strict inventory reports 32 migrated recipes, zero supported but deferred, 196 needing specified capabilities, 242 retained on Motion and zero needing source review. The 38 reviewed families and all 470 exports remain covered exactly once. Only the six selected recipes change engine.
+The current strict inventory reports 120 migrated recipes, zero supported but deferred, 107 needing specified capabilities, 243 retained on Motion and zero needing source review. The 39 reviewed families and all 470 exports remain covered exactly once. This rollout changes only the 88 approved compatible paint recipes. The extra family records the WindArrowDown exception without a per-export policy override.
 
 The inventory regenerated for #98 accounts for 26 migrated recipes, six supported but deferred, 196 needing specified capabilities, 242 retained on Motion, and zero needing source review. The strict check rejects missing/orphan records and invalidates reviews when local definitions, transitive helpers, drawings, origins, lifecycle, delivery, recipe types, dependency lock or reviewed family policies change. Deferred recipes also pin the existing CSS mechanism that supports their compatibility decision. [Schema version 2](animation-inventory.md) separates production import graphs from this broader review dependency set. The [source-review record](history/2026-10-29-catalogue-source-review.md) preserves its validation and limits.
 

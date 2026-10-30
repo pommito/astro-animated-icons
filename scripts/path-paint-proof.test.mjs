@@ -2,8 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import plans from "../tests/helpers/path-paint-proof-plans.json" with { type: "json" };
 import { paintCSS, measureTargets, validateProofScope } from "../tests/fixtures/astro/src/path-paint-proof/compiler.mjs";
-import decisions from "./animation-decisions.json" with { type: "json" };
-import families from "./animation-families.json" with { type: "json" };
+import scope from "../tests/helpers/path-paint-scope.json" with { type: "json" };
 
 test("the paint compiler keeps EyeOff's two-length dash and signed offset", () => {
   const css = paintCSS(plans["eye-off"]);
@@ -13,7 +12,7 @@ test("the paint compiler keeps EyeOff's two-length dash and signed offset", () =
 });
 
 test("the proof keeps all 89 scoped candidates explicit without certifying WindArrowDown", () => {
-  const slugs=Object.keys(decisions).filter(slug=>families[decisions[slug].family].capability==="runtime-path-paint");
+  const slugs=scope.map(icon=>icon.slug);
   const retained={"wind-arrow-down":"Retained y/opacity sampling needs a separately proved composition adapter; #103 Phase 2."};
   assert.equal(validateProofScope(plans,slugs,retained),89);
   assert.throws(()=>validateProofScope(plans,slugs,{}),/wind-arrow-down/);

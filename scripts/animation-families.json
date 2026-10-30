@@ -119,53 +119,73 @@
     }
   },
   "runtime-path-reveal": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "runtime-path-paint",
-    "reason": "Path lengths, dash values, optional offset/opacity tracks and replay policies need a geometry-aware paint capability.",
-    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "reason": "The approved ADR 0002 paint representation preserves the complete reviewed finite measured-paint recipe.",
+    "followUp": "#103: production visual acceptance is pending; #105 retains the WindArrowDown composition exception.",
     "contract": {
-      "mechanism": "shared/path-reveal.ts",
-      "playback": "Measure getTotalLength for each actual target. full=length px length px, entry dash starts at zero unless preservePose and active; preservePose until-clear remains active after completion. Return goes to full and zero offset. Opacity has independent duration/delay/ease; opacityDelay/ease default to main delay/ease. reverseOffset defaults pathOffset to 1. Entry offset=-pathOffset*length. No transforms or springs in this helper. Clear deletes playback state and opacity/dash styles. Caller controls finish and sequencing."
+      "mechanism": "paint.ts -> CssPaintIcon.astro -> shared/css-paint.ts",
+      "playback": "Measure getTotalLength for each actual target. full=length px length px, entry dash starts at zero unless preservePose and active; preservePose until-clear remains active after completion. Return goes to full and zero offset. Opacity has independent duration/delay/ease; opacityDelay/ease default to main delay/ease. reverseOffset defaults pathOffset to 1. Entry offset=-pathOffset*length. No transforms or springs in this helper. Clear deletes playback state and opacity/dash styles. Caller controls finish and sequencing. Production uses measured target-local length and captured values, native CSS property tracks with effect easing, compact self-contained delivery and shared stylesheet recovery. Architecture approved 2026-10-30; production visual acceptance remains pending.",
+      "precedingMotion": {
+        "mechanism": "shared/path-reveal.ts",
+        "playback": "Measure getTotalLength for each actual target. full=length px length px, entry dash starts at zero unless preservePose and active; preservePose until-clear remains active after completion. Return goes to full and zero offset. Opacity has independent duration/delay/ease; opacityDelay/ease default to main delay/ease. reverseOffset defaults pathOffset to 1. Entry offset=-pathOffset*length. No transforms or springs in this helper. Clear deletes playback state and opacity/dash styles. Caller controls finish and sequencing."
+      }
     }
   },
   "staggered-path-reveal": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "runtime-path-paint",
-    "reason": "At least one resolved step draws measured stroke geometry; opacity-only sibling steps do not remove that requirement.",
-    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "reason": "The approved ADR 0002 paint representation preserves the complete reviewed finite measured-paint recipe.",
+    "followUp": "#103: production visual acceptance is pending; #105 retains the WindArrowDown composition exception.",
     "contract": {
-      "mechanism": "shared/staggered-reveal.ts -> shared/path-reveal.ts",
-      "playback": "One-based child indices. Entry delay=step.delay, opacityDelay=step.opacityDelay or delay. Return delay=returnDelay or zero. Entry stroke duration=step.duration or .3, return .3. Ease=easeOut unless defaultEase or returning, then [.25,.1,.35,1]. Opacity .3 and [.25,.1,.35,1]. opacityOnly bypasses geometry and uses preservePose-specific replay. Finish is caller argument or hold; clear deletes opacity playback map and path styles."
+      "mechanism": "paint.ts -> CssPaintIcon.astro -> shared/css-paint.ts",
+      "playback": "One-based child indices. Entry delay=step.delay, opacityDelay=step.opacityDelay or delay. Return delay=returnDelay or zero. Entry stroke duration=step.duration or .3, return .3. Ease=easeOut unless defaultEase or returning, then [.25,.1,.35,1]. Opacity .3 and [.25,.1,.35,1]. opacityOnly bypasses geometry and uses preservePose-specific replay. Finish is caller argument or hold; clear deletes opacity playback map and path styles. Production uses measured target-local length and captured values, native CSS property tracks with effect easing, compact self-contained delivery and shared stylesheet recovery. Architecture approved 2026-10-30; production visual acceptance remains pending.",
+      "precedingMotion": {
+        "mechanism": "shared/staggered-reveal.ts -> shared/path-reveal.ts",
+        "playback": "One-based child indices. Entry delay=step.delay, opacityDelay=step.opacityDelay or delay. Return delay=returnDelay or zero. Entry stroke duration=step.duration or .3, return .3. Ease=easeOut unless defaultEase or returning, then [.25,.1,.35,1]. Opacity .3 and [.25,.1,.35,1]. opacityOnly bypasses geometry and uses preservePose-specific replay. Finish is caller argument or hold; clear deletes opacity playback map and path styles."
+      }
     }
   },
   "currency-path-reveal": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "runtime-path-paint",
-    "reason": "The complete currency/receipt family reveals measured main and secondary strokes with distinct delays and return durations.",
-    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "reason": "The approved ADR 0002 paint representation preserves the complete reviewed finite measured-paint recipe.",
+    "followUp": "#103: production visual acceptance is pending; #105 retains the WindArrowDown composition exception.",
     "contract": {
-      "mechanism": "shared/currency-receipt.ts -> shared/path-reveal.ts",
-      "playback": "One-based child lists in construction. Main entry .6/return .4, delay zero. Secondary entry .4/delay .5, return .3/delay .3. easeOut and opacity .1. reverseSecondary adds negative-length offset to secondary strokes only. Entry restarts explicit zero because preservePose is absent. Hold completion; clear all selected path paint."
+      "mechanism": "paint.ts -> CssPaintIcon.astro -> shared/css-paint.ts",
+      "playback": "One-based child lists in construction. Main entry .6/return .4, delay zero. Secondary entry .4/delay .5, return .3/delay .3. easeOut and opacity .1. reverseSecondary adds negative-length offset to secondary strokes only. Entry restarts explicit zero because preservePose is absent. Hold completion; clear all selected path paint. Production uses measured target-local length and captured values, native CSS property tracks with effect easing, compact self-contained delivery and shared stylesheet recovery. Architecture approved 2026-10-30; production visual acceptance remains pending.",
+      "precedingMotion": {
+        "mechanism": "shared/currency-receipt.ts -> shared/path-reveal.ts",
+        "playback": "One-based child lists in construction. Main entry .6/return .4, delay zero. Secondary entry .4/delay .5, return .3/delay .3. easeOut and opacity .1. reverseSecondary adds negative-length offset to secondary strokes only. Entry restarts explicit zero because preservePose is absent. Hold completion; clear all selected path paint."
+      }
     }
   },
   "symbol-path-reveal": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "runtime-path-paint",
-    "reason": "Symbol/check strokes use measured geometry and timed opacity that the opacity-only mechanism does not represent.",
-    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "reason": "The approved ADR 0002 paint representation preserves the complete reviewed finite measured-paint recipe.",
+    "followUp": "#103: production visual acceptance is pending; #105 retains the WindArrowDown composition exception.",
     "contract": {
-      "mechanism": "shared/symbol-reveal.ts -> shared/path-reveal.ts",
-      "playback": "Zero-based firstChild, strokes default 1, duration default .4. Entry duration argument, delay=index*.2, easeInOut, opacity same duration. Return .3, delay zero, [.25,.1,.35,1]. Entry restarts. Hold completion; clear selected geometry paint."
+      "mechanism": "paint.ts -> CssPaintIcon.astro -> shared/css-paint.ts",
+      "playback": "Zero-based firstChild, strokes default 1, duration default .4. Entry duration argument, delay=index*.2, easeInOut, opacity same duration. Return .3, delay zero, [.25,.1,.35,1]. Entry restarts. Hold completion; clear selected geometry paint. Production uses measured target-local length and captured values, native CSS property tracks with effect easing, compact self-contained delivery and shared stylesheet recovery. Architecture approved 2026-10-30; production visual acceptance remains pending.",
+      "precedingMotion": {
+        "mechanism": "shared/symbol-reveal.ts -> shared/path-reveal.ts",
+        "playback": "Zero-based firstChild, strokes default 1, duration default .4. Entry duration argument, delay=index*.2, easeInOut, opacity same duration. Return .3, delay zero, [.25,.1,.35,1]. Entry restarts. Hold completion; clear selected geometry paint."
+      }
     }
   },
   "wind-path-reveal": {
-    "status": "candidate",
+    "status": "supported",
     "capability": "runtime-path-paint",
-    "reason": "Measured dash/offset tracks and until-clear replay require a paint capability.",
-    "followUp": "#81: specify and prove this capability before adding this complete family to #99.",
+    "reason": "The approved ADR 0002 paint representation preserves the complete reviewed finite measured-paint recipe.",
+    "followUp": "#103: production visual acceptance is pending; #105 retains the WindArrowDown composition exception.",
     "contract": {
-      "mechanism": "shared/wind.ts -> shared/path-reveal.ts",
-      "playback": "Child index follows delays array. Entry .5, return .3, caller delay applies to both. easeInOut, opacity same duration, pathOffset=1 and preservePose=until-clear. Restore completion; clear selected paint. WindArrowDown adds timed translated opacity as detailed locally."
+      "mechanism": "paint.ts -> CssPaintIcon.astro -> shared/css-paint.ts",
+      "playback": "Child index follows delays array. Entry .5, return .3, caller delay applies to both. easeInOut, opacity same duration, pathOffset=1 and preservePose=until-clear. Restore completion; clear selected paint. WindArrowDown adds timed translated opacity as detailed locally. Production uses measured target-local length and captured values, native CSS property tracks with effect easing, compact self-contained delivery and shared stylesheet recovery. Architecture approved 2026-10-30; production visual acceptance remains pending.",
+      "precedingMotion": {
+        "mechanism": "shared/wind.ts -> shared/path-reveal.ts",
+        "playback": "Child index follows delays array. Entry .5, return .3, caller delay applies to both. easeInOut, opacity same duration, pathOffset=1 and preservePose=until-clear. Restore completion; clear selected paint. WindArrowDown adds timed translated opacity as detailed locally."
+      }
     }
   },
   "staggered-path-cycle": {
@@ -394,6 +414,16 @@
     "contract": {
       "mechanism": "shared/path-morph.ts",
       "playback": "animatePathMorph forwards the complete options object to Motion animate with attrD. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
+    }
+  },
+  "wind-path-translation": {
+    "status": "motion",
+    "capability": "retained-path-translation",
+    "reason": "WindArrowDown combines measured wind strokes with retained sampled Y/opacity on its final paths. The owner explicitly keeps the complete recipe on Motion.",
+    "followUp": "#105: prove retained translated-opacity composition before replacing WindArrowDown.",
+    "contract": {
+      "mechanism": "shared/wind.ts + shared/svg-transform.ts",
+      "playback": "Keep the complete measured wind reveal with delayed until-clear stroke state, plus Y [-10,0] px and opacity [0,1] over 500 ms after 350 ms. Return uses 300 ms easeInOut, retained poses and restore completion. A paint-only adapter does not cover this recipe."
     }
   }
 }
