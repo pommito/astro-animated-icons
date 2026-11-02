@@ -1,6 +1,6 @@
 # Motion Astro release identity
 
-Motion Astro is the owner's chosen product identity. The owner confirmed `@motion-astro/icons` as the npm name and `icons.astromotion.dev` as the documentation hostname on 2026-11-02. The project license, namespace access, version policy and release owners remain unresolved. This record covers [issue #107](https://github.com/pommito/astro-animated-icons/issues/107) under [the release plan #106](https://github.com/pommito/astro-animated-icons/issues/106). It does not complete #107.
+Motion Astro is the owner's chosen product identity. The owner confirmed `@motion-astro/icons` as the npm name, `icons.astromotion.dev` as the documentation hostname and MIT as the license for the project's own contributions on 2026-11-02. The copyright holder, namespace access, version policy and release owners remain unresolved. This record covers [issue #107](https://github.com/pommito/astro-animated-icons/issues/107) under [the release plan #106](https://github.com/pommito/astro-animated-icons/issues/106). It does not complete #107.
 
 The audit below describes commit `90302b37876ba25f417b63ffd721fbab5e21f0aa` on 2026-11-02. Runtime measurement work, including #108, can continue with the existing package name and API. [Packaging #115](https://github.com/pommito/astro-animated-icons/issues/115) applies the approved metadata and license files later. Publication and deployment require their separate release approval.
 
@@ -11,7 +11,7 @@ The audit below describes commit `90302b37876ba25f417b63ffd721fbab5e21f0aa` on 2
 | Product identity | Motion Astro, confirmed by the owner in the task instructions | Use product branding rather than a personal package brand. Preserve upstream author credits. |
 | Exact npm name | `@motion-astro/icons`, confirmed by the owner on 2026-11-02 | Establish namespace access and recheck the name before release. The confirmation does not reserve it. |
 | npm namespace and access | Pending | Identify the publishing npm account and package administrators. Prove access to the selected `motion-astro` user or organization scope and its publishing permissions. |
-| Project license | Owner requested a conventional free/open-source license; exact license pending | MIT is proposed for explicit confirmation. Confirm the copyright holder and wording for the project's own contributions. Product branding alone does not establish copyright ownership. |
+| Project license | MIT, SPDX identifier `MIT`, confirmed by the owner on 2026-11-02 for the project's own contributions | Confirm the copyright holder and wording. Apply the license files and metadata in #115. Product branding alone does not establish copyright ownership. |
 | Attribution | Existing upstream credits must remain, as required by the task instructions | Resolve the provenance and notice gaps below. Keep upstream notices with copied or adapted material under their existing terms. |
 | First version and version policy | Pending | Choose the first public version, whether to use prereleases, and the compatibility policy before 1.0 if applicable. |
 | Public naming | Existing contract remains in force | Decide whether the first release changes only the package import or also tags and handle names. Approve exact replacements and migration scope before applying any change. |
@@ -21,7 +21,7 @@ The audit below describes commit `90302b37876ba25f417b63ffd721fbab5e21f0aa` on 2
 
 ## Existing licenses and attribution
 
-The only tracked license/notice file is [THIRD_PARTY_NOTICES.md](../packages/animated-icons/THIRD_PARTY_NOTICES.md). There is no root project license. [The README](../README.md#attribution-and-license) already requires a license decision before publication.
+The only tracked license/notice file is [THIRD_PARTY_NOTICES.md](../packages/animated-icons/THIRD_PARTY_NOTICES.md). There is no root project license file yet. [The README](../README.md#attribution-and-license) records the selected MIT license and the remaining copyright-holder and license-file preparation before publication.
 
 | Material | Existing credit and terms | Source checked |
 | --- | --- | --- |
@@ -120,4 +120,4 @@ Local verification resolved all 15 Markdown paths and anchors in the README and 
 
 `rtk pnpm install --frozen-lockfile --offline` first failed because `mdn-data@2.27.1` was absent from the local cache. `rtk pnpm install --frozen-lockfile` then succeeded without changing the manifests or lockfile. `rtk pnpm validate` passed in 168.610 seconds, including both Astro checks with zero errors, warnings or hints, 470 initial drawings, 944 bundle cases, 120 migrated recipes across 132 compositions and all 108 Node tests. The production fixture build still emitted warnings for fixture-only React `use client` directives and a large generated chunk. Routine validation launched no browser.
 
-The completed preparation is the license/metadata inventory, dated registry observations and package-file audit. The npm name and documentation hostname now have owner confirmation. The exact license, copyright holder, first-version policy, maintainers, public-name migration scope and release/deployment responsibility remain open. Provenance corrections, final license files, the final artifact, namespace permission checks, registry installation and deployment remain pending. No DNS or hosting configuration was changed. This audit adds no browser qualification or visual acceptance.
+The completed preparation is the license/metadata inventory, dated registry observations and package-file audit. The npm name, documentation hostname and MIT license now have owner confirmation. The copyright holder, first-version policy, maintainers, public-name migration scope and release/deployment responsibility remain open. Provenance corrections, final license files, the final artifact, namespace permission checks, registry installation and deployment remain pending. No DNS or hosting configuration was changed. This audit adds no browser qualification or visual acceptance.
