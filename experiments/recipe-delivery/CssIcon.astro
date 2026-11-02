@@ -1,0 +1,25 @@
+---
+import Icon, { type IconProps } from "../../packages/animated-icons/src/Icon.astro";
+import type { TransformCycle } from "../../packages/animated-icons/src/shared/finite-transform-cycle";
+import { cycleCSS } from "../../packages/animated-icons/src/shared/cycle-css";
+import { serializeRecipe } from "../../packages/animated-icons/src/shared/recipe-data";
+
+import { assets } from "../../.artifacts/recipe-delivery/generated/assets";
+interface Props extends IconProps {
+  cycle: TransformCycle;
+  svgStyle?: string;
+  tag: `grave-${string}`;
+}
+const { cycle, tag, ...props } = Astro.props;
+const locals = Astro.locals as { cssCycleSheets?: Set<string> };
+const seen = locals.cssCycleSheets ??= new Set<string>();
+const include = !seen.has(cycle.id);
+seen.add(cycle.id);
+---
+{include && <style is:inline data-grave-cycle-style={cycle.id} set:html={cycleCSS(cycle)} />}
+<Icon {...props} tag={tag} data-css-cycle={cycle.id} data-grave-cycle-recipe={include ? serializeRecipe(cycle) : undefined} data-grave-cycle-src={include ? undefined : assets[tag]}>
+  <slot />
+</Icon>
+<script>
+  import "./register-cycle";
+</script>

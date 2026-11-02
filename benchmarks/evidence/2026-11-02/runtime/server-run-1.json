@@ -1,0 +1,3636 @@
+{
+  "environment": {
+    "node": "v22.20.0"
+  },
+  "protocol": {
+    "warmupPairs": 5,
+    "measuredPairs": 30,
+    "streamingPairs": 15,
+    "order": "AB on even pairs, BA on odd pairs",
+    "compiled": "Astro production build and container API",
+    "gc": "Natural GC; no forced collection",
+    "excluded": "Build, module initialization, container creation, HTTP adapter and network"
+  },
+  "scenarios": {
+    "paint-eye-off": {
+      "batch": 32,
+      "controls": {
+        "baseline": {
+          "bytes": 2968,
+          "icons": 1,
+          "references": 0
+        },
+        "proof": {
+          "bytes": 2968,
+          "icons": 1,
+          "references": 0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.1573268125000027,
+            "cpuMs": 0.29971875
+          },
+          "proof": {
+            "wallMs": 0.1309518125000011,
+            "cpuMs": 0.20984375
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.1433190000000053,
+            "cpuMs": 0.1415
+          },
+          "baseline": {
+            "wallMs": 0.11472656249999602,
+            "cpuMs": 0.188
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.10200131250000766,
+            "cpuMs": 0.12553125
+          },
+          "proof": {
+            "wallMs": 0.18256768749999708,
+            "cpuMs": 0.43034375
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.13622525000000962,
+            "cpuMs": 0.30490625
+          },
+          "baseline": {
+            "wallMs": 0.11240496874999906,
+            "cpuMs": 0.12515625
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.12012368750001201,
+            "cpuMs": 0.1899375
+          },
+          "proof": {
+            "wallMs": 0.16838803125000368,
+            "cpuMs": 0.29959375
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.1545507812500091,
+            "cpuMs": 0.2696875
+          },
+          "baseline": {
+            "wallMs": 0.14446615625000447,
+            "cpuMs": 0.5656875
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.09908984374999363,
+            "cpuMs": 0.20071875
+          },
+          "proof": {
+            "wallMs": 0.19689843749999625,
+            "cpuMs": 0.39378125
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.11059896874999708,
+            "cpuMs": 0.166125
+          },
+          "baseline": {
+            "wallMs": 0.08435937500000534,
+            "cpuMs": 0.08440625
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.08231118749999666,
+            "cpuMs": 0.10290625
+          },
+          "proof": {
+            "wallMs": 0.11519793749999963,
+            "cpuMs": 0.33390625
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.19208593749999636,
+            "cpuMs": 0.257125
+          },
+          "baseline": {
+            "wallMs": 0.08310937499999227,
+            "cpuMs": 0.0876875
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.08521874999999568,
+            "cpuMs": 0.256875
+          },
+          "proof": {
+            "wallMs": 0.14131381250000175,
+            "cpuMs": 0.20175
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.23301562500000728,
+            "cpuMs": 0.60446875
+          },
+          "baseline": {
+            "wallMs": 0.08122393749999901,
+            "cpuMs": 0.14125
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.12532684375000258,
+            "cpuMs": 0.2299375
+          },
+          "proof": {
+            "wallMs": 0.10072787500000402,
+            "cpuMs": 0.10915625
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.1619570312500116,
+            "cpuMs": 0.26903125
+          },
+          "baseline": {
+            "wallMs": 0.08273306249999735,
+            "cpuMs": 0.16484375
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.0880676875000006,
+            "cpuMs": 0.186
+          },
+          "proof": {
+            "wallMs": 0.09222784374999549,
+            "cpuMs": 0.144875
+          }
+        },
+        {
+          "pair": 15,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.10285156250000682,
+            "cpuMs": 0.11640625
+          },
+          "baseline": {
+            "wallMs": 0.1540377812499969,
+            "cpuMs": 0.24590625
+          }
+        },
+        {
+          "pair": 16,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.08913021875000027,
+            "cpuMs": 0.088375
+          },
+          "proof": {
+            "wallMs": 0.10533075000000736,
+            "cpuMs": 0.1039375
+          }
+        },
+        {
+          "pair": 17,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.11899478124999519,
+            "cpuMs": 0.11790625
+          },
+          "baseline": {
+            "wallMs": 0.17608331249999765,
+            "cpuMs": 0.24696875
+          }
+        },
+        {
+          "pair": 18,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.10234634374999985,
+            "cpuMs": 0.194125
+          },
+          "proof": {
+            "wallMs": 0.10584634375000235,
+            "cpuMs": 0.2805
+          }
+        },
+        {
+          "pair": 19,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.09175781249999204,
+            "cpuMs": 0.2598125
+          },
+          "baseline": {
+            "wallMs": 0.08297656250000784,
+            "cpuMs": 0.08303125
+          }
+        },
+        {
+          "pair": 20,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.16776040624999666,
+            "cpuMs": 0.23746875
+          },
+          "proof": {
+            "wallMs": 0.09011459375000186,
+            "cpuMs": 0.09003125
+          }
+        },
+        {
+          "pair": 21,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.08667318749999708,
+            "cpuMs": 0.0866875
+          },
+          "baseline": {
+            "wallMs": 0.1127083437500005,
+            "cpuMs": 0.12709375
+          }
+        },
+        {
+          "pair": 22,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.12285415624999985,
+            "cpuMs": 0.19871875
+          },
+          "proof": {
+            "wallMs": 0.12242837499999837,
+            "cpuMs": 0.11765625
+          }
+        },
+        {
+          "pair": 23,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.09433593750000568,
+            "cpuMs": 0.094375
+          },
+          "baseline": {
+            "wallMs": 0.09421743749999223,
+            "cpuMs": 0.09278125
+          }
+        },
+        {
+          "pair": 24,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.0777903749999922,
+            "cpuMs": 0.0778125
+          },
+          "proof": {
+            "wallMs": 0.16767706250000458,
+            "cpuMs": 0.5004375
+          }
+        },
+        {
+          "pair": 25,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.11743228125000371,
+            "cpuMs": 0.19171875
+          },
+          "baseline": {
+            "wallMs": 0.1027890625000083,
+            "cpuMs": 0.294
+          }
+        },
+        {
+          "pair": 26,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.1297083437500106,
+            "cpuMs": 0.26959375
+          },
+          "proof": {
+            "wallMs": 0.16476693750000493,
+            "cpuMs": 0.3740625
+          }
+        },
+        {
+          "pair": 27,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.1095312499999892,
+            "cpuMs": 0.24278125
+          },
+          "baseline": {
+            "wallMs": 0.08339581250000094,
+            "cpuMs": 0.08346875
+          }
+        },
+        {
+          "pair": 28,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.1323307187499978,
+            "cpuMs": 0.241875
+          },
+          "proof": {
+            "wallMs": 0.15508984374999102,
+            "cpuMs": 0.23690625
+          }
+        },
+        {
+          "pair": 29,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.11011718749999488,
+            "cpuMs": 0.1056875
+          },
+          "baseline": {
+            "wallMs": 0.11484375000000568,
+            "cpuMs": 0.10884375
+          }
+        }
+      ],
+      "streams": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.10141699999985576,
+            "totalMs": 0.10666700000001583,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.1654169999997066,
+            "totalMs": 0.17162499999994907,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.17525000000023283,
+            "totalMs": 0.18170800000007148,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.10220799999979135,
+            "totalMs": 0.10845800000015515,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.09116699999958655,
+            "totalMs": 0.09600000000000364,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.10875000000032742,
+            "totalMs": 0.11570800000026793,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.10650000000032378,
+            "totalMs": 0.11262500000020736,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.08641599999964455,
+            "totalMs": 0.09129099999972823,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.08483399999977337,
+            "totalMs": 0.08933399999978064,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.10504099999980099,
+            "totalMs": 0.11074999999982538,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.09816599999976461,
+            "totalMs": 0.10341599999992468,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.0860000000002401,
+            "totalMs": 0.09054100000003018,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.0858749999997599,
+            "totalMs": 0.09420799999998053,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.27224999999998545,
+            "totalMs": 0.3098339999996824,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.13420799999994415,
+            "totalMs": 0.1410000000000764,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.11391599999979007,
+            "totalMs": 0.11924999999973807,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.08620900000005349,
+            "totalMs": 0.09083400000008623,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.09758400000009715,
+            "totalMs": 0.10316700000021228,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.10583400000041365,
+            "totalMs": 0.1117500000000291,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.08233299999983501,
+            "totalMs": 0.08674999999993815,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.08837499999981446,
+            "totalMs": 0.0929999999998472,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.09383300000035888,
+            "totalMs": 0.09900000000016007,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.09225000000014916,
+            "totalMs": 0.09708399999999529,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.07966699999997218,
+            "totalMs": 0.0838330000001406,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.07749999999987267,
+            "totalMs": 0.08170900000004622,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.09458300000005693,
+            "totalMs": 0.09979100000009566,
+            "chunks": 2
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.0915420000001177,
+            "totalMs": 0.0966670000002523,
+            "chunks": 2
+          },
+          "baseline": {
+            "firstSvgMs": 0.07845899999983885,
+            "totalMs": 0.08233400000017355,
+            "chunks": 1
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.08341699999982666,
+            "totalMs": 0.08737500000006548,
+            "chunks": 1
+          },
+          "proof": {
+            "firstSvgMs": 0.10362499999973807,
+            "totalMs": 0.1082909999995536,
+            "chunks": 2
+          }
+        }
+      ]
+    },
+    "repeated": {
+      "batch": 8,
+      "controls": {
+        "baseline": {
+          "bytes": 66346,
+          "icons": 20,
+          "references": 0
+        },
+        "proof": {
+          "bytes": 66346,
+          "icons": 20,
+          "references": 0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5631822499999544,
+            "cpuMs": 0.559
+          },
+          "proof": {
+            "wallMs": 1.0777708749999988,
+            "cpuMs": 2.34475
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.889010374999998,
+            "cpuMs": 1.8135
+          },
+          "baseline": {
+            "wallMs": 0.452968750000025,
+            "cpuMs": 0.453375
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.6432864999999879,
+            "cpuMs": 0.68925
+          },
+          "proof": {
+            "wallMs": 1.06901562500002,
+            "cpuMs": 1.168625
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.8321927499999902,
+            "cpuMs": 0.827125
+          },
+          "baseline": {
+            "wallMs": 0.6893021249999833,
+            "cpuMs": 0.72125
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5084375000000136,
+            "cpuMs": 0.904625
+          },
+          "proof": {
+            "wallMs": 0.9959999999999809,
+            "cpuMs": 1.4415
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.87662499999999,
+            "cpuMs": 0.932125
+          },
+          "baseline": {
+            "wallMs": 0.4462396249999756,
+            "cpuMs": 0.4465
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.552541749999989,
+            "cpuMs": 0.588375
+          },
+          "proof": {
+            "wallMs": 1.0279427499999656,
+            "cpuMs": 2.814625
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.8250052500000038,
+            "cpuMs": 1.355375
+          },
+          "baseline": {
+            "wallMs": 0.7290052500000002,
+            "cpuMs": 0.78225
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5256926249999765,
+            "cpuMs": 0.518875
+          },
+          "proof": {
+            "wallMs": 0.8303593750000005,
+            "cpuMs": 0.89
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.995927125000037,
+            "cpuMs": 1.028625
+          },
+          "baseline": {
+            "wallMs": 0.46038025000001426,
+            "cpuMs": 0.456
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5697812500000055,
+            "cpuMs": 0.626125
+          },
+          "proof": {
+            "wallMs": 0.7712656250000123,
+            "cpuMs": 0.75
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.8622343750000141,
+            "cpuMs": 0.93175
+          },
+          "baseline": {
+            "wallMs": 0.5517031250000173,
+            "cpuMs": 0.627125
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5812707499999874,
+            "cpuMs": 0.554375
+          },
+          "proof": {
+            "wallMs": 0.8398072499999785,
+            "cpuMs": 1.0015
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 1.1611353750000148,
+            "cpuMs": 2.1635
+          },
+          "baseline": {
+            "wallMs": 0.6313072499999635,
+            "cpuMs": 1.11125
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.8495103750000226,
+            "cpuMs": 0.99375
+          },
+          "proof": {
+            "wallMs": 0.8672343750000095,
+            "cpuMs": 1.315125
+          }
+        },
+        {
+          "pair": 15,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.9341146250000065,
+            "cpuMs": 1.419125
+          },
+          "baseline": {
+            "wallMs": 0.6093384999999785,
+            "cpuMs": 0.664125
+          }
+        },
+        {
+          "pair": 16,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5483177500000238,
+            "cpuMs": 0.530375
+          },
+          "proof": {
+            "wallMs": 0.8741718750000018,
+            "cpuMs": 0.946875
+          }
+        },
+        {
+          "pair": 17,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.9980728749999912,
+            "cpuMs": 1.039875
+          },
+          "baseline": {
+            "wallMs": 0.48706774999999425,
+            "cpuMs": 0.48525
+          }
+        },
+        {
+          "pair": 18,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5654894999999556,
+            "cpuMs": 0.822375
+          },
+          "proof": {
+            "wallMs": 0.8155312499999923,
+            "cpuMs": 1.6735
+          }
+        },
+        {
+          "pair": 19,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.9066510000000108,
+            "cpuMs": 1.31975
+          },
+          "baseline": {
+            "wallMs": 0.6362394999999879,
+            "cpuMs": 0.704875
+          }
+        },
+        {
+          "pair": 20,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.6715521250000052,
+            "cpuMs": 0.617
+          },
+          "proof": {
+            "wallMs": 0.8374843750000309,
+            "cpuMs": 0.90125
+          }
+        },
+        {
+          "pair": 21,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.858098874999996,
+            "cpuMs": 1.10725
+          },
+          "baseline": {
+            "wallMs": 0.5124375000000327,
+            "cpuMs": 0.492625
+          }
+        },
+        {
+          "pair": 22,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5539009999999962,
+            "cpuMs": 0.620125
+          },
+          "proof": {
+            "wallMs": 0.8308072499999639,
+            "cpuMs": 0.8255
+          }
+        },
+        {
+          "pair": 23,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.8633125000000064,
+            "cpuMs": 0.918875
+          },
+          "baseline": {
+            "wallMs": 0.5390884999999912,
+            "cpuMs": 0.61225
+          }
+        },
+        {
+          "pair": 24,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5329322499999876,
+            "cpuMs": 0.529625
+          },
+          "proof": {
+            "wallMs": 1.0088802499999474,
+            "cpuMs": 1.04025
+          }
+        },
+        {
+          "pair": 25,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.8163073749999512,
+            "cpuMs": 0.86925
+          },
+          "baseline": {
+            "wallMs": 0.45768749999996317,
+            "cpuMs": 0.457875
+          }
+        },
+        {
+          "pair": 26,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5309480000000235,
+            "cpuMs": 0.5125
+          },
+          "proof": {
+            "wallMs": 0.8886458750000088,
+            "cpuMs": 0.931375
+          }
+        },
+        {
+          "pair": 27,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.9389792499999885,
+            "cpuMs": 1.001375
+          },
+          "baseline": {
+            "wallMs": 0.507984375000035,
+            "cpuMs": 0.507875
+          }
+        },
+        {
+          "pair": 28,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 0.5591562500000009,
+            "cpuMs": 0.621375
+          },
+          "proof": {
+            "wallMs": 1.000171875000035,
+            "cpuMs": 1.301
+          }
+        },
+        {
+          "pair": 29,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 0.71776562499997,
+            "cpuMs": 0.759
+          },
+          "baseline": {
+            "wallMs": 0.6163281249999955,
+            "cpuMs": 0.695
+          }
+        }
+      ],
+      "streams": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.804957999999715,
+            "totalMs": 1.8585829999997259,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.9605419999998048,
+            "totalMs": 1.1075000000000728,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.6999580000001515,
+            "totalMs": 0.8337500000002365,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.43983299999990777,
+            "totalMs": 0.5669579999998859,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.4042500000000473,
+            "totalMs": 0.5583750000000691,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.6592500000001564,
+            "totalMs": 0.7969590000002427,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.8187080000002425,
+            "totalMs": 1.0684580000001915,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.5557089999997515,
+            "totalMs": 0.673917000000074,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.5695000000000618,
+            "totalMs": 0.6925839999998971,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.7153330000001006,
+            "totalMs": 0.8530829999999696,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.6508330000001479,
+            "totalMs": 0.7871250000002874,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.4216660000001866,
+            "totalMs": 0.7372080000000096,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 1.5825839999997697,
+            "totalMs": 1.7458750000000691,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.940958000000137,
+            "totalMs": 1.0902080000000751,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.7558749999998327,
+            "totalMs": 0.974666999999954,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.5182910000003176,
+            "totalMs": 0.6463750000002619,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.4560410000003685,
+            "totalMs": 0.5797910000001139,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 1.085458000000017,
+            "totalMs": 1.2511250000002292,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.9972920000000158,
+            "totalMs": 1.201332999999977,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.5948330000001079,
+            "totalMs": 0.7243330000001151,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.44499999999970896,
+            "totalMs": 0.5767499999997199,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.7305830000000242,
+            "totalMs": 0.8608329999997295,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.650000000000091,
+            "totalMs": 0.7723750000000109,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.4238749999999527,
+            "totalMs": 0.5484580000002097,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 1.2241249999997308,
+            "totalMs": 1.3634579999998095,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.8194170000001577,
+            "totalMs": 0.9445000000000618,
+            "chunks": 8
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 0.6983329999998205,
+            "totalMs": 0.822458000000097,
+            "chunks": 8
+          },
+          "baseline": {
+            "firstSvgMs": 0.44266600000037215,
+            "totalMs": 0.5728330000001733,
+            "chunks": 9
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 0.43600000000014916,
+            "totalMs": 0.5580420000001141,
+            "chunks": 9
+          },
+          "proof": {
+            "firstSvgMs": 0.7826669999999467,
+            "totalMs": 0.9204580000000533,
+            "chunks": 8
+          }
+        }
+      ]
+    },
+    "all": {
+      "batch": 1,
+      "controls": {
+        "baseline": {
+          "bytes": 602123,
+          "icons": 120,
+          "references": 0
+        },
+        "proof": {
+          "bytes": 602123,
+          "icons": 120,
+          "references": 0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.665040999999746,
+            "cpuMs": 10.555
+          },
+          "proof": {
+            "wallMs": 8.477250000000367,
+            "cpuMs": 17.201
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 7.668999999999869,
+            "cpuMs": 12.957
+          },
+          "baseline": {
+            "wallMs": 5.521957999999813,
+            "cpuMs": 8.88
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 8.734375,
+            "cpuMs": 8.9
+          },
+          "proof": {
+            "wallMs": 8.624708999999712,
+            "cpuMs": 9.562
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.703500000000076,
+            "cpuMs": 6.444
+          },
+          "baseline": {
+            "wallMs": 6.176750000000084,
+            "cpuMs": 6.73
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.251542000000427,
+            "cpuMs": 7.112
+          },
+          "proof": {
+            "wallMs": 5.750500000000102,
+            "cpuMs": 5.755
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.955083000000286,
+            "cpuMs": 7.871
+          },
+          "baseline": {
+            "wallMs": 7.208792000000358,
+            "cpuMs": 17.02
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 4.86587499999996,
+            "cpuMs": 4.871
+          },
+          "proof": {
+            "wallMs": 7.30337499999996,
+            "cpuMs": 11.146
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 7.7127080000000205,
+            "cpuMs": 8.216
+          },
+          "baseline": {
+            "wallMs": 4.9712499999996,
+            "cpuMs": 4.974
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.514458000000104,
+            "cpuMs": 6.371
+          },
+          "proof": {
+            "wallMs": 7.556417000000238,
+            "cpuMs": 8.126
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.8229160000000775,
+            "cpuMs": 7.526
+          },
+          "baseline": {
+            "wallMs": 5.57883400000037,
+            "cpuMs": 5.972
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.167374999999993,
+            "cpuMs": 6.593
+          },
+          "proof": {
+            "wallMs": 7.475332999999864,
+            "cpuMs": 9.707
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 5.676000000000386,
+            "cpuMs": 5.625
+          },
+          "baseline": {
+            "wallMs": 6.118124999999964,
+            "cpuMs": 6.831
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.934124999999767,
+            "cpuMs": 11.47
+          },
+          "proof": {
+            "wallMs": 5.602124999999887,
+            "cpuMs": 5.567
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 7.781625000000076,
+            "cpuMs": 7.949
+          },
+          "baseline": {
+            "wallMs": 6.448499999999967,
+            "cpuMs": 9.558
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 4.565084000000297,
+            "cpuMs": 4.568
+          },
+          "proof": {
+            "wallMs": 7.323374999999942,
+            "cpuMs": 7.329
+          }
+        },
+        {
+          "pair": 15,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 7.754374999999982,
+            "cpuMs": 10.859
+          },
+          "baseline": {
+            "wallMs": 6.040166000000227,
+            "cpuMs": 13.596
+          }
+        },
+        {
+          "pair": 16,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.668832999999722,
+            "cpuMs": 12.377
+          },
+          "proof": {
+            "wallMs": 6.9785830000000715,
+            "cpuMs": 10.557
+          }
+        },
+        {
+          "pair": 17,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 8.252582999999959,
+            "cpuMs": 13.435
+          },
+          "baseline": {
+            "wallMs": 4.799624999999651,
+            "cpuMs": 4.793
+          }
+        },
+        {
+          "pair": 18,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 5.480750000000171,
+            "cpuMs": 6.022
+          },
+          "proof": {
+            "wallMs": 7.336624999999913,
+            "cpuMs": 8.432
+          }
+        },
+        {
+          "pair": 19,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 5.93908300000021,
+            "cpuMs": 5.907
+          },
+          "baseline": {
+            "wallMs": 6.578375000000051,
+            "cpuMs": 6.941
+          }
+        },
+        {
+          "pair": 20,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.504708000000392,
+            "cpuMs": 7.358
+          },
+          "proof": {
+            "wallMs": 5.920916999999918,
+            "cpuMs": 5.833
+          }
+        },
+        {
+          "pair": 21,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.6540829999999005,
+            "cpuMs": 7.102
+          },
+          "baseline": {
+            "wallMs": 5.955415999999786,
+            "cpuMs": 7.036
+          }
+        },
+        {
+          "pair": 22,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 5.693582999999762,
+            "cpuMs": 5.41
+          },
+          "proof": {
+            "wallMs": 6.92166700000007,
+            "cpuMs": 7.443
+          }
+        },
+        {
+          "pair": 23,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.613916999999674,
+            "cpuMs": 7.633
+          },
+          "baseline": {
+            "wallMs": 6.033207999999831,
+            "cpuMs": 10.656
+          }
+        },
+        {
+          "pair": 24,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 5.521624999999858,
+            "cpuMs": 6.069
+          },
+          "proof": {
+            "wallMs": 7.0818749999998545,
+            "cpuMs": 12.781
+          }
+        },
+        {
+          "pair": 25,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 7.851374999999734,
+            "cpuMs": 8.507
+          },
+          "baseline": {
+            "wallMs": 5.757458000000042,
+            "cpuMs": 5.609
+          }
+        },
+        {
+          "pair": 26,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 6.777791999999863,
+            "cpuMs": 6.903
+          },
+          "proof": {
+            "wallMs": 6.959083999999621,
+            "cpuMs": 9.27
+          }
+        },
+        {
+          "pair": 27,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 5.7712500000002365,
+            "cpuMs": 5.684
+          },
+          "baseline": {
+            "wallMs": 6.155832999999802,
+            "cpuMs": 6.758
+          }
+        },
+        {
+          "pair": 28,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 5.719750000000204,
+            "cpuMs": 6.649
+          },
+          "proof": {
+            "wallMs": 5.790917000000263,
+            "cpuMs": 5.575
+          }
+        },
+        {
+          "pair": 29,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 6.733999999999924,
+            "cpuMs": 9.372
+          },
+          "baseline": {
+            "wallMs": 5.53145799999993,
+            "cpuMs": 6.106
+          }
+        }
+      ],
+      "streams": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 5.0092500000000655,
+            "totalMs": 6.688834000000043,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 7.467375000000175,
+            "totalMs": 8.63370900000018,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 7.773041999999805,
+            "totalMs": 8.811541999999918,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 5.6100830000000315,
+            "totalMs": 6.686749999999847,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 6.471250000000055,
+            "totalMs": 7.776542000000063,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 5.209667000000081,
+            "totalMs": 7.846000000000004,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 5.437416999999641,
+            "totalMs": 7.008916999999656,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 6.766625000000204,
+            "totalMs": 7.7249580000002425,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 6.634041999999681,
+            "totalMs": 7.803125000000364,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 6.576291999999739,
+            "totalMs": 7.648000000000138,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 7.240791000000172,
+            "totalMs": 8.494833000000654,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 4.569917000000714,
+            "totalMs": 7.508459000000585,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 5.0277500000001965,
+            "totalMs": 6.399959000000308,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 6.5770000000002256,
+            "totalMs": 7.550874999999905,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 7.615625000000364,
+            "totalMs": 8.933208000000377,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 5.777250000000095,
+            "totalMs": 6.934624999999869,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 4.373165999999401,
+            "totalMs": 7.4679159999996045,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 5.0853750000005675,
+            "totalMs": 6.057708000000275,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 6.426792000000205,
+            "totalMs": 7.433834000000388,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 5.982042000000547,
+            "totalMs": 6.955417000000125,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 6.446582999999919,
+            "totalMs": 7.453540999999859,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 8.490875000000415,
+            "totalMs": 9.475374999999985,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 9.185500000000502,
+            "totalMs": 10.740832999999839,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 9.531500000000051,
+            "totalMs": 11.061625000000276,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 20.19658299999992,
+            "totalMs": 21.46124999999938,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 6.478208999999879,
+            "totalMs": 7.496959000000061,
+            "chunks": 33
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 5.7140840000001845,
+            "totalMs": 8.884666999999354,
+            "chunks": 33
+          },
+          "baseline": {
+            "firstSvgMs": 5.332540999999765,
+            "totalMs": 6.345540999999685,
+            "chunks": 59
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 6.31408300000021,
+            "totalMs": 7.391958000000159,
+            "chunks": 59
+          },
+          "proof": {
+            "firstSvgMs": 7.22045799999978,
+            "totalMs": 8.162250000000313,
+            "chunks": 33
+          }
+        }
+      ]
+    },
+    "repeated-all": {
+      "batch": 1,
+      "controls": {
+        "baseline": {
+          "bytes": 825457,
+          "icons": 360,
+          "references": 0
+        },
+        "proof": {
+          "bytes": 825457,
+          "icons": 360,
+          "references": 0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 8.746500000000196,
+            "cpuMs": 11.065
+          },
+          "proof": {
+            "wallMs": 12.374917000000096,
+            "cpuMs": 13.01
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.838958000000275,
+            "cpuMs": 17.486
+          },
+          "baseline": {
+            "wallMs": 9.791040999999495,
+            "cpuMs": 12.83
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.288666999999805,
+            "cpuMs": 11.331
+          },
+          "proof": {
+            "wallMs": 12.230833999999959,
+            "cpuMs": 13.224
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 12.443666000000121,
+            "cpuMs": 16.453
+          },
+          "baseline": {
+            "wallMs": 9.54674999999952,
+            "cpuMs": 12.974
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.820042000000285,
+            "cpuMs": 14.437
+          },
+          "proof": {
+            "wallMs": 10.928750000000036,
+            "cpuMs": 17.38
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 14.324916000000485,
+            "cpuMs": 17.746
+          },
+          "baseline": {
+            "wallMs": 10.650916999999936,
+            "cpuMs": 16.117
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.75079100000039,
+            "cpuMs": 21.32
+          },
+          "proof": {
+            "wallMs": 12.208208000000013,
+            "cpuMs": 27.607
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 14.654915999999503,
+            "cpuMs": 49.843
+          },
+          "baseline": {
+            "wallMs": 9.792209000000184,
+            "cpuMs": 15.379
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 8.733000000000175,
+            "cpuMs": 11.161
+          },
+          "proof": {
+            "wallMs": 11.651458000000275,
+            "cpuMs": 12.843
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 12.848041000000194,
+            "cpuMs": 18.803
+          },
+          "baseline": {
+            "wallMs": 9.456500000000233,
+            "cpuMs": 12.953
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.286208999999872,
+            "cpuMs": 11.606
+          },
+          "proof": {
+            "wallMs": 10.838708999999653,
+            "cpuMs": 12.151
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.305333000000246,
+            "cpuMs": 23.396
+          },
+          "baseline": {
+            "wallMs": 10.015709000000243,
+            "cpuMs": 12.607
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 10.262625000000298,
+            "cpuMs": 12.124
+          },
+          "proof": {
+            "wallMs": 11.762041999999383,
+            "cpuMs": 13.153
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.301499999999578,
+            "cpuMs": 16.826
+          },
+          "baseline": {
+            "wallMs": 9.521499999999833,
+            "cpuMs": 12.858
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.56500000000051,
+            "cpuMs": 11.481
+          },
+          "proof": {
+            "wallMs": 11.173375000000306,
+            "cpuMs": 12.669
+          }
+        },
+        {
+          "pair": 15,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.63812499999949,
+            "cpuMs": 16.756
+          },
+          "baseline": {
+            "wallMs": 9.07104199999958,
+            "cpuMs": 12.427
+          }
+        },
+        {
+          "pair": 16,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.670916999999463,
+            "cpuMs": 11.429
+          },
+          "proof": {
+            "wallMs": 10.690500000000611,
+            "cpuMs": 12.215
+          }
+        },
+        {
+          "pair": 17,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.47649999999976,
+            "cpuMs": 16.98
+          },
+          "baseline": {
+            "wallMs": 8.89020900000014,
+            "cpuMs": 12.231
+          }
+        },
+        {
+          "pair": 18,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.150791000000027,
+            "cpuMs": 11.181
+          },
+          "proof": {
+            "wallMs": 12.31879200000003,
+            "cpuMs": 13.07
+          }
+        },
+        {
+          "pair": 19,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.09845899999982,
+            "cpuMs": 16.533
+          },
+          "baseline": {
+            "wallMs": 10.43945900000017,
+            "cpuMs": 13.713
+          }
+        },
+        {
+          "pair": 20,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 10.72729199999958,
+            "cpuMs": 12.39
+          },
+          "proof": {
+            "wallMs": 13.298624999999447,
+            "cpuMs": 14.14
+          }
+        },
+        {
+          "pair": 21,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.849667000000409,
+            "cpuMs": 17.116
+          },
+          "baseline": {
+            "wallMs": 9.221666000000369,
+            "cpuMs": 12.391
+          }
+        },
+        {
+          "pair": 22,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.847332999999708,
+            "cpuMs": 12.409
+          },
+          "proof": {
+            "wallMs": 12.940749999999753,
+            "cpuMs": 14.152
+          }
+        },
+        {
+          "pair": 23,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 12.3915420000003,
+            "cpuMs": 17.853
+          },
+          "baseline": {
+            "wallMs": 10.218499999999949,
+            "cpuMs": 13.21
+          }
+        },
+        {
+          "pair": 24,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.517125000000306,
+            "cpuMs": 11.413
+          },
+          "proof": {
+            "wallMs": 11.293457999999191,
+            "cpuMs": 12.808
+          }
+        },
+        {
+          "pair": 25,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.219583000000057,
+            "cpuMs": 17.027
+          },
+          "baseline": {
+            "wallMs": 9.80895800000053,
+            "cpuMs": 19.505
+          }
+        },
+        {
+          "pair": 26,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.41424999999981,
+            "cpuMs": 12.904
+          },
+          "proof": {
+            "wallMs": 11.041165999999976,
+            "cpuMs": 12.259
+          }
+        },
+        {
+          "pair": 27,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 12.486750000000029,
+            "cpuMs": 15.809
+          },
+          "baseline": {
+            "wallMs": 9.597083999999995,
+            "cpuMs": 12.271
+          }
+        },
+        {
+          "pair": 28,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 9.700708000000304,
+            "cpuMs": 11.498
+          },
+          "proof": {
+            "wallMs": 12.027624999999716,
+            "cpuMs": 13.51
+          }
+        },
+        {
+          "pair": 29,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 13.19116699999995,
+            "cpuMs": 16.736
+          },
+          "baseline": {
+            "wallMs": 10.251957999999831,
+            "cpuMs": 12.842
+          }
+        }
+      ],
+      "streams": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 8.361541999999645,
+            "totalMs": 10.807584000000134,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 11.22241699999995,
+            "totalMs": 14.409708999999566,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 10.777917000000343,
+            "totalMs": 12.369542000000365,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 8.760290999999597,
+            "totalMs": 11.748332999999548,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 9.216416999999637,
+            "totalMs": 12.86999999999989,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 11.230333000000428,
+            "totalMs": 13.150958000000173,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 13.236582999999882,
+            "totalMs": 14.863249999999425,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 8.230709000000388,
+            "totalMs": 9.973541999999725,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 9.444917000000714,
+            "totalMs": 13.638083000000734,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 10.886333000000377,
+            "totalMs": 13.061666999999943,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 13.104416999999557,
+            "totalMs": 15.712666999999783,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 8.09558399999969,
+            "totalMs": 9.738459000000148,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 9.049042000000554,
+            "totalMs": 10.843166999999994,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 11.799332999999933,
+            "totalMs": 13.399249999999483,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 13.38958300000013,
+            "totalMs": 15.14050000000043,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 8.595291999999972,
+            "totalMs": 10.98133400000006,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 9.45495800000026,
+            "totalMs": 11.170165999999881,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 13.643082999999933,
+            "totalMs": 15.324666000000434,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 11.298874999999498,
+            "totalMs": 14.921457999999802,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 9.674665999999888,
+            "totalMs": 11.427832999999737,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 8.35529200000019,
+            "totalMs": 10.496874999999818,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 12.622624999999971,
+            "totalMs": 14.313790999999583,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 12.817208000000392,
+            "totalMs": 16.22345800000039,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 9.369499999999789,
+            "totalMs": 11.521249999999782,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 9.987958000000617,
+            "totalMs": 11.756916000000274,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 14.529083000000355,
+            "totalMs": 16.44929200000024,
+            "chunks": 93
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 11.358083999999508,
+            "totalMs": 13.092416999999841,
+            "chunks": 93
+          },
+          "baseline": {
+            "firstSvgMs": 17.309833000000253,
+            "totalMs": 23.5087910000002,
+            "chunks": 179
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 15.416374999999789,
+            "totalMs": 17.316290999999183,
+            "chunks": 179
+          },
+          "proof": {
+            "firstSvgMs": 15.129500000000007,
+            "totalMs": 16.96308399999998,
+            "chunks": 93
+          }
+        }
+      ]
+    },
+    "path-paint-repeated": {
+      "batch": 1,
+      "controls": {
+        "baseline": {
+          "bytes": 1939324,
+          "icons": 1780,
+          "references": 0
+        },
+        "proof": {
+          "bytes": 1614331,
+          "icons": 1780,
+          "references": 1423
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 32.16566700000021,
+            "cpuMs": 51.908
+          },
+          "proof": {
+            "wallMs": 68.60712499999954,
+            "cpuMs": 199.397
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 43.8177910000004,
+            "cpuMs": 69.892
+          },
+          "baseline": {
+            "wallMs": 33.59533300000021,
+            "cpuMs": 60.641
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 36.457290999999714,
+            "cpuMs": 67.266
+          },
+          "proof": {
+            "wallMs": 39.94958300000053,
+            "cpuMs": 65.603
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 41.27245799999946,
+            "cpuMs": 63.673
+          },
+          "baseline": {
+            "wallMs": 33.099583000000166,
+            "cpuMs": 53.439
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 34.13774999999987,
+            "cpuMs": 55.826
+          },
+          "proof": {
+            "wallMs": 42.04670799999985,
+            "cpuMs": 67.739
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 38.84937499999978,
+            "cpuMs": 60.663
+          },
+          "baseline": {
+            "wallMs": 32.395541000000776,
+            "cpuMs": 53.042
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 33.92670799999996,
+            "cpuMs": 56.249
+          },
+          "proof": {
+            "wallMs": 39.82433299999957,
+            "cpuMs": 66.627
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 40.84100000000035,
+            "cpuMs": 62.274
+          },
+          "baseline": {
+            "wallMs": 52.795500000000175,
+            "cpuMs": 158.651
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 37.569915999999466,
+            "cpuMs": 65.959
+          },
+          "proof": {
+            "wallMs": 45.216583000000355,
+            "cpuMs": 94.644
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 40.05016699999942,
+            "cpuMs": 68.36
+          },
+          "baseline": {
+            "wallMs": 31.87395800000013,
+            "cpuMs": 52.52
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 33.57579199999964,
+            "cpuMs": 55.637
+          },
+          "proof": {
+            "wallMs": 39.88829200000055,
+            "cpuMs": 67.195
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 40.94574999999986,
+            "cpuMs": 67.602
+          },
+          "baseline": {
+            "wallMs": 30.321208000000297,
+            "cpuMs": 46.176
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 32.2373749999997,
+            "cpuMs": 54.221
+          },
+          "proof": {
+            "wallMs": 39.54591700000037,
+            "cpuMs": 65.79
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 39.75037500000053,
+            "cpuMs": 65.293
+          },
+          "baseline": {
+            "wallMs": 30.645540999999866,
+            "cpuMs": 46.909
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 31.83087499999965,
+            "cpuMs": 53.094
+          },
+          "proof": {
+            "wallMs": 61.84483300000011,
+            "cpuMs": 189.17
+          }
+        },
+        {
+          "pair": 15,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 39.34699999999975,
+            "cpuMs": 70.594
+          },
+          "baseline": {
+            "wallMs": 33.74162500000057,
+            "cpuMs": 55.409
+          }
+        },
+        {
+          "pair": 16,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 31.94183300000077,
+            "cpuMs": 54.542
+          },
+          "proof": {
+            "wallMs": 41.55779199999961,
+            "cpuMs": 75.401
+          }
+        },
+        {
+          "pair": 17,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 37.72412500000064,
+            "cpuMs": 60.077
+          },
+          "baseline": {
+            "wallMs": 31.57774999999947,
+            "cpuMs": 50.767
+          }
+        },
+        {
+          "pair": 18,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 31.94287499999973,
+            "cpuMs": 53.44
+          },
+          "proof": {
+            "wallMs": 38.034999999999854,
+            "cpuMs": 64.348
+          }
+        },
+        {
+          "pair": 19,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 36.91583300000002,
+            "cpuMs": 58.797
+          },
+          "baseline": {
+            "wallMs": 31.850083000000268,
+            "cpuMs": 51.909
+          }
+        },
+        {
+          "pair": 20,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 31.30237500000021,
+            "cpuMs": 52.821
+          },
+          "proof": {
+            "wallMs": 39.02287500000057,
+            "cpuMs": 64.92
+          }
+        },
+        {
+          "pair": 21,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 37.866916999999376,
+            "cpuMs": 59.448
+          },
+          "baseline": {
+            "wallMs": 50.084875000000466,
+            "cpuMs": 156.715
+          }
+        },
+        {
+          "pair": 22,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 33.60725000000002,
+            "cpuMs": 59.446
+          },
+          "proof": {
+            "wallMs": 42.21858400000019,
+            "cpuMs": 94.276
+          }
+        },
+        {
+          "pair": 23,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 41.84587499999998,
+            "cpuMs": 68.84
+          },
+          "baseline": {
+            "wallMs": 32.064916999999696,
+            "cpuMs": 48.529
+          }
+        },
+        {
+          "pair": 24,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 32.31587499999932,
+            "cpuMs": 54.422
+          },
+          "proof": {
+            "wallMs": 39.56920900000023,
+            "cpuMs": 67.442
+          }
+        },
+        {
+          "pair": 25,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 40.579624999999396,
+            "cpuMs": 79.058
+          },
+          "baseline": {
+            "wallMs": 29.336166999999477,
+            "cpuMs": 52.553
+          }
+        },
+        {
+          "pair": 26,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 32.506209000000126,
+            "cpuMs": 53.478
+          },
+          "proof": {
+            "wallMs": 38.46879199999967,
+            "cpuMs": 63.5
+          }
+        },
+        {
+          "pair": 27,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 39.14379100000042,
+            "cpuMs": 65.044
+          },
+          "baseline": {
+            "wallMs": 31.17883399999937,
+            "cpuMs": 46.669
+          }
+        },
+        {
+          "pair": 28,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "wallMs": 32.58025000000089,
+            "cpuMs": 53.93
+          },
+          "proof": {
+            "wallMs": 61.67358400000012,
+            "cpuMs": 187.81
+          }
+        },
+        {
+          "pair": 29,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "wallMs": 40.43845899999906,
+            "cpuMs": 71.291
+          },
+          "baseline": {
+            "wallMs": 33.50129200000083,
+            "cpuMs": 57.063
+          }
+        }
+      ],
+      "streams": [
+        {
+          "pair": 0,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 28.472332999999708,
+            "totalMs": 37.259917000001224,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 35.92687500000102,
+            "totalMs": 41.371917000000394,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 37.17695800000001,
+            "totalMs": 41.49754100000064,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 30.11175000000003,
+            "totalMs": 37.47087500000089,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 29.615875000001324,
+            "totalMs": 38.5726250000007,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 40.28912499999933,
+            "totalMs": 50.829750000000786,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 52.83575000000019,
+            "totalMs": 58.808750000000146,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 30.893334000000323,
+            "totalMs": 38.30595899999935,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 32.35200000000077,
+            "totalMs": 38.97741700000006,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 38.4731670000001,
+            "totalMs": 43.13166699999965,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 37.57420900000034,
+            "totalMs": 44.31945900000028,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 28.83233399999881,
+            "totalMs": 37.34937499999978,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 6,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 28.106166999999914,
+            "totalMs": 37.326624999999694,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 39.6033750000006,
+            "totalMs": 43.852082999999766,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 7,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 38.17766600000141,
+            "totalMs": 43.307958000001236,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 29.29070899999897,
+            "totalMs": 36.40216699999837,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 8,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 29.746083,
+            "totalMs": 37.78504099999918,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 35.577040999998644,
+            "totalMs": 42.152374999999665,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 9,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 36.72449999999844,
+            "totalMs": 42.229833999999755,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 28.71416599999975,
+            "totalMs": 37.66229100000055,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 10,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 30.009916999999405,
+            "totalMs": 36.847334000000046,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 42.58216600000014,
+            "totalMs": 47.61441600000035,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 11,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 38.26941699999952,
+            "totalMs": 42.8995419999992,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 48.910499999999956,
+            "totalMs": 60.91883400000006,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 12,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 29.436250000000655,
+            "totalMs": 37.951750000000175,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 40.0435839999991,
+            "totalMs": 45.0084169999991,
+            "chunks": 453
+          }
+        },
+        {
+          "pair": 13,
+          "order": [
+            "proof",
+            "baseline"
+          ],
+          "proof": {
+            "firstSvgMs": 38.59604099999888,
+            "totalMs": 43.410791000000245,
+            "chunks": 453
+          },
+          "baseline": {
+            "firstSvgMs": 29.761334000000716,
+            "totalMs": 36.3622090000008,
+            "chunks": 889
+          }
+        },
+        {
+          "pair": 14,
+          "order": [
+            "baseline",
+            "proof"
+          ],
+          "baseline": {
+            "firstSvgMs": 29.64045900000019,
+            "totalMs": 38.18695900000057,
+            "chunks": 889
+          },
+          "proof": {
+            "firstSvgMs": 36.956458000000566,
+            "totalMs": 44.27629200000047,
+            "chunks": 453
+          }
+        }
+      ]
+    }
+  }
+}

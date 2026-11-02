@@ -10,6 +10,7 @@ import { inspectRoute } from "./inspect-bundle.mjs";
 import { measureRoute, resourceSizes } from "./measure-resources.mjs";
 import { loadingCases, supportedSix, pathPaintFamilies } from "./page-loading-cases.mjs";
 import { registrationEntries, verifyRegistrations } from "./registration-contract.mjs";
+import { checkModeBudgets } from "./loading-budgets.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const fixture = join(root, "tests/fixtures/astro");
@@ -51,6 +52,8 @@ export function captureClientModules(file) {
       const chunks = Object.values(bundle).filter(value => value.type === "chunk");
       writeFileSync(file, JSON.stringify(Object.fromEntries(chunks.map(chunk => ["/" + chunk.fileName, {
         entry: chunk.isEntry,
+        imports: chunk.imports.map(url => "/" + url),
+        dynamicImports: chunk.dynamicImports.map(url => "/" + url),
         sha256: createHash("sha256").update(chunk.code).digest("hex"),
         modules: Object.entries(chunk.modules).map(([id, module]) => ({
           id: id.startsWith(root) ? id.slice(root.length) : id.includes("node_modules/") ? id.slice(id.indexOf("node_modules/")) : id,
@@ -62,7 +65,27 @@ export function captureClientModules(file) {
   };
 }
 
-export function measureLoading(output, metadata) {
+function measureGraph(inspection, metadata) {
+  const initial = new Set();
+  const eventual = new Set();
+  const collect = (url, selected, dynamic) => {
+    if (selected.has(url)) return;
+    assert.ok(metadata[url] && inspection.chunks.has(url), "Graph dependency missing from inspected output: " + url);
+    assert.ok(Array.isArray(metadata[url].imports) && Array.isArray(metadata[url].dynamicImports), "Graph edges missing: " + url);
+    selected.add(url);
+    for (const dependency of metadata[url].imports) collect(dependency, selected, dynamic);
+    if (dynamic) for (const dependency of metadata[url].dynamicImports) collect(dependency, selected, dynamic);
+  };
+  for (const entry of inspection.entries) {
+    collect(entry, initial, false);
+    collect(entry, eventual, true);
+  }
+  assert.deepEqual([...eventual].sort(), [...inspection.chunks.keys()].sort(), "Graph and import inspection must agree");
+  const describe = files => ({ files: [...files].sort(), javascript: resourceSizes([...files].map(url => inspection.chunks.get(url).source)) });
+  return { initial: describe(initial), eventual: describe(eventual), deferred: describe([...eventual].filter(url => !initial.has(url))) };
+}
+
+export function measureLoading(output, metadata, { mode } = {}) {
   const cache = new Map();
   const resources = {};
   const routes = Object.fromEntries(Object.entries(loadingCases).map(([name, slugs]) => {
@@ -82,7 +105,8 @@ export function measureLoading(output, metadata) {
       resources[url] = { ...resourceSizes([chunk.source]), ...metadata[url] };
     }
     for (const url of payload.externalCSS) resources[url] = { ...resourceSizes([readFileSync(new URL(url.slice(1), output), "utf8")]), kind: "stylesheet" };
-    return [name, { icons: slugs.length, distinctIcons: new Set(slugs).size, entries: inspection.entries.length,
+    const graph = measureGraph(inspection, metadata);
+    return [name, { icons: slugs.length, distinctIcons: new Set(slugs).size, entries: inspection.entries.length, graph,
       javascriptFiles: inspection.chunks.size, inlineScripts: inspection.inline.length, registrations: new Set(slugs).size,
       recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity|paint)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
   }));
@@ -111,7 +135,9 @@ export function measureLoading(output, metadata) {
     assert.deepEqual(routes[name].chunks, routes[name + "-repeated"].chunks, name + ": repeated instances must reuse JavaScript");
     assert.deepEqual(routes[name].css, routes[name + "-repeated"].css, name + ": repeated instances must reuse generated CSS");
   }
-  return { routes, warm, resources };
+  const result = { routes, warm, resources };
+  if (mode) checkModeBudgets(mode, result);
+  return result;
 }
 
 async function main() {
@@ -140,12 +166,17 @@ async function main() {
     environment: { node: process.version, packageManager: JSON.parse(readFileSync(join(root, "package.json"), "utf8")).packageManager,
       astro: JSON.parse(readFileSync(astroPackage, "utf8")).version,
       motion: JSON.parse(readFileSync(fixtureRequire.resolve("motion/package.json"), "utf8")).version,
+      typescript: JSON.parse(readFileSync(fixtureRequire.resolve("typescript/package.json"), "utf8")).version,
       platform: platform(), arch: arch(), cpu: cpus()[0]?.model },
+    source: { package: JSON.parse(readFileSync(join(root, "packages/animated-icons/package.json"), "utf8")).name,
+      lockfileSHA256: createHash("sha256").update(readFileSync(join(root, "pnpm-lock.yaml"))).digest("hex"),
+      measurementSHA256: createHash("sha256").update(readFileSync(fileURLToPath(import.meta.url))).digest("hex") },
     assumptions: {
       cold: "Reachable static and literal dynamic imports count once per URL. These are resource counts, not observed browser requests.",
       compression: "Node zlib gzip defaults per external resource. total compresses inline styles/scripts separately. page compresses HTML with inline content once plus external JS/CSS.",
       warm: "A second document navigation in the same build reuses every external URL reached by the first route, with no eviction or revalidation. HTML is fetched again. This is a cache model, not a browser measurement.",
       modules: "Rollup renderedLength identifies source contributions before final minification. It is not an additive allocation of final raw or gzip bytes. Mixed chunks may contain several roles.",
+      graph: "Rollup imports and dynamicImports separate initial static closure from eventual closure. Deferred recovery still counts in javascript and page. No scenario-specific dynamic path is exempt from the eventual budget.",
       minimal: "The isolated project contains only the measurement routes, uses the same public barrel imports and installed package links, and has no reference implementation. It is not a packed-package installation.",
       excluded: "Headers, latency, Brotli, HTTP cache policy, cross-build cache reuse, frame pacing, preparation timing and browser behavior.",
     }, cases: loadingCases, modes,

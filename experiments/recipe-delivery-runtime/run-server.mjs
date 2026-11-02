@@ -1,0 +1,12 @@
+import {createRequire} from "node:module";
+import {dirname,resolve} from "node:path";
+import {fileURLToPath} from "node:url";
+import {spawn} from "node:child_process";
+import {readFileSync} from "node:fs";
+const root=fileURLToPath(new URL("../../",import.meta.url));
+const require=createRequire(root+"/tests/fixtures/astro/package.json");
+const packageFile=require.resolve("astro/package.json");
+const astro=resolve(dirname(packageFile),JSON.parse(readFileSync(packageFile,"utf8")).bin.astro);
+const child=spawn(process.execPath,[astro,"build","--config","../ssr.config.mjs"],{cwd:resolve(root,".artifacts/recipe-delivery-runtime/ssr-project"),stdio:"inherit",env:{...process.env,NODE_ENV:"production"}});
+child.once("error",error=>{console.error(error);process.exitCode=1;});
+child.once("exit",code=>{process.exitCode=code??1;});

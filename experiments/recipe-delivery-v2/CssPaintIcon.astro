@@ -1,0 +1,15 @@
+---
+import Original from "../../packages/animated-icons/src/CssPaintIcon.astro";
+import ReferenceIcon from "./ReferenceIcon.astro";
+import type { IconProps } from "../../packages/animated-icons/src/Icon.astro";
+import type { PaintRecipe } from "../../packages/animated-icons/src/shared/paint-recipe";
+import { encodePaint } from "../../packages/animated-icons/src/shared/paint-data";
+import { assets } from "../../.artifacts/recipe-delivery/generated/assets";
+import recoveryURL from "../recipe-delivery/register-paint.ts?worker&url";
+import { chooseDelivery } from "./delivery";
+interface Props extends IconProps { paint: PaintRecipe; tag: `grave-${string}`;  }
+const {paint,tag,...props}=Astro.props;
+const drawing=await Astro.slots.render("default");
+const shared=chooseDelivery(Astro.locals,tag,encodePaint(paint),drawing,assets[tag],recoveryURL,"paint");
+---
+{shared ? <ReferenceIcon {...props} tag={tag} data-css-paint={paint.id} data-grave-paint-src={assets[tag]}><Fragment set:html={drawing}/><script slot="recovery" is:inline type="module" src={recoveryURL}/></ReferenceIcon> : <Original {...props} paint={paint} tag={tag}><Fragment set:html={drawing}/></Original>}

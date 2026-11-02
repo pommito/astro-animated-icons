@@ -1,0 +1,27 @@
+import {readFileSync,writeFileSync,mkdirSync} from "node:fs";
+import {fileURLToPath} from "node:url";
+const root=fileURLToPath(new URL("../../",import.meta.url));
+const out=root+"/.artifacts/recipe-delivery-v2/minimal-dist";
+const all=readFileSync(out+"/page-loading/all/index.html","utf8");
+const repeated=readFileSync(out+"/page-loading/path-paint-repeated/index.html","utf8");
+const hosts=html=>new Map([...html.matchAll(/<(grave-[a-z0-9-]+)\b[^>]*>[\s\S]*?<\/\1>/g)].map(m=>[m[1],m[0]]));
+const full=hosts(all);
+const references=new Map([...repeated.matchAll(/<(grave-[a-z0-9-]+)\b[^>]*>[\s\S]*?<\/\1>/g)].filter(match=>/data-grave-(?:cycle|opacity|paint)-src=/.test(match[0])).map(match=>[match[1],match[0]]));
+if(references.size<2)throw Error("Native clone probe requires multiple referenced recipes");
+const chosen=[...full].map(([tag,html])=>references.get(tag)??html).join("");
+const entries=[...all.matchAll(/<script\b[^>]*\bsrc="[^"]+"[^>]*><\/script>/g)].map(m=>m[0]).join("");
+const nestedTag=references.keys().next().value;
+const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Bounded recipe delivery native clones</title><script>window.proofFetches=[];window.proofErrors=[];const originalFetch=fetch;window.fetch=(...args)=>{window.proofFetches.push(String(args[0]));return originalFetch(...args)};addEventListener("error",event=>window.proofErrors.push(event.message));</script>${entries}</head><body><template id="source">${chosen}</template><script>
+const source=document.getElementById("source");
+const hosts=[...source.content.querySelectorAll("[data-grave-icon]")];
+const clones=hosts.flatMap(host=>[host.cloneNode(true),host.cloneNode(true)]);
+const nested=document.createElement("template"),inner=document.createElement("template");
+const nestedClones=clones.filter(host=>host.localName===${JSON.stringify(nestedTag)});
+inner.content.append(...nestedClones);nested.content.append(inner);
+source.remove();
+document.body.append(...clones.filter(host=>!nestedClones.includes(host)),nested);
+window.proofReady=Promise.all(hosts.map(host=>customElements.whenDefined(host.localName))).then(()=>{document.body.append(...nestedClones);nested.remove();window.proofClones=clones;return {recipes:hosts.length,referenceRecipes:${references.size},nestedTag:${JSON.stringify(nestedTag)}}});
+</script></body></html>`;
+mkdirSync(out+"/native-clones",{recursive:true});
+writeFileSync(out+"/native-clones/index.html",html);
+console.log("Prepared native clone harness",{recipes:full.size,referenceRecipes:references.size,nestedTag});

@@ -1,0 +1,14 @@
+---
+import Original from "../../packages/animated-icons/src/CssOpacityIcon.astro";
+import ReferenceIcon from "./ReferenceIcon.astro";
+import type { IconProps } from "../../packages/animated-icons/src/Icon.astro";
+import type { OpacityPart } from "../../packages/animated-icons/src/shared/opacity-parts";
+import { assets } from "../../.artifacts/recipe-delivery/generated/assets";
+import recoveryURL from "../recipe-delivery/register-opacity.ts?worker&url";
+import { chooseDelivery } from "./delivery";
+interface Props extends IconProps { parts: OpacityPart[]; tag: `grave-${string}`;  }
+const {parts,tag,...props}=Astro.props;
+const drawing=await Astro.slots.render("default");
+const shared=chooseDelivery(Astro.locals,tag,{ id: tag.slice(6), parts },drawing,assets[tag],recoveryURL,"opacity");
+---
+{shared ? <ReferenceIcon {...props} tag={tag} data-css-opacity={tag.slice(6)} data-grave-opacity-src={assets[tag]}><Fragment set:html={drawing}/><script slot="recovery" is:inline type="module" src={recoveryURL}/></ReferenceIcon> : <Original {...props} parts={parts} tag={tag}><Fragment set:html={drawing}/></Original>}
