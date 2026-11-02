@@ -133,17 +133,17 @@ function withReviewedCopy(run) {
 
 test("adapter, lifecycle, lock and family drift invalidate reviewed CSS as well as Motion", () => {
   withReviewedCopy(root => {
-    for (const file of [
-      "packages/animated-icons/src/icons/bell/Bell.astro",
-      "packages/animated-icons/src/icons/bell/Drawing.astro",
-      "packages/animated-icons/src/shared/combined-transform-cycle.ts",
-      "packages/animated-icons/src/element.ts",
-      "pnpm-lock.yaml",
+    for (const [file, slug] of [
+      ["packages/animated-icons/src/icons/bell/Bell.astro", "bell"],
+      ["packages/animated-icons/src/icons/bell/Drawing.astro", "bell"],
+      ["packages/animated-icons/src/shared/combined-transform-cycle.ts", "key-square"],
+      ["packages/animated-icons/src/element.ts", "bell"],
+      ["pnpm-lock.yaml", "bell"],
     ]) {
       const path = join(root, file);
       const before = readFileSync(path, "utf8");
       writeFileSync(path, before + "\n");
-      assert.equal(inventoryAnimations(root).icons.find(icon => icon.slug === "bell").migrationState, "needs-review", file);
+      assert.equal(inventoryAnimations(root).icons.find(icon => icon.slug === slug).migrationState, "needs-review", file);
       assert.throws(() => inventoryAnimations(root, { requireReviewed: true }), /stale source reviews/);
       writeFileSync(path, before);
     }

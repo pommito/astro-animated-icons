@@ -73,12 +73,13 @@ export function readModule(root, path) {
 const reviewDirectory = fileURLToPath(new URL("./", import.meta.url));
 const reviewContext = ["packages/animated-icons/src/element.ts", "packages/animated-icons/src/Icon.astro", "packages/animated-icons/src/icon.css", "packages/animated-icons/src/shared/finite-transform-cycle.ts", "packages/animated-icons/src/shared/opacity-parts.ts", "pnpm-lock.yaml"];
 
-function cssDelivery(source) {
+function cssDelivery(source, combined) {
   const mechanism = source.includes("CssPaintIcon") ? "paint" : source.includes("CssOpacityIcon") ? "opacity" : source.includes("CssIcon") ? "cycle" : undefined;
   if (!mechanism) return undefined;
   return {
     wrapper: `packages/animated-icons/src/${mechanism === "paint" ? "CssPaintIcon" : mechanism === "opacity" ? "CssOpacityIcon" : "CssIcon"}.astro`,
-    registration: `packages/animated-icons/src/shared/register-css-${mechanism}.ts`,
+    registration: `packages/animated-icons/src/shared/register-css-${mechanism === "cycle" && combined ? "combined-cycle" : mechanism}.ts`,
+    entry: mechanism === "cycle" ? `packages/animated-icons/src/${combined ? "CssCombinedCycleRegistration" : "CssCycleRegistration"}.astro` : undefined,
   };
 }
 
@@ -127,7 +128,7 @@ export function inventoryAnimations(root = defaultRoot, { requireReviewed = fals
     const adapterPath = `${directory}/${icon.name}.astro`;
     const adapter = existsSync(resolve(root, adapterPath)) ? adapterPath : undefined;
     const adapterSource = adapter ? readFileSync(resolve(root, adapter), "utf8") : "";
-    const delivery = cssDelivery(adapterSource);
+    const delivery = cssDelivery(adapterSource, load(definition).imports.includes("../../shared/css-combined-cycle"));
     const registration = delivery?.registration ?? `${directory}/element.ts`;
     if (existsSync(resolve(root, registration))) closure(registration, recipeFiles);
     const runtimeSources = [...recipeFiles].sort();
@@ -146,6 +147,7 @@ export function inventoryAnimations(root = defaultRoot, { requireReviewed = fals
     }
     for (const path of reviewContext) if (existsSync(resolve(root, path))) recipeFiles.add(path);
     if (delivery) recipeFiles.add(delivery.wrapper);
+    if (delivery?.entry) recipeFiles.add(delivery.entry);
     if (delivery?.registration.endsWith("register-css-paint.ts") || provenMechanismSources.some(path => path.endsWith("register-css-paint.ts"))) recipeFiles.add("packages/animated-icons/src/shared/paint-recipe.ts");
     const files = [...recipeFiles].sort();
     const modules = files.map(load);

@@ -7,7 +7,10 @@ export const { cycleCSS, ensureCycleCSS, combinedFrames, combinedPose } = await 
   readFileSync(new URL("shared/recipe-css.ts", source), "utf8")
   + readFileSync(new URL("shared/combined-transform-cycle.ts", source), "utf8").replace(/^import .*;\n/gm, "")
   + readFileSync(new URL("shared/combined-transform-css.ts", source), "utf8").replace(/^import .*;\n/gm, "")
-  + readFileSync(new URL("shared/cycle-css.ts", source), "utf8").replace(/^import .*;\n/gm, ""),
+  + readFileSync(new URL("shared/transform-css.ts", source), "utf8").replace(/^import .*;\n/gm, "")
+  + readFileSync(new URL("shared/cycle-css.ts", source), "utf8").replace(/^import .*;\n/gm, "").replaceAll("cycleCSS", "finiteCSS")
+  + readFileSync(new URL("shared/combined-cycle-css.ts", source), "utf8").replace(/^import .*;\n/gm, "")
+  + readFileSync(new URL("shared/transform-cycle-css.ts", source), "utf8").replace(/^import .*;\n/gm, ""),
 );
 export const cycles = new Map();
 for (const icon of readCatalog()) {

@@ -1,7 +1,9 @@
 ---
 import Icon, { type IconProps } from "./Icon.astro";
 import type { TransformCycle } from "./shared/finite-transform-cycle";
-import { cycleCSS } from "./shared/cycle-css";
+import { cycleCSS } from "./shared/transform-cycle-css";
+import CssCycleRegistration from "./CssCycleRegistration.astro";
+import CssCombinedCycleRegistration from "./CssCombinedCycleRegistration.astro";
 import { serializeRecipe } from "./shared/recipe-data";
 
 interface Props extends IconProps {
@@ -10,15 +12,14 @@ interface Props extends IconProps {
   tag: `grave-${string}`;
 }
 const { cycle, tag, ...props } = Astro.props;
+const Registration = "tracks" in cycle ? CssCombinedCycleRegistration : CssCycleRegistration;
 const locals = Astro.locals as { cssCycleSheets?: Set<string> };
 const seen = locals.cssCycleSheets ??= new Set<string>();
 const include = !seen.has(cycle.id);
 seen.add(cycle.id);
 ---
 {include && <style is:inline data-grave-cycle-style={cycle.id} set:html={cycleCSS(cycle)} />}
-<Icon {...props} tag={tag} data-css-cycle={cycle.id} data-grave-cycle-recipe={serializeRecipe(cycle)}>
+<Icon {...props} tag={tag} data-css-cycle={cycle.id} {...{ ["tracks" in cycle ? "data-grave-combined-recipe" : "data-grave-cycle-recipe"]: serializeRecipe(cycle) }}>
   <slot />
 </Icon>
-<script>
-  import "./shared/register-css-cycle";
-</script>
+<Registration />

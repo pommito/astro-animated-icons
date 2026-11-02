@@ -1,4 +1,4 @@
-import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { createCSSCombinedCycleRecipe } from "../../shared/css-combined-cycle";
 import { keyCircleCycle } from "./cycle";
 
-export const keyCircleRecipe = createCSSCycleRecipe(keyCircleCycle);
+export const keyCircleRecipe = createCSSCombinedCycleRecipe(keyCircleCycle);

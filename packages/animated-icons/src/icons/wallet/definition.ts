@@ -1,4 +1,4 @@
-import { createCSSCycleRecipe } from "../../shared/css-cycle";
+import { createCSSCombinedCycleRecipe } from "../../shared/css-combined-cycle";
 import { walletCycle } from "./cycle";
 
-export const walletRecipe = createCSSCycleRecipe(walletCycle);
+export const walletRecipe = createCSSCombinedCycleRecipe(walletCycle);
