@@ -14,7 +14,7 @@
     "experiments/css-client/run-browser.mjs": "b9d62c09ff05effeb3a6f47982b852c223e67fae83235eb1b3908db4b54b3995",
     "experiments/css-client/run-runtime.mjs": "b16a8f45f300c47136b20d7e470f2b4af5fd6735eb14914b19a3ac581172c7f6",
     "experiments/css-client/runtime-simple.ts": "7b950bd9b0d031080a4b8f6a1f1df4497d6c706beee21ea04d3e32c25409ecdd",
-    "experiments/css-client/summarize.mjs": "07624f84fdbe51354a82fde5d8b479e149f040b4acb7e2ac0bf6dfebe58b0f6f",
+    "experiments/css-client/summarize.mjs": "b507f0ad00548ad3972d6864623929922510de4406786f385ae2b2509d139574",
     "scripts/measure-page-loading.mjs": "1417b4e643fdb619be257a7689436613fb0761608132ab5242481eea2e3890c6",
     "scripts/prepared-css.test.mjs": "2635596ed54705aca70bb25e0ec009b175865a661e9ef0230962adb889c2741d",
     "tests/fixtures/astro/src/pages/page-loading/templates.astro": "a5450261a61b285477dee407930529a3c664328a0cfdbb2f082c28dea2e14a69",

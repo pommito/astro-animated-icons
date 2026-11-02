@@ -46,10 +46,13 @@ for (const transport of ["attribute", "template"]) {
     }) };
     for (const [name, route] of Object.entries(loading.modes[mode].routes)) {
       const html = readFileSync(join(directory, mode, "dist/page-loading", name, "index.html"), "utf8");
+      const attributeRecords = transport === "attribute" ? [...html.matchAll(/data-grave-(?:cycle|combined|opacity|paint)-recipe="([^"]*)"/g)].map(match => JSON.parse(decodeAttribute(match[1]))) : [];
       const recoveryCSS = transport === "attribute"
-        ? [...html.matchAll(/data-grave-(?:cycle|combined|opacity|paint)-recipe="([^"]*)"/g)].map(match => JSON.parse(decodeAttribute(match[1])).css)
+        ? attributeRecords.map(record => record.css)
         : [...html.matchAll(/<template\b[^>]*data-css-recovery[^>]*><style\b[^>]*>([\s\S]*?)<\/style>/g)].map(match => match[1]);
-      route.transportData = { recoveryCopies: recoveryCSS.length, recoveryCSS: resourceSizes(recoveryCSS), encodedBasis: resourceSizes([...html.matchAll(/data-basis="[^"]*"/g)].map(match => match[0])), note: "Diagnostic subsets of HTML. Separate compression of copies/attributes is not a transfer estimate. Whole-page HTML already includes all recovery CSS and JSON." };
+      const scalarData = transport === "attribute" ? attributeRecords.filter(record => record.basis).map(record => JSON.stringify(record.basis).replaceAll('"', "&quot;"))
+        : [...html.matchAll(/data-basis="([^"]*)"/g)].filter(match => match[1] !== "null").map(match => match[1]);
+      route.transportData = { recoveryCopies: recoveryCSS.length, recoveryCSS: resourceSizes(recoveryCSS), scalarData: resourceSizes(scalarData), note: "Diagnostic subsets of HTML. Scalar data measures escaped JSON values, excluding attribute/property names. Separate compression of copies/attributes is not a transfer estimate. Whole-page HTML already includes all recovery CSS and JSON." };
       const delta = previous => Object.fromEntries(["javascript", "html", "css", "recipeData", "total", "page"].map(metric => [metric, { raw: route[metric].raw - previous[metric].raw, gzip: route[metric].gzip - previous[metric].gzip }]));
       report.loading[mode].routes[name] = { against108: delta(original.modes[mode].routes[name]), against109: delta(baseline.modes[mode].routes[name]), javascriptFiles: route.javascriptFiles };
     }
