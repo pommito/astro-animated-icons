@@ -1,0 +1,229 @@
+{
+  "reference": "90302b37876ba25f417b63ffd721fbab5e21f0aa",
+  "files": {
+    "experiments/recipe-delivery/CssIcon.astro": {
+      "bytes": 1119,
+      "sha256": "c1b270c84c8dd51e55dc09334bc745d1f3f0d3ef2b7a3807123628faf56a4e62"
+    },
+    "experiments/recipe-delivery/CssOpacityIcon.astro": {
+      "bytes": 1116,
+      "sha256": "75460916129d9cbfa4581cf34ed8ea90e1b6d2375ed2eb7df843c1dbab41f301"
+    },
+    "experiments/recipe-delivery/CssPaintIcon.astro": {
+      "bytes": 1165,
+      "sha256": "97483285c2893cd1a5fb1bd45fd6e238deb804d0bce9c652df19c3cf299a184d"
+    },
+    "experiments/recipe-delivery/README.md": {
+      "bytes": 4542,
+      "sha256": "7e64b2594d2aa4d1f6c62201d387e48748b4d88f33fdef979522e459d8290cfa"
+    },
+    "experiments/recipe-delivery/browser/clone.js": {
+      "bytes": 3466,
+      "sha256": "3a0883c79c198da93f754cb42e7cb2eada28fdc6ff45ff768027016badb697cb"
+    },
+    "experiments/recipe-delivery/browser/negative.js": {
+      "bytes": 2317,
+      "sha256": "1ab2bc286612bb72ec2ebee54fe5d2dd88a9e1a44e922ae78e70202a17e46e9d"
+    },
+    "experiments/recipe-delivery/browser/normal.js": {
+      "bytes": 1423,
+      "sha256": "6df2b1ad0109ac935a817eec5211fd7cb3f58124076055c344b683c5782be137"
+    },
+    "experiments/recipe-delivery/diagnose.mjs": {
+      "bytes": 2372,
+      "sha256": "ac15728dea09ccd4b0b253e6abda6c26c71ff1d5ac0d893c2e9c02bdfa6df7fa"
+    },
+    "experiments/recipe-delivery/prepare.mjs": {
+      "bytes": 3640,
+      "sha256": "7807658313122578081fe7556e6486ab37933c6c946a0ffc0ebc2d11a9ab02b9"
+    },
+    "experiments/recipe-delivery/register-cycle.ts": {
+      "bytes": 334,
+      "sha256": "169eea62772201d2e6a47aa6a562cbb4dfa6348f724a393f33a4ad3b5e3bc865"
+    },
+    "experiments/recipe-delivery/register-opacity.ts": {
+      "bytes": 381,
+      "sha256": "446f4e847cbe90e74e5552f1a849d3531b5fc396523df1bf6a7878d5c7663de1"
+    },
+    "experiments/recipe-delivery/register-paint.ts": {
+      "bytes": 352,
+      "sha256": "52bbed905dac50962f077584f06e27362720089673228fe19f3b0aa6004b72cc"
+    },
+    "experiments/recipe-delivery/register.ts": {
+      "bytes": 1888,
+      "sha256": "2a459e06f779a252d4ef66c8875fbd61b140d7af066340948985a1d8cf8b109e"
+    },
+    "experiments/recipe-delivery/report.mjs": {
+      "bytes": 14664,
+      "sha256": "7b0e43f8e71df0fcb56c273a86b4d03609208891f74262fb963ede93aec712fe"
+    },
+    "experiments/recipe-delivery/run.mjs": {
+      "bytes": 7716,
+      "sha256": "3323a3581f2effb33841f2df0d9025051e2663451781e665b1be401c9a328a42"
+    },
+    "experiments/recipe-delivery/serve.mjs": {
+      "bytes": 1136,
+      "sha256": "146a01de5516cc0b672662b8449b03f9d2941ec0c9785a20e5854b4ca67029b4"
+    },
+    "experiments/recipe-delivery-v2/CssIcon.astro": {
+      "bytes": 1107,
+      "sha256": "4180c25d65417164a494370c2b41258aa8545f7825d8f368accf829bc67ca27f"
+    },
+    "experiments/recipe-delivery-v2/CssOpacityIcon.astro": {
+      "bytes": 1117,
+      "sha256": "3b979b95ebac8a00f35471fdeda1420de845f69dbae8cd7eb6ff45ede477ada3"
+    },
+    "experiments/recipe-delivery-v2/CssPaintIcon.astro": {
+      "bytes": 1174,
+      "sha256": "0235ea5531170cf551bbb85c8ca02e7c1019e4f062f6f60fabaecd5564647816"
+    },
+    "experiments/recipe-delivery-v2/README.md": {
+      "bytes": 4397,
+      "sha256": "46a2cf5982a78d61e4f7b8bc12d87a9e978e04c7685a5d10abc0c43f766eae48"
+    },
+    "experiments/recipe-delivery-v2/ReferenceIcon.astro": {
+      "bytes": 971,
+      "sha256": "09213db2e702cbde5870f5d8990d4602e2c24066464a6321e2787875d8c8335a"
+    },
+    "experiments/recipe-delivery-v2/browser/native.js": {
+      "bytes": 1867,
+      "sha256": "bab19e67c279903e256de60cc684830f36690bbc350415ea992b6ef1f9c1ec75"
+    },
+    "experiments/recipe-delivery-v2/browser/normal.js": {
+      "bytes": 1074,
+      "sha256": "cb789a6d1251fa958996a37dd8ec36e085afffe8fb8ee15de6a50d04bbb244a8"
+    },
+    "experiments/recipe-delivery-v2/delivery.test.mjs": {
+      "bytes": 1532,
+      "sha256": "0b45cc4295f02dc5b3d29a922dab02e77b2b89f9142465df9eb874d04cf0630c"
+    },
+    "experiments/recipe-delivery-v2/delivery.ts": {
+      "bytes": 1023,
+      "sha256": "2f75b3279f14333d528ec73faf00c57419b414c8ab3f601796e4a8825c42aa37"
+    },
+    "experiments/recipe-delivery-v2/harness.mjs": {
+      "bytes": 2563,
+      "sha256": "2fcef9ef68b8894240642a22c028927c5741abcfe43d3a4272c950d60dabe775"
+    },
+    "experiments/recipe-delivery-v2/prepare.mjs": {
+      "bytes": 2540,
+      "sha256": "6c7262fc7a7f6968e81bbf40a2259b91504558eb0a5e1764f7c8fb87d64aa356"
+    },
+    "experiments/recipe-delivery-v2/report.mjs": {
+      "bytes": 12325,
+      "sha256": "8f1ff0e9f4499c8a7a5e713cf8e289aac2e4fb58e71905cf6351e4bdb25620fd"
+    },
+    "experiments/recipe-delivery-v2/run.mjs": {
+      "bytes": 8369,
+      "sha256": "4e5e09ea2ccc16a31c09c0dbfc2deef6405d72d30e753a22c737d04aa76f5621"
+    },
+    "experiments/recipe-delivery-v2/verify.mjs": {
+      "bytes": 1478,
+      "sha256": "d028d78a6f821f0583993a8ad97758ca0088566e64dc3755e42c3cb5e2e65a24"
+    },
+    "experiments/recipe-delivery-runtime/README.md": {
+      "bytes": 5401,
+      "sha256": "1f3cfb5c682c10dd78f1793bd0c51a72ae53e0e75be6873a5fc3de57d2527db3"
+    },
+    "experiments/recipe-delivery-runtime/browser-controller.js": {
+      "bytes": 3144,
+      "sha256": "9c144968929f4b898693e23b6772842a6e461b61ebc3ae32c099984415efcaab"
+    },
+    "experiments/recipe-delivery-runtime/browser-probe.js": {
+      "bytes": 2386,
+      "sha256": "dbd66644fadf0da53ff89be430d854209cf6bfda52db0635cef6384fab2a0469"
+    },
+    "experiments/recipe-delivery-runtime/browser-server.mjs": {
+      "bytes": 2238,
+      "sha256": "02d02668a8bb1c9483d3f882f220babf5b84fde1effb31c1d72aa3ee83a3b468"
+    },
+    "experiments/recipe-delivery-runtime/prepare.mjs": {
+      "bytes": 3038,
+      "sha256": "e866152e6305482cc0e9f7dfbea5b3ff179d8a04881b911e09de28739b3f415e"
+    },
+    "experiments/recipe-delivery-runtime/report.mjs": {
+      "bytes": 12430,
+      "sha256": "1471ff57076e163329b5b962c4581f81cbd3ca5da3dc766d6332d29f45291d53"
+    },
+    "experiments/recipe-delivery-runtime/run-server.mjs": {
+      "bytes": 831,
+      "sha256": "699d9cd08db28cebe6cd4a07d600106f6993c2ede582e18493e307e53d4e4cde"
+    },
+    "experiments/recipe-delivery-runtime/server-benchmark.mjs": {
+      "bytes": 3577,
+      "sha256": "c7a1c56bb4520294b8f910098ab838e8f09d4cc13c7c5a5bef36e08609de977f"
+    },
+    "experiments/recipe-delivery-runtime/stats.mjs": {
+      "bytes": 1380,
+      "sha256": "8876708ddb43d209751cda7308dd0994420802b7954d11c5df76c6ab2411b69b"
+    },
+    "experiments/recipe-delivery-runtime/stats.test.mjs": {
+      "bytes": 679,
+      "sha256": "ace25ae96af0a77e3b6f0983c48daa0d036d581043f464cc588a34c15923ff11"
+    },
+    "experiments/recipe-delivery-runtime/summary.mjs": {
+      "bytes": 3468,
+      "sha256": "f50cf0fd81a4067956d4fa83a6236a59c84e94769292293bb35e01bf86da9031"
+    },
+    "experiments/recipe-delivery-runtime/verify.mjs": {
+      "bytes": 2292,
+      "sha256": "8670bc2a70a774230a91b5f916bdf8e6800f07b82f1cf523ad28b0411a133fbd"
+    },
+    "benchmarks/evidence/2026-11-02/loading-baseline.json": {
+      "bytes": 1870525,
+      "sha256": "171de4de078439a8eac59b304695162d869ad5d370e9579d9407f17875ab843e"
+    },
+    "benchmarks/evidence/2026-11-02/runtime/browser-environment.json": {
+      "bytes": 165,
+      "sha256": "9278a25b7f67b4bf77501f7a7c808e93e4d8adf59f5136e4b2cd0935134891ef"
+    },
+    "benchmarks/evidence/2026-11-02/runtime/browser-run-1.json": {
+      "bytes": 148732,
+      "sha256": "1604e10d50d279a6b3f1afcbee9ac6e4422fe86270cd6e79cc17501d7421148d"
+    },
+    "benchmarks/evidence/2026-11-02/runtime/server-run-1.json": {
+      "bytes": 83058,
+      "sha256": "2fafd6f81047ad31a2fe28862312fa3266ee8637482e7a59215fabe463ad07a9"
+    },
+    "benchmarks/evidence/2026-11-02/runtime/server-run-2.json": {
+      "bytes": 83078,
+      "sha256": "87ed8e29a500948fdc2a0f86cc0b9ea6c0b9bc07d5121f528a555305bb808021"
+    },
+    "benchmarks/evidence/2026-11-02/runtime/summary.json": {
+      "bytes": 61968,
+      "sha256": "7fea855dfb54d34a6495b9bc57f40ab2a8e5ca07d18f0aa2453f1def47fb5a4e"
+    },
+    "docs/history/2026-11-02-recipe-delivery-proof.md": {
+      "bytes": 12254,
+      "sha256": "e931b69e252c63e2d22ceca3dea2a27e8437da77c487b6f92661148a49133232"
+    },
+    "docs/history/2026-11-02-recipe-delivery-payloads.json": {
+      "bytes": 491732,
+      "sha256": "f51ab7d1c3b1c40c5da64b8ca58195931279494ef86a7ee33708f5a4e9899460"
+    },
+    "docs/history/2026-11-02-recipe-delivery-browser.json": {
+      "bytes": 1446,
+      "sha256": "8a5b4a256e5cad76d8938a4fdef2de4b2d7f059e799b6e1b7fecc9991382c3f5"
+    },
+    "docs/history/2026-11-02-bounded-recipe-delivery.md": {
+      "bytes": 10650,
+      "sha256": "efba9a8a1ad432a36b21d9f3af78feec4f0df0aa107bcecd3d312861d6256351"
+    },
+    "docs/history/2026-11-02-bounded-recipe-delivery-payloads.json": {
+      "bytes": 387912,
+      "sha256": "d9fa3c60e0360411a1c4dc52e61f3f64e6051d0fbc0a239de8d78541577c7306"
+    },
+    "docs/history/2026-11-02-bounded-recipe-delivery-browser.json": {
+      "bytes": 1012,
+      "sha256": "5aed6638a5a89c280df5ac9016c4c6957747be1ca7758e1a24f7a69817dde0d6"
+    },
+    "docs/history/2026-11-02-recipe-delivery-runtime.md": {
+      "bytes": 11575,
+      "sha256": "33d6f806c4ae30683669addcee0955d33d9c3777e8f3c2586860ff3567a8e4cf"
+    },
+    "docs/history/2026-11-02-recipe-delivery-runtime-evidence.json": {
+      "bytes": 264114,
+      "sha256": "ab698629bf6d2a5a8a6f14c152035557d9993e5815178473467e76598a8bc4b4"
+    }
+  }
+}

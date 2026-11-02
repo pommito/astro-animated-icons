@@ -1,0 +1,34 @@
+[
+  {
+    "recipes": 120,
+    "referenceRecipes": 86,
+    "nestedTag": "grave-air-vent",
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "clones": 240,
+    "jsonFetches": 86,
+    "distinctFetches": 86,
+    "active": 240,
+    "remainingAnimations": 0,
+    "lateCloneRecovered": true,
+    "sheets": 120,
+    "errors": []
+  },
+  {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "hosts": 360,
+    "referenceHosts": 0,
+    "recoveryModuleURLs": 0,
+    "recoveryModuleRequests": 0,
+    "jsonRequests": 0,
+    "registered": 360
+  },
+  {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "hosts": 1780,
+    "referenceHosts": 1423,
+    "recoveryModuleURLs": 1,
+    "recoveryModuleRequests": 1,
+    "jsonRequests": 0,
+    "registered": 1780
+  }
+]

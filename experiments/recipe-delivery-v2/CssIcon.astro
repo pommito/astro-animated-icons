@@ -1,0 +1,14 @@
+---
+import Original from "../../packages/animated-icons/src/CssIcon.astro";
+import ReferenceIcon from "./ReferenceIcon.astro";
+import type { IconProps } from "../../packages/animated-icons/src/Icon.astro";
+import type { TransformCycle } from "../../packages/animated-icons/src/shared/finite-transform-cycle";
+import { assets } from "../../.artifacts/recipe-delivery/generated/assets";
+import recoveryURL from "../recipe-delivery/register-cycle.ts?worker&url";
+import { chooseDelivery } from "./delivery";
+interface Props extends IconProps { cycle: TransformCycle; tag: `grave-${string}`; svgStyle?: string; }
+const {cycle,tag,...props}=Astro.props;
+const drawing=await Astro.slots.render("default");
+const shared=chooseDelivery(Astro.locals,tag,cycle,drawing,assets[tag],recoveryURL,"cycle");
+---
+{shared ? <ReferenceIcon {...props} tag={tag} data-css-cycle={cycle.id} data-grave-cycle-src={assets[tag]}><Fragment set:html={drawing}/><script slot="recovery" is:inline type="module" src={recoveryURL}/></ReferenceIcon> : <Original {...props} cycle={cycle} tag={tag}><Fragment set:html={drawing}/></Original>}

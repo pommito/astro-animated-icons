@@ -18,7 +18,10 @@ function consumer(run) {
     mkdirSync(join(directory, "assets"));
     writeFileSync(join(directory, "assets/runtime.js"), "export const register = tag => customElements.define(tag, class extends HTMLElement {});");
     writeFileSync(join(directory, "assets/shared.css"), "[data-grave-icon]{display:inline-flex}");
-    const evidence = path => ({ sha256: createHash("sha256").update(readFileSync(new URL(path.slice(1), output))).digest("hex"), modules: [] });
+    const evidence = path => ({
+      sha256: createHash("sha256").update(readFileSync(new URL(path.slice(1), output))).digest("hex"), modules: [],
+      imports: path === "/assets/runtime.js" ? [] : ["/assets/runtime.js"], dynamicImports: [],
+    });
     metadata["/assets/runtime.js"] = { entry: false, ...evidence("/assets/runtime.js") };
     const entryFor = slug => clientRecipes.get(slug)?.attribute ?? slug;
     for (const entry of new Set(loadingIcons.map(icon => entryFor(icon.slug)))) {
@@ -50,6 +53,47 @@ test("cold totals compress HTML once and count a shared dependency once", () => 
   const sources = files.map(file => readFileSync(new URL(file, output)));
   assert.equal(route.page.raw, sources.reduce((sum, source) => sum + source.length, 0));
   assert.equal(route.page.gzip, sources.reduce((sum, source) => sum + gzipSync(source).length, 0));
+}));
+
+test("release budgets reject extra JavaScript on a common CSS page", () => consumer((output, metadata) => {
+  const entry = new URL("assets/data-grave-opacity-recipe.js", output);
+  writeFileSync(entry, readFileSync(entry, "utf8") + '\nexport const ballast = "' + "x".repeat(6000) + '";');
+  metadata["/assets/data-grave-opacity-recipe.js"].sha256 = createHash("sha256").update(readFileSync(entry)).digest("hex");
+  assert.throws(() => measureLoading(output, metadata, { mode: "minimal" }), /one: javascript raw budget/);
+}));
+
+test("CSS-only graphs reject Motion even below their byte ceilings", () => consumer((output, metadata) => {
+  metadata["/assets/data-grave-opacity-recipe.js"].modules.push({
+    id: "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/index.mjs",
+    role: "dependency", renderedLength: 12,
+  });
+  assert.throws(() => measureLoading(output, metadata, { mode: "minimal" }), /one: CSS-only graph reaches Motion/);
+}));
+
+test("the report charges deferred recovery to eventual JavaScript", () => consumer((output, metadata) => {
+  const leaf = "/assets/recovery.js";
+  const source = "export const recover = () => 42;";
+  writeFileSync(new URL(leaf.slice(1), output), source);
+  metadata[leaf] = { imports: [], dynamicImports: [], modules: [], sha256: createHash("sha256").update(source).digest("hex") };
+  const entry = new URL("assets/data-grave-opacity-recipe.js", output);
+  writeFileSync(entry, readFileSync(entry, "utf8") + '\nexport const recover = () => import("./recovery.js");');
+  metadata["/assets/data-grave-opacity-recipe.js"].dynamicImports = [leaf];
+  metadata["/assets/data-grave-opacity-recipe.js"].sha256 = createHash("sha256").update(readFileSync(entry)).digest("hex");
+  const { routes } = measureLoading(output, metadata);
+  assert.equal(routes.one.graph.initial.files.length, 2);
+  assert.equal(routes.one.graph.eventual.files.length, 3);
+  assert.deepEqual(routes.one.graph.deferred.files, [leaf]);
+  assert.deepEqual(routes.one.graph.eventual.javascript, routes.one.javascript);
+}));
+
+test("warm budgets reject a fresh URL that hides unchanged code on navigation", () => consumer((output, metadata) => {
+  const original = "/assets/data-grave-opacity-recipe.js";
+  const alias = "/assets/opacity-alias.js";
+  writeFileSync(new URL(alias.slice(1), output), readFileSync(new URL(original.slice(1), output)));
+  metadata[alias] = { ...metadata[original] };
+  const page = new URL("page-loading/ten/index.html", output);
+  writeFileSync(page, readFileSync(page, "utf8").replace(original, alias));
+  assert.throws(() => measureLoading(output, metadata, { mode: "minimal" }), /four -> ten: warm JavaScript file budget/);
 }));
 
 test("warm transitions reuse URLs and still charge the second HTML document", () => consumer((output, metadata) => {

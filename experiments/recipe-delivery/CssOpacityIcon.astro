@@ -1,0 +1,25 @@
+---
+import Icon, { type IconProps } from "../../packages/animated-icons/src/Icon.astro";
+import type { OpacityPart } from "../../packages/animated-icons/src/shared/opacity-parts";
+import { opacityCSS } from "../../packages/animated-icons/src/shared/opacity-css";
+import { serializeRecipe } from "../../packages/animated-icons/src/shared/recipe-data";
+
+import { assets } from "../../.artifacts/recipe-delivery/generated/assets";
+interface Props extends IconProps {
+  parts: OpacityPart[];
+  tag: `grave-${string}`;
+}
+const { parts, tag, ...props } = Astro.props;
+const id = tag.slice(6);
+const locals = Astro.locals as { cssOpacitySheets?: Set<string> };
+const seen = locals.cssOpacitySheets ??= new Set<string>();
+const include = !seen.has(id);
+seen.add(id);
+---
+{include && <style is:inline data-grave-cycle-style={id} set:html={opacityCSS(id, parts)} />}
+<Icon {...props} tag={tag} data-css-opacity={id} data-grave-opacity-recipe={include ? serializeRecipe({ id, parts }) : undefined} data-grave-opacity-src={include ? undefined : assets[tag]}>
+  <slot />
+</Icon>
+<script>
+  import "./register-opacity";
+</script>
