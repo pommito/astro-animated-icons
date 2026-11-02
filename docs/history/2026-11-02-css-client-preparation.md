@@ -72,7 +72,7 @@ Do not adopt eager slot rendering, per-instance byte accounting or module-bearin
 
 ## Existing validation to reuse
 
-No new test has been written. Proposed TDD boundaries await owner confirmation under the `tdd` skill: production-built Astro pages for delivered resources, then public handle methods after `whenDefined` in the isolated browser proofs. Existing saved-pose checks remain the numerical reference. The compiled-page boundary does not establish browser execution; the handle boundary does not establish visual acceptance.
+No new test has been written. The owner confirmed production-built Astro pages as the only boundary for new TDD tests, to check delivered modules and resources. Browser evidence will reuse existing controls and fixtures, including public playback after `whenDefined`, clones and recovery. Existing saved-pose checks remain the numerical reference. The compiled-page boundary does not establish browser execution or visual acceptance.
 
 After #108 is incorporated, use its versioned commands for budgets and runtime campaigns. Existing commands remain applicable:
 
