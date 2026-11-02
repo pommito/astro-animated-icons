@@ -1,0 +1,16 @@
+{
+  "version": {
+    "Browser": "Chrome/154.0.8037.98",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "V8-Version": "15.4.80.20",
+    "WebKit-Version": "537.36 (@b859317bf11f6be47f9b7799ec690a0a42a1fb33)",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:45385/devtools/browser/6434a9f2-2936-46de-8135-427ad04db8d7"
+  },
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 10,
+  "deviceMemory": 16,
+  "motion": "native browser media emulation, no-preference",
+  "competingWork": "Motion #112 idle; own builds, validation, functional probes and server campaigns stopped",
+  "visibility": "Every measured iframe checked visible by the existing controller"
+}

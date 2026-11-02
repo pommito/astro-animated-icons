@@ -30,7 +30,10 @@ import { pathPaint } from "../../path-paint-catalogue";
   await Promise.all(slugs.map(slug=>customElements.whenDefined("grave-"+slug)));
   const countFor=(icon:HTMLElement,returning=false)=>{
     const record=icon.getAttribute("data-grave-paint-recipe");
-    return record?JSON.parse(record)[returning?4:3].length:icon.localName==="grave-circle-dashed"?8:1;
+    if (!record) return icon.localName==="grave-circle-dashed"?8:1;
+    const parsed=JSON.parse(record);
+    const data=parsed.data ?? parsed;
+    return Array.isArray(data)?data[returning?4:3].length:data[returning?"returning":"entry"].length;
   };
   let sequence = 0;
   document.querySelector("#check-loading")!.addEventListener("click", () => {
@@ -61,7 +64,7 @@ import { pathPaint } from "../../path-paint-catalogue";
     const probe = document.createElement(tag) as Handle;
     const bell = document.querySelector<Handle>("#early [data-grave-paint-recipe]")!;
     for (const attribute of bell.attributes) probe.setAttribute(attribute.name, attribute.value);
-    probe.append(bell.querySelector("svg")!.cloneNode(true));
+    probe.append(...[...bell.childNodes].map(child=>child.cloneNode(true)));
     const outer = document.createElement("template");
     const inner = document.createElement("template");
     inner.content.append(probe);
