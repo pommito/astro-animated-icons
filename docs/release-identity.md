@@ -1,6 +1,6 @@
 # Motion Astro release identity
 
-Motion Astro is the owner's chosen product identity. The npm name, project license, release owners and full documentation hostname still need owner decisions before packaging. This record covers [issue #107](https://github.com/pommito/astro-animated-icons/issues/107) under [the release plan #106](https://github.com/pommito/astro-animated-icons/issues/106). It does not complete #107.
+Motion Astro is the owner's chosen product identity. The owner confirmed `@motion-astro/icons` as the npm name and `icons.astromotion.dev` as the documentation hostname on 2026-11-02. The project license, namespace access, version policy and release owners remain unresolved. This record covers [issue #107](https://github.com/pommito/astro-animated-icons/issues/107) under [the release plan #106](https://github.com/pommito/astro-animated-icons/issues/106). It does not complete #107.
 
 The audit below describes commit `90302b37876ba25f417b63ffd721fbab5e21f0aa` on 2026-11-02. Runtime measurement work, including #108, can continue with the existing package name and API. [Packaging #115](https://github.com/pommito/astro-animated-icons/issues/115) applies the approved metadata and license files later. Publication and deployment require their separate release approval.
 
@@ -9,13 +9,13 @@ The audit below describes commit `90302b37876ba25f417b63ffd721fbab5e21f0aa` on 2
 | Decision | Recorded state | Needed before approval |
 | --- | --- | --- |
 | Product identity | Motion Astro, confirmed by the owner in the task instructions | Use product branding rather than a personal package brand. Preserve upstream author credits. |
-| Exact npm name | Pending | Choose `@motion-astro/icons`, `motion-astro-icons`, or another exact name after checking it. Neither candidate is reserved. |
-| npm namespace and access | Pending | Identify the publishing npm account and package administrators. For the scoped candidate, prove access to the `motion-astro` user or organization scope and its publishing permissions. |
-| Project license | Pending | Select an open-source license and SPDX identifier. Confirm the copyright holder and wording for the project's own contributions. Product branding alone does not establish copyright ownership. |
+| Exact npm name | `@motion-astro/icons`, confirmed by the owner on 2026-11-02 | Establish namespace access and recheck the name before release. The confirmation does not reserve it. |
+| npm namespace and access | Pending | Identify the publishing npm account and package administrators. Prove access to the selected `motion-astro` user or organization scope and its publishing permissions. |
+| Project license | Owner requested a conventional free/open-source license; exact license pending | MIT is proposed for explicit confirmation. Confirm the copyright holder and wording for the project's own contributions. Product branding alone does not establish copyright ownership. |
 | Attribution | Existing upstream credits must remain, as required by the task instructions | Resolve the provenance and notice gaps below. Keep upstream notices with copied or adapted material under their existing terms. |
 | First version and version policy | Pending | Choose the first public version, whether to use prereleases, and the compatibility policy before 1.0 if applicable. |
 | Public naming | Existing contract remains in force | Decide whether the first release changes only the package import or also tags and handle names. Approve exact replacements and migration scope before applying any change. |
-| Documentation hostname | Owner supplied `motion-astro` and `icons.motion-astro` as shorthand | Confirm the complete domain, including its TLD, and the exact documentation hostname. No TLD is assumed. |
+| Documentation hostname | Owner confirmed the domain `astromotion.dev` and hostname `icons.astromotion.dev` on 2026-11-02 | Use this hostname for documentation. Domain control, DNS and hosting configuration have not been verified. |
 | Hosting and deployment | Pending | Name the hosting project/provider, account with deployment access, DNS owner and deployment owner. |
 | Release responsibility | Pending | Identify maintainers, the person accountable for npm publication and who can approve releases. A public brand does not replace registry access controls. |
 
@@ -54,9 +54,9 @@ Unauthenticated GET requests to the public npm registry on 2026-11-02 returned t
 | `motion-astro-icons` | 14:08:23.287 | [Package endpoint](https://registry.npmjs.org/motion-astro-icons) returned HTTP 404, `{"error":"Not found"}` | A publishing account and approved package maintainers. No product scope is required. |
 | `@motion-astro/icons` | 14:08:23.555 | [Package endpoint](https://registry.npmjs.org/%40motion-astro%2Ficons) returned HTTP 404, `{"error":"Not found"}` | Control of the `motion-astro` npm scope and permission to publish within it. |
 
-Neither response proves that a name is claimable or that the owner has namespace access. Naming restrictions can still apply. The scoped candidate may also be occupied by a private package that a public read cannot reveal. Recheck after the owner chooses a name and before release. No name, account or organization was reserved.
+Neither response proves that a name is claimable or that the owner has namespace access. Naming restrictions can still apply. The scoped candidate may also be occupied by a private package that a public read cannot reveal. Recheck the selected name before release. No name, account or organization was reserved.
 
-I recommend `@motion-astro/icons` if the owner can establish scope access. It groups future Motion Astro packages under the same product namespace. `motion-astro-icons` is the alternative if the owner prefers an unscoped package. These are proposals, not approved identifiers.
+The owner selected `@motion-astro/icons` on 2026-11-02. Namespace access remains unverified. `motion-astro-icons` was an audited alternative and is not the selected release name.
 
 [npm scopes](https://docs.npmjs.com/about-scopes/) belong to matching npm users or organizations. Domain ownership does not grant that scope. [Public scoped publication](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages/) also requires explicit public access configuration. The selected name does not authorize account creation or publication.
 
@@ -71,7 +71,7 @@ I recommend `@motion-astro/icons` if the owner can establish scope access. It gr
 | Peer and dependency | Astro `^7.2.10`, Motion `^13.4.4` | #115 qualifies or narrows supported versions with evidence and approval. This audit does not change dependencies. |
 | Package description and keywords | Absent | Describe Motion Astro's Astro components and selective loading. Avoid unmeasured performance claims. |
 | Repository and issue tracker fields | Absent | Current origin is `https://github.com/pommito/astro-animated-icons.git`. If retained, use its package directory and issue tracker in metadata. Repository relocation is not decided here. |
-| Homepage | Absent | Use the confirmed full documentation URL after the hostname decision. |
+| Homepage | Absent | Use the deployed documentation URL at the confirmed `icons.astromotion.dev` hostname when preparing metadata in #115. |
 | Author/contributor metadata | Absent | Confirm project attribution wording. Keep original authors in third-party notices, separately from the product identity and npm maintainers. |
 | `publishConfig` and release CI | Absent | #115 prepares registry/access configuration and the reviewed publication workflow. #117 owns approved publication. |
 
@@ -120,4 +120,4 @@ Local verification resolved all 15 Markdown paths and anchors in the README and 
 
 `rtk pnpm install --frozen-lockfile --offline` first failed because `mdn-data@2.27.1` was absent from the local cache. `rtk pnpm install --frozen-lockfile` then succeeded without changing the manifests or lockfile. `rtk pnpm validate` passed in 168.610 seconds, including both Astro checks with zero errors, warnings or hints, 470 initial drawings, 944 bundle cases, 120 migrated recipes across 132 compositions and all 108 Node tests. The production fixture build still emitted warnings for fixture-only React `use client` directives and a large generated chunk. Routine validation launched no browser.
 
-The completed preparation is the license/metadata inventory, dated registry observations and package-file audit. Owner decisions in the register remain open. Provenance corrections, final license files, the final artifact, namespace permission checks, registry installation and deployment remain pending. No DNS or hosting configuration was changed. This audit adds no browser qualification or visual acceptance.
+The completed preparation is the license/metadata inventory, dated registry observations and package-file audit. The npm name and documentation hostname now have owner confirmation. The exact license, copyright holder, first-version policy, maintainers, public-name migration scope and release/deployment responsibility remain open. Provenance corrections, final license files, the final artifact, namespace permission checks, registry installation and deployment remain pending. No DNS or hosting configuration was changed. This audit adds no browser qualification or visual acceptance.
