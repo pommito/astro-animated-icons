@@ -147,7 +147,10 @@ export function inventoryAnimations(root = defaultRoot, { requireReviewed = fals
     }
     for (const path of reviewContext) if (existsSync(resolve(root, path))) recipeFiles.add(path);
     if (delivery) recipeFiles.add(delivery.wrapper);
-    if (delivery?.entry) recipeFiles.add(delivery.entry);
+    if (delivery?.entry) {
+      recipeFiles.add(delivery.entry);
+      for (const path of closure("packages/animated-icons/src/shared/transform-cycle-css.ts")) recipeFiles.add(path);
+    }
     if (delivery?.registration.endsWith("register-css-paint.ts") || provenMechanismSources.some(path => path.endsWith("register-css-paint.ts"))) recipeFiles.add("packages/animated-icons/src/shared/paint-recipe.ts");
     const files = [...recipeFiles].sort();
     const modules = files.map(load);

@@ -1,7 +1,7 @@
 {
   "browser": "Chrome/154.0.8037.98",
   "reference": "90302b37876ba25f417b63ffd721fbab5e21f0aa",
-  "protocol": "Fresh visible documents; HTTP cache disabled; request trace only. No timing campaign.",
+  "protocol": "Fresh documents in dedicated Chrome; HTTP cache disabled; six ordinary route snapshots hidden and one visible while other functional checks activated their own targets. Request trace only, no visible-readiness or timing claim.",
   "routes": {
     "unused": {
       "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
