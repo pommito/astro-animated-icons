@@ -4,6 +4,8 @@
 
 This is preparation for [issue #112](https://github.com/pommito/astro-animated-icons/issues/112). It does not complete that issue or establish an import reduction. Runtime implementation must wait for a verified commit from [issue #108](https://github.com/pommito/astro-animated-icons/issues/108) containing reproducible tools, measurements and proposed budgets. That commit was unavailable during this audit. Any applicable architecture approval remains a separate gate.
 
+The later [implementation report](2026-11-02-motion-import-reduction.md) records the delivered prerequisite, runtime reduction, measurements and remaining merge gates. This audit preserves the preceding preparation state.
+
 The starting revision and review reference are `90302b37876ba25f417b63ffd721fbab5e21f0aa`. Work is isolated on `perf/112-motion-imports`. This change adds only this report. It changes no recipe, lifecycle, import, dependency, compiler, adapter or test.
 
 The owner selected reuse of existing validations only for #112. No new tests are authorized by that selection. Use existing consumer graph checks and fixture controls for subsequent implementation. If they cannot establish a required behavior, report the gap before adding a test.

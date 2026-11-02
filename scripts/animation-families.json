@@ -58,8 +58,8 @@
     "reason": "The resolved parts below use explicit or implicit transform springs. A fixed CSS timeline would discard the retained property velocities.",
     "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
     "contract": {
-      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
-      "playback": "Effective parts record each pose separately. Pose transition replaces part transition. A scalar transform with no duration and no explicit spring gets scale 550/30 or other 500/25, restSpeed 10, overriding base stiffness/damping. A spring uses retained per-property velocity. Active entry arrays replace their first value; completed entry restarts explicit arrays. Repeating active entry first finishes one cycle then clears and loops via animateSequence. Hold completion. Clear deletes playback/pose state, releases svgEffect and restores normal d and paint styles.",
+      "mechanism": "shared/svg-transform-parts.ts -> shared/svg-transform.ts; shared/svg-parts.ts adds paint and morph tracks",
+      "playback": "Effective parts record each pose separately. Pose transition replaces part transition. A scalar transform with no duration and no explicit spring gets scale 550/30 or other 500/25, restSpeed 10, overriding base stiffness/damping. A spring uses retained per-property velocity. Active entry arrays replace their first value; completed entry restarts explicit arrays. Repeating active entry first finishes one cycle then clears and loops via animateSequence. Hold completion. Clear deletes playback/pose state, releases svgEffect and restores normal d and paint styles. Loader, LoaderCircle and LoaderPinwheel use the transform-only factory. Their clear path has no SVG effect or paint state to release.",
       "transformOrder": [
         "x",
         "translateX",

@@ -39,7 +39,7 @@ test("inventory covers each export once and retains shared defaults and mixed me
   const loader = result.icons.find(icon => icon.slug === "loader-circle");
   assert.equal(loader.engine, "motion");
   assert.equal(loader.classification.status, "motion");
-  assert.ok(loader.sources.some(path => path.endsWith("shared/svg-parts.ts")));
+  assert.ok(loader.sources.some(path => path.endsWith("shared/svg-transform-parts.ts")));
   assert.ok(loader.sources.some(path => path.endsWith("shared/svg-transform.ts")));
   assert.ok(result.sources["packages/animated-icons/src/shared/svg-parts.ts"].constants.some(fact => fact.expression.includes("defaultEase")));
   assert.ok(result.sources["packages/animated-icons/src/shared/svg-transform.ts"].calls.some(fact => fact.expression.includes("previous?.velocities")));

@@ -1,6 +1,6 @@
-import { createSvgPartsRecipe } from "../../shared/svg-parts";
+import { createSvgTransformPartsRecipe } from "../../shared/svg-transform-parts";
 
-export const loaderCircleRecipe = createSvgPartsRecipe([{
+export const loaderCircleRecipe = createSvgTransformPartsRecipe([{
   selector: "[data-spin]",
   variants: {
     normal: { rotate: 0 },

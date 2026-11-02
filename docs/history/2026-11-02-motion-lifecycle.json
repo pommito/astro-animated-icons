@@ -1,0 +1,64 @@
+{
+  "browser": "Chrome/154.0.8037.98",
+  "scope": "Existing manual fixture buttons and public handles; native CDP media emulation, not OS preference or owner visual acceptance",
+  "observations": [
+    {
+      "slug": "loader-circle",
+      "playback": {
+        "entry": 1,
+        "afterReturn": 0,
+        "returnPose": "",
+        "cloneEntry": 1,
+        "cloneAfterDisconnect": 0
+      },
+      "reduced": {
+        "cleared": 0,
+        "underReduce": 0,
+        "pose": ""
+      },
+      "restored": 1
+    },
+    {
+      "slug": "loader",
+      "playback": {
+        "entry": 1,
+        "afterReturn": 0,
+        "returnPose": "",
+        "cloneEntry": 1,
+        "cloneAfterDisconnect": 0
+      },
+      "reduced": {
+        "cleared": 0,
+        "underReduce": 0,
+        "pose": ""
+      },
+      "restored": 1
+    },
+    {
+      "slug": "loader-pinwheel",
+      "playback": {
+        "entry": 1,
+        "afterReturn": 0,
+        "returnPose": "",
+        "cloneEntry": 1,
+        "cloneAfterDisconnect": 0
+      },
+      "reduced": {
+        "cleared": 0,
+        "underReduce": 0,
+        "pose": ""
+      },
+      "restored": 1
+    }
+  ],
+  "sourceHashes": {
+    "element.ts": "e58cb859f8e3020ea02f3c077bf8153e8e1afb4f452b8e8daebe2bf687634a17",
+    "shared/svg-transform.ts": "d4d295bba3c1e9068d84699d75a2d5e4c4614b75e7f262ed282635ad7cba1664",
+    "shared/sequence.ts": "5272554ac458dbb885ad7d49e81af556737c2143a2cf4776b4379683cd4d6f7b",
+    "shared/svg-parts.ts": "b476b1b6a99d50307bdcbc4560adc336f648b2495ee115de4706b31e0fe47d57",
+    "shared/svg-transform-parts.ts": "377803e53de6c0e6ed3199926443ff20b46092efaf233d8fd9f5032516478e2c",
+    "icons/loader-circle/definition.ts": "b2aa3b19cca40648a3c00185f5119b6d2f525bf0caaf5543a72649fac3d50353",
+    "icons/loader/definition.ts": "f029e08cf38b45e574a5e1caecf0b84d4b14f13c566eac22538e726915d398c4",
+    "icons/loader-pinwheel/definition.ts": "930626151b848e21c4a86944d2097e42c3e6d59384efc777dc0bdc66134baed1"
+  }
+}
