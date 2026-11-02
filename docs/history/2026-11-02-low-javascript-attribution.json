@@ -1,0 +1,3380 @@
+{
+  "environment": {
+    "node": "v22.20.0",
+    "packageManager": "pnpm@12.5.1",
+    "astro": "7.3.8",
+    "motion": "13.5.1",
+    "typescript": "6.0.3",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M1 Pro"
+  },
+  "source": {
+    "package": "@grave/animated-icons",
+    "lockfileSHA256": "1438fedfd046e4531bf8680282266add183d0503e6a0932b38810e7f6e60f7cf",
+    "measurementSHA256": "9a3d968556911c3d9d9376a9d9f54bc20c0bd60ad87b249765877d6f18562f73"
+  },
+  "assumption": "Module renderedLength is before final minification. It cannot allocate final raw/gzip bytes additively.",
+  "modes": {
+    "full": {
+      "unused": {
+        "javascript": {
+          "raw": 0,
+          "gzip": 0
+        },
+        "page": {
+          "raw": 264,
+          "gzip": 209
+        },
+        "graph": {
+          "initial": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          },
+          "eventual": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {}
+      },
+      "one": {
+        "javascript": {
+          "raw": 5353,
+          "gzip": 2658
+        },
+        "page": {
+          "raw": 15467,
+          "gzip": 3884
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 5353,
+              "gzip": 2658
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 5353,
+              "gzip": 2658
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 195,
+            "modules": [
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2837,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2387,
+            "modules": [
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "cog": {
+        "javascript": {
+          "raw": 6322,
+          "gzip": 2961
+        },
+        "page": {
+          "raw": 8686,
+          "gzip": 3939
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6322,
+              "gzip": 2961
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6322,
+              "gzip": 2961
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 158,
+            "modules": [
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 3025,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2853,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "paint-eye-off": {
+        "javascript": {
+          "raw": 6749,
+          "gzip": 3158
+        },
+        "page": {
+          "raw": 9896,
+          "gzip": 4149
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6749,
+              "gzip": 3158
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6749,
+              "gzip": 3158
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 187,
+            "modules": [
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-paint.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2595,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 4396,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "key-square": {
+        "javascript": {
+          "raw": 6322,
+          "gzip": 2961
+        },
+        "page": {
+          "raw": 33134,
+          "gzip": 7147
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6322,
+              "gzip": 2961
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 6322,
+              "gzip": 2961
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 158,
+            "modules": [
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 3025,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2853,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "four": {
+        "javascript": {
+          "raw": 9561,
+          "gzip": 4474
+        },
+        "page": {
+          "raw": 23999,
+          "gzip": 6400
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 9561,
+              "gzip": 4474
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 9561,
+              "gzip": 4474
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 353,
+            "modules": [
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 5862,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 5240,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "ten": {
+        "javascript": {
+          "raw": 9561,
+          "gzip": 4474
+        },
+        "page": {
+          "raw": 42241,
+          "gzip": 7473
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 9561,
+              "gzip": 4474
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 9561,
+              "gzip": 4474
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 353,
+            "modules": [
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 5862,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 5240,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "repeated": {
+        "javascript": {
+          "raw": 5353,
+          "gzip": 2658
+        },
+        "page": {
+          "raw": 71878,
+          "gzip": 4437
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 5353,
+              "gzip": 2658
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 5353,
+              "gzip": 2658
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 195,
+            "modules": [
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2837,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2387,
+            "modules": [
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "all": {
+        "javascript": {
+          "raw": 14196,
+          "gzip": 6487
+        },
+        "page": {
+          "raw": 616328,
+          "gzip": 49194
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 14196,
+              "gzip": 6487
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 14196,
+              "gzip": 6487
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "repeated-all": {
+        "javascript": {
+          "raw": 14196,
+          "gzip": 6487
+        },
+        "page": {
+          "raw": 839662,
+          "gzip": 52214
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 14196,
+              "gzip": 6487
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js"
+            ],
+            "javascript": {
+              "raw": 14196,
+              "gzip": 6487
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "loader": {
+        "javascript": {
+          "raw": 71471,
+          "gzip": 30044
+        },
+        "page": {
+          "raw": 72252,
+          "gzip": 30544
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.445WGjDC.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/animate.D_SH5Zqa.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/single-value.CHiIGpB4.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-parts.NOl_CPV_.js",
+              "/_astro/svg-transform.C2YnaYlc.js",
+              "/_astro/svg.COIR82T0.js"
+            ],
+            "javascript": {
+              "raw": 71471,
+              "gzip": 30044
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.445WGjDC.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/animate.D_SH5Zqa.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/single-value.CHiIGpB4.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-parts.NOl_CPV_.js",
+              "/_astro/svg-transform.C2YnaYlc.js",
+              "/_astro/svg.COIR82T0.js"
+            ],
+            "javascript": {
+              "raw": 71471,
+              "gzip": 30044
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "recipe": {
+            "renderedLength": 425,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/definition.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2805,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/element.ts",
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 0,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 15719,
+            "modules": [
+              "packages/animated-icons/src/shared/svg-parts.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/sequence.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 148102,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-styles.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/path.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/has-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/delta-apply.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs"
+            ]
+          }
+        }
+      },
+      "all-loader": {
+        "javascript": {
+          "raw": 84219,
+          "gzip": 35875
+        },
+        "page": {
+          "raw": 686868,
+          "gzip": 78742
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.445WGjDC.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/animate.D_SH5Zqa.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/single-value.CHiIGpB4.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-parts.NOl_CPV_.js",
+              "/_astro/svg-transform.C2YnaYlc.js",
+              "/_astro/svg.COIR82T0.js"
+            ],
+            "javascript": {
+              "raw": 84219,
+              "gzip": 35875
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.IfZKpmwo.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.DjVJMtQq.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.445WGjDC.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/animate.D_SH5Zqa.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-cycle.s16eXjyB.js",
+              "/_astro/register-css-opacity.DmcjWPLA.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/single-value.CHiIGpB4.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-parts.NOl_CPV_.js",
+              "/_astro/svg-transform.C2YnaYlc.js",
+              "/_astro/svg.COIR82T0.js"
+            ],
+            "javascript": {
+              "raw": 84219,
+              "gzip": 35875
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2805,
+            "modules": [
+              "packages/animated-icons/src/element.ts",
+              "packages/animated-icons/src/icons/loader-circle/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 16286,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts",
+              "packages/animated-icons/src/shared/svg-parts.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/sequence.ts"
+            ]
+          },
+          "recipe": {
+            "renderedLength": 425,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/definition.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 148102,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/html/utils/build-styles.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/path.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/has-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/delta-apply.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs"
+            ]
+          }
+        }
+      },
+      "path-paint-repeated": {
+        "javascript": {
+          "raw": 32375,
+          "gzip": 14715
+        },
+        "page": {
+          "raw": 1971771,
+          "gzip": 187297
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/WindArrowDown.astro_astro_type_script_index_0_lang.B7DazjVa.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/path-reveal.C6p_S60v.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-transform.C2YnaYlc.js"
+            ],
+            "javascript": {
+              "raw": 32375,
+              "gzip": 14715
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.BCUULRRY.js",
+              "/_astro/GroupAnimationWithThen.CIuyc_1X.js",
+              "/_astro/WindArrowDown.astro_astro_type_script_index_0_lang.B7DazjVa.js",
+              "/_astro/animate-style.D1NF0tDs.js",
+              "/_astro/border-radius.CDzYrzJo.js",
+              "/_astro/ease.ClIG0ww7.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.CZ6mVftw.js",
+              "/_astro/path-reveal.C6p_S60v.js",
+              "/_astro/recipe-css.B7_VcmPG.js",
+              "/_astro/register-css-paint.Byr68AZZ.js",
+              "/_astro/register-css.u3iR1xBV.js",
+              "/_astro/resolve-elements.RFbo_LEe.js",
+              "/_astro/spring.DMCwaqNl.js",
+              "/_astro/svg-transform.C2YnaYlc.js"
+            ],
+            "javascript": {
+              "raw": 32375,
+              "gzip": 14715
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "registration": {
+            "renderedLength": 187,
+            "modules": [
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/icons/wind-arrow-down/WindArrowDown.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2595,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 4396,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2814,
+            "modules": [
+              "packages/animated-icons/src/element.ts",
+              "packages/animated-icons/src/icons/wind-arrow-down/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 9563,
+            "modules": [
+              "packages/animated-icons/src/shared/wind.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/path-reveal.ts"
+            ]
+          },
+          "recipe": {
+            "renderedLength": 683,
+            "modules": [
+              "packages/animated-icons/src/icons/wind-arrow-down/definition.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 50245,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs"
+            ]
+          }
+        }
+      }
+    },
+    "minimal": {
+      "unused": {
+        "javascript": {
+          "raw": 0,
+          "gzip": 0
+        },
+        "page": {
+          "raw": 264,
+          "gzip": 209
+        },
+        "graph": {
+          "initial": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          },
+          "eventual": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {}
+      },
+      "one": {
+        "javascript": {
+          "raw": 5269,
+          "gzip": 2491
+        },
+        "page": {
+          "raw": 15383,
+          "gzip": 3717
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 5269,
+              "gzip": 2491
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 5269,
+              "gzip": 2491
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2837,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2387,
+            "modules": [
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 195,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "cog": {
+        "javascript": {
+          "raw": 6240,
+          "gzip": 2794
+        },
+        "page": {
+          "raw": 8604,
+          "gzip": 3772
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6240,
+              "gzip": 2794
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6240,
+              "gzip": 2794
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 3025,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2853,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 158,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "paint-eye-off": {
+        "javascript": {
+          "raw": 6667,
+          "gzip": 2991
+        },
+        "page": {
+          "raw": 9814,
+          "gzip": 3979
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6667,
+              "gzip": 2991
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6667,
+              "gzip": 2991
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "stylesheet-compiler": {
+            "renderedLength": 2595,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 4396,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 187,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "key-square": {
+        "javascript": {
+          "raw": 6240,
+          "gzip": 2794
+        },
+        "page": {
+          "raw": 33052,
+          "gzip": 6979
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6240,
+              "gzip": 2794
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 6240,
+              "gzip": 2794
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 3025,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2853,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 158,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "four": {
+        "javascript": {
+          "raw": 9398,
+          "gzip": 4227
+        },
+        "page": {
+          "raw": 23836,
+          "gzip": 6155
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 9398,
+              "gzip": 4227
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 9398,
+              "gzip": 4227
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 5862,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 5240,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 353,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "ten": {
+        "javascript": {
+          "raw": 9398,
+          "gzip": 4227
+        },
+        "page": {
+          "raw": 42078,
+          "gzip": 7226
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 9398,
+              "gzip": 4227
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 9398,
+              "gzip": 4227
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 5862,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 5240,
+            "modules": [
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 353,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "repeated": {
+        "javascript": {
+          "raw": 5269,
+          "gzip": 2491
+        },
+        "page": {
+          "raw": 71794,
+          "gzip": 4269
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 5269,
+              "gzip": 2491
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 5269,
+              "gzip": 2491
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          },
+          "stylesheet-compiler": {
+            "renderedLength": 2837,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 2387,
+            "modules": [
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 195,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          }
+        }
+      },
+      "all": {
+        "javascript": {
+          "raw": 13954,
+          "gzip": 6160
+        },
+        "page": {
+          "raw": 616086,
+          "gzip": 48865
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 13954,
+              "gzip": 6160
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 13954,
+              "gzip": 6160
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "repeated-all": {
+        "javascript": {
+          "raw": 13954,
+          "gzip": 6160
+        },
+        "page": {
+          "raw": 839420,
+          "gzip": 51885
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 13954,
+              "gzip": 6160
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/register-css.DDow9PrR.js"
+            ],
+            "javascript": {
+              "raw": 13954,
+              "gzip": 6160
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2534,
+            "modules": [
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 567,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts"
+            ]
+          }
+        }
+      },
+      "loader": {
+        "javascript": {
+          "raw": 66943,
+          "gzip": 27112
+        },
+        "page": {
+          "raw": 67724,
+          "gzip": 27610
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/animate.Dmvq2wBV.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-parts.CGgDZ5LR.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 66943,
+              "gzip": 27112
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/animate.Dmvq2wBV.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-parts.CGgDZ5LR.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 66943,
+              "gzip": 27112
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "recipe": {
+            "renderedLength": 425,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/definition.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2805,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/element.ts",
+              "packages/animated-icons/src/element.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 0,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 15719,
+            "modules": [
+              "packages/animated-icons/src/shared/svg-parts.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/sequence.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 139599,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs"
+            ]
+          }
+        }
+      },
+      "all-loader": {
+        "javascript": {
+          "raw": 79449,
+          "gzip": 32616
+        },
+        "page": {
+          "raw": 682098,
+          "gzip": 75482
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/animate.Dmvq2wBV.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/register-css.DDow9PrR.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-parts.CGgDZ5LR.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 79449,
+              "gzip": 32616
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssIcon.astro_astro_type_script_index_0_lang.Db4C_4aF.js",
+              "/_astro/CssOpacityIcon.astro_astro_type_script_index_0_lang.BENGTQdE.js",
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/LoaderCircle.astro_astro_type_script_index_0_lang.BeR7CQmr.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/animate.Dmvq2wBV.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/register-css.DDow9PrR.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/sequence.efB8P2z6.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-parts.CGgDZ5LR.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 79449,
+              "gzip": 32616
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "stylesheet-compiler": {
+            "renderedLength": 8457,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts",
+              "packages/animated-icons/src/shared/combined-transform-css.ts",
+              "packages/animated-icons/src/shared/cycle-css.ts",
+              "packages/animated-icons/src/shared/opacity-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 9636,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts",
+              "packages/animated-icons/src/shared/css-cycle.ts",
+              "packages/animated-icons/src/shared/css-opacity.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 540,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-cycle.ts",
+              "packages/animated-icons/src/CssIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/shared/register-css-opacity.ts",
+              "packages/animated-icons/src/CssOpacityIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/icons/loader-circle/LoaderCircle.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2805,
+            "modules": [
+              "packages/animated-icons/src/element.ts",
+              "packages/animated-icons/src/icons/loader-circle/element.ts"
+            ]
+          },
+          "combined-sampling": {
+            "renderedLength": 2248,
+            "modules": [
+              "packages/animated-icons/src/shared/combined-transform-cycle.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 16286,
+            "modules": [
+              "packages/animated-icons/src/shared/opacity-parts.ts",
+              "packages/animated-icons/src/shared/svg-parts.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/sequence.ts"
+            ]
+          },
+          "recipe": {
+            "renderedLength": 425,
+            "modules": [
+              "packages/animated-icons/src/icons/loader-circle/definition.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 139599,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-numerical-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-object.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/is-zero-value-string.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/subscription-manager.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/velocity-per-second.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/wrap.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/back.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/anticipate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/circ.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/get-easing-for-segment.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/map.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/order.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/render-step.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/batcher.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/drivers/frame.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/inertia.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/fill.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/default.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/offsets/time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/keyframes.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/velocity.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/replace-transition-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/JSAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/filter.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/mask.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/int.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/maps/defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/animatable-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/parse-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/unit-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/KeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/unsupported-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimationExtended.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/can-animate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/make-animation-instant.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/accelerated-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/is-browser-color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/supports/waapi.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/AsyncMotionValueAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/default-transitions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-transition-defined.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/interfaces/motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/css-variables-conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/utils/keys-position.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/utils/is-motion-value.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/utils/camel-to-dash.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/auto.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/test.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/dimensions.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/is-none.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/make-none-animatable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/DOMKeyframesResolver.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/effects.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-html-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/is-svg-element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/get-as-type.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-dom-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/MotionValueState.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/utils/create-effect.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/transform.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/style/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/svg/utils/build-attrs.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/attr/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/svg/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/geometry/conversion.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/projection/utils/measure.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/element.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/effects/prop/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/store.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/animate/single-value.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/utils/is-dom-keyframes.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/resolve-subjects.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-repeat-duration.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/calc-time.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/edit.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/normalize-times.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/utils/sort.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/sequence/create.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/subject.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/sequence.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animate/index.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs"
+            ]
+          }
+        }
+      },
+      "path-paint-repeated": {
+        "javascript": {
+          "raw": 31887,
+          "gzip": 14213
+        },
+        "page": {
+          "raw": 1971283,
+          "gzip": 186794
+        },
+        "graph": {
+          "initial": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/WindArrowDown.astro_astro_type_script_index_0_lang.77-FUJnM.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/path-reveal.Cl0xnsYs.js",
+              "/_astro/register-css.DDow9PrR.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 31887,
+              "gzip": 14213
+            }
+          },
+          "eventual": {
+            "files": [
+              "/_astro/CssPaintIcon.astro_astro_type_script_index_0_lang.raRFQbig.js",
+              "/_astro/WindArrowDown.astro_astro_type_script_index_0_lang.77-FUJnM.js",
+              "/_astro/animate-style.BUFqNLlb.js",
+              "/_astro/ease.SXrjam8y.js",
+              "/_astro/element.DawF6gnr.js",
+              "/_astro/interpolate.D1oTUab4.js",
+              "/_astro/path-reveal.Cl0xnsYs.js",
+              "/_astro/register-css.DDow9PrR.js",
+              "/_astro/resolve-elements.BfTnYGPJ.js",
+              "/_astro/spring.BTrCZkUi.js",
+              "/_astro/svg-transform.C3n5ANox.js"
+            ],
+            "javascript": {
+              "raw": 31887,
+              "gzip": 14213
+            }
+          },
+          "deferred": {
+            "files": [],
+            "javascript": {
+              "raw": 0,
+              "gzip": 0
+            }
+          }
+        },
+        "roles": {
+          "stylesheet-compiler": {
+            "renderedLength": 2595,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-css.ts"
+            ]
+          },
+          "css-adapter": {
+            "renderedLength": 4396,
+            "modules": [
+              "packages/animated-icons/src/shared/css-paint.ts"
+            ]
+          },
+          "recipe-serialization": {
+            "renderedLength": 1139,
+            "modules": [
+              "packages/animated-icons/src/shared/paint-data.ts"
+            ]
+          },
+          "registration": {
+            "renderedLength": 187,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css-paint.ts",
+              "packages/animated-icons/src/CssPaintIcon.astro?astro&type=script&index=0&lang.ts",
+              "packages/animated-icons/src/icons/wind-arrow-down/WindArrowDown.astro?astro&type=script&index=0&lang.ts"
+            ]
+          },
+          "stylesheet-recovery": {
+            "renderedLength": 473,
+            "modules": [
+              "packages/animated-icons/src/shared/recipe-css.ts"
+            ]
+          },
+          "discovery": {
+            "renderedLength": 636,
+            "modules": [
+              "packages/animated-icons/src/shared/register-css.ts"
+            ]
+          },
+          "lifecycle": {
+            "renderedLength": 2814,
+            "modules": [
+              "packages/animated-icons/src/element.ts",
+              "packages/animated-icons/src/icons/wind-arrow-down/element.ts"
+            ]
+          },
+          "other-shared": {
+            "renderedLength": 9563,
+            "modules": [
+              "packages/animated-icons/src/shared/wind.ts",
+              "packages/animated-icons/src/shared/svg-transform.ts",
+              "packages/animated-icons/src/shared/path-reveal.ts"
+            ]
+          },
+          "recipe": {
+            "renderedLength": 683,
+            "modules": [
+              "packages/animated-icons/src/icons/wind-arrow-down/definition.ts"
+            ]
+          },
+          "motion": {
+            "renderedLength": 49953,
+            "modules": [
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/clamp.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/calc-duration.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/create-generator-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/spring.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/errors.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/global-config.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/memo.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/noop.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/time-conversion.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/frame-data.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/frameloop/sync-time.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/linear.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/get-final.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/notify-inspector.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/WithPromise.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/fill-wildcards.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/is-css-var.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-set.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/flags.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/memo.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/scroll-timeline.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/supports/linear-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/supported.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/easing/map-easing.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/start-waapi-animation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/generators/utils/is-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/apply-generator.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/NativeAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimation.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/GroupAnimationWithThen.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/resolve-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/get-value-transition.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/resolve-elements.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/pipe.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/progress.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/sanitize.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/is-css-variable.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/float-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/is-nullish.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/single-color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/utils.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/numbers/units.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/utils/color-regex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/complex/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/value/types/color/hsla-to-rgba.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/immediate.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/number.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/color.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/visibility.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/complex.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/mix/index.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/interpolate.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs",
+              "node_modules/.pnpm/motion-utils@13.5.0/node_modules/motion-utils/dist/es/easing/ease.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/utils/active-animations.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/utils/border-radius.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/waapi/utils/px-values.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/animation/keyframes/utils/apply-px-defaults.mjs",
+              "node_modules/.pnpm/motion-dom@13.5.1/node_modules/motion-dom/dist/es/render/dom/style-computed.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-elements.mjs",
+              "node_modules/.pnpm/framer-motion@13.5.1/node_modules/framer-motion/dist/es/animation/animators/waapi/animate-style.mjs"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

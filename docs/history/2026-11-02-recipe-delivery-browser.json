@@ -1,0 +1,42 @@
+[
+  {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "scenario": "References cloned before registration; source records and sheets removed",
+    "recipes": 120,
+    "clones": 240,
+    "fetches": 120,
+    "distinctFetches": 120,
+    "recoveredSheets": 120,
+    "activeClones": 240,
+    "remainingAnimations": 0,
+    "remainingStates": 0,
+    "reconnect": true,
+    "nestedTemplateOnlyTag": "grave-circle-help",
+    "failures": 0
+  },
+  {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "scenario": "Normal all-120 document; stylesheet deletion and recovery",
+    "hosts": 120,
+    "jsonRequests": 0,
+    "sheetsBefore": 120,
+    "recoveredSheets": 120,
+    "activeHosts": 120,
+    "remainingAnimations": 0,
+    "failures": 0
+  },
+  {
+    "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+    "scenario": "Missing shared record, failed recovery and explicit retry",
+    "tableOnlyUnavailable": true,
+    "failedFetchDidNotDefine": true,
+    "expectedErrors": [
+      "Recipe delivery proof grave-user-round-cog Error: Recipe fetch failed: 404"
+    ],
+    "requests": 2,
+    "retryDefined": true,
+    "remainingAnimations": 0,
+    "syntheticPageLoad": true,
+    "failures": 0
+  }
+]
