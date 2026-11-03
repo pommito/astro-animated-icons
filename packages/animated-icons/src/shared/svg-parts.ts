@@ -1,7 +1,8 @@
-import { animate, interpolate, svgEffect } from "motion";
+import { interpolate, svgEffect } from "motion";
 import { animate as animateMini } from "motion/mini";
 import { resolveSvgEasing } from "./svg-transform";
 import { createSvgPartsPlayer } from "./svg-transform-parts";
+import { animateSvgEffect } from "./motion-effect";
 export type { SvgPart, SvgVariants } from "./svg-transform-parts";
 
 const defaultEase: [number, number, number, number] = [0.25, 0.1, 0.35, 1];
@@ -21,7 +22,7 @@ export const { animateSvgPart, clearSvgPart, createSvgPartsRecipe } = createSvgP
         playback.track(onComplete => {
           const values = !returning && playback.interrupted && Array.isArray(target)
             ? [Number(getComputedStyle(element).opacity), ...target.slice(1)] : target;
-          const animation = animate(element, { opacity: values as number | number[] }, { ...settings, onComplete });
+          const animation = animateSvgEffect(element, { opacity: values as number | number[] }, { ...settings, onComplete });
           const stop = () => {
             const current = Number(getComputedStyle(element).opacity);
             animation.stop();
@@ -38,7 +39,7 @@ export const { animateSvgPart, clearSvgPart, createSvgPartsRecipe } = createSvgP
         playback.track(onComplete => {
           const values = !returning && playback.interrupted && Array.isArray(target)
             ? [element.getAttribute("d")!, ...target.slice(1)] : target as string | string[];
-          const animation = animate(element, { attrD: values }, { duration, ease, delay, onComplete });
+          const animation = animateSvgEffect(element, { attrD: values }, { duration, ease, delay, onComplete });
           return { stop: () => animation.stop(), cancel: () => animation.stop() };
         });
       } else {

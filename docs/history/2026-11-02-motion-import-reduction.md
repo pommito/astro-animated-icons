@@ -1,5 +1,7 @@
 # Motion import reduction for three loaders
 
+The later [refinement](2026-11-02-motion-import-refinement.md) replaces the byte regressions recorded here with measured savings. It also corrects the earlier export analysis: the public root `motion` entry reexports `animateElement`, `animateSingleValue` and GroupAnimationWithThen, so a narrower path needs no additional dependency. This report and its data preserve the preceding candidate at `1375778`.
+
 ## Result and merge gates
 
 Loader, LoaderCircle and LoaderPinwheel now use the shared transform-only SVG-parts player. Their browser graphs no longer include the general SVG-parts paint/morph effects or Motion's full animate dispatcher. They retain the existing Motion spring generator, SVG transform sampler and local sequence helper. No animation data, drawing, public import, tag, prop, synchronous handle, dependency or CSS mechanism changes.

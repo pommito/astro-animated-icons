@@ -412,8 +412,8 @@
     "reason": "The direct path-morph helper forwards spring or repeat settings to Motion attribute animation. The CSS mechanisms cannot preserve these morphs.",
     "followUp": "#81: retain the direct Motion morphs until a replacement preserves their curves, repeats and cancellation.",
     "contract": {
-      "mechanism": "shared/path-morph.ts",
-      "playback": "animatePathMorph forwards the complete options object to Motion animate with attrD. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
+      "mechanism": "shared/path-morph.ts -> shared/motion-effect.ts",
+      "playback": "animatePathMorph forwards the complete options object with attrD through animateSvgEffect to Motion animateElement. GroupAnimationWithThen preserves the original grouped completion promise. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
     }
   },
   "wind-path-translation": {

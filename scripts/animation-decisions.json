@@ -309,7 +309,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "897e85026b3a8f605744bcb8e54f7f5f5892c368d32f7cea07fecb06866cdcc2",
+    "sourceHash": "25fa87bb4d8650d5e05cd5e509c9567ab3b34419d4e0ce53846cc56c754ab7ee",
     "familyHash": "f3412adc3773dde45579533914d09406645c4b37bf15c8fe15a0caa6a7f8eb4d"
   },
   "activity": {
@@ -417,7 +417,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "7f16e8ec37345e2beb7e663778e7b1fec81adecc704abb38bd0ddd5276928ebd",
+    "sourceHash": "896c8c0fe8316b22329c16bc86d3125e0ff3f6ca68d5ed72f9efc2a8c17da8b4",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "air-vent": {
@@ -630,7 +630,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "951f28190f108ccfaebbdd471cc2e6b65e0fea50be507c5ce95a3b014ef4adc7",
+    "sourceHash": "4d98d3911649dbf0e0c8d9b88b6f5dd4d31c075c82519b461bc53bc924be9c14",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "align-center": {
@@ -714,7 +714,7 @@
       ],
       "review": "Each line animates between the supplied normal and active attribute values with the supplied spring stiffness, damping and mass. Cancel stops the effect without rewinding it. Entry holds. Clear releases svgEffect and restores the normal attributes."
     },
-    "sourceHash": "4e9ea004376278e006b7692cd9277061a8ddac3be184c6f2efa50e573def22ff",
+    "sourceHash": "85ae743ebe6f455dcadc3a308d7cbca6fd8e3731865f4cf07ab22854ff77a56c",
     "familyHash": "4d410306413a5120cc27c5388ddf0f5e12e1c6689b96e6bd862ed52514b1efcd"
   },
   "align-right": {
@@ -761,7 +761,7 @@
       ],
       "review": "Each line animates between the supplied normal and active attribute values with the supplied spring stiffness, damping and mass. Cancel stops the effect without rewinding it. Entry holds. Clear releases svgEffect and restores the normal attributes."
     },
-    "sourceHash": "34dfcf317209fa097b345c7e177331128bad2eac4523482ebd11534d3908b997",
+    "sourceHash": "8f3e26dda281e53121350ee47c46a38aa184d8c1f74624ba2086658ce84974f1",
     "familyHash": "4d410306413a5120cc27c5388ddf0f5e12e1c6689b96e6bd862ed52514b1efcd"
   },
   "align-vertical": {
@@ -861,7 +861,7 @@
       ],
       "review": "The construction records all vehicle parameters. The cross adds an infinite opacity cycle [1, 0.3, 1] lasting 0.6 seconds with easeInOut, and returns to opacity 1 over 0.3 seconds with default cubic easing. Body, wheel and speed targets retain their independent interrupted-cycle completion and restart phases. Entry holds. Clear removes vehicle and cross state."
     },
-    "sourceHash": "81ef169c0db0728a2896de62eda5f431924bd4c97261c11b2a576ac9ca7a3252",
+    "sourceHash": "2b30419b793767617f1a6344b8d2d4f81df0b56163a8412882a2fdefd89b93b6",
     "familyHash": "0cf3a524c4b2be35f8ca7efa7399649ade15f0cd07df8494eccf758a3dd9b931"
   },
   "angry": {
@@ -1227,7 +1227,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "c27fdce174fc8e74f98b149e0582cffe8926d153a2c27f59e42363b4bf7a150e",
+    "sourceHash": "dd7bbef7add148a9df2c1f957bc512aab7f0e219c2781f93d4811450e5a78d27",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "annoyed": {
@@ -1542,7 +1542,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "4035a36eab1eba3c0f7fa659979c5c282dfe83eee7f84ca761e8dccc56a0197e",
+    "sourceHash": "b61e03282c918a4ae44da205191ec4e1368a665ec9eb6122fb73de686c7f8070",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "archive": {
@@ -1550,7 +1550,7 @@
     "contract": {
       "review": "The lid rectangle owns a retained Motion value. It targets y = -1.5 px on entry and zero on return, with spring stiffness 200 and damping 25. Stopping the Motion value preserves its velocity. Body and handle attributes morph between the pinned closed and open paths over 0.3 seconds with default cubic easing. Entry holds. Clear deletes the lid value, removes its transform, releases svgEffect and restores both attributes."
     },
-    "sourceHash": "300d39c1bce796e6e7703c9259a691991588de6bf65bb3d75284170ae77dc104",
+    "sourceHash": "402c1001eb70e212ce9a798b7dd6b0549824c4cae7e7cf42ef961c98057350e7",
     "familyHash": "4d410306413a5120cc27c5388ddf0f5e12e1c6689b96e6bd862ed52514b1efcd"
   },
   "arrow-big-down": {
@@ -1809,7 +1809,7 @@
       ],
       "review": "The two glyph groups target y = 10 px and y = -10 px respectively. Both directions use spring stiffness 240 and damping 24, with normal y = 0. Entry holds. Clear removes part poses."
     },
-    "sourceHash": "16dc182686acce0163c6c58912f92ac2183d830896881a8177185f40636e1bb9",
+    "sourceHash": "4dfb07fa03fb892de3cb2ffc40b1e3f4a390c0873961b401f03407bd65f76501",
     "familyHash": "1d4bb431849d0350bccce53924f84ba8206c91d10e7fffe868eed8d26b0efc56"
   },
   "arrow-down-1-0": {
@@ -1824,7 +1824,7 @@
       ],
       "review": "The two glyph groups target y = 10 px and y = -10 px respectively. Both directions use spring stiffness 240 and damping 24, with normal y = 0. Entry holds. Clear removes part poses."
     },
-    "sourceHash": "8f217694abfbac638e6f3ccbce25ef16fa5c09ee4b64a7fea3710e625d20c4b9",
+    "sourceHash": "c2038f6bee3f2039c3a2f3d64a5631452530143806b78bf39c1512f91f96ba34",
     "familyHash": "1d4bb431849d0350bccce53924f84ba8206c91d10e7fffe868eed8d26b0efc56"
   },
   "arrow-down-a-z": {
@@ -1839,7 +1839,7 @@
       ],
       "review": "The two glyph groups target y = 10 px and y = -10 px respectively. Both directions use spring stiffness 240 and damping 24, with normal y = 0. Entry holds. Clear removes part poses."
     },
-    "sourceHash": "4ff441a1e412d9284b496fae50351f73817296caa20f2c193191e49588100547",
+    "sourceHash": "37b9fe5ca7b5c29c492909630cb5992addb8d5f376946fcf139b3acc18aa6e98",
     "familyHash": "1d4bb431849d0350bccce53924f84ba8206c91d10e7fffe868eed8d26b0efc56"
   },
   "arrow-down-left": {
@@ -1963,7 +1963,7 @@
       ],
       "review": "The two glyph groups target y = 10 px and y = -10 px respectively. Both directions use spring stiffness 240 and damping 24, with normal y = 0. Entry holds. Clear removes part poses."
     },
-    "sourceHash": "866db0be5d2d013274a05d826f01b202c98b47e19467c2cc5e1dcc64038c8a68",
+    "sourceHash": "d3cfeb4b7751a263bec639e51f2f526bf738e40a9b09fd6fe215e06faf1e4bca",
     "familyHash": "1d4bb431849d0350bccce53924f84ba8206c91d10e7fffe868eed8d26b0efc56"
   },
   "arrow-left": {
@@ -2319,7 +2319,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "020bd00c7c39eee96f7927239db88a0e7ddee9b3b5e03c1bef935ac56eaceed9",
+    "sourceHash": "de691b8c5a53bebc12c3eeaae7728dd958116f2df214c97982e8797c82d8abcf",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "attach-file": {
@@ -2406,7 +2406,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "d645ec0d2a3d4829e0d4761ddddf023782d128570a77d67f676e914db2ec9f3d",
+    "sourceHash": "c7a8d09c97f5b3f89227a6d9807174432fc8d14f0c75aacf2212268eb68ebc30",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "badge-alert": {
@@ -2662,7 +2662,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "1329b14ebaf4d880b7753404d99024f8fdfd372c2fadd0b7394cec0c48632429",
+    "sourceHash": "9a3a8bf7de25f797f2a5611debcbd37b1bbea531ab03f57f08fa737167ef1daa",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "battery": {
@@ -3264,7 +3264,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "879ab33a1f114761870740721a2ebb4fc4ae8cf5d1a1c54e9ad4bd2011ade4d2",
+    "sourceHash": "dd21c8d56d43c6d588a43ca4cf61b7a8faf3d40de0afb79e9b9ee95ff99abd28",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "biceps-flexed": {
@@ -3410,7 +3410,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "4753db05c7160765e9b8e9d2d4f56f69179e10490e646599fe7bfc748deef160",
+    "sourceHash": "4428d74e60a4758fadfb3feba9e3a97e7e2754abc992ab1abe38cb8a2836eb3b",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "binary": {
@@ -3606,7 +3606,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "2f7b81fdb3d4d321d060a53f7c9512efad90580c80dd2cec98218c26934aea56",
+    "sourceHash": "b384f704a219716e8f07f5360ead7821a7ae29e273d37b4e18d77058fc031ad5",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "book-text": {
@@ -3766,7 +3766,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "3e8cf477c60b49f24c5d868d5a6aea6d0663815e60678a99be3d84302b5221ed",
+    "sourceHash": "870358593ccf77a6c370f18b8b5e9f33134d9d9c4d7c59601df82d73299f6206",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "bookmark": {
@@ -4275,7 +4275,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "4dcc3f68100857df8c8d44d9fc008b7e740c000635876b51a87a85569f3d39d7",
+    "sourceHash": "37afb4515441d7ba8337185a094fb494d214b203154dd8cf89b58dd7827520b1",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "box": {
@@ -4354,7 +4354,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "4778b7f6727aee185612e44779b246aa5af3d49363d75e4cdce16a754a69db89",
+    "sourceHash": "5bc8e28f5dab09ede874fc498a6dabc4981055a5a84891fa3511c9f16906842d",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "boxes": {
@@ -4619,7 +4619,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "c995e02efaea5c719ca1de004476eee433128e7591cae39bd4dead8eee4245a5",
+    "sourceHash": "25ccf3bae1084ef8243ba5308f445f77bd096b55ede5137843bded3fc0c6a509",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "brain": {
@@ -5047,7 +5047,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "4f4a9ac009954d71a36a1bc1a3cf21601cbd31fe412b5c9cd3e23a9267aafbc4",
+    "sourceHash": "67f8c3c676bfe6340f18c49a3dd9aeab13f9216f7bb12588db9883f918939225",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "briefcase-business": {
@@ -5666,7 +5666,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "2d0f2e64dcb1114390245138e72242dc56fd435b8683eca5353f7790768325f5",
+    "sourceHash": "d220904d2eccfff6833f3432a85bf643bf381b7568737ab70c6ce9fff6205461",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "chart-bar-decreasing": {
@@ -6196,7 +6196,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "748d046320171f72b43c0185dd17e30f05fabc68ccaea34a66d02b13d905836a",
+    "sourceHash": "334d2ef7a45ececafcc3f28ba8fee85c2e62d8f35c6cc645aec5fee0f65563a1",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "chess-bishop": {
@@ -6442,7 +6442,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "fe0f1355ca097736c3c5995991aa8787af9e5673cd153e019af5471ecc4a625f",
+    "sourceHash": "9d87e54a7149bd0c814e67371ee655bfa7e5d4050867185810a15ce9cbd31103",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "chess-king": {
@@ -6571,7 +6571,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "92be33bbef046a65eb28a0ff35193ec55718685b8de78ff9fef1e6412505cf4c",
+    "sourceHash": "58fc221a51ce24acc4ddeb48696d74eced3e176b552862687eb01c355154472c",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "chess-knight": {
@@ -6706,7 +6706,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "76b67354170468fa3e3ef759f3288ebaf0c2df37a3b5dbdfcb1215035ed38636",
+    "sourceHash": "1b6786b27d03a2cd65cdb490904b793584d81616d69642dc3988426830dedeb6",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "chess-pawn": {
@@ -6917,7 +6917,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "f11884d8e783458a6002f20fd5a33bda1a403a2aca4ba623a9eb877fc3ba2e19",
+    "sourceHash": "ffd20a5ecd8cf664e8afc9cffd15bc227067c54618ffe4deba5a832bb850d262",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "chevron-down": {
@@ -7469,7 +7469,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "c52c58e2a6f565bb5e0dd2f4d6d5e67a8b934bf75db102c881380e6f41eff039",
+    "sourceHash": "a6480b3c9ccb82ea1186241a8786b5155f53c9bc288c7aad4e6e129f9198d7fc",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "cigarette": {
@@ -7489,7 +7489,7 @@
       ],
       "review": "Each selector uses firstPart + index, where firstPart defaults to zero. Entry targets y = -3 px and opacity [0, 1, 0], over 1.5 seconds with easeInOut, infinite repeat and the supplied delay. Normal y = 0 inherits spring stiffness 500, damping 25 and restSpeed 10; opacity returns to 1 over 0.3 seconds with default cubic easing. Interrupted entry queues cycle completion, clear and loop restart. Entry holds. Clear removes part state."
     },
-    "sourceHash": "9ada30ebef5a10108bf151157341a0419506de271dc5e9b5fe3b069e1e9d2002",
+    "sourceHash": "6aee0fba78cad3db807a998feee63df0f71a1cb96c28313c7522d4845e5dd107",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "cigarette-off": {
@@ -7535,7 +7535,7 @@
       ],
       "review": "Steam targets parts 0 and 1 with zero delays and retains the implicit Y return spring with stiffness 500 and damping 25. The slash adds normalized pathLength [0, 1] over 0.4 seconds with linear easing and returns to 1 over 0.3 seconds with default cubic easing. Entry holds. Clear restores both recipes."
     },
-    "sourceHash": "a36c66ecb4eba92e894744132b8a4bf604184e56ac8fd972fed3811c44db613b",
+    "sourceHash": "a4dc7c72053aaea36d8a2fc7659aa7384ea64799c1314dcf609c80ac858ef300",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "circle-check": {
@@ -7929,7 +7929,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "50bc1e602cf25150c94dfb5db244a842588a2662118f50e9f9a30325919b4a06",
+    "sourceHash": "f266eb7be753ae21747c8a403757afd8da0df74a950754789e3fc0e7f8d1a9ca",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "circle-help": {
@@ -8088,7 +8088,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "6a8c29cdc45036b02112d3851051fac798366d96ae59c504f69a9286e26b1d30",
+    "sourceHash": "d2e887da4e85be3ac1c8465309744f28879bfd3e0609c01e1a8efdfb581f6398",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "clipboard-check": {
@@ -8383,7 +8383,7 @@
       ],
       "review": "Each selector uses firstPart + index, where firstPart defaults to zero. Entry targets y = -3 px and opacity [0, 1, 0], over 1.5 seconds with easeInOut, infinite repeat and the supplied delay. Normal y = 0 inherits spring stiffness 500, damping 25 and restSpeed 10; opacity returns to 1 over 0.3 seconds with default cubic easing. Interrupted entry queues cycle completion, clear and loop restart. Entry holds. Clear removes part state."
     },
-    "sourceHash": "191eb616851fc3fb6e5b485a374cafcf2679e12a1ab4015cf065dfb97bae53a2",
+    "sourceHash": "610bc8b3e4c79a93534a304443ebf367a638c648345dd64c26c56b5da7a7b2d4",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "cog": {
@@ -8497,7 +8497,7 @@
       ],
       "review": "The stem moves to y = 2 px over 0.1 seconds. The bell rotates through [0, -2, 2, -2, 2, -1, 1, 0] degrees over 0.28 seconds after a 0.1-second delay with easeInOut. Waves use opacity [0, 1, 0] and scale [0.8, 1, 1.3] over 0.7 seconds after a 0.13-second delay, with easeOut and offsets [0, 0.2, 1]. Entry queues active parts then normal parts. Normal transforms use implicit translation/rotation springs with stiffness 500 and damping 25, or scale stiffness 550 and damping 30; opacity returns to zero over 0.3 seconds. Completed entry restores. Clear removes part state and forces waves opacity to zero."
     },
-    "sourceHash": "cbb4889b4eca18034bdbb5c9b9a99d7c91ad22ecd3aef4646f58f175a24d205f",
+    "sourceHash": "eaaf0ebde731aed3e799e1a47032fc80c21ddf7642247d114c6d9ac9fb6ce3be",
     "familyHash": "70fdcb469ccee6960ed1b2907333b085d3445fd9c45cdbe6e068ad4267228b57"
   },
   "connect": {
@@ -8505,8 +8505,8 @@
     "contract": {
       "review": "Four wire attributes morph between the pinned paths. Children 2 and 5 translate to (3px, -3px) and (-3px, 3px). Both directions use spring stiffness 500 and damping 30. The direct morph helper forwards these spring options in full. Entry holds. Cancellation stops morph effects without rewinding. Clear releases effects, restores wire attributes and deletes transforms."
     },
-    "sourceHash": "fd25dcec0cacdf3aa49b79bb245349e55f230dd4999391c8197245323411a58d",
-    "familyHash": "c14e8f850e95248c7ba983abdf0ffbc04435b8528dcba67e36dc974c8511f5db"
+    "sourceHash": "b31742b678cca5390b05ce82a27ea39a2393d73d287d14f4b4b111ccb60c14a6",
+    "familyHash": "ece57ba10f3d400d25d3c86e93084539ff0f7151683857a9331600bb9c40001f"
   },
   "construction": {
     "family": "parts-springs",
@@ -8562,7 +8562,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "9c834b25b7211e742f50ab68387359a13f3769f51d988d4297f8bf7714ecc595",
+    "sourceHash": "d757ad0cc9be46f833b44406deb6055cfbc764198bb563d0b0c08f9352a6ce72",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "contrast": {
@@ -8619,7 +8619,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "2004785bdf28c2f71ebfd20450b3586f332f41b5564db6a0577fe09bcd349123",
+    "sourceHash": "c0c27074a3bd7023d2f153027d7ff13b19441a0a432cdec5130c758ddbbd672a",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "cooking-pot": {
@@ -8737,7 +8737,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "aa2a86f186ebffe755820c7eb8a848a04bc1d8303dce1bf749f4e91dd6bfcb2a",
+    "sourceHash": "162def65feb42a68e3695933a3407c30524923d8cbaf51ea83a13e9e12d7eb55",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "copy": {
@@ -9867,7 +9867,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "06cfa6695468a0f711c0fc081c376a465318ca87efde2fe7f7e0c84b8e9c3f14",
+    "sourceHash": "b4b3757f0fa6d3c9125e0f4c69e3a2917ff567774e839ac987864582e9cde1e2",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "cursor-click": {
@@ -10508,7 +10508,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "cec2dd111f0cb3d8df684371d3f91f3bceceacd95390a280cb9ebd478dc8c82f",
+    "sourceHash": "fe62daea7075488b5264e84b928166995ac0fd16a23518784a9ac248e9c16c35",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "database-backup": {
@@ -10682,7 +10682,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a21d6f7e3d5fb67cfd8e650760402741b3bf744609ad00aed5511da4e2ea342f",
+    "sourceHash": "f287a93e8520825d46b6f840d4a86336dc49b5c63dbb71bcf5375da861047ece",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "dollar-sign": {
@@ -10851,7 +10851,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "307d1581df1859f8c44acb408cc5023156781f96ad06ceaeadd49b9be2c77184",
+    "sourceHash": "6bb71fd705639d592d1b1cc0ea762ca58c4aeae7607f04a7ba9e96a9ea25be54",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "dribbble": {
@@ -10959,7 +10959,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "bcb2026883cf7212a3bac297879934b0563421c323ebd402363dcd08ca8b4e4d",
+    "sourceHash": "bd95d825fb09544b3dea0c2a3663f0a620e96a7271a64d1a1732054d681e971c",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "droplet": {
@@ -11193,7 +11193,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "d1ff23416c015ac88fd1548aaf88483c388440f7a629b89f1a630404314b4c94",
+    "sourceHash": "d25872a0d8d7c5bd49bd33a13372e375ac5b2912e3d260ddc8a378ca69d6a699",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "euro": {
@@ -11277,7 +11277,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a31c525cf7b8e1e027d8ae6cb88773e3ca0d03bec73d3829a1e8a79c7512770b",
+    "sourceHash": "fb830a6dd153d34542b8e6f332c1509dda4cbd67b330dbefca2463585abb2ac3",
     "familyHash": "00d2f02a4e986de2af159205f676087e1c26deb88ae1fad785b75e11e3715b14"
   },
   "expand": {
@@ -11447,7 +11447,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "cf7caf8fb51b26282bec76e307f63e1ce71e5edab9be6f282bfbc6e6b0c98f9e",
+    "sourceHash": "a7a126ce3f3329e54634562ad6c90892524e24bbc61bdbdb45d91b94312f75a9",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "fan": {
@@ -11493,7 +11493,7 @@
       ],
       "review": "The SVG enters with x [0, 2, -2, 1, 0] px, y [0, -4, -2, -1, 0] px and rotation [0, -8, 4, -3, 0] degrees over 1.6 seconds with easeInOut. Normal X, Y and rotation values are zero and inherit spring stiffness 500, damping 25 and restSpeed 10. Entry holds. Clear deletes the SVG pose."
     },
-    "sourceHash": "2621848385506299f578b036e2a9f4de9d6ebcff033a5660278486765acfa743",
+    "sourceHash": "7505a4b2d5fac0a5b113b7c0e1b82a7d2fda143fea4c42ba8e0f865724a4c386",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "figma": {
@@ -11587,7 +11587,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "05e068c447936df1b40caca27aadde2c06e803ad66c85ae0c5db7de71988050d",
+    "sourceHash": "fa5027555f6ac68191595a58d574f8b2088dde122a20e1c75af95185bc9b1146",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "file-chart-line": {
@@ -11792,7 +11792,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "5b025614e5b9838b82556581b36fb52c6cdae58013b3d402c9d121c7f75823d6",
+    "sourceHash": "d90677a8a5d5571d681f6dc5bae04802d6af9038a36c9f390f4d0a62096e7b45",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "flame": {
@@ -12015,7 +12015,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a108d4dc63bfcb6395fb959f86067908ad96f3c6153a0ac332fa30986429278d",
+    "sourceHash": "5cc11391ce0f1c87d71560d704d604a3a4f331aa8074403f3b8e68b1d5cf53f2",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "folder": {
@@ -12817,7 +12817,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e9d79a110b07876bed5373468344686b9c7bd608f33a347292150a6ff92f74f8",
+    "sourceHash": "2373cc5e29e2e9379734fac896738a100a31fb0869284cad563cc671820ed34c",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "frown": {
@@ -13183,7 +13183,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "5244a156848821c76d4d064f883e7754033efd4264f80069545555cdfac638c6",
+    "sourceHash": "cb5d7236a29fc7fd4470aa49d33deabba8312432c5be33f27cf200bd6fca37ca",
     "familyHash": "f3412adc3773dde45579533914d09406645c4b37bf15c8fe15a0caa6a7f8eb4d"
   },
   "gallery-horizontal-end": {
@@ -13535,7 +13535,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "3dfe57269832612944c562998803adf4da361c6bab45e0cdab03fa69cbe4ad5f",
+    "sourceHash": "ef5df8c30505087830a65d79514fe467a28a11f0363f854d004da32d347131c0",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "gavel": {
@@ -13602,7 +13602,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "0b92bfed4c2a4d4fb7d0bdaf8a2dc9fd0a6d6c75aa69fa79e6dfe5be4b88930c",
+    "sourceHash": "72e51e21e761d70040a381c3d59db21cc34c8473aeaa1fc192bfe33fd2c2075b",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "georgian-lari": {
@@ -14136,7 +14136,7 @@
     "contract": {
       "review": "The cap continues its 0.6-second easeInOut Y sampler during return while rotation returns with spring stiffness 500, damping 25 and restSpeed 10. The tassel enters over 0.8 seconds after a 0.1-second delay and has an implicit rotation spring on return. Entry holds. Clear deletes cap samplers and tassel playback state."
     },
-    "sourceHash": "cd7f864c5e72d04a8690ca10e5f2c98238a4b9f2a8eec9009e89528a30c36925",
+    "sourceHash": "c27ade26d69b10fdba250e783ea863476db1b9071747bad23b2b8337ad2a3752",
     "familyHash": "64863d0eb675fdf1d271b7317efcdb118adf2e16033e91306e9299c15bd21913"
   },
   "grip": {
@@ -14311,7 +14311,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "84352f93a7108d9c9e28eebcbd413affa281ef2a3d54a1f591dd9eea3b55252e",
+    "sourceHash": "797bd4038d28c2879d050f46add9e2fc478ba137ff092ecb6bca33b91b020231",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "hand": {
@@ -14374,7 +14374,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e5de1b53854110156c4500cee6b01478efa37b35912ec612f51700de7c33681e",
+    "sourceHash": "e39f20c35b2ce2ae5578276b78ec50fe9391929a603649c37d58c6e7752dba7c",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-coins": {
@@ -14540,7 +14540,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "d94f05543bfe5fcd9a98e4a9ff2549bfbb055179feaa5a7082b60f93946eb018",
+    "sourceHash": "36eb4b5abd5f902f99432683a01f3ef5615b3386de1323ddeb6539d00171e72d",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-fist": {
@@ -14639,7 +14639,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "7f5d1d65b11a38d7207c4c8adee41c36d3883cfd2f777d72b999a43eddf48907",
+    "sourceHash": "54f4db6bd9cd9b500bcf6be737c2823e1034627405e4e4c3211519d3843aaa87",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-grab": {
@@ -14698,7 +14698,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "cf369dd32d800711c78b1c954198917ba57ea14e760f197b69ed40aefd86c9c6",
+    "sourceHash": "acdbde0a42c4ea848762d5f1a3b93c2bacc2df51b707711f568cc302e7b17a45",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-heart": {
@@ -14800,7 +14800,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "313d3253def37b195da6fa1188ee71f08532baa5f453ec06f3ef1ad3f32a84a7",
+    "sourceHash": "73330a9d17107cabd8d682d84149fff2c3784e9dcd7ce56c03138dbfcb886eb1",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-helping": {
@@ -14897,7 +14897,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "1be66298d03ccaaff27fba4f707a0f599a91558392a98bf273fc9cc56d2e3a8f",
+    "sourceHash": "c6e90f6d6efb2bcc6569c21f8ae5587772963db8fbbe78fb03bfe90995e39e16",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hand-metal": {
@@ -14962,7 +14962,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "54d7435a71e58e5d87df50fd43128b5dbad6ff3dbca73e642569e232db164053",
+    "sourceHash": "6d5da0e834fc94a2d984fee9483e9b2e1a6bb4e55222a9506908844eab6afa21",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "hard-drive-download": {
@@ -15198,7 +15198,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "cbb2ebf135fe6263d5175b3e638513a08236d69ed1d55738ae3cd0594acc8e8d",
+    "sourceHash": "3091c5b2df3cdaab1eb8731770badccde3c12ed8ee208f2ee102afd5ffe4dca0",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "heart": {
@@ -15253,7 +15253,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "12f01c15998098d9990872511b33b4417cd4f490434014053dc8d6a292f851b7",
+    "sourceHash": "5646c0b706f76f7a09367abe341f9bdae27a3e629376723f6e5f6aaf99abf5a0",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "heart-handshake": {
@@ -15384,7 +15384,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "2b51bb557ddfefc754085b81e09ebf2e7b45a8f2798acacf909a1986df3c828a",
+    "sourceHash": "0cbe5e193d0186cc3bfad918b1c617e1edd87220868eab2a57a01ec86cb8db47",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "heart-pulse": {
@@ -15392,7 +15392,7 @@
     "contract": {
       "review": "Entry first hides the heart, then queues the ECG reveal over 0.6 seconds with linear easing and 0.1-second opacity, the heart reveal over 0.5 seconds with easeOut and 0.1-second opacity, and the scale pulse [1, 1.08, 1] over 0.9 seconds with easeInOut and one repeat. Return animates all normal parts over 0.3 seconds with easeOut. Entry holds. Clear removes all part and effect state."
     },
-    "sourceHash": "33fa1ab3d1afe68b43bd720725d7a31cea6d40305424ef6833a7d2b70e706c25",
+    "sourceHash": "ac214f77fe0081cbf6f524529b63d0a9972f9f834c5cc1a0681b26b54a65c45b",
     "familyHash": "70fdcb469ccee6960ed1b2907333b085d3445fd9c45cdbe6e068ad4267228b57"
   },
   "history": {
@@ -15746,7 +15746,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "9fad9d80418a22073346c11270727cf53f0f09962bbb920bbf1057137cee8b18",
+    "sourceHash": "25c483aff1a0aced17bae28c7526acd0dcb4add1ed3681b5dedad5c2fb41f352",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "indian-rupee": {
@@ -15883,7 +15883,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "39c9d86cc4a2e9e0bc5137c0a787a4811eb09b92711682f37fab495fcd35eaec",
+    "sourceHash": "29119917917f5c818f940c43494ea4cd8286f1279ebabe8b9cf2af9fb99626d4",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "italic": {
@@ -16128,7 +16128,7 @@
     "contract": {
       "review": "Fixed duration spring painting has no inherited velocity. Keep sampled remapping and independent property delays from the family contract."
     },
-    "sourceHash": "1bcfaa94452d18fbe2577a493e63832d88940c81e9c910cc40e3023abc4312ac",
+    "sourceHash": "78e1468ec92a66d9bba5654de7c1f495fe23b4354f463669e888fee890025a6f",
     "familyHash": "2be15d44e7c4e4764b4937f7bd50737c562383298d1dcb82a510058a735e94dd"
   },
   "laptop-minimal-check": {
@@ -16207,7 +16207,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e18bbf930d2a566f51879cb500ac1254e3c264165bae1c04f83025ef72454f20",
+    "sourceHash": "3136008438db218dce44dc19bf8b16014d4b772256df4548e9f2fcd95c8a7857",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "laugh": {
@@ -16726,7 +16726,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "20806bb35a91ee5f861505717d476fd31f68eee3b97b12c1570fbe4e15f9d819",
+    "sourceHash": "57c6d37dc83db360cf82dc7207b997f9b964057dd821184c1bd4aa7bfacc1667",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "layers": {
@@ -16955,7 +16955,7 @@
       ],
       "review": "The SVG enters with x [0, 2, -2, 1, 0] px, y [0, -4, -2, -1, 0] px and rotation [0, -8, 4, -3, 0] degrees over 1.6 seconds with easeInOut. Normal X, Y and rotation values are zero and inherit spring stiffness 500, damping 25 and restSpeed 10. Entry holds. Clear deletes the SVG pose."
     },
-    "sourceHash": "471e32a5b95bbf4c19034916451106abef61444e01556aff16ed2fc0669e355a",
+    "sourceHash": "253536097e01e63ae1a300bfc4929eddbd09100811d3caffabf87969ceb66d7f",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "leafy-green": {
@@ -16970,7 +16970,7 @@
       ],
       "review": "The SVG enters with x [0, 2, -2, 1, 0] px, y [0, -4, -2, -1, 0] px and rotation [0, -8, 4, -3, 0] degrees over 1.6 seconds with easeInOut. Normal X, Y and rotation values are zero and inherit spring stiffness 500, damping 25 and restSpeed 10. Entry holds. Clear deletes the SVG pose."
     },
-    "sourceHash": "53a89218ded00f7094b11cb57eef10aa9ff2a1be772609f56c073deecb7b7cda",
+    "sourceHash": "eeb21899f1912adcae2badf2cec57a78ef2c4a66e9ccdf42cbc306bec738e276",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "link": {
@@ -17102,7 +17102,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a7399be8debfe2ec74e14c4508b3b29da306f3f6b9ca250ba7b00f0abc186456",
+    "sourceHash": "8e10f7cda57c597f5a40198f3547fb1d34b5abd54cf03b687fb7862a29c7a4f9",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "linkedin": {
@@ -18338,7 +18338,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e5559a0134dfc0a359fef520955f3138c1df013e3317afe106b89222bc454a27",
+    "sourceHash": "36f6f54267c1767e835a3348a4f7050d6c0592804655292d112407ed7407f8a0",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "menu": {
@@ -18804,7 +18804,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "fb8a73d01a9664d0f45c5625b0a30f17a0756ff8d311101fa3ad046aef9db476",
+    "sourceHash": "05a8617c1367889e8f49e6abcc9c1ae4ec6a64959d4df6be6b30acb950a64751",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "monitor-cog": {
@@ -19112,7 +19112,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e69369e441c3b373894263e8f2f2d5eac43b3109585ce16e42319d5e27fc74ea",
+    "sourceHash": "b23c485476aa210d950e0eefb4c266c1a51ac20b967b8f6938d5a4ef4c31eaca",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "panel-left-close": {
@@ -19719,7 +19719,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "56c8b3dfa418b9e67ef5939fc4aa3be134d1abf94e027170e639e7af06bec238",
+    "sourceHash": "50e30422589a4d9a2d0ab7bdb9039692d503b9ead9e270765b4e8f68495924bc",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "pause": {
@@ -19944,7 +19944,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a87ca249391616055c67d84876237799d51016ec5d433d5828de8922fac9d6d1",
+    "sourceHash": "c110f2f7fbc4999b64486acf138d74c419f77040d14ddbda6d387a63288906cd",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "philippine-peso": {
@@ -20252,7 +20252,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "69cd28b2fd90a0b250b020c1f5d5e3dfe0d7a958cbd984b23c1f5ec773f36eb4",
+    "sourceHash": "0661269696bee02a5d86c85fb03e48a1b3b1cb80241dcdcc32f5fc116cac8c1e",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "plane-landing": {
@@ -20391,7 +20391,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "48cef82a6855bbac991c8e21522d97ead37326f5cf20c98dd49792201c4c6199",
+    "sourceHash": "f774cf4973b56f1bae354fe611269590f75bfe6cb0ff715a68e33b91efc422df",
     "familyHash": "00d2f02a4e986de2af159205f676087e1c26deb88ae1fad785b75e11e3715b14"
   },
   "plus": {
@@ -20445,7 +20445,7 @@
     "contract": {
       "review": "The body enters with scale [1, 1.08, 1] and y [0, -1, 0] px over 0.8 seconds with easeInOut. Normal scale uses implicit spring stiffness 550 and damping 30. Normal Y uses stiffness 500 and damping 25. Rays first hide normalized pathLength and opacity over 0.3 seconds with default cubic easing, then reveal to 1 over 0.4 seconds with easeOut. Return restores rays over 0.3 seconds. Entry holds. Clear removes part state and cancellation disables the queued phase."
     },
-    "sourceHash": "bbb5c4f44ded65ea530e08d0bc3c947a2b119b3e5d755e4ecaede3617d27a3c7",
+    "sourceHash": "a23e1e4c32ac8970473b57ccd397fa84e9387a16a26125514c13c0001ab20235",
     "familyHash": "70fdcb469ccee6960ed1b2907333b085d3445fd9c45cdbe6e068ad4267228b57"
   },
   "rabbit": {
@@ -20613,7 +20613,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "1fc1b28e931c23ff66f7c16204b1c1ff7d64c90efbb71994716ea3f9dd378823",
+    "sourceHash": "0769719bc501811c4457251d6a214dae4e832401a0ec90403ce8f5f67357d811",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "radio": {
@@ -21031,7 +21031,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e58d90b9723de012814df421ef9f54d330d986a55b3d35db0f552dbdcb482928",
+    "sourceHash": "8cbee81c3cfc301f1735c0e4fa65a9c12e243266241db518a3c49af166293282",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "refresh-cw": {
@@ -21090,8 +21090,8 @@
     "contract": {
       "review": "The SVG enters with x [0, 0, -3, 2, -2, 1, -1, 0] px and y [0, -3, 0, -2, -3, -1, -2, 0] px in an infinite reversed 6-second easeInOut cycle, with offsets [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1]. Return uses spring stiffness 500, damping 25 and restSpeed 10. The direct fire attrD morph passes all options, so its five-shape entry retains infinite repeat, a 2-second duration, cubic easing [0.4, 0, 0.2, 1] and offsets [0, 0.2, 0.5, 0.8, 1]. Fire return targets the first shape over 0.3 seconds with default cubic easing. Entry holds. Clear deletes SVG pose and restores the fire attribute."
     },
-    "sourceHash": "fc05a8096c52dd7ff0f5df724bd14b4dafbb6809a1bd752cac40b899068f906d",
-    "familyHash": "c14e8f850e95248c7ba983abdf0ffbc04435b8528dcba67e36dc974c8511f5db"
+    "sourceHash": "9e2a949818158ffeb412a3d1f5477c8184bf5557913e30e442964c29009853d8",
+    "familyHash": "ece57ba10f3d400d25d3c86e93084539ff0f7151683857a9331600bb9c40001f"
   },
   "rocking-chair": {
     "family": "parts-springs",
@@ -21150,7 +21150,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e302d3cd6038dc3872cc7f12cc45edc27c667a2dd37bc7c5a7cca305e1fc4261",
+    "sourceHash": "592a75f053cad8aa42a7cf7bc7076546681e3dc0af3b74b77a89762f74b04a68",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "roller-coaster": {
@@ -21748,7 +21748,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "9f8c7007db4c07f61be8ffd8af8a9b8602288f77f3e71a95cec8290c7ad23b76",
+    "sourceHash": "9a40ef18ea74144a21a3f36ecc1ee3e766a66a8e7f83ba874841250146bc06c2",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "rotate-ccw": {
@@ -21889,7 +21889,7 @@
       ],
       "review": "The SVG enters with y [0, 1, 2, 0] px and rotation [0, -15, 0] degrees over 1.5 seconds with easeInOut. Normal transforms inherit stiffness 500 and damping 25. Signal parts 2 and 3 first fade to opacity zero over 1.1 seconds with easeOut, then reveal with spring stiffness 300 and damping 20 after (index + 1) * 0.1 seconds. Return targets signal opacity 1 over 1.1 seconds. Each playback releases prior signal svgEffect state. Entry holds. Cancellation blocks the queued phase; clear removes movement and signal state."
     },
-    "sourceHash": "05bd0f1156c5ec9e653a6267ec91cb0c27cd64b547129eddd44b06b7509011ab",
+    "sourceHash": "e26e05526c32d1a3976a96b56f44b231f89a1aba26ae80a590996782a474117a",
     "familyHash": "70fdcb469ccee6960ed1b2907333b085d3445fd9c45cdbe6e068ad4267228b57"
   },
   "saudi-riyal": {
@@ -21931,7 +21931,7 @@
     "contract": {
       "review": "Line parts 4 through 6 first hide normalized pathLength and opacity to zero over 0.3 seconds after index * 0.1 seconds with easeOut, then reveal to 1 with the same timing. Normal return takes 0.3 seconds without delay and with default cubic easing. Entry initializes full dash only when absent and holds completion. Clear removes normalized paint. Cancellation blocks the queued phase."
     },
-    "sourceHash": "1d20f04d020c5a59c730fc9c3d879cf78e7d1d1caca416bdc233d76eecabf29d",
+    "sourceHash": "a0e8cde2eb7c804534d6b41f28346ff03bbf7ec54d04db9d0be3a80b71d51822",
     "familyHash": "70fdcb469ccee6960ed1b2907333b085d3445fd9c45cdbe6e068ad4267228b57"
   },
   "search": {
@@ -22391,7 +22391,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "8163244576a55d6340a5f90a57c607e940bf3b6c99799e0546d1334d5d322295",
+    "sourceHash": "1996205f420da1643b3dd026f565aaff869d706b74a46f03690080e4d95a1b32",
     "familyHash": "00d2f02a4e986de2af159205f676087e1c26deb88ae1fad785b75e11e3715b14"
   },
   "shredder": {
@@ -22780,7 +22780,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "d4903b2d02fecaae05698a5a4d0ec1f4e5586b32aeb808c589e3f72dbd182596",
+    "sourceHash": "f404ce9c69319bfc0a2e6b747143ad15f3082c6b56f7b9c6f124f7cafc7ab451",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "shrink": {
@@ -22915,7 +22915,7 @@
       ],
       "review": "Each line animates between the supplied normal and active attribute values with the supplied spring stiffness, damping and mass. Cancel stops the effect without rewinding it. Entry holds. Clear releases svgEffect and restores the normal attributes."
     },
-    "sourceHash": "5d978c47edff0cf3934425913bc63081ac7aff44620963c622a93991c43667af",
+    "sourceHash": "66a27dcc558570c7daabb80b758af1293cbbeba422c962df8523b753099556d0",
     "familyHash": "4d410306413a5120cc27c5388ddf0f5e12e1c6689b96e6bd862ed52514b1efcd"
   },
   "smartphone-charging": {
@@ -22972,7 +22972,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "79b50042680a9b318d649f706433d0601df4a024c691cfd32c06d20c494e18a4",
+    "sourceHash": "972a1be8518837b968676aec826417ae305bf6952ba0b3522b3b3f6d3a01c179",
     "familyHash": "00d2f02a4e986de2af159205f676087e1c26deb88ae1fad785b75e11e3715b14"
   },
   "smartphone-nfc": {
@@ -23457,7 +23457,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "e33bfecc4acf8a52f104f5d33a1d0abb35145c89370abab5fd0fa1aec9d00bc5",
+    "sourceHash": "51bd5076edb9dc0b80f57a7f46f74bf4accdc8cfc7370d76a675ea2d2eddb6ee",
     "familyHash": "f3412adc3773dde45579533914d09406645c4b37bf15c8fe15a0caa6a7f8eb4d"
   },
   "smile-plus": {
@@ -23597,7 +23597,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "7202cbca0612171254ca5e7f4645adb426cac91d2da3fc5ac5b754364aec744c",
+    "sourceHash": "c6bd99c9b1871852f44d47cdf716cb4fb6c101f39668572e5a00d6607f0b06d0",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "snowflake": {
@@ -23663,7 +23663,7 @@
       ],
       "review": "Each selector uses firstPart + index, where firstPart defaults to zero. Entry targets y = -3 px and opacity [0, 1, 0], over 1.5 seconds with easeInOut, infinite repeat and the supplied delay. Normal y = 0 inherits spring stiffness 500, damping 25 and restSpeed 10; opacity returns to 1 over 0.3 seconds with default cubic easing. Interrupted entry queues cycle completion, clear and loop restart. Entry holds. Clear removes part state."
     },
-    "sourceHash": "8c1badc9a114831e6c5d9383678843a9e247ebc29a62d77968666e286c2f0abd",
+    "sourceHash": "0dda29cf8696632ae4f0565d5cfee61f5ed1ed496e2c19004e935e6d0ae0fd05",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "sparkles": {
@@ -23724,7 +23724,7 @@
       ],
       "review": "The Y return uses an implicit spring with stiffness 500 and damping 25. Fill separately animates to currentColor on entry and none on return, alongside timed opacity parts. Entry holds. Clear removes fill, effect and pose state. Other finite tracks do not remove the spring requirement."
     },
-    "sourceHash": "1a862112c694ae137cb675367e95f4b492fad78e36d68e8ee36d75bbd0d48183",
+    "sourceHash": "5399ae9116451cdc326c4ae3be92d9c3e14dacf8668526a9e0e4e5efbf7eb4b0",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "spray-can": {
@@ -24016,7 +24016,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "f07177ead7d2c210bb98322bccf0d461f8139368ac90b7cd6e9960bcb3e0291d",
+    "sourceHash": "314a01bca2e955a58ef78afce33ab4f8819b3d5ed67c605802f3541d16712301",
     "familyHash": "00d2f02a4e986de2af159205f676087e1c26deb88ae1fad785b75e11e3715b14"
   },
   "square-activity": {
@@ -24124,7 +24124,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "f910c49f22cb7f74991bac1c883b84ff4f45fe87ee34164a4d8c6a5eac39028e",
+    "sourceHash": "e44649f8c1c454c56f1ad120728ce7a884ab447718d71e0996d93d8b5cc60243",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "square-arrow-down": {
@@ -24149,7 +24149,7 @@
       ],
       "review": "The head moves on the supplied y or translateX axis through [0, distance, 0] px over 0.4 seconds. Normal scalar return inherits spring stiffness 500, damping 25 and restSpeed 10. The shaft uses the supplied three d values over 0.4 seconds through the SVG-parts attrD branch and restores the first path. Entry holds. Clear removes pose, attribute and paint state."
     },
-    "sourceHash": "e23f3fd7653215ee4639e4358143230ebccc0cb73709ce57023fcc32a44dbdc3",
+    "sourceHash": "fb1439dded0378bad5c1f771700a4fd11e3beec23687626ab670f32efd7696d9",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "square-arrow-left": {
@@ -24174,7 +24174,7 @@
       ],
       "review": "The head moves on the supplied y or translateX axis through [0, distance, 0] px over 0.4 seconds. Normal scalar return inherits spring stiffness 500, damping 25 and restSpeed 10. The shaft uses the supplied three d values over 0.4 seconds through the SVG-parts attrD branch and restores the first path. Entry holds. Clear removes pose, attribute and paint state."
     },
-    "sourceHash": "6ac725a82aba7f2761bba1397a4543db3492b71d454775ded535e69ab0510497",
+    "sourceHash": "9d097e5b18ac6958630b751e3f9b72547abfc4778c0946fee512ea88e58f8c11",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "square-arrow-right": {
@@ -24199,7 +24199,7 @@
       ],
       "review": "The head moves on the supplied y or translateX axis through [0, distance, 0] px over 0.4 seconds. Normal scalar return inherits spring stiffness 500, damping 25 and restSpeed 10. The shaft uses the supplied three d values over 0.4 seconds through the SVG-parts attrD branch and restores the first path. Entry holds. Clear removes pose, attribute and paint state."
     },
-    "sourceHash": "da50037e3f18c3d702f9ea518436625166fc2afc3f99ad9949da1ec893bb3f6c",
+    "sourceHash": "2dd9c3a6527a54ce00870903ee87293272689e888b37589b758cbae8d377f5b2",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "square-arrow-up": {
@@ -24224,7 +24224,7 @@
       ],
       "review": "The head moves on the supplied y or translateX axis through [0, distance, 0] px over 0.4 seconds. Normal scalar return inherits spring stiffness 500, damping 25 and restSpeed 10. The shaft uses the supplied three d values over 0.4 seconds through the SVG-parts attrD branch and restores the first path. Entry holds. Clear removes pose, attribute and paint state."
     },
-    "sourceHash": "edfc704c59fe9e45978df94bd7913c2f602c3f90963184d030db8dc357a16b7c",
+    "sourceHash": "ee66bcc1df6823b9881ce6e7f2f127f90f78daeeac7507286748574a3ba01972",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "square-chevron-down": {
@@ -24499,7 +24499,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "31a6526b8b035945d20943cfabef3aaa85a0a74fe97e89eba5a282c6db6fab7d",
+    "sourceHash": "cb87dba163b576ea68d06356821b44626e312eb5b5e2220727a2e53ed0479c66",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "square-stack": {
@@ -24727,7 +24727,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "07e9fbd093a1b3d225d1a911ac434d0db5010c4a34dd25d3c066e03ddf2ecbe6",
+    "sourceHash": "021da79344e6ba4abbd0f5c22c78abf5ef5cb453c68b206de1ff81dd1d134c5f",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "stethoscope": {
@@ -25293,7 +25293,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "ea4995d5659e5c7f5bb5551d932a085942f13484de19f799d678649dc0f481bd",
+    "sourceHash": "5e4c25eb50c98791cff872881b06f2bf9b6cd08198c8d99a4aec973120964765",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "sun": {
@@ -25793,7 +25793,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "614dd43c9c1ef237c0b36b0c28be732a07dea62add393a4378ab409edfb02ae6",
+    "sourceHash": "d2438f2b1f692de5d7e78a0a597f379342e23a999abdfcc8e01d025c22fbdf78",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "telescope": {
@@ -25843,7 +25843,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "80fd6c341816929cd7790ef5f49116138b33d1883bab62c45ce02ee5c6843641",
+    "sourceHash": "5e3c3099f08accc952689a380a0b36cbaa34cea162c10d7fa3bb020c8e30385e",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "terminal": {
@@ -25924,7 +25924,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "36c4c67afc3b339ed8aee1017fc29a5192a2634ab5d092163357199368ab67a8",
+    "sourceHash": "6647f5b400ffcf32d5d656948e4b21f985bd76d17e96efd708eadffab69ef6f6",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "ticket": {
@@ -26061,7 +26061,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "340c001c0b2a54b7f897bbddad06f65d9ca9f9f682da871cc54f2086e5a78be1",
+    "sourceHash": "55766ca522a2b5c5464533431e3d85cd24dd7f8b49e1df5c39c43229c396f0b8",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "timer": {
@@ -26191,7 +26191,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "fef6775ce7169769c4c8e222fca2c4eb9db451b1cbd5c341ef53d2311ab87453",
+    "sourceHash": "01b8288c6c8e60ad9ef3833398294096371e5c0aa3b75e2065dac2ca7190c597",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "tree-pine": {
@@ -26270,7 +26270,7 @@
       ],
       "review": "The SVG uses x = 0, y [0, direction, 0] px or zero, and translateX [0, 2, 0] px over 0.5 seconds with easeOut. preservePose and continueOnReturn apply to every transform channel. Head and line normalized reveals take 0.3 seconds after a 0.3-second delay and 0.4 seconds without delay respectively; opacity takes 0.1 seconds. Dash offsets begin at -0.5 px and -1 px, use sampled easeOut and retain elapsed time so return continues the remaining interval. Entry holds. Clear deletes SVG pose, offset maps and part state."
     },
-    "sourceHash": "83d272cecf25116c0570943a68d35059b16889a3a595995572489da676be5dab",
+    "sourceHash": "10585f134e94137f2a39d14f392218e195e1d6998dd62339c757b6394145ebda",
     "familyHash": "64863d0eb675fdf1d271b7317efcdb118adf2e16033e91306e9299c15bd21913"
   },
   "trending-up": {
@@ -26287,7 +26287,7 @@
       ],
       "review": "The SVG uses x = 0, y [0, direction, 0] px or zero, and translateX [0, 2, 0] px over 0.5 seconds with easeOut. preservePose and continueOnReturn apply to every transform channel. Head and line normalized reveals take 0.3 seconds after a 0.3-second delay and 0.4 seconds without delay respectively; opacity takes 0.1 seconds. Dash offsets begin at -0.5 px and -1 px, use sampled easeOut and retain elapsed time so return continues the remaining interval. Entry holds. Clear deletes SVG pose, offset maps and part state."
     },
-    "sourceHash": "672b274b020a1c36dd0706d07e8cc63242857299a13487ad8a03d3f382c74304",
+    "sourceHash": "ab25c35ae4b301d716965783b421f1ad9de2ed5b899c67be1a79162d67926f86",
     "familyHash": "64863d0eb675fdf1d271b7317efcdb118adf2e16033e91306e9299c15bd21913"
   },
   "trending-up-down": {
@@ -26302,7 +26302,7 @@
       ],
       "review": "The SVG uses x = 0, y [0, direction, 0] px or zero, and translateX [0, 2, 0] px over 0.5 seconds with easeOut. preservePose and continueOnReturn apply to every transform channel. Head and line normalized reveals take 0.3 seconds after a 0.3-second delay and 0.4 seconds without delay respectively; opacity takes 0.1 seconds. Dash offsets begin at -0.5 px and -1 px, use sampled easeOut and retain elapsed time so return continues the remaining interval. Entry holds. Clear deletes SVG pose, offset maps and part state."
     },
-    "sourceHash": "9014c6461d245fdb16b1a7a0543eae51f0d8bd395ec4ef87b9bee346e5aea15a",
+    "sourceHash": "b2114a16874fc25124b9ab1c53673a486bf3941e297db1ad7299bff8a05cd618",
     "familyHash": "64863d0eb675fdf1d271b7317efcdb118adf2e16033e91306e9299c15bd21913"
   },
   "truck": {
@@ -26479,7 +26479,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "fc813cc8c4dc05dc7780bd239cc1ec5d09d8329331ad75e35bcde9eaa1cf09b8",
+    "sourceHash": "10eb4e328e071cf18f656ea3dda06c9714d1755665662176d1f69553489ba793",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "twitter": {
@@ -26587,7 +26587,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "edd588d65193e1488463851bb7f6c9d4a67db205c693151bd5b053f7f12d81ec",
+    "sourceHash": "909a72fd567f16b5ee1c396cd1f5ee4c5de9c5f506dc841e14cac935ddde633d",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "underline": {
@@ -26799,7 +26799,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "2f8df35e52e0d1b3e9ca4e80f8dd7428df380a78a877e3dca8fe5cddd39ce68f",
+    "sourceHash": "560e1b1c5389ef7df692d9c9457a7f8b99ac1c2fe27948fe1b8a59ea4b9dd12d",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "user": {
@@ -27001,7 +27001,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "297366683bf773b110b33d83f1fe3a1300a3ba9f7a510fb1cfbe3f85ac9116d1",
+    "sourceHash": "d22285266eeb031ba6edaeef68c4663006b76f46476003baaebcf5a40f8c90e1",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "vibrate": {
@@ -27074,7 +27074,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "a0f5f47172719db816f548da8967dcb2ceda101675d06ad990e310c97a03b1cb",
+    "sourceHash": "7e25f7b311c5e92fb7201443991ef2b28896cc30413e79fc9d8d8bc255347529",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "volume": {
@@ -27179,7 +27179,7 @@
       ],
       "review": "The body X return uses an implicit spring with stiffness 500 and damping 25. Drum Y and unwrapped 360-degree spin keep independent loops and 0.5-second linear returns. Entry holds. Clear deletes body, drum and spin poses and their playback state."
     },
-    "sourceHash": "81bde4c1fe23fbbb58a4a01723e8285818f41fa01fea5b3274b351316bb5b08d",
+    "sourceHash": "1edb30d53b08545d0d1a15728a12bd4c34ef939945aed8b49e90546a90572af7",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "waves": {
@@ -27234,7 +27234,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "3bf29dc4388c3deef1190554cc8249bb93c2b81bdaef2a9b1bde70ff95bed9e8",
+    "sourceHash": "d7bfddabf8fc7aa653034cebda41968693158b8de2df3998522c1ce116372ec6",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "waves-arrow-down": {
@@ -27380,7 +27380,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "d9a8110ba47172785bf832d92e2579bf292e760dc6373b28c09eab41b15e9769",
+    "sourceHash": "c9fb0a3995731a328105981060b81e78f63d10d38ac2cae39570ccb2f8120f76",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "waves-arrow-up": {
@@ -27526,7 +27526,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "f70aa51ea9b9b762350e916c61ca6530a3704ac477ea4c03bbc5b04549f07421",
+    "sourceHash": "4b0f17e70b8a250effd349eecf078ce441b0caf89e6052ef5071f8bd127fdad3",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "waves-ladder": {
@@ -27629,7 +27629,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "01cdaa58918468137460da17e73bd155f2b823cfcab9e55362901c294d01391d",
+    "sourceHash": "8ccd66dce0ec8c7312c397a5d5476f36d310bd5b46ce76136877d8c4086539dd",
     "familyHash": "23324fc8171202c0c46854c227fafe56f2c090f8aae9497d36ab52e0a11abb56"
   },
   "waypoints": {
@@ -27979,7 +27979,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "0e6a3ed250c23c80a4247bd62bb0323ccc132d847b048f3909237d7cd6a2934a",
+    "sourceHash": "ee70d4aaec80139c8d23693c527fe7a4775e8f44b8e02cce0f86afbc4f7a0660",
     "familyHash": "7aab371ef74904f6fc2abbbf417e31ee51f2f9a4a883280d16894096fbd24bd4"
   },
   "x": {
@@ -28119,7 +28119,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "6583cc682f9a4b8532c54a3b70f4809d913324dc0e61c6facf1e2f52b274f012",
+    "sourceHash": "6af31a96a5de8f4f251efc3d0f1510669da1b25abeb11b8694b541d89c4b90a5",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "zap": {
@@ -28198,7 +28198,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "42fe4cc98e42bcc6d87d59834e7f3ddb2ace9516fd39e52b4367e9117a5dd392",
+    "sourceHash": "2ff35772ece17b16aa959dc1e2e02e6fff5fb32ef58ef9a73d879d7f06f0d6fd",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   },
   "zap-off": {
@@ -28277,7 +28277,7 @@
       ],
       "geometry": "No getTotalLength branch executes; normalized paints use pathLength=1 from the drawing when required."
     },
-    "sourceHash": "21fc58890da8c6a759c4610e3a4be7e170eaaecbc75ec602f04b369a6b0f6902",
+    "sourceHash": "a0a6412b3e53464289902cd503bbbabdf31acef15cf2411a0ab57890cdf39ae5",
     "familyHash": "c3702a6c4976a692474c608e749a1907c1b0826e30d594b7ce54244e40cb9214"
   }
 }

@@ -1,4 +1,5 @@
-import { animate, svgEffect } from "motion";
+import { svgEffect } from "motion";
+import { animateSvgEffect } from "./motion-effect";
 import type { IconRecipe } from "../element";
 
 interface AttributePose {
@@ -12,7 +13,7 @@ export function createSvgAttributeRecipe(poses: AttributePose[], transition: { s
     animate(drawing, returning, track) {
       drawing.querySelectorAll("line").forEach((line, index) => {
         track((onComplete) => {
-          const animation = animate(line, returning ? poses[index].normal : poses[index].animate, {
+          const animation = animateSvgEffect(line, returning ? poses[index].normal : poses[index].animate, {
             type: "spring", ...transition, onComplete,
           });
           // Attribute cancellation must preserve the current pose instead of rewinding it.
