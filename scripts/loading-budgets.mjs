@@ -32,9 +32,11 @@ export function checkModeBudgets(mode, data, { proposed = false } = {}) {
   for (const row of data.warm) {
     const name = row.from + " -> " + row.to;
     const ceiling = warmCeilings[name];
-    assert.ok(row.javascriptFiles <= ceiling.javascriptFiles, name + ": warm JavaScript file budget");
+    const files = row.javascriptFiles;
+    assert.ok(Number.isInteger(files) && files >= 0 && files <= ceiling.javascriptFiles, name + ": warm JavaScript file budget");
     for (const encoding of ["raw", "gzip"]) {
-      assert.ok(row.page[encoding] <= ceiling.page[encoding], name + ": warm page " + encoding + " budget");
+      const bytes = row.page?.[encoding];
+      assert.ok(Number.isInteger(bytes) && bytes >= 0 && bytes <= ceiling.page[encoding], name + ": warm page " + encoding + " budget");
     }
   }
   if (proposed) {

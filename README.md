@@ -106,4 +106,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, adding an icon, va
 
 The drawings derive from Lucide and Feather, and the animation recipes adapt Lucide Animated. Source links and applicable ISC and MIT notices are preserved in [the package notices](packages/animated-icons/THIRD_PARTY_NOTICES.md). Motion is a package dependency under its own license.
 
-A root project license must be selected before publication.
+MIT has been selected for the project's own contributions. The copyright holder and license files must be finalized before publication.
+
+The [Motion Astro release identity record](docs/release-identity.md) tracks the license and attribution audit, npm candidates and pending owner decisions. The current package name and public API remain in use while those decisions are open.
