@@ -70,3 +70,7 @@ rtk proxy env CHROME_DEBUG_URL=http://127.0.0.1:45385 BENCHMARK_MINIMAL_URL=http
 The public-page integration test failed before implementation with both combined modules in Bell's graph. It now compiles all 27 public simple-transform pages and checks their actual chunk/module metadata. No new test boundary beyond compiled Astro pages was introduced. Existing compiler, discovery and browser controls were reused. An existing inventory drift case now checks a combined recipe when the combined sampler changes.
 
 The strict inventory passes with 470 current reviews, 120 migrated recipes, 107 capability candidates and 243 Motion retentions. The final full validation result and independent Standards/Spec reviews are recorded in the delivery summary. Neither those reviews nor this implementation closes owner acceptance gates. #110 continues with isolated proofs; #111 waits for explicit ADR approval.
+
+## Owner acceptance on November 17
+
+On 2026-11-17, the owner reviewed the rendered comparisons at `c896c2d`, accepted the animation behavior and measured loading regressions, and authorized merging [PR #120](https://github.com/pommito/astro-animated-icons/pull/120). This includes eight files on the four-icon route in the full consumer, the 655-byte full and 567-byte minimal catalogue increases in page gzip, and the recorded warm transfer increases of up to 1,272 bytes in the full consumer. The #108 checker still reports deviations from its frozen baseline.
