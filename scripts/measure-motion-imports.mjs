@@ -4,7 +4,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync
 import { join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { readCatalog } from "./catalog.mjs";
-import { build } from "./measure-page-loading.mjs";
+import { build, captureLoadingContext } from "./measure-page-loading.mjs";
 import { inspectRoute } from "./inspect-bundle.mjs";
 import { measureRoute, resourceSizes } from "./measure-resources.mjs";
 import { verifyRegistrations } from "./registration-contract.mjs";
@@ -72,9 +72,7 @@ export default { ...base, root: ${JSON.stringify(directory)}, outDir: ${JSON.str
 } finally {
   rmSync(temporaryPage);
 }
-const report = { cases, modes, environment: JSON.parse(readFileSync(join(root, ".artifacts/page-loading/baseline.json"), "utf8")).environment,
-  source: { lockfileSHA256: createHash("sha256").update(readFileSync(join(root, "pnpm-lock.yaml"))).digest("hex"),
-    measurementSHA256: createHash("sha256").update(readFileSync(fileURLToPath(import.meta.url))).digest("hex") },
+const report = { cases, modes, ...captureLoadingContext(import.meta.url),
   assumptions: "Same locked full/minimal builds, static imports only, shared URLs counted once, Node gzip defaults per resource. Page compresses HTML including inline CSS once. No request, timing or installed-package measurement." };
 writeFileSync(join(artifacts, "report.json"), JSON.stringify(report, null, 2) + "\n");
 console.log("Saved .artifacts/motion-imports/report.json");
