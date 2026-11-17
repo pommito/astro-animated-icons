@@ -1,0 +1,8 @@
+{
+  "browser": "Chrome/154.0.0.0",
+  "hardwareConcurrency": 10,
+  "deviceMemory": 16,
+  "devicePixelRatio": 2,
+  "reducedMotion": false,
+  "visibility": "visible"
+}
