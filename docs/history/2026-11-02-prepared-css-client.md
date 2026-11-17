@@ -1,6 +1,6 @@
 # Prepared CSS recovery proofs
 
-Issue [#110](https://github.com/pommito/astro-animated-icons/issues/110) has two executable proofs and complete measured evidence. The proposed [ADR 0003](../adr/0003-prepared-css-client.md) rejects both transports because their page, server and browser preparation costs regress. Owner decision is pending. Production remains at #109's `9a5a81f`; #111 has not started.
+Issue [#110](https://github.com/pommito/astro-animated-icons/issues/110) has two executable proofs and complete measured evidence. [ADR 0003](../adr/0003-prepared-css-client.md) records the owner's November 17 decision to reject both transports and archive their results because page transfer, server rendering and browser preparation regress. The proofs use #109's `9a5a81f` as their reference.
 
 The [proof guide](../../experiments/css-client/README.md) documents reproduction. Both transports prepare exact CSS and combined scalar data on the server. The attribute transport serializes everything into the host record. The template transport puts recovery CSS in an inert host child and scalar data in its attribute. Paint uses decoded playback data. Each host remains independently recoverable. There is no recipe registry, network fallback, deferred compiler or new consumer setting.
 
@@ -79,4 +79,4 @@ The existing template control now accepts compact or prepared paint data and cop
 
 The protocol verifier reports 600 server, 300 streaming and 200 browser pairs per transport, with matched inputs, launch targets and cache hits. Reproduction commands, including the existing request runner, are in the proof guide. Source hashes are in each summary. Routine validation launches no browser. Safari, Firefox, installed npm consumers, native input/media qualification, frame pacing and owner visual acceptance remain unverified.
 
-These are isolated rejected candidates awaiting an owner decision. Their measurements establish compiler-free synchronous recovery for the tested scope and expose its costs. They grant no production runtime reduction beyond #109 and no approval for #111.
+The archived trials demonstrate compiler-free synchronous recovery for the tested scope and record its costs. #111 requires a separately approved recovery design.

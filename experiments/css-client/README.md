@@ -1,6 +1,6 @@
 # Prepared CSS client proofs
 
-These isolated proofs support [#110](https://github.com/pommito/astro-animated-icons/issues/110). Production stays at the selective transform implementation in `9a5a81f`. Neither proof is an approved package architecture. The proposed decision is in [ADR 0003](../../docs/adr/0003-prepared-css-client.md).
+These isolated proofs support [#110](https://github.com/pommito/astro-animated-icons/issues/110). The proofs use the selective transform implementation at `9a5a81f` as their reference. [ADR 0003](../../docs/adr/0003-prepared-css-client.md) records the decision to reject both transports and archive their results.
 
 Both proofs compile the existing recipes on the server and carry enough information in each host for recovery without its source. One transport uses a complete JSON attribute. The other uses an inert template with CSS text and a JSON attribute for combined scalar samples. Both retain the original active styles, complete SVG and public handles. No catalogue registry, per-instance byte accounting, eager slot rendering or JSON fetch is introduced.
 

@@ -1,12 +1,13 @@
 ---
-status: proposed
+status: rejected
+decision_date: 2026-11-17
 ---
 
 # Reject the two repeated prepared-record transports
 
-Issue [#110](https://github.com/pommito/astro-animated-icons/issues/110) requires a smaller CSS client with synchronous playback and independent recovery. Two executable transports meet the proposed JavaScript byte reductions. Both increase complete-page transfer, server work and browser preparation on repeated and combined compositions. I recommend rejecting both for production. The owner has not accepted this decision or an architecture for #111.
+Issue [#110](https://github.com/pommito/astro-animated-icons/issues/110) requires a smaller CSS client with synchronous playback and independent recovery. Two executable transports meet the proposed JavaScript byte reductions. Both increase complete-page transfer, server work and browser preparation on repeated and combined compositions. On 2026-11-17, the owner rejected both transports for production and authorized archiving the results in [PR #122](https://github.com/pommito/astro-animated-icons/pull/122).
 
-Production remains at the selective transform implementation in `9a5a81f`. The [proof guide](../../experiments/css-client/README.md) gives the commands. The [evidence report](../history/2026-11-02-prepared-css-client.md) links raw samples, graphs, payloads and comparisons.
+The proofs used the selective transform implementation at `9a5a81f` as their reference. The [proof guide](../../experiments/css-client/README.md) gives the commands. The [evidence report](../history/2026-11-02-prepared-css-client.md) links raw samples, graphs, payloads and comparisons.
 
 ## Candidate interfaces
 
@@ -54,6 +55,6 @@ The production browser-free suite passes 115 tests, 470 drawings and 944 bundle 
 
 Keep #109's selective entries separate. The next proof can test one generated recovery asset per rendered recipe, eagerly loaded before its tag is defined, instead of repeating CSS and scalar samples on every host. Limit that proof to Bell/UserRoundCog, KeySquare, CircleDashed and EyeOff plus a retained Motion mixture. Use one, twenty repeated instances and a real navigation before extending membership.
 
-That option must count initial and eventual JS, CSS and JSON requests, package asset resolution, first definition, source-removed clones, missing sheets and complete pages. Any new asynchronous dependency needs its own contract decision. It is an untested follow-up, not an accepted replacement for the current recovery contract.
+That option must count initial and eventual JS, CSS and JSON requests, package asset resolution, first definition, source-removed clones, missing sheets and complete pages. Any new asynchronous dependency needs its own contract decision. It remains an untested option under the current recovery contract.
 
-The pending owner decision is whether to reject these two candidates and authorize that bounded follow-up, or accept explicitly identified costs with a chosen representation. #111 remains blocked until the owner accepts a concrete architecture. No budget or acceptance record has been changed to permit integration.
+#111 remains blocked until the owner approves a concrete recovery design. The frozen budgets remain in place.
