@@ -27,7 +27,9 @@ for (const transport of ["attribute", "template"]) {
   await import("data:text/javascript;base64," + Buffer.from(verify).toString("base64"));
   const servers = [read("server-run-1.json"), read("server-run-2.json")];
   const browser = read("browser-run-1.json");
-  const report = { transport, reference: "9a5a81f", sourceHashes: hashes, environment: baseline.environment, browserEnvironment: read("browser-environment.json"),
+  const loading = JSON.parse(readFileSync(join(directory, "loading.json")));
+  const report = { transport, reference: "9a5a81f", sourceHashes: hashes,
+    environment: loading.environment, serverEnvironments: servers.map(run => run.environment), browserEnvironment: read("browser-environment.json"),
     protocol: { server: "Two independent production Node processes; five warmup pairs and thirty measured pairs per scenario; separate streaming runs with three warmup pairs and fifteen measured pairs", browser: "Three warmup pairs and twenty measured pairs in fresh visible frames, warm assets, at most twenty matched hosts", statistics: "5000 deterministic paired bootstrap resamples, medians, p95 and 95% intervals; no outliers discarded", excluded: "Build, container creation, HTTP adapter/network, frame pacing and visual acceptance" }, server: {}, browser: {}, loading: {} };
   for (const name of names) {
     const samples = servers.flatMap(run => run.scenarios[name].samples);
@@ -37,8 +39,6 @@ for (const transport of ["attribute", "template"]) {
       campaigns: servers.map(run => ({ wall: compare(run.scenarios[name].samples, "wallMs"), firstSvg: compare(run.scenarios[name].streams, "firstSvgMs") })) };
     report.browser[name] = Object.fromEntries(["readyMs", "defineMs", "initialLayoutMs", "startMs"].map(key => [key, compare(browser.scenarios[name].samples, key)]));
   }
-  const loading = JSON.parse(readFileSync(join(directory, "loading.json")));
-  loading.source = { ...loading.source, measurementSHA256: hashes["scripts/measure-page-loading.mjs"], proofSources: hashes };
   for (const mode of ["full", "minimal"]) {
     report.loading[mode] = { routes: {}, warm: loading.modes[mode].warm.map(row => {
       const before = baseline.modes[mode].warm.find(value => value.from === row.from && value.to === row.to);

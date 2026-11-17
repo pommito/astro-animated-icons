@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { after, test } from "node:test";
 import { buildProof } from "../experiments/css-client/build.mjs";
+import { verifyPreparedRecords } from "../experiments/css-client/records.mjs";
 import { inspectRoute } from "./inspect-bundle.mjs";
 
 const directory = realpathSync(mkdtempSync(join(tmpdir(), "icons-prepared-css-")));
@@ -22,6 +23,8 @@ for (const transport of ["attribute", "template"]) {
     const route = inspectRoute(pathToFileURL(output + "/"), "index.html", () => {}, new Map());
     const modules = [...route.chunks.keys()].flatMap(url => metadata[url].modules.map(module => module.id));
     assert.ok(!modules.some(id => /\/(?:cycle-css|combined-cycle-css|transform-css|combined-transform-(?:cycle|css)|opacity-css|paint-css)\.ts$/.test(id)), modules.join("\n"));
-    assert.equal((readFileSync(join(output, "index.html"), "utf8").match(/<svg\b/g) ?? []).length, 4);
+    const html = readFileSync(join(output, "index.html"), "utf8");
+    assert.equal((html.match(/<svg\b/g) ?? []).length, 4);
+    verifyPreparedRecords(transport, route, html, ["bell", "key-circle", "circle-dashed", "eye-off"], transport + " proof");
   });
 }
