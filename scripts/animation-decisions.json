@@ -2821,7 +2821,7 @@
         }
       ]
     },
-    "sourceHash": "ae79c8adb87a407ebb5d036917d50ffd09911aac1ceee79eb5b2a519847cefb2",
+    "sourceHash": "5cf389bb001d2e973b5843f339092f6db71873317bd7666b6f548238a8eb0a25",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "bell-electric": {
@@ -5124,7 +5124,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "faad9237a0d1ff1807efc98cce153773275129d860fdd893a637a875e3ea3e9c",
+    "sourceHash": "df5a6858f7287bb774f3ecb654c6791ae4443bec98efd46fdc8bc1d86b5db3a7",
     "familyHash": "3fdc64cb4e1c8b851a497056c2a08e6c6f8a5446012cf955c9a8fd439bb1d30a"
   },
   "calendar-check": {
@@ -6951,7 +6951,7 @@
         }
       ]
     },
-    "sourceHash": "b9195121c5785b9ffdaea6c8757db5841a572dd16d86de1d35f0bc797b0b6383",
+    "sourceHash": "9bdef1b25a11e7e30f481fe226c9e962adbf3bccc54915e5674cb30f4945c855",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-first": {
@@ -6989,7 +6989,7 @@
         }
       ]
     },
-    "sourceHash": "d27461cbfecb62a5edb8a6703e42a7485e27e6396d60e7a9cc9bb9406cb77b4d",
+    "sourceHash": "f13c6cdbeded5ce37b4aabb2a8223b9a74681d6c3f8ae64d234bffde2f192010",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-left": {
@@ -7023,7 +7023,7 @@
         }
       ]
     },
-    "sourceHash": "b7d1652f94920209d585ba76f271993e6ff45edf993dd7da5fec64349631c354",
+    "sourceHash": "f1fc4bc4ee9cb8abcdf83c86ff36c285a45689b6635567aec5589e97b2084d49",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-right": {
@@ -7057,7 +7057,7 @@
         }
       ]
     },
-    "sourceHash": "4651dce69e5ea1f6e01fb18c866341bed9eceb9c9cd0e52d2dfb4635434bcf0f",
+    "sourceHash": "91e844cf5cd73641ae00c79bd839b02e08b076b43f799581221d41bf30c478f7",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevron-up": {
@@ -7091,7 +7091,7 @@
         }
       ]
     },
-    "sourceHash": "1f66afe28af46c2a78ec0e0f08af6e4add02fb08b798fa698adbb9b6cdf5b2f8",
+    "sourceHash": "b620733c1b2bd078202d0919ba38155b2f97231f489c22df7d5ae16e46322c06",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "chevrons-down-up": {
@@ -7581,7 +7581,7 @@
         }
       ]
     },
-    "sourceHash": "101196eafe9ddb4b972e3627d36d451aecc03ab00e79eaa3aeffb1cabfd52b75",
+    "sourceHash": "6afa5fe6fdb45ea44a17fe0ca7fdf0aba51861604e3ec7cefebcfc65dc51c6d6",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-left": {
@@ -7615,7 +7615,7 @@
         }
       ]
     },
-    "sourceHash": "2ec864b74749c52b4152a87cdfd2a832d7cf0f0c6ff75f12c0ffeb248bb5cd89",
+    "sourceHash": "f34df7d290c8d8ec79b09b7260c60050e1b6403c4c40245963ff8efea88f1e48",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-right": {
@@ -7649,7 +7649,7 @@
         }
       ]
     },
-    "sourceHash": "c627ed42fa3e75079f3198a08a9315d909a94192be3a27ce8e7672bff2c7667b",
+    "sourceHash": "d1699be820171f0fa2c30772edfbcfc9fc160a8f30ce342727c7cdfa616a200f",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-chevron-up": {
@@ -7683,7 +7683,7 @@
         }
       ]
     },
-    "sourceHash": "5941164dc5eadf4c7fc421d7577c8bbe68ea01c3341ecd777650d9e3a0ba9208",
+    "sourceHash": "ae7223905f9fe4039b7e87b8541af7066bf80b770f6e3dc2f2f715f4f08e508a",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "circle-dashed": {
@@ -7967,7 +7967,7 @@
         }
       ]
     },
-    "sourceHash": "1f0de56f4e4a2831b396112557ef6c03e3983653f3b18c5c34aeaadca2e0edd7",
+    "sourceHash": "f48f4ccbaaa91b58d070a37bb31403d45dad08d470838870b5998d28bd9c4e5b",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "clap": {
@@ -10579,7 +10579,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "b51016bdc6fb272c10dbb3a568a059466fa914ea832e911ff2660ea131195698",
+    "sourceHash": "6ef5602f51f25001cef02debb84a005db157df30a97b9cfa5e7c0926b7485cec",
     "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "discord": {
@@ -12055,7 +12055,7 @@
         }
       ]
     },
-    "sourceHash": "5e072e7d6779266edf7a2c00fc4d6884373bfb4982750a5300ac9972070a0cba",
+    "sourceHash": "73365f75e98bd6ffde8a300fb8fbdaae9251d04a9789de33fd477e15fe34f0c0",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-archive": {
@@ -12156,7 +12156,7 @@
         }
       ]
     },
-    "sourceHash": "e658cdab5c41d02df29b46d1c11271195d55113129a84e6e3cf939737b98fbd6",
+    "sourceHash": "32538ae6a251452896f6d68248d6bb1f27acb975b51d3df368334e5bdecd120a",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-git": {
@@ -12268,7 +12268,7 @@
         }
       ]
     },
-    "sourceHash": "2b5082e09d9965f652a4993c3a8330b0be373f50d7eec4d4d618a496810acc91",
+    "sourceHash": "8314037ae979f03227d00478d406d99fa76e01af313e15c9afb7fc99fad13d11",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-kanban": {
@@ -12346,7 +12346,7 @@
         }
       ]
     },
-    "sourceHash": "b2bc7bbf4a8451437c749092563a5d228a4fe8382b782c7cc8e1af85d55dd4af",
+    "sourceHash": "dadf162385fc0c2a5563eac82317be6f965e1ff3968317fe3d641663a93a826b",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-plus": {
@@ -12435,7 +12435,7 @@
         }
       ]
     },
-    "sourceHash": "ab3e80a9f275e80b9c1d7aa8312e882ad2e3a675205039c294333657c67ac879",
+    "sourceHash": "a4c5374cf932aa9de10eaf8fd891a96ff5214b013cbfa1c6800f756c8e062cb2",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "folder-x": {
@@ -16052,7 +16052,7 @@
         }
       ]
     },
-    "sourceHash": "a54cb268ca736e98efdb58501f7b02f165c83cff40b03a05e2b760650ad1f104",
+    "sourceHash": "274b601842de0909c1c4596b4c2907aa891f7d03ec4ccd33b9fae29ca5bee9bc",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "key-square": {
@@ -16112,7 +16112,7 @@
         }
       ]
     },
-    "sourceHash": "9404230e28536bbbafe57d8599d656c39f0c61e29119084f567925c11ef2657b",
+    "sourceHash": "cc41677c3cd336dd8c4af85ecd824b38aa285c7483bf915e78100605f2cc3719",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "keyboard": {
@@ -19163,7 +19163,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "5c47750e26c9f2ea83cde7f4f60e4320c6e652e0b6bf1c49075a4e920558fae9",
+    "sourceHash": "59b0b9226ab5c383d2c0b8b5c2268316f33ae912e2250930cd52afbae90080c6",
     "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "panel-left-open": {
@@ -19214,7 +19214,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "6fde3efc3ae5f9a417e27cfcff0f42f2fb071edbb0cebe50f779dd2b6b0d987b",
+    "sourceHash": "27ed90ab80c953efcf73a4863d923a1005fa292f61a9e624cfc9af6fd72ee488",
     "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "panel-right-open": {
@@ -19265,7 +19265,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "e03fdc6d905bd9d57a8e971ebeca1f9979b741e2fd0543ffdba6eba27285f4b7",
+    "sourceHash": "6656b6093f4c2bdc2a2bef75d60dcfd9b2031759de6ba4a1e4e38d2a700ab438",
     "familyHash": "047c1f639b9d8b5689357ef83c8eccddf01fd6c87db2bcdd3fad32604c3490ef"
   },
   "party-popper": {
@@ -24258,7 +24258,7 @@
         }
       ]
     },
-    "sourceHash": "2ba8fd02a98c9198f464823c32bbdaf6c55bf978e5323c063f9310ba6c20ac55",
+    "sourceHash": "8cc75f4bf0dee11b8ce33bca4053d6e9649278b822bf87f0d307817ab8205f99",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-left": {
@@ -24292,7 +24292,7 @@
         }
       ]
     },
-    "sourceHash": "3d60d3c1c3c476f4a7f9fc8590778199f147ecd99037d14bc9ff7e2da601865a",
+    "sourceHash": "2f53414e2acf7687e3957fffa7207ecd9bfdb8e1ca481fe9b9e665f7e4de1dfc",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-right": {
@@ -24326,7 +24326,7 @@
         }
       ]
     },
-    "sourceHash": "1c7a845801203e1f89c36029c297f7790ce98c0c0e17a02d5f57b4a21518f0f3",
+    "sourceHash": "f617a2fceac2c1d4f1138dcfb99b42188325e00bbf8b77332d66b00e2b7c2816",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-chevron-up": {
@@ -24360,7 +24360,7 @@
         }
       ]
     },
-    "sourceHash": "5fb05d11b68c2ace3953276c096aa047c38f632874e9b8737eb3aacb1ceb970c",
+    "sourceHash": "f99af4f988d4fe7b8fe4596a5606fd028b0c7a0b5299da1620576289790fcd9e",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "square-pen": {
@@ -26253,7 +26253,7 @@
         "replay": "current"
       }
     },
-    "sourceHash": "d3299061d845df67e6d10286b95008e812555817e835db7f17ac4608838e6605",
+    "sourceHash": "8135b78ddce7ade04a4e05f061b6cb2e3b878e022f302b9ca8a2defd77f3ae2e",
     "familyHash": "3fdc64cb4e1c8b851a497056c2a08e6c6f8a5446012cf955c9a8fd439bb1d30a"
   },
   "trending-down": {
@@ -26887,7 +26887,7 @@
         }
       ]
     },
-    "sourceHash": "7037aae5f0d05d76a4b80d6ebced4f05671310f0ca50668b53a87882b83ec1ab",
+    "sourceHash": "c4678658eebfbed986a128b71e2bcb97eb4c7b28114b54d68a1e7de6c39cf8c3",
     "familyHash": "8eaeeec941c3e8110c02ef6a6523dd5f86eedd68c1c380ac548d8f0cee5eda10"
   },
   "user-round-plus": {
@@ -27138,7 +27138,7 @@
         }
       ]
     },
-    "sourceHash": "7c05a0596c44252b4cdafa98c6f4a13d34ea48f71d5ef0ec067cd46965059450",
+    "sourceHash": "d1a269b19ba51c7f3d407f6b428e73b6f52f706b5dcbf2d805da3535a9f9ab8b",
     "familyHash": "618b19f751fe468ff7c1b4e072ba4ee66559dc8da3c76be0620849606d282df7"
   },
   "washing-machine": {
