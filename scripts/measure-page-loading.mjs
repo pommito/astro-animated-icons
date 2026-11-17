@@ -44,14 +44,14 @@ export function build(cwd, config) {
 }
 
 export function chunkRole(id) {
-  if (/\/src\/shared\/register-css/.test(id) || /\/src\/Css(?:Opacity|Paint)?Icon\.astro\?astro&type=script/.test(id)) return "registration";
+  if (/\/src\/shared\/register-css/.test(id) || /\/src\/(?:Css(?:Opacity|Paint)?Icon|Css(?:Combined)?CycleRegistration)\.astro\?astro&type=script/.test(id)) return "registration";
   if (/\/src\/icons\/[^/]+\/(?:element\.ts$|[^/]+\.astro\?astro&type=script)/.test(id)) return "registration";
   if (/\/src\/icons\//.test(id)) return "recipe";
   if (/\/src\/element\.ts$/.test(id)) return "lifecycle";
-  if (/\/src\/shared\/(?:cycle-css|opacity-css|paint-css|recipe-css|combined-transform-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
+  if (/\/src\/shared\/(?:cycle-css|opacity-css|paint-css|recipe-css|combined-transform-css|combined-cycle-css|transform-css)\.ts$/.test(id)) return "stylesheet-compiler-and-recovery";
   if (/\/src\/shared\/paint-data\.ts$/.test(id)) return "recipe-serialization";
   if (/\/src\/shared\/combined-transform-cycle\.ts$/.test(id)) return "transform-sampling";
-  if (/\/src\/shared\/css-(?:cycle|opacity|paint)\.ts$/.test(id)) return "css-adapter";
+  if (/\/src\/shared\/css-(?:cycle|opacity|paint|combined-cycle|transform)\.ts$/.test(id)) return "css-adapter";
   if (/\/node_modules\//.test(id)) return "dependency";
   return "other-shared";
 }
@@ -121,7 +121,7 @@ export function measureLoading(output, metadata, { mode } = {}) {
     const graph = measureGraph(inspection, metadata);
     return [name, { icons: slugs.length, distinctIcons: new Set(slugs).size, entries: inspection.entries.length, graph,
       javascriptFiles: inspection.chunks.size, inlineScripts: inspection.inline.length, registrations: new Set(slugs).size,
-      recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|opacity|paint)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
+      recipeData: resourceSizes([...html.matchAll(/data-grave-(?:cycle|combined|opacity|paint)-recipe="([^"]*)"/g)].map(match => match[0])), ...payload }];
   }));
   const transitions = [["one", "four"], ["four", "ten"], ["ten", "all"], ["all", "one"], ["all", "all-loader"],
     ["loader", "all-loader"], ["all-loader", "four"], ["one", "repeated"], ["all", "repeated-all"],
