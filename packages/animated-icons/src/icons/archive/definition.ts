@@ -1,4 +1,5 @@
-import { animate, motionValue } from "motion";
+import { motionValue } from "motion";
+import { animateNumberValue } from "../../shared/motion-effect";
 import { animatePathMorph, clearPathMorph } from "../../shared/path-morph";
 import type { IconRecipe, IconTrack } from "../../element";
 
@@ -19,7 +20,7 @@ export function animateArchive(drawing: SVGGElement, returning: boolean, track: 
   }
   const value = lidValue;
   track((onComplete) => {
-    animate(value, returning ? 0 : -1.5, {
+    animateNumberValue(value, returning ? 0 : -1.5, {
       type: "spring",
       stiffness: 200,
       damping: 25,

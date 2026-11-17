@@ -1,0 +1,25 @@
+{
+  "checkedVersion": "13.4.4",
+  "installedVersion": "13.5.1",
+  "scope": "Export availability only; no installed-package or browser qualification of the minimum version.",
+  "exports": [
+    "animateElement",
+    "animateSingleValue",
+    "GroupAnimationWithThen",
+    "visualElementStore"
+  ],
+  "packages": {
+    "motion": {
+      "url": "https://registry.npmjs.org/motion/-/motion-13.4.4.tgz",
+      "sha256": "3997a2b848aadab693ebde1d7819817ecd9fde4705176aa4766888080012532e"
+    },
+    "framer-motion": {
+      "url": "https://registry.npmjs.org/framer-motion/-/framer-motion-13.4.4.tgz",
+      "sha256": "fc9c4d46d2cec011469ebfde7c0f688172f701f874cee70064fb67ac777a261a"
+    },
+    "motion-dom": {
+      "url": "https://registry.npmjs.org/motion-dom/-/motion-dom-13.4.4.tgz",
+      "sha256": "3ecf2ee580bbd093f17b2bf8dce0af4da2d2247b2800691210bfccb6bbbcba28"
+    }
+  }
+}

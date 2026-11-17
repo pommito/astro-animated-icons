@@ -58,8 +58,8 @@
     "reason": "The resolved parts below use explicit or implicit transform springs. A fixed CSS timeline would discard the retained property velocities.",
     "followUp": "#81: retain this Motion behavior; any replacement needs separate capability and interruption evidence.",
     "contract": {
-      "mechanism": "shared/svg-parts.ts -> shared/svg-transform.ts",
-      "playback": "Effective parts record each pose separately. Pose transition replaces part transition. A scalar transform with no duration and no explicit spring gets scale 550/30 or other 500/25, restSpeed 10, overriding base stiffness/damping. A spring uses retained per-property velocity. Active entry arrays replace their first value; completed entry restarts explicit arrays. Repeating active entry first finishes one cycle then clears and loops via animateSequence. Hold completion. Clear deletes playback/pose state, releases svgEffect and restores normal d and paint styles.",
+      "mechanism": "shared/svg-transform-parts.ts -> shared/svg-transform.ts; shared/svg-parts.ts adds paint and morph tracks",
+      "playback": "Effective parts record each pose separately. Pose transition replaces part transition. A scalar transform with no duration and no explicit spring gets scale 550/30 or other 500/25, restSpeed 10, overriding base stiffness/damping. A spring uses retained per-property velocity. Active entry arrays replace their first value; completed entry restarts explicit arrays. Repeating active entry first finishes one cycle then clears and loops via animateSequence. Hold completion. Clear deletes playback/pose state, releases svgEffect and restores normal d and paint styles. Loader, LoaderCircle and LoaderPinwheel use the transform-only factory. Their clear path has no SVG effect or paint state to release.",
       "transformOrder": [
         "x",
         "translateX",
@@ -412,8 +412,8 @@
     "reason": "The direct path-morph helper forwards spring or repeat settings to Motion attribute animation. The CSS mechanisms cannot preserve these morphs.",
     "followUp": "#81: retain the direct Motion morphs until a replacement preserves their curves, repeats and cancellation.",
     "contract": {
-      "mechanism": "shared/path-morph.ts",
-      "playback": "animatePathMorph forwards the complete options object to Motion animate with attrD. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
+      "mechanism": "shared/path-morph.ts -> shared/motion-effect.ts",
+      "playback": "animatePathMorph forwards the complete options object with attrD through animateSvgEffect to Motion animateElement. GroupAnimationWithThen preserves the original grouped completion promise. Rocket therefore retains its infinite repeat and explicit offsets. Connect retains its spring stiffness and damping. Stop and cancel both stop the attribute effect without rewinding it. Clear releases svgEffect and restores the supplied normal d. Local contracts describe the parallel transforms. These calls do not use the restricted d branch in svg-parts."
     }
   },
   "wind-path-translation": {
