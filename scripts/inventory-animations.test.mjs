@@ -290,11 +290,16 @@ test("a deferred Motion recipe loses support when its proven CSS dependency chan
     writeFileSync(recordsPath, JSON.stringify(records));
     const deferred = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
     assert.equal(deferred.migrationState, "supported-but-deferred");
-    assert.ok(deferred.provenMechanismSources.includes("packages/animated-icons/src/shared/css-cycle.ts"));
-    const path = join(root, "packages/animated-icons/src/shared/css-cycle.ts");
-    writeFileSync(path, readFileSync(path, "utf8") + "\n");
-    const stale = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
-    assert.equal(stale.engine, "motion");
-    assert.equal(stale.migrationState, "needs-review");
+    for (const source of ["shared/css-cycle.ts", "CssCycleRegistration.astro", "shared/transform-cycle-css.ts", "shared/combined-cycle-css.ts"]) {
+      const file = "packages/animated-icons/src/" + source;
+      const path = join(root, file);
+      const original = readFileSync(path, "utf8");
+      writeFileSync(path, original + "\n");
+      const stale = inventoryAnimations(root).icons.find(icon => icon.slug === "disc-3");
+      assert.equal(stale.engine, "motion", source);
+      assert.equal(stale.migrationState, "needs-review", source);
+      assert.ok(deferred.provenMechanismSources.includes(file), source);
+      writeFileSync(path, original);
+    }
   });
 });
