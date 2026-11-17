@@ -1,0 +1,66 @@
+---
+import { UsersRound } from "@grave/animated-icons/astro";
+---
+<html lang="en">
+  <head><meta charset="utf-8" /><title>UsersRound spring interruption probe</title></head>
+  <body>
+    {[14, 16, 24, 28].map(size => <div data-size={size}><UsersRound size={size} /></div>)}
+    <button id="capture">Capture interrupted spring poses</button>
+    <pre id="result"></pre>
+    <script>
+      import { NativeAnimationExtended, svgEffect, time } from "motion";
+
+      const result = document.querySelector("#result")!;
+      document.querySelector("#capture")!.addEventListener("click", async () => {
+        await customElements.whenDefined("grave-users-round");
+        const samples = [];
+        try {
+          for (const row of document.querySelectorAll<HTMLElement>("[data-size]")) {
+            const source = row.querySelector("grave-users-round")!;
+            for (const entry of [130, 165, 200, 235]) {
+              const host = source.cloneNode(true) as HTMLElement & { startAnimation(): void; stopAnimation(): void };
+              row.append(host);
+              try {
+                const target = host.querySelector<SVGElement>("[data-part='0']")!;
+                function sample(phase: string, start: number, elapsed: number) {
+                  const active = svgEffect.get(target, "opacity")?.animation;
+                  const spring = active && "animation" in active ? active.animation : undefined;
+                  if (!(spring instanceof NativeAnimationExtended)) throw new Error("Missing native opacity spring at " + phase);
+                  // Motion estimates stop velocity from elapsed wall time even when the native track is paused.
+                  spring.startTime = start;
+                  spring.pause();
+                  spring.time = elapsed / 1000;
+                  for (const animation of target.getAnimations()) {
+                    animation.pause();
+                    animation.currentTime = elapsed;
+                  }
+                  time.set(start + elapsed);
+                  const style = getComputedStyle(target);
+                  const velocity = spring.options.velocity ?? 0;
+                  samples.push({ size: Number(row.dataset.size), entry, phase, opacity: Number(style.opacity), velocity, transform: style.transform });
+                }
+
+                time.set(1000);
+                host.startAnimation();
+                sample("entry", 1000, entry);
+                host.stopAnimation();
+                sample("return", 1000 + entry, 80);
+                host.stopAnimation();
+                sample("repeated-stop", 1080 + entry, 70);
+                host.startAnimation();
+                sample("replay-during-return", 1150 + entry, 150);
+              } finally {
+                host.remove();
+              }
+            }
+          }
+          const inherited = samples.filter(sample => sample.phase !== "entry" && Math.abs(sample.velocity) > 0.001).length;
+          if (!inherited) throw new Error("No interrupted opacity spring inherited velocity");
+          result.textContent = JSON.stringify({ samples, inherited });
+        } catch (error) {
+          result.textContent = JSON.stringify({ error: String(error) });
+        }
+      });
+    </script>
+  </body>
+</html>

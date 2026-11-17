@@ -1,4 +1,4 @@
-import { animate } from "motion";
+import { animateSvgEffect } from "../../shared/motion-effect";
 import type { IconRecipe } from "../../element";
 import { createSvgPartsRecipe } from "../../shared/svg-parts";
 
@@ -29,7 +29,7 @@ export const sparklesRecipe: IconRecipe = {
     parts.animate(drawing, returning, track);
     const sparkle = drawing.querySelector<SVGPathElement>("[data-part='0']")!;
     track(onComplete => {
-      const animation = animate(sparkle, { fill: returning ? "none" : "currentColor" }, {
+      const animation = animateSvgEffect(sparkle, { fill: returning ? "none" : "currentColor" }, {
         duration: returning ? 0.3 : 1,
         ease: returning ? [0.25, 0.1, 0.35, 1] : "easeOut",
         onComplete,

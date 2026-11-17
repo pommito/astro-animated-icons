@@ -20,6 +20,19 @@ const fixtureRequire = createRequire(join(fixture, "package.json"));
 const astroPackage = fixtureRequire.resolve("astro/package.json");
 const astroCLI = join(dirname(astroPackage), JSON.parse(readFileSync(astroPackage, "utf8")).bin.astro);
 
+export function captureLoadingContext(measurement = import.meta.url) {
+  return {
+    environment: { node: process.version, packageManager: JSON.parse(readFileSync(join(root, "package.json"), "utf8")).packageManager,
+      astro: JSON.parse(readFileSync(astroPackage, "utf8")).version,
+      motion: JSON.parse(readFileSync(fixtureRequire.resolve("motion/package.json"), "utf8")).version,
+      typescript: JSON.parse(readFileSync(fixtureRequire.resolve("typescript/package.json"), "utf8")).version,
+      platform: platform(), arch: arch(), cpu: cpus()[0]?.model },
+    source: { package: JSON.parse(readFileSync(join(root, "packages/animated-icons/package.json"), "utf8")).name,
+      lockfileSHA256: createHash("sha256").update(readFileSync(join(root, "pnpm-lock.yaml"))).digest("hex"),
+      measurementSHA256: createHash("sha256").update(readFileSync(new URL(measurement))).digest("hex") },
+  };
+}
+
 export function build(cwd, config) {
   return new Promise((resolve, reject) => {
     const child = spawn(process.execPath, [astroCLI, "build", "--config", relative(cwd, config)], {
@@ -163,14 +176,7 @@ async function main() {
     modes[name] = measureLoading(pathToFileURL(output + "/"), JSON.parse(readFileSync(evidence, "utf8")));
   }
   const result = {
-    environment: { node: process.version, packageManager: JSON.parse(readFileSync(join(root, "package.json"), "utf8")).packageManager,
-      astro: JSON.parse(readFileSync(astroPackage, "utf8")).version,
-      motion: JSON.parse(readFileSync(fixtureRequire.resolve("motion/package.json"), "utf8")).version,
-      typescript: JSON.parse(readFileSync(fixtureRequire.resolve("typescript/package.json"), "utf8")).version,
-      platform: platform(), arch: arch(), cpu: cpus()[0]?.model },
-    source: { package: JSON.parse(readFileSync(join(root, "packages/animated-icons/package.json"), "utf8")).name,
-      lockfileSHA256: createHash("sha256").update(readFileSync(join(root, "pnpm-lock.yaml"))).digest("hex"),
-      measurementSHA256: createHash("sha256").update(readFileSync(fileURLToPath(import.meta.url))).digest("hex") },
+    ...captureLoadingContext(),
     assumptions: {
       cold: "Reachable static and literal dynamic imports count once per URL. These are resource counts, not observed browser requests.",
       compression: "Node zlib gzip defaults per external resource. total compresses inline styles/scripts separately. page compresses HTML with inline content once plus external JS/CSS.",
